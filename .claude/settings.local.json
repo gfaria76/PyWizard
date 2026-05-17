@@ -12,7 +12,8 @@
       "Bash(echo \"EXIT:$?\")",
       "Bash(git add *)",
       "Bash(git commit -m ' *)",
-      "Bash(grep \"\\\\.json$\")"
+      "Bash(grep \"\\\\.json$\")",
+      "Bash(git commit *)"
     ]
   }
 }

@@ -2,7 +2,7 @@
   <div class="space-y-3">
     <!-- Mapa -->
     <div
-      class="relative overflow-x-auto rounded-2xl border border-slate-700/40 bg-[#030810] cg-scroll"
+      class="relative overflow-x-auto rounded-2xl border border-outline-variant/30 bg-surface-container-lowest cg-scroll"
       :style="{ height: `${MAP_H}px` }"
     >
       <div class="relative" :style="{ width: `${totalWidth}px`, height: `${MAP_H}px` }">
@@ -115,12 +115,12 @@
             transform: 'translateX(-50%)',
           }"
         >
-          <p class="text-center text-[0.6rem] font-bold uppercase tracking-[0.25em] text-slate-500">
+          <p class="text-center text-[0.6rem] font-bold uppercase tracking-[0.25em] text-on-surface-variant">
             Bloco {{ bi + 1 }}
           </p>
           <p
             v-if="block.closer"
-            class="max-w-[200px] truncate text-center text-[0.7rem] font-bold text-slate-400"
+            class="max-w-[200px] truncate text-center text-[0.7rem] font-bold text-on-surface-variant"
           >
             {{ block.closer.titulo }}
           </p>
@@ -149,7 +149,7 @@
             />
             <p
               v-if="getQuestSlug(q) === activeSlug"
-              class="text-[0.6rem] text-cyan-400/80 text-center font-bold animate-pulse mt-1 pointer-events-none"
+              class="text-[0.6rem] text-primary-container text-center font-bold animate-pulse mt-1 pointer-events-none"
             >
               aqui
             </p>
@@ -200,13 +200,13 @@
         <UBadge :color="tone(hoveredQuest).badgeColor" variant="soft" size="xs">
           {{ tone(hoveredQuest).label }}
         </UBadge>
-        <span class="text-xs font-semibold text-slate-500">{{ hoveredQuest.rotulo ?? `Aula ${hoveredQuest.numero}` }}</span>
-        <span v-if="!isRequiredQuest(hoveredQuest)" class="rounded-full bg-amber-500/15 px-2 py-0.5 text-[0.65rem] font-bold text-amber-300">Opcional</span>
-        <span v-if="isCompleted(hoveredQuest)" class="rounded-full bg-emerald-500/15 px-2 py-0.5 text-[0.65rem] font-bold text-emerald-400">✓ Concluída</span>
-        <span class="ml-auto truncate text-sm font-black text-slate-100">{{ hoveredQuest.titulo }}</span>
+        <span class="text-xs font-semibold text-on-surface-variant">{{ hoveredQuest.rotulo ?? `Aula ${hoveredQuest.numero}` }}</span>
+        <span v-if="!isRequiredQuest(hoveredQuest)" class="rounded-full bg-tertiary-fixed-dim/15 px-2 py-0.5 text-[0.65rem] font-bold text-tertiary-fixed-dim">Opcional</span>
+        <span v-if="isCompleted(hoveredQuest)" class="rounded-full bg-primary-container/15 px-2 py-0.5 text-[0.65rem] font-bold text-primary-container">✓ Concluída</span>
+        <span class="ml-auto truncate text-sm font-black text-on-background">{{ hoveredQuest.titulo }}</span>
         <span class="flex shrink-0 items-center gap-2 text-[0.7rem] font-bold">
-          <span class="text-cyan-300">+{{ getQuestRewards(hoveredQuest).xp }} XP</span>
-          <span class="text-amber-300">+{{ getQuestRewards(hoveredQuest).coins }} 🪙</span>
+          <span class="text-primary-container">+{{ getQuestRewards(hoveredQuest).xp }} XP</span>
+          <span class="text-tertiary-fixed-dim">+{{ getQuestRewards(hoveredQuest).coins }} 🪙</span>
         </span>
       </div>
     </Transition>

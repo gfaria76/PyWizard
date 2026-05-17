@@ -5,12 +5,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="406385b9-2d31-4267-a23d-2632bb107856" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.claude/settings.local.json" beforeDir="false" afterPath="$PROJECT_DIR$/.claude/settings.local.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/pages/professor/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/app/pages/professor/index.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/assets/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/assets/css/main.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/components/ConstellationMap.vue" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/ConstellationMap.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/components/NodeShape.vue" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/NodeShape.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/components/code/CodeEditor.vue" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/code/CodeEditor.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/components/quest/MarkdownBlock.vue" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/quest/MarkdownBlock.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/components/quest/QuestCard.vue" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/quest/QuestCard.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/components/rpg/BeastCard.vue" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/rpg/BeastCard.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/components/rpg/LootItem.vue" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/rpg/LootItem.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/components/rpg/SkillCard.vue" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/rpg/SkillCard.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/pages/python/arena/[...slug].vue" beforeDir="false" afterPath="$PROJECT_DIR$/app/pages/python/arena/[...slug].vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/pages/python/bestiary.vue" beforeDir="false" afterPath="$PROJECT_DIR$/app/pages/python/bestiary.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/pages/python/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/app/pages/python/index.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/pages/python/ranking.vue" beforeDir="false" afterPath="$PROJECT_DIR$/app/pages/python/ranking.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -184,61 +193,61 @@
   </component>
   <component name="NextEditCompletionFeaturesState">
     <decayedCancelled>
-      <entry key="MS100" value="1.0" />
-      <entry key="MS500" value="1.0" />
-      <entry key="S2" value="1.0" />
-      <entry key="S5" value="1.0" />
-      <entry key="S10" value="1.0" />
-      <entry key="S30" value="1.0" />
-      <entry key="S60" value="1.0" />
-      <entry key="M2" value="1.0" />
-      <entry key="M5" value="1.0000000000000013" />
-      <entry key="M10" value="1.0000000897426224" />
-      <entry key="M15" value="1.0000393751282666" />
-      <entry key="M30" value="1.0185897600859743" />
-      <entry key="H1" value="1.4225613423550652" />
-      <entry key="H2" value="3.0444499848314925" />
-      <entry key="H4" value="5.515202357623115" />
-      <entry key="D1" value="9.75709295799386" />
-      <entry key="W1" value="10.812136477221763" />
+      <entry key="MS100" value="1.0002953566678465" />
+      <entry key="MS500" value="1.4810340999265093" />
+      <entry key="S2" value="3.6405631963781464" />
+      <entry key="S5" value="4.852981205614865" />
+      <entry key="S10" value="5.385666260009852" />
+      <entry key="S30" value="6.134669052659205" />
+      <entry key="S60" value="8.250791178444999" />
+      <entry key="M2" value="12.37035863724563" />
+      <entry key="M5" value="17.861073863641188" />
+      <entry key="M10" value="20.606656327154237" />
+      <entry key="M15" value="21.658752520117684" />
+      <entry key="M30" value="22.787943059102062" />
+      <entry key="H1" value="23.385498804257818" />
+      <entry key="H2" value="23.810379018499102" />
+      <entry key="H4" value="24.945512299934737" />
+      <entry key="D1" value="31.433906016059435" />
+      <entry key="W1" value="34.401629798176714" />
     </decayedCancelled>
     <decayedSelected>
       <entry key="MS100" value="0.0" />
-      <entry key="MS500" value="0.0" />
-      <entry key="S2" value="0.0" />
-      <entry key="S5" value="0.0" />
-      <entry key="S10" value="0.0" />
-      <entry key="S30" value="0.0" />
-      <entry key="S60" value="0.0" />
-      <entry key="M2" value="0.0" />
-      <entry key="M5" value="0.0" />
-      <entry key="M10" value="0.0" />
-      <entry key="M15" value="0.0" />
-      <entry key="M30" value="0.0" />
-      <entry key="H1" value="0.0" />
-      <entry key="H2" value="0.0" />
-      <entry key="H4" value="0.0" />
-      <entry key="D1" value="0.0" />
-      <entry key="W1" value="0.0" />
+      <entry key="MS500" value="1.0747729191824315E-83" />
+      <entry key="S2" value="1.8106277775570315E-21" />
+      <entry key="S5" value="5.0481432642048245E-9" />
+      <entry key="S10" value="7.105028686926481E-5" />
+      <entry key="S30" value="0.041417951185294954" />
+      <entry key="S60" value="0.20351400734419958" />
+      <entry key="M2" value="0.45112526790704116" />
+      <entry key="M5" value="0.7273088316281566" />
+      <entry key="M10" value="0.8528240332144471" />
+      <entry key="M15" value="0.8993035070738924" />
+      <entry key="M30" value="0.9483161429997341" />
+      <entry key="H1" value="0.9738152509586889" />
+      <entry key="H2" value="0.9868207795535562" />
+      <entry key="H4" value="0.9933885340356794" />
+      <entry key="D1" value="0.9988950411640884" />
+      <entry key="W1" value="0.9998420739354924" />
     </decayedSelected>
     <decayedShown>
-      <entry key="MS100" value="0.0" />
-      <entry key="MS500" value="4.925377313237295E-108" />
-      <entry key="S2" value="1.4897379334219272E-27" />
-      <entry key="S5" value="1.8588483084633663E-11" />
-      <entry key="S10" value="4.3114363134150155E-6" />
-      <entry key="S30" value="0.016275736811265" />
-      <entry key="S60" value="0.1275763959800754" />
-      <entry key="M2" value="0.35717838117679435" />
-      <entry key="M5" value="0.6624514664903314" />
-      <entry key="M10" value="0.8139113051031062" />
-      <entry key="M15" value="0.871774787328081" />
-      <entry key="M30" value="0.9522574323285155" />
-      <entry key="H1" value="1.3888255316963731" />
-      <entry key="H2" value="3.0274360152347217" />
-      <entry key="H4" value="5.5066577984558585" />
-      <entry key="D1" value="9.755663448762405" />
-      <entry key="W1" value="10.811932124887429" />
+      <entry key="MS100" value="0.9729415409224847" />
+      <entry key="MS500" value="1.4719939067081245" />
+      <entry key="S2" value="3.633643689643796" />
+      <entry key="S5" value="4.84908629267288" />
+      <entry key="S10" value="5.383515729368193" />
+      <entry key="S30" value="6.17061083877915" />
+      <entry key="S60" value="8.441985051071315" />
+      <entry key="M2" value="12.807805379203716" />
+      <entry key="M5" value="18.57949624209441" />
+      <entry key="M10" value="21.454253571646717" />
+      <entry key="M15" value="22.55437738396352" />
+      <entry key="M30" value="23.73431717841254" />
+      <entry key="H1" value="24.35826269212336" />
+      <entry key="H2" value="24.796015184656373" />
+      <entry key="H4" value="25.936939367526048" />
+      <entry key="D1" value="32.4316654244206" />
+      <entry key="W1" value="35.40126910712288" />
     </decayedShown>
   </component>
   <component name="ProblemsViewState">
@@ -347,7 +356,7 @@
       <recent name="$PROJECT_DIR$/content/python_basico" />
     </key>
   </component>
-  <component name="RunManager" selected="npm.dev">
+  <component name="RunManager" selected="npm.typecheck">
     <configuration name="build" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/package.json" />
       <command value="run" />
@@ -401,10 +410,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="npm.dev" />
+        <item itemvalue="npm.typecheck" />
         <item itemvalue="npm.build" />
         <item itemvalue="npm.preview" />
         <item itemvalue="npm.postinstall" />
-        <item itemvalue="npm.typecheck" />
       </list>
     </recent_temporary>
   </component>
@@ -450,7 +459,7 @@
       <workItem from="1778720500257" duration="16524000" />
       <workItem from="1778781416751" duration="1375000" />
       <workItem from="1778783686859" duration="41676000" />
-      <workItem from="1778974226567" duration="11218000" />
+      <workItem from="1778974226567" duration="13339000" />
     </task>
     <servers />
   </component>
