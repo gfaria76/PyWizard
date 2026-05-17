@@ -49,24 +49,94 @@
         </div>
       </header>
 
-      <!-- Editor Container (Placeholder) -->
-      <div class="flex-1 p-6 overflow-auto">
-        <div class="bg-[#0f111a] border border-primary-container/20 rounded-xl h-full flex flex-col">
-          <div class="h-10 bg-surface-container-highest border-b border-outline-variant/50 flex items-center px-4">
-            <span class="font-code-md text-code-md text-primary-container flex items-center gap-2">
-              <span class="material-symbols-outlined text-[16px]">code</span>
-              {{ lesson?.arquivo || 'solution.py' }}
-            </span>
-          </div>
-          <div class="flex-1 p-4 font-code-md text-code-md text-on-surface/70 overflow-auto">
-            <div class="text-on-surface-variant"># Your code here...</div>
-          </div>
-        </div>
+      <!-- Editor + Console -->
+      <div class="flex-1 flex flex-col gap-4 p-6 overflow-auto">
+        <CodeEditor
+          :lesson="lesson"
+          :test-cases="missions"
+          :submission-meta="{ questSlug: slugPath ?? '', tipoAula: lesson?.tipo ?? 'Aula' }"
+          @output="consoleOutput = $event"
+        />
       </div>
     </main>
   </div>
 
-  <!-- Aventura/Guardião/Conceito Layout: Student Layout with Grid -->
+  <!-- Aventura/Guardião/Boss/Prova Layout: Grid 4+8 cols with Editor -->
+  <div v-else-if="isEditorLayout" class="space-y-6 p-8 max-w-[1400px] mx-auto">
+    <!-- Back Button -->
+    <NuxtLink to="/python" class="inline-flex items-center gap-2 text-on-surface-variant hover:text-primary transition-colors">
+      <span class="material-symbols-outlined">arrow_back</span>
+      <span class="font-body-md">Return to Trail</span>
+    </NuxtLink>
+
+    <!-- Main Grid: Aside (4 cols) + Section (8 cols) -->
+    <div class="grid grid-cols-12 gap-6">
+      <!-- Left Side: Problem Description -->
+      <aside class="col-span-4 space-y-6 overflow-y-auto max-h-[calc(100vh-200px)]">
+        <!-- Problem Card -->
+        <div class="bg-surface-container/80 backdrop-blur-xl border border-secondary-container/30 rounded-xl p-6">
+          <h2 class="font-headline-sm text-headline-sm text-secondary mb-4 flex items-center gap-2">
+            <span class="material-symbols-outlined">challenge</span>
+            {{ lesson?.titulo }}
+          </h2>
+
+          <div v-if="lesson?.rpg" class="space-y-4">
+            <div v-if="lesson.rpg.runa_titulo" class="bg-surface-dim/80 border border-primary-container/20 rounded-lg p-4 shadow-[inset_0_0_10px_rgba(0,251,251,0.1)]">
+              <h3 class="font-label-caps text-label-caps text-primary-container mb-2">Runa</h3>
+              <div class="font-body-md text-on-surface">{{ lesson.rpg.runa_titulo }}</div>
+            </div>
+
+            <div v-if="lesson.rpg.xp_reward" class="flex items-center gap-2 p-3 bg-tertiary-fixed-dim/5 rounded-lg border border-tertiary-fixed-dim/20">
+              <span class="material-symbols-outlined text-tertiary-fixed-dim">stars</span>
+              <span class="font-label-caps text-label-caps text-tertiary-fixed-dim">{{ lesson.rpg.xp_reward }} XP</span>
+            </div>
+
+            <div v-if="lesson.rpg.enemy_name" class="bg-error/5 border border-error/20 rounded-lg p-4">
+              <h4 class="font-label-caps text-label-caps text-error mb-2">Enemy</h4>
+              <div class="font-body-md text-on-surface mb-3">{{ lesson.rpg.enemy_name }}</div>
+              <div class="space-y-2">
+                <div class="text-label-caps text-[12px] text-on-surface-variant">HP {{ lesson.rpg.enemy_hp }}</div>
+                <div class="w-full h-2 bg-surface-container-high rounded overflow-hidden border border-outline-variant/30">
+                  <div class="h-full bg-gradient-to-r from-error-container to-error" :style="{ width: '100%' }" />
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div v-if="lesson?.objetivo" class="mt-4 p-4 bg-primary-container/5 border border-primary-container/20 rounded-lg">
+            <h4 class="font-label-caps text-label-caps text-primary-container mb-2">Objective</h4>
+            <div class="font-body-md text-on-surface text-sm">{{ lesson.objetivo }}</div>
+          </div>
+        </div>
+
+        <!-- Test Cases -->
+        <div v-if="missions.length" class="bg-surface-container/80 backdrop-blur-xl border border-secondary-container/30 rounded-xl p-6">
+          <h3 class="font-headline-sm text-headline-sm text-secondary mb-4 flex items-center gap-2">
+            <span class="material-symbols-outlined">check_circle</span>
+            Test Cases ({{ missions.length }})
+          </h3>
+          <div class="space-y-3">
+            <div v-for="(mission, i) in missions" :key="i" class="bg-surface-container-highest/50 p-3 rounded-lg border border-outline-variant/30">
+              <div class="font-label-caps text-label-caps text-on-surface-variant mb-1">Test {{ i + 1 }}: {{ mission.titulo }}</div>
+              <div class="font-body-md text-on-surface/80 text-sm">{{ mission.texto_md }}</div>
+            </div>
+          </div>
+        </div>
+      </aside>
+
+      <!-- Right Side: Editor + Console -->
+      <section class="col-span-8 max-h-[calc(100vh-200px)]">
+        <CodeEditor
+          :lesson="lesson"
+          :test-cases="missions"
+          :submission-meta="{ questSlug: slugPath ?? '', tipoAula: lesson?.tipo ?? 'Aula' }"
+          @output="consoleOutput = $event"
+        />
+      </section>
+    </div>
+  </div>
+
+  <!-- Conceito Layout: Full-width Content -->
   <div v-else class="space-y-8 p-8 max-w-[1200px] mx-auto">
     <!-- Top Nav Bar -->
     <div class="p-4 border-b border-outline-variant/30 flex items-center justify-between shrink-0">
@@ -263,19 +333,10 @@
 import { computed, ref, watch } from 'vue'
 const route = useRoute()
 
-// Conditional layout based on subtipo
-const layoutComputed = computed(() => {
-  const subtipo = lesson.value?.subtipo as string | undefined
-  return subtipo === 'aprendiz' ? false : 'student'
-})
-
-watch(
-  layoutComputed,
-  (newLayout) => {
-    definePageMeta({ layout: newLayout as any })
-  },
-  { immediate: true }
-)
+// Set layout based on subtipo
+const isAprendiz = ref(false)
+const consoleOutput = ref<any>(null)
+const enemyHpPercent = ref(100)
 
 // route.params.slug is string[] for [...slug] catch-all routes
 const slugPath = computed(() => {
@@ -288,9 +349,27 @@ const { data: lesson } = await useFetch<any>(
   () => `/api/cursos/python/aulas/${slugPath.value}`
 )
 
-const enemyHpPercent = ref(100)
+// Update isAprendiz when lesson loads
+watch(() => lesson.value?.subtipo, (subtipo) => {
+  isAprendiz.value = subtipo === 'aprendiz'
+})
 
-const isAprendiz = computed(() => lesson.value?.subtipo === 'aprendiz')
+// Editor layout for aventura, guardião, boss, prova
+const isEditorLayout = computed(() => {
+  const subtipo = lesson.value?.subtipo as string | undefined
+  return ['aventura', 'guardiao', 'boss', 'prova', 'grupo'].includes(subtipo ?? '')
+})
+
+// Set page layout based on subtipo
+watch(() => lesson.value?.subtipo, (subtipo) => {
+  if (subtipo === 'aprendiz') {
+    definePageMeta({ layout: false })
+  } else if (subtipo === 'conceito') {
+    definePageMeta({ layout: 'student' })
+  } else {
+    definePageMeta({ layout: 'student' })
+  }
+}, { immediate: true })
 
 const missions = computed<any[]>(() => {
   if (!lesson.value) return []

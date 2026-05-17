@@ -9,6 +9,7 @@
       <change beforePath="$PROJECT_DIR$/app/pages/professor/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/app/pages/professor/index.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/pages/python/arena/[...slug].vue" beforeDir="false" afterPath="$PROJECT_DIR$/app/pages/python/arena/[...slug].vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/pages/python/bestiary.vue" beforeDir="false" afterPath="$PROJECT_DIR$/app/pages/python/bestiary.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/pages/python/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/app/pages/python/index.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/pages/python/ranking.vue" beforeDir="false" afterPath="$PROJECT_DIR$/app/pages/python/ranking.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -449,7 +450,7 @@
       <workItem from="1778720500257" duration="16524000" />
       <workItem from="1778781416751" duration="1375000" />
       <workItem from="1778783686859" duration="41676000" />
-      <workItem from="1778974226567" duration="10496000" />
+      <workItem from="1778974226567" duration="11218000" />
     </task>
     <servers />
   </component>
