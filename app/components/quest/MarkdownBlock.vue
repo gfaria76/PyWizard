@@ -21,7 +21,7 @@ function escapeHtml(value: string) {
 function renderInline(value: string) {
   return escapeHtml(value)
     .replace(/`([^`]+)`/g, '<code>$1</code>')
-    .replace(/\*\*([^*]+)\*\*/g, '<strong class="text-slate-100">$1</strong>')
+    .replace(/\*\*([^*]+)\*\*/g, '<strong class="text-on-background">$1</strong>')
     .replace(/\*([^*]+)\*/g, '<em>$1</em>')
     .replaceAll('&lt;br&gt;', '<br>')
 }

@@ -1,7 +1,6 @@
 # 📋 Schema de Conteúdo Pedagógico — Metamodelo 2026
 
 ## Status
-
 - ✅ Escopo ativo: `data/cursos/python/modulo1`, `data/cursos/python/modulo2`, `data/cursos/python/modulo3`
 - ✅ Campos `acesso`, `recompensasRpg` e `regrasPedagogicas` removidos dos JSONs
 - ✅ Ordem de atributos top-level padronizada em todos os arquivos

@@ -6,7 +6,7 @@
     <!-- Left: Icon + Title -->
     <div class="flex items-center gap-4 flex-1">
       <div
-        class="w-12 h-12 rounded-lg flex items-center justify-center font-bold text-white flex-shrink-0"
+        class="w-12 h-12 rounded-lg flex items-center justify-center font-bold text-on-primary-container flex-shrink-0"
         :class="iconBgClass"
       >
         <span class="material-symbols-outlined">{{ icon }}</span>

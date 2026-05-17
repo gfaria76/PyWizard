@@ -51,7 +51,7 @@
       <UIcon
         v-else
         name="i-lucide-lock"
-        class="text-slate-700"
+        class="text-on-surface-variant/40"
         :class="iconSizeClass"
       />
     </div>
@@ -59,7 +59,7 @@
     <!-- Badge de número (canto inferior direito, só no trunk) -->
     <div
       v-if="!small && !isBossOrProva && unlocked"
-      class="absolute -bottom-1 -right-1 flex h-5 min-w-[1.25rem] items-center justify-center rounded-full border border-slate-700/40 bg-slate-900 px-1 text-[0.6rem] font-black"
+      class="absolute -bottom-1 -right-1 flex h-5 min-w-[1.25rem] items-center justify-center rounded-full border border-outline-variant/40 bg-surface-container-highest px-1 text-[0.6rem] font-black"
       :style="{ color: completed ? pal.done : pal.text }"
     >
       {{ quest.numero }}
@@ -68,7 +68,7 @@
     <!-- Selo opcional -->
     <div
       v-if="isOptional && unlocked"
-      class="absolute -top-1 -left-1 flex h-4 w-4 items-center justify-center rounded-full bg-amber-500/90 text-[0.55rem] font-black text-amber-950"
+      class="absolute -top-1 -left-1 flex h-4 w-4 items-center justify-center rounded-full bg-tertiary-fixed-dim/90 text-[0.55rem] font-black text-on-tertiary-container"
       title="Opcional"
     >
       ?

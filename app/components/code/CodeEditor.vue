@@ -49,8 +49,8 @@
     <div class="level-1-panel rounded-lg shrink-0 min-h-[150px] max-h-[300px] flex flex-col overflow-hidden border border-secondary-container/30">
       <div class="bg-surface-container-highest/80 px-4 py-2 flex items-center justify-between border-b border-outline-variant/30">
         <div class="flex items-center gap-2">
-          <span class="material-symbols-outlined text-secondary-fixed text-[16px]">terminal</span>
-          <span class="font-label-caps text-label-caps text-secondary-fixed">Oracle Console</span>
+          <span class="material-symbols-outlined text-primary-container text-[16px]">terminal</span>
+          <span class="font-label-caps text-label-caps text-primary-container">Oracle Console</span>
         </div>
         <div v-if="output" class="flex items-center gap-2">
           <div class="w-2 h-2 rounded-full" :class="output.exitCode === 0 ? 'bg-primary-container' : 'bg-error'" />
@@ -229,7 +229,7 @@ watch(showInputDialog, (open) => {
 })
 
 const cgTheme = EditorView.theme({
-  '&': { background: '#050a13' },
+  '&': { background: 'var(--color-surface-container-lowest)' },
   '.cm-content': {
     padding: '1rem',
     minHeight: '10rem',
@@ -239,10 +239,10 @@ const cgTheme = EditorView.theme({
   '.cm-line': { lineHeight: '1.75' },
   '.cm-scroller': { overflow: 'auto' },
   '.cm-gutters': {
-    background: '#0b1729',
-    color: '#3d5a7a',
+    background: 'var(--color-surface-dim)',
+    color: 'var(--color-on-surface-variant)',
     border: 'none',
-    borderRight: '1px solid rgba(76,215,246,0.08)',
+    borderRight: '1px solid rgba(0,251,251,0.08)',
   },
   '.cm-activeLineGutter': { background: 'rgba(76,215,246,0.06)' },
   '.cm-activeLine': { background: 'rgba(76,215,246,0.04)' },

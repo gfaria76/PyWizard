@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-[#0f172a]/80 backdrop-blur-[12px] rounded-lg border border-secondary-container/30 p-6 relative overflow-hidden group hover:border-primary-container/50 transition-all shadow-lg hover:shadow-[0_0_30px_rgba(0,251,251,0.1)] flex flex-col h-full">
+  <div class="bg-surface-container/80 backdrop-blur-xl rounded-lg border border-secondary-container/30 p-6 relative overflow-hidden group hover:border-primary-container/50 transition-all shadow-lg hover:shadow-[0_0_30px_rgba(0,251,251,0.1)] flex flex-col h-full">
     
     <!-- Inner Glow -->
     <div 
@@ -24,7 +24,7 @@
     </p>
 
     <!-- Code Block -->
-    <div class="bg-[#060e20] p-4 rounded-md border border-[#3a4a49]/50 relative group-hover:border-[#00fbfb]/30 transition-colors z-10">
+    <div class="bg-surface-container-lowest p-4 rounded-md border border-outline-variant/50 relative group-hover:border-primary-container/30 transition-colors z-10">
       <div class="absolute top-2 right-2 opacity-0 group-hover:opacity-100 transition-opacity cursor-pointer" @click="copyCode">
         <span class="material-symbols-outlined text-on-surface-variant text-sm hover:text-primary">content_copy</span>
       </div>

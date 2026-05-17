@@ -10,7 +10,7 @@
 
       <!-- Challenge Info -->
       <div v-if="lesson?.rpg" class="space-y-6 flex-1">
-        <div class="bg-surface-dim/80 border border-primary-container/20 rounded-xl p-4 shadow-[inset_0_0_10px_rgba(0,251,251,0.1)]">
+        <div class="bg-surface-container/80 border border-primary-container/20 rounded-xl p-4 shadow-[inset_0_0_10px_rgba(0,251,251,0.1)]">
           <h3 class="font-headline-sm text-headline-sm text-primary-container mb-3">Runa: {{ lesson.rpg.runa_titulo || 'Desafio' }}</h3>
           <div class="space-y-3">
             <div v-if="lesson.rpg.xp_reward" class="flex items-center gap-2">
@@ -331,10 +331,11 @@
 
 <script setup lang="ts">
 import { computed, ref, watch } from 'vue'
+
+definePageMeta({ layout: 'student' })
+
 const route = useRoute()
 
-// Set layout based on subtipo
-const isAprendiz = ref(false)
 const consoleOutput = ref<any>(null)
 const enemyHpPercent = ref(100)
 
@@ -349,27 +350,18 @@ const { data: lesson } = await useFetch<any>(
   () => `/api/cursos/python/aulas/${slugPath.value}`
 )
 
-// Update isAprendiz when lesson loads
-watch(() => lesson.value?.subtipo, (subtipo) => {
-  isAprendiz.value = subtipo === 'aprendiz'
-})
+const isAprendiz = computed(() => lesson.value?.subtipo === 'aprendiz')
 
-// Editor layout for aventura, guardião, boss, prova
 const isEditorLayout = computed(() => {
   const subtipo = lesson.value?.subtipo as string | undefined
   return ['aventura', 'guardiao', 'boss', 'prova', 'grupo'].includes(subtipo ?? '')
 })
 
-// Set page layout based on subtipo
-watch(() => lesson.value?.subtipo, (subtipo) => {
-  if (subtipo === 'aprendiz') {
-    definePageMeta({ layout: false })
-  } else if (subtipo === 'conceito') {
-    definePageMeta({ layout: 'student' })
-  } else {
-    definePageMeta({ layout: 'student' })
-  }
-}, { immediate: true })
+function applyArenaLayout(subtipo: string | undefined) {
+  setPageLayout(subtipo === 'aprendiz' ? false : 'student')
+}
+
+watch(() => lesson.value?.subtipo, applyArenaLayout, { immediate: true })
 
 const missions = computed<any[]>(() => {
   if (!lesson.value) return []

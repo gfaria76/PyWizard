@@ -5,12 +5,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="406385b9-2d31-4267-a23d-2632bb107856" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.claude/settings.local.json" beforeDir="false" afterPath="$PROJECT_DIR$/.claude/settings.local.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/pages/professor/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/app/pages/professor/index.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SCHEMA_DOCUMENTATION.md" beforeDir="false" afterPath="$PROJECT_DIR$/SCHEMA_DOCUMENTATION.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/assets/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/assets/css/main.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/components/ConstellationMap.vue" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/ConstellationMap.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/components/NodeShape.vue" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/NodeShape.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/components/code/CodeEditor.vue" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/code/CodeEditor.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/components/quest/MarkdownBlock.vue" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/quest/MarkdownBlock.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/components/quest/QuestCard.vue" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/quest/QuestCard.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/components/rpg/BeastCard.vue" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/rpg/BeastCard.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/components/rpg/LootItem.vue" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/rpg/LootItem.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/components/rpg/SkillCard.vue" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/rpg/SkillCard.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/pages/python/arena/[...slug].vue" beforeDir="false" afterPath="$PROJECT_DIR$/app/pages/python/arena/[...slug].vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/pages/python/bestiary.vue" beforeDir="false" afterPath="$PROJECT_DIR$/app/pages/python/bestiary.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/pages/python/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/app/pages/python/index.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/pages/python/ranking.vue" beforeDir="false" afterPath="$PROJECT_DIR$/app/pages/python/ranking.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -184,61 +194,61 @@
   </component>
   <component name="NextEditCompletionFeaturesState">
     <decayedCancelled>
-      <entry key="MS100" value="1.0" />
-      <entry key="MS500" value="1.0" />
-      <entry key="S2" value="1.0" />
-      <entry key="S5" value="1.0" />
-      <entry key="S10" value="1.0" />
-      <entry key="S30" value="1.0" />
-      <entry key="S60" value="1.0" />
-      <entry key="M2" value="1.0" />
-      <entry key="M5" value="1.0000000000000013" />
-      <entry key="M10" value="1.0000000897426224" />
-      <entry key="M15" value="1.0000393751282666" />
-      <entry key="M30" value="1.0185897600859743" />
-      <entry key="H1" value="1.4225613423550652" />
-      <entry key="H2" value="3.0444499848314925" />
-      <entry key="H4" value="5.515202357623115" />
-      <entry key="D1" value="9.75709295799386" />
-      <entry key="W1" value="10.812136477221763" />
+      <entry key="MS100" value="1.1504603920402146" />
+      <entry key="MS500" value="2.4523208408381088" />
+      <entry key="S2" value="3.4866636083035876" />
+      <entry key="S5" value="3.7816846819039864" />
+      <entry key="S10" value="3.8885483366246048" />
+      <entry key="S30" value="3.962326919961934" />
+      <entry key="S60" value="3.981097330673863" />
+      <entry key="M2" value="3.990533700631672" />
+      <entry key="M5" value="4.027813698413116" />
+      <entry key="M10" value="4.86492726525703" />
+      <entry key="M15" value="6.618419493038294" />
+      <entry key="M30" value="11.924615452176361" />
+      <entry key="H1" value="17.79083433245278" />
+      <entry key="H2" value="22.284769239440283" />
+      <entry key="H4" value="25.86020960979259" />
+      <entry key="D1" value="34.74978439943536" />
+      <entry key="W1" value="38.293660063923056" />
     </decayedCancelled>
     <decayedSelected>
       <entry key="MS100" value="0.0" />
       <entry key="MS500" value="0.0" />
       <entry key="S2" value="0.0" />
-      <entry key="S5" value="0.0" />
-      <entry key="S10" value="0.0" />
-      <entry key="S30" value="0.0" />
-      <entry key="S60" value="0.0" />
-      <entry key="M2" value="0.0" />
-      <entry key="M5" value="0.0" />
-      <entry key="M10" value="0.0" />
-      <entry key="M15" value="0.0" />
-      <entry key="M30" value="0.0" />
-      <entry key="H1" value="0.0" />
-      <entry key="H2" value="0.0" />
-      <entry key="H4" value="0.0" />
-      <entry key="D1" value="0.0" />
-      <entry key="W1" value="0.0" />
+      <entry key="S5" value="3.748955004774548E-174" />
+      <entry key="S10" value="1.9362218376969482E-87" />
+      <entry key="S30" value="1.2463835391009092E-29" />
+      <entry key="S60" value="3.5304157532802117E-15" />
+      <entry key="M2" value="5.9417301800739925E-8" />
+      <entry key="M5" value="0.0012869603605145201" />
+      <entry key="M10" value="0.03587422975499989" />
+      <entry key="M15" value="0.10877315448000252" />
+      <entry key="M30" value="0.32980775382031646" />
+      <entry key="H1" value="0.5742889114551285" />
+      <entry key="H2" value="0.7578185214516259" />
+      <entry key="H4" value="0.8705277258373944" />
+      <entry key="D1" value="0.9771556960240952" />
+      <entry key="W1" value="0.9967041179115571" />
     </decayedSelected>
     <decayedShown>
-      <entry key="MS100" value="0.0" />
-      <entry key="MS500" value="4.925377313237295E-108" />
-      <entry key="S2" value="1.4897379334219272E-27" />
-      <entry key="S5" value="1.8588483084633663E-11" />
-      <entry key="S10" value="4.3114363134150155E-6" />
-      <entry key="S30" value="0.016275736811265" />
-      <entry key="S60" value="0.1275763959800754" />
-      <entry key="M2" value="0.35717838117679435" />
-      <entry key="M5" value="0.6624514664903314" />
-      <entry key="M10" value="0.8139113051031062" />
-      <entry key="M15" value="0.871774787328081" />
-      <entry key="M30" value="0.9522574323285155" />
-      <entry key="H1" value="1.3888255316963731" />
-      <entry key="H2" value="3.0274360152347217" />
-      <entry key="H4" value="5.5066577984558585" />
-      <entry key="D1" value="9.755663448762405" />
-      <entry key="W1" value="10.811932124887429" />
+      <entry key="MS100" value="1.0377483376980958" />
+      <entry key="MS500" value="2.3993622441408853" />
+      <entry key="S2" value="3.4657635092861225" />
+      <entry key="S5" value="3.772399347826239" />
+      <entry key="S10" value="3.883735895254057" />
+      <entry key="S30" value="3.9606834901992833" />
+      <entry key="S60" value="3.9802706052924433" />
+      <entry key="M2" value="3.990119135304354" />
+      <entry key="M5" value="4.028918781729975" />
+      <entry key="M10" value="4.900498502034549" />
+      <entry key="M15" value="6.726692276582208" />
+      <entry key="M30" value="12.253720083900832" />
+      <entry key="H1" value="18.364489361105413" />
+      <entry key="H2" value="23.04167111851463" />
+      <entry key="H4" value="26.729014994774072" />
+      <entry key="D1" value="35.72582860025909" />
+      <entry key="W1" value="39.29016197069592" />
     </decayedShown>
   </component>
   <component name="ProblemsViewState">
@@ -270,67 +280,67 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Git.Working.Tree.Tab.closed.by.user&quot;: &quot;closed&quot;,
-    &quot;HTTP Request.rest-api_2 | #1.executor&quot;: &quot;Run&quot;,
-    &quot;HTTP Request.rest-api_5 | #1.executor&quot;: &quot;Run&quot;,
-    &quot;HTTP Request.rest-api_5 | #2.executor&quot;: &quot;Run&quot;,
-    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
-    &quot;NIXITCH_NIXPKGS_CONFIG&quot;: &quot;&quot;,
-    &quot;NIXITCH_NIX_CONF_DIR&quot;: &quot;&quot;,
-    &quot;NIXITCH_NIX_OTHER_STORES&quot;: &quot;&quot;,
-    &quot;NIXITCH_NIX_PATH&quot;: &quot;&quot;,
-    &quot;NIXITCH_NIX_PROFILES&quot;: &quot;&quot;,
-    &quot;NIXITCH_NIX_REMOTE&quot;: &quot;&quot;,
-    &quot;NIXITCH_NIX_USER_PROFILE_DIR&quot;: &quot;&quot;,
-    &quot;Python.gerar_datasets.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.MCP Project settings loaded&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
-    &quot;SHELLCHECK.PATH&quot;: &quot;/Users/gedsonfaria/Library/Application Support/JetBrains/WebStorm2026.1/plugins/Shell Script/shellcheck&quot;,
-    &quot;codeWithMe.voiceChat.enabledByDefault&quot;: &quot;false&quot;,
-    &quot;com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1&quot;: &quot;true&quot;,
-    &quot;copilot.sensitive.folder.allow.file_read./Users/gedsonfaria/_agents/skills/supabase-postgres-best-practices&quot;: &quot;true&quot;,
-    &quot;copilot.sensitive.folder.allow.file_read./private/tmp&quot;: &quot;true&quot;,
-    &quot;copilot.sensitive.folder.allow.file_write./private/tmp&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;javascript.preferred.runtime.type.id&quot;: &quot;node&quot;,
-    &quot;junie.onboarding.icon.badge.shown&quot;: &quot;true&quot;,
-    &quot;kronk.content.tree.expanded.paths&quot;: &quot;|Modulo2|Content&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/gedsonfaria/JetBrains/WebstormProjects/alg1-2026/docs&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.stylelint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.stylelint&quot;: &quot;&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_interpreter_path&quot;: &quot;node&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;npm.build.executor&quot;: &quot;Run&quot;,
-    &quot;npm.dev.executor&quot;: &quot;Run&quot;,
-    &quot;npm.npm build.executor&quot;: &quot;Run&quot;,
-    &quot;npm.npm dev.executor&quot;: &quot;Run&quot;,
-    &quot;npm.postinstall.executor&quot;: &quot;Run&quot;,
-    &quot;npm.preview.executor&quot;: &quot;Run&quot;,
-    &quot;npm.typecheck.executor&quot;: &quot;Run&quot;,
-    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;configurable.tailwindcss&quot;,
-    &quot;to.speed.mode.migration.done&quot;: &quot;true&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;/Users/gedsonfaria/JetBrains/WebstormProjects/alg1-2026/node_modules/typescript/lib&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Git.Working.Tree.Tab.closed.by.user": "closed",
+    "HTTP Request.rest-api_2 | #1.executor": "Run",
+    "HTTP Request.rest-api_5 | #1.executor": "Run",
+    "HTTP Request.rest-api_5 | #2.executor": "Run",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "NIXITCH_NIXPKGS_CONFIG": "",
+    "NIXITCH_NIX_CONF_DIR": "",
+    "NIXITCH_NIX_OTHER_STORES": "",
+    "NIXITCH_NIX_PATH": "",
+    "NIXITCH_NIX_PROFILES": "",
+    "NIXITCH_NIX_REMOTE": "",
+    "NIXITCH_NIX_USER_PROFILE_DIR": "",
+    "Python.gerar_datasets.executor": "Run",
+    "RunOnceActivity.MCP Project settings loaded": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
+    "SHELLCHECK.PATH": "/Users/gedsonfaria/Library/Application Support/JetBrains/WebStorm2026.1/plugins/Shell Script/shellcheck",
+    "codeWithMe.voiceChat.enabledByDefault": "false",
+    "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
+    "copilot.sensitive.folder.allow.file_read./Users/gedsonfaria/_agents/skills/supabase-postgres-best-practices": "true",
+    "copilot.sensitive.folder.allow.file_read./private/tmp": "true",
+    "copilot.sensitive.folder.allow.file_write./private/tmp": "true",
+    "git-widget-placeholder": "master",
+    "javascript.preferred.runtime.type.id": "node",
+    "junie.onboarding.icon.badge.shown": "true",
+    "kronk.content.tree.expanded.paths": "|Modulo2|Content",
+    "last_opened_file_path": "/Users/gedsonfaria/JetBrains/WebstormProjects/alg1-2026/docs",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.stylelint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.stylelint": "",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_interpreter_path": "node",
+    "nodejs_package_manager_path": "npm",
+    "npm.build.executor": "Run",
+    "npm.dev.executor": "Run",
+    "npm.npm build.executor": "Run",
+    "npm.npm dev.executor": "Run",
+    "npm.postinstall.executor": "Run",
+    "npm.preview.executor": "Run",
+    "npm.typecheck.executor": "Run",
+    "run.code.analysis.last.selected.profile": "pProject Default",
+    "settings.editor.selected.configurable": "org.jetbrains.plugins.github.ui.GithubSettingsConfigurable",
+    "to.speed.mode.migration.done": "true",
+    "ts.external.directory.path": "/Users/gedsonfaria/JetBrains/WebstormProjects/alg1-2026/node_modules/typescript/lib",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;DatabaseDriversLRU&quot;: [
-      &quot;postgresql&quot;
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "postgresql"
     ],
-    &quot;com.intellij.ide.scratch.LRUPopupBuilder$1/&quot;: [
-      &quot;PostgreSQL&quot;
+    "com.intellij.ide.scratch.LRUPopupBuilder$1/": [
+      "PostgreSQL"
     ]
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/docs" />
@@ -347,7 +357,7 @@
       <recent name="$PROJECT_DIR$/content/python_basico" />
     </key>
   </component>
-  <component name="RunManager" selected="npm.dev">
+  <component name="RunManager" selected="npm.typecheck">
     <configuration name="build" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/package.json" />
       <command value="run" />
@@ -401,10 +411,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="npm.dev" />
+        <item itemvalue="npm.typecheck" />
         <item itemvalue="npm.build" />
         <item itemvalue="npm.preview" />
         <item itemvalue="npm.postinstall" />
-        <item itemvalue="npm.typecheck" />
       </list>
     </recent_temporary>
   </component>
@@ -450,7 +460,7 @@
       <workItem from="1778720500257" duration="16524000" />
       <workItem from="1778781416751" duration="1375000" />
       <workItem from="1778783686859" duration="41676000" />
-      <workItem from="1778974226567" duration="11218000" />
+      <workItem from="1778974226567" duration="15942000" />
     </task>
     <servers />
   </component>

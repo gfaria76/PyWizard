@@ -17,7 +17,7 @@
       <div 
         v-for="beast in beasts" 
         :key="beast.name"
-        class="bg-surface-container/60 backdrop-blur-md p-6 rounded-xl border border-error/20 hover:border-error/50 transition-all group cursor-pointer relative overflow-hidden"
+        class="bg-surface-container/80 backdrop-blur-xl p-6 rounded-xl border border-error/20 hover:border-error/50 transition-all group cursor-pointer relative overflow-hidden"
       >
         <!-- Glow -->
         <div class="absolute -top-16 -right-16 w-40 h-40 bg-error/5 rounded-full blur-3xl group-hover:bg-error/15 transition-all pointer-events-none"></div>
