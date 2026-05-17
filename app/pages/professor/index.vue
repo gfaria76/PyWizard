@@ -13,8 +13,8 @@
     </header>
 
     <!-- Seletor de turma -->
-    <div class="cg-panel mb-6 rounded-xl p-5">
-      <label class="mb-2 block font-label-caps text-label-caps text-on-surface-variant">Turma ativa</label>
+    <div class="bg-surface-container/80 backdrop-blur-xl border border-secondary-container/30 rounded-xl p-6 mb-8">
+      <label class="mb-3 block font-label-caps text-label-caps text-on-surface-variant">Turma ativa</label>
       <USelect
         v-model="turmaSelecionada"
         :options="turmaOptions"
@@ -26,9 +26,9 @@
     </div>
 
     <!-- Grid de poderes -->
-    <div class="grid gap-4 sm:grid-cols-2">
+    <div class="grid gap-6 sm:grid-cols-2">
       <!-- Curar Turma -->
-      <div class="cg-panel rounded-xl p-5">
+      <div class="bg-surface-container/80 backdrop-blur-xl border border-secondary-container/30 rounded-xl p-6">
         <div class="mb-4 flex items-center gap-3">
           <div class="w-9 h-9 rounded-xl bg-primary-container/10 border border-primary-container/30 flex items-center justify-center">
             <span class="material-symbols-outlined text-primary-container text-[20px]">favorite</span>
@@ -52,7 +52,7 @@
       </div>
 
       <!-- Curar Aluno -->
-      <div class="cg-panel rounded-xl p-5">
+      <div class="bg-surface-container/80 backdrop-blur-xl border border-secondary-container/30 rounded-xl p-6">
         <div class="mb-4 flex items-center gap-3">
           <div class="w-9 h-9 rounded-xl bg-secondary/10 border border-secondary/30 flex items-center justify-center">
             <span class="material-symbols-outlined text-secondary text-[20px]">person_check</span>
@@ -84,7 +84,7 @@
       </div>
 
       <!-- Creditar Moedas -->
-      <div class="cg-panel rounded-xl p-5">
+      <div class="bg-surface-container/80 backdrop-blur-xl border border-secondary-container/30 rounded-xl p-6">
         <div class="mb-4 flex items-center gap-3">
           <div class="w-9 h-9 rounded-xl bg-tertiary-fixed-dim/10 border border-tertiary-fixed-dim/30 flex items-center justify-center">
             <span class="material-symbols-outlined text-tertiary-fixed-dim text-[20px]">monetization_on</span>
@@ -131,7 +131,7 @@
       </div>
 
       <!-- Ativar Masmorra -->
-      <div class="cg-panel rounded-xl p-5">
+      <div class="bg-surface-container/80 backdrop-blur-xl border border-secondary-container/30 rounded-xl p-6">
         <div class="mb-4 flex items-center gap-3">
           <div class="w-9 h-9 rounded-xl bg-error/10 border border-error/30 flex items-center justify-center">
             <span class="material-symbols-outlined text-error text-[20px]">castle</span>

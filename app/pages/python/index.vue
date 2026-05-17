@@ -14,14 +14,38 @@
     </div>
 
     <!-- Quest Timeline -->
-    <div class="space-y-3">
-      <QuestCard
+    <div class="space-y-4">
+      <div
         v-for="aula in modulo?.aulas"
         :key="aula.arquivo"
-        :aula="{ titulo: aula.titulo, subtipo: aula.subtipo }"
-        :state="getQuestState(aula)"
-        @open="goToArena(aula)"
-      />
+        class="group cursor-pointer transition-all"
+        @click="goToArena(aula)"
+      >
+        <div
+          class="glass-panel p-6 rounded-xl border transition-all"
+          :class="getCardClass(aula)"
+        >
+          <div class="flex items-center justify-between gap-4">
+            <div class="flex items-center gap-4 flex-1">
+              <div
+                class="w-12 h-12 rounded-lg flex items-center justify-center font-bold text-white flex-shrink-0 transition-transform group-hover:scale-110"
+                :class="getIconBgClass(aula.subtipo)"
+              >
+                <span class="material-symbols-outlined text-xl">{{ getIcon(aula.subtipo) }}</span>
+              </div>
+              <div class="flex-1 min-w-0">
+                <div class="text-body-md font-bold text-on-background truncate">{{ aula.titulo }}</div>
+                <div class="text-label-caps text-on-surface-variant">{{ getTypeLabel(aula.subtipo) }}</div>
+              </div>
+            </div>
+            <div class="flex items-center gap-2 ml-4 flex-shrink-0">
+              <span v-if="getQuestState(aula) === 'completed'" class="material-symbols-outlined fill text-primary-container">check_circle</span>
+              <span v-else-if="getQuestState(aula) === 'active'" class="material-symbols-outlined animate-pulse text-secondary">radio_button_checked</span>
+              <span v-else class="material-symbols-outlined text-on-surface-variant">radio_button_unchecked</span>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
 
     <!-- Module Navigation -->
@@ -70,5 +94,66 @@ function getQuestState(aula: ModuleQuest): 'completed' | 'active' | 'locked' {
   if (progress.isCompleted(slug)) return 'completed'
   if (progress.getActiveQuestSlug(modulo.value?.aulas || []) === slug) return 'active'
   return 'locked'
+}
+
+function getCardClass(aula: ModuleQuest): string {
+  const state = getQuestState(aula)
+  const subtipo = aula.subtipo
+
+  if (subtipo === 'boss') {
+    return 'border-error/50 shadow-[0_0_20px_rgba(255,180,171,0.15)] bg-error/5'
+  }
+  if (subtipo === 'prova') {
+    return 'border-tertiary-fixed-dim/50 bg-tertiary-fixed-dim/5'
+  }
+  if (subtipo === 'guardiao') {
+    return 'border-secondary/50 bg-secondary/5'
+  }
+  if (state === 'completed') {
+    return 'border-primary-container/50 bg-primary-container/5'
+  }
+  if (state === 'active') {
+    return 'border-primary-container shadow-[0_0_15px_rgba(0,251,251,0.3)]'
+  }
+  return 'border-outline-variant/30 opacity-70'
+}
+
+function getIconBgClass(subtipo?: string): string {
+  switch (subtipo) {
+    case 'conceito': return 'bg-tertiary-fixed-dim/60'
+    case 'aprendiz': return 'bg-secondary/60'
+    case 'aventura': return 'bg-primary-container/60'
+    case 'guardiao': return 'bg-tertiary-container/60'
+    case 'boss': return 'bg-error/60'
+    case 'prova': return 'bg-error-container/60'
+    case 'grupo': return 'bg-secondary-container/60'
+    default: return 'bg-outline/60'
+  }
+}
+
+function getIcon(subtipo?: string): string {
+  switch (subtipo) {
+    case 'conceito': return 'lightbulb'
+    case 'aprendiz': return 'school'
+    case 'aventura': return 'landscape'
+    case 'guardiao': return 'shield'
+    case 'boss': return 'dragon'
+    case 'prova': return 'quiz'
+    case 'grupo': return 'group'
+    default: return 'help'
+  }
+}
+
+function getTypeLabel(subtipo?: string): string {
+  switch (subtipo) {
+    case 'conceito': return 'Conceito'
+    case 'aprendiz': return 'Aprendiz'
+    case 'aventura': return 'Aventura'
+    case 'guardiao': return 'Guardião'
+    case 'boss': return 'Boss'
+    case 'prova': return 'Prova'
+    case 'grupo': return 'Guilda'
+    default: return 'Desafio'
+  }
 }
 </script>

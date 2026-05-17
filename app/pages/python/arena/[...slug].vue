@@ -1,9 +1,72 @@
 <template>
-  <div v-if="isAprendiz" class="flex h-screen overflow-hidden">
-    <!-- Aprendiz Layout: Sidebar + Editor -->
-    <ChallengeArena :lesson="lesson" />
+  <!-- Aprendiz Layout: Fixed Sidebar + Editor -->
+  <div v-if="isAprendiz" class="flex h-screen overflow-hidden bg-background">
+    <!-- Challenge Sidebar -->
+    <aside class="w-80 bg-surface-container/90 backdrop-blur-md border-r border-secondary-container/30 shadow-xl flex flex-col overflow-y-auto pt-6 px-6 pb-6">
+      <div class="mb-6">
+        <h2 class="font-headline-sm text-headline-sm text-secondary mb-1">{{ lesson?.titulo }}</h2>
+        <p class="font-label-caps text-label-caps text-on-surface-variant">{{ getTypeLabel(lesson?.subtipo) }}</p>
+      </div>
+
+      <!-- Challenge Info -->
+      <div v-if="lesson?.rpg" class="space-y-6 flex-1">
+        <div class="bg-surface-dim/80 border border-primary-container/20 rounded-xl p-4 shadow-[inset_0_0_10px_rgba(0,251,251,0.1)]">
+          <h3 class="font-headline-sm text-headline-sm text-primary-container mb-3">Runa: {{ lesson.rpg.runa_titulo || 'Desafio' }}</h3>
+          <div class="space-y-3">
+            <div v-if="lesson.rpg.xp_reward" class="flex items-center gap-2">
+              <span class="material-symbols-outlined text-tertiary-fixed-dim">stars</span>
+              <span class="font-label-caps text-label-caps">Reward: {{ lesson.rpg.xp_reward }} XP</span>
+            </div>
+            <div v-if="lesson?.objetivo">
+              <h4 class="font-label-caps text-label-caps text-on-surface-variant mb-2">Objective</h4>
+              <p class="font-body-md text-body-md text-on-surface text-sm">{{ lesson.objetivo }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Test Cases Placeholder -->
+      <div v-if="missions.length" class="space-y-3 mt-auto pt-6 border-t border-outline-variant/30">
+        <h4 class="font-label-caps text-label-caps text-primary-container">Test Cases</h4>
+        <div class="bg-surface-container-highest rounded-lg p-3 border border-outline-variant/50 text-sm">
+          <div class="font-label-caps text-label-caps text-on-surface-variant">{{ missions.length }} test{{ missions.length !== 1 ? 's' : '' }}</div>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Editor Area -->
+    <main class="flex-1 flex flex-col overflow-hidden">
+      <!-- TopAppBar -->
+      <header class="h-16 border-b border-primary-container/20 bg-surface/80 backdrop-blur-xl flex items-center justify-between px-8 z-30 shadow-[0_4px_20px_rgba(0,0,0,0.5)]">
+        <span class="font-headline-md text-headline-md font-bold text-primary-container drop-shadow-[0_0_10px_rgba(0,251,251,0.6)]">Arena</span>
+        <div class="flex gap-4">
+          <button class="text-on-surface-variant hover:text-primary-container transition-colors">
+            <span class="material-symbols-outlined">bolt</span>
+          </button>
+          <button class="text-on-surface-variant hover:text-primary-container transition-colors">
+            <span class="material-symbols-outlined">auto_fix_high</span>
+          </button>
+        </div>
+      </header>
+
+      <!-- Editor Container (Placeholder) -->
+      <div class="flex-1 p-6 overflow-auto">
+        <div class="bg-[#0f111a] border border-primary-container/20 rounded-xl h-full flex flex-col">
+          <div class="h-10 bg-surface-container-highest border-b border-outline-variant/50 flex items-center px-4">
+            <span class="font-code-md text-code-md text-primary-container flex items-center gap-2">
+              <span class="material-symbols-outlined text-[16px]">code</span>
+              {{ lesson?.arquivo || 'solution.py' }}
+            </span>
+          </div>
+          <div class="flex-1 p-4 font-code-md text-code-md text-on-surface/70 overflow-auto">
+            <div class="text-on-surface-variant"># Your code here...</div>
+          </div>
+        </div>
+      </div>
+    </main>
   </div>
 
+  <!-- Aventura/Guardião/Conceito Layout: Student Layout with Grid -->
   <div v-else class="space-y-8 p-8 max-w-[1200px] mx-auto">
     <!-- Top Nav Bar -->
     <div class="p-4 border-b border-outline-variant/30 flex items-center justify-between shrink-0">
@@ -293,6 +356,19 @@ function lootIconClass(rarity: string) {
 
 function lootRarityClass(rarity: string) {
   return lootIconClass(rarity)
+}
+
+function getTypeLabel(subtipo?: string): string {
+  switch (subtipo) {
+    case 'conceito': return 'Conceito'
+    case 'aprendiz': return 'Aprendiz'
+    case 'aventura': return 'Aventura'
+    case 'guardiao': return 'Guardião'
+    case 'boss': return 'Boss'
+    case 'prova': return 'Prova'
+    case 'grupo': return 'Guilda'
+    default: return 'Desafio'
+  }
 }
 </script>
 
