@@ -1,0 +1,81 @@
+{
+  "id": "python-M03-A02-CT",
+  "curso": "python",
+  "modulo": 3,
+  "aula": 2,
+  "numero": 2,
+  "tipo": "Aula",
+  "subtipo": "conceito",
+  "titulo": "Parametros e Retornos",
+  "subtitulo": "A interface da funcao: o que entra, o que sai e o que fica auditavel",
+  "objetivo": "Usar parametros obrigatorios e opcionais, organizar retornos simples e multiplos, e projetar funcoes com contrato claro para processamento de dados publicos.",
+  "duracao": "1h30",
+  "tags": [
+    "parametros",
+    "return",
+    "interface",
+    "contrato"
+  ],
+  "secoes": {
+    "abertura": {
+      "objetivo": {
+        "texto_md": "Uma funcao sem contrato claro vira caixa-preta confusa: ninguem sabe exatamente o que fornecer nem o que esperar de volta. Em sistemas reais, isso custa caro: chamadas erradas, resultados mal interpretados e retrabalho de equipe inteira. Quando voce define parametros e retorno de forma precisa, cria uma interface confiavel para o time e para o avaliador automatico."
+      },
+      "retomada": {
+        "texto_md": "**Base que voce ja domina:**\n\n* Criacao e chamada de funcoes com `def` (aula anterior).\n* Condicionais para aplicar regras diferentes.\n* Formatacao de saida com f-strings para relatorios claros."
+      },
+      "situacao": {
+        "titulo": "A funcao que ninguém entendia",
+        "texto_md": "Um setor de compras usava uma funcao chamada `processar()` sem documentacao de entradas. Em alguns pontos, passavam valor mensal; em outros, valor anual. O retorno tambem mudava sem padrao. Resultado: comparacoes erradas em relatorios. Com assinatura explicita e retorno previsivel, o erro deixaria de ser estrutural."
+      },
+      "problematizacao": {
+        "texto_md": "* Por que funcoes com parametros vagos dificultam manutencao, mesmo quando funcionam no primeiro teste?\n* Quando vale retornar dois valores de uma vez, e quando vale retornar apenas um valor final?"
+      }
+    },
+    "conceito": {
+      "titulo": "Conceito tecnico",
+      "texto_md": "Parametros descrevem o que a funcao precisa receber. Retorno descreve o que ela entrega. Esse contrato precisa ser estavel: mesma entrada valida, mesma regra, mesma forma de saida. Parametros padrao ajudam no caso comum sem impedir personalizacao.",
+      "exemplos": [
+        {
+          "texto_md": "### 1. Parametros obrigatorios\n\nAqui a funcao exige os dois dados para calcular o total devido.",
+          "python": "def calcular_total(consumo, tarifa):\n    return consumo * tarifa\n\nprint(f'Total: R$ {calcular_total(180, 0.92):.2f}')"
+        },
+        {
+          "texto_md": "### 2. Parametro com valor padrao\n\nA taxa padrao cobre o caso mais frequente, mas pode ser sobrescrita.",
+          "python": "def calcular_taxa_servico(valor, taxa=0.05):\n    return valor * taxa\n\nprint(f'Taxa padrao: R$ {calcular_taxa_servico(200.0):.2f}')\nprint(f'Taxa customizada: R$ {calcular_taxa_servico(200.0, 0.08):.2f}')"
+        },
+        {
+          "texto_md": "### 3. Retorno multiplo\n\nUma unica funcao devolve valor liquido e valor de desconto para auditoria.",
+          "python": "def calcular_liquido(valor_bruto, desconto_percentual):\n    desconto = valor_bruto * desconto_percentual\n    liquido = valor_bruto - desconto\n    return liquido, desconto\n\nliquido, desconto = calcular_liquido(1500.0, 0.12)\nprint(f'Liquido: R$ {liquido:.2f}')\nprint(f'Desconto: R$ {desconto:.2f}')"
+        }
+      ]
+    },
+    "pratica_guiada": {
+      "titulo": "Pratica guiada",
+      "texto_md": "Vamos criar uma funcao de elegibilidade de beneficio com dois retornos: status e valor aprovado. Isso facilita decisao e rastreabilidade no mesmo fluxo.",
+      "python": "def avaliar_beneficio(renda_per_capita, dependentes, teto=750.0):\n    elegivel = renda_per_capita <= teto\n    if elegivel:\n        valor = 120.0 + (dependentes * 30.0)\n    else:\n        valor = 0.0\n    return elegivel, valor\n\nstatus, valor = avaliar_beneficio(680.0, 2)\nprint(f'Elegivel: {status}')\nprint(f'Valor aprovado: R$ {valor:.2f}')"
+    },
+    "pratica_autonoma": {
+      "titulo": "Exercicio de Continuacao (Sua vez!)",
+      "texto_md": "**Enunciado:** Crie `calcular_energia(kwh, tarifa=0.78)` que retorne o custo total. Imprima `Conta: R$ X.XX`.\n\n| Entrada Oculta | Saida Esperada | Show |\n|---|---|---|\n| `kwh=100` | Conta: R$ 78.00 | Sim |\n| `kwh=100, tarifa=0.95` | Conta: R$ 95.00 | Sim |\n| `kwh=0` | Conta: R$ 0.00 | Nao |"
+    },
+    "desafios": {
+      "titulo": "",
+      "texto_md": "",
+      "lista": []
+    },
+    "fechamento": {
+      "titulo": "Fechamento e Autoavaliacao",
+      "quiz": {
+        "texto_md": "**1. Qual vantagem de parametro com valor padrao?**\nA) Remove a necessidade de `return`.\nB) Resolve o caso comum sem impedir ajuste pontual.\nC) Obriga uso de listas.\n\n::details{summary=\"Ver a resposta correta\"}\n**Correto: B.** O padrao reduz friccao e mantem flexibilidade.\n::\n\n**2. Quando retornar dois valores e util?**\nA) Quando o processo gera dois resultados relevantes para decisao.\nB) Sempre, por padrao.\nC) Nunca.\n\n::details{summary=\"Ver a resposta correta\"}\n**Correto: A.** Retorno multiplo e util quando ambos os valores serao consumidos.\n::\n\n**3. O que caracteriza um bom contrato de funcao?**\nA) Nome vago e parametros implicitos.\nB) Entrada clara, regra clara e saida previsivel.\nC) Ausencia total de parametros.\n\n::details{summary=\"Ver a resposta correta\"}\n**Correto: B.** Contrato claro reduz ambiguidade e erro de integracao.\n::"
+      },
+      "leitura_complementar": {
+        "texto_md": "* Revise parametros padrao e desempacotamento de retornos na documentacao Python.\n* Pratica diaria: pegue uma regra do seu setor e escreva o contrato da funcao em uma frase: recebe X e Y, devolve Z."
+      },
+      "reflexao": {
+        "texto_md": "* Especificar entradas e saidas nao e burocracia: e defesa contra erro sistemico e interpretacao arbitraria dos dados."
+      }
+    }
+  },
+  "premio": null
+}

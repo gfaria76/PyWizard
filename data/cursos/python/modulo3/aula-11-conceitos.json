@@ -1,0 +1,81 @@
+{
+  "id": "python-M03-A11-CT",
+  "curso": "python",
+  "modulo": 3,
+  "aula": 11,
+  "numero": 11,
+  "tipo": "Aula",
+  "subtipo": "conceito",
+  "titulo": "Modularizacao Basica: Import",
+  "subtitulo": "Separar responsabilidades para reduzir erro e retrabalho",
+  "objetivo": "Usar `import` para reutilizar bibliotecas e organizar codigo por responsabilidade, com foco em clareza de dependencia e reuso de funcoes.",
+  "duracao": "1h30",
+  "tags": [
+    "import",
+    "modularizacao",
+    "math",
+    "reuso"
+  ],
+  "secoes": {
+    "abertura": {
+      "objetivo": {
+        "texto_md": "Software robusto nao nasce de reescrever tudo do zero, e sim de compor blocos confiaveis: bibliotecas prontas, funcoes de dominio e separacao de responsabilidades por arquivo. `import` e o mecanismo que conecta essas partes. Nesta aula, voce vai tratar modularizacao como estrategia de manutencao, nao como detalhe sintatico."
+      },
+      "retomada": {
+        "texto_md": "**Inventario consolidado ate aqui:**\n\n* Funcoes, parametros e retorno.\n* Escopo local para previsibilidade.\n* Lacos e listas para processar lotes."
+      },
+      "situacao": {
+        "titulo": "Reinventar roda gera bug caro",
+        "texto_md": "Uma equipe tentou reimplementar arredondamento para cima em vez de usar `math.ceil`. Em casos decimais de borda, o resultado divergiu da regra oficial e comprometeu planejamento de equipes de campo."
+      },
+      "problematizacao": {
+        "texto_md": "* Qual risco de reescrever manualmente funcoes consolidadas da biblioteca padrao?\n* Como dividir codigo em modulos ajuda leitura, teste e manutencao por equipe?"
+      }
+    },
+    "conceito": {
+      "titulo": "Conceito tecnico",
+      "texto_md": "`import` traz recursos externos para o arquivo atual. Isso inclui modulos da biblioteca padrao (como `math`) e funcoes internas separadas em outros arquivos do projeto. Modularizar significa separar responsabilidades para reduzir acoplamento e facilitar reuso.",
+      "exemplos": [
+        {
+          "texto_md": "### 1. Importando `math`",
+          "python": "import math\n\npessoas = 53\ncapacidade = 10\nequipes = math.ceil(pessoas / capacidade)\nprint(f'Equipes: {equipes}')"
+        },
+        {
+          "texto_md": "### 2. Import seletivo",
+          "python": "from math import floor\n\nvalor = 19.87\nprint(f'Piso: {floor(valor)}')"
+        },
+        {
+          "texto_md": "### 3. Funcao interna em outro arquivo",
+          "python": "# arquivo: utils.py\ndef calcular_imposto(valor):\n    return valor * 0.15\n\n# arquivo principal\nfrom utils import calcular_imposto\nprint(f'Imposto: R$ {calcular_imposto(1000.0):.2f}')"
+        }
+      ]
+    },
+    "pratica_guiada": {
+      "titulo": "Pratica guiada",
+      "texto_md": "Vamos usar `math.ceil` para planejar capacidade de atendimento sem subdimensionar equipe.",
+      "python": "import math\n\ndef equipes_necessarias(total_familias, capacidade_equipe):\n    return math.ceil(total_familias / capacidade_equipe)\n\nqtd = equipes_necessarias(125, 18)\nprint(f'Equipes: {qtd}')"
+    },
+    "pratica_autonoma": {
+      "titulo": "Exercicio de Continuacao (Sua vez!)",
+      "texto_md": "**Enunciado:** Importe `math` e crie `dias_de_visita(total, capacidade_dia)` que retorne o numero de dias com arredondamento para cima. Imprima `Dias: N`.\n\n| Entrada | Saida | Show |\n|---|---|---|\n| `53`, `10` | Dias: 6 | Sim |\n| `20`, `5` | Dias: 4 | Sim |\n| `1`, `8` | Dias: 1 | Nao |"
+    },
+    "desafios": {
+      "titulo": "",
+      "texto_md": "",
+      "lista": []
+    },
+    "fechamento": {
+      "titulo": "Fechamento e Autoavaliacao",
+      "quiz": {
+        "texto_md": "**1. Para que serve `import`?**\nA) Trazer bibliotecas ou modulos para reuso no arquivo atual.\nB) Repetir codigo manualmente.\nC) Apagar variaveis locais.\n\n::details{summary=\"Ver a resposta correta\"}\n**Correto: A.** `import` conecta recursos ja prontos ao seu fluxo.\n::\n\n**2. Qual vantagem de modularizar por arquivos?**\nA) Misturar responsabilidades no mesmo arquivo.\nB) Separar responsabilidades e facilitar manutencao.\nC) Impedir testes automatizados.\n\n::details{summary=\"Ver a resposta correta\"}\n**Correto: B.** Modularizacao melhora leitura, teste e evolucao do codigo.\n::\n\n**3. Quando usar biblioteca padrao e recomendado?**\nA) Quando ela resolve o problema com confiabilidade e clareza.\nB) Nunca.\nC) So em provas.\n\n::details{summary=\"Ver a resposta correta\"}\n**Correto: A.** Reuso confiavel reduz bugs de reimplementacao.\n::"
+      },
+      "leitura_complementar": {
+        "texto_md": "* Explore `math` (`sqrt`, `ceil`, `floor`) e compare com implementacoes manuais.\n* Pratica diaria: mapeie uma rotina sua e liste quais partes poderiam virar modulos separados."
+      },
+      "reflexao": {
+        "texto_md": "* Modularizar e assumir que qualidade depende de colaboracao e de fronteiras claras entre responsabilidades."
+      }
+    }
+  },
+  "premio": null
+}

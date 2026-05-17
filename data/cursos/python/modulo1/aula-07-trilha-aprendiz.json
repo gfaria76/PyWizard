@@ -1,0 +1,63 @@
+{
+  "id": "python-M01-A07-TA",
+  "curso": "python",
+  "modulo": 1,
+  "aula": 7,
+  "numero": 7,
+  "tipo": "Trilha",
+  "subtipo": "aprendiz",
+  "titulo": "Trilha do Aprendiz VII: Portões da Decisão",
+  "subtitulo": "5 desafios em sala sobre if e else",
+  "objetivo": "Consolidar em sala o conteúdo de Condicionais: If e Else.",
+  "duracao": "30min",
+  "tags": [
+    "trilha-aprendiz",
+    "if e else"
+  ],
+  "secoes": {
+    "abertura": {
+      "introducao": {
+        "texto_md": "# Trilha do Aprendiz VII: Portões da Decisão\n\nEsta trilha em sala transforma o conteúdo de **Condicionais: If e Else** em cinco desafios de prática imediata."
+      }
+    },
+    "preparacao": {
+      "titulo": "Preparação da trilha",
+      "texto_md": "* releia o conceito antes de começar;\n* avance do mais simples ao mais exigente;\n* confira o formato de saída."
+    },
+    "desafios": {
+      "titulo": "Cinco desafios da trilha",
+      "texto_md": "Cinco desafios em sala para consolidar if e else.",
+      "missoes": [
+        {
+          "titulo": "Triagem de Temperatura",
+          "texto_md": "**O Problema:** Receba uma temperatura. Se for maior ou igual a 38, imprima `Febre`; senão, `Normal`.\n\n**Casos de Teste (Amostra):**\n\n| Entrada | Saída | Show |\n|---|---|---|\n| 38 | Febre | Sim |"
+        },
+        {
+          "titulo": "Elegibilidade por Renda",
+          "texto_md": "**O Problema:** Receba uma renda. Se for menor ou igual a 218, imprima `Elegivel`; senão, `Nao elegivel`.\n\n**Casos de Teste (Amostra):**\n\n| Entrada | Saída | Show |\n|---|---|---|\n| 200.0 | Elegivel | Sim |"
+        },
+        {
+          "titulo": "Aprovação Escolar",
+          "texto_md": "**O Problema:** Receba uma nota. Se for maior ou igual a 6, imprima `Aprovado`; senão, `Reprovado`.\n\n**Casos de Teste (Amostra):**\n\n| Entrada | Saída | Show |\n|---|---|---|\n| 7.0 | Aprovado | Sim |"
+        },
+        {
+          "titulo": "Piso Salarial",
+          "texto_md": "**O Problema:** Receba salário e piso. Se salário for menor que piso, imprima `Ajustar`; senão, `Ok`.\n\n**Casos de Teste (Amostra):**\n\n| Entrada | Saída | Show |\n|---|---|---|\n| 1200.0<br>1412.0 | Ajustar | Não |"
+        },
+        {
+          "titulo": "Maioridade",
+          "texto_md": "**O Problema:** Receba a idade. Se for maior ou igual a 18, imprima `Maior`; senão, `Menor`.\n\n**Casos de Teste (Amostra):**\n\n| Entrada | Saída | Show |\n|---|---|---|\n| 16 | Menor | Não |"
+        }
+      ]
+    },
+    "fechamento": {
+      "titulo": "Fechamento da Trilha",
+      "reflexao": {
+        "texto_md": "Resolver em sala ajuda a transformar explicação em confiança prática."
+      }
+    }
+  },
+  "premio": {
+    "pontuacao": 70
+  }
+}

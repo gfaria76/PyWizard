@@ -1,0 +1,63 @@
+{
+  "id": "python-M02-A01-TA",
+  "curso": "python",
+  "modulo": 2,
+  "aula": 1,
+  "numero": 1,
+  "tipo": "Trilha",
+  "subtipo": "aprendiz",
+  "titulo": "Trilha do Aprendiz I: Cofres das Listas",
+  "subtitulo": "5 desafios em sala sobre listas, índices e métodos básicos",
+  "objetivo": "Consolidar em sala o conteúdo de Listas: criação, acesso e métodos básicos.",
+  "duracao": "30min",
+  "tags": [
+    "trilha-aprendiz",
+    "listas, índices e métodos básicos"
+  ],
+  "secoes": {
+    "abertura": {
+      "introducao": {
+        "texto_md": "# Trilha do Aprendiz I: Cofres das Listas\n\nEsta trilha em sala transforma o conteúdo de **Listas: criação, acesso e métodos básicos** em cinco desafios de prática imediata."
+      }
+    },
+    "preparacao": {
+      "titulo": "Preparação da trilha",
+      "texto_md": "* releia o conceito antes de começar;\n* avance do mais simples ao mais exigente;\n* confira o formato de saída."
+    },
+    "desafios": {
+      "titulo": "Cinco desafios da trilha",
+      "texto_md": "Cinco desafios em sala para consolidar listas, índices e métodos básicos.",
+      "missoes": [
+        {
+          "titulo": "Índice do Mercado",
+          "texto_md": "**O Problema:** Leia uma lista e imprima o primeiro e o último item.\n\n**Casos de Teste (Amostra):**\n\n| Entrada | Saída | Show |\n|---|---|---|\n| [10, 20, 30] | Primeiro: 10<br>Último: 30 | Sim |"
+        },
+        {
+          "titulo": "Nova Conta",
+          "texto_md": "**O Problema:** Leia uma lista e adicione `999` ao final. Imprima a lista resultante.\n\n**Casos de Teste (Amostra):**\n\n| Entrada | Saída | Show |\n|---|---|---|\n| [1, 2, 3] | [1, 2, 3, 999] | Sim |"
+        },
+        {
+          "titulo": "Correção do Registro",
+          "texto_md": "**O Problema:** Leia uma lista, um índice e um novo valor. Atualize a posição informada.\n\n**Casos de Teste (Amostra):**\n\n| Entrada | Saída | Show |\n|---|---|---|\n| [3, 5, 7]<br>1<br>9 | [3, 9, 7] | Sim |"
+        },
+        {
+          "titulo": "Pop da Fila",
+          "texto_md": "**O Problema:** Leia uma lista e remova o primeiro item com `pop(0)`. Imprima o removido e a lista.\n\n**Casos de Teste (Amostra):**\n\n| Entrada | Saída | Show |\n|---|---|---|\n| [8, 9, 10] | Removido: 8<br>Lista: [9, 10] | Não |"
+        },
+        {
+          "titulo": "Remove do Plantão",
+          "texto_md": "**O Problema:** Leia uma lista e um valor. Remova a primeira ocorrência e imprima a lista.\n\n**Casos de Teste (Amostra):**\n\n| Entrada | Saída | Show |\n|---|---|---|\n| [4, 7, 4, 9]<br>4 | [7, 4, 9] | Não |"
+        }
+      ]
+    },
+    "fechamento": {
+      "titulo": "Fechamento da Trilha",
+      "reflexao": {
+        "texto_md": "Resolver em sala ajuda a transformar explicação em confiança prática."
+      }
+    }
+  },
+  "premio": {
+    "pontuacao": 70
+  }
+}

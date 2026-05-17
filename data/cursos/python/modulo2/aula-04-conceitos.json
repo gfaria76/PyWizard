@@ -1,0 +1,73 @@
+{
+  "id": "python-M02-A04-CT",
+  "curso": "python",
+  "modulo": 2,
+  "aula": 4,
+  "numero": 4,
+  "tipo": "Aula",
+  "subtipo": "conceito",
+  "titulo": "Laço for percorrendo listas",
+  "subtitulo": "Contar e acumular: medindo o nosso esforço um dia de cada vez",
+  "objetivo": "Utilizar o laço for para percorrer dados individualmente, construindo contadores e acumuladores que permitem filtrar o que realmente importa numa lista.",
+  "duracao": "1h30",
+  "tags": [],
+  "secoes": {
+    "abertura": {
+      "objetivo": {
+        "texto_md": "Ao longo de um mês de trabalho, realizamos dezenas de pequenas ações: pagamos pequenos recibos, fazemos horas extras, gastamos com transporte. Se olharmos apenas para o montante final, perdemos a noção de para onde foi o nosso esforço. Nesta aula, vai aprender a usar o laço **for** em Python. Ele funciona exatamente como nós ao revermos um extrato bancário ou um registro de ponto: percorre a lista linha a linha, permitindo-nos separar, contar e acumular apenas os dados que nos interessam para percebermos a nossa realidade."
+      },
+      "retomada": {
+        "texto_md": "* Criação de listas e índices (Aula 1).\n* Funções nativas como `sum()` e `len()` (Aula 2).\n* Estruturas de decisão `if` e `else` (Módulo I)."
+      },
+      "situacao": {
+        "texto_md": "Um trabalhador por turnos recebeu a lista dos valores diários que ganhou num mês. Ele usou a função `sum()` e viu que o total bateu certo com o seu salário base. Porém, ele sente que trabalhou em demasiados dias de folga. A função `sum()` diz-lhe o total do dinheiro, mas não lhe diz **quantos** dias de folga foram sacrificados, nem **quanto** desse dinheiro veio de esforço extra. Para extrair essas respostas, precisamos de olhar para cada dia, um a um.",
+        "titulo": "O problema do bolo total"
+      },
+      "problematizacao": {
+        "texto_md": "* O que se esconde quando as empresas ou os governos mostram apenas os números totais (somas e médias) sem filtrar as condições em que esses números foram gerados?\n* Como a capacidade de criar \"filtros automáticos\" (contar apenas certas ocorrências e acumular apenas certos valores) nos dá poder para questionar recibos de vencimento ou orçamentos domésticos?"
+      }
+    },
+    "conceito": {
+      "titulo": "Conceito técnico",
+      "texto_md": "",
+      "exemplos": [
+        {
+          "texto_md": "",
+          "python": "# Lista com o custo dos transportes na semana\ngastos = [4.50, 4.50, 12.00, 4.50, 25.00]\n\n# O laço lê: \"Para cada valor dentro de gastos, faça o seguinte:\"\nfor valor in gastos:\n    if valor > 10.00:\n        print(\"Atenção: Gasto alto detectado de\", valor)"
+        },
+        {
+          "texto_md": "### 2. Contadores e Acumuladores\n\nEsta é a técnica mais importante da análise de dados básica. \n* Um **contador** soma sempre `+ 1` (responde à pergunta: \"Quantas vezes aconteceu?\").\n* Um **acumulador** soma o próprio `valor` (responde à pergunta: \"Qual é o montante total disso?\").\n\nPara usá-los, precisamos sempre de criar as variáveis com valor `0` **antes** de o laço começar.",
+          "python": "valores = [12, -3, 18, 7, -1]\nqtd_dias_negativos = 0  # Contador\nsoma_positivos = 0      # Acumulador\n\nfor v in valores:\n    if v < 0:\n        # Encontrou um dia negativo, conta mais um\n        qtd_dias_negativos += 1\n    else:\n        # Encontrou um dia positivo, acumula o montante\n        soma_positivos += v\n\nprint(\"Dias no vermelho:\", qtd_dias_negativos)\nprint(\"Total ganho nos dias bons:\", soma_positivos)"
+        }
+      ]
+    },
+    "pratica_guiada": {
+      "titulo": "Prática guiada",
+      "texto_md": "Vamos testar esta lógica calculando as horas extras de um contrato de trabalho. O limite diário é de 8 horas. Acompanhe a lógica e teste no seu editor de código:",
+      "python": "# 1. Recebemos o registro de horas trabalhadas na semana\nhoras_semana = eval(input(\"Registo de horas diárias: \"))\n\ndias_com_extra = 0\ntotal_horas_extras = 0\n\n# 2. Percorremos a semana dia a dia\nfor horas in horas_semana:\n    if horas > 8:\n        dias_com_extra += 1\n        extra_do_dia = horas - 8\n        total_horas_extras += extra_do_dia\n\n# 3. Exibimos o relatório\nprint(f\"Dias em que fez horas extras: {dias_com_extra}\")\nprint(f\"Total de horas a receber no fim do mês: {total_horas_extras}\")"
+    },
+    "pratica_autonoma": {
+      "titulo": "Exercício de Continuação (A sua vez!)",
+      "texto_md": "**Enunciado:** Uma pequena mercearia quer saber o valor exato que faturou apenas com as vendas pequenas (valores menores ou iguais a 20 euros). O programa recebe uma lista com todas as vendas do dia. Utilize um laço `for` com uma condição `if` para acumular apenas os valores que respeitam esta regra e exiba o montante total faturado com essas vendas pequenas.\n\n**Entradas e Saídas (Autocorreção):**\n\n| Entrada | Saída | Show | \n|---|---|---| \n| [15, 50, 10, 80, 20] | Total vendas pequenas: 45 | Sim | \n| [100, 200, 300] | Total vendas pequenas: 0 | Sim |"
+    },
+    "desafios": {
+      "titulo": "",
+      "texto_md": "",
+      "lista": []
+    },
+    "fechamento": {
+      "titulo": "Fechamento e Autoavaliação",
+      "texto_md": "Consolide a sua compreensão lógica antes de avançar. Pense bem antes de revelar a resposta!",
+      "quiz": {
+        "texto_md": "A) Para impedir que o laço leia números negativos.\nB) Para limpar o valor da lista original.\nC) Para criar uma base neutra e segura que acumulará os valores de forma correta ao longo do ciclo.\n\n::details{summary=\"Ver a resposta correta\"}\n**Correto: C.** Se não inicializarmos o contador ou acumulador, o Python não saberá a partir de que número deve começar a somar, gerando um erro no momento do `+=`.\n::\n\n**2. O que acontece se colocarmos a instrução `print(\"Total\", soma)` DENTRO do laço `for` (com indentação/espaçamento igual ao do `if`)?**\nA) O tela vai exibir o total parcial em cada vez que o laço rodar, linha após linha.\nB) O programa dá erro de sintaxe imediato.\nC) O tela vai exibir o total final apenas uma vez, no final do processo.\n\n::details{summary=\"Ver a resposta correta\"}\n**Correto: A.** Tudo o que está indentado dentro do `for` repete-se. Se quisermos imprimir apenas o resultado final, o `print()` deve estar fora e alinhado à margem esquerda, após o ciclo terminar.\n::\n\n**3. Qual é a principal vantagem de usar um `for` com `if` em relação à função `sum()` nativa?**\nA) O laço `for` processa os cálculos muito mais rápido que o `sum()`.\nB) O `for` com `if` permite filtrar, ignorar ou classificar dados consoante regras do nosso quotidiano, enquanto o `sum()` soma tudo indiscriminadamente.\nC) Não há diferença, ambos fazem rigorosamente a mesma coisa.\n\n::details{summary=\"Ver a resposta correta\"}\n**Correto: B.** A leitura crítica de dados exige filtros. O `sum()` diz-nos o peso total do carrinho de compras; o `for` com `if` diz-nos quanto desse peso foram itens básicos e quanto foram despesas supérfluas.\n::"
+      },
+      "leitura_complementar": {
+        "texto_md": "* **Documentação Oficial:** Pesquise sobre as Estruturas de Controlo de Fluxo (`for` statements) no manual de Python para entender como ele interage com outras coleções além das listas.\n* **Prática Diária:** Analise o seu próprio histórico do celular (exemplo: horas de utilização de tela na última semana). Escreva um programa que leia esses sete valores e use um acumulador para descobrir quantas horas gastou apenas nos dias em que o uso passou de 4 horas."
+      },
+      "reflexao": {
+        "texto_md": "* Ter a capacidade técnica para usar um laço `for` é ter o poder de não aceitar uma resposta mastigada. Quando um banco ou gestor lhe entregar um relatório com um valor absoluto, saber programar significa poder exigir a lista completa, criar o seu próprio filtro, verificar os limites justos e descobrir os dados que estão propositadamente escondidos na \"média\" ou no \"total\". A programação dá-lhe a lente para ler a sua própria realidade material com independência."
+      }
+    }
+  },
+  "premio": null
+}

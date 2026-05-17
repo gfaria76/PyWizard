@@ -1,0 +1,738 @@
+{
+  "modulo": 1,
+  "titulo": "Inventário do Módulo I",
+  "schema": 1,
+  "aulas": [
+    {
+      "numero": 1,
+      "rotulo": "1C",
+      "tipo_aula": "A",
+      "subtipo": "conceito",
+      "titulo": "Variáveis e Tipos Básicos",
+      "arquivo": "modulo1/aula-01-conceitos.json",
+      "inventario_novo": [
+        {
+          "id": "m1-a1-variavel-atribuicao",
+          "tipo": "comando",
+          "nome": "Runa de Vinculação",
+          "descricao": "Ancora dados à memória com um nome que persiste no feitiço.",
+          "exemplo": "saldo = 1500"
+        }
+      ],
+      "premio": null
+    },
+    {
+      "numero": 1,
+      "rotulo": "1TA",
+      "tipo_aula": "A",
+      "subtipo": "aprendiz",
+      "titulo": "Trilha do Aprendiz I: Cofres da Memória",
+      "arquivo": "modulo1/aula-01-trilha-aprendiz.json",
+      "inventario_novo": [
+        {
+          "id": "m1-aula-01-trilha-aprendiz",
+          "tipo": "trilha",
+          "nome": "Selo do Aprendiz",
+          "descricao": "Recompensa editorial associada a Trilha do Aprendiz I: Cofres da Memória."
+        }
+      ],
+      "premio": {
+        "pontuacao": 70,
+        "descricao_md": "Trilha do Aprendiz I: Cofres da Memória"
+      }
+    },
+    {
+      "numero": 1,
+      "rotulo": "1TV",
+      "tipo_aula": "A",
+      "subtipo": "aventura",
+      "titulo": "Trilha da Aventura I: Lanternas da Aldeia",
+      "arquivo": "modulo1/aula-01-trilha-aventura.json",
+      "inventario_novo": [
+        {
+          "id": "m1-aula-01-trilha-aventura",
+          "tipo": "trilha",
+          "nome": "Marca da Aventura",
+          "descricao": "Recompensa editorial associada a Trilha da Aventura I: Lanternas da Aldeia."
+        }
+      ],
+      "premio": {
+        "pontuacao": 90,
+        "descricao_md": "Trilha da Aventura I: Lanternas da Aldeia"
+      },
+      "obrigatoria": false
+    },
+    {
+      "numero": 2,
+      "rotulo": "2C",
+      "tipo_aula": "A",
+      "subtipo": "conceito",
+      "titulo": "Operadores Matemáticos e Input",
+      "arquivo": "modulo1/aula-02-conceitos.json",
+      "inventario_novo": [
+        {
+          "id": "m1-a2-input-conversao",
+          "tipo": "fundamento",
+          "nome": "Voz do Oráculo",
+          "descricao": "Capta palavras do mundo externo e as converte em poder numérico.",
+          "exemplo": "valor = float(input())"
+        }
+      ],
+      "premio": null
+    },
+    {
+      "numero": 2,
+      "rotulo": "2TA",
+      "tipo_aula": "A",
+      "subtipo": "aprendiz",
+      "titulo": "Trilha do Aprendiz II: Forja dos Operadores",
+      "arquivo": "modulo1/aula-02-trilha-aprendiz.json",
+      "inventario_novo": [
+        {
+          "id": "m1-aula-02-trilha-aprendiz",
+          "tipo": "trilha",
+          "nome": "Selo do Aprendiz",
+          "descricao": "Recompensa editorial associada a Trilha do Aprendiz II: Forja dos Operadores."
+        }
+      ],
+      "premio": {
+        "pontuacao": 70,
+        "descricao_md": "Trilha do Aprendiz II: Forja dos Operadores"
+      }
+    },
+    {
+      "numero": 2,
+      "rotulo": "2TV",
+      "tipo_aula": "A",
+      "subtipo": "aventura",
+      "titulo": "Trilha da Aventura II: Estrada dos Cálculos",
+      "arquivo": "modulo1/aula-02-trilha-aventura.json",
+      "inventario_novo": [
+        {
+          "id": "m1-aula-02-trilha-aventura",
+          "tipo": "trilha",
+          "nome": "Marca da Aventura",
+          "descricao": "Recompensa editorial associada a Trilha da Aventura II: Estrada dos Cálculos."
+        }
+      ],
+      "premio": {
+        "pontuacao": 90,
+        "descricao_md": "Trilha da Aventura II: Estrada dos Cálculos"
+      },
+      "obrigatoria": false
+    },
+    {
+      "numero": 3,
+      "rotulo": "3TG",
+      "tipo_aula": "E",
+      "subtipo": "guardiao",
+      "titulo": "Trilha do Guardião I: Forja dos Cálculos",
+      "arquivo": "modulo1/aula-03-trilha-guardiao.json",
+      "inventario_novo": [
+        {
+          "id": "m1-aula-03-trilha-guardiao",
+          "tipo": "trilha",
+          "nome": "Insígnia do Guardião",
+          "descricao": "Recompensa editorial associada a Trilha do Guardião I: Forja dos Cálculos."
+        }
+      ],
+      "premio": {
+        "pontuacao": 120,
+        "descricao_md": "Trilha do Guardião I: Forja dos Cálculos"
+      },
+      "obrigatoria": false
+    },
+    {
+      "numero": 3,
+      "rotulo": "3EG",
+      "tipo_aula": "E",
+      "subtipo": "grupo",
+      "titulo": "Exedição da Guilda I: Oficina de Relatórios",
+      "arquivo": "modulo1/aula-03-exedicao_guilda.json",
+      "inventario_novo": [
+        {
+          "id": "m1-aula-03-exedicao_guilda",
+          "tipo": "trilha",
+          "nome": "Brasão da Guilda",
+          "descricao": "Recompensa editorial associada a Exedição da Guilda I: Oficina de Relatórios."
+        }
+      ],
+      "premio": {
+        "pontuacao": 140,
+        "descricao_md": "Exedição da Guilda I: Oficina de Relatórios"
+      },
+      "obrigatoria": false
+    },
+    {
+      "numero": 3,
+      "tipo_aula": "E",
+      "titulo": "Maratona Prática I: Operadores",
+      "arquivo": "modulo1/aula-03-boss.json",
+      "inventario_novo": [
+        {
+          "id": "m1-a3-conquista-operadores",
+          "tipo": "conquista",
+          "nome": "Selo do Aritimante",
+          "descricao": "Marca de combate conquistada na maratona de operadores."
+        }
+      ],
+      "premio": {
+        "pontuacao": 0,
+        "recursos": [],
+        "descricao_md": "Definir recompensa para esta maratona."
+      }
+    },
+    {
+      "numero": 4,
+      "rotulo": "4C",
+      "tipo_aula": "A",
+      "subtipo": "conceito",
+      "titulo": "F-strings e Formatação de Saída",
+      "arquivo": "modulo1/aula-04-conceitos.json",
+      "inventario_novo": [
+        {
+          "id": "m1-a4-fstring-formatacao",
+          "tipo": "tecnica",
+          "nome": "Pergaminho Interpolado",
+          "descricao": "Tece variáveis diretamente no tecido de uma mensagem.",
+          "exemplo": "print(f'Total: {total}')"
+        }
+      ],
+      "premio": null
+    },
+    {
+      "numero": 4,
+      "rotulo": "4TA",
+      "tipo_aula": "A",
+      "subtipo": "aprendiz",
+      "titulo": "Trilha do Aprendiz IV: Pergaminhos Formatados",
+      "arquivo": "modulo1/aula-04-trilha-aprendiz.json",
+      "inventario_novo": [
+        {
+          "id": "m1-aula-04-trilha-aprendiz",
+          "tipo": "trilha",
+          "nome": "Selo do Aprendiz",
+          "descricao": "Recompensa editorial associada a Trilha do Aprendiz IV: Pergaminhos Formatados."
+        }
+      ],
+      "premio": {
+        "pontuacao": 70,
+        "descricao_md": "Trilha do Aprendiz IV: Pergaminhos Formatados"
+      }
+    },
+    {
+      "numero": 4,
+      "rotulo": "4TV",
+      "tipo_aula": "A",
+      "subtipo": "aventura",
+      "titulo": "Trilha da Aventura IV: Cartas do Tesouro",
+      "arquivo": "modulo1/aula-04-trilha-aventura.json",
+      "inventario_novo": [
+        {
+          "id": "m1-aula-04-trilha-aventura",
+          "tipo": "trilha",
+          "nome": "Marca da Aventura",
+          "descricao": "Recompensa editorial associada a Trilha da Aventura IV: Cartas do Tesouro."
+        }
+      ],
+      "premio": {
+        "pontuacao": 90,
+        "descricao_md": "Trilha da Aventura IV: Cartas do Tesouro"
+      },
+      "obrigatoria": false
+    },
+    {
+      "numero": 5,
+      "rotulo": "5C",
+      "tipo_aula": "A",
+      "subtipo": "conceito",
+      "titulo": "Divisão Inteira (//) e Módulo (%)",
+      "arquivo": "modulo1/aula-05-conceitos.json",
+      "inventario_novo": [
+        {
+          "id": "m1-a5-divisao-modulo",
+          "tipo": "operador",
+          "nome": "Faca do Quociente",
+          "descricao": "Divide com precisão inteira e extrai o resto como fragmento.",
+          "exemplo": "lotes = caixas // 12"
+        }
+      ],
+      "premio": null
+    },
+    {
+      "numero": 5,
+      "rotulo": "5TA",
+      "tipo_aula": "A",
+      "subtipo": "aprendiz",
+      "titulo": "Trilha do Aprendiz V: Fragmentos do Quociente",
+      "arquivo": "modulo1/aula-05-trilha-aprendiz.json",
+      "inventario_novo": [
+        {
+          "id": "m1-aula-05-trilha-aprendiz",
+          "tipo": "trilha",
+          "nome": "Selo do Aprendiz",
+          "descricao": "Recompensa editorial associada a Trilha do Aprendiz V: Fragmentos do Quociente."
+        }
+      ],
+      "premio": {
+        "pontuacao": 70,
+        "descricao_md": "Trilha do Aprendiz V: Fragmentos do Quociente"
+      }
+    },
+    {
+      "numero": 5,
+      "rotulo": "5TV",
+      "tipo_aula": "A",
+      "subtipo": "aventura",
+      "titulo": "Trilha da Aventura V: Sobras do Cofre",
+      "arquivo": "modulo1/aula-05-trilha-aventura.json",
+      "inventario_novo": [
+        {
+          "id": "m1-aula-05-trilha-aventura",
+          "tipo": "trilha",
+          "nome": "Marca da Aventura",
+          "descricao": "Recompensa editorial associada a Trilha da Aventura V: Sobras do Cofre."
+        }
+      ],
+      "premio": {
+        "pontuacao": 90,
+        "descricao_md": "Trilha da Aventura V: Sobras do Cofre"
+      },
+      "obrigatoria": false
+    },
+    {
+      "numero": 6,
+      "rotulo": "6TG",
+      "tipo_aula": "E",
+      "subtipo": "guardiao",
+      "titulo": "Trilha do Guardião II: Câmara dos Quocientes",
+      "arquivo": "modulo1/aula-06-trilha-guardiao.json",
+      "inventario_novo": [
+        {
+          "id": "m1-aula-06-trilha-guardiao",
+          "tipo": "trilha",
+          "nome": "Insígnia do Guardião",
+          "descricao": "Recompensa editorial associada a Trilha do Guardião II: Câmara dos Quocientes."
+        }
+      ],
+      "premio": {
+        "pontuacao": 120,
+        "descricao_md": "Trilha do Guardião II: Câmara dos Quocientes"
+      },
+      "obrigatoria": false
+    },
+    {
+      "numero": 6,
+      "rotulo": "6EG",
+      "tipo_aula": "E",
+      "subtipo": "grupo",
+      "titulo": "Exedição da Guilda II: Arsenal dos Quocientes",
+      "arquivo": "modulo1/aula-06-exedicao_guilda.json",
+      "inventario_novo": [
+        {
+          "id": "m1-aula-06-exedicao_guilda",
+          "tipo": "trilha",
+          "nome": "Brasão da Guilda",
+          "descricao": "Recompensa editorial associada a Exedição da Guilda II: Arsenal dos Quocientes."
+        }
+      ],
+      "premio": {
+        "pontuacao": 140,
+        "descricao_md": "Exedição da Guilda II: Arsenal dos Quocientes"
+      },
+      "obrigatoria": false
+    },
+    {
+      "numero": 6,
+      "tipo_aula": "E",
+      "titulo": "Maratona Prática II: Matemática",
+      "arquivo": "modulo1/aula-06-boss.json",
+      "inventario_novo": [
+        {
+          "id": "m1-a6-conquista-matematica",
+          "tipo": "conquista",
+          "nome": "Calculista de Campo",
+          "descricao": "Valida cálculos de maratona com precisão operacional."
+        }
+      ],
+      "premio": {
+        "pontuacao": 0,
+        "recursos": [],
+        "descricao_md": "Definir recompensa para esta maratona."
+      }
+    },
+    {
+      "numero": 7,
+      "rotulo": "7C",
+      "tipo_aula": "A",
+      "subtipo": "conceito",
+      "titulo": "Condicionais: If e Else",
+      "arquivo": "modulo1/aula-07-conceitos.json",
+      "inventario_novo": [
+        {
+          "id": "m1-a7-if-else",
+          "tipo": "estrutura",
+          "nome": "Encruzilhada Arcana",
+          "descricao": "Redireciona o fluxo do feitiço conforme a verdade da condição.",
+          "exemplo": "if saldo > 0:"
+        }
+      ],
+      "premio": null
+    },
+    {
+      "numero": 7,
+      "rotulo": "7TA",
+      "tipo_aula": "A",
+      "subtipo": "aprendiz",
+      "titulo": "Trilha do Aprendiz VII: Portões da Decisão",
+      "arquivo": "modulo1/aula-07-trilha-aprendiz.json",
+      "inventario_novo": [
+        {
+          "id": "m1-aula-07-trilha-aprendiz",
+          "tipo": "trilha",
+          "nome": "Selo do Aprendiz",
+          "descricao": "Recompensa editorial associada a Trilha do Aprendiz VII: Portões da Decisão."
+        }
+      ],
+      "premio": {
+        "pontuacao": 70,
+        "descricao_md": "Trilha do Aprendiz VII: Portões da Decisão"
+      }
+    },
+    {
+      "numero": 7,
+      "rotulo": "7TV",
+      "tipo_aula": "A",
+      "subtipo": "aventura",
+      "titulo": "Trilha da Aventura VII: Encruzilhadas da Vila",
+      "arquivo": "modulo1/aula-07-trilha-aventura.json",
+      "inventario_novo": [
+        {
+          "id": "m1-aula-07-trilha-aventura",
+          "tipo": "trilha",
+          "nome": "Marca da Aventura",
+          "descricao": "Recompensa editorial associada a Trilha da Aventura VII: Encruzilhadas da Vila."
+        }
+      ],
+      "premio": {
+        "pontuacao": 90,
+        "descricao_md": "Trilha da Aventura VII: Encruzilhadas da Vila"
+      },
+      "obrigatoria": false
+    },
+    {
+      "numero": 8,
+      "rotulo": "8C",
+      "tipo_aula": "A",
+      "subtipo": "conceito",
+      "titulo": "Operadores Relacionais e Lógicos",
+      "arquivo": "modulo1/aula-08-conceitos.json",
+      "inventario_novo": [
+        {
+          "id": "m1-a8-relacionais-booleanos",
+          "tipo": "logica",
+          "nome": "Olho da Verdade",
+          "descricao": "Compara, avalia e retorna a luz ou a sombra da lógica booleana.",
+          "exemplo": "aprovado = idade >= 18 and ativo"
+        }
+      ],
+      "premio": null
+    },
+    {
+      "numero": 8,
+      "rotulo": "8TA",
+      "tipo_aula": "A",
+      "subtipo": "aprendiz",
+      "titulo": "Trilha do Aprendiz VIII: Selos da Verdade",
+      "arquivo": "modulo1/aula-08-trilha-aprendiz.json",
+      "inventario_novo": [
+        {
+          "id": "m1-aula-08-trilha-aprendiz",
+          "tipo": "trilha",
+          "nome": "Selo do Aprendiz",
+          "descricao": "Recompensa editorial associada a Trilha do Aprendiz VIII: Selos da Verdade."
+        }
+      ],
+      "premio": {
+        "pontuacao": 70,
+        "descricao_md": "Trilha do Aprendiz VIII: Selos da Verdade"
+      }
+    },
+    {
+      "numero": 8,
+      "rotulo": "8TV",
+      "tipo_aula": "A",
+      "subtipo": "aventura",
+      "titulo": "Trilha da Aventura VIII: Pactos Lógicos",
+      "arquivo": "modulo1/aula-08-trilha-aventura.json",
+      "inventario_novo": [
+        {
+          "id": "m1-aula-08-trilha-aventura",
+          "tipo": "trilha",
+          "nome": "Marca da Aventura",
+          "descricao": "Recompensa editorial associada a Trilha da Aventura VIII: Pactos Lógicos."
+        }
+      ],
+      "premio": {
+        "pontuacao": 90,
+        "descricao_md": "Trilha da Aventura VIII: Pactos Lógicos"
+      },
+      "obrigatoria": false
+    },
+    {
+      "numero": 9,
+      "rotulo": "9TG",
+      "tipo_aula": "E",
+      "subtipo": "guardiao",
+      "titulo": "Trilha do Guardião III: Julgamento das Regras",
+      "arquivo": "modulo1/aula-09-trilha-guardiao.json",
+      "inventario_novo": [
+        {
+          "id": "m1-aula-09-trilha-guardiao",
+          "tipo": "trilha",
+          "nome": "Insígnia do Guardião",
+          "descricao": "Recompensa editorial associada a Trilha do Guardião III: Julgamento das Regras."
+        }
+      ],
+      "premio": {
+        "pontuacao": 120,
+        "descricao_md": "Trilha do Guardião III: Julgamento das Regras"
+      },
+      "obrigatoria": false
+    },
+    {
+      "numero": 9,
+      "rotulo": "9EG",
+      "tipo_aula": "E",
+      "subtipo": "grupo",
+      "titulo": "Exedição da Guilda III: Tribunal das Regras",
+      "arquivo": "modulo1/aula-09-exedicao_guilda.json",
+      "inventario_novo": [
+        {
+          "id": "m1-aula-09-exedicao_guilda",
+          "tipo": "trilha",
+          "nome": "Brasão da Guilda",
+          "descricao": "Recompensa editorial associada a Exedição da Guilda III: Tribunal das Regras."
+        }
+      ],
+      "premio": {
+        "pontuacao": 140,
+        "descricao_md": "Exedição da Guilda III: Tribunal das Regras"
+      },
+      "obrigatoria": false
+    },
+    {
+      "numero": 9,
+      "tipo_aula": "E",
+      "titulo": "Maratona Prática III: Filtros Básicos",
+      "arquivo": "modulo1/aula-09-boss.json",
+      "inventario_novo": [
+        {
+          "id": "m1-a9-conquista-filtros",
+          "tipo": "conquista",
+          "nome": "Peneira Rúnica",
+          "descricao": "Prova de fogo que separa o verdadeiro do falso sob pressão de batalha."
+        }
+      ],
+      "premio": {
+        "pontuacao": 0,
+        "recursos": [],
+        "descricao_md": "Definir recompensa para esta maratona."
+      }
+    },
+    {
+      "numero": 10,
+      "rotulo": "10C",
+      "tipo_aula": "A",
+      "subtipo": "conceito",
+      "titulo": "Decisões Múltiplas: Elif",
+      "arquivo": "modulo1/aula-10-conceitos.json",
+      "inventario_novo": [
+        {
+          "id": "m1-a10-elif",
+          "tipo": "estrutura",
+          "nome": "Cadeia de Julgamento",
+          "descricao": "Encadeia múltiplos vereditos sem colapsar a legibilidade do feitiço.",
+          "exemplo": "elif nota >= 7:"
+        }
+      ],
+      "premio": null
+    },
+    {
+      "numero": 10,
+      "rotulo": "10TA",
+      "tipo_aula": "A",
+      "subtipo": "aprendiz",
+      "titulo": "Trilha do Aprendiz X: Escalas do Conselho",
+      "arquivo": "modulo1/aula-10-trilha-aprendiz.json",
+      "inventario_novo": [
+        {
+          "id": "m1-aula-10-trilha-aprendiz",
+          "tipo": "trilha",
+          "nome": "Selo do Aprendiz",
+          "descricao": "Recompensa editorial associada a Trilha do Aprendiz X: Escalas do Conselho."
+        }
+      ],
+      "premio": {
+        "pontuacao": 70,
+        "descricao_md": "Trilha do Aprendiz X: Escalas do Conselho"
+      }
+    },
+    {
+      "numero": 10,
+      "rotulo": "10TV",
+      "tipo_aula": "A",
+      "subtipo": "aventura",
+      "titulo": "Trilha da Aventura X: Faixas do Reino",
+      "arquivo": "modulo1/aula-10-trilha-aventura.json",
+      "inventario_novo": [
+        {
+          "id": "m1-aula-10-trilha-aventura",
+          "tipo": "trilha",
+          "nome": "Marca da Aventura",
+          "descricao": "Recompensa editorial associada a Trilha da Aventura X: Faixas do Reino."
+        }
+      ],
+      "premio": {
+        "pontuacao": 90,
+        "descricao_md": "Trilha da Aventura X: Faixas do Reino"
+      },
+      "obrigatoria": false
+    },
+    {
+      "numero": 11,
+      "rotulo": "11C",
+      "tipo_aula": "A",
+      "subtipo": "conceito",
+      "titulo": "If-Else Aninhado e Validações Complexas",
+      "arquivo": "modulo1/aula-11-conceitos.json",
+      "inventario_novo": [
+        {
+          "id": "m1-a11-if-aninhado",
+          "tipo": "estrutura",
+          "nome": "Labirinto Condicional",
+          "descricao": "Aninhar condições em camadas hierárquicas para regras complexas.",
+          "exemplo": "if setor == 'A':\n    if meta >= 100:"
+        }
+      ],
+      "premio": null
+    },
+    {
+      "numero": 11,
+      "rotulo": "11TA",
+      "tipo_aula": "A",
+      "subtipo": "aprendiz",
+      "titulo": "Trilha do Aprendiz XI: Labirintos da Regra",
+      "arquivo": "modulo1/aula-11-trilha-aprendiz.json",
+      "inventario_novo": [
+        {
+          "id": "m1-aula-11-trilha-aprendiz",
+          "tipo": "trilha",
+          "nome": "Selo do Aprendiz",
+          "descricao": "Recompensa editorial associada a Trilha do Aprendiz XI: Labirintos da Regra."
+        }
+      ],
+      "premio": {
+        "pontuacao": 70,
+        "descricao_md": "Trilha do Aprendiz XI: Labirintos da Regra"
+      }
+    },
+    {
+      "numero": 11,
+      "rotulo": "11TV",
+      "tipo_aula": "A",
+      "subtipo": "aventura",
+      "titulo": "Trilha da Aventura XI: Salas Aninhadas",
+      "arquivo": "modulo1/aula-11-trilha-aventura.json",
+      "inventario_novo": [
+        {
+          "id": "m1-aula-11-trilha-aventura",
+          "tipo": "trilha",
+          "nome": "Marca da Aventura",
+          "descricao": "Recompensa editorial associada a Trilha da Aventura XI: Salas Aninhadas."
+        }
+      ],
+      "premio": {
+        "pontuacao": 90,
+        "descricao_md": "Trilha da Aventura XI: Salas Aninhadas"
+      },
+      "obrigatoria": false
+    },
+    {
+      "numero": 12,
+      "rotulo": "12TG",
+      "tipo_aula": "E",
+      "subtipo": "guardiao",
+      "titulo": "Trilha do Guardião IV: Labirinto dos Vereditos",
+      "arquivo": "modulo1/aula-12-trilha-guardiao.json",
+      "inventario_novo": [
+        {
+          "id": "m1-aula-12-trilha-guardiao",
+          "tipo": "trilha",
+          "nome": "Insígnia do Guardião",
+          "descricao": "Recompensa editorial associada a Trilha do Guardião IV: Labirinto dos Vereditos."
+        }
+      ],
+      "premio": {
+        "pontuacao": 120,
+        "descricao_md": "Trilha do Guardião IV: Labirinto dos Vereditos"
+      },
+      "obrigatoria": false
+    },
+    {
+      "numero": 12,
+      "rotulo": "12EG",
+      "tipo_aula": "E",
+      "subtipo": "grupo",
+      "titulo": "Exedição da Guilda IV: Fortaleza dos Vereditos",
+      "arquivo": "modulo1/aula-12-exedicao_guilda.json",
+      "inventario_novo": [
+        {
+          "id": "m1-aula-12-exedicao_guilda",
+          "tipo": "trilha",
+          "nome": "Brasão da Guilda",
+          "descricao": "Recompensa editorial associada a Exedição da Guilda IV: Fortaleza dos Vereditos."
+        }
+      ],
+      "premio": {
+        "pontuacao": 140,
+        "descricao_md": "Exedição da Guilda IV: Fortaleza dos Vereditos"
+      },
+      "obrigatoria": false
+    },
+    {
+      "numero": 12,
+      "tipo_aula": "E",
+      "titulo": "Maratona Prática IV: Regras",
+      "arquivo": "modulo1/aula-12-boss.json",
+      "inventario_novo": [
+        {
+          "id": "m1-a12-conquista-regras",
+          "tipo": "conquista",
+          "nome": "Tecelão de Regras",
+          "descricao": "Forja cadeias condicionais complexas com maestria na maratona."
+        }
+      ],
+      "premio": {
+        "pontuacao": 0,
+        "recursos": [],
+        "descricao_md": "Definir recompensa para esta maratona."
+      }
+    },
+    {
+      "numero": 13,
+      "tipo_aula": "E",
+      "titulo": "Prova de Fogo Master",
+      "arquivo": "modulo1/aula-13-PROVA.json",
+      "inventario_novo": [
+        {
+          "id": "m1-a13-selo-master",
+          "tipo": "selo",
+          "nome": "Arauto dos Fundamentos",
+          "descricao": "Certifica o domínio completo do primeiro módulo do grimório."
+        }
+      ],
+      "premio": null
+    }
+  ]
+}

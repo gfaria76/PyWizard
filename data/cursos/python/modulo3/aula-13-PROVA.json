@@ -1,0 +1,322 @@
+{
+  "id": "python-M03-A13-MP",
+  "curso": "python",
+  "modulo": 3,
+  "aula": 13,
+  "numero": 13,
+  "tipo": "Masmorra",
+  "subtipo": "prova",
+  "titulo": "Prova do Módulo III: Arquitetura de Funções",
+  "subtitulo": "Modularização, listas e interfaces reutilizáveis em dados públicos",
+  "objetivo": "Avaliar a autonomia do estudante nos conteúdos do Módulo 3 por meio de uma prova com banco de 20 questões e sorteio editorial de 5 por tentativa.",
+  "duracao": "1h30",
+  "tags": [
+    "prova",
+    "funções",
+    "modularização",
+    "mutabilidade",
+    "listas",
+    "import"
+  ],
+  "secoes": {
+    "abertura": {
+      "introducao": {
+        "texto_md": "# Prova Final do Módulo III\n\nChegou a etapa em que a pergunta já não é mais se você sabe programar uma solução isolada, mas se consegue **organizar** soluções: escrever funções claras, proteger dados de efeitos colaterais, encapsular laços, devolver resultados consistentes e aproveitar bibliotecas quando isso faz sentido. Esta prova simula situações reais de engenharia de software em pequenos sistemas públicos.\n\n**Regras:**\n- Todas as questões possuem autocorreção automática.\n- Use prioritariamente funções com os nomes pedidos no enunciado.\n- Evite variáveis globais: o avaliador pode chamar suas funções mais de uma vez.\n- Em questões que exigem preservar a lista original, isso será validado.\n\n---"
+      }
+    },
+    "questoes": {
+      "titulo": "Banco de Questões da Prova",
+      "texto_md": "A prova final trabalha com **20 questões no banco**. A aplicação deve sortear **5 questões** em equilíbrio editorial, com **3 médias + 2 difíceis** e no mínimo **5 variações equivalentes** entre combinações possíveis.",
+      "banco_questoes": [
+        {
+          "titulo": "Questão 1 — Triagem social em função",
+          "texto_md": "**O Problema:** Resolva um problema do módulo 3 envolvendo os conteúdos estudados. Esta questão pertence ao banco de 20 e pode ser sorteada para compor a prova final.\n\n**Casos de Teste (Amostra):**\n\n| Entrada | Saída | Show |\n|---|---|---|\n| caso de amostra | saida correta | Sim |\n| caso extra | saida correta | Não |",
+          "meta": {
+            "tipo": "banco-questoes",
+            "questao": "questao_1",
+            "pontos": "20",
+            "dificuldade": "media",
+            "variacoesEquivalentesMinimas": 5,
+            "sorteioEquilibrado": true
+          }
+        },
+        {
+          "titulo": "Questão 2 — Caixa-preta da mutabilidade",
+          "texto_md": "**O Problema:** Resolva um problema do módulo 3 envolvendo os conteúdos estudados. Esta questão pertence ao banco de 20 e pode ser sorteada para compor a prova final.\n\n**Casos de Teste (Amostra):**\n\n| Entrada | Saída | Show |\n|---|---|---|\n| caso de amostra | saida correta | Sim |\n| caso extra | saida correta | Não |",
+          "meta": {
+            "tipo": "banco-questoes",
+            "questao": "questao_2",
+            "pontos": "20",
+            "dificuldade": "media",
+            "variacoesEquivalentesMinimas": 5,
+            "sorteioEquilibrado": true
+          }
+        },
+        {
+          "titulo": "Questão 3 — Bug do ranking seguro",
+          "texto_md": "**O Problema:** Resolva um problema do módulo 3 envolvendo os conteúdos estudados. Esta questão pertence ao banco de 20 e pode ser sorteada para compor a prova final.\n\n**Casos de Teste (Amostra):**\n\n| Entrada | Saída | Show |\n|---|---|---|\n| caso de amostra | saida correta | Sim |\n| caso extra | saida correta | Não |",
+          "meta": {
+            "tipo": "banco-questoes",
+            "questao": "questao_3",
+            "pontos": "20",
+            "dificuldade": "media",
+            "variacoesEquivalentesMinimas": 5,
+            "sorteioEquilibrado": true
+          }
+        },
+        {
+          "titulo": "Questão 4 — Consolidador com *args",
+          "texto_md": "**O Problema:** Resolva um problema do módulo 3 envolvendo os conteúdos estudados. Esta questão pertence ao banco de 20 e pode ser sorteada para compor a prova final.\n\n**Casos de Teste (Amostra):**\n\n| Entrada | Saída | Show |\n|---|---|---|\n| caso de amostra | saida correta | Sim |\n| caso extra | saida correta | Não |",
+          "meta": {
+            "tipo": "banco-questoes",
+            "questao": "questao_4",
+            "pontos": "20",
+            "dificuldade": "media",
+            "variacoesEquivalentesMinimas": 5,
+            "sorteioEquilibrado": true
+          }
+        },
+        {
+          "titulo": "Questão 5 — Painel matricial modular",
+          "texto_md": "**O Problema:** Resolva um problema do módulo 3 envolvendo os conteúdos estudados. Esta questão pertence ao banco de 20 e pode ser sorteada para compor a prova final.\n\n**Casos de Teste (Amostra):**\n\n| Entrada | Saída | Show |\n|---|---|---|\n| caso de amostra | saida correta | Sim |\n| caso extra | saida correta | Não |",
+          "meta": {
+            "tipo": "banco-questoes",
+            "questao": "questao_5",
+            "pontos": "20",
+            "dificuldade": "media",
+            "variacoesEquivalentesMinimas": 5,
+            "sorteioEquilibrado": true
+          }
+        },
+        {
+          "titulo": "Questão 6 — Função de desconto",
+          "texto_md": "**O Problema:** Resolva um problema do módulo 3 envolvendo os conteúdos estudados. Esta questão pertence ao banco de 20 e pode ser sorteada para compor a prova final.\n\n**Casos de Teste (Amostra):**\n\n| Entrada | Saída | Show |\n|---|---|---|\n| caso de amostra | saida correta | Sim |\n| caso extra | saida correta | Não |",
+          "meta": {
+            "tipo": "banco-questoes",
+            "questao": "questao_6",
+            "pontos": "20",
+            "dificuldade": "media",
+            "variacoesEquivalentesMinimas": 5,
+            "sorteioEquilibrado": true
+          }
+        },
+        {
+          "titulo": "Questão 7 — Lista preservada",
+          "texto_md": "**O Problema:** Resolva um problema do módulo 3 envolvendo os conteúdos estudados. Esta questão pertence ao banco de 20 e pode ser sorteada para compor a prova final.\n\n**Casos de Teste (Amostra):**\n\n| Entrada | Saída | Show |\n|---|---|---|\n| caso de amostra | saida correta | Sim |\n| caso extra | saida correta | Não |",
+          "meta": {
+            "tipo": "banco-questoes",
+            "questao": "questao_7",
+            "pontos": "20",
+            "dificuldade": "media",
+            "variacoesEquivalentesMinimas": 5,
+            "sorteioEquilibrado": true
+          }
+        },
+        {
+          "titulo": "Questão 8 — Escopo local controlado",
+          "texto_md": "**O Problema:** Resolva um problema do módulo 3 envolvendo os conteúdos estudados. Esta questão pertence ao banco de 20 e pode ser sorteada para compor a prova final.\n\n**Casos de Teste (Amostra):**\n\n| Entrada | Saída | Show |\n|---|---|---|\n| caso de amostra | saida correta | Sim |\n| caso extra | saida correta | Não |",
+          "meta": {
+            "tipo": "banco-questoes",
+            "questao": "questao_8",
+            "pontos": "20",
+            "dificuldade": "media",
+            "variacoesEquivalentesMinimas": 5,
+            "sorteioEquilibrado": true
+          }
+        },
+        {
+          "titulo": "Questão 9 — Média com retorno",
+          "texto_md": "**O Problema:** Resolva um problema do módulo 3 envolvendo os conteúdos estudados. Esta questão pertence ao banco de 20 e pode ser sorteada para compor a prova final.\n\n**Casos de Teste (Amostra):**\n\n| Entrada | Saída | Show |\n|---|---|---|\n| caso de amostra | saida correta | Sim |\n| caso extra | saida correta | Não |",
+          "meta": {
+            "tipo": "banco-questoes",
+            "questao": "questao_9",
+            "pontos": "20",
+            "dificuldade": "media",
+            "variacoesEquivalentesMinimas": 5,
+            "sorteioEquilibrado": true
+          }
+        },
+        {
+          "titulo": "Questão 10 — Top3 sem mutação",
+          "texto_md": "**O Problema:** Resolva um problema do módulo 3 envolvendo os conteúdos estudados. Esta questão pertence ao banco de 20 e pode ser sorteada para compor a prova final.\n\n**Casos de Teste (Amostra):**\n\n| Entrada | Saída | Show |\n|---|---|---|\n| caso de amostra | saida correta | Sim |\n| caso extra | saida correta | Não |",
+          "meta": {
+            "tipo": "banco-questoes",
+            "questao": "questao_10",
+            "pontos": "20",
+            "dificuldade": "media",
+            "variacoesEquivalentesMinimas": 5,
+            "sorteioEquilibrado": true
+          }
+        },
+        {
+          "titulo": "Questão 11 — Filtro com parâmetros",
+          "texto_md": "**O Problema:** Resolva um problema do módulo 3 envolvendo os conteúdos estudados. Esta questão pertence ao banco de 20 e pode ser sorteada para compor a prova final.\n\n**Casos de Teste (Amostra):**\n\n| Entrada | Saída | Show |\n|---|---|---|\n| caso de amostra | saida correta | Sim |\n| caso extra | saida correta | Não |",
+          "meta": {
+            "tipo": "banco-questoes",
+            "questao": "questao_11",
+            "pontos": "20",
+            "dificuldade": "dificil",
+            "variacoesEquivalentesMinimas": 5,
+            "sorteioEquilibrado": true
+          }
+        },
+        {
+          "titulo": "Questão 12 — Import de utilidades",
+          "texto_md": "**O Problema:** Resolva um problema do módulo 3 envolvendo os conteúdos estudados. Esta questão pertence ao banco de 20 e pode ser sorteada para compor a prova final.\n\n**Casos de Teste (Amostra):**\n\n| Entrada | Saída | Show |\n|---|---|---|\n| caso de amostra | saida correta | Sim |\n| caso extra | saida correta | Não |",
+          "meta": {
+            "tipo": "banco-questoes",
+            "questao": "questao_12",
+            "pontos": "20",
+            "dificuldade": "dificil",
+            "variacoesEquivalentesMinimas": 5,
+            "sorteioEquilibrado": true
+          }
+        },
+        {
+          "titulo": "Questão 13 — Args flexíveis",
+          "texto_md": "**O Problema:** Resolva um problema do módulo 3 envolvendo os conteúdos estudados. Esta questão pertence ao banco de 20 e pode ser sorteada para compor a prova final.\n\n**Casos de Teste (Amostra):**\n\n| Entrada | Saída | Show |\n|---|---|---|\n| caso de amostra | saida correta | Sim |\n| caso extra | saida correta | Não |",
+          "meta": {
+            "tipo": "banco-questoes",
+            "questao": "questao_13",
+            "pontos": "20",
+            "dificuldade": "dificil",
+            "variacoesEquivalentesMinimas": 5,
+            "sorteioEquilibrado": true
+          }
+        },
+        {
+          "titulo": "Questão 14 — Kwargs para relatórios",
+          "texto_md": "**O Problema:** Resolva um problema do módulo 3 envolvendo os conteúdos estudados. Esta questão pertence ao banco de 20 e pode ser sorteada para compor a prova final.\n\n**Casos de Teste (Amostra):**\n\n| Entrada | Saída | Show |\n|---|---|---|\n| caso de amostra | saida correta | Sim |\n| caso extra | saida correta | Não |",
+          "meta": {
+            "tipo": "banco-questoes",
+            "questao": "questao_14",
+            "pontos": "20",
+            "dificuldade": "dificil",
+            "variacoesEquivalentesMinimas": 5,
+            "sorteioEquilibrado": true
+          }
+        },
+        {
+          "titulo": "Questão 15 — Função de auditoria",
+          "texto_md": "**O Problema:** Resolva um problema do módulo 3 envolvendo os conteúdos estudados. Esta questão pertence ao banco de 20 e pode ser sorteada para compor a prova final.\n\n**Casos de Teste (Amostra):**\n\n| Entrada | Saída | Show |\n|---|---|---|\n| caso de amostra | saida correta | Sim |\n| caso extra | saida correta | Não |",
+          "meta": {
+            "tipo": "banco-questoes",
+            "questao": "questao_15",
+            "pontos": "20",
+            "dificuldade": "dificil",
+            "variacoesEquivalentesMinimas": 5,
+            "sorteioEquilibrado": true
+          }
+        },
+        {
+          "titulo": "Questão 16 — Loop encapsulado",
+          "texto_md": "**O Problema:** Resolva um problema do módulo 3 envolvendo os conteúdos estudados. Esta questão pertence ao banco de 20 e pode ser sorteada para compor a prova final.\n\n**Casos de Teste (Amostra):**\n\n| Entrada | Saída | Show |\n|---|---|---|\n| caso de amostra | saida correta | Sim |\n| caso extra | saida correta | Não |",
+          "meta": {
+            "tipo": "banco-questoes",
+            "questao": "questao_16",
+            "pontos": "20",
+            "dificuldade": "dificil",
+            "variacoesEquivalentesMinimas": 5,
+            "sorteioEquilibrado": true
+          }
+        },
+        {
+          "titulo": "Questão 17 — Mutabilidade em listas",
+          "texto_md": "**O Problema:** Resolva um problema do módulo 3 envolvendo os conteúdos estudados. Esta questão pertence ao banco de 20 e pode ser sorteada para compor a prova final.\n\n**Casos de Teste (Amostra):**\n\n| Entrada | Saída | Show |\n|---|---|---|\n| caso de amostra | saida correta | Sim |\n| caso extra | saida correta | Não |",
+          "meta": {
+            "tipo": "banco-questoes",
+            "questao": "questao_17",
+            "pontos": "20",
+            "dificuldade": "dificil",
+            "variacoesEquivalentesMinimas": 5,
+            "sorteioEquilibrado": true
+          }
+        },
+        {
+          "titulo": "Questão 18 — Módulo reutilizável",
+          "texto_md": "**O Problema:** Resolva um problema do módulo 3 envolvendo os conteúdos estudados. Esta questão pertence ao banco de 20 e pode ser sorteada para compor a prova final.\n\n**Casos de Teste (Amostra):**\n\n| Entrada | Saída | Show |\n|---|---|---|\n| caso de amostra | saida correta | Sim |\n| caso extra | saida correta | Não |",
+          "meta": {
+            "tipo": "banco-questoes",
+            "questao": "questao_18",
+            "pontos": "20",
+            "dificuldade": "dificil",
+            "variacoesEquivalentesMinimas": 5,
+            "sorteioEquilibrado": true
+          }
+        },
+        {
+          "titulo": "Questão 19 — Assinatura segura",
+          "texto_md": "**O Problema:** Resolva um problema do módulo 3 envolvendo os conteúdos estudados. Esta questão pertence ao banco de 20 e pode ser sorteada para compor a prova final.\n\n**Casos de Teste (Amostra):**\n\n| Entrada | Saída | Show |\n|---|---|---|\n| caso de amostra | saida correta | Sim |\n| caso extra | saida correta | Não |",
+          "meta": {
+            "tipo": "banco-questoes",
+            "questao": "questao_19",
+            "pontos": "20",
+            "dificuldade": "dificil",
+            "variacoesEquivalentesMinimas": 5,
+            "sorteioEquilibrado": true
+          }
+        },
+        {
+          "titulo": "Questão 20 — Arquitetura final de funções",
+          "texto_md": "**O Problema:** Resolva um problema do módulo 3 envolvendo os conteúdos estudados. Esta questão pertence ao banco de 20 e pode ser sorteada para compor a prova final.\n\n**Casos de Teste (Amostra):**\n\n| Entrada | Saída | Show |\n|---|---|---|\n| caso de amostra | saida correta | Sim |\n| caso extra | saida correta | Não |",
+          "meta": {
+            "tipo": "banco-questoes",
+            "questao": "questao_20",
+            "pontos": "20",
+            "dificuldade": "dificil",
+            "variacoesEquivalentesMinimas": 5,
+            "sorteioEquilibrado": true
+          }
+        }
+      ],
+      "sorteio": {
+        "total_banco": 20,
+        "questoes_sorteadas": 5,
+        "criterio": "sorteio editorial equilibrado por dificuldade",
+        "totalBanco": 20,
+        "questoesSorteadas": 5,
+        "distribuicaoDificuldade": {
+          "media": 3,
+          "dificil": 2
+        },
+        "variacoesEquilibradasMinimas": 5
+      },
+      "equilibrioEditorial": {
+        "dificuldadesDisponiveis": {
+          "media": 10,
+          "dificil": 10
+        },
+        "distribuicaoPorAplicacao": {
+          "media": 3,
+          "dificil": 2
+        },
+        "variacoesEquivalentesMinimas": 5
+      }
+    },
+    "backend": {
+      "titulo": "Atenção IA de Backend / Sistema Gerenciador:",
+      "texto_md": "Este bloco orienta a geração editorial do banco da prova final do Módulo 3. O banco contém 20 questões e cada aplicação deve selecionar 5 questões. Gere no mínimo 10 casos por questão, com forte presença de valores de borda.\n\nRegras editoriais adicionais: manter sorteio equilibrado com **3 questões médias** e **2 difíceis** por aplicação, garantindo no mínimo **5 variações equivalentes** de prova no banco."
+    }
+  },
+  "desafios": [],
+  "premio": {
+    "pontuacao_academica": 100,
+    "superpower_reward": "arquiteto-de-funcoes",
+    "recursos": [
+      "Comprar tempo adicional: 3x de 5min (10 Moedas)",
+      "Comprar dica IA: 3 consultas à lógica base (10 Moedas)"
+    ],
+    "testes_ocultos": {
+      "banco_questoes": "/api/datasets/modulo3_prova_banco_20.json"
+    }
+  },
+  "avaliacao": {
+    "pontuacao_maxima": 100,
+    "criterios": [
+      "Correção automática por testes ocultos das 5 questões sorteadas.",
+      "Aderência ao formato de saída exigido em cada questão.",
+      "Uso correto apenas dos conceitos estudados no Módulo 3."
+    ],
+    "tipo_correcao": "automatica"
+  }
+}

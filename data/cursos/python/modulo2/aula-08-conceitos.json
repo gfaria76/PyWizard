@@ -1,0 +1,69 @@
+{
+  "id": "python-M02-A08-CT",
+  "curso": "python",
+  "modulo": 2,
+  "aula": 8,
+  "numero": 8,
+  "tipo": "Aula",
+  "subtipo": "conceito",
+  "titulo": "A Esteira de Processamento: while com for e if",
+  "subtitulo": "Coletar, processar e decidir: construindo a nossa própria automação",
+  "objetivo": "Integrar o laço while (para coleta interativa), o laço for (para percorrer os dados) e a estrutura if (para filtragem) num único fluxo de trabalho.",
+  "duracao": "1h30",
+  "tags": [],
+  "secoes": {
+    "abertura": {
+      "objetivo": {
+        "texto_md": "Nos nossos trabalhos, raramente fazemos apenas uma coisa. Nós recolhemos as informações durante o dia de trabalho, paramos no fim do expediente para olhar para tudo o que foi recolhido e, por fim, tomamos decisões sobre o que está certo e o que precisa ser corrigido. Nesta aula, vai aprender a construir um programa que imita exatamente este fluxo: uma \"esteira de produção digital\". Vamos combinar o `while` (para recolher os dados sem limites rígidos), o `for` (para processar o lote recolhido) e o `if` (para filtrar a informação útil). Dominar este funil é o que nos permite automatizar horas de conferência manual."
+      },
+      "retomada": {
+        "texto_md": "* O `while True` com `break` e sentinelas para recolher dados ilimitados (Aula 6).\n* O laço `for` percorrendo listas e utilizando índices (Aulas 3 e 4).\n* A estrutura `if/else` para separar cenários e aplicar regras de negócio."
+      },
+      "situacao": {
+        "texto_md": "Um pequeno comerciante ou um trabalhador por conta própria passa o dia a anotar num caderno todas as vendas e despesas de forma misturada. Ao fechar a porta da loja, ele tem nas mãos um fluxo bruto de dados. Fazer a triagem de tudo isto manualmente com uma calculadora — separando o que foi lucro do que foi taxa, o que foi pago do que foi fiado — consome grande parte do seu merecido tempo de descanso. Sem uma esteira de automação, a recolha de dados torna-se um fardo, não uma solução.",
+        "titulo": "O problema do caos das anotações"
+      },
+      "problematizacao": {
+        "texto_md": "* O que perdemos, em termos de saúde mental e controlo financeiro, quando os nossos dados são recolhidos de forma constante mas nunca devidamente processados ou filtrados no final do dia?\n* Como a capacidade de interligar três lógicas diferentes (recolher com paciência, percorrer com atenção e filtrar com rigor) nos dá a autonomia para fechar relatórios num piscar de olhos e ir finalmente para casa descansar?"
+      }
+    },
+    "conceito": {
+      "titulo": "Conceito técnico",
+      "texto_md": "",
+      "exemplos": [
+        {
+          "texto_md": "",
+          "python": "# FASE 1: COLETA (O Caderno Aberto)\nvalores_brutos = []\nprint(\"Registe os valores (digite 'fim' para fechar o caixa):\")\n\nwhile True:\n    entrada = input(\"Valor: \")\n    if entrada == \"fim\":\n        break\n    valores_brutos.append(float(entrada))\n\n# FASE 2 e 3: PROCESSAMENTO E CLASSIFICAÇÃO (A Conferência)\ntotal_valido = 0\nerros_ignorados = 0\n\nfor v in valores_brutos:\n    if v >= 0:\n        total_valido += v\n    else:\n        erros_ignorados += 1\n\nprint(f\"Total apurado: {total_valido} euros\")\nprint(f\"Registos inválidos/negativos descartados: {erros_ignorados}\")"
+        }
+      ]
+    },
+    "pratica_guiada": {
+      "titulo": "Prática guiada",
+      "texto_md": "Vamos criar o código do responsável de um armazém. Durante o turno, ele vai bipando os códigos dos pacotes despachados. O sistema regista tudo. No final, o sistema confere se um pacote de alta prioridade (código `999`) foi despachado hoje, varrendo a lista final recolhida.",
+      "python": "pacotes_despachados = []\n\n# Fase 1: Coletar até ao fim do turno\nwhile True:\n    codigo = input(\"Código do pacote (ou 'encerrar'): \")\n    if codigo == \"encerrar\":\n        break\n    # O input lê como texto, mas para procurar e comparar preferimos números\n    pacotes_despachados.append(int(codigo))\n\n# Fase 2 e 3: O balanço de segurança\npacote_urgente_enviado = False\n\nfor pacote in pacotes_despachados:\n    if pacote == 999:\n        pacote_urgente_enviado = True\n\n# Relatório final\nif pacote_urgente_enviado:\n    print(\"Sucesso! O pacote de urgência médica seguiu no camião.\")\nelse:\n    print(\"Alerta: O pacote prioritário 999 ficou esquecido no armazém.\")"
+    },
+    "pratica_autonoma": {
+      "titulo": "Exercício de Continuação (A sua vez!)",
+      "texto_md": "**Enunciado:** O fiscal de uma obra anota as larguras de várias peças cortadas. Quando ele digita `fim`, o programa para de recolher. Em seguida, usando um laço `for`, o programa confere se todas as peças cortadas têm exatamente `10.0` cm. O programa deve exibir o número exato de peças que passaram no teste de qualidade (ou seja, peças maiores ou menores do que 10.0 devem ser ignoradas na contagem).\n\n**Entradas e Saídas (Autocorreção):**\n\n| Entrada | Saída | Show | \n|---|---|---| \n| 10.0<br>9.8<br>10.0<br>fim | Aprovadas: 2 | Sim | \n| 10.1<br>9.9<br>fim | Aprovadas: 0 | Sim |"
+    },
+    "desafios": {
+      "titulo": "",
+      "texto_md": "",
+      "lista": []
+    },
+    "fechamento": {
+      "titulo": "Fechamento e Autoavaliação",
+      "texto_md": "Compreendeu bem a ordem correta da nossa esteira de dados? Verifique o seu conhecimento antes de encerrar.",
+      "quiz": {
+        "texto_md": "A) Porque o Python não permite usar o comando `if` dentro de um `while`.\nB) Organizar o código em \"pipeline\" (fluxo de tarefas isoladas) facilita a manutenção, reduz erros de raciocínio e permite alterar a regra de negócio sem estragar a recolha dos dados.\nC) Não há motivo especial, apenas obriga o código a ficar mais longo e complexo.\n\n::details{summary=\"Ver a resposta correta\"}\n**Correto: B.** Separar responsabilidades é um princípio sagrado na programação. Assim como na vida real não deve tentar contar o dinheiro da caixa enquanto atende o cliente, no código separamos o momento de ouvir do momento de julgar os dados.\n::\n\n**2. Qual é a estratégia correta se precisarmos de procurar um valor específico numa base de dados grande e não quisermos perder tempo depois de o encontrar?**\nA) Percorrer a lista inteira com o `for`, independentemente de encontrarmos logo no início, para garantir que o computador não falha.\nB) Usar um `for` combinado com um `if`. Assim que a condição for verdadeira e a peça encontrada, utilizamos o comando `break` para destruir o laço prematuramente e poupar recursos.\nC) Utilizar um `while True` sem sentinela e cruzar os dedos.\n\n::details{summary=\"Ver a resposta correta\"}\n**Correto: B.** O comando `break` não pertence apenas ao `while`. Pode (e deve) ser utilizado no laço `for` como um travão de eficiência na Busca Sequencial. Achou, parou!\n::\n\n**3. Se os dados brutos chegam corrompidos (com notas negativas ou preços impossíveis), onde no nosso programa é o local mais ético e seguro para descartá-los?**\nA) Diretamente na base de dados do cliente, sem deixar rastos.\nB) Ignorá-los e imprimi-los no relatório final mesmo assim, pois os números são neutros.\nC) Numa fase de \"Limpeza\" intermédia: usar o `for` para percorrer os dados brutos e um `if` rigoroso que transfere apenas a informação limpa para uma nova lista segura.\n\n::details{summary=\"Ver a resposta correta\"}\n**Correto: C.** A limpeza dos dados, feita através do nosso filtro condicional, garante que as tomadas de decisão que dependem do relatório (como as médias salariais) não serão distorcidas por ruído da máquina.\n::"
+      },
+      "leitura_complementar": {
+        "texto_md": "* **Documentação Oficial:** Estude as *List Comprehensions* na documentação do Python. Embora tenhamos utilizado o método passo a passo (`for` + `if` + `append`) para criar filtros transparentes e didáticos, o Python possui formas de fazer esta triagem numa única linha compacta de código!\n* **Prática Diária:** Analise os juros e taxas da sua conta bancária na aplicação. Mentalize a seguinte lógica enquanto lê: \"O banco usou um `while` para aceitar os meus gastos do mês; de noite, rodou um `for` na minha conta; se o gasto com taxas fosse menor que X, ignorou; se fosse maior (`if`), cobrou mais juros\". Comece a imaginar o código de triagem por detrás das faturas injustas que paga."
+      },
+      "reflexao": {
+        "texto_md": "* Terminar o dia e ver uma caixa cheia de registros, notas, despesas e faturas soltas é o princípio da exaustão e do prejuízo invisível. Uma grande parte do lucro e do bem-estar dos trabalhadores esvai-se nessa falta de organização. Construir a sua própria \"Esteira de Processamento de Dados\" — um sistema capaz de pacientemente ouvir o dia (`while`), analisar criteriosamente cada detalhe (`for`) e descartar o que não é útil ou que foi fraudulento (`if`) — não é apenas aprender tecnologia. É aprender a não delegar a fiscalização do seu esforço para lógicas externas. O funil da realidade passa pelas mãos do seu código."
+      }
+    }
+  },
+  "premio": null
+}

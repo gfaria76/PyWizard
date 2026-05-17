@@ -1,0 +1,111 @@
+{
+  "id": "python-M02-A03-MB",
+  "curso": "python",
+  "modulo": 2,
+  "aula": 3,
+  "numero": 3,
+  "tipo": "Masmorra",
+  "subtipo": "boss",
+  "titulo": "Maratona Prática I: O Despertar Analítico",
+  "subtitulo": "Dados brutos, pressão real e algoritmos escaláveis",
+  "objetivo": "Resolver problemas analíticos sob pressão de tempo, combinando manipulação de índices, métodos básicos e funções nativas de lista em bases de dados massivas do governo.",
+  "duracao": "2h00",
+  "tags": [],
+  "secoes": {
+    "abertura": {
+      "introducao": {
+        "texto_md": "# A Prova de Fogo: O Teste de Autonomia\n\nChegou o momento de desligar as luzes da sala de aula e ligar os monitores do mundo real. Quando um portal governamental libera um arquivo com milhares de registros salariais ou uma máquina industrial reporta anomalias, não há tutoriais piscando na tela. Há apenas um problema para resolver e um relógio contando.\n\nNesta maratona não introduzimos conceitos novos. O seu \"inventário\" é exclusivamente o conhecimento das Aulas 1 e 2 (criação de listas, índices, `append`, `insert`, `remove`, `pop`, `min`, `max`, `sum`, `len`).\n\nA plataforma avalia seu desempenho global. Resultados expressivos podem desbloquear recursos especiais no seu Inventário.\n\n---"
+      }
+    },
+    "aquecimento": {
+      "titulo": "FASE 1: Aquecimento de Sistemas (Warm-up)",
+      "texto_md": "**Tempo estimado:** 15 minutos.\n**Pontuação:** 0 pontos.\n**Objetivo:** Calibrar o seu raciocínio lógico e testar a nossa plataforma. O avaliador oculto injetará arquivos de teste massivos; certifique-se de que o seu código imprime estritamente os resultados pedidos, e não a lista inteira.",
+      "missoes": [
+        {
+          "titulo": "Aquecimento A: A Fronteira do Expediente",
+          "texto_md": "**O Problema:** Uma transportadora sob investigação enviou o registro do ponto eletrônico dos seus motoristas de forma massiva e desestruturada, esperando que o sindicato não tivesse capacidade para auditá-lo.\n\nO motor de avaliação injetará no seu código uma lista chamada `horarios`, contendo milhares de valores `Floats` (horas). Extraia a **primeira** marcação de entrada e a **última** marcação absoluta registrada na lista, independentemente do seu tamanho. Some esses dois extremos e imprima o resultado formatado com duas casas decimais.\n\n**Casos de Teste (Amostra):**\n\n| Entrada Oculta (`horarios`) | Saída Esperada | Show |\n|---|---|---|\n| [8.5, 12.0, 13.0, 18.5] | Chave de validacao: 27.00 | Sim |\n| [9.0, 17.0] | Chave de validacao: 26.00 | Sim |",
+          "meta": {
+            "tipo": "warmup",
+            "dataset": "warmup_a"
+          }
+        },
+        {
+          "titulo": "Aquecimento B: O Básico do Painel",
+          "texto_md": "**O Problema:** A caldeira da fábrica está reportando superaquecimento, mas a gerência afirma que \"a média diária está normal\".\n\nO sistema injeta uma lista chamada `temperaturas` contendo milhares de valores `Floats`. Utilize as funções nativas das listas para apurar a média térmica exata de todas as medições captadas. Imprima o resultado formatado com uma casa decimal.\n\n**Casos de Teste (Amostra):**\n\n| Entrada Oculta (`temperaturas`) | Saída Esperada | Show |\n|---|---|---|\n| [90.5, 92.5, 88.5] | Media termica: 90.5 | Sim |\n| [100.0, 105.0] | Media termica: 102.5 | Sim |",
+          "meta": {
+            "tipo": "warmup",
+            "dataset": "warmup_b"
+          }
+        }
+      ]
+    },
+    "maratona": {
+      "titulo": "FASE 2: A Maratona (Missões Oficiais)",
+      "texto_md": "**Tempo estimado:** 1h45m.\n**Status:** Avaliação Ativa.\n**Instruções:** Leia os cenários e interprete os fluxogramas com extrema atenção. O avaliador testará a sua lógica contra dados reais extraídos de portais do governo.",
+      "missoes": [
+        {
+          "titulo": "Missão 1: A Distorção Máxima (Portal da Transparência)",
+          "texto_md": "**O Problema:** Um consórcio de jornalistas precisa provar a disparidade absurda de pagamentos dentro da mesma entidade pública.\n\nO avaliador injeta uma lista contendo os salários base (`Floats`) de todos os funcionários ativos de um órgão do Poder Executivo. Encontre o teto máximo e o piso mínimo salarial deste dataset. Calcule a diferença matemática absoluta entre eles e imprima esta discrepância formatada com duas casas decimais.\n\n```mermaid\nflowchart LR\n    A[(Base de Salários)] --> B(Maior Salário)\n    A --> C(Menor Salário)\n    B & C --> D(Diferença Absoluta)\n    D --> E([Discrepância])\n\n    style A stroke:#000000,fill:#E1F0D4\n    style B stroke:#000000,fill:#C3EFE0\n    style C stroke:#000000,fill:#F6ACD8\n    style D stroke:#000000,fill:#DBCDF8\n    style E stroke:#000000,fill:#FFF2CC\n```\n\n**Casos de Teste (Amostra):**\n\n| Entrada | Saída | Show |\n|---|---|---|\n| [820.0, 950.0, 5600.0, 820.0] | Discrepancia: 4780.00 | Sim |\n| [1500.0, 12000.0] | Discrepancia: 10500.00 | Não |\n| [1000.0, 1000.0, 1000.0] | Discrepancia: 0.00 | Não |",
+          "meta": {
+            "tipo": "maratona",
+            "dataset": "missao_1"
+          }
+        },
+        {
+          "titulo": "Missão 2: Auditoria de Picos Ambientais (Focos de Queimada)",
+          "texto_md": "**O Problema:** O cálculo da média de intensidade dos focos em regiões afetadas por queimadas pode ser maquiado por anomalias (picos extremos de erro ou leituras zeradas). Para encontrar o nível real de criticidade ambiental, precisamos auditar estritamente o \"Miolo\" dos dados de focos do INPE.\n\nO sistema fornece uma lista de temperaturas (`Floats`). Exclua da memória a **primeira ocorrência do maior pico** e a **primeira ocorrência da maior queda** registrada na lista. Apenas depois dessas exclusões, calcule a média dos milhares de elementos que restaram e imprima com duas casas decimais. *(Garantimos que o dataset terá sempre mais de 3 elementos).*\n\n```mermaid\nflowchart TD\n    A[(Dados INPE)] --> B(Excluir Pico Extremo)\n    B --> C(Excluir Queda Extrema)\n    C --> D[Dados Restantes Validados]\n    D --> E(Média dos Restantes)\n    E --> F([Temperatura Real])\n\n    style A stroke:#000000,fill:#E1F0D4\n    style B stroke:#000000,fill:#F6ACD8\n    style C stroke:#000000,fill:#F6ACD8\n    style D stroke:#000000,fill:#C3EFE0\n    style E stroke:#000000,fill:#DBCDF8\n    style F stroke:#000000,fill:#FFF2CC\n```\n\n**Casos de Teste (Amostra):**\n\n| Entrada | Saída | Show |\n|---|---|---|\n| [35.0, 40.0, 38.0, 100.0, 0.0] | Media do miolo: 37.67 | Sim |\n| [0.0, 20.0, 20.0, 40.0, 99.0] | Media do miolo: 26.67 | Não |\n| [-50.0, 10.0, 10.0, 50.0] | Media do miolo: 10.00 | Não |",
+          "meta": {
+            "tipo": "maratona",
+            "dataset": "missao_2"
+          }
+        },
+        {
+          "titulo": "Missão 3: A Intervenção Estratégica (Câmara dos Deputados)",
+          "texto_md": "**O Problema:** A fila de votação de proposições da Câmara segue uma ordem cronológica rígida representada por Códigos de ID (`Inteiros`). Uma urgência política ocorreu e você tem de intervir na memória do sistema alterando a fila exata de milhares de IDs na seguinte ordem estrita:\n\n1. O Projeto de Urgência de código `999` tem prioridade e deve ser inserido como a **segunda** tarefa da fila (índice 1), empurrando as restantes para trás.\n2. O plenário cancelou o projeto de código `500`. Encontre e exclua a **primeira** ocorrência deste código.\n3. O projeto que ficou na primeira posição absoluta (índice 0) acabou de ser votado e deve sair da fila.\n4. Para provar a validade da nova fila, imprima o total de projetos pendentes, e nas linhas seguintes, indique qual projeto passou a ocupar o início e o fim da lista de votações.\n\n**Casos de Teste (Amostra):**\n\n| Entrada | Saída | Show |\n|---|---|---|\n| [101, 202, 500, 303] | Tamanho: 3<br>Primeira: 999<br>Ultima: 303 | Sim |\n| [1, 500, 2, 3, 500] | Tamanho: 4<br>Primeira: 999<br>Ultima: 500 | Não |\n| [42, 500, 43] | Tamanho: 2<br>Primeira: 999<br>Ultima: 43 | Não |",
+          "meta": {
+            "tipo": "maratona",
+            "dataset": "missao_3"
+          }
+        },
+        {
+          "titulo": "Missão 4: O Peso da Segurança (Auditoria de Contratos)",
+          "texto_md": "**O Problema:** Um órgão público empilhou aditivos e lançamentos sem controle, inflando o orçamento de contratos críticos. A auditoria sindical exige reorganização imediata dos valores para revelar o impacto real do último lançamento.\n\nO sistema injeta uma lista chamada `carga` contendo os valores (`Floats`) de lançamentos de contratos, pela ordem exata em que foram registrados.\n\n**A Missão:**\n1. O **último** lançamento é o que gerou o estouro recente. Remova-o da lista e guarde o seu valor.\n2. O **primeiro** lançamento da série (índice 0) está fora de vigência e deve ser removido da lista.\n3. Adicione um novo ajuste técnico obrigatório de valor `15.5` no **final** da lista.\n4. Para liberar o relatório, o programa deve imprimir o valor do lançamento removido por último e o novo total auditado (usando a função de soma na lista atualizada).\n\n```mermaid\nflowchart TD\n    A[(Base de Cargas)] --> B(Extrair o Último Pacote)\n    A --> C(Extrair o Primeiro Pacote)\n    B & C --> D(Adicionar Pacote de Segurança)\n    D --> E(Calcular Nova Soma Total)\n    E --> F([Imprimir Relatório])\n\n    style A stroke:#000000,fill:#E1F0D4\n    style B stroke:#000000,fill:#F6ACD8\n    style C stroke:#000000,fill:#F6ACD8\n    style D stroke:#000000,fill:#C3EFE0\n    style E stroke:#000000,fill:#DBCDF8\n    style F stroke:#000000,fill:#FFF2CC\n```\n\n**Casos de Teste (Amostra):**\n\n| Entrada Oculta (`carga`) | Saída Esperada | Show |\n|---|---|---|\n| [50.0, 20.0, 30.0, 100.0] | Lancamento removido: 100.0<br>Novo total auditado: 65.50 | Sim |\n| [12.0, 40.5, 12.0] | Lancamento removido: 12.0<br>Novo total auditado: 56.00 | Sim |\n| [100.0, 200.0, 300.0, 50.0] | Lancamento removido: 50.0<br>Novo total auditado: 515.50 | Não |",
+          "meta": {
+            "tipo": "maratona",
+            "dataset": "missao_4"
+          }
+        },
+        {
+          "titulo": "Missão 5: Retenção de CNAEs (A Prova de Estado)",
+          "texto_md": "**O Problema:** Ao processar os registros de Atividades Econômicas (CNAE), o Tribunal de Contas exige obrigatoriamente que os **dois últimos** registros lançados no sistema sejam confiscados e separados da fila para uma auditoria antifraude detalhada.\n\nO sistema entrega a lista de atividades (`Strings`). Extraia efetivamente os dois últimos elementos da memória da lista. Para comprovar que a fila foi manipulada corretamente e andou para a frente, exiba os códigos confiscados, indique o nome do lote que passou a assumir a nova última posição da esteira, e o total final de lotes liberados.\n\n**Casos de Teste (Amostra):**\n\n| Entrada | Saída | Show |\n|---|---|---|\n| [\"Agricola\", \"Pecuaria\", \"Pesca\", \"Mineracao\", \"Industria\"] | Confiscado 1: Industria<br>Confiscado 2: Mineracao<br>Novo ultimo da fila: Pesca<br>Lotes liberados: 3 | Sim |\n| [\"Servicos\", \"Varejo\", \"Tecnologia\"] | Confiscado 1: Tecnologia<br>Confiscado 2: Varejo<br>Novo ultimo da fila: Servicos<br>Lotes liberados: 1 | Sim |\n| [\"Z1\", \"Z2\", \"Z3\", \"Z4\"] | Confiscado 1: Z4<br>Confiscado 2: Z3<br>Novo ultimo da fila: Z2<br>Lotes liberados: 2 | Não |",
+          "meta": {
+            "tipo": "maratona",
+            "dataset": "missao_5"
+          }
+        }
+      ]
+    },
+    "backend": {
+      "titulo": "Atenção IA de Backend / Sistema Gerenciador:",
+      "texto_md": "O objetivo deste bloco é instruir a pipeline de dados a gerar os arquivos `.json` necessários para alimentar as variáveis ocultas desta maratona. Para garantir a confiabilidade, deve gerar no mínimo 10 casos de teste por missão (agrupados por filtros geográficos, temporais ou estruturais), evitando dados aleatórios nas missões principais.\n\n### Warmup A & B (Dados Sintéticos Permitidos)\n* **Warmup A (Ponto Eletrônico):** Gerar 10 arrays de `floats` aleatórios (tamanho > 1000). Representam horas de `0.0` a `23.9`. *Output Esperado:* Soma matemática de `lista[0] + lista[-1]`.\n* **Warmup B (Motores):** Gerar 10 arrays de `floats` (tamanho > 1000) distribuídos entre `80.0` e `110.0`. *Output Esperado:* `sum(lista) / len(lista)`.\n\n### Missão 1 (Portal da Transparência - Servidores)\n* **Fonte da Base:** `content/fontes/ptransp_servidores.json`\n* **Agrupamento (10 testes):** Agrupar por 10 combinações de `orgao` e `uf`.\n* **Extração:** Extrair o campo `valor` (`Float`).\n* **Output Esperado pelo avaliador:** `max(lista) - min(lista)` formatado com `:.2f`.\n\n### Missão 2 (INPE - Focos de Queimada)\n* **Fonte da Base:** `content/fontes/inpe_queimadas.json`\n* **Agrupamento (10 testes):** Separar por 10 recortes de `uf` e `bioma`.\n* **Extração:** Extrair o campo `frp` (intensidade) como `Float`, ignorando nulos.\n* **Output Esperado:** Simular `lista.remove(max(lista))` e `lista.remove(min(lista))`, seguido de `sum(lista)/len(lista)` formatado com `:.2f`.\n\n### Missão 3 (Câmara dos Deputados - Intervenção na Fila)\n* **Fonte da Base:** `content/fontes/camara_proposicoes.json`\n* **Agrupamento (10 testes):** Agrupar por 10 anos distintos no campo `ano`.\n* **Extração:** Capturar o campo `id` (`Inteiro`) das proposições.\n* **Injeção de Regra:** O script ETL DEVE forçar a injeção do número `500` numa posição aleatória no meio de cada lista gerada, para garantir que o aluno consegue executar a operação de `remove(500)`.\n* **Output Esperado:** Tamanho final (len), nova primeira tarefa (999), última tarefa restante (`lista[-1]`).\n\n### Missão 4 (Portal da Transparência - Contratos)\n* **Fonte da Base:** `content/fontes/ptransp_contratos.json`\n* **Agrupamento (10 testes):** Criar 10 arrays de `Floats` com `valor_inicial` e `valor_final` válidos.\n* **Tamanho:** Entre 1.000 e 50.000 registros por teste.\n* **Output Esperado pelo avaliador:** `Lancamento removido: [valor do último item original]` e `Novo total auditado: [sum(lista) - primeiro - ultimo + 15.5]` formatado com `:.2f`.\n\n### Missão 5 (IBGE - CNAE - Retenção Duplo Pop)\n* **Fonte da Base:** `content/fontes/ibge_cnae.json`\n* **Agrupamento (10 testes):** Filtrar e agrupar por 10 `grupo_codigo` ou `divisao_codigo` distintos.\n* **Extração:** Capturar a propriedade `descricao` (`String`) das classes econômicas.\n* **Output Esperado:** `Confiscado 1: [último_elemento_antigo]`, `Confiscado 2: [penúltimo_elemento_antigo]`, `Novo ultimo da fila: [novo_último_elemento]` e `Lotes liberados: [len-2]`."
+    }
+  },
+  "desafios": [],
+  "premio": {
+    "pontuacao": 100,
+    "superpower_reward": "slicing",
+    "recursos": [
+      "Comprar tempo: 3x5min (10 Moedas)",
+      "Comprar dica IA: 3 consultas (10 Moedas)"
+    ],
+    "testes_ocultos": {
+      "warmup_a": "/api/datasets/ponto_eletronico_10k.json",
+      "warmup_b": "/api/datasets/telemetria_motores_10k.json",
+      "missao_1": "/api/datasets/ptransp_servidores_salarios.json",
+      "missao_2": "/api/datasets/inpe_queimadas_frp.json",
+      "missao_3": "/api/datasets/camara_proposicoes_ids.json",
+      "missao_4": "/api/datasets/ptransp_contratos_valores.json",
+      "missao_5": "/api/datasets/ibge_cnae_lotes.json"
+    }
+  }
+}

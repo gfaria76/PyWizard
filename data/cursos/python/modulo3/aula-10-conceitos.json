@@ -1,0 +1,81 @@
+{
+  "id": "python-M03-A10-CT",
+  "curso": "python",
+  "modulo": 3,
+  "aula": 10,
+  "numero": 10,
+  "tipo": "Aula",
+  "subtipo": "conceito",
+  "titulo": "Parametros Flexiveis: *args e **kwargs",
+  "subtitulo": "Funcoes adaptaveis sem perder contrato e legibilidade",
+  "objetivo": "Aplicar `*args` e `**kwargs` para lidar com entradas variáveis com controle de contrato, mantendo funções claras e com saída determinística.",
+  "duracao": "1h30",
+  "tags": [
+    "args",
+    "kwargs",
+    "flexibilidade",
+    "interface"
+  ],
+  "secoes": {
+    "abertura": {
+      "objetivo": {
+        "texto_md": "Nem toda rotina recebe o mesmo numero de entradas todo dia. Relatorios financeiros mudam de volume, configuracoes mudam por contexto e o codigo precisa absorver essa variacao sem virar bagunca. `*args` e `**kwargs` existem para esse ponto: abrir flexibilidade, mas com disciplina de saida e validacao."
+      },
+      "retomada": {
+        "texto_md": "**Base necessaria:**\n\n* Parametros obrigatorios e padrao.\n* Retorno simples e multiplo.\n* Lacos em funcoes para processar entradas em lote."
+      },
+      "situacao": {
+        "titulo": "A funcao engessada que quebrou no fechamento",
+        "texto_md": "Uma rotina aceitava exatamente tres despesas. No fechamento trimestral, chegaram sete itens e a equipe abriu excecao manual. Na semana seguinte, vieram dois itens. Sem flexibilidade controlada, a rotina sempre quebra no mundo real."
+      },
+      "problematizacao": {
+        "texto_md": "* Quando `*args` melhora a interface e quando esconde demais o significado dos dados?\n* Como usar `**kwargs` sem transformar a funcao em caixa-preta sem contrato?"
+      }
+    },
+    "conceito": {
+      "titulo": "Conceito tecnico",
+      "texto_md": "`*args` captura argumentos posicionais extras em tupla. `**kwargs` captura argumentos nomeados extras em dicionario. Boas praticas: manter parametros essenciais explicitos, validar chaves esperadas e padronizar formato da saida.",
+      "exemplos": [
+        {
+          "texto_md": "### 1. Soma flexivel com `*args`",
+          "python": "def somar_itens(*valores):\n    total = 0.0\n    for valor in valores:\n        total += valor\n    return total\n\nprint(somar_itens(10.0, 20.0, 30.0))"
+        },
+        {
+          "texto_md": "### 2. Configuracao com `**kwargs`",
+          "python": "def montar_relatorio(**dados):\n    orgao = dados.get('orgao', 'N/D')\n    status = dados.get('status', 'Sem status')\n    return f'Orgao: {orgao} | Status: {status}'\n\nprint(montar_relatorio(orgao='FNDE', status='Regular'))"
+        },
+        {
+          "texto_md": "### 3. Combinando `*args` e `**kwargs`",
+          "python": "def totalizar(*valores, **config):\n    total = sum(valores)\n    taxa = config.get('taxa', 0.0)\n    return total * (1 + taxa)\n\nprint(f'Total: {totalizar(100, 200, taxa=0.1):.2f}')"
+        }
+      ]
+    },
+    "pratica_guiada": {
+      "titulo": "Pratica guiada",
+      "texto_md": "Vamos criar uma funcao flexivel para repasses e outra para status de meta com parametro de exibicao opcional.",
+      "python": "def somar_repasses(*valores):\n    total = 0.0\n    for valor in valores:\n        total += valor\n    return total\n\ndef resumo_meta(valor_atual, meta, **config):\n    mostrar_percentual = config.get('percentual', False)\n    if mostrar_percentual:\n        taxa = (valor_atual / meta) * 100\n        return f'Status: {valor_atual:.2f}/{meta:.2f} ({taxa:.1f}%)'\n    return f'Status: {valor_atual:.2f}/{meta:.2f}'\n\nprint(f'Total: R$ {somar_repasses(100.0, 200.0, 50.0):.2f}')\nprint(resumo_meta(90.0, 100.0, percentual=True))"
+    },
+    "pratica_autonoma": {
+      "titulo": "Exercicio de Continuacao (Sua vez!)",
+      "texto_md": "**Enunciado:** Crie `media_flexivel(*valores)` que retorne a media dos argumentos recebidos. Imprima `Media: X.XX`.\n\n| Entrada Oculta | Saida Esperada | Show |\n|---|---|---|\n| `10.0, 20.0, 30.0` | Media: 20.00 | Sim |\n| `5.0, 5.0` | Media: 5.00 | Sim |\n| `8.0, 7.0, 9.0, 6.0` | Media: 7.50 | Nao |"
+    },
+    "desafios": {
+      "titulo": "",
+      "texto_md": "",
+      "lista": []
+    },
+    "fechamento": {
+      "titulo": "Fechamento e Autoavaliacao",
+      "quiz": {
+        "texto_md": "**1. O que `*args` captura?**\nA) Apenas dicionarios.\nB) Argumentos posicionais extras.\nC) Comentarios de codigo.\n\n::details{summary=\"Ver a resposta correta\"}\n**Correto: B.** `*args` organiza entradas posicionais variaveis em tupla.\n::\n\n**2. O que `**kwargs` captura?**\nA) Argumentos nomeados extras.\nB) Apenas listas.\nC) Variaveis globais.\n\n::details{summary=\"Ver a resposta correta\"}\n**Correto: A.** `**kwargs` concentra configuracoes nomeadas.\n::\n\n**3. Qual boa pratica ao usar parametros flexiveis?**\nA) Nunca validar chaves recebidas.\nB) Manter contrato de saida claro e previsivel.\nC) Remover todos os parametros obrigatorios.\n\n::details{summary=\"Ver a resposta correta\"}\n**Correto: B.** Flexibilidade sem contrato vira ambiguidade.\n::"
+      },
+      "leitura_complementar": {
+        "texto_md": "* Revise `*args` e `**kwargs` na documentacao Python com foco em legibilidade de assinatura.\n* Pratica diaria: identifique uma rotina que recebe quantidade variavel de entradas e descreva assinatura flexivel adequada."
+      },
+      "reflexao": {
+        "texto_md": "* Flexibilidade tecnica nao e improviso; e capacidade de adaptar entrada sem abrir mao de criterio."
+      }
+    }
+  },
+  "premio": null
+}

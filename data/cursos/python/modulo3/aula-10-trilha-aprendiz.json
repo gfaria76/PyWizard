@@ -1,0 +1,63 @@
+{
+  "id": "python-M03-A10-TA",
+  "curso": "python",
+  "modulo": 3,
+  "aula": 10,
+  "numero": 10,
+  "tipo": "Trilha",
+  "subtipo": "aprendiz",
+  "titulo": "Trilha do Aprendiz X: Arsenal Flexível",
+  "subtitulo": "5 desafios em sala sobre *args e **kwargs",
+  "objetivo": "Consolidar em sala o conteúdo de Parâmetros Flexíveis: *args e **kwargs.",
+  "duracao": "30min",
+  "tags": [
+    "trilha-aprendiz",
+    "*args e **kwargs"
+  ],
+  "secoes": {
+    "abertura": {
+      "introducao": {
+        "texto_md": "# Trilha do Aprendiz X: Arsenal Flexível\n\nEsta trilha em sala transforma o conteúdo de **Parâmetros Flexíveis: *args e **kwargs** em cinco desafios de prática imediata."
+      }
+    },
+    "preparacao": {
+      "titulo": "Preparação da trilha",
+      "texto_md": "* releia o conceito antes de começar;\n* avance do mais simples ao mais exigente;\n* confira o formato de saída."
+    },
+    "desafios": {
+      "titulo": "Cinco desafios da trilha",
+      "texto_md": "Cinco desafios em sala para consolidar *args e **kwargs.",
+      "missoes": [
+        {
+          "titulo": "Somar Args",
+          "texto_md": "**O Problema:** Crie `somar(*valores)` e imprima a soma de 1, 2 e 3.\n\n**Casos de Teste (Amostra):**\n\n| Entrada | Saída | Show |\n|---|---|---|\n| sem entrada | 6 | Sim |"
+        },
+        {
+          "titulo": "Maior Args",
+          "texto_md": "**O Problema:** Crie função que retorne o maior valor recebido em `*args`.\n\n**Casos de Teste (Amostra):**\n\n| Entrada | Saída | Show |\n|---|---|---|\n| sem entrada | 9 | Sim |"
+        },
+        {
+          "titulo": "Relatório Kwargs",
+          "texto_md": "**O Problema:** Crie função que leia `nome` e `cargo` em `**kwargs` e imprima ambos.\n\n**Casos de Teste (Amostra):**\n\n| Entrada | Saída | Show |\n|---|---|---|\n| sem entrada | Nome: Lia<br>Cargo: Analista | Não |"
+        },
+        {
+          "titulo": "Quantidade de Args",
+          "texto_md": "**O Problema:** Crie função que conte quantos argumentos recebeu.\n\n**Casos de Teste (Amostra):**\n\n| Entrada | Saída | Show |\n|---|---|---|\n| sem entrada | 4 | Não |"
+        },
+        {
+          "titulo": "Valor Padrão em Kwargs",
+          "texto_md": "**O Problema:** Use `kwargs.get()` para imprimir um campo opcional.\n\n**Casos de Teste (Amostra):**\n\n| Entrada | Saída | Show |\n|---|---|---|\n| sem entrada | setor: TI | Não |"
+        }
+      ]
+    },
+    "fechamento": {
+      "titulo": "Fechamento da Trilha",
+      "reflexao": {
+        "texto_md": "Resolver em sala ajuda a transformar explicação em confiança prática."
+      }
+    }
+  },
+  "premio": {
+    "pontuacao": 70
+  }
+}

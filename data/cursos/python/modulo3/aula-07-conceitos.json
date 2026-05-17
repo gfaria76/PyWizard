@@ -1,0 +1,81 @@
+{
+  "id": "python-M03-A07-CT",
+  "curso": "python",
+  "modulo": 3,
+  "aula": 7,
+  "numero": 7,
+  "tipo": "Aula",
+  "subtipo": "conceito",
+  "titulo": "Estruturas de Repeticao em Funcoes",
+  "subtitulo": "For e while como motores de processamento modular em lote",
+  "objetivo": "Encapsular lacos `for` e `while` dentro de funcoes, usando acumuladores locais para processar sequencias e listas com repetibilidade e previsibilidade.",
+  "duracao": "1h30",
+  "tags": [
+    "for",
+    "while",
+    "funcoes",
+    "acumuladores"
+  ],
+  "secoes": {
+    "abertura": {
+      "objetivo": {
+        "texto_md": "Uma funcao so vira ferramenta de escala quando consegue repetir regra sem depender de copia manual. O laco dentro da funcao e o que transforma uma analise de um caso isolado em analise de centenas de casos com a mesma disciplina. Nesta aula, voce vai consolidar esse salto: repetir com metodo, sem perder controle do estado local."
+      },
+      "retomada": {
+        "texto_md": "**Inventario mobilizado:**\n\n* Lacos `for` e `while` do Modulo 2.\n* Funcoes com parametros e retorno.\n* Acumuladores locais para soma, contagem e classificacao."
+      },
+      "situacao": {
+        "titulo": "A regra que precisava rodar o mes inteiro",
+        "texto_md": "Um painel ambiental recebia milhares de medicoes diarias. Sem laco em funcao, a equipe repetia blocos inteiros de codigo para cada lote. A cada ajuste de regra, surgiam divergencias entre blocos. Encapsular repeticao em funcao resolve justamente essa fragilidade."
+      },
+      "problematizacao": {
+        "texto_md": "* Qual a diferenca pratica entre repetir no corpo principal e repetir dentro de funcao reutilizavel?\n* Por que acumulador global e uma armadilha quando a funcao e chamada varias vezes?"
+      }
+    },
+    "conceito": {
+      "titulo": "Conceito tecnico",
+      "texto_md": "Dentro de funcoes, `for` e usado para percorrer colecoes conhecidas; `while` e usado para repeticao orientada por condicao. Variaveis de controle e acumuladores devem nascer dentro da funcao para evitar contaminacao entre chamadas.",
+      "exemplos": [
+        {
+          "texto_md": "### 1. `for` para soma de lote",
+          "python": "def somar_lote(valores):\n    total = 0\n    for valor in valores:\n        total += valor\n    return total\n\nprint(somar_lote([10, 20, 30]))"
+        },
+        {
+          "texto_md": "### 2. `while` ate marcador",
+          "python": "def contar_ate_sentinela(valores, marcador):\n    i = 0\n    while i < len(valores) and valores[i] != marcador:\n        i += 1\n    return i\n\nprint(contar_ate_sentinela([4, 5, 0, 9], 0))"
+        },
+        {
+          "texto_md": "### 3. Repeticao com retorno multiplo",
+          "python": "def resumo_alertas(valores, limite):\n    soma = 0\n    qtd = 0\n    for valor in valores:\n        soma += valor\n        if valor >= limite:\n            qtd += 1\n    return soma, qtd\n\nsoma, qtd = resumo_alertas([12, 80, 51, 9], 50)\nprint(soma, qtd)"
+        }
+      ]
+    },
+    "pratica_guiada": {
+      "titulo": "Pratica guiada",
+      "texto_md": "Vamos criar uma funcao de triagem de ocorrencias que soma volume e conta quantos casos ultrapassam limite critico.",
+      "python": "def triagem_ocorrencias(valores, limite):\n    total = 0\n    criticos = 0\n\n    for valor in valores:\n        total += valor\n        if valor >= limite:\n            criticos += 1\n\n    return total, criticos\n\ndados = [15, 70, 22, 90, 10]\ntotal, criticos = triagem_ocorrencias(dados, 60)\nprint(f'Total processado: {total}')\nprint(f'Criticos: {criticos}')"
+    },
+    "pratica_autonoma": {
+      "titulo": "Exercicio de Continuacao (Sua vez!)",
+      "texto_md": "**Enunciado:** Crie `contar_pares(valores)` que percorra a lista e retorne quantos numeros pares existem. Imprima `Pares: N`.\n\n| Entrada Oculta (`valores`) | Saida Esperada | Show |\n|---|---|---|\n| `[1, 2, 3, 4]` | Pares: 2 | Sim |\n| `[1, 3, 5]` | Pares: 0 | Sim |\n| `[2, 2, 2]` | Pares: 3 | Nao |"
+    },
+    "desafios": {
+      "titulo": "",
+      "texto_md": "",
+      "lista": []
+    },
+    "fechamento": {
+      "titulo": "Fechamento e Autoavaliacao",
+      "quiz": {
+        "texto_md": "**1. Quando `for` costuma ser mais natural?**\nA) Quando percorremos colecao conhecida.\nB) Quando nao existe repeticao.\nC) Quando queremos importar modulo.\n\n::details{summary=\"Ver a resposta correta\"}\n**Correto: A.** `for` e desenhado para iterar colecoes.\n::\n\n**2. Qual risco de acumulador global em funcoes?**\nA) Nenhum risco.\nB) Contaminacao entre chamadas sucessivas.\nC) Erro de sintaxe inevitavel.\n\n::details{summary=\"Ver a resposta correta\"}\n**Correto: B.** Estado global tende a gerar resultado inconsistente.\n::\n\n**3. O que torna um laco em funcao auditavel?**\nA) Variavel local + criterio explicito + retorno claro.\nB) Impressao aleatoria dos dados.\nC) Dependencia de ordem externa nao documentada.\n\n::details{summary=\"Ver a resposta correta\"}\n**Correto: A.** Transparencia no fluxo facilita verificacao e teste.\n::"
+      },
+      "leitura_complementar": {
+        "texto_md": "* Revise padroes de acumulador e contador com `for` e `while`.\n* Pratica diaria: pegue uma tarefa repetitiva do seu contexto e descreva qual parte viraria laco dentro de funcao."
+      },
+      "reflexao": {
+        "texto_md": "* Escala sem metodo vira exaustao. Escala com funcao e laco local vira previsibilidade."
+      }
+    }
+  },
+  "premio": null
+}

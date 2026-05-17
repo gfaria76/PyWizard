@@ -1,0 +1,63 @@
+{
+  "id": "python-M01-A10-TV",
+  "curso": "python",
+  "modulo": 1,
+  "aula": 10,
+  "numero": 10,
+  "tipo": "Trilha",
+  "subtipo": "aventura",
+  "titulo": "Trilha da Aventura X: Faixas do Reino",
+  "subtitulo": "5 desafios para casa sobre elif",
+  "objetivo": "Aprofundar em casa o conteúdo de Decisões Múltiplas: Elif.",
+  "duracao": "35min",
+  "tags": [
+    "trilha-aventura",
+    "elif"
+  ],
+  "secoes": {
+    "abertura": {
+      "introducao": {
+        "texto_md": "# Trilha da Aventura X: Faixas do Reino\n\nEsta trilha para casa amplia a prática do conteúdo de **Decisões Múltiplas: Elif** com cinco novos desafios."
+      }
+    },
+    "preparacao": {
+      "titulo": "Mapa da aventura",
+      "texto_md": "* tente resolver sem olhar a solução da aula;\n* teste seus resultados;\n* anote dúvidas para levar ao próximo encontro."
+    },
+    "desafios": {
+      "titulo": "Cinco desafios da aventura",
+      "texto_md": "Cinco desafios de casa para reforçar elif.",
+      "missoes": [
+        {
+          "titulo": "Tarifa de Energia",
+          "texto_md": "**O Problema:** Receba consumo e classifique em três faixas usando `elif`.\n\n**Casos de Teste (Amostra):**\n\n| Entrada | Saída | Show |\n|---|---|---|\n| 95 | Media | Sim |"
+        },
+        {
+          "titulo": "Porte da Escola",
+          "texto_md": "**O Problema:** Receba quantidade de alunos e classifique em `Pequena`, `Media` ou `Grande`.\n\n**Casos de Teste (Amostra):**\n\n| Entrada | Saída | Show |\n|---|---|---|\n| 850 | Grande | Sim |"
+        },
+        {
+          "titulo": "Nível de Chuva",
+          "texto_md": "**O Problema:** Receba chuva em mm e classifique em `Leve`, `Moderada` ou `Forte`.\n\n**Casos de Teste (Amostra):**\n\n| Entrada | Saída | Show |\n|---|---|---|\n| 45.0 | Moderada | Não |"
+        },
+        {
+          "titulo": "Faixa Etária",
+          "texto_md": "**O Problema:** Receba idade e classifique em `Crianca`, `Adolescente`, `Adulto` ou `Idoso`.\n\n**Casos de Teste (Amostra):**\n\n| Entrada | Saída | Show |\n|---|---|---|\n| 70 | Idoso | Não |"
+        },
+        {
+          "titulo": "Pontuação do Torneio",
+          "texto_md": "**O Problema:** Receba pontos e classifique em `Bronze`, `Prata` ou `Ouro`.\n\n**Casos de Teste (Amostra):**\n\n| Entrada | Saída | Show |\n|---|---|---|\n| 87 | Ouro | Não |"
+        }
+      ]
+    },
+    "fechamento": {
+      "titulo": "Fechamento da Jornada",
+      "reflexao": {
+        "texto_md": "A prática em casa amplia a autonomia e prepara melhor para as trilhas acumulativas."
+      }
+    }
+  },
+  "premio": {
+    "pontuacao": 90
+  }
+}

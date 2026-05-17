@@ -1,0 +1,83 @@
+{
+  "id": "python-M02-A06-TG",
+  "curso": "python",
+  "modulo": 2,
+  "aula": 6,
+  "numero": 6,
+  "tipo": "Trilha",
+  "subtipo": "guardiao",
+  "titulo": "Trilha do Guardião II: Ponte dos Laços",
+  "subtitulo": "10 desafios acumulativos para casa antes do boss",
+  "objetivo": "Revisar de forma acumulativa os conteúdos de for, range e enumerate antes da maratona prática.",
+  "duracao": "50min",
+  "tags": [
+    "trilha-guardiao",
+    "revisão acumulativa"
+  ],
+  "secoes": {
+    "abertura": {
+      "introducao": {
+        "texto_md": "# Trilha do Guardião II: Ponte dos Laços\n\nAntes do boss, o Guardião exige revisão. Esta trilha reúne 10 desafios acumulativos para fortalecer precisão e resistência."
+      }
+    },
+    "ritual": {
+      "titulo": "Ritual do Guardião",
+      "texto_md": "* revise os conceitos do bloco;\n* resolva em sequência crescente;\n* cuide do formato de saída e dos casos de borda."
+    },
+    "desafios": {
+      "titulo": "Dez provas do Guardião",
+      "texto_md": "Dez desafios acumulativos para casa antes da masmorra do boss.",
+      "missoes": [
+        {
+          "titulo": "Prova 1: Desafio acumulativo 1",
+          "texto_md": "**O Problema:** Resolva um problema acumulativo envolvendo for, range e enumerate. Leia os dados, aplique a regra pedida e imprima a saída exatamente no formato solicitado.\n\n**Casos de Teste (Amostra):**\n\n| Entrada | Saída | Show |\n|---|---|---|\n| caso oculto | saida conforme regra | Sim |\n| caso oculto 2 | saida conforme regra | Não |"
+        },
+        {
+          "titulo": "Prova 2: Desafio acumulativo 2",
+          "texto_md": "**O Problema:** Resolva um problema acumulativo envolvendo for, range e enumerate. Leia os dados, aplique a regra pedida e imprima a saída exatamente no formato solicitado.\n\n**Casos de Teste (Amostra):**\n\n| Entrada | Saída | Show |\n|---|---|---|\n| caso oculto | saida conforme regra | Sim |\n| caso oculto 2 | saida conforme regra | Não |"
+        },
+        {
+          "titulo": "Prova 3: Desafio acumulativo 3",
+          "texto_md": "**O Problema:** Resolva um problema acumulativo envolvendo for, range e enumerate. Leia os dados, aplique a regra pedida e imprima a saída exatamente no formato solicitado.\n\n**Casos de Teste (Amostra):**\n\n| Entrada | Saída | Show |\n|---|---|---|\n| caso oculto | saida conforme regra | Sim |\n| caso oculto 2 | saida conforme regra | Não |"
+        },
+        {
+          "titulo": "Prova 4: Desafio acumulativo 4",
+          "texto_md": "**O Problema:** Resolva um problema acumulativo envolvendo for, range e enumerate. Leia os dados, aplique a regra pedida e imprima a saída exatamente no formato solicitado.\n\n**Casos de Teste (Amostra):**\n\n| Entrada | Saída | Show |\n|---|---|---|\n| caso oculto | saida conforme regra | Sim |\n| caso oculto 2 | saida conforme regra | Não |"
+        },
+        {
+          "titulo": "Prova 5: Desafio acumulativo 5",
+          "texto_md": "**O Problema:** Resolva um problema acumulativo envolvendo for, range e enumerate. Leia os dados, aplique a regra pedida e imprima a saída exatamente no formato solicitado.\n\n**Casos de Teste (Amostra):**\n\n| Entrada | Saída | Show |\n|---|---|---|\n| caso oculto | saida conforme regra | Sim |\n| caso oculto 2 | saida conforme regra | Não |"
+        },
+        {
+          "titulo": "Prova 6: Desafio acumulativo 6",
+          "texto_md": "**O Problema:** Resolva um problema acumulativo envolvendo for, range e enumerate. Leia os dados, aplique a regra pedida e imprima a saída exatamente no formato solicitado.\n\n**Casos de Teste (Amostra):**\n\n| Entrada | Saída | Show |\n|---|---|---|\n| caso oculto | saida conforme regra | Sim |\n| caso oculto 2 | saida conforme regra | Não |"
+        },
+        {
+          "titulo": "Prova 7: Desafio acumulativo 7",
+          "texto_md": "**O Problema:** Resolva um problema acumulativo envolvendo for, range e enumerate. Leia os dados, aplique a regra pedida e imprima a saída exatamente no formato solicitado.\n\n**Casos de Teste (Amostra):**\n\n| Entrada | Saída | Show |\n|---|---|---|\n| caso oculto | saida conforme regra | Sim |\n| caso oculto 2 | saida conforme regra | Não |"
+        },
+        {
+          "titulo": "Prova 8: Desafio acumulativo 8",
+          "texto_md": "**O Problema:** Resolva um problema acumulativo envolvendo for, range e enumerate. Leia os dados, aplique a regra pedida e imprima a saída exatamente no formato solicitado.\n\n**Casos de Teste (Amostra):**\n\n| Entrada | Saída | Show |\n|---|---|---|\n| caso oculto | saida conforme regra | Sim |\n| caso oculto 2 | saida conforme regra | Não |"
+        },
+        {
+          "titulo": "Prova 9: Desafio acumulativo 9",
+          "texto_md": "**O Problema:** Resolva um problema acumulativo envolvendo for, range e enumerate. Leia os dados, aplique a regra pedida e imprima a saída exatamente no formato solicitado.\n\n**Casos de Teste (Amostra):**\n\n| Entrada | Saída | Show |\n|---|---|---|\n| caso oculto | saida conforme regra | Sim |\n| caso oculto 2 | saida conforme regra | Não |"
+        },
+        {
+          "titulo": "Prova 10: Desafio acumulativo 10",
+          "texto_md": "**O Problema:** Resolva um problema acumulativo envolvendo for, range e enumerate. Leia os dados, aplique a regra pedida e imprima a saída exatamente no formato solicitado.\n\n**Casos de Teste (Amostra):**\n\n| Entrada | Saída | Show |\n|---|---|---|\n| caso oculto | saida conforme regra | Sim |\n| caso oculto 2 | saida conforme regra | Não |"
+        }
+      ]
+    },
+    "fechamento": {
+      "titulo": "Encerramento da Trilha",
+      "reflexao": {
+        "texto_md": "Se a trilha do Guardião foi bem resolvida, a entrada no boss acontece com mais confiança."
+      }
+    }
+  },
+  "premio": {
+    "pontuacao": 120
+  }
+}

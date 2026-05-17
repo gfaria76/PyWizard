@@ -1,0 +1,63 @@
+{
+  "id": "python-M03-A10-TV",
+  "curso": "python",
+  "modulo": 3,
+  "aula": 10,
+  "numero": 10,
+  "tipo": "Trilha",
+  "subtipo": "aventura",
+  "titulo": "Trilha da Aventura X: Portais Variáveis",
+  "subtitulo": "5 desafios para casa sobre *args e **kwargs",
+  "objetivo": "Aprofundar em casa o conteúdo de Parâmetros Flexíveis: *args e **kwargs.",
+  "duracao": "35min",
+  "tags": [
+    "trilha-aventura",
+    "*args e **kwargs"
+  ],
+  "secoes": {
+    "abertura": {
+      "introducao": {
+        "texto_md": "# Trilha da Aventura X: Portais Variáveis\n\nEsta trilha para casa amplia a prática do conteúdo de **Parâmetros Flexíveis: *args e **kwargs** com cinco novos desafios."
+      }
+    },
+    "preparacao": {
+      "titulo": "Mapa da aventura",
+      "texto_md": "* tente resolver sem olhar a solução da aula;\n* teste seus resultados;\n* anote dúvidas para levar ao próximo encontro."
+    },
+    "desafios": {
+      "titulo": "Cinco desafios da aventura",
+      "texto_md": "Cinco desafios de casa para reforçar *args e **kwargs.",
+      "missoes": [
+        {
+          "titulo": "Média Variável",
+          "texto_md": "**O Problema:** Crie função que calcule média de qualquer quantidade de argumentos.\n\n**Casos de Teste (Amostra):**\n\n| Entrada | Saída | Show |\n|---|---|---|\n| sem entrada | 5.0 | Sim |"
+        },
+        {
+          "titulo": "Filtros do Sistema",
+          "texto_md": "**O Problema:** Crie função que imprima todos os pares chave-valor recebidos em `kwargs`.\n\n**Casos de Teste (Amostra):**\n\n| Entrada | Saída | Show |\n|---|---|---|\n| sem entrada | status=ativo | Sim |"
+        },
+        {
+          "titulo": "Produto de Args",
+          "texto_md": "**O Problema:** Crie função que multiplique todos os argumentos.\n\n**Casos de Teste (Amostra):**\n\n| Entrada | Saída | Show |\n|---|---|---|\n| sem entrada | 24 | Não |"
+        },
+        {
+          "titulo": "Mensagem Flexível",
+          "texto_md": "**O Problema:** Crie função que aceite `*args` e monte uma frase com eles.\n\n**Casos de Teste (Amostra):**\n\n| Entrada | Saída | Show |\n|---|---|---|\n| sem entrada | Python é flexível | Não |"
+        },
+        {
+          "titulo": "Dicionário de Entrada",
+          "texto_md": "**O Problema:** Crie função que receba `kwargs` e retorne quantas chaves existem.\n\n**Casos de Teste (Amostra):**\n\n| Entrada | Saída | Show |\n|---|---|---|\n| sem entrada | 3 | Não |"
+        }
+      ]
+    },
+    "fechamento": {
+      "titulo": "Fechamento da Jornada",
+      "reflexao": {
+        "texto_md": "A prática em casa amplia a autonomia e prepara melhor para as trilhas acumulativas."
+      }
+    }
+  },
+  "premio": {
+    "pontuacao": 90
+  }
+}

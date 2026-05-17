@@ -1,0 +1,64 @@
+{
+  "id": "python-M01-A01-TA",
+  "curso": "python",
+  "modulo": 1,
+  "aula": 1,
+  "numero": 1,
+  "tipo": "Trilha",
+  "subtipo": "aprendiz",
+  "titulo": "Trilha do Aprendiz I: Cofres da Memória",
+  "subtitulo": "5 desafios em sala sobre variáveis e tipos básicos",
+  "objetivo": "Fixar em sala os fundamentos de variáveis, tipos e saída simples.",
+  "duracao": "25min",
+  "tags": [
+    "trilha-aprendiz",
+    "variáveis",
+    "tipos"
+  ],
+  "secoes": {
+    "abertura": {
+      "introducao": {
+        "texto_md": "# Trilha do Aprendiz\n\nEsta trilha acontece em sala e transforma a primeira explicação em prática imediata."
+      }
+    },
+    "preparacao": {
+      "titulo": "Preparação da Trilha",
+      "texto_md": "* use nomes claros de variáveis;\n* identifique o tipo correto antes de programar;\n* confira a saída exatamente como o enunciado pede."
+    },
+    "desafios": {
+      "titulo": "Cinco runas da memória",
+      "texto_md": "Cinco desafios curtos para fixar a aula 1 ainda em sala.",
+      "missoes": [
+        {
+          "titulo": "Runa 1: Registro do Herói",
+          "texto_md": "**O Problema:** Crie as variáveis `nome = \"Ayla\"`, `nivel = 3` e `mana = 12.5`. Depois, imprima as três informações, uma por linha.\n\n**Casos de Teste (Amostra):**\n\n| Entrada | Saída | Show |\n|---|---|---|\n| sem entrada | Nome: Ayla<br>Nivel: 3<br>Mana: 12.5 | Sim |"
+        },
+        {
+          "titulo": "Runa 2: Espelho dos Tipos",
+          "texto_md": "**O Problema:** Crie `cidade = \"Coxim\"` e `temperatura = 31.7`. Use `type()` para imprimir o tipo das duas variáveis.\n\n**Casos de Teste (Amostra):**\n\n| Entrada | Saída | Show |\n|---|---|---|\n| sem entrada | <class 'str'><br><class 'float'> | Sim |"
+        },
+        {
+          "titulo": "Runa 3: Cofre da Prefeitura",
+          "texto_md": "**O Problema:** Declare `empresa = \"Padaria Central\"`, `ano_fundacao = 2024` e `capital = 5000.5`. Imprima as três linhas no formato pedido.\n\n**Casos de Teste (Amostra):**\n\n| Entrada | Saída | Show |\n|---|---|---|\n| sem entrada | Empresa: Padaria Central<br>Ano: 2024<br>Capital: 5000.5 | Sim |"
+        },
+        {
+          "titulo": "Runa 4: Caixa da Biblioteca",
+          "texto_md": "**O Problema:** Crie `livro = \"Python para Iniciantes\"`, `paginas = 120` e `disponivel = True`. Imprima os valores.\n\n**Casos de Teste (Amostra):**\n\n| Entrada | Saída | Show |\n|---|---|---|\n| sem entrada | Livro: Python para Iniciantes<br>Paginas: 120<br>Disponivel: True | Sim |"
+        },
+        {
+          "titulo": "Runa 5: Cristal dos Quatro Tipos",
+          "texto_md": "**O Problema:** Crie uma variável `int`, uma `float`, uma `str` e uma `bool`. Imprima o tipo de cada uma.\n\n**Casos de Teste (Amostra):**\n\n| Entrada | Saída | Show |\n|---|---|---|\n| sem entrada | <class 'int'><br><class 'float'><br><class 'str'><br><class 'bool'> | Não |"
+        }
+      ]
+    },
+    "fechamento": {
+      "titulo": "Encerramento da Trilha",
+      "reflexao": {
+        "texto_md": "Quem conclui esta trilha já domina o primeiro gesto do programador: nomear e guardar partes da realidade."
+      }
+    }
+  },
+  "premio": {
+    "pontuacao": 70
+  }
+}

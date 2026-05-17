@@ -1,0 +1,348 @@
+{
+  "aneel_continuidade": {
+    "descricao": "Indicadores anuais de continuidade do fornecimento de energia por distribuidora, com foco no DEC.",
+    "registros": 10000,
+    "atributos": [
+      "distribuidora",
+      "dec",
+      "ano"
+    ]
+  },
+  "bndes_operacoes": {
+    "descricao": "Operações do BNDES com identificação do cliente, localização, valores contratados/desembolsados, setor CNAE e situação.",
+    "registros": 10000,
+    "atributos": [
+      "cliente",
+      "uf",
+      "municipio",
+      "valor_contratado",
+      "valor_desembolsado",
+      "setor_cnae",
+      "situacao"
+    ]
+  },
+  "cadastro_de_empregadores": {
+    "descricao": "Cadastro de empregadores autuados por trabalho análogo ao escravo, com dados do empregador, estabelecimento, CNAE e datas administrativas.",
+    "registros": 610,
+    "atributos": [
+      "ID",
+      "Ano da ação fiscal",
+      "UF",
+      "Empregador",
+      "CNPJ/CPF",
+      "Estabelecimento",
+      "Trabalhadores envolvidos",
+      "CNAE",
+      "Decisão administrativa de procedência",
+      "Inclusão no Cadastro de Empregadores"
+    ]
+  },
+  "camara_deputados_ms": {
+    "descricao": "Lista de deputados federais de Mato Grosso do Sul com identificação, partido, UF e e-mail institucional.",
+    "registros": 8,
+    "atributos": [
+      "id",
+      "nome",
+      "partido",
+      "uf",
+      "email"
+    ]
+  },
+  "camara_despesas": {
+    "descricao": "Despesas parlamentares da Câmara com tipo de gasto, valores, fornecedor, data e identificação do deputado.",
+    "registros": 10000,
+    "atributos": [
+      "deputado",
+      "partido",
+      "uf",
+      "tipo_despesa",
+      "valor",
+      "valor_liquido",
+      "fornecedor",
+      "cnpj_fornecedor",
+      "data",
+      "mes",
+      "ano"
+    ]
+  },
+  "camara_frentes": {
+    "descricao": "Frentes parlamentares cadastradas na Câmara com identificador, título e legislatura.",
+    "registros": 100,
+    "atributos": [
+      "id",
+      "titulo",
+      "legislatura"
+    ]
+  },
+  "camara_partidos": {
+    "descricao": "Partidos com representação na Câmara, incluindo sigla, nome e liderança informada.",
+    "registros": 21,
+    "atributos": [
+      "id",
+      "sigla",
+      "nome",
+      "lider"
+    ]
+  },
+  "camara_proposicoes": {
+    "descricao": "Proposições legislativas da Câmara com tipo, número, ano, ementa e data de apresentação.",
+    "registros": 3000,
+    "atributos": [
+      "id",
+      "tipo",
+      "numero",
+      "ano",
+      "ementa",
+      "data_apresentacao"
+    ]
+  },
+  "camara_votacoes": {
+    "descricao": "Votações e deliberações da Câmara com data, órgão responsável, descrição e indicador de aprovação.",
+    "registros": 1900,
+    "atributos": [
+      "id",
+      "data",
+      "orgao",
+      "descricao",
+      "aprovacao"
+    ]
+  },
+  "camara_votos_nominais": {
+    "descricao": "Votos nominais de deputados em votações da Câmara, com identificação da votação e posição de cada parlamentar.",
+    "registros": 382,
+    "atributos": [
+      "votacao_id",
+      "votacao_data",
+      "votacao_descricao",
+      "deputado",
+      "partido",
+      "uf",
+      "voto"
+    ]
+  },
+  "consumidor_reclamacoes": {
+    "descricao": "Reclamações de consumidores com UF, assunto, problema reportado e indicação se a empresa respondeu.",
+    "registros": 10000,
+    "atributos": [
+      "uf",
+      "assunto",
+      "problema",
+      "respondida"
+    ]
+  },
+  "ibge_cnae": {
+    "descricao": "Estrutura de códigos CNAE com descrição da atividade e seus agrupamentos por grupo e divisão.",
+    "registros": 673,
+    "atributos": [
+      "codigo",
+      "descricao",
+      "grupo_codigo",
+      "grupo_descricao",
+      "divisao_codigo",
+      "divisao_descricao"
+    ]
+  },
+  "ibge_ipca": {
+    "descricao": "Série histórica do IPCA com variável observada, categoria, período e valor do índice.",
+    "registros": 1200,
+    "atributos": [
+      "variavel",
+      "categoria",
+      "periodo",
+      "valor"
+    ]
+  },
+  "ibge_municipios_ms": {
+    "descricao": "Municípios de Mato Grosso do Sul com identificador IBGE, nome e recortes micro e mesorregionais.",
+    "registros": 79,
+    "atributos": [
+      "id",
+      "nome",
+      "microrregiao",
+      "mesorregiao"
+    ]
+  },
+  "ibge_nomes_censo": {
+    "descricao": "Nomes mais frequentes observados no censo, com frequência acumulada e posição no ranking.",
+    "registros": 20,
+    "atributos": [
+      "nome",
+      "frequencia",
+      "ranking"
+    ]
+  },
+  "ibge_populacao_ms": {
+    "descricao": "População dos municípios de Mato Grosso do Sul por período, com identificador do município e total estimado.",
+    "registros": 79,
+    "atributos": [
+      "municipio_id",
+      "municipio",
+      "periodo",
+      "populacao"
+    ]
+  },
+  "inmet_estacoes": {
+    "descricao": "Estações meteorológicas do INMET com localização geográfica, tipo, situação operacional e período de funcionamento.",
+    "registros": 672,
+    "atributos": [
+      "codigo",
+      "nome",
+      "uf",
+      "tipo",
+      "situacao",
+      "latitude",
+      "longitude",
+      "altitude",
+      "data_inicio",
+      "data_fim"
+    ]
+  },
+  "inpe_queimadas": {
+    "descricao": "Focos de queimadas detectados com localização, data, município, bioma e intensidade estimada via FRP.",
+    "registros": 10000,
+    "atributos": [
+      "latitude",
+      "longitude",
+      "data",
+      "municipio",
+      "uf",
+      "bioma",
+      "frp"
+    ]
+  },
+  "ptransp_bolsafamilia": {
+    "descricao": "Pagamentos do Bolsa Família por município, mês/ano, tipo de benefício, valor total e quantidade de beneficiados.",
+    "registros": 90,
+    "atributos": [
+      "municipio",
+      "uf",
+      "mes_ano",
+      "tipo",
+      "valor",
+      "quantidade_beneficiados"
+    ]
+  },
+  "ptransp_cartoes": {
+    "descricao": "Transações de cartões de pagamento do governo federal com data, valor, estabelecimento, órgão e portador.",
+    "registros": 15,
+    "atributos": [
+      "id",
+      "mes_extrato",
+      "data_transacao",
+      "valor",
+      "tipo_cartao",
+      "estabelecimento",
+      "cnpj_estabelecimento",
+      "orgao",
+      "portador"
+    ]
+  },
+  "ptransp_ceis": {
+    "descricao": "Registros do CEIS com sanções aplicadas, órgão sancionador, pessoa sancionada, processo e fonte da informação.",
+    "registros": 15,
+    "atributos": [
+      "id",
+      "data_inicio",
+      "data_fim",
+      "tipo_sancao",
+      "orgao_sancionador",
+      "sancionado",
+      "numero_processo",
+      "fonte"
+    ]
+  },
+  "ptransp_contratos": {
+    "descricao": "Contratos públicos com órgão contratante, objeto, valores, período de vigência, modalidade e fornecedor.",
+    "registros": 165,
+    "atributos": [
+      "numero",
+      "orgao",
+      "objeto",
+      "valor_inicial",
+      "valor_final",
+      "data_inicio",
+      "data_fim",
+      "modalidade",
+      "fornecedor",
+      "cnpj_fornecedor"
+    ]
+  },
+  "ptransp_convenios": {
+    "descricao": "Convênios e instrumentos congêneres com órgão, convenente, situação, valores e período de execução.",
+    "registros": 58,
+    "atributos": [
+      "id",
+      "codigo",
+      "numero",
+      "objeto",
+      "situacao",
+      "orgao",
+      "convenente",
+      "valor",
+      "valor_liberado",
+      "data_inicio",
+      "data_fim"
+    ]
+  },
+  "ptransp_emendas": {
+    "descricao": "Emendas parlamentares com autor, localidade, função orçamentária e valores empenhados e pagos.",
+    "registros": 30,
+    "atributos": [
+      "codigo_emenda",
+      "ano",
+      "tipo",
+      "autor",
+      "localidade",
+      "funcao",
+      "subfuncao",
+      "valor_empenhado",
+      "valor_pago"
+    ]
+  },
+  "ptransp_licitacoes": {
+    "descricao": "Licitações públicas com número, objeto, datas principais, modalidade, situação, valor e unidade gestora.",
+    "registros": 109,
+    "atributos": [
+      "id",
+      "numero",
+      "objeto",
+      "data_abertura",
+      "data_resultado",
+      "modalidade",
+      "situacao",
+      "valor",
+      "unidade_gestora"
+    ]
+  },
+  "ptransp_servidores": {
+    "descricao": "Pagamentos registrados para pessoas e entidades vinculadas a órgãos públicos, com órgão, município, tipo de pessoa e valor.",
+    "registros": 90,
+    "atributos": [
+      "ano_mes",
+      "nome_pessoa",
+      "tipo_pessoa",
+      "municipio",
+      "uf",
+      "orgao",
+      "orgao_superior",
+      "valor"
+    ]
+  },
+  "ptransp_viagens": {
+    "descricao": "Despesas de viagens a serviço com viajante, cargo, órgão, destino, datas e detalhamento de diárias e passagens.",
+    "registros": 360,
+    "atributos": [
+      "nome",
+      "cargo",
+      "orgao",
+      "destino",
+      "uf_destino",
+      "valor",
+      "valor_diarias",
+      "valor_passagens",
+      "data_ida",
+      "data_volta",
+      "motivo"
+    ]
+  }
+}

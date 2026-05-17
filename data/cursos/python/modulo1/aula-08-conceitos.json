@@ -1,0 +1,76 @@
+{
+  "id": "python-M01-A08-CT",
+  "curso": "python",
+  "modulo": 1,
+  "aula": 8,
+  "numero": 8,
+  "tipo": "Aula",
+  "subtipo": "conceito",
+  "titulo": "Operadores Relacionais e Lógicos",
+  "subtitulo": "Combinando critérios: quando um 'e' ou 'ou' muda tudo",
+  "objetivo": "Usar os operadores relacionais (`>`, `<`, `>=`, `<=`, `==`, `!=`) em combinação com os operadores lógicos (`and`, `or`, `not`) para avaliar condições compostas em sistemas de triagem e validação.",
+  "duracao": "1h30",
+  "tags": [],
+  "secoes": {
+    "abertura": {
+      "objetivo": {
+        "texto_md": "Os critérios da vida real raramente são simples. O Benefício de Prestação Continuada (BPC) exige que a pessoa tenha **deficiência comprovada** OU seja idosa com **65 anos ou mais** E que a renda familiar per capita seja de no máximo **1/4 do salário mínimo**. Traduzindo: são três condições que precisam ser avaliadas em conjunto com `and` e `or`. Nesta aula, você aprenderá a combinar múltiplos critérios em uma única expressão lógica — a base para programar qualquer sistema de triagem do mundo real."
+      },
+      "retomada": {
+        "texto_md": "**O que você já sabe e vai usar hoje:**\n\n* Operadores de comparação `>`, `<`, `>=`, `<=`, `==`, `!=` (Aula 7).\n* Estrutura `if/else` para tomar decisões (Aula 7).\n* Tipos `bool` — valores `True` e `False` (Aula 1)."
+      },
+      "situacao": {
+        "texto_md": "**Dois critérios, uma decisão**\nImagine que um sistema de vacinação prioriza pessoas com 60 anos ou mais **e** que possuam alguma comorbidade registrada. Se o sistema só verificar a idade, idosos sem comorbidade seriam incluídos indevidamente. Se verificar só a comorbidade, adultos jovens de risco seriam priorizados antes dos idosos. O `and` garante que **ambos** os critérios sejam atendidos. Essa lógica combinada é o que torna um sistema público justo e auditável.",
+        "titulo": "O critério que precisa de dois 'e'"
+      },
+      "problematizacao": {
+        "texto_md": "* Pense na lei de isenção de IPTU para idosos: she é válida para quem tem 60 anos **e** renda de até 3 salários mínimos **e** possui um único imóvel. Como traduzimos essa lei em código Python com operadores lógicos?\n* Qual é a diferença entre usar `and` versus `or` quando combinamos critérios de elegibilidade? Que tipo de erro grave pode surgir se usarmos o operador errado?"
+      }
+    },
+    "conceito": {
+      "exemplos": [
+        {
+          "texto_md": "### 2. O operador `not`\n\n`not` **inverte** o valor lógico: transforma `True` em `False` e vice-versa. É útil para verificar a ausência de uma condição:",
+          "python": "# AND: ambas as condições precisam ser True\nidade = 65\nrenda_per_capita = 353.0  # 1/4 do salário mínimo = 353.00\n\nelegivel = (idade >= 65) and (renda_per_capita <= 353.0)\nprint(elegivel)  # True\n\n# OR: basta uma das condições ser True\ntem_deficiencia = False\ntem_65_anos = True\n\nbpc_elegivel = tem_deficiencia or tem_65_anos\nprint(bpc_elegivel)  # True"
+        },
+        {
+          "texto_md": "### 3. Tabela-verdade dos operadores lógicos\n\n| A | B | A and B | A or B | not A |\n|---|---|---|---|---|\n| True | True | True | True | False |\n| True | False | False | True | False |\n| False | True | False | True | True |\n| False | False | False | False | True |\n\nO `and` só resulta `True` quando **ambos** são `True`. O `or` basta um ser `True`.",
+          "python": "cadastro_ativo = False\n\nif not cadastro_ativo:\n    print(\"ALERTA: cadastro inativo — encaminhar para regularização\")"
+        },
+        {
+          "texto_md": "",
+          "python": "# Critério do BPC simplificado\nidade = int(input(\"Idade: \"))\nrenda = float(input(\"Renda per capita (R$): \"))\ntem_deficiencia = input(\"Tem deficiência? (sim/nao): \")\n\ncritério_idoso = (idade >= 65) and (renda <= 353.0)\ncritério_deficiencia = (tem_deficiencia == \"sim\") and (renda <= 353.0)\n\nif critério_idoso or critério_deficiencia:\n    print(\"BPC: ELEGÍVEL\")\nelse:\n    print(\"BPC: NÃO ELEGÍVEL\")"
+        }
+      ],
+      "titulo": "Conceito técnico",
+      "texto_md": "Os operadores lógicos combinam duas ou mais condições booleanas em uma única expressão:"
+    },
+    "pratica_guiada": {
+      "titulo": "Prática guiada",
+      "texto_md": "Vamos construir um validador de senha bancária que exige múltiplos critérios. Acompanhe:",
+      "python": "# Validação de senha bancária\nsenha = input(\"Digite a senha: \")\n\ntem_tamanho_ok = len(senha) >= 6\ntem_numero = any(c.isdigit() for c in senha)  # Prévia: usaremos mais em M2\n\nif tem_tamanho_ok:\n    print(\"Comprimento: OK\")\nelse:\n    print(\"Comprimento: INVÁLIDO (mínimo 6 caracteres)\")\n\nif not tem_tamanho_ok:\n    print(\"Senha rejeitada.\")\nelse:\n    print(\"Senha aceita.\")"
+    },
+    "pratica_autonoma": {
+      "titulo": "Exercício de Continuação (Sua vez!)",
+      "texto_md": "**Enunciado:** Um sistema de habilitação verifica dois critérios para aprovação no DETRAN: a nota teórica deve ser **maior ou igual a 7.0** E a nota prática deve ser **maior ou igual a 6.0**. O programa recebe as duas notas (float). Se ambas forem aprovadas, exibe `Resultado: APROVADO`. Caso contrário, exibe `Resultado: REPROVADO`.\n\n**Entradas e Saídas (Autocorreção):**\n\n| Entrada | Saída | Show |\n|---|---|---|\n| 7.5<br>6.5 | Resultado: APROVADO | Sim |\n| 8.0<br>5.9 | Resultado: REPROVADO | Sim |"
+    },
+    "desafios": {
+      "titulo": "",
+      "texto_md": "",
+      "lista": []
+    },
+    "fechamento": {
+      "titulo": "Fechamento e Autoavaliação",
+      "quiz": {
+        "texto_md": "**1. Qual é o resultado de `(5 > 3) and (2 > 10)`?**\nA) True\nB) False\nC) Erro\n\n::details{summary=\"Ver a resposta correta\"}\n**Correto: B) False.** Com `and`, **ambas** as condições precisam ser `True`. `5 > 3` é `True`, mas `2 > 10` é `False`. `True and False` = `False`.\n::\n\n**2. Qual é o resultado de `(5 > 10) or (3 == 3)`?**\nA) False\nB) Erro\nC) True\n\n::details{summary=\"Ver a resposta correta\"}\n**Correto: C) True.** Com `or`, basta **uma** condição ser `True`. `5 > 10` é `False`, mas `3 == 3` é `True`. `False or True` = `True`.\n::\n\n**3. O que `not True` retorna?**\nA) True\nB) 0\nC) False\n\n::details{summary=\"Ver a resposta correta\"}\n**Correto: C) False.** O operador `not` inverte o valor lógico. `not True` = `False`. `not False` = `True`.\n::"
+      },
+      "leitura_complementar": {
+        "texto_md": "* **Documentação Oficial:** Pesquise por \"Python boolean operations\" para ver a ordem de precedência dos operadores lógicos (`not` > `and` > `or`).\n* **Prática contextual:** Pesquise os critérios do BPC (Benefício de Prestação Continuada) ou do CNIS (Cadastro Nacional de Informações Sociais) e tente traduzir cada critério em uma expressão booleana Python. Isso simulará como os sistemas do INSS realmente funcionam por dentro."
+      },
+      "reflexao": {
+        "texto_md": "* A linguagem lógica dos computadores e a linguagem lógica das leis são surpreendentemente parecidas. Ambas usam `E`, `OU` e `NÃO` para definir quem está incluído ou excluído de uma regra. Quando entendemos essa correspondência, percebemos que programar sistemas públicos não é apenas uma habilidade técnica — é uma forma de **implementar políticas sociais em código**. Quem escolhe as condições do `if` está, de fato, escolhendo quem o sistema vai atender."
+      }
+    }
+  },
+  "premio": null
+}

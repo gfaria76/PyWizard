@@ -1,0 +1,64 @@
+{
+  "id": "python-M01-A02-TV",
+  "curso": "python",
+  "modulo": 1,
+  "aula": 2,
+  "numero": 2,
+  "tipo": "Trilha",
+  "subtipo": "aventura",
+  "titulo": "Trilha da Aventura II: Estrada dos Cálculos",
+  "subtitulo": "5 desafios para casa sobre input, conversão e operadores",
+  "objetivo": "Treinar em casa a interpretação de entrada e a execução de cálculos simples com segurança.",
+  "duracao": "35min",
+  "tags": [
+    "trilha-aventura",
+    "input",
+    "operadores"
+  ],
+  "secoes": {
+    "abertura": {
+      "introducao": {
+        "texto_md": "# Estrada dos Cálculos\n\nNesta trilha para casa, você vai repetir os fundamentos da aula 2 até que a conversão de tipos e os operadores se tornem naturais."
+      }
+    },
+    "preparacao": {
+      "titulo": "Mapa da jornada",
+      "texto_md": "* leia a entrada com atenção;\n* escolha `int()` ou `float()` corretamente;\n* confirme se a operação escolhida faz sentido."
+    },
+    "desafios": {
+      "titulo": "Cinco marcos da estrada",
+      "texto_md": "Cinco desafios de casa para reforçar leitura, cálculo e saída.",
+      "missoes": [
+        {
+          "titulo": "Marco 1: Bilheteria da Vila",
+          "texto_md": "**O Problema:** Receba o preço do ingresso e a quantidade comprada. Imprima `Total: X`.\n\n**Casos de Teste (Amostra):**\n\n| Entrada | Saída | Show |\n|---|---|---|\n| 12.5<br>3 | Total: 37.5 | Sim |\n| 7.0<br>2 | Total: 14.0 | Não |"
+        },
+        {
+          "titulo": "Marco 2: Ponte do Troco",
+          "texto_md": "**O Problema:** Receba o valor pago e o valor da compra. Calcule o troco e imprima `Troco: X`.\n\n**Casos de Teste (Amostra):**\n\n| Entrada | Saída | Show |\n|---|---|---|\n| 50.0<br>32.5 | Troco: 17.5 | Sim |\n| 20.0<br>8.0 | Troco: 12.0 | Não |"
+        },
+        {
+          "titulo": "Marco 3: Relógio do Ferreiro",
+          "texto_md": "**O Problema:** Receba horas trabalhadas e valor da hora. Calcule o pagamento e imprima `Pagamento: X`.\n\n**Casos de Teste (Amostra):**\n\n| Entrada | Saída | Show |\n|---|---|---|\n| 8<br>25.0 | Pagamento: 200.0 | Sim |\n| 6<br>18.5 | Pagamento: 111.0 | Não |"
+        },
+        {
+          "titulo": "Marco 4: Mesa do Refeitório",
+          "texto_md": "**O Problema:** Receba duas notas e calcule a média. Imprima `Media: X`.\n\n**Casos de Teste (Amostra):**\n\n| Entrada | Saída | Show |\n|---|---|---|\n| 7.0<br>9.0 | Media: 8.0 | Sim |\n| 6.0<br>8.0 | Media: 7.0 | Não |"
+        },
+        {
+          "titulo": "Marco 5: Farol do Câmbio",
+          "texto_md": "**O Problema:** Receba um valor em reais e uma taxa de câmbio. Imprima `Convertido: X`.\n\n**Casos de Teste (Amostra):**\n\n| Entrada | Saída | Show |\n|---|---|---|\n| 100.0<br>5.0 | Convertido: 20.0 | Sim |\n| 50.0<br>4.0 | Convertido: 12.5 | Não |"
+        }
+      ]
+    },
+    "fechamento": {
+      "titulo": "Fim da Estrada",
+      "reflexao": {
+        "texto_md": "A repetição consciente transforma conta escolar em ferramenta de programação."
+      }
+    }
+  },
+  "premio": {
+    "pontuacao": 90
+  }
+}

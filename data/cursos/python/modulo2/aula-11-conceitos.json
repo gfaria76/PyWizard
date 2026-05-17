@@ -1,0 +1,73 @@
+{
+  "id": "python-M02-A11-CT",
+  "curso": "python",
+  "modulo": 2,
+  "aula": 11,
+  "numero": 11,
+  "tipo": "Aula",
+  "subtipo": "conceito",
+  "titulo": "Matrizes: índices e precisão",
+  "subtitulo": "Encontrando a coordenada exata do problema",
+  "objetivo": "Utilizar o enumerate() em matrizes para identificar posições e processar dados de forma seletiva (ex: tirar a média de cada linha individualmente).",
+  "duracao": "1h30",
+  "tags": [],
+  "secoes": {
+    "abertura": {
+      "objetivo": {
+        "texto_md": "Na aula passada, aprendemos a percorrer toda a tabela para encontrar os totais. Mas, muitas vezes, saber que \"perdemos dinheiro este mês\" não é suficiente. Precisamos de saber **exatamente em que semana e em que dia** isso aconteceu para podermos reclamar. Além disso, às vezes não queremos o total do mês; queremos o total *de cada semana separadamente* para ver a evolução. Nesta aula, vai aprender a usar os índices e o `enumerate()` dentro das Matrizes. Vamos passar da simples \"leitura\" para a \"precisão cirúrgica\", rastreando as coordenadas exatas da informação."
+      },
+      "retomada": {
+        "texto_md": "* O laço `for` aninhado para matrizes (Aula 9).\n* A função `enumerate()` que entrega a posição e o valor (Aula 4).\n* A lógica para tirar a média (`sum` / `len`)."
+      },
+      "situacao": {
+        "texto_md": "Um analista de armazém encontrou um registro negativo (impossível) no relatório de stock mensal. Ele usou o laço aninhado da Aula 9 e o código imprimiu \"Erro detectado!\". Mas o gerente perguntou: \"Em que prateleira e em que dia ocorreu esse erro?\". Como o código do analista não registava a posição temporal (índices), ele teve de imprimir as 500 linhas da matriz no papel e procurar o erro à mão, perdendo horas preciosas. Saber *o que* aconteceu é bom; saber *onde* aconteceu é o que resolve o problema.",
+        "titulo": "O problema do erro sem endereço"
+      },
+      "problematizacao": {
+        "texto_md": "* O que acontece com a nossa capacidade de intervir na realidade quando temos os dados brutos, mas perdemos as \"coordenadas\" de onde as falhas estão a ocorrer?\n* Como a adoção de índices (`i` e `j`) transforma um programa que apenas \"lê dados\" numa ferramenta de \"auditoria rastreável\", capaz de apontar o dedo exato à raiz da injustiça?"
+      }
+    },
+    "conceito": {
+      "titulo": "Conceito técnico",
+      "texto_md": "",
+      "exemplos": [
+        {
+          "texto_md": "",
+          "python": "# Tabela de temperaturas\ntabela = [\n    [20, 22], # Linha 0\n    [18, 15]  # Linha 1\n]\n\n# i é o índice da linha, j é o índice da coluna\nfor i, linha in enumerate(tabela):\n    for j, valor in enumerate(linha):\n        print(f\"Linha {i}, Coluna {j}: Temperatura de {valor}\")"
+        },
+        {
+          "texto_md": "### 2. O Relatório por Linhas (Isolando as \"Gavetas\")\n\nSe quisermos o total *por semana* em vez do total do mês, temos de reiniciar a nossa matemática sempre que abrirmos uma gaveta nova. O truque é colocar as contas *dentro do primeiro for*, mas *fora do segundo*.",
+          "python": "vendas_semanais = [\n    [10, 20, 30], # Semana 1\n    [5, 5, 5]     # Semana 2\n]\n\nfor i, semana in enumerate(vendas_semanais):\n    # A conta reinicia para cada semana!\n    total_semana = sum(semana)\n    print(f\"Total da Semana {i}: {total_semana} euros\")"
+        }
+      ]
+    },
+    "pratica_guiada": {
+      "titulo": "Prática guiada",
+      "texto_md": "Vamos criar um radar de problemas. O sistema vai analisar a matriz de produção e avisar-nos EXATAMENTE onde a máquina produziu 0 peças, dando as coordenadas para o engenheiro ir consertar.",
+      "python": "producao = [\n    [100, 100, 100],\n    [100, 0, 100],  # A falha está aqui (Linha 1, Coluna 1)\n    [100, 100, 100]\n]\n\nfalhas = 0\n\nfor linha_id, semana in enumerate(producao):\n    for col_id, pecas in enumerate(semana):\n        \n        if pecas == 0:\n            print(f\"ALERTA CRÍTICO: Falha na Semana {linha_id}, Dia {col_id}!\")\n            falhas += 1\n\nif falhas == 0:\n    print(\"Produção imaculada.\")\nelse:\n    print(f\"Total de {falhas} coordenadas reportadas para manutenção.\")"
+    },
+    "pratica_autonoma": {
+      "titulo": "Exercício de Continuação (A sua vez!)",
+      "texto_md": "**Enunciado:** O sistema recebe uma matriz de inteiros. Percorra as linhas e utilize as funções `sum()` e `len()` APENAS na linha para calcular a média daquela linha específica. Imprima o resultado de cada linha no formato `Linha X: Y`.\n\n**Entradas e Saídas (Autocorreção):**\n\n| Entrada | Saída | Show | \n|---|---|---| \n| [[10, 20], [30, 40]] | Linha 0: 15.0<br>Linha 1: 35.0 | Sim | \n| [[5, 5], [10, 10]] | Linha 0: 5.0<br>Linha 1: 10.0 | Sim |"
+    },
+    "desafios": {
+      "titulo": "",
+      "texto_md": "",
+      "lista": []
+    },
+    "fechamento": {
+      "titulo": "Fechamento e Autoavaliação",
+      "texto_md": "Teste o seu domínio sobre o rastreamento dos dados!",
+      "quiz": {
+        "texto_md": "A) Para tornar o código complexo e validar o uso de variáveis.\nB) Para garantir que capturamos tanto o número da linha (`i`) como o número da coluna (`j`), sabendo exatamente as coordenadas de onde o valor foi lido na memória.\nC) Apenas para converter os números para texto.\n\n::details{summary=\"Ver a resposta correta\"}\n**Correto: B.** Num mundo a duas dimensões, precisamos de um GPS duplo: \"Foi na semana X, no dia Y\". O `enumerate` duplo é esse GPS.\n::\n\n**2. Quando queremos fazer um relatório onde os totais ou as médias são calculados \"linha a linha\" (semana a semana), onde deve ser colocada a variável acumuladora (ex: `soma = 0`)?**\nA) Fora de todos os laços, na primeira linha do programa.\nB) Logo após o primeiro `for` (antes do segundo). Assim, a cada nova \"linha/semana\" que for aberta, o acumulador volta a zerar para não misturar com as contas da semana anterior.\nC) Dentro do segundo `for`.\n\n::details{summary=\"Ver a resposta correta\"}\n**Correto: B.** O sítio onde as variáveis nascem define como a matemática funciona. Zerar o contador ao abrir a gaveta garante que contamos apenas os papéis daquela gaveta!\n::\n\n**3. Se construir uma lista secundária que vai guardando as somas de cada linha da matriz, qual é o superpoder que ganha a seguir?**\nA) Pode apagar a matriz original sem perder os dados primários.\nB) O programa converte as listas para o Excel automaticamente.\nC) Pode facilmente percorrer essa nova lista de somas usando os índices e comparar o total desta semana com o total da semana passada, sem ter de olhar de novo para os dias avulsos.\n\n::details{summary=\"Ver a resposta correta\"}\n**Correto: C.** Simplificar dimensões. Pegar numa matriz pesada, reduzi-la a uma lista simples de totais, e depois investigar essa nova lista, é uma das táticas de auditoria mais fortes na programação.\n::"
+      },
+      "leitura_complementar": {
+        "texto_md": "* **Documentação Oficial:** Explore funções avançadas de procura e min/max. Muitas linguagens de Data Science (como o Pandas em Python) foram criadas precisamente para evitar que tenha de escrever o `for` aninhado à mão sempre que precisar de uma coordenada!\n* **Prática Diária:** Pense na disposição de um supermercado. É uma matriz perfeita. Cada corredor é a linha `i`, cada prateleira é a coluna `j`. Como escreveria as coordenadas para encontrar o azeite mais barato?"
+      },
+      "reflexao": {
+        "texto_md": "* A precisão é a arma de quem quer justiça. Saber que um erro aconteceu num mês não o ajuda a questionar o chefe; saber exatamente que o erro aconteceu \"na Linha 2, Coluna 4\" (na terceira semana de trabalho, à quinta-feira) retira qualquer argumento à contraparte. Dominar as coordenadas através de técnicas como o `enumerate` aninhado devolve-lhe a capacidade de não aceitar uma resposta genérica. Você passa a ter os dados localizados com exatidão cirúrgica."
+      }
+    }
+  },
+  "premio": null
+}

@@ -1,0 +1,76 @@
+{
+  "id": "python-M02-A01-CT",
+  "curso": "python",
+  "modulo": 2,
+  "aula": 1,
+  "numero": 1,
+  "tipo": "Aula",
+  "subtipo": "conceito",
+  "titulo": "Listas: criação, acesso e métodos básicos",
+  "subtitulo": "Organizando os dados da nossa rotina para enxergar padrões",
+  "objetivo": "Compreender como agrupar dados do cotidiano (como contas, horas de trabalho e preços) em listas, acessar posições e manipular essas informações com métodos básicos.",
+  "duracao": "1h30",
+  "tags": [],
+  "secoes": {
+    "abertura": {
+      "objetivo": {
+        "texto_md": "No dia a dia, corremos tanto que mal conseguimos observar os padrões da nossa própria rotina — seja no orçamento de casa, no suor do nosso trabalho ou nos custos de manter um pequeno negócio. Nesta aula, você aprenderá a usar as **Listas** em Python: uma ferramenta para organizar informações que estão espalhadas e agrupá-las em um único lugar. Quando colocamos os dados lado a lado e criamos um histórico, a névoa da rotina some. Fica mais fácil analisar a realidade, perceber discrepâncias que antes passavam despercebidas e buscar soluções lógicas para problemas reais."
+      },
+      "retomada": {
+        "texto_md": "**O que você já sabe e vai usar hoje:**\n\n* Variáveis, tipos e `input()` do Módulo I.\n* Conversão e formatação de saída com `print()`."
+      },
+      "situacao": {
+        "titulo": "O problema de olhar um dia de cada vez",
+        "texto_md": "Imagine que uma família ou um pequeno comerciante decida anotar o valor gasto com a cesta básica ou com a conta de luz. Sem conhecer as listas, a pessoa criaria uma anotação solta para cada mês: `mes1 = 650`, `mes2 = 680`, `mes3 = 710`.\nOlhando um mês isolado, parece só \"um pouco mais caro\". Mas com as anotações soltas, a visão do cenário completo se perde. O código fica gigantesco e comparar o primeiro mês com o último exige um esforço enorme."
+      },
+      "problematizacao": {
+        "texto_md": "* O que acontece com a nossa capacidade de planejamento e análise quando olhamos apenas para o dado isolado do momento, sem ver o histórico completo?\n* Quando agrupamos nossos dados em uma linha do tempo (uma lista) e notamos, por exemplo, o custo de vida subindo enquanto o valor da nossa hora de trabalho continua o mesmo: por que você acha que essa discrepância acontece na prática? Qual seria o cenário matemático justo para o esforço valer a pena?"
+      }
+    },
+    "conceito": {
+      "titulo": "Conceito técnico",
+      "texto_md": "## Conceito técnico\n\n### 1. O que são listas e índices\n\nUma lista é uma coleção ordenada que guarda vários valores em uma única variável. Em Python, listas são criadas com colchetes `[ ]`.\n\nCada item ocupa uma posição, chamada de **índice**. O primeiro item **sempre** fica no índice `0` e o último pode ser acessado rapidamente pelo índice `-1`.",
+      "exemplos": [
+        {
+          "texto_md": "",
+          "python": "# Registrando o valor da conta de energia dos últimos 5 meses\nconta_luz = [120, 135, 150, 180, 210]\n\nprint(conta_luz[0])   # Primeiro mês: 120\nprint(conta_luz[2])   # Terceiro mês: 150\nprint(conta_luz[-1])  # Último mês: 210\n\n# Corrigindo um registro que foi anotado errado\nconta_luz[2] = 155"
+        },
+        {
+          "texto_md": "### 2. Lendo listas inteiras\n\nPara acelerar nossos testes lógicos nesta etapa do curso, podemos pedir ao usuário que digite a lista inteira de uma vez utilizando a função `eval()` junto ao `input()`:",
+          "python": "lista_gastos = eval(input(\"Digite a lista de gastos (ex: [100, 200, 300]): \"))\nprint(\"O histórico registrado foi:\", lista_gastos)"
+        },
+        {
+          "texto_md": "### 3. Modificando a Realidade: Métodos Básicos\n\nNossas rotinas mudam. Uma nova despesa entra, uma dívida é quitada e sai do papel, um registro é corrigido. Para isso usamos os métodos:\n\n| Método | O que faz na prática | Exemplo de código |\n| ----- | ----- | ----- |\n| `append(x)` | Adiciona um item no **final** do histórico. | `lista.append(150)` |\n| `insert(i, x)` | Insere um item na **posição exata** `i` desejada. | `lista.insert(1, 80)` |\n| `remove(x)` | Busca e remove a **primeira ocorrência** de um valor. | `lista.remove(250)` |\n| `pop()` | Remove e retorna o **último item** (ou de um índice específico). | `valor = lista.pop(0)` |",
+          "python": "# Exemplo rápido de métodos básicos\ndespesas = [120, 90, 150]\ndespesas.append(200)\ndespesas.insert(1, 80)\ndespesas.remove(90)\nultimo = despesas.pop()\nprint(despesas)\nprint(ultimo)"
+        }
+      ]
+    },
+    "pratica_guiada": {
+      "titulo": "Prática guiada",
+      "texto_md": "Vamos testar os métodos observando o comportamento de um controle de despesas. Acompanhe a lógica e teste no seu editor de código:",
+      "python": "# 1. Recebemos o histórico de despesas do sistema\ndespesas = eval(input(\"Digite as despesas atuais: \"))\nprint(f\"O primeiro gasto registrado foi: {despesas[0]}\")\nprint(f\"O último gasto registrado foi: {despesas[-1]}\")\n\n# 2. Chegou uma nova conta inesperada no fim do mês\nnova_conta = input(\"Qual o valor da nova conta? \")\ndespesas.append(nova_conta)\n\n# 3. O primeiro gasto (índice 0) foi pago e saiu da nossa pendência\npago = despesas.pop(0)\n\nprint(f\"Conta que acabamos de quitar: {pago}\")\nprint(f\"Despesas pendentes atualizadas: {despesas}\")"
+    },
+    "pratica_autonoma": {
+      "titulo": "Exercício de Continuação (Sua vez!)",
+      "texto_md": "**Enunciado:** Você está construindo um sistema para ajudar uma família a monitorar os valores das compras de mercado ao longo do mês. O programa recebe a lista atualizada com os valores das compras já realizadas. Uma nova compra no valor de `999` reais acaba de ser feita e deve ser registrada no final desta lista. Simultaneamente, a família decide devolver/cancelar a primeira compra da lista (índice 0). O programa deve exibir como ficou a lista final de compras válidas do mês.\n\n**Entradas e Saídas (Autocorreção):**\n\n| Entrada | Saída | Show |\n|---|---|---|\n| [101, 102, 103] | [102, 103, 999] | Sim |\n| [55, 66] | [66, 999] | Sim |"
+    },
+    "desafios": {
+      "titulo": "",
+      "texto_md": "",
+      "lista": []
+    },
+    "fechamento": {
+      "titulo": "Fechamento e Autoavaliação",
+      "quiz": {
+        "texto_md": "**1. Em Python, qual índice representa o primeiro item de uma lista?**\nA) 0\nB) 1\nC) -1\n\n::details{summary=\"Ver a resposta correta\"}\n**Correto: A) 0.** Na programação, as posições dos índices começam sempre do zero.\n::\n\n**2. Qual método adiciona um novo item ao final da lista?**\nA) remove()\nB) append()\nC) pop()\n\n::details{summary=\"Ver a resposta correta\"}\n**Correto: B) append().** Este método insere (\"anexa\") o elemento na última posição.\n::\n\n**3. O método pop() faz o quê?**\nA) Apenas consulta o último item\nB) Ordena a lista automaticamente\nC) Remove e retorna um item\n\n::details{summary=\"Ver a resposta correta\"}\n**Correto: C) Remove e retorna um item.** Ele retira o valor da lista e devolve-o para que possamos guardá-lo numa variável e processá-lo.\n::"
+      },
+      "leitura_complementar": {
+        "texto_md": "* **Documentação Oficial:** Pesquise pela documentação oficial do Python sobre estruturas de dados para rever os exemplos sobre listas e métodos básicos.\n* **Material de apoio da disciplina:** Reveja os exemplos de entrada de dados com `eval(input())` já vistos em sala.\n* **Para praticar:** Crie listas baseadas no seu cotidiano financeiro. Registre suas horas extras trabalhadas na semana contra o lucro gerado na loja onde você atua, ou anote o aumento percentual dos 5 itens que você mais compra no mercado. Teste aplicar `append()`, `pop()` e índices para manipular essas realidades no código."
+      },
+      "reflexao": {
+        "texto_md": "* Observar um número isolado nos anestesia; observar um conjunto de dados revela uma história. Se aplicarmos a lógica das listas ao longo de anos, perceberíamos discrepâncias claras (como gráficos de salários versus gráficos de custo de produtos básicos). Aprender a programar é, no fundo, aprender a enxergar esses padrões estruturais que compõem o nosso dia a dia, ganhando o poder técnico e analítico de questioná-los logicamente."
+      }
+    }
+  },
+  "premio": null
+}

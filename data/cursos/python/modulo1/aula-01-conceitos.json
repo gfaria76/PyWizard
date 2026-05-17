@@ -1,0 +1,72 @@
+{
+  "id": "python-M01-A01-CT",
+  "curso": "python",
+  "modulo": 1,
+  "aula": 1,
+  "numero": 1,
+  "tipo": "Aula",
+  "subtipo": "conceito",
+  "titulo": "Variáveis e Tipos Básicos",
+  "subtitulo": "O começo de tudo: armazenando informações do mundo real",
+  "objetivo": "Entender os tipos básicos do Python (int, float, str, bool) e criar variáveis para armazenar dados de sistemas públicos brasileiros.",
+  "duracao": "1h30",
+  "tags": [
+    "variáveis",
+    "tipos de dados",
+    "dados governamentais"
+  ],
+  "secoes": {
+    "abertura": {
+      "objetivo": {
+        "texto_md": "Antes de criarmos sistemas complexos para analisar dados gigantescos do governo, precisamos entender como o computador lembra das coisas. Quando você joga um jogo, ele lembra seu HP, sua mana e seu nome. Ele faz isso usando **variáveis**. Hoje, aprenderemos a capturar pedaços da realidade e guardá-los na memória do nosso código."
+      },
+      "situacao": {
+        "texto_md": "Imagine que você precisa calcular o salário de um funcionário. Onde o valor \"1500\" fica guardado enquanto o cálculo de impostos não termina? Sem variáveis, o computador esquece a informação no segundo seguinte.",
+        "titulo": "Onde guardamos a informação?"
+      },
+      "problematizacao": {
+        "texto_md": "* Se tudo que um computador faz é manipular memória, como o Python representa os diferentes tipos de informação (texto, número, verdadeiro/falso)?\n* Por que o Python precisa saber se algo é `int` ou `float` antes de fazer um cálculo?"
+      }
+    },
+    "conceito": {
+      "titulo": "Conceito técnico",
+      "texto_md": "Uma variável é como uma caixa com uma etiqueta. Você dá um nome à caixa e guarda um valor dentro dela. O Python suporta vários tipos básicos de dados, cada um apropriado para diferentes funções.",
+      "exemplos": [
+        {
+          "texto_md": "**Criando nossa primeira variável**\n\nO sinal de igual (`=`) significa ATRIBUIÇÃO (o lado esquerdo RECEBE o valor do lado direito).",
+          "python": "# Criando nossa primeira variável\nnome_jogador = \"Arthur\"\nnivel_atual = 1\nmoedas = 15.50\n\n# Lemos: A variável nivel_atual RECEBE o valor 1"
+        },
+        {
+          "texto_md": "**Tipos de Dados Básicos**\n\nO computador precisa saber o \"formato\" daquele dado para saber o que pode fazer com ele:\n\n* **Inteiros (`int`)**: Números sem casas decimais. Ex: `1`, `-5`, `100`.\n* **Decimais (`float`)**: Números com casas decimais (ponto, não vírgula). Ex: `15.50`, `3.14`.\n* **Texto (`str`)**: Qualquer coisa entre aspas. Ex: `\"Arthur\"`, `\"12345\"`.\n* **Lógicos (`bool`)**: Verdadeiro ou falso. Ex: `True`, `False`.",
+          "python": "vida = 100         # int\ndano_critico = 2.5 # float\nnome_boss = \"Orc\"  # str\nchefao_derrotado = False # bool\n\nprint(type(vida))  # <class 'int'>\nprint(type(nome_boss))  # <class 'str'>"
+        }
+      ]
+    },
+    "pratica_guiada": {
+      "titulo": "Prática guiada",
+      "texto_md": "Vamos guardar informações de um servidor público. Abra seu editor e execute:",
+      "python": "# Registrando um servidor público\nsalario = 2500.00\nnome_cargo = \"Analista de Dados\"\nani_ativo = True\nmatricula = 45821\n\nprint(\"Salário:\", salario)\nprint(\"Cargo:\", nome_cargo)\nprint(\"Matricula:\", matricula)\nprint(\"Ainda ativo?\", ativ_ativo)"
+    },
+    "pratica_autonoma": {
+      "texto_md": "**Enunciado:** Um cidadão foi à prefeitura registrar seu negócio. Crie as variáveis para armazenar: nome da empresa (`\"Padaria Central\"`), ano de fundação (`2024`), capital inicial (`5000.50`). Após criar, exiba usando `print()`.\n\n**Entrada e Saída:**\n\n| Variáveis | Saída | Show |\n|---|---|---|\n| nome=\"Padaria\", ano=2024, capital=5000.50 | Empresa: Padaria<br>Ano: 2024<br>Capital: 5000.50 | Sim |",
+      "titulo": "Exercício de Continuação (Sua vez!)"
+    },
+    "desafios": {
+      "titulo": "",
+      "texto_md": "",
+      "lista": []
+    },
+    "fechamento": {
+      "titulo": "Fechamento e Autoavaliação",
+      "quiz": {
+        "texto_md": "**1. O que é uma variável em Python?**\nA) Um valor fixo que nunca muda\nB) Um nome que aponta para um espaço na memória onde guardamos um valor\nC) Uma função matemática\n\n::details{summary=\"Ver a resposta correta\"}\n**Correto: B.** Uma variável é uma etiqueta que você cola em uma caixa de memória. Você pode mudar o conteúdo.\n::\n\n**2. Qual é o tipo de dado de `valor = \"1500\"`?**\nA) int\nB) float\nC) str\n\n::details{summary=\"Ver a resposta correta\"}\n**Correto: C) str.** Qualquer coisa entre aspas é string, mesmo que pareça um número.\n::\n\n**3. O que o sinal `=` faz em Python?**\nA) Verifica se dois valores são iguais\nB) Atribui um valor a uma variável\nC) Soma valores\n\n::details{summary=\"Ver a resposta correta\"}\n**Correto: B.** `=` é atribuição. Para comparar, use `==`.\n::"
+      },
+      "leitura_complementar": {
+        "texto_md": "* **Documentação:** Pesquise \"Python built-in types\" para ver a lista completa de tipos nativos.\n* **Prática:** Pense em um formulário (Cadastro Único) e modele cada campo como variável Python com tipo correto."
+      },
+      "reflexao": {
+        "texto_md": "* Variáveis são o vocabulário básico de qualquer sistema computacional. Quando um registro do INSS guarda sua data de nascimento, seu tempo de contribuição e seu salário, cada um é uma variável com tipo específico. Entender tipos não é apenas sintaxe — é entender como a realidade é representada na máquina."
+      }
+    }
+  }
+}

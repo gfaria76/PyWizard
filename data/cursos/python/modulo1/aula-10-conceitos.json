@@ -1,0 +1,72 @@
+{
+  "id": "python-M01-A10-CT",
+  "curso": "python",
+  "modulo": 1,
+  "aula": 10,
+  "numero": 10,
+  "tipo": "Aula",
+  "subtipo": "conceito",
+  "titulo": "Decisões Múltiplas: Elif",
+  "subtitulo": "Quando há mais de dois caminhos: classificação em faixas",
+  "objetivo": "Usar `elif` para estruturar cadeias de decisão com múltiplos caminhos exclusivos, aplicando classificações por faixas (salariais, etárias, de risco) em contextos de políticas públicas.",
+  "duracao": "1h30",
+  "tags": [],
+  "secoes": {
+    "abertura": {
+      "objetivo": {
+        "texto_md": "O imposto de renda não tem apenas duas faixas. A faixa etária de risco para doenças não é só `menor de 60` ou `maior de 60`. O índice de reprovação de uma escola não é apenas `crítico` ou `normal`. O mundo real opera em **faixas** — e para cada faixa, existe uma resposta diferente. A estrutura `elif` permite criar uma cadeia de condições exclusivas, onde o código segue exatamente **um** dos caminhos possíveis. Nesta aula, você aprenderá a classificar dados em múltiplas categorias — a base técnica de qualquer sistema de triagem graduada."
+      },
+      "retomada": {
+        "texto_md": "**O que você já sabe e vai usar hoje:**\n\n* Estrutura `if/else` para decisões binárias (Aula 7).\n* Operadores relacionais e lógicos `and`, `or`, `not` (Aula 8).\n* Formatação com f-strings (Aula 4)."
+      },
+      "situacao": {
+        "texto_md": "**A tabela do IRPF em código**\nA Receita Federal define cinco faixas de tributação para o Imposto de Renda Pessoa Física em 2024: isento (até R$ 2.259,20), 7,5%, 15%, 22,5% e 27,5%. Se usássemos apenas `if/else`, precisaríamos de condicionais aninhados muito confusos. Com `elif`, a lógica fica linear, legível e diretamente mapeável para o decreto legal. Hoje vamos construir exatamente isso.",
+        "titulo": "A tabela do IRPF em código"
+      },
+      "problematizacao": {
+        "texto_md": "* Por que usar múltiplos `if` separados para verificar faixas salariais pode ser lógicamente perigoso? O que acontece se um valor cair em mais de uma condição?\n* Se a tabela do IRPF mudar (como muda todo ano), que vantagem tem um código com `elif` em termos de manutenção versus um código com lógica espalhada em múltiplos `if` independentes?"
+      }
+    },
+    "conceito": {
+      "exemplos": [
+        {
+          "texto_md": "### 2. A diferença entre `elif` e múltiplos `if`\n\n**ERRADO (múltiplos `if` independentes — pode executar mais de um bloco):**\n```python\nif nota >= 9: print(\"Conceito A\")\nif nota >= 7: print(\"Conceito B\")  # Executa mesmo se já imprimiu A!\nif nota >= 5: print(\"Conceito C\")  # Problema!\n```\n\n**CORRETO (cadeia `elif` — exatamente um bloco executa):**\n```python\nif nota >= 9: print(\"Conceito A\")\nelif nota >= 7: print(\"Conceito B\")\nelif nota >= 5: print(\"Conceito C\")\nelse: print(\"Conceito D\")\n```",
+          "python": "# Classificação de índice de qualidade do ar (IQA)\niqua = float(input(\"Índice de qualidade do ar: \"))\n\nif iqua <= 40:\n    classificacao = \"Boa\"\nelif iqua <= 80:\n    classificacao = \"Moderada\"\nelif iqua <= 120:\n    classificacao = \"Ruim para grupos sensíveis\"\nelif iqua <= 200:\n    classificacao = \"Ruim\"\nelse:\n    classificacao = \"Muito Ruim / Perigosa\"\n\nprint(f\"IQA: {iqua} — Qualidade: {classificacao}\")"
+        },
+        {
+          "texto_md": "",
+          "python": "# Tabela simplificada do IRPF 2024\nsalario_mensal = float(input(\"Salário mensal bruto (R$): \"))\n\nif salario_mensal <= 2259.20:\n    aliquota = 0.0\n    faixa = \"Isento\"\nelif salario_mensal <= 2826.65:\n    aliquota = 0.075\n    faixa = \"7.5%\"\nelif salario_mensal <= 3751.05:\n    aliquota = 0.15\n    faixa = \"15%\"\nelif salario_mensal <= 4664.68:\n    aliquota = 0.225\n    faixa = \"22.5%\"\nelse:\n    aliquota = 0.275\n    faixa = \"27.5%\"\n\nimposto = salario_mensal * aliquota\nprint(f\"Faixa: {faixa}\")\nprint(f\"Imposto estimado: R$ {imposto:.2f}\")"
+        }
+      ],
+      "titulo": "Conceito técnico",
+      "texto_md": "O `elif` (abreviação de \"else if\") cria um novo teste de condição que só é avaliado se **todas as condições anteriores foram falsas**. Quando uma condição é verdadeira, o bloco correspondente é executado e todos os `elif` e `else` seguintes são **ignorados automaticamente**."
+    },
+    "pratica_guiada": {
+      "titulo": "Prática guiada",
+      "texto_md": "Vamos construir um classificador de risco de desmatamento baseado em percentual de cobertura florestal. Acompanhe:",
+      "python": "# Classificador de risco de desmatamento (dados INPE)\npercentual_cobertura = float(input(\"Cobertura florestal restante (%): \"))\n\nif percentual_cobertura >= 80:\n    risco = \"BAIXO\"\nelif percentual_cobertura >= 60:\n    risco = \"MODERADO\"\nelif percentual_cobertura >= 40:\n    risco = \"ALTO\"\nelse:\n    risco = \"CRITICO — EMERGÊNCIA AMBIENTAL\"\n\nprint(f\"Cobertura: {percentual_cobertura:.1f}%\")\nprint(f\"Nível de risco: {risco}\")"
+    },
+    "pratica_autonoma": {
+      "titulo": "Exercício de Continuação (Sua vez!)",
+      "texto_md": "**Enunciado:** Um sistema de saúde classifica o IMC (Índice de Massa Corporal) em categorias. O programa recebe o IMC (float). Classifique: `Abaixo do peso` (< 18.5), `Normal` (≥ 18.5 e < 25.0), `Sobrepeso` (≥ 25.0 e < 30.0), `Obesidade` (≥ 30.0). Exiba `IMC: CATEGORIA`.\n\n**Entradas e Saídas (Autocorreção):**\n\n| Entrada | Saída | Show |\n|---|---|---|\n| 17.0 | IMC: Abaixo do peso | Sim |\n| 22.0 | IMC: Normal | Sim |"
+    },
+    "desafios": {
+      "titulo": "",
+      "texto_md": "",
+      "lista": []
+    },
+    "fechamento": {
+      "titulo": "Fechamento e Autoavaliação",
+      "quiz": {
+        "texto_md": "**1. Quando o bloco de um `elif` é executado?**\nA) Sempre, independentemente das condições anteriores.\nB) Apenas quando o `if` anterior também foi verdadeiro.\nC) Apenas quando todas as condições anteriores (`if` e `elif` anteriores) foram falsas e a sua condição é verdadeira.\n\n::details{summary=\"Ver a resposta correta\"}\n**Correto: C.** O `elif` só é avaliado se o `if` (e todos os `elif` anteriores) foram `False`. É um mecanismo de exclusão mútua.\n::\n\n**2. Em uma cadeia `if/elif/elif/else`, quantos blocos podem ser executados no máximo?**\nA) Todos os blocos que tiverem condição verdadeira.\nB) Apenas um — o primeiro cuja condição for verdadeira (ou o `else` se nenhum for).\nC) Dois: o `if` e o `else`.\n\n::details{summary=\"Ver a resposta correta\"}\n**Correto: B.** Em uma cadeia `if/elif/..../else`, exatamente **um** bloco é executado. Isso garante que as faixas sejam mutuamente exclusivas.\n::\n\n**3. Qual o problema de usar múltiplos `if` independentes para classificar faixas de valor?**\nA) O Python proíbe múltiplos `if` seguidos.\nB) Pode executar mais de um bloco se o valor se enquadrar em mais de uma condição, gerando saídas incorretas.\nC) Fica mais rápido mas menos legível.\n\n::details{summary=\"Ver a resposta correta\"}\n**Correto: B.** Com múltiplos `if` independentes, cada condição é avaliada separadamente. Um valor de `nota = 9` satisfaria `nota >= 9`, `nota >= 7` e `nota >= 5` ao mesmo tempo, imprimindo três conceitos ao invés de um.\n::"
+      },
+      "leitura_complementar": {
+        "texto_md": "* **Documentação Oficial:** Pesquise \"Python elif\" para entender o conceito de fluxo de controle e como o Python avalia as condições em sequência.\n* **Prática contextual:** Acesse o site da Receita Federal e encontre a tabela progressiva do IRPF atual. Tente codificar a tabela completa (com deduções progressivas) usando `elif`. Depois, compare com a tabela do ano anterior — que linhas de código precisariam mudar?"
+      },
+      "reflexao": {
+        "texto_md": "* As tabelas progressivas do IRPF existem para que quem ganha mais pague proporcionalmente mais. É um critério de **justiça fiscal** codificado em lei. Quando você aprende a implementar `elif`, você está, na prática, aprendendo a programar política tributária. Sistemas de arrecadação, triagem de saúde, ranqueamento de candidatos em concursos públicos — todos usam exatamente essa estrutura. Entender o código é entender as regras que regem quem paga o quê e quem recebe o quê."
+      }
+    }
+  },
+  "premio": null
+}

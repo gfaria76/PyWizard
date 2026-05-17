@@ -1,0 +1,81 @@
+{
+  "id": "python-M03-A08-CT",
+  "curso": "python",
+  "modulo": 3,
+  "aula": 8,
+  "numero": 8,
+  "tipo": "Aula",
+  "subtipo": "conceito",
+  "titulo": "Escopo Local vs Global",
+  "subtitulo": "Onde variaveis nascem, vivem e deixam de interferir",
+  "objetivo": "Distinguir escopo local e global, evitar dependencia de estado compartilhado e escrever funcoes previsiveis que se comportam igual em chamadas repetidas.",
+  "duracao": "1h30",
+  "tags": [
+    "escopo",
+    "variaveis",
+    "global",
+    "estado"
+  ],
+  "secoes": {
+    "abertura": {
+      "objetivo": {
+        "texto_md": "Quando variavel global vira atalho padrao, o sistema parece pratico no inicio e imprevisivel depois. Um resultado muda sem motivo aparente porque algum ponto distante alterou o mesmo estado. Escopo e justamente a disciplina que impede esse tipo de opacidade. Nesta aula, voce vai escrever funcoes que nao dependem de sorte nem ordem acidental de execucao."
+      },
+      "retomada": {
+        "texto_md": "**Inventario que voce traz:**\n\n* Parametros e retorno para troca explicita de dados.\n* Lacos e acumuladores locais em funcoes.\n* Mutabilidade e efeitos colaterais das aulas anteriores."
+      },
+      "situacao": {
+        "titulo": "O contador contaminado",
+        "texto_md": "Uma rotina de auditoria contava registros invalidos usando variavel global. No primeiro lote, o numero saiu correto. No segundo, o contador ja começou alto por causa da execucao anterior. O erro nao era matematico; era de arquitetura de escopo."
+      },
+      "problematizacao": {
+        "texto_md": "* Por que funcao dependente de global e mais dificil de testar e validar?\n* Em uma base grande, como rastrear com seguranca quem alterou uma global por ultimo?"
+      }
+    },
+    "conceito": {
+      "titulo": "Conceito tecnico",
+      "texto_md": "Variavel local existe apenas dentro da funcao durante aquela chamada. Variavel global existe no nivel do arquivo e pode ser lida de varios pontos. Regra recomendada: receber por parametro, processar com variaveis locais e devolver por `return`. Isso reduz acoplamento e aumenta previsibilidade.",
+      "exemplos": [
+        {
+          "texto_md": "### 1. Escopo local puro",
+          "python": "def somar(a, b):\n    total = a + b\n    return total\n\nprint(somar(3, 4))"
+        },
+        {
+          "texto_md": "### 2. Leitura de global sem alteracao",
+          "python": "taxa_padrao = 0.1\n\ndef calcular_bonus(venda):\n    return venda * taxa_padrao\n\nprint(calcular_bonus(500.0))"
+        },
+        {
+          "texto_md": "### 3. Versao segura sem global",
+          "python": "def calcular_bonus_seguro(venda, taxa):\n    bonus = venda * taxa\n    return bonus\n\nprint(calcular_bonus_seguro(500.0, 0.1))"
+        }
+      ]
+    },
+    "pratica_guiada": {
+      "titulo": "Pratica guiada",
+      "texto_md": "Vamos substituir uma abordagem com estado escondido por uma funcao deterministica que sempre recomeça limpa.",
+      "python": "def contar_maiores(valores, limite):\n    contador = 0\n    for valor in valores:\n        if valor > limite:\n            contador += 1\n    return contador\n\nlote_a = [10, 50, 70, 20]\nlote_b = [100, 30, 20]\n\nprint(f'Lote A: {contar_maiores(lote_a, 40)}')\nprint(f'Lote B: {contar_maiores(lote_b, 40)}')"
+    },
+    "pratica_autonoma": {
+      "titulo": "Exercicio de Continuacao (Sua vez!)",
+      "texto_md": "**Enunciado:** Crie `somar_positivos(valores)` usando apenas variaveis locais e retorne a soma dos itens positivos. Imprima `Soma positiva: X.XX`.\n\n| Entrada Oculta (`valores`) | Saida Esperada | Show |\n|---|---|---|\n| `[1.0, -2.0, 4.0]` | Soma positiva: 5.00 | Sim |\n| `[-5.0, -1.0]` | Soma positiva: 0.00 | Sim |\n| `[10.0, 0.0, 2.5]` | Soma positiva: 12.50 | Nao |"
+    },
+    "desafios": {
+      "titulo": "",
+      "texto_md": "",
+      "lista": []
+    },
+    "fechamento": {
+      "titulo": "Fechamento e Autoavaliacao",
+      "quiz": {
+        "texto_md": "**1. Onde variavel local existe?**\nA) Apenas dentro da funcao onde foi criada.\nB) Em todos os arquivos do projeto.\nC) So no `print()`.\n\n::details{summary=\"Ver a resposta correta\"}\n**Correto: A.** Escopo local limita acesso e interferencia.\n::\n\n**2. Qual sintoma comum de dependencia global?**\nA) Resultado muda entre chamadas sem alterar entrada.\nB) Codigo sempre mais rapido.\nC) Funcao nao precisa de retorno.\n\n::details{summary=\"Ver a resposta correta\"}\n**Correto: A.** Estado compartilhado pode contaminar execucoes.\n::\n\n**3. Qual desenho recomendado para funcoes previsiveis?**\nA) Ler e alterar globais em varios pontos.\nB) Receber parametros, processar localmente e retornar resultado.\nC) Remover parametros para simplificar.\n\n::details{summary=\"Ver a resposta correta\"}\n**Correto: B.** Essa arquitetura reduz acoplamento e facilita teste.\n::"
+      },
+      "leitura_complementar": {
+        "texto_md": "* Revise escopo LEGB em Python e boas praticas para evitar globais mutaveis.\n* Pratica diaria: pegue uma rotina de contagem e descreva como tornaria cada execucao independente da anterior."
+      },
+      "reflexao": {
+        "texto_md": "* Escopo e uma escolha politica de qualidade: ou voce controla de onde vem o dado, ou o dado controla o seu resultado."
+      }
+    }
+  },
+  "premio": null
+}

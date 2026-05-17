@@ -1,0 +1,110 @@
+{
+  "id": "python-M01-A09-MB",
+  "curso": "python",
+  "modulo": 1,
+  "aula": 9,
+  "numero": 9,
+  "tipo": "Masmorra",
+  "subtipo": "boss",
+  "titulo": "Maratona Prática III: O Auditor de Critérios",
+  "subtitulo": "If, else e operadores lógicos aplicados em triagens de dados públicos",
+  "objetivo": "Construir sistemas de triagem e classificação binária utilizando `if/else`, operadores relacionais e lógicos (`and`, `or`, `not`) para processar critérios de elegibilidade em bases governamentais.",
+  "duracao": "2h00",
+  "tags": [],
+  "secoes": {
+    "abertura": {
+      "introducao": {
+        "texto_md": "# A Lógica da Triagem\n\nTodo sistema público opera com cortes. Quem entra e quem fica de fora. Quem recebe prioridade e quem aguarda. Quem dispara alerta e quem permanece em observação. Por trás dessas decisões aparentemente burocráticas existe uma estrutura lógica precisa: operadores relacionais, combinações booleanas e condicionais bem definidas.\n\nNesta maratona, você vai lidar com o núcleo político da programação: transformar critérios institucionais em regras executáveis. O desafio não é apenas calcular — é decidir corretamente.\n\n---"
+      }
+    },
+    "aquecimento": {
+      "titulo": "FASE 1: Aquecimento de Sistemas (Warm-up)",
+      "texto_md": "**Tempo estimado:** 15 minutos.\n**Pontuação:** 0 pontos.\n**Objetivo:** testar decisões simples antes da fase principal.",
+      "missoes": [
+        {
+          "titulo": "Aquecimento A: Termômetro do Almoxarifado (SUS)",
+          "texto_md": "**O Problema:** O avaliador injeta `temperatura` (`Float`) e `limite_max` (`Float`). Se `temperatura > limite_max`, imprima `ALERTA: temperatura fora do limite`. Caso contrário, imprima `OK: temperatura dentro do limite`.\n\n**Casos de Teste (Amostra):**\n\n| Entrada | Saída | Show |\n|---|---|---|\n| `8.3`, `8.0` | ALERTA: temperatura fora do limite | Sim |\n| `7.9`, `8.0` | OK: temperatura dentro do limite | Sim |",
+          "meta": {
+            "tipo": "warmup",
+            "dataset": "warmup_a"
+          }
+        },
+        {
+          "titulo": "Aquecimento B: Prioridade de Vacinação",
+          "texto_md": "**O Problema:** O avaliador injeta `idade` (`Int`) e `tem_comorbidade` (`Int`, 0 ou 1). Se a pessoa tiver 60 anos ou mais **ou** comorbidade, imprima `Prioridade: SIM`. Caso contrário, `Prioridade: NAO`.\n\n**Casos de Teste (Amostra):**\n\n| Entrada | Saída | Show |\n|---|---|---|\n| `65`, `0` | Prioridade: SIM | Sim |\n| `35`, `0` | Prioridade: NAO | Sim |",
+          "meta": {
+            "tipo": "warmup",
+            "dataset": "warmup_b"
+          }
+        }
+      ]
+    },
+    "maratona": {
+      "titulo": "FASE 2: A Maratona (Missões Oficiais)",
+      "texto_md": "**Tempo estimado:** 1h45m.\n**Status:** Avaliação ativa.\n**Instruções:** testes de borda são decisivos. Verifique valores exatamente iguais aos limiares das regras.",
+      "missoes": [
+        {
+          "titulo": "Missão 1: Triagem Fiscal de Empresas",
+          "texto_md": "**O Problema:** O avaliador injeta `faturamento` (`Float`) e `imposto_recolhido` (`Float`). Uma empresa entra em auditoria se o faturamento for maior que 4,8 milhões **ou** se o imposto recolhido representar menos de 8% do faturamento. Imprima `Auditoria: NECESSARIA` ou `Auditoria: DISPENSA`.\n\n**Casos de Teste (Amostra):**\n\n| Entrada | Saída | Show |\n|---|---|---|\n| `5000000.0`, `500000.0` | Auditoria: NECESSARIA | Sim |\n| `3000000.0`, `300000.0` | Auditoria: DISPENSA | Sim |",
+          "meta": {
+            "tipo": "maratona",
+            "dataset": "missao_1"
+          }
+        },
+        {
+          "titulo": "Missão 2: Triagem do CadÚnico",
+          "texto_md": "**O Problema:** O avaliador injeta `renda_per_capita` (`Float`). Classifique a família como `Classificacao: Extremamente pobre` se a renda for até 218.0; `Classificacao: Pobre` se for maior que 218.0 e até 660.0; `Classificacao: Nao elegivel` caso contrário.\n\n**Casos de Teste (Amostra):**\n\n| Entrada | Saída | Show |\n|---|---|---|\n| `150.0` | Classificacao: Extremamente pobre | Sim |\n| `450.0` | Classificacao: Pobre | Sim |",
+          "meta": {
+            "tipo": "maratona",
+            "dataset": "missao_2"
+          }
+        },
+        {
+          "titulo": "Missão 3: Monitoramento Especial do INPE",
+          "texto_md": "**O Problema:** O avaliador injeta `desmatamento_ha` (`Float`) e `cobertura_pct` (`Float`). Um município entra em `Monitoramento: ESPECIAL` se o desmatamento for maior que 100 hectares **e** a cobertura florestal restante for menor que 50%. Caso contrário, `Monitoramento: REGULAR`.\n\n**Casos de Teste (Amostra):**\n\n| Entrada | Saída | Show |\n|---|---|---|\n| `150.0`, `35.0` | Monitoramento: ESPECIAL | Sim |\n| `150.0`, `55.0` | Monitoramento: REGULAR | Sim |",
+          "meta": {
+            "tipo": "maratona",
+            "dataset": "missao_3"
+          }
+        },
+        {
+          "titulo": "Missão 4: Balança Rodoviária (ANTT)",
+          "texto_md": "**O Problema:** O avaliador injeta `peso_kg` (`Float`) e `largura_m` (`Float`). A carga é regular somente se `peso_kg <= 45000` **e** `largura_m <= 2.6`. Se estiver regular, imprima `Autorizacao: DISPENSADA`. Se não estiver, imprima `Autorizacao: NECESSARIA`.\n\n**Casos de Teste (Amostra):**\n\n| Entrada | Saída | Show |\n|---|---|---|\n| `40000.0`, `2.5` | Autorizacao: DISPENSADA | Sim |\n| `50000.0`, `2.5` | Autorizacao: NECESSARIA | Sim |",
+          "meta": {
+            "tipo": "maratona",
+            "dataset": "missao_4"
+          }
+        },
+        {
+          "titulo": "Missão 5: Sentinela Epidemiológica (Dengue)",
+          "texto_md": "**O Problema:** O avaliador injeta `incidencia` (`Float`) e `larvitrampas_pct` (`Float`). Classifique:\n- `Nivel: Epidemia` se incidência >= 300 **e** larvitrampas >= 20\n- `Nivel: Alerta` se incidência >= 100 **ou** larvitrampas >= 10\n- `Nivel: Normal` caso contrário\n\n**Casos de Teste (Amostra):**\n\n| Entrada | Saída | Show |\n|---|---|---|\n| `350.0`, `25.0` | Nivel: Epidemia | Sim |\n| `200.0`, `5.0` | Nivel: Alerta | Sim |",
+          "meta": {
+            "tipo": "maratona",
+            "dataset": "missao_5"
+          }
+        }
+      ]
+    },
+    "backend": {
+      "titulo": "Atenção IA de Backend / Sistema Gerenciador:",
+      "texto_md": "Gerar no mínimo 10 casos por missão, com forte presença de valores de limiar.\n\n### Warmups\n* temperatura/limite com casos de igualdade\n* idade/comorbidade cobrindo os quatro quadrantes lógicos\n\n### Missão 1\n* `faturamento`, `imposto_recolhido`\n* Gabarito: condição com `or` entre faturamento alto e recolhimento baixo.\n\n### Missão 2\n* `renda_per_capita`\n* Gabarito: três faixas exclusivas.\n\n### Missão 3\n* `desmatamento_ha`, `cobertura_pct`\n* Gabarito: condição com `and`.\n\n### Missão 4\n* `peso_kg`, `largura_m`\n* Gabarito: regular apenas se as duas condições forem satisfeitas.\n\n### Missão 5\n* `incidencia`, `larvitrampas_pct`\n* Gabarito: hierarquia Epidemia > Alerta > Normal."
+    }
+  },
+  "premio": {
+    "pontuacao": 100,
+    "superpower_reward": "boolean-shield",
+    "recursos": [
+      "Comprar tempo: 3x5min (10 Moedas)",
+      "Comprar dica IA: 3 consultas (10 Moedas)"
+    ],
+    "testes_ocultos": {
+      "warmup_a": "/api/datasets/sus_temperatura_almoxarifado.json",
+      "warmup_b": "/api/datasets/datasus_vacinacao_prioridade.json",
+      "missao_1": "/api/datasets/receita_triagem_fiscal.json",
+      "missao_2": "/api/datasets/cadUnico_classificacao_renda.json",
+      "missao_3": "/api/datasets/inpe_desmatamento_nivel.json",
+      "missao_4": "/api/datasets/antt_controle_cargas.json",
+      "missao_5": "/api/datasets/sinan_dengue_nivel.json"
+    }
+  }
+}

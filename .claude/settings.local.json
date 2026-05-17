@@ -1,0 +1,15 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(pnpm typecheck *)",
+      "Bash(npm run *)",
+      "Bash(curl *)",
+      "Bash(python3 -c ' *)",
+      "Bash(pnpm add *)",
+      "Bash(npm install *)",
+      "Bash(python3 *)",
+      "Bash(npx supabase *)",
+      "Bash(echo \"EXIT:$?\")"
+    ]
+  }
+}

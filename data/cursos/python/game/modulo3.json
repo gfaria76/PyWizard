@@ -1,0 +1,734 @@
+{
+  "modulo": 3,
+  "titulo": "Inventário do Módulo III",
+  "schema": 1,
+  "aulas": [
+    {
+      "numero": 1,
+      "rotulo": "1C",
+      "tipo_aula": "A",
+      "subtipo": "conceito",
+      "titulo": "Introducao a Funcoes (def)",
+      "arquivo": "modulo3/aula-01-conceitos.json",
+      "inventario_novo": [
+        {
+          "id": "m3-a1-def-basico",
+          "tipo": "fundamento",
+          "nome": "def",
+          "descricao": "Define bloco reutilizável para encapsular regras de negócio.",
+          "exemplo": "def calcular_total(valores):"
+        }
+      ],
+      "premio": null
+    },
+    {
+      "numero": 1,
+      "rotulo": "1TA",
+      "tipo_aula": "A",
+      "subtipo": "aprendiz",
+      "titulo": "Trilha do Aprendiz I: Portais do def",
+      "arquivo": "modulo3/aula-01-trilha-aprendiz.json",
+      "inventario_novo": [
+        {
+          "id": "m3-aula-01-trilha-aprendiz",
+          "tipo": "trilha",
+          "nome": "Selo do Aprendiz",
+          "descricao": "Recompensa editorial associada a Trilha do Aprendiz I: Portais do def."
+        }
+      ],
+      "premio": {
+        "pontuacao": 70,
+        "descricao_md": "Trilha do Aprendiz I: Portais do def"
+      }
+    },
+    {
+      "numero": 1,
+      "rotulo": "1TV",
+      "tipo_aula": "A",
+      "subtipo": "aventura",
+      "titulo": "Trilha da Aventura I: Chamados da Função",
+      "arquivo": "modulo3/aula-01-trilha-aventura.json",
+      "inventario_novo": [
+        {
+          "id": "m3-aula-01-trilha-aventura",
+          "tipo": "trilha",
+          "nome": "Marca da Aventura",
+          "descricao": "Recompensa editorial associada a Trilha da Aventura I: Chamados da Função."
+        }
+      ],
+      "premio": {
+        "pontuacao": 90,
+        "descricao_md": "Trilha da Aventura I: Chamados da Função"
+      },
+      "obrigatoria": false
+    },
+    {
+      "numero": 2,
+      "rotulo": "2C",
+      "tipo_aula": "A",
+      "subtipo": "conceito",
+      "titulo": "Parametros e Retornos",
+      "arquivo": "modulo3/aula-02-conceitos.json",
+      "inventario_novo": [
+        {
+          "id": "m3-a2-parametro-retorno",
+          "tipo": "fundamento",
+          "nome": "parâmetros e return",
+          "descricao": "Recebe entrada controlada e devolve saída previsível.",
+          "exemplo": "return resultado"
+        }
+      ],
+      "premio": null
+    },
+    {
+      "numero": 2,
+      "rotulo": "2TA",
+      "tipo_aula": "A",
+      "subtipo": "aprendiz",
+      "titulo": "Trilha do Aprendiz II: Runas do Return",
+      "arquivo": "modulo3/aula-02-trilha-aprendiz.json",
+      "inventario_novo": [
+        {
+          "id": "m3-aula-02-trilha-aprendiz",
+          "tipo": "trilha",
+          "nome": "Selo do Aprendiz",
+          "descricao": "Recompensa editorial associada a Trilha do Aprendiz II: Runas do Return."
+        }
+      ],
+      "premio": {
+        "pontuacao": 70,
+        "descricao_md": "Trilha do Aprendiz II: Runas do Return"
+      }
+    },
+    {
+      "numero": 2,
+      "rotulo": "2TV",
+      "tipo_aula": "A",
+      "subtipo": "aventura",
+      "titulo": "Trilha da Aventura II: Ecos do Parâmetro",
+      "arquivo": "modulo3/aula-02-trilha-aventura.json",
+      "inventario_novo": [
+        {
+          "id": "m3-aula-02-trilha-aventura",
+          "tipo": "trilha",
+          "nome": "Marca da Aventura",
+          "descricao": "Recompensa editorial associada a Trilha da Aventura II: Ecos do Parâmetro."
+        }
+      ],
+      "premio": {
+        "pontuacao": 90,
+        "descricao_md": "Trilha da Aventura II: Ecos do Parâmetro"
+      },
+      "obrigatoria": false
+    },
+    {
+      "numero": 3,
+      "rotulo": "3TG",
+      "tipo_aula": "E",
+      "subtipo": "guardiao",
+      "titulo": "Trilha do Guardião I: Cúpula das Funções",
+      "arquivo": "modulo3/aula-03-trilha-guardiao.json",
+      "inventario_novo": [
+        {
+          "id": "m3-aula-03-trilha-guardiao",
+          "tipo": "trilha",
+          "nome": "Insígnia do Guardião",
+          "descricao": "Recompensa editorial associada a Trilha do Guardião I: Cúpula das Funções."
+        }
+      ],
+      "premio": {
+        "pontuacao": 120,
+        "descricao_md": "Trilha do Guardião I: Cúpula das Funções"
+      },
+      "obrigatoria": false
+    },
+    {
+      "numero": 3,
+      "rotulo": "3EG",
+      "tipo_aula": "E",
+      "subtipo": "grupo",
+      "titulo": "Exedição da Guilda 1: Cúpula das Funções",
+      "arquivo": "modulo3/aula-03-exedicao_guilda.json",
+      "inventario_novo": [
+        {
+          "id": "m3-aula-03-exedicao_guilda",
+          "tipo": "trilha",
+          "nome": "Brasão da Guilda",
+          "descricao": "Recompensa editorial associada a Exedição da Guilda 1: Cúpula das Funções."
+        }
+      ],
+      "premio": {
+        "pontuacao": 140,
+        "descricao_md": "Exedição da Guilda 1: Cúpula das Funções"
+      },
+      "obrigatoria": false
+    },
+    {
+      "numero": 3,
+      "tipo_aula": "E",
+      "titulo": "Maratona Prática I: Funções",
+      "arquivo": "modulo3/aula-03-boss.json",
+      "inventario_novo": [
+        {
+          "id": "m3-a3-conquista-funcoes",
+          "tipo": "conquista",
+          "nome": "Orquestrador de Funções",
+          "descricao": "Consolida desenho de funções sob pressão de maratona."
+        }
+      ],
+      "premio": {
+        "pontuacao": 0,
+        "recursos": [],
+        "descricao_md": "Definir recompensa para esta maratona."
+      }
+    },
+    {
+      "numero": 4,
+      "rotulo": "4C",
+      "tipo_aula": "A",
+      "subtipo": "conceito",
+      "titulo": "Passagem por Valor e por Referencia",
+      "arquivo": "modulo3/aula-04-conceitos.json",
+      "inventario_novo": [
+        {
+          "id": "m3-a4-mutabilidade",
+          "tipo": "conceito",
+          "nome": "valor vs referência",
+          "descricao": "Controla efeitos colaterais ao manipular objetos mutáveis."
+        }
+      ],
+      "premio": null
+    },
+    {
+      "numero": 4,
+      "rotulo": "4TA",
+      "tipo_aula": "A",
+      "subtipo": "aprendiz",
+      "titulo": "Trilha do Aprendiz IV: Ecos da Referência",
+      "arquivo": "modulo3/aula-04-trilha-aprendiz.json",
+      "inventario_novo": [
+        {
+          "id": "m3-aula-04-trilha-aprendiz",
+          "tipo": "trilha",
+          "nome": "Selo do Aprendiz",
+          "descricao": "Recompensa editorial associada a Trilha do Aprendiz IV: Ecos da Referência."
+        }
+      ],
+      "premio": {
+        "pontuacao": 70,
+        "descricao_md": "Trilha do Aprendiz IV: Ecos da Referência"
+      }
+    },
+    {
+      "numero": 4,
+      "rotulo": "4TV",
+      "tipo_aula": "A",
+      "subtipo": "aventura",
+      "titulo": "Trilha da Aventura IV: Espelhos da Mutabilidade",
+      "arquivo": "modulo3/aula-04-trilha-aventura.json",
+      "inventario_novo": [
+        {
+          "id": "m3-aula-04-trilha-aventura",
+          "tipo": "trilha",
+          "nome": "Marca da Aventura",
+          "descricao": "Recompensa editorial associada a Trilha da Aventura IV: Espelhos da Mutabilidade."
+        }
+      ],
+      "premio": {
+        "pontuacao": 90,
+        "descricao_md": "Trilha da Aventura IV: Espelhos da Mutabilidade"
+      },
+      "obrigatoria": false
+    },
+    {
+      "numero": 5,
+      "rotulo": "5C",
+      "tipo_aula": "A",
+      "subtipo": "conceito",
+      "titulo": "Listas em Funcoes",
+      "arquivo": "modulo3/aula-05-conceitos.json",
+      "inventario_novo": [
+        {
+          "id": "m3-a5-listas-funcoes",
+          "tipo": "tecnica",
+          "nome": "listas em funções",
+          "descricao": "Processa coleções como entrada e saída de funções reutilizáveis."
+        }
+      ],
+      "premio": null
+    },
+    {
+      "numero": 5,
+      "rotulo": "5TA",
+      "tipo_aula": "A",
+      "subtipo": "aprendiz",
+      "titulo": "Trilha do Aprendiz V: Coleções Modulares",
+      "arquivo": "modulo3/aula-05-trilha-aprendiz.json",
+      "inventario_novo": [
+        {
+          "id": "m3-aula-05-trilha-aprendiz",
+          "tipo": "trilha",
+          "nome": "Selo do Aprendiz",
+          "descricao": "Recompensa editorial associada a Trilha do Aprendiz V: Coleções Modulares."
+        }
+      ],
+      "premio": {
+        "pontuacao": 70,
+        "descricao_md": "Trilha do Aprendiz V: Coleções Modulares"
+      }
+    },
+    {
+      "numero": 5,
+      "rotulo": "5TV",
+      "tipo_aula": "A",
+      "subtipo": "aventura",
+      "titulo": "Trilha da Aventura V: Mochilas da Função",
+      "arquivo": "modulo3/aula-05-trilha-aventura.json",
+      "inventario_novo": [
+        {
+          "id": "m3-aula-05-trilha-aventura",
+          "tipo": "trilha",
+          "nome": "Marca da Aventura",
+          "descricao": "Recompensa editorial associada a Trilha da Aventura V: Mochilas da Função."
+        }
+      ],
+      "premio": {
+        "pontuacao": 90,
+        "descricao_md": "Trilha da Aventura V: Mochilas da Função"
+      },
+      "obrigatoria": false
+    },
+    {
+      "numero": 6,
+      "rotulo": "6TG",
+      "tipo_aula": "E",
+      "subtipo": "guardiao",
+      "titulo": "Trilha do Guardião II: Câmara da Mutabilidade",
+      "arquivo": "modulo3/aula-06-trilha-guardiao.json",
+      "inventario_novo": [
+        {
+          "id": "m3-aula-06-trilha-guardiao",
+          "tipo": "trilha",
+          "nome": "Insígnia do Guardião",
+          "descricao": "Recompensa editorial associada a Trilha do Guardião II: Câmara da Mutabilidade."
+        }
+      ],
+      "premio": {
+        "pontuacao": 120,
+        "descricao_md": "Trilha do Guardião II: Câmara da Mutabilidade"
+      },
+      "obrigatoria": false
+    },
+    {
+      "numero": 6,
+      "rotulo": "6EG",
+      "tipo_aula": "E",
+      "subtipo": "grupo",
+      "titulo": "Exedição da Guilda 2: Câmara da Mutabilidade",
+      "arquivo": "modulo3/aula-06-exedicao_guilda.json",
+      "inventario_novo": [
+        {
+          "id": "m3-aula-06-exedicao_guilda",
+          "tipo": "trilha",
+          "nome": "Brasão da Guilda",
+          "descricao": "Recompensa editorial associada a Exedição da Guilda 2: Câmara da Mutabilidade."
+        }
+      ],
+      "premio": {
+        "pontuacao": 140,
+        "descricao_md": "Exedição da Guilda 2: Câmara da Mutabilidade"
+      },
+      "obrigatoria": false
+    },
+    {
+      "numero": 6,
+      "tipo_aula": "E",
+      "titulo": "Maratona Prática II: Referências",
+      "arquivo": "modulo3/aula-06-boss.json",
+      "inventario_novo": [
+        {
+          "id": "m3-a6-conquista-referencias",
+          "tipo": "conquista",
+          "nome": "Guardião de Referências",
+          "descricao": "Evita alterações indesejadas em estruturas compartilhadas."
+        }
+      ],
+      "premio": {
+        "pontuacao": 0,
+        "recursos": [],
+        "descricao_md": "Definir recompensa para esta maratona."
+      }
+    },
+    {
+      "numero": 7,
+      "rotulo": "7C",
+      "tipo_aula": "A",
+      "subtipo": "conceito",
+      "titulo": "Estruturas de Repeticao em Funcoes",
+      "arquivo": "modulo3/aula-07-conceitos.json",
+      "inventario_novo": [
+        {
+          "id": "m3-a7-loops-em-funcoes",
+          "tipo": "estrutura",
+          "nome": "laços em funções",
+          "descricao": "Aplica repetição dentro de blocos reutilizáveis sem duplicar código."
+        }
+      ],
+      "premio": null
+    },
+    {
+      "numero": 7,
+      "rotulo": "7TA",
+      "tipo_aula": "A",
+      "subtipo": "aprendiz",
+      "titulo": "Trilha do Aprendiz VII: Laços Encapsulados",
+      "arquivo": "modulo3/aula-07-trilha-aprendiz.json",
+      "inventario_novo": [
+        {
+          "id": "m3-aula-07-trilha-aprendiz",
+          "tipo": "trilha",
+          "nome": "Selo do Aprendiz",
+          "descricao": "Recompensa editorial associada a Trilha do Aprendiz VII: Laços Encapsulados."
+        }
+      ],
+      "premio": {
+        "pontuacao": 70,
+        "descricao_md": "Trilha do Aprendiz VII: Laços Encapsulados"
+      }
+    },
+    {
+      "numero": 7,
+      "rotulo": "7TV",
+      "tipo_aula": "A",
+      "subtipo": "aventura",
+      "titulo": "Trilha da Aventura VII: Círculos da Rotina",
+      "arquivo": "modulo3/aula-07-trilha-aventura.json",
+      "inventario_novo": [
+        {
+          "id": "m3-aula-07-trilha-aventura",
+          "tipo": "trilha",
+          "nome": "Marca da Aventura",
+          "descricao": "Recompensa editorial associada a Trilha da Aventura VII: Círculos da Rotina."
+        }
+      ],
+      "premio": {
+        "pontuacao": 90,
+        "descricao_md": "Trilha da Aventura VII: Círculos da Rotina"
+      },
+      "obrigatoria": false
+    },
+    {
+      "numero": 8,
+      "rotulo": "8C",
+      "tipo_aula": "A",
+      "subtipo": "conceito",
+      "titulo": "Escopo Local vs Global",
+      "arquivo": "modulo3/aula-08-conceitos.json",
+      "inventario_novo": [
+        {
+          "id": "m3-a8-escopo",
+          "tipo": "conceito",
+          "nome": "escopo local e global",
+          "descricao": "Controla visibilidade de variáveis para evitar conflitos."
+        }
+      ],
+      "premio": null
+    },
+    {
+      "numero": 8,
+      "rotulo": "8TA",
+      "tipo_aula": "A",
+      "subtipo": "aprendiz",
+      "titulo": "Trilha do Aprendiz VIII: Círculos do Escopo",
+      "arquivo": "modulo3/aula-08-trilha-aprendiz.json",
+      "inventario_novo": [
+        {
+          "id": "m3-aula-08-trilha-aprendiz",
+          "tipo": "trilha",
+          "nome": "Selo do Aprendiz",
+          "descricao": "Recompensa editorial associada a Trilha do Aprendiz VIII: Círculos do Escopo."
+        }
+      ],
+      "premio": {
+        "pontuacao": 70,
+        "descricao_md": "Trilha do Aprendiz VIII: Círculos do Escopo"
+      }
+    },
+    {
+      "numero": 8,
+      "rotulo": "8TV",
+      "tipo_aula": "A",
+      "subtipo": "aventura",
+      "titulo": "Trilha da Aventura VIII: Fronteiras da Variável",
+      "arquivo": "modulo3/aula-08-trilha-aventura.json",
+      "inventario_novo": [
+        {
+          "id": "m3-aula-08-trilha-aventura",
+          "tipo": "trilha",
+          "nome": "Marca da Aventura",
+          "descricao": "Recompensa editorial associada a Trilha da Aventura VIII: Fronteiras da Variável."
+        }
+      ],
+      "premio": {
+        "pontuacao": 90,
+        "descricao_md": "Trilha da Aventura VIII: Fronteiras da Variável"
+      },
+      "obrigatoria": false
+    },
+    {
+      "numero": 9,
+      "rotulo": "9TG",
+      "tipo_aula": "E",
+      "subtipo": "guardiao",
+      "titulo": "Trilha do Guardião III: Torre do Escopo",
+      "arquivo": "modulo3/aula-09-trilha-guardiao.json",
+      "inventario_novo": [
+        {
+          "id": "m3-aula-09-trilha-guardiao",
+          "tipo": "trilha",
+          "nome": "Insígnia do Guardião",
+          "descricao": "Recompensa editorial associada a Trilha do Guardião III: Torre do Escopo."
+        }
+      ],
+      "premio": {
+        "pontuacao": 120,
+        "descricao_md": "Trilha do Guardião III: Torre do Escopo"
+      },
+      "obrigatoria": false
+    },
+    {
+      "numero": 9,
+      "rotulo": "9EG",
+      "tipo_aula": "E",
+      "subtipo": "grupo",
+      "titulo": "Exedição da Guilda 3: Torre do Escopo",
+      "arquivo": "modulo3/aula-09-exedicao_guilda.json",
+      "inventario_novo": [
+        {
+          "id": "m3-aula-09-exedicao_guilda",
+          "tipo": "trilha",
+          "nome": "Brasão da Guilda",
+          "descricao": "Recompensa editorial associada a Exedição da Guilda 3: Torre do Escopo."
+        }
+      ],
+      "premio": {
+        "pontuacao": 140,
+        "descricao_md": "Exedição da Guilda 3: Torre do Escopo"
+      },
+      "obrigatoria": false
+    },
+    {
+      "numero": 9,
+      "tipo_aula": "E",
+      "titulo": "Maratona Prática III: Escalabilidade",
+      "arquivo": "modulo3/aula-09-boss.json",
+      "inventario_novo": [
+        {
+          "id": "m3-a9-conquista-escalabilidade",
+          "tipo": "conquista",
+          "nome": "Engenheiro de Escala",
+          "descricao": "Consolida decomposição de problemas grandes em funções menores."
+        }
+      ],
+      "premio": {
+        "pontuacao": 0,
+        "recursos": [],
+        "descricao_md": "Definir recompensa para esta maratona."
+      }
+    },
+    {
+      "numero": 10,
+      "rotulo": "10C",
+      "tipo_aula": "A",
+      "subtipo": "conceito",
+      "titulo": "Parametros Flexiveis: *args e **kwargs",
+      "arquivo": "modulo3/aula-10-conceitos.json",
+      "inventario_novo": [
+        {
+          "id": "m3-a10-args-kwargs",
+          "tipo": "superpoder",
+          "nome": "*args e **kwargs",
+          "descricao": "Permite funções flexíveis para entradas variáveis.",
+          "exemplo": "def relatorio(*valores, **filtros):"
+        }
+      ],
+      "premio": null
+    },
+    {
+      "numero": 10,
+      "rotulo": "10TA",
+      "tipo_aula": "A",
+      "subtipo": "aprendiz",
+      "titulo": "Trilha do Aprendiz X: Arsenal Flexível",
+      "arquivo": "modulo3/aula-10-trilha-aprendiz.json",
+      "inventario_novo": [
+        {
+          "id": "m3-aula-10-trilha-aprendiz",
+          "tipo": "trilha",
+          "nome": "Selo do Aprendiz",
+          "descricao": "Recompensa editorial associada a Trilha do Aprendiz X: Arsenal Flexível."
+        }
+      ],
+      "premio": {
+        "pontuacao": 70,
+        "descricao_md": "Trilha do Aprendiz X: Arsenal Flexível"
+      }
+    },
+    {
+      "numero": 10,
+      "rotulo": "10TV",
+      "tipo_aula": "A",
+      "subtipo": "aventura",
+      "titulo": "Trilha da Aventura X: Portais Variáveis",
+      "arquivo": "modulo3/aula-10-trilha-aventura.json",
+      "inventario_novo": [
+        {
+          "id": "m3-aula-10-trilha-aventura",
+          "tipo": "trilha",
+          "nome": "Marca da Aventura",
+          "descricao": "Recompensa editorial associada a Trilha da Aventura X: Portais Variáveis."
+        }
+      ],
+      "premio": {
+        "pontuacao": 90,
+        "descricao_md": "Trilha da Aventura X: Portais Variáveis"
+      },
+      "obrigatoria": false
+    },
+    {
+      "numero": 11,
+      "rotulo": "11C",
+      "tipo_aula": "A",
+      "subtipo": "conceito",
+      "titulo": "Modularizacao Basica: Import",
+      "arquivo": "modulo3/aula-11-conceitos.json",
+      "inventario_novo": [
+        {
+          "id": "m3-a11-import",
+          "tipo": "modularizacao",
+          "nome": "import",
+          "descricao": "Separa responsabilidades e reutiliza código entre arquivos.",
+          "exemplo": "from utils import calcular"
+        }
+      ],
+      "premio": null
+    },
+    {
+      "numero": 11,
+      "rotulo": "11TA",
+      "tipo_aula": "A",
+      "subtipo": "aprendiz",
+      "titulo": "Trilha do Aprendiz XI: Pontes do Import",
+      "arquivo": "modulo3/aula-11-trilha-aprendiz.json",
+      "inventario_novo": [
+        {
+          "id": "m3-aula-11-trilha-aprendiz",
+          "tipo": "trilha",
+          "nome": "Selo do Aprendiz",
+          "descricao": "Recompensa editorial associada a Trilha do Aprendiz XI: Pontes do Import."
+        }
+      ],
+      "premio": {
+        "pontuacao": 70,
+        "descricao_md": "Trilha do Aprendiz XI: Pontes do Import"
+      }
+    },
+    {
+      "numero": 11,
+      "rotulo": "11TV",
+      "tipo_aula": "A",
+      "subtipo": "aventura",
+      "titulo": "Trilha da Aventura XI: Rotas entre Módulos",
+      "arquivo": "modulo3/aula-11-trilha-aventura.json",
+      "inventario_novo": [
+        {
+          "id": "m3-aula-11-trilha-aventura",
+          "tipo": "trilha",
+          "nome": "Marca da Aventura",
+          "descricao": "Recompensa editorial associada a Trilha da Aventura XI: Rotas entre Módulos."
+        }
+      ],
+      "premio": {
+        "pontuacao": 90,
+        "descricao_md": "Trilha da Aventura XI: Rotas entre Módulos"
+      },
+      "obrigatoria": false
+    },
+    {
+      "numero": 12,
+      "rotulo": "12TG",
+      "tipo_aula": "E",
+      "subtipo": "guardiao",
+      "titulo": "Trilha do Guardião IV: Arsenal dos Módulos",
+      "arquivo": "modulo3/aula-12-trilha-guardiao.json",
+      "inventario_novo": [
+        {
+          "id": "m3-aula-12-trilha-guardiao",
+          "tipo": "trilha",
+          "nome": "Insígnia do Guardião",
+          "descricao": "Recompensa editorial associada a Trilha do Guardião IV: Arsenal dos Módulos."
+        }
+      ],
+      "premio": {
+        "pontuacao": 120,
+        "descricao_md": "Trilha do Guardião IV: Arsenal dos Módulos"
+      },
+      "obrigatoria": false
+    },
+    {
+      "numero": 12,
+      "rotulo": "12EG",
+      "tipo_aula": "E",
+      "subtipo": "grupo",
+      "titulo": "Exedição da Guilda 4: Arsenal dos Módulos",
+      "arquivo": "modulo3/aula-12-exedicao_guilda.json",
+      "inventario_novo": [
+        {
+          "id": "m3-aula-12-exedicao_guilda",
+          "tipo": "trilha",
+          "nome": "Brasão da Guilda",
+          "descricao": "Recompensa editorial associada a Exedição da Guilda 4: Arsenal dos Módulos."
+        }
+      ],
+      "premio": {
+        "pontuacao": 140,
+        "descricao_md": "Exedição da Guilda 4: Arsenal dos Módulos"
+      },
+      "obrigatoria": false
+    },
+    {
+      "numero": 12,
+      "tipo_aula": "E",
+      "titulo": "Maratona Prática IV: Módulos",
+      "arquivo": "modulo3/aula-12-boss.json",
+      "inventario_novo": [
+        {
+          "id": "m3-a12-conquista-modulos",
+          "tipo": "conquista",
+          "nome": "Arquiteto de Módulos",
+          "descricao": "Consolida organização de projeto por domínio funcional."
+        }
+      ],
+      "premio": {
+        "pontuacao": 0,
+        "recursos": [],
+        "descricao_md": "Definir recompensa para esta maratona."
+      }
+    },
+    {
+      "numero": 13,
+      "tipo_aula": "E",
+      "titulo": "Líder Técnico Master",
+      "arquivo": "modulo3/aula-13-PROVA.json",
+      "inventario_novo": [
+        {
+          "id": "m3-a13-selo-lider",
+          "tipo": "selo",
+          "nome": "Líder Técnico",
+          "descricao": "Marca domínio final de funções, escopo e modularização."
+        }
+      ],
+      "premio": null
+    }
+  ]
+}

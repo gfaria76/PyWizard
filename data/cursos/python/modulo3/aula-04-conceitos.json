@@ -1,0 +1,81 @@
+{
+  "id": "python-M03-A04-CT",
+  "curso": "python",
+  "modulo": 3,
+  "aula": 4,
+  "numero": 4,
+  "tipo": "Aula",
+  "subtipo": "conceito",
+  "titulo": "Passagem por Valor e por Referencia",
+  "subtitulo": "Mutabilidade: como nao corromper dados originais em funcoes",
+  "objetivo": "Compreender como objetos mutaveis podem ser alterados por referencia, identificar efeitos colaterais e aplicar copias seguras quando a regra exigir preservacao do dado original.",
+  "duracao": "1h30",
+  "tags": [
+    "mutabilidade",
+    "referencia",
+    "listas",
+    "efeitos-colaterais"
+  ],
+  "secoes": {
+    "abertura": {
+      "objetivo": {
+        "texto_md": "Quando uma funcao altera uma lista recebida por parametro sem deixar isso explicito, o erro nao aparece como excecao; aparece como distorcao silenciosa de historico. Em contexto de auditoria, isso e grave: o relatorio final pode ate fechar, mas a trilha de evidencia ja foi adulterada sem intencao. Nesta aula, voce vai separar duas decisoes de projeto: quando modificar o original e aceitavel, e quando preservar o original e obrigatorio."
+      },
+      "retomada": {
+        "texto_md": "**Inventario anterior que voce vai mobilizar:**\n\n* Funcoes com parametros e retorno.\n* Operacoes de lista (`append`, `sort`, `pop`).\n* Condicionais para decidir caminho de processamento."
+      },
+      "situacao": {
+        "titulo": "A cronologia apagada por um `sort()`",
+        "texto_md": "Uma equipe ordenou internamente a lista de pagamentos para calcular mediana. O calculo saiu correto, mas a ordem cronologica original foi perdida para todos os outros modulos que reutilizavam a mesma lista. O erro nao estava no numero final; estava no efeito colateral escondido."
+      },
+      "problematizacao": {
+        "texto_md": "* Em quais cenarios uma funcao deve explicitar que vai modificar a lista original?\n* Por que copiar lista pode custar desempenho, mas ainda assim ser obrigatorio em sistemas auditaveis?"
+      }
+    },
+    "conceito": {
+      "titulo": "Conceito tecnico",
+      "texto_md": "Tipos imutaveis (como `int` e `float`) nao sofrem alteracao in-place. Listas sao mutaveis: mudar um item dentro da funcao muda o mesmo objeto fora dela. Para preservar dados, use copia (`lista[:]`, `list(lista)` ou `copy()`), processe a copia e retorne resultado sem contaminar o original.",
+      "exemplos": [
+        {
+          "texto_md": "### 1. Efeito colateral em lista original",
+          "python": "def ordenar_inplace(valores):\n    valores.sort()\n    return valores\n\ndados = [30, 10, 20]\nprint('Antes:', dados)\nordenar_inplace(dados)\nprint('Depois:', dados)"
+        },
+        {
+          "texto_md": "### 2. Copia segura antes de ordenar",
+          "python": "def ordenar_sem_afetar(valores):\n    copia = valores[:]\n    copia.sort()\n    return copia\n\ndados = [30, 10, 20]\nordenados = ordenar_sem_afetar(dados)\nprint('Original:', dados)\nprint('Ordenados:', ordenados)"
+        },
+        {
+          "texto_md": "### 3. Regra explicita de alteracao intencional",
+          "python": "def aplicar_desconto_em_lote(valores, taxa):\n    for i in range(len(valores)):\n        valores[i] = valores[i] * (1 - taxa)\n\nfaturas = [100.0, 200.0]\naplicar_desconto_em_lote(faturas, 0.1)\nprint(faturas)"
+        }
+      ]
+    },
+    "pratica_guiada": {
+      "titulo": "Pratica guiada",
+      "texto_md": "Vamos comparar duas estrategias: uma que preserva a lista original e outra que altera o original de forma explicita e consciente.",
+      "python": "def top3_sem_corromper(valores):\n    copia = valores[:]\n    copia.sort(reverse=True)\n    return copia[:3]\n\ndef normalizar_inplace(valores):\n    total = sum(valores)\n    for i in range(len(valores)):\n        valores[i] = valores[i] / total\n\nreceitas = [1200.0, 900.0, 1500.0, 1100.0]\nprint('Top3:', top3_sem_corromper(receitas))\nprint('Original apos top3:', receitas)\nnormalizar_inplace(receitas)\nprint('Original apos normalizacao:', receitas)"
+    },
+    "pratica_autonoma": {
+      "titulo": "Exercicio de Continuacao (Sua vez!)",
+      "texto_md": "**Enunciado:** Crie `ordenar_copia(valores)` que retorne uma lista ordenada sem alterar a lista original. Depois, imprima duas linhas: `Original: [...]` e `Ordenada: [...]`.\n\n| Entrada Oculta (`valores`) | Saida Esperada | Show |\n|---|---|---|\n| `[4, 1, 3]` | Original: [4, 1, 3]<br>Ordenada: [1, 3, 4] | Sim |\n| `[2, 2, 1]` | Original: [2, 2, 1]<br>Ordenada: [1, 2, 2] | Sim |\n| `[9]` | Original: [9]<br>Ordenada: [9] | Nao |"
+    },
+    "desafios": {
+      "titulo": "",
+      "texto_md": "",
+      "lista": []
+    },
+    "fechamento": {
+      "titulo": "Fechamento e Autoavaliacao",
+      "quiz": {
+        "texto_md": "**1. O que caracteriza efeito colateral indesejado?**\nA) Mudar o resultado retornado.\nB) Alterar dado compartilhado sem explicitar isso no contrato.\nC) Usar `for` em uma funcao.\n\n::details{summary=\"Ver a resposta correta\"}\n**Correto: B.** O problema e a alteracao oculta do estado compartilhado.\n::\n\n**2. Quando a copia de lista e recomendada?**\nA) Quando precisamos preservar o original para rastreabilidade.\nB) Sempre, sem excecao.\nC) Nunca.\n\n::details{summary=\"Ver a resposta correta\"}\n**Correto: A.** A copia atende cenarios de auditoria e reuso seguro.\n::\n\n**3. Alterar lista in-place e sempre erro?**\nA) Sim.\nB) Nao, pode ser regra legitima quando documentada e esperada.\nC) So e valido com `while`.\n\n::details{summary=\"Ver a resposta correta\"}\n**Correto: B.** O ponto central e clareza de contrato, nao proibicao absoluta.\n::"
+      },
+      "leitura_complementar": {
+        "texto_md": "* Revise mutabilidade de listas na documentacao Python e compare `sorted()` com `list.sort()`.\n* Pratica diaria: identifique um processo em que o historico nao pode ser alterado e descreva como o codigo preservaria os dados originais."
+      },
+      "reflexao": {
+        "texto_md": "* Proteger o dado original e proteger memoria institucional. Sem trilha confiavel, nao existe auditoria confiavel."
+      }
+    }
+  },
+  "premio": null
+}

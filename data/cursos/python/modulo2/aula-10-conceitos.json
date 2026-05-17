@@ -1,0 +1,73 @@
+{
+  "id": "python-M02-A10-CT",
+  "curso": "python",
+  "modulo": 2,
+  "aula": 10,
+  "numero": 10,
+  "tipo": "Aula",
+  "subtipo": "conceito",
+  "titulo": "Matrizes: o quadro geral",
+  "subtitulo": "Lendo listas dentro de listas: a realidade tem várias dimensões",
+  "objetivo": "Compreender o conceito de matrizes e utilizar o laço for aninhado simples para percorrer, somar e filtrar dados bidimensionais.",
+  "duracao": "1h30",
+  "tags": [],
+  "secoes": {
+    "abertura": {
+      "objetivo": {
+        "texto_md": "Até agora, analisamos listas simples, como se olhássemos para uma única folha de recibo. Mas na vida real, os nossos dados formam tabelas: um mês é composto por várias semanas, e cada semana por vários dias. O registro das nossas horas ou dos nossos gastos tem \"linhas\" e \"colunas\". Em programação, chamamos a isto **Matrizes** (listas dentro de listas). Nesta aula, vai aprender a usar um laço `for` dentro de outro `for` para percorrer estas duas dimensões. Dominar isto significa ter a capacidade de auditar o \"quadro geral\" do seu trabalho, não deixando que um mês inteiro seja resumido a um número solitário que esconde a sua realidade."
+      },
+      "retomada": {
+        "texto_md": "* O laço `for item in lista` simples (Aula 3).\n* Contadores e acumuladores (`soma += valor`).\n* A estrutura `if` para filtrar apenas os dados que importam."
+      },
+      "situacao": {
+        "texto_md": "O departamento de recursos humanos enviou a um trabalhador o registro das suas horas num formato complexo: uma tabela gigante com 4 semanas e 5 dias em cada uma. Se o trabalhador tentar usar uma função de soma rápida na tabela inteira, o sistema dará erro, pois o computador não sabe somar uma \"semana\" inteira com outra \"semana\". O trabalhador precisa de uma forma sistemática de abrir semana a semana, tirar as horas dia a dia de dentro das pastas, e só então somar o seu esforço.",
+        "titulo": "O problema da tabela achatada"
+      },
+      "problematizacao": {
+        "texto_md": "* O que perdemos na nossa argumentação quando um volume gigante de dados nos é imposto em tabelas, e nós não sabemos como as ler e processar de forma autónoma?\n* Como a capacidade de construir \"laços aninhados\" (que verificam o detalhe sem perder a noção do todo) nos devolve o poder de investigar bases de dados complexas criadas por sistemas fechados?"
+      }
+    },
+    "conceito": {
+      "titulo": "Conceito técnico",
+      "texto_md": "",
+      "exemplos": [
+        {
+          "texto_md": "",
+          "python": "# Registos de horas trabalhadas em 3 semanas diferentes (Matriz 3x5)\nhoras_mensais = [\n    [8, 8, 8, 8, 8],    # Semana 1\n    [8, 10, 12, 8, 8],  # Semana 2 (Houve horas extras aqui)\n    [8, 8, 8, 8, 8]     # Semana 3\n]"
+        },
+        {
+          "texto_md": "### 2. O laço `for` Aninhado\n\nPara ler os dados da matriz, precisamos de dar duas ordens ao computador: \"Abre a gaveta da semana\" e, a seguir, \"Lê os documentos dessa gaveta\".",
+          "python": "horas_mensais = [\n    [8, 8, 8], \n    [8, 10, 12]\n]\n\n# O laço de FORA pega numa linha inteira de cada vez\nfor semana in horas_mensais:\n    \n    # O laço de DENTRO processa os números dessa linha\n    for horas in semana:\n        print(f\"Trabalhou: {horas}h\")"
+        }
+      ]
+    },
+    "pratica_guiada": {
+      "titulo": "Prática guiada",
+      "texto_md": "Vamos criar o código de um trabalhador que quer saber qual o total de horas trabalhadas em todo o mês e quantos desses dias foram \"dias de exaustão\" (mais de 8 horas no turno).",
+      "python": "# A nossa matriz de horas\nregisto_mensal = [\n    [8, 8, 8, 8, 8],\n    [8, 10, 12, 10, 8],\n    [8, 8, 8, 8, 8]\n]\n\ntotal_horas = 0\ndias_exaustivos = 0\n\n# Percorrer a matriz\nfor semana in registo_mensal:\n    for horas_do_dia in semana:\n        # Acumular o total\n        total_horas += horas_do_dia\n        \n        # Filtrar o esforço extremo\n        if horas_do_dia > 8:\n            dias_exaustivos += 1\n\nprint(f\"O seu total mensal foi de {total_horas} horas.\")\nprint(f\"Trabalhou em regime de exaustão durante {dias_exaustivos} dias.\")"
+    },
+    "pratica_autonoma": {
+      "titulo": "Exercício de Continuação (A sua vez!)",
+      "texto_md": "**Enunciado:** O sistema recebe uma matriz (lista de listas) com os gastos diários de uma pequena loja ao longo de várias semanas. Escreva a lógica que percorre toda a matriz, conta a quantidade de dias em que a loja teve `0` gastos, e imprime esse total.\n\n**Entradas e Saídas (Autocorreção):**\n\n| Entrada | Saída | Show | \n|---|---|---| \n| [[10, 0], [0, 10]] | Dias sem gastos: 2 | Sim | \n| [[5, 2], [3, 1]] | Dias sem gastos: 0 | Sim |"
+    },
+    "desafios": {
+      "titulo": "",
+      "texto_md": "",
+      "lista": []
+    },
+    "fechamento": {
+      "titulo": "Fechamento e Autoavaliação",
+      "texto_md": "Teste o seu entendimento sobre a abertura das gavetas da memória.",
+      "quiz": {
+        "texto_md": "A) Um número inteiro que diz em que semana estamos.\nB) A sub-lista completa (a gaveta inteira), que será então aberta e lida número a número pelo segundo laço.\nC) Uma palavra que o Python inventa para não dar erro.\n\n::details{summary=\"Ver a resposta correta\"}\n**Correto: B.** O primeiro laço extrai a lista interior intacta. É por isso que o segundo laço consegue fazer um `for item in linha:` — ele está literalmente a abrir essa sub-lista.\n::\n\n**2. Qual é o grande risco de tentar usar `sum(matriz)` diretamente sem usar laços aninhados?**\nA) A função `sum()` não sabe somar listas com outras listas; ela só soma números. Sem os laços para \"tirar os números das gavetas\", o código vai rebentar com um erro.\nB) O computador bloqueia por tentar somar demasiados números ao mesmo tempo.\nC) Não há risco, o `sum()` resolve tudo sozinho.\n\n::details{summary=\"Ver a resposta correta\"}\n**Correto: A.** Para o Python, uma matriz é uma caixa cheia de caixas menores. Ele não soma caixas, soma o conteúdo delas. Os laços servem para desembalar o conteúdo.\n::\n\n**3. Se tivermos uma matriz com 3 linhas e 4 colunas, quantas vezes o código que está DENTRO do segundo `for` será executado no total?**\nA) 3 vezes.\nB) 4 vezes.\nC) 12 vezes.\n\n::details{summary=\"Ver a resposta correta\"}\n**Correto: C.** A máquina abre 3 gavetas. Em cada gaveta, ela lê 4 documentos. 3 vezes 4 resulta em 12 leituras individuais.\n::"
+      },
+      "leitura_complementar": {
+        "texto_md": "* **Documentação Oficial:** Explore o conceito de \"2D Lists\" (Listas Bidimensionais) em tutoriais de Python para ver como são aplicadas em coisas tão comuns como uma folha de Excel ou um tabuleiro de Xadrez.\n* **Prática Diária:** Olhe para o calendário do seu telefone. Ele é a matriz perfeita: cada linha é uma semana, cada quadrado é um dia. Tente imaginar na sua cabeça como o Python desenharia o seu calendário deste mês!"
+      },
+      "reflexao": {
+        "texto_md": "* Apresentar matrizes complexas e arquivos gigantes é uma tática corporativa comum para sobrecarregar a interpretação do trabalhador. \"Está aqui a tabela com centenas de rubricas, lide com isso\". Dominar o `for` aninhado é ganhar o poder de não se deixar esmagar pelo volume de informação. Deixamos de ter medo de tabelas porque sabemos que, para o código, a tabela gigante é apenas uma série de gavetas que ele abrirá uma a uma, em milissegundos, para encontrar a nossa verdade."
+      }
+    }
+  },
+  "premio": null
+}

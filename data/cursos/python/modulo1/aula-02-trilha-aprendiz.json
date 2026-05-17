@@ -1,0 +1,64 @@
+{
+  "id": "python-M01-A02-TA",
+  "curso": "python",
+  "modulo": 1,
+  "aula": 2,
+  "numero": 2,
+  "tipo": "Trilha",
+  "subtipo": "aprendiz",
+  "titulo": "Trilha do Aprendiz II: Forja dos Operadores",
+  "subtitulo": "5 desafios em sala sobre input, conversão e operadores",
+  "objetivo": "Fixar em sala a leitura de entrada, a conversão de tipos e os primeiros cálculos.",
+  "duracao": "30min",
+  "tags": [
+    "trilha-aprendiz",
+    "input",
+    "operadores"
+  ],
+  "secoes": {
+    "abertura": {
+      "introducao": {
+        "texto_md": "# Forja dos Operadores\n\nAgora o aprendiz precisa ouvir a voz do usuário, converter corretamente a entrada e realizar cálculos simples com precisão."
+      }
+    },
+    "preparacao": {
+      "titulo": "Regras da forja",
+      "texto_md": "* `input()` devolve texto;\n* use `int()` e `float()` quando necessário;\n* teste pelo menos dois casos."
+    },
+    "desafios": {
+      "titulo": "Cinco golpes da forja",
+      "texto_md": "Cinco exercícios em sala para consolidar a aula 2.",
+      "missoes": [
+        {
+          "titulo": "Golpe 1: Soma da Oficina",
+          "texto_md": "**O Problema:** Receba dois inteiros e imprima `Soma: X`.\n\n**Casos de Teste (Amostra):**\n\n| Entrada | Saída | Show |\n|---|---|---|\n| 10<br>5 | Soma: 15 | Sim |\n| 7<br>8 | Soma: 15 | Sim |"
+        },
+        {
+          "titulo": "Golpe 2: Produto das Runas",
+          "texto_md": "**O Problema:** Receba dois números e imprima `Produto: X`.\n\n**Casos de Teste (Amostra):**\n\n| Entrada | Saída | Show |\n|---|---|---|\n| 6<br>4 | Produto: 24 | Sim |\n| 2<br>9 | Produto: 18 | Não |"
+        },
+        {
+          "titulo": "Golpe 3: Divisão do Cristal",
+          "texto_md": "**O Problema:** Receba dois números e imprima `Divisao: X`.\n\n**Casos de Teste (Amostra):**\n\n| Entrada | Saída | Show |\n|---|---|---|\n| 10<br>5 | Divisao: 2.0 | Sim |\n| 9<br>2 | Divisao: 4.5 | Não |"
+        },
+        {
+          "titulo": "Golpe 4: Desconto do Alquimista",
+          "texto_md": "**O Problema:** Receba o preço de um item e o desconto. Calcule o valor final e imprima `Final: X`.\n\n**Casos de Teste (Amostra):**\n\n| Entrada | Saída | Show |\n|---|---|---|\n| 50.0<br>8.0 | Final: 42.0 | Sim |\n| 1412.0<br>11.0 | Final: 1401.0 | Não |"
+        },
+        {
+          "titulo": "Golpe 5: IMC do Guerreiro",
+          "texto_md": "**O Problema:** Receba peso e altura, calcule o IMC e imprima `IMC: X`.\n\n**Casos de Teste (Amostra):**\n\n| Entrada | Saída | Show |\n|---|---|---|\n| 80.0<br>1.8 | IMC: 24.691358024691358 | Sim |\n| 60.0<br>1.5 | IMC: 26.666666666666668 | Não |"
+        }
+      ]
+    },
+    "fechamento": {
+      "titulo": "Saída da Forja",
+      "reflexao": {
+        "texto_md": "Quem domina entrada e cálculo deixa de escrever apenas exemplos e começa a construir programas que respondem ao mundo real."
+      }
+    }
+  },
+  "premio": {
+    "pontuacao": 70
+  }
+}

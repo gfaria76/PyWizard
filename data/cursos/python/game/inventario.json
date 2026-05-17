@@ -1,0 +1,156 @@
+{
+  "titulo": "Inventário",
+  "schema": 1,
+  "categorias": [
+    {
+      "id": 1,
+      "nome": "Operadores e Decisões",
+      "modulo": 1
+    },
+    {
+      "id": 2,
+      "nome": "Listas, Laços e Estruturas",
+      "modulo": 2
+    },
+    {
+      "id": 3,
+      "nome": "Funções e Modularização",
+      "modulo": 3
+    },
+    {
+      "id": 0,
+      "nome": "Bônus",
+      "modulo": null
+    }
+  ],
+  "superpoderes": [
+    {
+      "id": "operador-ternario",
+      "icone": "i-lucide-toggle-right",
+      "titulo": "Operador Ternário",
+      "categoria": 1,
+      "desbloqueio": null,
+      "descricao": "Forma compacta de decisão em uma linha com if/else."
+    },
+    {
+      "id": "operador-walrus",
+      "icone": "i-lucide-circle-dot",
+      "titulo": "Operador Walrus (:=)",
+      "categoria": 1,
+      "desbloqueio": null,
+      "descricao": "Permite atribuir e testar valor na mesma expressão."
+    },
+    {
+      "id": "f-strings-avancadas",
+      "icone": "i-lucide-text-cursor-input",
+      "titulo": "f-strings Avançadas",
+      "categoria": 1,
+      "desbloqueio": null,
+      "descricao": "Formatação, alinhamento e expressões embutidas em strings."
+    },
+    {
+      "id": "match-case",
+      "icone": "i-lucide-git-branch",
+      "titulo": "match / case",
+      "categoria": 1,
+      "desbloqueio": null,
+      "descricao": "Pattern matching para decisões múltiplas legíveis."
+    },
+    {
+      "id": "short-circuit",
+      "icone": "i-lucide-zap",
+      "titulo": "Curto-Circuito (and / or)",
+      "categoria": 1,
+      "desbloqueio": null,
+      "descricao": "Usa avaliação curta para validações e valores padrão."
+    },
+    {
+      "id": "slicing",
+      "icone": "i-lucide-scissors",
+      "titulo": "Slicing",
+      "categoria": 2,
+      "desbloqueio": "modulo2/aula-03-boss",
+      "descricao": "Fatiamento de listas para extrair janelas de dados."
+    },
+    {
+      "id": "zip",
+      "icone": "i-lucide-link",
+      "titulo": "zip()",
+      "categoria": 2,
+      "desbloqueio": "modulo2/aula-06-boss",
+      "descricao": "Pareia sequências para comparação por posição."
+    },
+    {
+      "id": "list-comprehension",
+      "icone": "i-lucide-bolt",
+      "titulo": "List Comprehension",
+      "categoria": 2,
+      "desbloqueio": "modulo2/aula-09-boss",
+      "descricao": "Cria listas derivadas de forma concisa com filtros."
+    },
+    {
+      "id": "sorted-key",
+      "icone": "i-lucide-arrow-up-down",
+      "titulo": "sorted() com key",
+      "categoria": 2,
+      "desbloqueio": "modulo2/aula-12-boss",
+      "descricao": "Ordenação por critério customizado sem alterar a origem."
+    },
+    {
+      "id": "unpacking",
+      "icone": "i-lucide-unplug",
+      "titulo": "Unpacking de Sequências",
+      "categoria": 2,
+      "desbloqueio": "modulo2/aula-13-PROVA",
+      "descricao": "Desestrutura elementos de iteráveis em variáveis."
+    },
+    {
+      "id": "lambda",
+      "icone": "i-lucide-variable",
+      "titulo": "Lambda",
+      "categoria": 3,
+      "desbloqueio": null,
+      "descricao": "Funções anônimas compactas para operações rápidas."
+    },
+    {
+      "id": "map",
+      "icone": "i-lucide-arrow-right-left",
+      "titulo": "map()",
+      "categoria": 3,
+      "desbloqueio": null,
+      "descricao": "Aplica transformação em sequência de dados."
+    },
+    {
+      "id": "filter",
+      "icone": "i-lucide-filter",
+      "titulo": "filter()",
+      "categoria": 3,
+      "desbloqueio": null,
+      "descricao": "Seleciona itens que atendem a um critério."
+    },
+    {
+      "id": "dict-comprehension",
+      "icone": "i-lucide-braces",
+      "titulo": "Dict Comprehension",
+      "categoria": 3,
+      "desbloqueio": null,
+      "descricao": "Constrói dicionários com expressão declarativa."
+    },
+    {
+      "id": "funcoes-ordem-superior",
+      "icone": "i-lucide-function-square",
+      "titulo": "Funções de Ordem Superior",
+      "categoria": 3,
+      "desbloqueio": null,
+      "descricao": "Recebem ou retornam funções para composições flexíveis."
+    },
+    {
+      "id": "regex",
+      "icone": "i-lucide-search-code",
+      "titulo": "Expressões Regulares (regex)",
+      "categoria": 0,
+      "desbloqueio": null,
+      "descricao": "Busca, validação e substituição por padrões textuais."
+    }
+  ]
+}
