@@ -58,19 +58,16 @@
 <script setup lang="ts">
 definePageMeta({ layout: 'student' })
 
-// Extract unique enemies from all lesson JSONs
-// For now, we use a curated static list derived from the enriched data
+interface Beast {
+  name: string
+  hp: number
+  weakness: string
+  xp: number
+  icon: string
+  source: string
+  description: string
+}
 
-const beasts = [
-  { name: 'Golem de Memória', hp: 50, weakness: 'variáveis', xp: 70, icon: 'smart_toy', source: 'Trilha do Aprendiz I', description: 'Um construto de pedra e circuitos que guarda segredos em cofres de memória. Vulnerável a quem domina a arte de nomear e vincular dados.' },
-  { name: 'Espectro Errante', hp: 65, weakness: 'tipos de dados', xp: 90, icon: 'blur_on', source: 'Trilha da Aventura I', description: 'Um fantasma digital que assume formas aleatórias — ora inteiro, ora string. Só cai quando revelamos sua verdadeira natureza.' },
-  { name: 'Fantasma dos Operadores', hp: 55, weakness: 'operadores', xp: 70, icon: 'calculate', source: 'Trilha do Aprendiz II', description: 'Materializa-se em equações nebulosas. Derrote-o provando que conhece cada operador aritmético.' },
-  { name: 'Elemental Numérico', hp: 70, weakness: 'cálculos', xp: 90, icon: 'whatshot', source: 'Trilha da Aventura II', description: 'Uma entidade feita de puro cálculo. Suas chamas só se apagam com resultados precisos.' },
-  { name: 'Guardião da Forja', hp: 120, weakness: 'cálculos complexos', xp: 120, icon: 'shield', source: 'Trilha do Guardião I', description: 'O protetor da forja ancestral. Testa cada aprendiz com problemas de múltiplas etapas.' },
-  { name: 'O Analista de Dados Brutos', hp: 300, weakness: 'f-strings e formatação', xp: 500, icon: 'skull', source: 'Boss Marathon I', description: 'O primeiro chefão. Extraído do Portal da Transparência, exige análise precisa de dados governamentais reais.' },
-  { name: 'Cubo de Formatação', hp: 60, weakness: 'f-strings', xp: 70, icon: 'view_in_ar', source: 'Trilha do Aprendiz IV', description: 'Um cubo geométrico que exibe mensagens distorcidas. Só se alinha quando a formatação está perfeita.' },
-  { name: 'Espírito da Bifurcação', hp: 65, weakness: 'condicionais', xp: 70, icon: 'fork_right', source: 'Trilha do Aprendiz VII', description: 'Uma presença que habita encruzilhadas lógicas. Desaparece quando o caminho correto é escolhido.' },
-  { name: 'O Filtrador de Regras', hp: 400, weakness: 'condicionais avançadas', xp: 500, icon: 'skull', source: 'Boss Marathon III', description: 'Um juiz sombrio que aplica cadeias de regras impiedosas. Só é derrotado com lógica impecável.' },
-  { name: 'Hidra Aninhada', hp: 80, weakness: 'if aninhado', xp: 70, icon: 'hub', source: 'Trilha do Aprendiz XI', description: 'Cada cabeça cortada gera duas novas condições. Exige organização hierárquica para ser vencida.' },
-]
+const { data } = await useFetch<{ bestas: Beast[] }>('/api/cursos/python/bestiario')
+const beasts = computed(() => data.value?.bestas ?? [])
 </script>
