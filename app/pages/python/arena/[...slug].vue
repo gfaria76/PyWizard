@@ -1,8 +1,8 @@
 <template>
-  <!-- Aprendiz Layout: Fixed Sidebar + Editor -->
-  <div v-if="isAprendiz" class="flex h-screen overflow-hidden bg-background">
+  <!-- Aprendiz Layout: Challenge Sidebar + Editor (inside student layout) -->
+  <div v-if="isAprendiz" class="flex h-[calc(100vh-5rem)] overflow-hidden -mx-margin-mobile md:-mx-margin-desktop">
     <!-- Challenge Sidebar -->
-    <aside class="w-80 bg-surface-container/90 backdrop-blur-md border-r border-secondary-container/30 shadow-xl flex flex-col overflow-y-auto pt-6 px-6 pb-6">
+    <aside class="hidden lg:flex w-80 shrink-0 bg-surface-container/90 backdrop-blur-md border-r border-secondary-container/30 shadow-xl flex-col overflow-y-auto pt-6 px-6 pb-6">
       <div class="mb-6">
         <h2 class="font-headline-sm text-headline-sm text-secondary mb-1">{{ lesson?.titulo }}</h2>
         <p class="font-label-caps text-label-caps text-on-surface-variant">{{ getTypeLabel(lesson?.subtipo) }}</p>
@@ -10,7 +10,7 @@
 
       <!-- Challenge Info -->
       <div v-if="lesson?.rpg" class="space-y-6 flex-1">
-        <div class="bg-surface-dim/80 border border-primary-container/20 rounded-xl p-4 shadow-[inset_0_0_10px_rgba(0,251,251,0.1)]">
+        <div class="bg-surface-container/80 border border-primary-container/20 rounded-xl p-4 shadow-[inset_0_0_10px_rgba(0,251,251,0.1)]">
           <h3 class="font-headline-sm text-headline-sm text-primary-container mb-3">Runa: {{ lesson.rpg.runa_titulo || 'Desafio' }}</h3>
           <div class="space-y-3">
             <div v-if="lesson.rpg.xp_reward" class="flex items-center gap-2">
@@ -35,21 +35,7 @@
     </aside>
 
     <!-- Editor Area -->
-    <main class="flex-1 flex flex-col overflow-hidden">
-      <!-- TopAppBar -->
-      <header class="h-16 border-b border-primary-container/20 bg-surface/80 backdrop-blur-xl flex items-center justify-between px-8 z-30 shadow-[0_4px_20px_rgba(0,0,0,0.5)]">
-        <span class="font-headline-md text-headline-md font-bold text-primary-container drop-shadow-[0_0_10px_rgba(0,251,251,0.6)]">Arena</span>
-        <div class="flex gap-4">
-          <button class="text-on-surface-variant hover:text-primary-container transition-colors">
-            <span class="material-symbols-outlined">bolt</span>
-          </button>
-          <button class="text-on-surface-variant hover:text-primary-container transition-colors">
-            <span class="material-symbols-outlined">auto_fix_high</span>
-          </button>
-        </div>
-      </header>
-
-      <!-- Editor + Console -->
+    <section class="flex-1 flex flex-col overflow-hidden">
       <div class="flex-1 flex flex-col gap-4 p-6 overflow-auto">
         <CodeEditor
           :lesson="lesson"
@@ -58,7 +44,7 @@
           @output="consoleOutput = $event"
         />
       </div>
-    </main>
+    </section>
   </div>
 
   <!-- Aventura/Guardião/Boss/Prova Layout: Grid 4+8 cols with Editor -->
@@ -193,11 +179,11 @@
 
           <!-- Abertura -->
           <section v-if="lesson?.secoes?.abertura" class="glass-panel p-6 rounded-xl border border-outline-variant/20">
-            <div v-if="lesson.secoes.abertura.introducao" class="prose-arcane" v-html="renderMd(lesson.secoes.abertura.introducao.texto_md)"></div>
-            <div v-if="lesson.secoes.abertura.objetivo" class="mt-4 prose-arcane" v-html="renderMd(lesson.secoes.abertura.objetivo.texto_md)"></div>
+            <QuestMarkdownBlock v-if="lesson.secoes.abertura.introducao" class="prose-arcane" :content="lesson.secoes.abertura.introducao.texto_md" />
+            <QuestMarkdownBlock v-if="lesson.secoes.abertura.objetivo" class="mt-4 prose-arcane" :content="lesson.secoes.abertura.objetivo.texto_md" />
             <div v-if="lesson.secoes.abertura.situacao" class="mt-4">
               <h3 class="font-headline-sm text-headline-sm text-secondary mb-2">{{ lesson.secoes.abertura.situacao.titulo }}</h3>
-              <div class="prose-arcane" v-html="renderMd(lesson.secoes.abertura.situacao.texto_md)"></div>
+              <QuestMarkdownBlock class="prose-arcane" :content="lesson.secoes.abertura.situacao.texto_md" />
             </div>
           </section>
 
@@ -207,11 +193,11 @@
               <span class="material-symbols-outlined">auto_stories</span>
               {{ lesson.secoes.conceito.titulo }}
             </h2>
-            <div class="prose-arcane mb-6" v-html="renderMd(lesson.secoes.conceito.texto_md)"></div>
+            <QuestMarkdownBlock class="prose-arcane mb-6" :content="lesson.secoes.conceito.texto_md" />
 
             <!-- Code Examples -->
             <div v-for="(ex, i) in lesson.secoes.conceito.exemplos" :key="i" class="mt-6 space-y-3">
-              <div class="prose-arcane" v-html="renderMd(ex.texto_md)"></div>
+              <QuestMarkdownBlock class="prose-arcane" :content="ex.texto_md" />
               <div v-if="ex.python" class="bg-surface-container-lowest p-4 rounded-lg border border-outline-variant/30 font-code-md text-code-md">
                 <pre class="overflow-x-auto"><code class="text-primary-fixed-dim whitespace-pre">{{ ex.python }}</code></pre>
               </div>
@@ -224,7 +210,7 @@
               <span class="material-symbols-outlined">science</span>
               {{ lesson.secoes.pratica_guiada.titulo }}
             </h2>
-            <div class="prose-arcane mb-4" v-html="renderMd(lesson.secoes.pratica_guiada.texto_md)"></div>
+            <QuestMarkdownBlock class="prose-arcane mb-4" :content="lesson.secoes.pratica_guiada.texto_md" />
             <div v-if="lesson.secoes.pratica_guiada.python" class="bg-surface-container-lowest p-4 rounded-lg border border-outline-variant/30 font-code-md text-code-md">
               <pre class="overflow-x-auto"><code class="text-primary-fixed-dim whitespace-pre">{{ lesson.secoes.pratica_guiada.python }}</code></pre>
             </div>
@@ -233,7 +219,7 @@
           <!-- Preparação (Trilhas) -->
           <section v-if="lesson?.secoes?.preparacao" class="glass-panel p-6 rounded-xl border border-outline-variant/20">
             <h2 class="font-headline-sm text-headline-sm text-primary mb-4">{{ lesson.secoes.preparacao.titulo }}</h2>
-            <div class="prose-arcane" v-html="renderMd(lesson.secoes.preparacao.texto_md)"></div>
+            <QuestMarkdownBlock class="prose-arcane" :content="lesson.secoes.preparacao.texto_md" />
           </section>
 
           <!-- Desafios / Missões -->
@@ -254,7 +240,7 @@
                 </div>
                 <h3 class="font-headline-sm text-[18px] text-primary">{{ mission.titulo }}</h3>
               </div>
-              <div class="prose-arcane" v-html="renderMd(mission.texto_md)"></div>
+              <QuestMarkdownBlock class="prose-arcane" :content="mission.texto_md" />
             </div>
           </section>
 
@@ -264,14 +250,14 @@
               <span class="material-symbols-outlined">local_fire_department</span>
               {{ lesson.secoes.aquecimento.titulo }}
             </h2>
-            <div class="prose-arcane mb-4" v-html="renderMd(lesson.secoes.aquecimento.texto_md)"></div>
+            <QuestMarkdownBlock class="prose-arcane mb-4" :content="lesson.secoes.aquecimento.texto_md" />
             <div
               v-for="(m, i) in lesson.secoes.aquecimento.missoes"
               :key="'warmup-' + i"
               class="bg-tertiary-fixed-dim/5 backdrop-blur-md p-6 rounded-xl border border-tertiary-fixed-dim/20"
             >
               <h3 class="font-headline-sm text-[18px] text-tertiary-fixed-dim mb-3">{{ m.titulo }}</h3>
-              <div class="prose-arcane" v-html="renderMd(m.texto_md)"></div>
+              <QuestMarkdownBlock class="prose-arcane" :content="m.texto_md" />
             </div>
           </section>
 
@@ -281,15 +267,15 @@
               <span class="material-symbols-outlined">edit_note</span>
               {{ lesson.secoes.pratica_autonoma.titulo }}
             </h2>
-            <div class="prose-arcane" v-html="renderMd(lesson.secoes.pratica_autonoma.texto_md)"></div>
+            <QuestMarkdownBlock class="prose-arcane" :content="lesson.secoes.pratica_autonoma.texto_md" />
           </section>
 
           <!-- Fechamento -->
           <section v-if="lesson?.secoes?.fechamento" class="glass-panel p-6 rounded-xl border border-outline-variant/20">
             <h2 class="font-headline-sm text-headline-sm text-primary mb-4">{{ lesson.secoes.fechamento.titulo }}</h2>
-            <div v-if="lesson.secoes.fechamento.quiz" class="prose-arcane mb-4" v-html="renderMd(lesson.secoes.fechamento.quiz.texto_md)"></div>
+            <QuestMarkdownBlock v-if="lesson.secoes.fechamento.quiz" class="prose-arcane mb-4" :content="lesson.secoes.fechamento.quiz.texto_md" />
             <div v-if="lesson.secoes.fechamento.reflexao" class="mt-4 p-4 bg-surface-container/30 rounded-lg border border-outline-variant/10">
-              <div class="prose-arcane" v-html="renderMd(lesson.secoes.fechamento.reflexao.texto_md)"></div>
+              <QuestMarkdownBlock class="prose-arcane" :content="lesson.secoes.fechamento.reflexao.texto_md" />
             </div>
           </section>
 
@@ -330,11 +316,12 @@
 </template>
 
 <script setup lang="ts">
-import { computed, ref, watch } from 'vue'
+import { computed, ref } from 'vue'
+
+definePageMeta({ layout: 'student' })
+
 const route = useRoute()
 
-// Set layout based on subtipo
-const isAprendiz = ref(false)
 const consoleOutput = ref<any>(null)
 const enemyHpPercent = ref(100)
 
@@ -349,27 +336,12 @@ const { data: lesson } = await useFetch<any>(
   () => `/api/cursos/python/aulas/${slugPath.value}`
 )
 
-// Update isAprendiz when lesson loads
-watch(() => lesson.value?.subtipo, (subtipo) => {
-  isAprendiz.value = subtipo === 'aprendiz'
-})
+const isAprendiz = computed(() => lesson.value?.subtipo === 'aprendiz')
 
-// Editor layout for aventura, guardião, boss, prova
 const isEditorLayout = computed(() => {
   const subtipo = lesson.value?.subtipo as string | undefined
   return ['aventura', 'guardiao', 'boss', 'prova', 'grupo'].includes(subtipo ?? '')
 })
-
-// Set page layout based on subtipo
-watch(() => lesson.value?.subtipo, (subtipo) => {
-  if (subtipo === 'aprendiz') {
-    definePageMeta({ layout: false })
-  } else if (subtipo === 'conceito') {
-    definePageMeta({ layout: 'student' })
-  } else {
-    definePageMeta({ layout: 'student' })
-  }
-}, { immediate: true })
 
 const missions = computed<any[]>(() => {
   if (!lesson.value) return []
@@ -399,19 +371,6 @@ const variantBadgeClass = computed(() => {
   if (subtipo === 'prova') return 'text-tertiary-fixed-dim border-tertiary-fixed-dim/30'
   return 'text-primary-fixed-dim border-primary-fixed-dim/30'
 })
-
-function renderMd(md: string): string {
-  if (!md) return ''
-  return md
-    .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
-    .replace(/\*(.*?)\*/g, '<em>$1</em>')
-    .replace(/`(.*?)`/g, '<code class="bg-surface-container px-1 rounded text-primary-fixed-dim font-code-md text-[13px]">$1</code>')
-    .replace(/^# (.*$)/gm, '<h1 class="font-headline-md text-headline-md text-primary mb-3">$1</h1>')
-    .replace(/^## (.*$)/gm, '<h2 class="font-headline-sm text-headline-sm text-secondary mb-2">$1</h2>')
-    .replace(/^### (.*$)/gm, '<h3 class="font-body-lg text-body-lg text-primary font-bold mb-2">$1</h3>')
-    .replace(/^\* (.*$)/gm, '<li class="ml-4 list-disc text-on-surface-variant">$1</li>')
-    .replace(/\n/g, '<br/>')
-}
 
 function lootIcon(type: string) {
   const icons: Record<string, string> = {

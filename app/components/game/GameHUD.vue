@@ -1,64 +1,72 @@
 <template>
-  <div class="flex flex-col gap-1 w-full max-w-[200px]">
-    <!-- HP Bar -->
-    <div v-if="showHp" class="flex flex-col gap-1">
-      <div class="flex justify-between items-center px-1">
-        <span class="font-label-caps text-[10px] text-error font-bold tracking-wider">HP</span>
-        <span class="font-code-md text-[10px] text-error">{{ hp }}/{{ maxHp }}</span>
-      </div>
-      <div class="h-1.5 w-full bg-surface-container-lowest rounded-full overflow-hidden">
-        <div class="h-full bg-gradient-to-r from-error to-[#ff5c5c] transition-all duration-300" :style="{ width: hpPercent + '%' }"></div>
-      </div>
-    </div>
-
-    <!-- Mana Bar -->
-    <div v-if="showMana" class="flex flex-col gap-1 mt-1">
-      <div class="flex justify-between items-center px-1">
-        <span class="font-label-caps text-[10px] text-primary-container font-bold tracking-wider">MP</span>
-        <span class="font-code-md text-[10px] text-primary-container">{{ mana }}/{{ maxMana }}</span>
-      </div>
-      <div class="h-1.5 w-full bg-surface-container-lowest rounded-full overflow-hidden">
-        <div class="h-full bg-gradient-to-r from-surface-tint to-primary-container transition-all duration-300" :style="{ width: manaPercent + '%' }"></div>
+  <div class="flex items-center gap-5">
+    <!-- HP -->
+    <div class="flex items-center gap-2">
+      <span class="material-symbols-outlined text-error text-[18px]" style="font-variation-settings: 'FILL' 1;">favorite</span>
+      <div class="flex flex-col">
+        <div class="flex items-center gap-1">
+          <span class="font-label-caps text-[10px] text-error font-bold tracking-wider">HP</span>
+          <span class="font-code-md text-[10px] text-error tabular-nums">{{ hp }}/{{ maxHp }}</span>
+        </div>
+        <div class="h-1.5 w-20 bg-surface-container-lowest rounded-full overflow-hidden border border-error/20">
+          <div class="h-full bg-gradient-to-r from-error to-[#ff5c5c] transition-all duration-300" :style="{ width: hpPercent + '%' }" />
+        </div>
       </div>
     </div>
 
-    <!-- XP Bar (Top global style) -->
-    <Teleport to="body" v-if="showGlobalXp">
-      <div class="fixed top-0 left-0 w-full h-[2px] bg-surface-variant z-[60]">
-        <div class="h-full bg-tertiary-fixed-dim transition-all duration-500 shadow-[0_0_10px_rgba(251,188,0,0.8)]" :style="{ width: xpPercent + '%' }"></div>
+    <!-- Mana -->
+    <div class="flex items-center gap-2">
+      <span class="material-symbols-outlined text-primary-container text-[18px]" style="font-variation-settings: 'FILL' 1;">water_drop</span>
+      <div class="flex flex-col">
+        <div class="flex items-center gap-1">
+          <span class="font-label-caps text-[10px] text-primary-container font-bold tracking-wider">MP</span>
+          <span class="font-code-md text-[10px] text-primary-container tabular-nums">{{ mana }}/{{ maxMana }}</span>
+        </div>
+        <div class="h-1.5 w-20 bg-surface-container-lowest rounded-full overflow-hidden border border-primary-container/20">
+          <div class="h-full bg-gradient-to-r from-surface-tint to-primary-container transition-all duration-300" :style="{ width: manaPercent + '%' }" />
+        </div>
       </div>
-    </Teleport>
+    </div>
+
+    <!-- Coins -->
+    <div class="hidden sm:flex items-center gap-1.5">
+      <span class="material-symbols-outlined text-tertiary-fixed-dim text-[18px]" style="font-variation-settings: 'FILL' 1;">monetization_on</span>
+      <span class="font-code-md text-[12px] text-tertiary-fixed-dim tabular-nums">{{ coins }}</span>
+    </div>
+
+    <!-- Level + XP -->
+    <div class="hidden md:flex items-center gap-2">
+      <span class="font-label-caps text-[10px] text-tertiary-fixed-dim font-bold tracking-wider">LVL {{ level }}</span>
+      <div class="flex flex-col">
+        <div class="h-1.5 w-24 bg-surface-container-lowest rounded-full overflow-hidden border border-tertiary-fixed-dim/20">
+          <div class="h-full bg-tertiary-fixed-dim shadow-[0_0_8px_rgba(251,188,0,0.5)] transition-all duration-300" :style="{ width: xpPercent + '%' }" />
+        </div>
+        <span class="font-code-md text-[9px] text-on-surface-variant tabular-nums mt-0.5">{{ currentLevelXp }}/{{ xpPerLevel }} XP</span>
+      </div>
+    </div>
   </div>
 </template>
 
 <script setup lang="ts">
-import { computed } from 'vue'
+const progress = useProgressStore()
 
-interface Props {
-  hp?: number
-  maxHp?: number
-  mana?: number
-  maxMana?: number
-  xp?: number
-  nextLevelXp?: number
-  showHp?: boolean
-  showMana?: boolean
-  showGlobalXp?: boolean
+const XP_PER_LEVEL = 300
+
+const hp = computed(() => progress.stats.hp)
+const maxHp = computed(() => progress.stats.maxHp)
+const mana = computed(() => progress.stats.mana)
+const maxMana = computed(() => progress.stats.maxMana)
+const coins = computed(() => progress.stats.coins)
+const level = computed(() => progress.stats.level)
+const xpPerLevel = XP_PER_LEVEL
+const currentLevelXp = computed(() => progress.stats.xp % XP_PER_LEVEL)
+
+const hpPercent = computed(() => percent(hp.value, maxHp.value))
+const manaPercent = computed(() => percent(mana.value, maxMana.value))
+const xpPercent = computed(() => percent(currentLevelXp.value, XP_PER_LEVEL))
+
+function percent(value: number, total: number) {
+  if (!total) return 0
+  return Math.max(0, Math.min(100, (value / total) * 100))
 }
-
-const props = withDefaults(defineProps<Props>(), {
-  hp: 100,
-  maxHp: 100,
-  mana: 50,
-  maxMana: 50,
-  xp: 0,
-  nextLevelXp: 100,
-  showHp: true,
-  showMana: true,
-  showGlobalXp: true
-})
-
-const hpPercent = computed(() => Math.max(0, Math.min(100, (props.hp / props.maxHp) * 100)))
-const manaPercent = computed(() => Math.max(0, Math.min(100, (props.mana / props.maxMana) * 100)))
-const xpPercent = computed(() => Math.max(0, Math.min(100, (props.xp / props.nextLevelXp) * 100)))
 </script>
