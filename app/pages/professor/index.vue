@@ -178,7 +178,7 @@
 </template>
 
 <script setup lang="ts">
-definePageMeta({ middleware: 'professor' })
+definePageMeta({ layout: 'professor', middleware: 'professor' })
 
 const toast = useToast()
 const auth = useAuthStore()

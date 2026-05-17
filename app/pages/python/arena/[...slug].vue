@@ -1,5 +1,10 @@
 <template>
-  <div class="h-full flex flex-col">
+  <div v-if="isAprendiz" class="flex h-screen overflow-hidden">
+    <!-- Aprendiz Layout: Sidebar + Editor -->
+    <ChallengeArena :lesson="lesson" />
+  </div>
+
+  <div v-else class="space-y-8 p-8 max-w-[1200px] mx-auto">
     <!-- Top Nav Bar -->
     <div class="p-4 border-b border-outline-variant/30 flex items-center justify-between shrink-0">
       <NuxtLink to="/python" class="text-on-surface-variant hover:text-primary transition-colors flex items-center gap-2">
@@ -192,8 +197,22 @@
 </template>
 
 <script setup lang="ts">
-import { computed, ref } from 'vue'
+import { computed, ref, watch } from 'vue'
 const route = useRoute()
+
+// Conditional layout based on subtipo
+const layoutComputed = computed(() => {
+  const subtipo = lesson.value?.subtipo as string | undefined
+  return subtipo === 'aprendiz' ? false : 'student'
+})
+
+watch(
+  layoutComputed,
+  (newLayout) => {
+    definePageMeta({ layout: newLayout as any })
+  },
+  { immediate: true }
+)
 
 // route.params.slug is string[] for [...slug] catch-all routes
 const slugPath = computed(() => {
@@ -207,6 +226,8 @@ const { data: lesson } = await useFetch<any>(
 )
 
 const enemyHpPercent = ref(100)
+
+const isAprendiz = computed(() => lesson.value?.subtipo === 'aprendiz')
 
 const missions = computed<any[]>(() => {
   if (!lesson.value) return []

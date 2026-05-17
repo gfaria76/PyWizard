@@ -10,7 +10,8 @@
       "Bash(python3 *)",
       "Bash(npx supabase *)",
       "Bash(echo \"EXIT:$?\")",
-      "Bash(git add *)"
+      "Bash(git add *)",
+      "Bash(git commit -m ' *)"
     ]
   }
 }

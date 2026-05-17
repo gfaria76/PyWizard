@@ -56,6 +56,8 @@
 </template>
 
 <script setup lang="ts">
+definePageMeta({ layout: 'student' })
+
 // Extract unique enemies from all lesson JSONs
 // For now, we use a curated static list derived from the enriched data
 
