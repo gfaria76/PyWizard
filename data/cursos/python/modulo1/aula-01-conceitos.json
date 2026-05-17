@@ -68,5 +68,17 @@
         "texto_md": "* Variáveis são o vocabulário básico de qualquer sistema computacional. Quando um registro do INSS guarda sua data de nascimento, seu tempo de contribuição e seu salário, cada um é uma variável com tipo específico. Entender tipos não é apenas sintaxe — é entender como a realidade é representada na máquina."
       }
     }
+  },
+  "rpg": {
+    "xp_reward": 50,
+    "variant": "lesson",
+    "loot_drops": [
+      { "item": "Runa de Vinculação", "type": "scroll", "rarity": "common" }
+    ],
+    "oracle_hints": [
+      "Lembre-se: o sinal = em Python é atribuição, não comparação.",
+      "Strings sempre precisam de aspas. Números não.",
+      "Use type() para verificar se o dado é do tipo esperado."
+    ]
   }
 }

@@ -1,0 +1,435 @@
+<!-- Python Arcane: Guild Expedition (Group Arena) -->
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Python Arcane - Expedition Battle Arena</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&amp;family=JetBrains+Mono:wght@400;500;700&amp;family=Hanken+Grotesk:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-primary-fixed": "#002020",
+                        "on-primary": "#003737",
+                        "tertiary-container": "#ffdfa0",
+                        "on-surface": "#dae2fd",
+                        "secondary-fixed-dim": "#dcb8ff",
+                        "secondary-container": "#7701d0",
+                        "inverse-on-surface": "#283044",
+                        "surface-dim": "#0b1326",
+                        "tertiary-fixed": "#ffdfa0",
+                        "surface-bright": "#31394d",
+                        "surface-container-highest": "#2d3449",
+                        "tertiary-fixed-dim": "#fbbc00",
+                        "on-tertiary-fixed": "#261a00",
+                        "error-container": "#93000a",
+                        "on-secondary": "#480081",
+                        "primary-container": "#00fbfb",
+                        "on-secondary-fixed": "#2c0051",
+                        "on-tertiary": "#402d00",
+                        "on-tertiary-container": "#815f00",
+                        "surface-variant": "#2d3449",
+                        "primary": "#ffffff",
+                        "surface-tint": "#00dddd",
+                        "secondary-fixed": "#efdbff",
+                        "on-error": "#690005",
+                        "primary-fixed-dim": "#00dddd",
+                        "on-primary-container": "#007070",
+                        "background": "#0b1326",
+                        "surface-container-high": "#222a3d",
+                        "primary-fixed": "#00fbfb",
+                        "outline-variant": "#3a4a49",
+                        "on-secondary-container": "#dcb7ff",
+                        "secondary": "#dcb8ff",
+                        "error": "#ffb4ab",
+                        "tertiary": "#ffffff",
+                        "surface": "#0b1326",
+                        "surface-container": "#171f33",
+                        "inverse-surface": "#dae2fd",
+                        "inverse-primary": "#006a6a",
+                        "surface-container-lowest": "#060e20",
+                        "on-surface-variant": "#b9cac9",
+                        "on-secondary-fixed-variant": "#6700b5",
+                        "outline": "#839493",
+                        "on-tertiary-fixed-variant": "#5c4300",
+                        "on-background": "#dae2fd",
+                        "on-primary-fixed-variant": "#004f4f",
+                        "surface-container-low": "#131b2e",
+                        "on-error-container": "#ffdad6"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "unit": "4px",
+                        "margin-desktop": "48px",
+                        "margin-mobile": "16px",
+                        "gutter": "24px",
+                        "hud-padding": "12px"
+                    },
+                    "fontFamily": {
+                        "display-lg": ["Space Grotesk"],
+                        "label-caps": ["JetBrains Mono"],
+                        "headline-md": ["Space Grotesk"],
+                        "code-md": ["JetBrains Mono"],
+                        "body-md": ["Hanken Grotesk"],
+                        "headline-sm": ["Space Grotesk"],
+                        "body-lg": ["Hanken Grotesk"]
+                    },
+                    "fontSize": {
+                        "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "label-caps": ["12px", { "lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "700" }],
+                        "headline-md": ["32px", { "lineHeight": "40px", "fontWeight": "600" }],
+                        "code-md": ["14px", { "lineHeight": "20px", "fontWeight": "500" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "headline-sm": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .glitch-anim {
+            animation: glitch 1.5s linear infinite;
+        }
+        @keyframes glitch {
+            2%, 64% { transform: translate(2px,0) skew(0deg); }
+            4%, 60% { transform: translate(-2px,0) skew(0deg); }
+            62% { transform: translate(0,0) skew(5deg); }
+        }
+        .typewriter-cursor {
+            animation: blink 1s step-end infinite;
+        }
+        @keyframes blink {
+            50% { opacity: 0; }
+        }
+        
+        /* Custom scrollbar for HUD panels */
+        ::-webkit-scrollbar { width: 4px; }
+        ::-webkit-scrollbar-track { background: rgba(11, 19, 38, 0.5); }
+        ::-webkit-scrollbar-thumb { background: rgba(0, 251, 251, 0.2); border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: rgba(0, 251, 251, 0.5); }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body-md min-h-screen relative overflow-x-hidden selection:bg-primary-container selection:text-on-primary-container">
+<!-- HUD Level 0 Void Pattern -->
+<div class="fixed inset-0 pointer-events-none z-[-1] opacity-20" style="background-image: radial-gradient(circle at 2px 2px, rgba(0, 251, 251, 0.15) 1px, transparent 0); background-size: 32px 32px;"></div>
+<!-- TopAppBar -->
+<header class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-margin-desktop h-16 bg-surface/80 backdrop-blur-xl border-b border-primary-container/20 shadow-[0_4px_20px_rgba(0,0,0,0.5)]">
+<div class="flex items-center gap-4">
+<span class="font-headline-md text-headline-md font-bold text-primary-container drop-shadow-[0_0_10px_rgba(0,251,251,0.6)]">Python Arcane</span>
+</div>
+<div class="hidden">hidden search bar logic</div>
+<div class="flex items-center gap-6">
+<button class="text-on-surface-variant hover:text-primary-container transition-colors duration-300 active:scale-95 active:opacity-80">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">bolt</span>
+</button>
+<button class="text-on-surface-variant hover:text-primary-container transition-colors duration-300 active:scale-95 active:opacity-80">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">auto_fix_high</span>
+</button>
+<button class="text-on-surface-variant hover:text-primary-container transition-colors duration-300 active:scale-95 active:opacity-80">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">monetization_on</span>
+</button>
+<div class="h-8 w-8 rounded-full bg-secondary-container/50 border border-secondary p-0.5 ml-2 shadow-[0_0_15px_rgba(119,1,208,0.4)]">
+<img alt="Avatar" class="w-full h-full rounded-full object-cover grayscale opacity-80" data-alt="A stylized, low-poly digital portrait of a cyber-wizard character, featuring glowing neon violet eyes and sharp, angular dark robes, set against a completely black background. The mood is mysterious and technologically advanced." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAFhi8eSx_ioTLeeWYU4ISGjiHaGt91XnqVmekZ41pOyf0hz9_DWGHdtW94kEj9h_Eilw47cUma4xmj4BHJRKqLI_O0XQsxS395XoGz2JxpoxvpJH06eRTdSVUHKP6MMg3tHWAetdTyTyyY4B5NeXuVy2n04DvAJRv858vZEczvF4xy1QWoXHyz0fbMOuObFVMXdF9kn7C2D6VJJ0jwMnc8B8RG-COA97smfxCNZkEzqlsU7Fgwd-3_3W0VP2oKkePb4L5cvM2P97aC"/>
+</div>
+</div>
+</header>
+<!-- SideNavBar -->
+<nav class="fixed left-0 top-0 h-full pt-20 flex flex-col space-y-4 bg-surface-container/90 backdrop-blur-md w-64 border-r border-secondary-container/30 shadow-xl z-40">
+<div class="px-6 pb-6 border-b border-surface-container-highest/50 flex flex-col items-center">
+<h2 class="font-headline-sm text-headline-sm text-secondary drop-shadow-[0_0_5px_rgba(220,184,255,0.4)]">Archmage</h2>
+<p class="font-label-caps text-label-caps text-on-surface-variant mt-1">Level 42 Pythonista</p>
+</div>
+<div class="flex-1 overflow-y-auto py-4 space-y-2">
+<!-- Grimoire (Inactive) -->
+<a class="flex items-center gap-4 text-on-surface-variant py-3 px-6 opacity-70 hover:bg-surface-variant hover:text-primary transition-all duration-200" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">auto_stories</span>
+<span class="font-label-caps text-label-caps">Grimoire</span>
+</a>
+<!-- Trail (Inactive) -->
+<a class="flex items-center gap-4 text-on-surface-variant py-3 px-6 opacity-70 hover:bg-surface-variant hover:text-primary transition-all duration-200" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">explore</span>
+<span class="font-label-caps text-label-caps">Trail</span>
+</a>
+<!-- Arena (Active) -->
+<a class="flex items-center gap-4 bg-secondary-container/20 text-primary-container border-l-4 border-primary-container py-3 px-6 shadow-[inset_0_0_15px_rgba(0,251,251,0.2)] transition-transform active:translate-x-1" href="#">
+<span class="material-symbols-outlined text-primary-container" style="font-variation-settings: 'FILL' 1;">swords</span>
+<span class="font-label-caps text-label-caps text-primary-container">Arena</span>
+<div class="ml-auto w-1.5 h-1.5 rounded-full bg-primary-container shadow-[0_0_5px_#00fbfb] animate-pulse"></div>
+</a>
+<!-- Bestiary (Inactive) -->
+<a class="flex items-center gap-4 text-on-surface-variant py-3 px-6 opacity-70 hover:bg-surface-variant hover:text-primary transition-all duration-200" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">pets</span>
+<span class="font-label-caps text-label-caps">Bestiary</span>
+</a>
+</div>
+<div class="p-6">
+<button class="w-full py-3 px-4 bg-secondary-container/80 hover:bg-secondary-container text-primary font-label-caps text-label-caps uppercase tracking-widest border border-secondary/50 rounded-DEFAULT shadow-[0_0_15px_rgba(119,1,208,0.4)] hover:shadow-[0_0_25px_rgba(119,1,208,0.6)] transition-all duration-300">
+                Cast Spell
+            </button>
+</div>
+</nav>
+<!-- Main Content Canvas -->
+<main class="ml-64 pt-16 min-h-screen flex p-gutter gap-gutter max-w-[1600px] mx-auto">
+<!-- Left Column: Raid Status & Roster (Level 1 Panel) -->
+<aside class="w-80 flex flex-col gap-4">
+<!-- Active Quest Card -->
+<div class="bg-surface-container-highest/80 backdrop-blur-md border border-secondary-container/40 p-5 rounded-lg relative overflow-hidden group">
+<div class="absolute inset-0 bg-gradient-to-br from-secondary-container/10 to-transparent opacity-50"></div>
+<!-- Neon top accent -->
+<div class="absolute top-0 left-0 w-full h-[2px] bg-gradient-to-r from-transparent via-secondary to-transparent"></div>
+<p class="font-label-caps text-label-caps text-secondary mb-2 flex items-center gap-2">
+<span class="material-symbols-outlined text-[16px]">flag</span> Active Expedition
+                </p>
+<h3 class="font-headline-sm text-headline-sm text-primary mb-1">Oficina de Relatórios</h3>
+<p class="font-code-md text-code-md text-primary-container/80 mb-4">[DOCUMENT_12]</p>
+<div class="bg-surface-dim/80 border border-tertiary-container/30 rounded p-3 flex flex-col items-center justify-center shadow-[inset_0_0_10px_rgba(255,223,160,0.1)]">
+<p class="font-label-caps text-label-caps text-on-surface-variant mb-1">Time Remaining</p>
+<div class="font-display-lg text-display-lg text-tertiary-container drop-shadow-[0_0_12px_rgba(255,223,160,0.5)] tracking-tight">
+                        45:00
+                    </div>
+</div>
+</div>
+<!-- Party Roster -->
+<div class="flex-1 bg-surface-container/80 backdrop-blur-md border border-outline-variant/30 rounded-lg p-5 flex flex-col">
+<div class="flex justify-between items-end mb-4 border-b border-surface-container-highest pb-2">
+<h4 class="font-headline-sm text-headline-sm text-on-surface flex items-center gap-2">
+<span class="material-symbols-outlined text-primary-container">group</span> Raid Party
+                    </h4>
+<span class="font-label-caps text-label-caps text-on-surface-variant">5/5 Connected</span>
+</div>
+<div class="flex flex-col gap-3">
+<!-- Player 1 (Self) -->
+<div class="relative p-3 rounded bg-surface-variant/50 border border-primary-container/30 shadow-[inset_0_0_8px_rgba(0,251,251,0.1)]">
+<div class="absolute left-0 top-0 h-full w-[3px] bg-primary-container rounded-l"></div>
+<div class="flex items-center gap-3 mb-2">
+<div class="w-8 h-8 rounded bg-background border border-primary-container/50 flex items-center justify-center">
+<span class="material-symbols-outlined text-[18px] text-primary-container">edit_document</span>
+</div>
+<div class="flex-1">
+<p class="font-body-md text-body-md text-primary leading-tight">Archmage <span class="text-primary-container/70 text-[12px]">(You)</span></p>
+<p class="font-label-caps text-label-caps text-primary-container text-[10px]">Escriba</p>
+</div>
+</div>
+<!-- HP/MP Bars -->
+<div class="flex flex-col gap-1">
+<div class="flex items-center gap-2">
+<span class="text-[10px] font-label-caps text-error w-4">HP</span>
+<div class="flex-1 h-1.5 bg-background rounded-full overflow-hidden flex gap-[1px]">
+<div class="h-full bg-error w-full shadow-[0_0_5px_#ffb4ab]"></div>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<span class="text-[10px] font-label-caps text-primary-container w-4">MP</span>
+<div class="flex-1 h-1.5 bg-background rounded-full overflow-hidden flex gap-[1px]">
+<div class="h-full bg-primary-container w-[80%] shadow-[0_0_5px_#00fbfb]"></div>
+</div>
+</div>
+</div>
+</div>
+<!-- Player 2 -->
+<div class="relative p-3 rounded bg-surface-container-highest/30 border border-transparent hover:border-outline-variant/50 transition-colors">
+<div class="flex items-center gap-3 mb-2">
+<div class="w-8 h-8 rounded bg-background border border-outline-variant flex items-center justify-center">
+<span class="material-symbols-outlined text-[18px] text-secondary">account_tree</span>
+</div>
+<div class="flex-1">
+<p class="font-body-md text-body-md text-on-surface leading-tight">NullPointer</p>
+<p class="font-label-caps text-label-caps text-secondary text-[10px]">Guardião da Lógica</p>
+</div>
+</div>
+<!-- HP/MP Bars -->
+<div class="flex flex-col gap-1">
+<div class="flex items-center gap-2">
+<span class="text-[10px] font-label-caps text-error w-4">HP</span>
+<div class="flex-1 h-1.5 bg-background rounded-full overflow-hidden flex gap-[1px]">
+<div class="h-full bg-error w-[90%]"></div>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<span class="text-[10px] font-label-caps text-primary-container w-4">MP</span>
+<div class="flex-1 h-1.5 bg-background rounded-full overflow-hidden flex gap-[1px]">
+<div class="h-full bg-primary-container w-[45%]"></div>
+</div>
+</div>
+</div>
+</div>
+<!-- Player 3 -->
+<div class="relative p-3 rounded bg-surface-container-highest/30 border border-transparent hover:border-outline-variant/50 transition-colors">
+<div class="flex items-center gap-3 mb-2">
+<div class="w-8 h-8 rounded bg-background border border-outline-variant flex items-center justify-center">
+<span class="material-symbols-outlined text-[18px] text-tertiary-container">database</span>
+</div>
+<div class="flex-1">
+<p class="font-body-md text-body-md text-on-surface leading-tight">QueryMaster</p>
+<p class="font-label-caps text-label-caps text-tertiary-container text-[10px]">Mago dos Dados</p>
+</div>
+</div>
+<!-- HP/MP Bars -->
+<div class="flex flex-col gap-1">
+<div class="flex items-center gap-2">
+<span class="text-[10px] font-label-caps text-error w-4">HP</span>
+<div class="flex-1 h-1.5 bg-background rounded-full overflow-hidden flex gap-[1px]">
+<div class="h-full bg-error/40 w-[30%] animate-pulse"></div>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<span class="text-[10px] font-label-caps text-primary-container w-4">MP</span>
+<div class="flex-1 h-1.5 bg-background rounded-full overflow-hidden flex gap-[1px]">
+<div class="h-full bg-primary-container w-[100%]"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Group Ranking Snippet -->
+<div class="mt-auto pt-4 border-t border-surface-container-highest">
+<p class="font-label-caps text-label-caps text-on-surface-variant mb-2 flex justify-between">
+<span>Guild Rank</span>
+<span class="text-primary-container">#12 Global</span>
+</p>
+<div class="h-2 w-full bg-surface-dim rounded-full overflow-hidden">
+<div class="h-full bg-gradient-to-r from-secondary to-primary-container w-[75%]"></div>
+</div>
+</div>
+</div>
+</aside>
+<!-- Right Column: Battle Arena Canvas -->
+<section class="flex-1 flex flex-col gap-6 relative">
+<!-- Enemy/Challenge HUD (Level 2 Active Element) -->
+<div class="bg-surface-dim border border-error/30 rounded-lg p-6 relative overflow-hidden shadow-[inset_0_0_30px_rgba(255,180,171,0.05)]">
+<!-- Glitch background effect -->
+<div class="absolute -right-10 -top-10 w-48 h-48 bg-error/10 rounded-full blur-3xl mix-blend-screen"></div>
+<div class="flex justify-between items-start mb-4 relative z-10">
+<div>
+<div class="flex items-center gap-2 mb-1">
+<span class="material-symbols-outlined text-error glitch-anim">bug_report</span>
+<h2 class="font-headline-md text-headline-md text-error drop-shadow-[0_0_8px_rgba(255,180,171,0.5)] uppercase tracking-wider">Corrupted Dependency</h2>
+</div>
+<p class="font-code-md text-code-md text-on-surface-variant">Class: Level 5 Syntax Demon</p>
+</div>
+<div class="bg-error-container/30 border border-error/50 px-3 py-1 rounded font-label-caps text-label-caps text-error">
+                        PHASE 2 / 3
+                    </div>
+</div>
+<!-- Boss HP Bar -->
+<div class="relative w-full h-4 bg-background border border-error/20 rounded-[2px] p-[1px] overflow-hidden">
+<!-- Segment markers -->
+<div class="absolute inset-0 z-10 flex justify-between pointer-events-none">
+<div class="w-[1px] h-full bg-background/80 ml-[25%]"></div>
+<div class="w-[1px] h-full bg-background/80 ml-[50%]"></div>
+<div class="w-[1px] h-full bg-background/80 ml-[75%]"></div>
+</div>
+<div class="h-full bg-gradient-to-r from-error-container via-error to-error w-[68%] relative">
+<div class="absolute right-0 top-0 w-8 h-full bg-white/30 blur-[2px]"></div>
+</div>
+</div>
+<div class="flex justify-between mt-1 px-1">
+<span class="font-label-caps text-[10px] text-error/70">ERR_NULL_REFERENCE</span>
+<span class="font-code-md text-[12px] text-error">68.4% Integrity</span>
+</div>
+</div>
+<!-- Oracle Console / Editor area -->
+<div class="flex-1 flex flex-col rounded-lg bg-[#0d1117] border border-outline-variant/30 overflow-hidden relative shadow-[0_10px_30px_rgba(0,0,0,0.5)]">
+<!-- Editor Header -->
+<div class="bg-surface-container-highest px-4 py-2 border-b border-outline-variant/30 flex justify-between items-center">
+<div class="flex gap-2">
+<div class="px-3 py-1 bg-surface-dim border-t border-primary-container text-primary-container font-code-md text-[12px] rounded-t flex items-center gap-2">
+<span class="material-symbols-outlined text-[14px]">description</span> report_generator.py
+                        </div>
+<div class="px-3 py-1 text-on-surface-variant font-code-md text-[12px] hover:bg-surface-dim/50 cursor-pointer rounded-t flex items-center gap-2">
+<span class="material-symbols-outlined text-[14px]">table_chart</span> data_model.py
+                        </div>
+</div>
+<div class="flex items-center gap-3">
+<span class="flex h-2 w-2 relative">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary-container opacity-75"></span>
+<span class="relative inline-flex rounded-full h-2 w-2 bg-primary-container"></span>
+</span>
+<span class="font-label-caps text-[10px] text-primary-container">Live Sync</span>
+</div>
+</div>
+<!-- Editor Body -->
+<div class="flex-1 p-4 font-code-md text-code-md text-on-surface overflow-y-auto relative grid grid-cols-[40px_1fr] gap-4">
+<!-- Line Numbers -->
+<div class="text-right text-on-surface-variant/40 select-none flex flex-col gap-1">
+<span>42</span>
+<span>43</span>
+<span>44</span>
+<span>45</span>
+<span>46</span>
+<span>47</span>
+<span>48</span>
+<span>49</span>
+<span>50</span>
+</div>
+<!-- Code Content -->
+<div class="flex flex-col gap-1 text-[#c9d1d9]">
+<div><span class="text-[#ff7b72]">def</span> <span class="text-[#d2a8ff]">compile_guild_report</span>(data_source: <span class="text-[#79c0ff]">str</span>) -&gt; <span class="text-[#79c0ff]">dict</span>:</div>
+<div class="pl-4 text-[#8b949e]">"""</div>
+<div class="pl-4 text-[#8b949e]">Compiles the expedition data from DOCUMENT_12.</div>
+<div class="pl-4 text-[#8b949e]">WARNING: Integrity compromised by null references.</div>
+<div class="pl-4 text-[#8b949e]">"""</div>
+<div class="pl-4">raw_data = database.fetch(data_source)</div>
+<div class="pl-4 mt-2 bg-error/10 border border-error/30 p-1 -ml-1 rounded relative">
+<div class="absolute left-0 top-1/2 -translate-y-1/2 -ml-6 text-error">
+<span class="material-symbols-outlined text-[14px]">close</span>
+</div>
+<span class="text-[#8b949e]"># Guardião da Lógica needs to validate this structure</span><br/>
+                            processed_metrics = raw_data.get(<span class="text-[#a5d6ff]">'expedition_metrics'</span>).aggregate()<br/>
+<span class="text-error border-b border-error border-dashed">return processed_metrics</span>
+</div>
+<div class="pl-4 mt-2">
+<span class="text-[#ff7b72]">if</span> <span class="text-[#79c0ff]">not</span> raw_data: <span class="typewriter-cursor text-primary-container font-bold">_</span>
+</div>
+</div>
+<!-- Targeting Crosshair (Overlay effect as per guidelines) -->
+<div class="absolute right-[20%] top-[40%] w-32 h-32 pointer-events-none opacity-30 flex items-center justify-center">
+<div class="w-full h-[1px] bg-primary-container absolute"></div>
+<div class="h-full w-[1px] bg-primary-container absolute"></div>
+<div class="w-16 h-16 border border-primary-container rounded-full absolute"></div>
+</div>
+</div>
+</div>
+<!-- Action Bar (Level 3 Overlays style) -->
+<div class="flex justify-between items-center bg-surface/90 border border-primary-container/20 p-4 rounded-lg backdrop-blur-md">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full bg-surface-dim border border-outline-variant flex items-center justify-center relative">
+<span class="material-symbols-outlined text-on-surface-variant">mic_off</span>
+<div class="absolute -top-1 -right-1 w-3 h-3 bg-error rounded-full border border-background"></div>
+</div>
+<div class="flex flex-col">
+<span class="font-label-caps text-[10px] text-on-surface-variant">Team Comms</span>
+<span class="font-code-md text-[12px] text-error">Muted</span>
+</div>
+</div>
+<div class="flex gap-4">
+<button class="px-6 py-2 border border-outline-variant text-on-surface hover:bg-surface-variant rounded font-label-caps text-label-caps transition-colors">
+                        Consult Grimoire
+                    </button>
+<button class="px-8 py-2 bg-primary-container text-[#000000] font-label-caps text-label-caps font-bold rounded shadow-[0_0_15px_rgba(0,251,251,0.4)] hover:shadow-[0_0_25px_rgba(0,251,251,0.8)] hover:bg-white transition-all duration-300 relative overflow-hidden group">
+<div class="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300"></div>
+<span class="relative z-10 flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px]">publish</span>
+                            EXECUTE COMPILE
+                        </span>
+</button>
+</div>
+</div>
+</section>
+</main>
+</body></html>
+

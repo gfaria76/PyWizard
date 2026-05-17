@@ -1,0 +1,442 @@
+<!-- Python Arcane: Master's Sanctum (Dashboard) -->
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Master's Sanctum - Dashboard</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&amp;family=JetBrains+Mono:wght@500&amp;family=Inter:wght@400&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "on-surface": "#0d1c2e",
+                      "on-tertiary": "#ffffff",
+                      "outline": "#7e7386",
+                      "outline-variant": "#cfc2d7",
+                      "on-secondary-fixed-variant": "#004f4f",
+                      "surface": "#f8f9ff",
+                      "on-tertiary-fixed": "#191c1e",
+                      "surface-container-lowest": "#ffffff",
+                      "primary-fixed-dim": "#dcb8ff",
+                      "on-secondary-fixed": "#002020",
+                      "secondary-fixed": "#00fbfb",
+                      "on-background": "#0d1c2e",
+                      "primary-fixed": "#efdbff",
+                      "on-error": "#ffffff",
+                      "surface-dim": "#ccdbf3",
+                      "secondary": "#006a6a",
+                      "tertiary-fixed-dim": "#c4c7c9",
+                      "error": "#ba1a1a",
+                      "surface-container-high": "#dce9ff",
+                      "surface-tint": "#8422dd",
+                      "background": "#f8f9ff",
+                      "surface-container": "#e6eeff",
+                      "surface-container-highest": "#d5e3fc",
+                      "on-primary": "#ffffff",
+                      "on-tertiary-fixed-variant": "#444749",
+                      "on-secondary": "#ffffff",
+                      "tertiary-container": "#505355",
+                      "tertiary-fixed": "#e0e3e5",
+                      "on-primary-fixed": "#2b0052",
+                      "on-primary-fixed-variant": "#6700b5",
+                      "surface-container-low": "#eff4ff",
+                      "on-surface-variant": "#4c4354",
+                      "on-tertiary-container": "#c4c7c9",
+                      "inverse-surface": "#233144",
+                      "primary": "#57009b",
+                      "surface-bright": "#f8f9ff",
+                      "primary-container": "#7701d0",
+                      "inverse-primary": "#dcb8ff",
+                      "secondary-fixed-dim": "#00dddd",
+                      "on-primary-container": "#dbb8ff",
+                      "on-error-container": "#93000a",
+                      "on-secondary-container": "#006e6e",
+                      "surface-variant": "#d5e3fc",
+                      "error-container": "#ffdad6",
+                      "tertiary": "#393c3e",
+                      "secondary-container": "#00f8f8",
+                      "inverse-on-surface": "#eaf1ff"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.125rem",
+                      "lg": "0.25rem",
+                      "xl": "0.5rem",
+                      "full": "0.75rem"
+              },
+              "spacing": {
+                      "margin": "32px",
+                      "md": "16px",
+                      "lg": "24px",
+                      "xs": "4px",
+                      "base": "4px",
+                      "gutter": "24px",
+                      "xl": "40px",
+                      "sm": "8px",
+                      "container-max-width": "1440px"
+              },
+              "fontFamily": {
+                      "display-lg": [
+                              "Space Grotesk"
+                      ],
+                      "label-md": [
+                              "JetBrains Mono"
+                      ],
+                      "headline-md": [
+                              "Space Grotesk"
+                      ],
+                      "body-md": [
+                              "Inter"
+                      ],
+                      "headline-lg-mobile": [
+                              "Space Grotesk"
+                      ],
+                      "headline-lg": [
+                              "Space Grotesk"
+                      ],
+                      "label-sm": [
+                              "JetBrains Mono"
+                      ],
+                      "body-lg": [
+                              "Inter"
+                      ]
+              },
+              "fontSize": {
+                      "display-lg": [
+                              "48px",
+                              {
+                                      "lineHeight": "1.1",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "label-md": [
+                              "14px",
+                              {
+                                      "lineHeight": "1.2",
+                                      "letterSpacing": "0.05em",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "headline-md": [
+                              "24px",
+                              {
+                                      "lineHeight": "1.3",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "body-md": [
+                              "16px",
+                              {
+                                      "lineHeight": "1.5",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "headline-lg-mobile": [
+                              "24px",
+                              {
+                                      "lineHeight": "1.2",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "headline-lg": [
+                              "32px",
+                              {
+                                      "lineHeight": "1.2",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "label-sm": [
+                              "12px",
+                              {
+                                      "lineHeight": "1.2",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "body-lg": [
+                              "18px",
+                              {
+                                      "lineHeight": "1.6",
+                                      "fontWeight": "400"
+                              }
+                      ]
+              }
+      },
+          },
+        }
+    </script>
+<style>
+        body { background-color: #f8fafc; }
+        .arcane-accent { position: relative; }
+        .arcane-accent::before { content: ''; position: absolute; top: 0; left: 0; bottom: 0; width: 2px; background-color: #00dddd; border-top-left-radius: inherit; border-bottom-left-radius: inherit; }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md text-body-md antialiased flex">
+<!-- SideNavBar (Desktop) -->
+<nav class="hidden md:flex flex-col h-screen w-64 fixed left-0 top-0 bg-surface-container-low border-r border-outline-variant/30 py-lg z-40">
+<div class="px-lg mb-lg">
+<div class="flex items-center gap-sm mb-md">
+<img alt="Professor Avatar" class="w-12 h-12 rounded-full border border-outline-variant/50" data-alt="A small circular avatar portrait of an elderly, wise academic scholar with glasses, wearing deep violet robes. Soft, studio lighting, clean background. Corporate modern minimalist aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAiNpMtVKcBrsEsEbOkeU7E6AMBFW4VRp12cVFs5ousX8nQ8x2JKFvUAHmGD8Pe-B247NtFDLEnK3RsIW4_QRSXS_5yAoJvmJGiC4LZzrF5tMsSLCF0zfzrRxKDMoEZadHCUkjHeS8T3UO-QTO-Q6SUbPnS2tEaNsMOFvCs8ItRs6vzvtY7it07ThbMii96o7_rSnN2buLFtGiqWThWmekfDOjxE8UVoT2GzTQnFGbenWFUMxaaJ--7D_f0XarlcoDb6CgX3dtjnSgD"/>
+<div>
+<h2 class="text-headline-sm font-headline-sm text-secondary-fixed font-bold tracking-tight text-primary">Master's Sanctum</h2>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Arch-Instructor Level 99</p>
+</div>
+</div>
+<button class="w-full bg-primary text-on-primary py-sm px-md rounded-lg font-label-md text-label-md hover:bg-primary-container transition-colors shadow-sm">
+                Cast Global Event
+            </button>
+</div>
+<ul class="flex-1 overflow-y-auto font-body-md text-body-md">
+<li class="mb-xs">
+<a class="flex items-center gap-3 bg-secondary-container text-on-secondary-container rounded-lg p-3 mx-2 shadow-[inset_0_0_10px_rgba(119,1,208,0.3)] font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">dashboard</span>
+                    Dashboard
+                </a>
+</li>
+<li class="mb-xs">
+<a class="flex items-center gap-3 text-on-surface-variant p-3 mx-2 hover:bg-surface-variant/50 hover:bg-surface-container-high transition-all rounded-lg font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined">monitoring</span>
+                    Class Stats
+                </a>
+</li>
+<li class="mb-xs">
+<a class="flex items-center gap-3 text-on-surface-variant p-3 mx-2 hover:bg-surface-variant/50 hover:bg-surface-container-high transition-all rounded-lg font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined">swords</span>
+                    Mission Control
+                </a>
+</li>
+<li class="mb-xs">
+<a class="flex items-center gap-3 text-on-surface-variant p-3 mx-2 hover:bg-surface-variant/50 hover:bg-surface-container-high transition-all rounded-lg font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined">menu_book</span>
+                    Gradebook
+                </a>
+</li>
+<li class="mb-xs mt-lg">
+<a class="flex items-center gap-3 text-on-surface-variant p-3 mx-2 hover:bg-surface-variant/50 hover:bg-surface-container-high transition-all rounded-lg font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined">settings</span>
+                    Settings
+                </a>
+</li>
+</ul>
+<div class="mt-auto px-lg border-t border-outline-variant/30 pt-md">
+<a class="flex items-center gap-3 text-on-surface-variant py-sm hover:text-primary transition-colors font-label-sm text-label-sm" href="#">
+<span class="material-symbols-outlined text-[18px]">help</span>
+                Support
+            </a>
+<a class="flex items-center gap-3 text-on-surface-variant py-sm hover:text-primary transition-colors font-label-sm text-label-sm" href="#">
+<span class="material-symbols-outlined text-[18px]">logout</span>
+                Log Out
+            </a>
+</div>
+</nav>
+<!-- BottomNavBar (Mobile) -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full flex justify-around items-center px-margin pb-safe bg-surface-container-lowest/80 backdrop-blur-2xl border-t border-primary/10 z-50 h-20 rounded-t-xl shadow-[0_-4px_20px_rgba(0,0,0,0.5)] font-label-caps text-label-caps">
+<a class="flex flex-col items-center justify-center text-on-surface-variant opacity-60 hover:opacity-100 hover:text-primary transition-opacity" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="text-[10px] mt-1">Dashboard</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant opacity-60 hover:opacity-100 hover:text-primary transition-opacity" href="#">
+<span class="material-symbols-outlined">monitoring</span>
+<span class="text-[10px] mt-1">Class Stats</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant opacity-60 hover:opacity-100 hover:text-primary transition-opacity" href="#">
+<span class="material-symbols-outlined">swords</span>
+<span class="text-[10px] mt-1">Missions</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant opacity-60 hover:opacity-100 hover:text-primary transition-opacity" href="#">
+<span class="material-symbols-outlined">menu_book</span>
+<span class="text-[10px] mt-1">Gradebook</span>
+</a>
+</nav>
+<!-- Main Content -->
+<main class="flex-1 md:ml-64 p-margin min-h-screen bg-background">
+<div class="max-w-container-max-width mx-auto">
+<!-- Header -->
+<header class="mb-xl">
+<h1 class="font-display-lg text-display-lg text-on-surface mb-sm">Bem-vindo, Grão-Mestre</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant">Your sanctum awaits. Here is the latest arcane telemetry.</p>
+</header>
+<!-- Quick Stats Bento -->
+<section class="grid grid-cols-1 md:grid-cols-3 gap-lg mb-xl">
+<!-- Stat Card 1 -->
+<div class="bg-surface-container-lowest border border-outline-variant/30 rounded-xl p-lg arcane-accent shadow-sm hover:shadow-[0_8px_15px_rgba(87,0,155,0.05)] transition-shadow">
+<div class="flex items-center gap-sm mb-md">
+<div class="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[18px]">group</span>
+</div>
+<h3 class="font-label-md text-label-md text-on-surface-variant uppercase tracking-widest">Total Students</h3>
+</div>
+<p class="font-display-lg text-display-lg text-on-surface">142</p>
+<div class="mt-md flex items-center gap-xs text-secondary">
+<span class="material-symbols-outlined text-[14px]">trending_up</span>
+<span class="font-label-sm text-label-sm">+4 this week</span>
+</div>
+</div>
+<!-- Stat Card 2 -->
+<div class="bg-surface-container-lowest border border-outline-variant/30 rounded-xl p-lg arcane-accent shadow-sm hover:shadow-[0_8px_15px_rgba(87,0,155,0.05)] transition-shadow">
+<div class="flex items-center gap-sm mb-md">
+<div class="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[18px]">bolt</span>
+</div>
+<h3 class="font-label-md text-label-md text-on-surface-variant uppercase tracking-widest">Class Average XP</h3>
+</div>
+<p class="font-display-lg text-display-lg text-on-surface">8,450</p>
+<div class="mt-md w-full bg-surface-container-high rounded-full h-2">
+<div class="bg-gradient-to-r from-primary to-secondary-fixed-dim h-2 rounded-full" style="width: 75%"></div>
+</div>
+</div>
+<!-- Stat Card 3 -->
+<div class="bg-surface-container-lowest border border-outline-variant/30 rounded-xl p-lg arcane-accent shadow-sm hover:shadow-[0_8px_15px_rgba(87,0,155,0.05)] transition-shadow">
+<div class="flex items-center gap-sm mb-md">
+<div class="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[18px]">task_alt</span>
+</div>
+<h3 class="font-label-md text-label-md text-on-surface-variant uppercase tracking-widest">Missions Completed</h3>
+</div>
+<p class="font-display-lg text-display-lg text-on-surface">1,204</p>
+<div class="mt-md flex items-center gap-xs text-on-surface-variant">
+<span class="font-label-sm text-label-sm bg-surface-variant px-2 py-1 rounded-md text-primary font-bold">Arcane Tier 3</span>
+</div>
+</div>
+</section>
+<!-- Main Content Grid -->
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-lg pb-xl">
+<!-- Bugs in the Wild (2 columns on lg) -->
+<section class="lg:col-span-2 bg-surface-container-lowest border border-outline-variant/30 rounded-xl p-lg shadow-sm">
+<div class="flex items-center justify-between mb-lg border-b border-outline-variant/30 pb-sm">
+<h2 class="font-headline-md text-headline-md text-on-surface flex items-center gap-sm">
+<span class="material-symbols-outlined text-error">bug_report</span>
+                            Bugs in the Wild
+                        </h2>
+<button class="font-label-sm text-label-sm text-primary hover:underline">View All Diagnostics</button>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr>
+<th class="font-label-md text-label-md text-on-surface-variant border-b border-outline-variant/30 pb-sm font-bold w-1/2">Anomaly Type</th>
+<th class="font-label-md text-label-md text-on-surface-variant border-b border-outline-variant/30 pb-sm font-bold">Frequency</th>
+<th class="font-label-md text-label-md text-on-surface-variant border-b border-outline-variant/30 pb-sm font-bold">Action</th>
+</tr>
+</thead>
+<tbody class="font-body-md text-body-md">
+<tr class="hover:bg-surface/50 transition-colors">
+<td class="py-md border-b border-outline-variant/10">
+<div class="flex flex-col">
+<span class="font-label-md text-label-md font-bold text-on-surface bg-surface-container px-2 py-1 rounded w-fit mb-1 font-mono">SyntaxError</span>
+<span class="text-on-surface-variant text-sm">in "Looping Ouroboros"</span>
+</div>
+</td>
+<td class="py-md border-b border-outline-variant/10">
+<div class="flex items-center gap-sm">
+<span class="text-error font-bold">42 Hits</span>
+<div class="w-16 bg-surface-container-high rounded-full h-1">
+<div class="bg-error h-1 rounded-full" style="width: 80%"></div>
+</div>
+</div>
+</td>
+<td class="py-md border-b border-outline-variant/10">
+<button class="border border-secondary text-secondary hover:bg-secondary/5 px-3 py-1 rounded font-label-sm text-label-sm transition-colors">Investigate</button>
+</td>
+</tr>
+<tr class="hover:bg-surface/50 transition-colors">
+<td class="py-md border-b border-outline-variant/10">
+<div class="flex flex-col">
+<span class="font-label-md text-label-md font-bold text-on-surface bg-surface-container px-2 py-1 rounded w-fit mb-1 font-mono">NullReferenceException</span>
+<span class="text-on-surface-variant text-sm">in "Summoning Circle"</span>
+</div>
+</td>
+<td class="py-md border-b border-outline-variant/10">
+<div class="flex items-center gap-sm">
+<span class="text-tertiary-container font-bold">28 Hits</span>
+<div class="w-16 bg-surface-container-high rounded-full h-1">
+<div class="bg-tertiary-container h-1 rounded-full" style="width: 60%"></div>
+</div>
+</div>
+</td>
+<td class="py-md border-b border-outline-variant/10">
+<button class="border border-secondary text-secondary hover:bg-secondary/5 px-3 py-1 rounded font-label-sm text-label-sm transition-colors">Investigate</button>
+</td>
+</tr>
+<tr class="hover:bg-surface/50 transition-colors">
+<td class="py-md">
+<div class="flex flex-col">
+<span class="font-label-md text-label-md font-bold text-on-surface bg-surface-container px-2 py-1 rounded w-fit mb-1 font-mono">IndexOutOfBounds</span>
+<span class="text-on-surface-variant text-sm">in "Array of Ancients"</span>
+</div>
+</td>
+<td class="py-md">
+<div class="flex items-center gap-sm">
+<span class="text-tertiary-container font-bold">15 Hits</span>
+<div class="w-16 bg-surface-container-high rounded-full h-1">
+<div class="bg-tertiary-container h-1 rounded-full" style="width: 30%"></div>
+</div>
+</div>
+</td>
+<td class="py-md">
+<button class="border border-secondary text-secondary hover:bg-secondary/5 px-3 py-1 rounded font-label-sm text-label-sm transition-colors">Investigate</button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<!-- Activity Feed -->
+<section class="bg-surface-container-lowest border border-outline-variant/30 rounded-xl p-lg shadow-sm flex flex-col h-full">
+<div class="flex items-center justify-between mb-lg border-b border-outline-variant/30 pb-sm">
+<h2 class="font-headline-md text-headline-md text-on-surface flex items-center gap-sm">
+<span class="material-symbols-outlined text-primary">history</span>
+                            Activity Log
+                        </h2>
+</div>
+<div class="flex-1 overflow-y-auto space-y-md">
+<!-- Feed Item 1 -->
+<div class="flex gap-sm">
+<div class="flex flex-col items-center">
+<div class="w-8 h-8 rounded-full bg-primary-container flex items-center justify-center text-on-primary-container z-10">
+<span class="material-symbols-outlined text-[16px]">stars</span>
+</div>
+<div class="w-[2px] h-full bg-outline-variant/30 mt-1 flex-1"></div>
+</div>
+<div class="pb-md">
+<p class="font-body-md text-body-md text-on-surface"><span class="font-bold">Aria Novus</span> completed <span class="text-primary font-label-md text-label-md">"The Recursion Trial"</span></p>
+<p class="font-label-sm text-label-sm text-on-surface-variant mt-1">2 mins ago</p>
+</div>
+</div>
+<!-- Feed Item 2 -->
+<div class="flex gap-sm">
+<div class="flex flex-col items-center">
+<div class="w-8 h-8 rounded-full bg-surface-variant flex items-center justify-center text-on-surface-variant z-10">
+<span class="material-symbols-outlined text-[16px]">draw</span>
+</div>
+<div class="w-[2px] h-full bg-outline-variant/30 mt-1 flex-1"></div>
+</div>
+<div class="pb-md">
+<p class="font-body-md text-body-md text-on-surface"><span class="font-bold">Kaelen</span> submitted assignment <span class="font-label-md text-label-md">"Data Structures V"</span></p>
+<p class="font-label-sm text-label-sm text-on-surface-variant mt-1">15 mins ago</p>
+</div>
+</div>
+<!-- Feed Item 3 -->
+<div class="flex gap-sm">
+<div class="flex flex-col items-center">
+<div class="w-8 h-8 rounded-full bg-secondary/20 flex items-center justify-center text-secondary z-10">
+<span class="material-symbols-outlined text-[16px]">school</span>
+</div>
+</div>
+<div>
+<p class="font-body-md text-body-md text-on-surface"><span class="font-bold">Elara</span> reached level <span class="font-bold text-secondary">42</span></p>
+<p class="font-label-sm text-label-sm text-on-surface-variant mt-1">1 hour ago</p>
+</div>
+</div>
+</div>
+</section>
+</div>
+</div>
+</main>
+</body></html>
+

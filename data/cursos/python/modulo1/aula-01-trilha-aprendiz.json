@@ -60,5 +60,19 @@
   },
   "premio": {
     "pontuacao": 70
+  },
+  "rpg": {
+    "xp_reward": 70,
+    "variant": "trail",
+    "enemy_name": "Golem de Memória",
+    "enemy_hp": 50,
+    "weakness": "variáveis",
+    "loot_drops": [
+      { "item": "Selo do Aprendiz", "type": "badge", "rarity": "common" }
+    ],
+    "oracle_hints": [
+      "Verifique se imprimiu exatamente como o formato pede.",
+      "Use vírgulas ou f-strings para concatenar variáveis com texto."
+    ]
   }
 }

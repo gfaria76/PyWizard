@@ -12,7 +12,7 @@ import type { AlunoProgresso } from '~/types/database.types'
 const BodySchema = z.object({
   aluno_id: z.string().uuid(),
   event: z.enum(['submissao_aceita', 'primeiro_acerto', 'speedrunner']),
-  metadata: z.record(z.unknown()).optional().default({}),
+  metadata: z.record(z.string(), z.unknown()).optional().default({}),
 })
 
 interface ConquistaDefinicao {
@@ -30,7 +30,7 @@ const CONQUISTAS: ConquistaDefinicao[] = [
 
 export default defineEventHandler(async (event) => {
   const user = await requireUser(event)
-  const body = await readValidatedBody(event, BodySchema.parse)
+  const body = await readValidatedBody(event, BodySchema.parse.bind(BodySchema))
 
   // Apenas o próprio aluno ou admin pode verificar conquistas
   if (user.id !== body.aluno_id) {
@@ -113,8 +113,7 @@ export default defineEventHandler(async (event) => {
 
   const { error: insertErr } = await admin
     .from('aluno_conquista')
-    .insert(inserts)
-    .onConflict('aluno_id,conquista_slug')
+    .upsert(inserts, { onConflict: 'aluno_id,conquista_slug' })
 
   if (insertErr) {
     // Erro não-fatal: pode ser conflito de unicidade em corrida

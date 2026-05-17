@@ -1,0 +1,360 @@
+<!-- Python Arcane: The Grimoire (Library) -->
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Grimoire - Python Arcane</title>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&amp;family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&amp;family=Space+Grotesk:wght@300..700&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        /* HUD Grid background */
+        body {
+            background-image: 
+                linear-gradient(to right, rgba(0, 251, 251, 0.03) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(0, 251, 251, 0.03) 1px, transparent 1px);
+            background-size: 24px 24px;
+        }
+        /* Custom scrollbar for grimoire */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0b1326; 
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #2d3449; 
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #00dddd; 
+        }
+    </style>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-primary-fixed": "#002020",
+                        "on-primary": "#003737",
+                        "tertiary-container": "#ffdfa0",
+                        "on-surface": "#dae2fd",
+                        "secondary-fixed-dim": "#dcb8ff",
+                        "secondary-container": "#7701d0",
+                        "inverse-on-surface": "#283044",
+                        "surface-dim": "#0b1326",
+                        "tertiary-fixed": "#ffdfa0",
+                        "surface-bright": "#31394d",
+                        "surface-container-highest": "#2d3449",
+                        "tertiary-fixed-dim": "#fbbc00",
+                        "on-tertiary-fixed": "#261a00",
+                        "error-container": "#93000a",
+                        "on-secondary": "#480081",
+                        "primary-container": "#00fbfb",
+                        "on-secondary-fixed": "#2c0051",
+                        "on-tertiary": "#402d00",
+                        "on-tertiary-container": "#815f00",
+                        "surface-variant": "#2d3449",
+                        "primary": "#ffffff",
+                        "surface-tint": "#00dddd",
+                        "secondary-fixed": "#efdbff",
+                        "on-error": "#690005",
+                        "primary-fixed-dim": "#00dddd",
+                        "on-primary-container": "#007070",
+                        "background": "#0b1326",
+                        "surface-container-high": "#222a3d",
+                        "primary-fixed": "#00fbfb",
+                        "outline-variant": "#3a4a49",
+                        "on-secondary-container": "#dcb7ff",
+                        "secondary": "#dcb8ff",
+                        "error": "#ffb4ab",
+                        "tertiary": "#ffffff",
+                        "surface": "#0b1326",
+                        "surface-container": "#171f33",
+                        "inverse-surface": "#dae2fd",
+                        "inverse-primary": "#006a6a",
+                        "surface-container-lowest": "#060e20",
+                        "on-surface-variant": "#b9cac9",
+                        "on-secondary-fixed-variant": "#6700b5",
+                        "outline": "#839493",
+                        "on-tertiary-fixed-variant": "#5c4300",
+                        "on-background": "#dae2fd",
+                        "on-primary-fixed-variant": "#004f4f",
+                        "surface-container-low": "#131b2e",
+                        "on-error-container": "#ffdad6"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "unit": "4px",
+                        "margin-desktop": "48px",
+                        "margin-mobile": "16px",
+                        "gutter": "24px",
+                        "hud-padding": "12px"
+                    },
+                    "fontFamily": {
+                        "display-lg": ["Space Grotesk"],
+                        "label-caps": ["JetBrains Mono"],
+                        "headline-md": ["Space Grotesk"],
+                        "code-md": ["JetBrains Mono"],
+                        "body-md": ["Hanken Grotesk"],
+                        "headline-sm": ["Space Grotesk"],
+                        "body-lg": ["Hanken Grotesk"]
+                    },
+                    "fontSize": {
+                        "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "label-caps": ["12px", {"lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "700"}],
+                        "headline-md": ["32px", {"lineHeight": "40px", "fontWeight": "600"}],
+                        "code-md": ["14px", {"lineHeight": "20px", "fontWeight": "500"}],
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "headline-sm": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}]
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-background text-on-background font-body-md min-h-screen overflow-hidden flex selection:bg-primary-container selection:text-on-primary-container">
+<!-- XP Tracker (HUD) -->
+<div class="fixed top-0 left-0 w-full h-[2px] bg-surface-container-highest z-[60]">
+<div class="h-full bg-tertiary-fixed-dim w-1/3 drop-shadow-[0_0_8px_rgba(251,188,0,0.8)]"></div>
+</div>
+<!-- TopAppBar -->
+<nav class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-[48px] h-16 bg-surface/80 backdrop-blur-xl border-b border-primary-container/20 shadow-[0_4px_20px_rgba(0,0,0,0.5)] mt-[2px]">
+<!-- Brand -->
+<div class="font-headline-md text-headline-md font-bold text-primary-container drop-shadow-[0_0_10px_rgba(0,251,251,0.6)] flex items-center gap-3">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">auto_awesome</span>
+            Python Arcane
+        </div>
+<!-- Trailing Actions -->
+<div class="flex items-center gap-6">
+<!-- HP/Mana pseudo HUD in header -->
+<div class="hidden lg:flex items-center gap-4 mr-8 border-r border-outline-variant/50 pr-8">
+<div class="flex flex-col gap-1 w-32">
+<div class="flex justify-between font-label-caps text-[10px] text-error">
+<span>HP</span><span>100/100</span>
+</div>
+<div class="h-2 bg-surface-container-highest rounded-full overflow-hidden border border-error/20">
+<div class="h-full bg-gradient-to-r from-error-container to-error w-full"></div>
+</div>
+</div>
+<div class="flex flex-col gap-1 w-32">
+<div class="flex justify-between font-label-caps text-[10px] text-primary-container drop-shadow-[0_0_5px_rgba(0,251,251,0.5)]">
+<span>MP</span><span>85/120</span>
+</div>
+<div class="h-2 bg-surface-container-highest rounded-full overflow-hidden border border-primary-container/20">
+<div class="h-full bg-gradient-to-r from-inverse-primary to-primary-container w-[70%]"></div>
+</div>
+</div>
+</div>
+<!-- Icons from JSON -->
+<button class="text-on-surface-variant hover:text-primary-container transition-colors duration-300 relative group">
+<span class="material-symbols-outlined" data-icon="bolt">bolt</span>
+<span class="absolute inset-0 bg-primary-container/20 rounded-full scale-0 group-hover:scale-150 transition-transform blur-md"></span>
+</button>
+<button class="text-on-surface-variant hover:text-primary-container transition-colors duration-300 relative group">
+<span class="material-symbols-outlined" data-icon="auto_fix_high">auto_fix_high</span>
+</button>
+<button class="text-on-surface-variant hover:text-primary-container transition-colors duration-300 flex items-center gap-2 group">
+<span class="material-symbols-outlined text-tertiary-fixed-dim drop-shadow-[0_0_5px_rgba(251,188,0,0.5)]" data-icon="monetization_on">monetization_on</span>
+<span class="font-label-caps text-label-caps text-tertiary-fixed-dim">450G</span>
+</button>
+</div>
+</nav>
+<!-- SideNavBar -->
+<aside class="fixed left-0 top-0 h-full pt-20 flex flex-col space-y-4 bg-surface-container/90 backdrop-blur-md w-64 border-r border-secondary-container/30 shadow-xl z-40 mt-[2px]">
+<!-- Header/Avatar -->
+<div class="px-6 py-4 mb-4 border-b border-outline-variant/30 flex items-center gap-4">
+<div class="w-12 h-12 rounded-full border-2 border-secondary-container bg-surface-container-highest flex items-center justify-center overflow-hidden relative shadow-[0_0_15px_rgba(119,1,208,0.4)]">
+<img alt="Archmage Avatar" class="w-full h-full object-cover opacity-80" data-alt="A macro photograph of a glowing, fractured amethyst crystal core inside a futuristic metallic housing. The crystal emits a deep violet luminescence against the dark obsidian metal. The lighting highlights the sharp, geometric facets of the gemstone, creating a sense of ancient magic housed in modern technology. The aesthetic is dark, premium, and mysterious." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAW6U5J2NjTUzdX6-k7si8YtfJVJSEsrahWOClOns-a2TU9yZd5EeTZwIQHhYmiyeCvGK5DM5yk4PG_Q6AER9On5wyiVl3XM48gsKiv8g6M7dDSLsoGM-yuwH-NY68zlhkX8MaIYE1j5M2igmM1gRFM4wI-4f-LwwNMqHGL1aGic8lbRxKVGVReNEWDH5JLQ3Aa9JsCcyqfkD0OLoh6Srz1kafmKbe3m3fQC_ucJrVkA84zC4NoxJou1Z4V9f_K8lJdGsKvwtZAzsJ-"/>
+<div class="absolute inset-0 bg-secondary-container/20 mix-blend-overlay"></div>
+</div>
+<div>
+<h2 class="font-headline-sm text-headline-sm text-secondary">Archmage</h2>
+<p class="font-label-caps text-[10px] text-on-surface-variant tracking-wider">Level 42 Pythonista</p>
+</div>
+</div>
+<!-- Navigation Links -->
+<nav class="flex-1 flex flex-col gap-2 px-0">
+<!-- Active: Grimoire -->
+<a class="flex items-center gap-4 bg-secondary-container/20 text-primary-container border-l-4 border-primary-container py-3 px-6 shadow-[inset_0_0_15px_rgba(0,251,251,0.2)] group relative overflow-hidden" href="#">
+<div class="absolute inset-0 bg-gradient-to-r from-primary-container/10 to-transparent w-1/2 opacity-50"></div>
+<span class="material-symbols-outlined drop-shadow-[0_0_8px_rgba(0,251,251,0.8)] z-10" data-icon="auto_stories">auto_stories</span>
+<span class="font-label-caps text-label-caps z-10">Grimoire</span>
+</a>
+<!-- Inactive -->
+<a class="flex items-center gap-4 text-on-surface-variant py-3 px-6 opacity-70 hover:bg-surface-variant hover:text-primary transition-all duration-200 border-l-4 border-transparent group" href="#">
+<span class="material-symbols-outlined group-hover:text-tertiary-fixed-dim transition-colors" data-icon="explore">explore</span>
+<span class="font-label-caps text-label-caps">Trail</span>
+</a>
+<a class="flex items-center gap-4 text-on-surface-variant py-3 px-6 opacity-70 hover:bg-surface-variant hover:text-primary transition-all duration-200 border-l-4 border-transparent group" href="#">
+<span class="material-symbols-outlined group-hover:text-error transition-colors" data-icon="swords">swords</span>
+<span class="font-label-caps text-label-caps">Arena</span>
+</a>
+<a class="flex items-center gap-4 text-on-surface-variant py-3 px-6 opacity-70 hover:bg-surface-variant hover:text-primary transition-all duration-200 border-l-4 border-transparent group" href="#">
+<span class="material-symbols-outlined group-hover:text-secondary-fixed transition-colors" data-icon="pets">pets</span>
+<span class="font-label-caps text-label-caps">Bestiary</span>
+</a>
+</nav>
+<!-- CTA -->
+<div class="p-6 mt-auto">
+<button class="w-full bg-primary-container text-on-primary-container font-headline-sm text-headline-sm py-3 rounded border border-primary-container/50 hover:bg-surface-tint hover:shadow-[0_0_20px_rgba(0,251,251,0.4)] transition-all flex items-center justify-center gap-2 group">
+<span class="material-symbols-outlined group-hover:animate-pulse" style="font-variation-settings: 'FILL' 1;">flare</span>
+                Cast Spell
+            </button>
+</div>
+</aside>
+<!-- Main Content Canvas -->
+<main class="ml-64 pt-24 pb-12 px-[48px] h-screen w-full overflow-y-auto relative z-10 flex flex-col">
+<!-- Header Section -->
+<header class="mb-10 flex items-end justify-between border-b border-outline-variant/40 pb-6 relative">
+<div class="absolute bottom-[-1px] left-0 w-32 h-[1px] bg-primary-container drop-shadow-[0_0_5px_rgba(0,251,251,1)]"></div>
+<div>
+<h1 class="font-display-lg text-display-lg text-primary drop-shadow-md mb-2 flex items-center gap-4">
+<span class="material-symbols-outlined text-4xl text-secondary drop-shadow-[0_0_15px_rgba(119,1,208,0.8)]" style="font-variation-settings: 'FILL' 1;">menu_book</span>
+                    Arcane Grimoire
+                </h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl">Your repository of mastered incantations, logical constructs, and foundational hexes. Select a discipline to review your spellcraft.</p>
+</div>
+<!-- Oracle Console Mini-View (Atmospheric) -->
+<div class="hidden xl:flex bg-surface-container-lowest border border-outline-variant/30 rounded p-4 w-72 h-24 relative overflow-hidden group">
+<div class="absolute top-0 left-0 w-full h-[2px] bg-gradient-to-r from-transparent via-primary-container/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+<div class="font-code-md text-[12px] leading-tight text-on-surface-variant opacity-80">
+<span class="text-secondary-container">import</span> aether<br/>
+<span class="text-primary-container">system.scan</span>(grimoire_db)<br/>
+                    &gt; 3 disciplines active<br/>
+                    &gt; awaiting input <span class="animate-pulse text-primary-container">_</span>
+</div>
+</div>
+</header>
+<!-- Discipline Tabs (Holographic Tech Style) -->
+<div class="flex gap-4 mb-8">
+<button class="px-6 py-2 rounded-t-lg bg-surface-container-high border-t border-l border-r border-primary-container/50 text-primary-container font-label-caps text-label-caps shadow-[inset_0_4px_10px_rgba(0,251,251,0.1)] relative overflow-hidden">
+<div class="absolute inset-0 bg-primary-container/10 mix-blend-screen"></div>
+                Variables &amp; Types
+            </button>
+<button class="px-6 py-2 rounded-t-lg bg-surface-container-lowest border border-outline-variant/30 text-on-surface-variant font-label-caps text-label-caps hover:bg-surface-container hover:text-primary transition-colors">
+                Mathematical Hexes
+            </button>
+<button class="px-6 py-2 rounded-t-lg bg-surface-container-lowest border border-outline-variant/30 text-on-surface-variant font-label-caps text-label-caps hover:bg-surface-container hover:text-primary transition-colors">
+                Conditionals (Gates)
+            </button>
+</div>
+<!-- Spell Cards Bento Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 flex-1 content-start pb-20">
+<!-- Card 1: Initialization -->
+<div class="bg-[#0f172a]/80 backdrop-blur-[12px] rounded-lg border border-secondary-container/30 p-6 relative overflow-hidden group hover:border-primary-container/50 transition-all shadow-lg hover:shadow-[0_0_30px_rgba(0,251,251,0.1)] flex flex-col h-full col-span-1 md:col-span-2 xl:col-span-1">
+<!-- Inner Glow -->
+<div class="absolute -top-20 -right-20 w-48 h-48 bg-primary-container/5 rounded-full blur-3xl group-hover:bg-primary-container/15 transition-all pointer-events-none"></div>
+<div class="flex justify-between items-start mb-4 z-10">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded bg-surface-container flex items-center justify-center border border-outline-variant/50">
+<span class="material-symbols-outlined text-primary-container text-sm">data_object</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-primary group-hover:text-primary-container transition-colors">Declare String</h3>
+</div>
+<div class="bg-surface-container-lowest px-3 py-1 rounded-full border border-secondary/20">
+<span class="font-label-caps text-[10px] text-secondary tracking-widest drop-shadow-[0_0_5px_rgba(220,184,255,0.5)]">5 MP</span>
+</div>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6 flex-1 z-10">
+                    Binds a sequence of ethereal characters to a designated symbolic rune. Essential for storing true names and incantations.
+                </p>
+<div class="bg-[#060e20] p-4 rounded-md border border-[#3a4a49]/50 relative group-hover:border-[#00fbfb]/30 transition-colors z-10">
+<div class="absolute top-2 right-2 opacity-0 group-hover:opacity-100 transition-opacity cursor-pointer">
+<span class="material-symbols-outlined text-on-surface-variant text-sm hover:text-primary">content_copy</span>
+</div>
+<pre class="font-code-md text-code-md"><code class="text-on-surface"><span class="text-secondary-fixed-dim">spell_name</span> = <span class="text-tertiary-fixed">"Fireball"</span>
+<span class="text-secondary-fixed-dim">target</span> = <span class="text-tertiary-fixed">"Goblin_01"</span></code></pre>
+</div>
+</div>
+<!-- Card 2: Integers -->
+<div class="bg-[#0f172a]/80 backdrop-blur-[12px] rounded-lg border border-secondary-container/30 p-6 relative overflow-hidden group hover:border-primary-container/50 transition-all shadow-lg hover:shadow-[0_0_30px_rgba(0,251,251,0.1)] flex flex-col h-full">
+<div class="absolute -top-20 -right-20 w-48 h-48 bg-tertiary-fixed-dim/5 rounded-full blur-3xl group-hover:bg-tertiary-fixed-dim/10 transition-all pointer-events-none"></div>
+<div class="flex justify-between items-start mb-4 z-10">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded bg-surface-container flex items-center justify-center border border-outline-variant/50">
+<span class="material-symbols-outlined text-tertiary-fixed-dim text-sm">tag</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-primary group-hover:text-tertiary-fixed-dim transition-colors">Manifest Integer</h3>
+</div>
+<div class="bg-surface-container-lowest px-3 py-1 rounded-full border border-secondary/20">
+<span class="font-label-caps text-[10px] text-secondary tracking-widest">2 MP</span>
+</div>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6 flex-1 z-10">
+                    Conjures a solid, whole numerical value. Used for counting elemental charges or tracking entity health points.
+                </p>
+<div class="bg-[#060e20] p-4 rounded-md border border-[#3a4a49]/50 relative group-hover:border-[#00fbfb]/30 transition-colors z-10">
+<pre class="font-code-md text-code-md"><code class="text-on-surface"><span class="text-secondary-fixed-dim">mana_crystals</span> = <span class="text-[#00dddd]">42</span>
+<span class="text-secondary-fixed-dim">damage_multiplier</span> = <span class="text-[#00dddd]">3</span></code></pre>
+</div>
+</div>
+<!-- Card 3: Floats -->
+<div class="bg-[#0f172a]/80 backdrop-blur-[12px] rounded-lg border border-secondary-container/30 p-6 relative overflow-hidden group hover:border-primary-container/50 transition-all shadow-lg hover:shadow-[0_0_30px_rgba(0,251,251,0.1)] flex flex-col h-full">
+<div class="absolute -top-20 -right-20 w-48 h-48 bg-primary-container/5 rounded-full blur-3xl group-hover:bg-primary-container/15 transition-all pointer-events-none"></div>
+<div class="flex justify-between items-start mb-4 z-10">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded bg-surface-container flex items-center justify-center border border-outline-variant/50">
+<span class="material-symbols-outlined text-primary-container text-sm">water_drop</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-primary group-hover:text-primary-container transition-colors">Fluid Float</h3>
+</div>
+<div class="bg-surface-container-lowest px-3 py-1 rounded-full border border-secondary/20">
+<span class="font-label-caps text-[10px] text-secondary tracking-widest">3 MP</span>
+</div>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6 flex-1 z-10">
+                    A numerical value with ethereal precision (decimals). Crucial for calculating precise alchemical ratios or trajectory angles.
+                </p>
+<div class="bg-[#060e20] p-4 rounded-md border border-[#3a4a49]/50 relative group-hover:border-[#00fbfb]/30 transition-colors z-10">
+<pre class="font-code-md text-code-md"><code class="text-on-surface"><span class="text-secondary-fixed-dim">potion_potency</span> = <span class="text-[#00dddd]">99.9</span>
+<span class="text-secondary-fixed-dim">pi_rune</span> = <span class="text-[#00dddd]">3.14159</span></code></pre>
+</div>
+</div>
+<!-- Card 4: Booleans (Wide Span) -->
+<div class="bg-[#0f172a]/80 backdrop-blur-[12px] rounded-lg border border-secondary-container/30 p-6 relative overflow-hidden group hover:border-primary-container/50 transition-all shadow-lg hover:shadow-[0_0_30px_rgba(0,251,251,0.1)] flex flex-col md:flex-row gap-6 h-full col-span-1 md:col-span-2 xl:col-span-3">
+<div class="absolute inset-0 bg-gradient-to-br from-secondary-container/5 to-transparent pointer-events-none"></div>
+<div class="flex-1 z-10 flex flex-col">
+<div class="flex justify-between items-start mb-4">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded bg-surface-container flex items-center justify-center border border-outline-variant/50">
+<span class="material-symbols-outlined text-secondary text-sm">toggle_on</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-primary group-hover:text-secondary-fixed transition-colors">Binary State (Boolean)</h3>
+</div>
+<div class="bg-surface-container-lowest px-3 py-1 rounded-full border border-secondary/20">
+<span class="font-label-caps text-[10px] text-secondary tracking-widest">1 MP</span>
+</div>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6">
+                        The fundamental dichotomy of the Arcane logic gates. A state of absolute truth or absolute falsehood. Determines if a magical ward is active, or if a target is vanquished.
+                    </p>
+</div>
+<div class="flex-1 bg-[#060e20] p-4 rounded-md border border-[#3a4a49]/50 relative group-hover:border-[#00fbfb]/30 transition-colors z-10 flex items-center">
+<pre class="font-code-md text-code-md w-full"><code class="text-on-surface"><span class="text-on-surface-variant"># The ward is currently active</span>
+<span class="text-secondary-fixed-dim">is_shield_up</span> = <span class="text-secondary-fixed font-bold">True</span>
+
+<span class="text-on-surface-variant"># The enemy still stands</span>
+<span class="text-secondary-fixed-dim">is_defeated</span> = <span class="text-secondary-fixed font-bold">False</span></code></pre>
+</div>
+</div>
+</div>
+</main>
+</body></html>
+

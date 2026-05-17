@@ -106,5 +106,23 @@
       "missao_4": "/api/datasets/receita_multa_irpf.json",
       "missao_5": "/api/datasets/ibge_grade_demografica.json"
     }
+  },
+  "rpg": {
+    "xp_reward": 100,
+    "variant": "marathon",
+    "oracle_hints": [
+      "Verifique a formatação exata da saída pedida.",
+      "Releia o enunciado com atenção antes de codar."
+    ],
+    "enemy_name": "O Analista de Dados Brutos",
+    "enemy_hp": 300,
+    "weakness": "f-strings e formatação",
+    "loot_drops": [
+      {
+        "item": "Superpoder: modulo-operator",
+        "type": "superpower",
+        "rarity": "epic"
+      }
+    ]
   }
 }

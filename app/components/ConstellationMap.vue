@@ -321,6 +321,10 @@ function bothCompleted(a: ModuleQuest, b: ModuleQuest) {
   return isCompleted(a) && isCompleted(b)
 }
 
+function isCompletedToActiveLink(a: ModuleQuest, b: ModuleQuest) {
+  return isCompleted(a) && !isCompleted(b)
+}
+
 // ── Cores ────────────────────────────────────────────────────────────────────
 function trunkLineColor(block: QuestBlock, fromIdx: number, toIdx: number): string {
   const list = trunkWithCloser(block)

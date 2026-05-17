@@ -1,0 +1,424 @@
+<!-- Python Arcane: Oracle of Progress (Gradebook) -->
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Oracle of Progress - Master's Sanctum</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&amp;family=JetBrains+Mono:wght@500&amp;family=Space+Grotesk:wght@500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        /* Custom scrollbar for horizontal scrolling tables to match theme */
+        ::-webkit-scrollbar {
+            height: 6px;
+            width: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #eff4ff; 
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #cfc2d7; 
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #7e7386; 
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-surface": "#0d1c2e",
+                        "on-tertiary": "#ffffff",
+                        "outline": "#7e7386",
+                        "outline-variant": "#cfc2d7",
+                        "on-secondary-fixed-variant": "#004f4f",
+                        "surface": "#f8f9ff",
+                        "on-tertiary-fixed": "#191c1e",
+                        "surface-container-lowest": "#ffffff",
+                        "primary-fixed-dim": "#dcb8ff",
+                        "on-secondary-fixed": "#002020",
+                        "secondary-fixed": "#00fbfb",
+                        "on-background": "#0d1c2e",
+                        "primary-fixed": "#efdbff",
+                        "on-error": "#ffffff",
+                        "surface-dim": "#ccdbf3",
+                        "secondary": "#006a6a",
+                        "tertiary-fixed-dim": "#c4c7c9",
+                        "error": "#ba1a1a",
+                        "surface-container-high": "#dce9ff",
+                        "surface-tint": "#8422dd",
+                        "background": "#f8f9ff",
+                        "surface-container": "#e6eeff",
+                        "surface-container-highest": "#d5e3fc",
+                        "on-primary": "#ffffff",
+                        "on-tertiary-fixed-variant": "#444749",
+                        "on-secondary": "#ffffff",
+                        "tertiary-container": "#505355",
+                        "tertiary-fixed": "#e0e3e5",
+                        "on-primary-fixed": "#2b0052",
+                        "on-primary-fixed-variant": "#6700b5",
+                        "surface-container-low": "#eff4ff",
+                        "on-surface-variant": "#4c4354",
+                        "on-tertiary-container": "#c4c7c9",
+                        "inverse-surface": "#233144",
+                        "primary": "#57009b",
+                        "surface-bright": "#f8f9ff",
+                        "primary-container": "#7701d0",
+                        "inverse-primary": "#dcb8ff",
+                        "secondary-fixed-dim": "#00dddd",
+                        "on-primary-container": "#dbb8ff",
+                        "on-error-container": "#93000a",
+                        "on-secondary-container": "#006e6e",
+                        "surface-variant": "#d5e3fc",
+                        "error-container": "#ffdad6",
+                        "tertiary": "#393c3e",
+                        "secondary-container": "#00f8f8",
+                        "inverse-on-surface": "#eaf1ff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "margin": "32px",
+                        "md": "16px",
+                        "lg": "24px",
+                        "xs": "4px",
+                        "base": "4px",
+                        "gutter": "24px",
+                        "xl": "40px",
+                        "sm": "8px",
+                        "container-max-width": "1440px"
+                    },
+                    "fontFamily": {
+                        "display-lg": ["Space Grotesk"],
+                        "label-md": ["JetBrains Mono"],
+                        "headline-md": ["Space Grotesk"],
+                        "body-md": ["Inter"],
+                        "headline-lg-mobile": ["Space Grotesk"],
+                        "headline-lg": ["Space Grotesk"],
+                        "label-sm": ["JetBrains Mono"],
+                        "body-lg": ["Inter"]
+                    },
+                    "fontSize": {
+                        "display-lg": ["48px", { "lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "label-md": ["14px", { "lineHeight": "1.2", "letterSpacing": "0.05em", "fontWeight": "500" }],
+                        "headline-md": ["24px", { "lineHeight": "1.3", "fontWeight": "500" }],
+                        "body-md": ["16px", { "lineHeight": "1.5", "fontWeight": "400" }],
+                        "headline-lg-mobile": ["24px", { "lineHeight": "1.2", "fontWeight": "600" }],
+                        "headline-lg": ["32px", { "lineHeight": "1.2", "fontWeight": "600" }],
+                        "label-sm": ["12px", { "lineHeight": "1.2", "fontWeight": "500" }],
+                        "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-background text-on-background font-body-md text-body-md min-h-screen flex selection:bg-primary-container selection:text-on-primary-container">
+<!-- Desktop Side Navigation -->
+<nav class="h-screen w-64 fixed left-0 top-0 bg-surface-container-low backdrop-blur-md border-r border-outline-variant/30 flex flex-col h-full py-8 hidden md:flex z-40">
+<!-- Header -->
+<div class="px-6 mb-8 flex flex-col items-center text-center">
+<div class="w-20 h-20 rounded-full border-2 border-secondary-fixed p-1 mb-4">
+<img alt="Professor Avatar" class="w-full h-full rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCJqxZk6s_a2-7ta3vuKXpzKM8UteIxV9R-QShAXz9afPuABr53ssqCZPNBn7I376HE8lkCyNE9r-vxynyEciym70AbbG3oGzJMkEuexM6S4SegI_CUoH6LanzK2Ik2A9hV7yJODzo-ZrbNrif-II91IP-50_lf_vv97hJhzeA91KdGJ6QNl2Dk6t24vpCpv28CRA82M8zrN5TPAF0gq74lLOnEvrPd_0Jzyw7cZzs5-HwRqiZL4ZxTgShIeoyPAShsIm49liatO8zZ"/>
+</div>
+<h2 class="text-headline-sm font-headline-sm text-secondary-fixed">Master's Sanctum</h2>
+<span class="font-label-sm text-label-sm text-on-surface-variant mt-1">Arch-Instructor Level 99</span>
+</div>
+<!-- CTA -->
+<div class="px-4 mb-6">
+<button class="w-full bg-primary hover:bg-primary-container text-on-primary font-label-md text-label-md py-3 rounded-lg transition-colors flex items-center justify-center gap-2 shadow-sm">
+<span class="material-symbols-outlined text-lg">bolt</span>
+                Cast Global Event
+            </button>
+</div>
+<!-- Navigation Links -->
+<div class="flex-1 overflow-y-auto px-2 space-y-1">
+<a class="flex items-center gap-3 text-on-surface-variant p-3 mx-2 hover:bg-surface-variant/50 rounded-lg hover:bg-surface-container-high transition-all active:translate-x-1 transition-transform" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="font-label-caps text-label-caps">Dashboard</span>
+</a>
+<a class="flex items-center gap-3 text-on-surface-variant p-3 mx-2 hover:bg-surface-variant/50 rounded-lg hover:bg-surface-container-high transition-all active:translate-x-1 transition-transform" href="#">
+<span class="material-symbols-outlined">monitoring</span>
+<span class="font-label-caps text-label-caps">Class Stats</span>
+</a>
+<a class="flex items-center gap-3 text-on-surface-variant p-3 mx-2 hover:bg-surface-variant/50 rounded-lg hover:bg-surface-container-high transition-all active:translate-x-1 transition-transform" href="#">
+<span class="material-symbols-outlined">swords</span>
+<span class="font-label-caps text-label-caps">Mission Control</span>
+</a>
+<a class="flex items-center gap-3 bg-secondary-container text-on-secondary-container rounded-lg p-3 mx-2 shadow-[inset_0_0_10px_rgba(119,1,208,0.3)] hover:bg-surface-container-high transition-all active:translate-x-1 transition-transform" href="#">
+<span class="material-symbols-outlined">menu_book</span>
+<span class="font-label-caps text-label-caps">Gradebook</span>
+</a>
+<a class="flex items-center gap-3 text-on-surface-variant p-3 mx-2 hover:bg-surface-variant/50 rounded-lg hover:bg-surface-container-high transition-all active:translate-x-1 transition-transform" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span class="font-label-caps text-label-caps">Settings</span>
+</a>
+</div>
+<!-- Footer Links -->
+<div class="mt-auto px-2 pt-4 border-t border-outline-variant/20">
+<a class="flex items-center gap-3 text-on-surface-variant p-3 mx-2 hover:bg-surface-variant/50 rounded-lg hover:bg-surface-container-high transition-all" href="#">
+<span class="material-symbols-outlined">help</span>
+<span class="font-label-caps text-label-caps">Support</span>
+</a>
+<a class="flex items-center gap-3 text-on-surface-variant p-3 mx-2 hover:bg-surface-variant/50 rounded-lg hover:bg-surface-container-high transition-all" href="#">
+<span class="material-symbols-outlined">logout</span>
+<span class="font-label-caps text-label-caps">Log Out</span>
+</a>
+</div>
+</nav>
+<!-- Mobile Bottom Navigation -->
+<nav class="fixed bottom-0 w-full z-50 h-20 rounded-t-xl md:hidden bg-surface-container-lowest/80 backdrop-blur-2xl border-t border-primary/10 shadow-[0_-4px_20px_rgba(0,0,0,0.5)] fixed bottom-0 left-0 w-full flex justify-around items-center px-4 pb-safe pb-4 pt-2">
+<a class="flex flex-col items-center justify-center text-on-surface-variant opacity-60 hover:opacity-100 hover:text-primary transition-opacity active:scale-90 transition-all duration-150" href="#">
+<span class="material-symbols-outlined mb-1">map</span>
+<span class="font-label-caps text-label-caps text-xs">Quests</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant opacity-60 hover:opacity-100 hover:text-primary transition-opacity active:scale-90 transition-all duration-150" href="#">
+<span class="material-symbols-outlined mb-1">military_tech</span>
+<span class="font-label-caps text-label-caps text-xs">Skills</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant opacity-60 hover:opacity-100 hover:text-primary transition-opacity active:scale-90 transition-all duration-150" href="#">
+<span class="material-symbols-outlined mb-1">auto_fix_high</span>
+<span class="font-label-caps text-label-caps text-xs">Spells</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant opacity-60 hover:opacity-100 hover:text-primary transition-opacity active:scale-90 transition-all duration-150" href="#">
+<span class="material-symbols-outlined mb-1">person</span>
+<span class="font-label-caps text-label-caps text-xs">Profile</span>
+</a>
+</nav>
+<!-- Main Content Canvas -->
+<main class="flex-1 ml-0 md:ml-64 w-full min-h-screen relative overflow-x-hidden">
+<!-- Header & Top Actions -->
+<div class="px-6 md:px-12 pt-12 pb-8 flex flex-col md:flex-row md:items-end justify-between gap-6 max-w-7xl mx-auto">
+<div class="max-w-2xl">
+<div class="flex items-center gap-3 mb-2">
+<div class="w-8 h-8 rounded-full bg-surface-container-high flex items-center justify-center border border-outline-variant">
+<span class="material-symbols-outlined text-secondary text-sm">menu_book</span>
+</div>
+<span class="font-label-md text-label-md text-secondary tracking-widest uppercase">Class Administration</span>
+</div>
+<h1 class="font-display-lg text-display-lg text-primary tracking-tight">Oracle of Progress</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant mt-4">Review student aptitudes, manage experience yields, and inspect detailed academic scrolls across your active sanctums.</p>
+</div>
+<button class="shrink-0 bg-primary text-on-primary hover:bg-primary-container px-6 py-4 rounded-xl font-label-md text-label-md flex items-center justify-center gap-3 transition-all duration-300 shadow-sm border border-transparent hover:border-primary-fixed group w-full md:w-auto">
+<span class="material-symbols-outlined group-hover:-translate-y-0.5 transition-transform">download</span>
+                Gerar Relatório de Desempenho
+            </button>
+</div>
+<!-- Filters & Tools Bar -->
+<div class="px-6 md:px-12 pb-8 max-w-7xl mx-auto">
+<div class="bg-surface-container-lowest border border-outline-variant p-2 rounded-xl flex flex-col md:flex-row gap-2 shadow-sm relative overflow-hidden">
+<div class="absolute left-0 top-0 bottom-0 w-[2px] bg-secondary-fixed"></div>
+<!-- Search Input -->
+<div class="flex-1 flex items-center px-4 bg-surface rounded-lg border border-transparent focus-within:border-primary focus-within:ring-2 focus-within:ring-secondary-fixed/20 transition-all">
+<span class="material-symbols-outlined text-outline">search</span>
+<input class="w-full bg-transparent border-none focus:ring-0 font-body-md text-body-md text-on-surface placeholder:text-outline py-3 px-3" placeholder="Search acolytes by name or ID..." type="text"/>
+</div>
+<!-- Filters -->
+<div class="flex gap-2 w-full md:w-auto">
+<select class="flex-1 md:w-48 bg-surface border border-outline-variant rounded-lg font-label-md text-label-md text-on-surface focus:border-primary focus:ring-2 focus:ring-secondary-fixed/20 py-3 px-4 cursor-pointer appearance-none bg-[url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2224%22%20height%3D%2224%22%20viewBox%3D%220%200%24%2024%22%20fill%3D%22none%22%20stroke%3D%22%237e7386%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cpolyline%20points%3D%226%209%2012%2015%2018%209%22%3E%3C%2Fpolyline%3E%3C%2Fsvg%3E')] bg-no-repeat bg-[position:right_1rem_center] bg-[length:1.2em_1.2em]">
+<option value="">All Sanctums</option>
+<option value="alpha">Alpha Cohort</option>
+<option value="beta">Beta Cohort</option>
+<option value="omega">Omega Vanguard</option>
+</select>
+<select class="flex-1 md:w-48 bg-surface border border-outline-variant rounded-lg font-label-md text-label-md text-on-surface focus:border-primary focus:ring-2 focus:ring-secondary-fixed/20 py-3 px-4 cursor-pointer appearance-none bg-[url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2224%22%20height%3D%2224%22%20viewBox%3D%220%200%24%2024%22%20fill%3D%22none%22%20stroke%3D%22%237e7386%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cpolyline%20points%3D%226%209%2012%2015%2018%209%22%3E%3C%2Fpolyline%3E%3C%2Fsvg%3E')] bg-no-repeat bg-[position:right_1rem_center] bg-[length:1.2em_1.2em]">
+<option value="">All Levels</option>
+<option value="novice">Novice (1-10)</option>
+<option value="adept">Adept (11-30)</option>
+<option value="magus">Magus (31+)</option>
+</select>
+<button class="bg-surface-container-high border border-outline-variant hover:bg-surface-variant text-on-surface w-12 rounded-lg flex items-center justify-center transition-colors">
+<span class="material-symbols-outlined">filter_list</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Data Table Section -->
+<div class="px-6 md:px-12 pb-32 md:pb-12 max-w-7xl mx-auto">
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl shadow-sm relative">
+<!-- Arcane Accent Line -->
+<div class="absolute left-0 top-0 bottom-0 w-[2px] bg-primary-container rounded-l-xl z-10"></div>
+<div class="overflow-x-auto relative">
+<table class="w-full text-left border-collapse min-w-[900px]">
+<thead>
+<tr class="border-b border-outline-variant bg-surface-bright">
+<th class="font-headline-md text-body-md font-semibold text-on-surface py-5 px-6 whitespace-nowrap pl-8">Student Name</th>
+<th class="font-headline-md text-body-md font-semibold text-on-surface py-5 px-6 whitespace-nowrap">Level &amp; Rank</th>
+<th class="font-headline-md text-body-md font-semibold text-on-surface py-5 px-6 whitespace-nowrap w-64">XP Accumulation</th>
+<th class="font-headline-md text-body-md font-semibold text-on-surface py-5 px-6 whitespace-nowrap text-right">Completion</th>
+<th class="font-headline-md text-body-md font-semibold text-on-surface py-5 px-6 whitespace-nowrap">Last Active</th>
+<th class="font-headline-md text-body-md font-semibold text-on-surface py-5 px-6 whitespace-nowrap text-center">Action</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-surface-container">
+<!-- Row 1 -->
+<tr class="hover:bg-surface-variant/30 transition-colors group cursor-default">
+<td class="py-4 px-6 pl-8">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full overflow-hidden bg-surface-container-high border border-outline-variant">
+<img alt="Student Elara" class="w-full h-full object-cover" data-alt="A close-up portrait of a young female scholar with bright eyes and short dark hair, wearing an elegant, minimalist academic robe in deep violet. The background is a clean, bright white light-mode setting. The lighting is soft and corporate, conveying a sense of intellectual mastery and modern professionalism." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA8Uj9ibDwpMx0-TqhyxjSDfUnK4AUFfYnlsT-31C69txHoT14-Sd3OiBooYMhs-YlVdc7_CpLoKXo6ED2exVoUXDlIQdVP6Ohl0qLuRZepeaTAuVkNjXJbvvF8s3G8X3FrAIDW7G3uKjQdwNtm3JOA7OcMt-uqX_7vF_cFsSHnVSRO2dMKOkS5_oRsDNLJej6HAl81p8UJHbWUUBKfIhN8P4aKI4vqQTCYnKcDh3GlLs75Ql3T6X7oIMriosPoO0e7NtoNl6Mjnvja"/>
+</div>
+<div>
+<p class="font-body-md font-medium text-on-surface">Elara Vance</p>
+<p class="font-label-sm text-label-sm text-outline mt-0.5">ID: AC-7731</p>
+</div>
+</div>
+</td>
+<td class="py-4 px-6">
+<div class="inline-flex items-center gap-2 bg-surface-container-high px-3 py-1.5 rounded-md border border-outline-variant/50">
+<span class="font-label-md text-label-md text-primary">Lvl 42</span>
+<span class="w-1 h-1 rounded-full bg-outline"></span>
+<span class="font-label-md text-label-sm text-on-surface-variant uppercase tracking-wider">Magus</span>
+</div>
+</td>
+<td class="py-4 px-6">
+<div class="flex flex-col gap-2">
+<div class="flex justify-between font-label-sm text-label-sm">
+<span class="text-on-surface-variant">8,450 / 10,000 XP</span>
+<span class="text-secondary font-medium">84.5%</span>
+</div>
+<div class="h-2 w-full bg-surface-container rounded-full overflow-hidden border border-outline-variant/30">
+<div class="h-full bg-secondary-fixed-dim rounded-full" style="width: 84.5%"></div>
+</div>
+</div>
+</td>
+<td class="py-4 px-6 text-right">
+<span class="font-label-md text-label-md text-on-surface">92%</span>
+</td>
+<td class="py-4 px-6">
+<div class="flex items-center gap-2 text-on-surface-variant font-body-md">
+<span class="w-2 h-2 rounded-full bg-secondary-fixed-dim"></span>
+                                        Today, 09:14 AM
+                                    </div>
+</td>
+<td class="py-4 px-6 text-center">
+<button class="p-2 rounded-lg text-outline hover:text-primary hover:bg-primary-container/10 transition-colors group-hover:border-primary border border-transparent">
+<span class="material-symbols-outlined">visibility</span>
+</button>
+</td>
+</tr>
+<!-- Row 2 -->
+<tr class="bg-surface-bright/50 hover:bg-surface-variant/30 transition-colors group cursor-default">
+<td class="py-4 px-6 pl-8">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full overflow-hidden bg-surface-container-high border border-outline-variant">
+<img alt="Student Kaelen" class="w-full h-full object-cover" data-alt="A close-up portrait of a male student with a calm expression and neat, light brown hair, wearing a clean, minimalist uniform. The setting is a bright, high-key light-mode environment with crisp white backgrounds and subtle lavender tones. The style is modern corporate mixed with a hint of academic tradition, emphasizing clarity and order." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBW6CUDrlSLNXHMx6V1_37dDG8wxQi7EF63-_NgEajC3mghDgI5vqy-4J3KUJKbwTHnGHuNDu06g5NWu_TX8msLYgoTDJGGvWC9xO4WeGrsGBOAFZPyWAiiA29R-OxD_gBIU-6fzR_bfSENfT5_QoFTA5J_UCTpJCWQOrU32EOYGP70gaCdVZMU8RjDsdgkFSPPZfGbMNh88Q1IaAy05gpOjvmKHpyUTM5cVx-FFNHX4_sQWGybQ8U3Yltlg4wFshwLfiYJ8vFwmwK_"/>
+</div>
+<div>
+<p class="font-body-md font-medium text-on-surface">Kaelen Thorne</p>
+<p class="font-label-sm text-label-sm text-outline mt-0.5">ID: AC-8820</p>
+</div>
+</div>
+</td>
+<td class="py-4 px-6">
+<div class="inline-flex items-center gap-2 bg-surface-container-high px-3 py-1.5 rounded-md border border-outline-variant/50">
+<span class="font-label-md text-label-md text-primary">Lvl 14</span>
+<span class="w-1 h-1 rounded-full bg-outline"></span>
+<span class="font-label-md text-label-sm text-on-surface-variant uppercase tracking-wider">Adept</span>
+</div>
+</td>
+<td class="py-4 px-6">
+<div class="flex flex-col gap-2">
+<div class="flex justify-between font-label-sm text-label-sm">
+<span class="text-on-surface-variant">2,100 / 5,000 XP</span>
+<span class="text-primary font-medium">42.0%</span>
+</div>
+<div class="h-2 w-full bg-surface-container rounded-full overflow-hidden border border-outline-variant/30">
+<div class="h-full bg-primary-fixed-dim rounded-full" style="width: 42.0%"></div>
+</div>
+</div>
+</td>
+<td class="py-4 px-6 text-right">
+<span class="font-label-md text-label-md text-on-surface">65%</span>
+</td>
+<td class="py-4 px-6">
+<div class="flex items-center gap-2 text-on-surface-variant font-body-md">
+<span class="w-2 h-2 rounded-full bg-outline"></span>
+                                        Yesterday
+                                    </div>
+</td>
+<td class="py-4 px-6 text-center">
+<button class="p-2 rounded-lg text-outline hover:text-primary hover:bg-primary-container/10 transition-colors group-hover:border-primary border border-transparent">
+<span class="material-symbols-outlined">visibility</span>
+</button>
+</td>
+</tr>
+<!-- Row 3 -->
+<tr class="hover:bg-surface-variant/30 transition-colors group cursor-default">
+<td class="py-4 px-6 pl-8">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full overflow-hidden bg-surface-container-high border border-outline-variant flex items-center justify-center text-primary font-label-md">
+                                            SR
+                                        </div>
+<div>
+<p class="font-body-md font-medium text-on-surface">Sylas Reed</p>
+<p class="font-label-sm text-label-sm text-outline mt-0.5">ID: AC-9012</p>
+</div>
+</div>
+</td>
+<td class="py-4 px-6">
+<div class="inline-flex items-center gap-2 bg-surface-container-high px-3 py-1.5 rounded-md border border-outline-variant/50">
+<span class="font-label-md text-label-md text-primary">Lvl 08</span>
+<span class="w-1 h-1 rounded-full bg-outline"></span>
+<span class="font-label-md text-label-sm text-on-surface-variant uppercase tracking-wider">Novice</span>
+</div>
+</td>
+<td class="py-4 px-6">
+<div class="flex flex-col gap-2">
+<div class="flex justify-between font-label-sm text-label-sm">
+<span class="text-on-surface-variant">800 / 1,000 XP</span>
+<span class="text-secondary font-medium">80.0%</span>
+</div>
+<div class="h-2 w-full bg-surface-container rounded-full overflow-hidden border border-outline-variant/30">
+<div class="h-full bg-secondary-fixed-dim rounded-full" style="width: 80.0%"></div>
+</div>
+</div>
+</td>
+<td class="py-4 px-6 text-right">
+<span class="font-label-md text-label-md text-on-surface">30%</span>
+</td>
+<td class="py-4 px-6">
+<div class="flex items-center gap-2 text-on-surface-variant font-body-md">
+<span class="w-2 h-2 rounded-full bg-error"></span>
+                                        3 days ago
+                                    </div>
+</td>
+<td class="py-4 px-6 text-center">
+<button class="p-2 rounded-lg text-outline hover:text-primary hover:bg-primary-container/10 transition-colors group-hover:border-primary border border-transparent">
+<span class="material-symbols-outlined">visibility</span>
+</button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Pagination Footer -->
+<div class="border-t border-outline-variant/50 bg-surface-bright px-6 py-4 flex items-center justify-between rounded-b-xl">
+<p class="font-label-sm text-label-sm text-outline">Showing 1-3 of 142 records</p>
+<div class="flex gap-2">
+<button class="px-3 py-1 border border-outline-variant rounded hover:bg-surface-container-high disabled:opacity-50 text-on-surface-variant font-label-md">Prev</button>
+<button class="px-3 py-1 bg-primary text-on-primary rounded font-label-md">1</button>
+<button class="px-3 py-1 border border-outline-variant rounded hover:bg-surface-container-high text-on-surface-variant font-label-md">2</button>
+<button class="px-3 py-1 border border-outline-variant rounded hover:bg-surface-container-high text-on-surface-variant font-label-md">3</button>
+<button class="px-3 py-1 border border-outline-variant rounded hover:bg-surface-container-high text-on-surface-variant font-label-md">Next</button>
+</div>
+</div>
+</div>
+</div>
+</main>
+</body></html>
+

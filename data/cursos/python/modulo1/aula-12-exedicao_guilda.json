@@ -60,5 +60,23 @@
   },
   "premio": {
     "pontuacao": 140
+  },
+  "rpg": {
+    "xp_reward": 140,
+    "variant": "expedition",
+    "oracle_hints": [
+      "Verifique a formatação exata da saída pedida.",
+      "Releia o enunciado com atenção antes de codar."
+    ],
+    "enemy_name": "Legião da Fortaleza",
+    "enemy_hp": 180,
+    "weakness": "vereditos cooperativos",
+    "loot_drops": [
+      {
+        "item": "Fragmento de Experiência",
+        "type": "consumable",
+        "rarity": "common"
+      }
+    ]
   }
 }

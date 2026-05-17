@@ -106,5 +106,23 @@
       "missao_4": "/api/datasets/mcmv_faixas_habitacao.json",
       "missao_5": "/api/datasets/sisvan_estado_nutricional.json"
     }
+  },
+  "rpg": {
+    "xp_reward": 100,
+    "variant": "marathon",
+    "oracle_hints": [
+      "Verifique a formatação exata da saída pedida.",
+      "Releia o enunciado com atenção antes de codar."
+    ],
+    "enemy_name": "O Filtrador de Regras",
+    "enemy_hp": 400,
+    "weakness": "condicionais avançadas",
+    "loot_drops": [
+      {
+        "item": "Superpoder: elif-master",
+        "type": "superpower",
+        "rarity": "epic"
+      }
+    ]
   }
 }

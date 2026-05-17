@@ -1,0 +1,396 @@
+<!-- Python Arcane: Reliquary of Power (Inventory) -->
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Reliquary of Power - PYTHON ARCANE</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&amp;family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&amp;family=Space+Grotesk:wght@300..700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "primary": "#ffffff",
+                      "tertiary-fixed": "#ffdfa0",
+                      "surface-variant": "#2d3449",
+                      "primary-container": "#00fbfb",
+                      "inverse-surface": "#dae2fd",
+                      "error": "#ffb4ab",
+                      "on-error-container": "#ffdad6",
+                      "surface": "#0b1326",
+                      "surface-container-highest": "#2d3449",
+                      "secondary-container": "#7701d0",
+                      "surface-container-low": "#131b2e",
+                      "on-tertiary-fixed-variant": "#5c4300",
+                      "on-error": "#690005",
+                      "secondary-fixed-dim": "#dcb8ff",
+                      "on-secondary-fixed-variant": "#6700b5",
+                      "on-tertiary-fixed": "#261a00",
+                      "on-primary-container": "#007070",
+                      "on-primary": "#003737",
+                      "surface-dim": "#0b1326",
+                      "tertiary-container": "#ffdfa0",
+                      "secondary": "#dcb8ff",
+                      "on-tertiary-container": "#815f00",
+                      "surface-container": "#171f33",
+                      "on-tertiary": "#402d00",
+                      "secondary-fixed": "#efdbff",
+                      "surface-bright": "#31394d",
+                      "primary-fixed-dim": "#00dddd",
+                      "error-container": "#93000a",
+                      "primary-fixed": "#00fbfb",
+                      "surface-container-high": "#222a3d",
+                      "on-secondary-fixed": "#2c0051",
+                      "inverse-on-surface": "#283044",
+                      "on-background": "#dae2fd",
+                      "tertiary-fixed-dim": "#fbbc00",
+                      "outline": "#839493",
+                      "on-primary-fixed": "#002020",
+                      "on-secondary-container": "#dcb7ff",
+                      "on-surface": "#dae2fd",
+                      "inverse-primary": "#006a6a",
+                      "surface-container-lowest": "#060e20",
+                      "tertiary": "#ffffff",
+                      "surface-tint": "#00dddd",
+                      "on-primary-fixed-variant": "#004f4f",
+                      "background": "#0b1326",
+                      "on-surface-variant": "#b9cac9",
+                      "on-secondary": "#480081",
+                      "outline-variant": "#3a4a49"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "unit": "4px",
+                      "margin-mobile": "16px",
+                      "hud-padding": "12px",
+                      "gutter": "24px",
+                      "margin-desktop": "48px"
+              },
+              "fontFamily": {
+                      "headline-md": [
+                              "Space Grotesk"
+                      ],
+                      "display-lg": [
+                              "Space Grotesk"
+                      ],
+                      "headline-sm": [
+                              "Space Grotesk"
+                      ],
+                      "body-lg": [
+                              "Hanken Grotesk"
+                      ],
+                      "code-md": [
+                              "JetBrains Mono"
+                      ],
+                      "body-md": [
+                              "Hanken Grotesk"
+                      ],
+                      "label-caps": [
+                              "JetBrains Mono"
+                      ]
+              },
+              "fontSize": {
+                      "headline-md": [
+                              "32px",
+                              {
+                                      "lineHeight": "40px",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "display-lg": [
+                              "48px",
+                              {
+                                      "lineHeight": "56px",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "headline-sm": [
+                              "24px",
+                              {
+                                      "lineHeight": "32px",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "body-lg": [
+                              "18px",
+                              {
+                                      "lineHeight": "28px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "code-md": [
+                              "14px",
+                              {
+                                      "lineHeight": "20px",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "body-md": [
+                              "16px",
+                              {
+                                      "lineHeight": "24px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "label-caps": [
+                              "12px",
+                              {
+                                      "lineHeight": "16px",
+                                      "letterSpacing": "0.1em",
+                                      "fontWeight": "700"
+                              }
+                      ]
+              }
+            }
+          }
+        }
+      </script>
+<style>
+        body {
+            background-color: #020617; /* Base void color */
+            color: theme('colors.on-surface');
+        }
+        .glass-panel {
+            background-color: rgba(15, 23, 42, 0.8);
+            backdrop-filter: blur(12px);
+        }
+        .hud-bar-hp {
+            background: linear-gradient(90deg, theme('colors.error-container'), theme('colors.error'));
+        }
+        .hud-bar-mana {
+            background: linear-gradient(90deg, theme('colors.primary-fixed-dim'), theme('colors.primary-fixed'));
+        }
+      </style>
+</head>
+<body class="font-body-md text-body-md min-h-screen overflow-x-hidden flex">
+<!-- TopAppBar -->
+<header class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-margin-desktop h-16 bg-surface-container-low dark:bg-surface-container-low border-b border-outline-variant/30 backdrop-blur-xl shadow-[0_4px_20px_rgba(0,0,0,0.5)]">
+<div class="font-display-lg text-display-lg text-primary-fixed tracking-tighter drop-shadow-[0_0_8px_rgba(0,251,251,0.6)]">
+            PYTHON ARCANE
+        </div>
+<nav class="hidden md:flex gap-6 h-full items-end">
+<a class="text-on-surface-variant font-medium hover:text-primary-fixed-dim transition-colors duration-300 pb-1" href="#">
+                Level 12
+            </a>
+<a class="text-on-surface-variant font-medium hover:text-primary-fixed-dim transition-colors duration-300 pb-1" href="#">
+                Quest: Binary Serpent
+            </a>
+<a class="text-primary-fixed font-bold border-b-2 border-primary-fixed pb-1 hover:text-primary-fixed-dim transition-colors duration-300" href="#">
+                Reliquary of Power
+            </a>
+</nav>
+<div class="flex items-center gap-4 text-primary-fixed dark:text-primary-fixed-dim">
+<button class="scale-98 active:opacity-80 transition-transform hover:text-primary-fixed-dim duration-300">
+<span class="material-symbols-outlined">favorite</span>
+</button>
+<button class="scale-98 active:opacity-80 transition-transform hover:text-primary-fixed-dim duration-300">
+<span class="material-symbols-outlined">bolt</span>
+</button>
+<button class="scale-98 active:opacity-80 transition-transform hover:text-primary-fixed-dim duration-300">
+<span class="material-symbols-outlined">payments</span>
+</button>
+</div>
+</header>
+<!-- SideNavBar -->
+<aside class="fixed left-0 top-16 bottom-0 w-64 z-40 flex flex-col pt-8 bg-surface-container-lowest dark:bg-surface-container-lowest border-r border-outline-variant/20 bg-opacity-80 backdrop-blur-md">
+<div class="px-6 mb-8 flex flex-col items-center">
+<div class="w-20 h-20 rounded-full border-2 border-secondary p-1 mb-4 relative shadow-[0_0_15px_rgba(119,1,208,0.3)]">
+<img alt="Archmage Avatar" class="w-full h-full object-cover rounded-full" data-alt="A highly detailed portrait of a cyberpunk wizard in a dark, neon-lit environment. The character is wearing futuristic robes with glowing cyan and violet circuitry patterns. The mood is mysterious and powerful, typical of an advanced Arcane Digitalis aesthetic. Soft, directional light highlights the metallic elements of their gear." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBhRAgD_SoYDiAIwCb3HwFOhA2FOY-bMs6yypXX-3ib2eryCRHdYsud_Sd6oEhVdvoMpVsXI--nXxJaSCknB78OlQghybdJDA85HoX1Mll9zUT4E2oR0RSHbDZcbqX5XYaj3RXkM8wygqjrUtHq7h02GrQmPQWO9ff8PKeto_oJYkdyt4rhYabyPkRBhJt7aPxKNdGADLxiyZ5tSj6RB70fkswuVmeXpsZ00r9eoMIPmoiVT8ndrD35T3mYyYogHifDrpxIamksG4iZ"/>
+</div>
+<h2 class="font-headline-sm text-headline-sm text-secondary tracking-widest text-center">Master Syntax</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mt-1">Level 42 Archmage</p>
+</div>
+<nav class="flex-1 flex flex-col gap-2">
+<a class="flex items-center gap-3 text-on-surface-variant p-3 opacity-60 hover:opacity-100 hover:bg-surface-variant/40 hover:text-on-surface transition-all duration-200 active:translate-x-1" href="#">
+<span class="material-symbols-outlined">auto_stories</span>
+<span class="font-body-md text-body-md">Grimório</span>
+</a>
+<a class="flex items-center gap-3 text-on-surface-variant p-3 opacity-60 hover:opacity-100 hover:bg-surface-variant/40 hover:text-on-surface transition-all duration-200 active:translate-x-1" href="#">
+<span class="material-symbols-outlined">auto_fix_high</span>
+<span class="font-body-md text-body-md">Trilha</span>
+</a>
+<a class="flex items-center gap-3 text-on-surface-variant p-3 opacity-60 hover:opacity-100 hover:bg-surface-variant/40 hover:text-on-surface transition-all duration-200 active:translate-x-1" href="#">
+<span class="material-symbols-outlined">swords</span>
+<span class="font-body-md text-body-md">Arena</span>
+</a>
+<a class="flex items-center gap-3 bg-secondary-container/20 text-secondary border-l-4 border-secondary p-3 shadow-[inset_0_0_12px_rgba(119,1,208,0.4)] active:translate-x-1 transition-transform" href="#">
+<span class="material-symbols-outlined">pest_control</span>
+<span class="font-body-md text-body-md">Bestiário</span>
+</a>
+</nav>
+</aside>
+<!-- Main Content Canvas -->
+<main class="ml-64 mt-16 p-gutter flex-1 relative min-h-screen">
+<!-- XP Bar (Top Edge) -->
+<div class="absolute top-0 left-0 right-0 h-1 bg-surface-variant">
+<div class="h-full bg-tertiary-fixed-dim w-3/4 shadow-[0_0_8px_rgba(251,188,0,0.8)]"></div>
+</div>
+<!-- HUD Layer (Absolute positioning) -->
+<div class="absolute top-gutter left-gutter flex flex-col gap-unit w-64">
+<!-- HP Bar -->
+<div class="flex items-center gap-2">
+<span class="font-label-caps text-label-caps text-on-surface-variant w-8">HP</span>
+<div class="flex-1 h-3 bg-surface-container-high rounded overflow-hidden border border-outline-variant/30">
+<div class="h-full hud-bar-hp w-[85%]"></div>
+</div>
+</div>
+<!-- Mana Bar -->
+<div class="flex items-center gap-2">
+<span class="font-label-caps text-label-caps text-on-surface-variant w-8">MP</span>
+<div class="flex-1 h-3 bg-surface-container-high rounded overflow-hidden border border-outline-variant/30">
+<div class="h-full hud-bar-mana w-[40%] animate-pulse"></div>
+</div>
+</div>
+</div>
+<div class="absolute top-gutter right-gutter flex gap-6 text-right">
+<div>
+<div class="font-label-caps text-label-caps text-on-surface-variant">Golden Syntax</div>
+<div class="font-code-md text-code-md text-tertiary-fixed-dim drop-shadow-[0_0_5px_rgba(251,188,0,0.5)]">14,250</div>
+</div>
+<div>
+<div class="font-label-caps text-label-caps text-on-surface-variant">Next Level</div>
+<div class="font-code-md text-code-md text-on-surface">8,400 XP</div>
+</div>
+</div>
+<!-- Central Content Container -->
+<div class="max-w-[1200px] mx-auto mt-24 flex gap-gutter">
+<!-- Left Sidebar: Equipped Spells -->
+<div class="w-1/3 flex flex-col gap-6">
+<div class="glass-panel p-6 rounded-lg border border-outline-variant/20 shadow-[0_4px_20px_rgba(0,0,0,0.3)]">
+<h3 class="font-headline-sm text-headline-sm text-primary mb-6 flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary">flash_on</span>
+                        Equipped Spells
+                    </h3>
+<div class="flex flex-col gap-4">
+<!-- Spell Card -->
+<div class="bg-surface-container-highest/50 p-4 rounded border border-secondary/20 hover:border-secondary/50 transition-colors group cursor-pointer">
+<div class="flex justify-between items-start mb-2">
+<h4 class="font-code-md text-code-md text-secondary group-hover:text-secondary-fixed transition-colors">def cast_fireball():</h4>
+<span class="font-label-caps text-label-caps text-primary-fixed bg-primary-fixed/10 px-2 py-1 rounded">50 MP</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant text-sm">Deals high AoE damage to syntax errors.</p>
+</div>
+<!-- Spell Card -->
+<div class="bg-surface-container-highest/50 p-4 rounded border border-primary-container/20 hover:border-primary-container/50 transition-colors group cursor-pointer">
+<div class="flex justify-between items-start mb-2">
+<h4 class="font-code-md text-code-md text-primary-fixed group-hover:text-primary-fixed-dim transition-colors">import os.shield</h4>
+<span class="font-label-caps text-label-caps text-primary-fixed bg-primary-fixed/10 px-2 py-1 rounded">25 MP</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant text-sm">Creates a barrier against untrusted inputs.</p>
+</div>
+</div>
+</div>
+<!-- Player Stats Card -->
+<div class="glass-panel p-6 rounded-lg border border-outline-variant/20 shadow-[0_4px_20px_rgba(0,0,0,0.3)]">
+<h3 class="font-headline-sm text-headline-sm text-primary mb-4">Player Status</h3>
+<div class="grid grid-cols-2 gap-4">
+<div class="bg-surface-container/50 p-3 rounded border border-outline-variant/10 text-center">
+<div class="font-label-caps text-label-caps text-on-surface-variant mb-1">Intelligence</div>
+<div class="font-headline-md text-headline-md text-primary">85</div>
+</div>
+<div class="bg-surface-container/50 p-3 rounded border border-outline-variant/10 text-center">
+<div class="font-label-caps text-label-caps text-on-surface-variant mb-1">Wisdom</div>
+<div class="font-headline-md text-headline-md text-secondary">62</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Right Main Area: Reliquary Grid -->
+<div class="w-2/3 glass-panel p-8 rounded-xl border border-primary-fixed/20 shadow-[inset_0_0_30px_rgba(0,251,251,0.05)] relative overflow-hidden">
+<!-- Decorative background elements -->
+<div class="absolute top-0 right-0 w-64 h-64 bg-primary-fixed/5 rounded-full blur-[100px] pointer-events-none"></div>
+<div class="absolute bottom-0 left-0 w-64 h-64 bg-secondary/5 rounded-full blur-[100px] pointer-events-none"></div>
+<div class="flex justify-between items-end mb-8 border-b border-outline-variant/20 pb-4 relative z-10">
+<div>
+<h1 class="font-display-lg text-display-lg text-primary tracking-tight">Reliquary of Power</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant">Manage your artifacts and arcane items.</p>
+</div>
+<div class="flex gap-2">
+<button class="p-2 bg-surface-container rounded border border-outline-variant/30 text-on-surface hover:text-primary-fixed transition-colors">
+<span class="material-symbols-outlined">filter_list</span>
+</button>
+<button class="p-2 bg-surface-container rounded border border-outline-variant/30 text-on-surface hover:text-primary-fixed transition-colors">
+<span class="material-symbols-outlined">sort</span>
+</button>
+</div>
+</div>
+<!-- Bento Grid for Items -->
+<div class="grid grid-cols-3 gap-6 relative z-10">
+<!-- Item 1: fstring-pro -->
+<div class="aspect-square bg-surface-container-highest rounded-lg border border-tertiary-fixed-dim/30 p-4 flex flex-col items-center justify-center gap-4 hover:shadow-[0_0_20px_rgba(251,188,0,0.2)] hover:-translate-y-1 transition-all duration-300 cursor-pointer group relative overflow-hidden">
+<div class="absolute inset-0 bg-tertiary-fixed-dim/5 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+<div class="w-16 h-16 rounded-full border border-tertiary-fixed-dim/50 flex items-center justify-center text-tertiary-fixed-dim drop-shadow-[0_0_8px_rgba(251,188,0,0.6)] group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-4xl" style="font-variation-settings: 'FILL' 1;">code_blocks</span>
+</div>
+<div class="text-center relative z-10">
+<h3 class="font-code-md text-code-md text-primary mb-1">fstring-pro</h3>
+<span class="font-label-caps text-label-caps text-tertiary-fixed-dim">Superpower</span>
+</div>
+</div>
+<!-- Item 2: regra-clara -->
+<div class="aspect-square bg-surface-container-highest rounded-lg border border-secondary/30 p-4 flex flex-col items-center justify-center gap-4 hover:shadow-[0_0_20px_rgba(220,184,255,0.2)] hover:-translate-y-1 transition-all duration-300 cursor-pointer group relative overflow-hidden shadow-[inset_0_0_15px_rgba(119,1,208,0.2)]">
+<div class="absolute inset-0 bg-secondary/5 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+<div class="w-16 h-16 rounded-full border border-secondary/50 flex items-center justify-center text-secondary drop-shadow-[0_0_8px_rgba(220,184,255,0.6)] group-hover:scale-110 transition-transform relative">
+<!-- Runic pulse effect simulation via box shadow -->
+<div class="absolute inset-0 rounded-full shadow-[0_0_10px_rgba(220,184,255,0.5)] animate-pulse"></div>
+<span class="material-symbols-outlined text-4xl relative z-10" style="font-variation-settings: 'FILL' 1;">rule</span>
+</div>
+<div class="text-center relative z-10">
+<h3 class="font-code-md text-code-md text-primary mb-1">regra-clara</h3>
+<span class="font-label-caps text-label-caps text-secondary">Superpower</span>
+</div>
+</div>
+<!-- Item 3: Mana Crystal -->
+<div class="aspect-square bg-surface-container-highest rounded-lg border border-primary-fixed/30 p-4 flex flex-col items-center justify-center gap-4 hover:shadow-[0_0_20px_rgba(0,251,251,0.2)] hover:-translate-y-1 transition-all duration-300 cursor-pointer group relative overflow-hidden">
+<div class="absolute inset-0 bg-primary-fixed/5 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+<div class="w-16 h-16 rounded-full border border-primary-fixed/50 flex items-center justify-center text-primary-fixed drop-shadow-[0_0_8px_rgba(0,251,251,0.6)] group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-4xl" style="font-variation-settings: 'FILL' 1;">diamond</span>
+</div>
+<div class="text-center relative z-10">
+<h3 class="font-code-md text-code-md text-primary mb-1">Mana Crystal</h3>
+<span class="font-label-caps text-label-caps text-primary-fixed">Consumable</span>
+</div>
+<div class="absolute top-2 right-2 bg-surface-variant text-on-surface-variant font-code-md text-xs px-2 py-0.5 rounded">x12</div>
+</div>
+<!-- Item 4: Empty Slot -->
+<div class="aspect-square bg-surface-container/30 rounded-lg border border-outline-variant/20 border-dashed p-4 flex items-center justify-center opacity-50 hover:opacity-100 hover:border-outline-variant/50 transition-all duration-300 cursor-pointer">
+<span class="material-symbols-outlined text-on-surface-variant text-4xl">add</span>
+</div>
+<!-- Item 5: Empty Slot -->
+<div class="aspect-square bg-surface-container/30 rounded-lg border border-outline-variant/20 border-dashed p-4 flex items-center justify-center opacity-50 hover:opacity-100 hover:border-outline-variant/50 transition-all duration-300 cursor-pointer">
+<span class="material-symbols-outlined text-on-surface-variant text-4xl">add</span>
+</div>
+<!-- Item 6: Empty Slot -->
+<div class="aspect-square bg-surface-container/30 rounded-lg border border-outline-variant/20 border-dashed p-4 flex items-center justify-center opacity-50 hover:opacity-100 hover:border-outline-variant/50 transition-all duration-300 cursor-pointer">
+<span class="material-symbols-outlined text-on-surface-variant text-4xl">add</span>
+</div>
+</div>
+<!-- Oracle Console (Lower area of Reliquary) -->
+<div class="mt-8 bg-[#0a0a0a] border border-outline-variant/30 rounded p-4 font-code-md text-code-md shadow-inner">
+<div class="flex items-center gap-2 mb-2 text-outline">
+<span class="material-symbols-outlined text-sm">terminal</span>
+<span>Oracle Console v4.2</span>
+</div>
+<div class="text-primary-fixed-dim">
+                        &gt; Scanning inventory slots...<br/>
+                        &gt; 3 active artifacts detected.<br/>
+                        &gt; System optimal. Mana reserves acceptable.<br/>
+<span class="text-primary mt-2 inline-block">_</span>
+</div>
+</div>
+</div>
+</div>
+</main>
+</body></html>
+

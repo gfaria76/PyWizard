@@ -60,5 +60,23 @@
   },
   "premio": {
     "pontuacao": 70
+  },
+  "rpg": {
+    "xp_reward": 70,
+    "variant": "trail",
+    "oracle_hints": [
+      "Verifique a formatação exata da saída pedida.",
+      "Releia o enunciado com atenção antes de codar."
+    ],
+    "enemy_name": "Golem de Memória",
+    "enemy_hp": 50,
+    "weakness": "variáveis",
+    "loot_drops": [
+      {
+        "item": "Selo de Combate",
+        "type": "badge",
+        "rarity": "common"
+      }
+    ]
   }
 }

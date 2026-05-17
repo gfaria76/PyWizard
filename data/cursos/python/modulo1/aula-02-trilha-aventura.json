@@ -60,5 +60,23 @@
   },
   "premio": {
     "pontuacao": 90
+  },
+  "rpg": {
+    "xp_reward": 90,
+    "variant": "trail",
+    "oracle_hints": [
+      "Verifique a formatação exata da saída pedida.",
+      "Releia o enunciado com atenção antes de codar."
+    ],
+    "enemy_name": "Espectro Errante",
+    "enemy_hp": 65,
+    "weakness": "tipos de dados",
+    "loot_drops": [
+      {
+        "item": "Selo de Combate",
+        "type": "badge",
+        "rarity": "common"
+      }
+    ]
   }
 }

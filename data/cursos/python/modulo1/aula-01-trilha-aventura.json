@@ -60,5 +60,19 @@
   },
   "premio": {
     "pontuacao": 90
+  },
+  "rpg": {
+    "xp_reward": 90,
+    "variant": "trail",
+    "enemy_name": "Espectro Errante",
+    "enemy_hp": 65,
+    "weakness": "tipos de dados",
+    "loot_drops": [
+      { "item": "Marca da Aventura", "type": "badge", "rarity": "uncommon" }
+    ],
+    "oracle_hints": [
+      "Cuidado com booleans: True e False começam com letra maiúscula.",
+      "Não confunda int com float — 40 é diferente de 40.0."
+    ]
   }
 }

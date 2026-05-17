@@ -319,5 +319,20 @@
       "Uso correto apenas dos conceitos estudados no Módulo I."
     ],
     "tipo_correcao": "automatica"
+  },
+  "rpg": {
+    "xp_reward": 50,
+    "variant": "trail",
+    "oracle_hints": [
+      "Verifique a formatação exata da saída pedida.",
+      "Releia o enunciado com atenção antes de codar."
+    ],
+    "loot_drops": [
+      {
+        "item": "Superpoder: regra-clara",
+        "type": "superpower",
+        "rarity": "epic"
+      }
+    ]
   }
 }

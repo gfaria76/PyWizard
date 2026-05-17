@@ -5,205 +5,79 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="406385b9-2d31-4267-a23d-2632bb107856" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/ShadcnHelperSettings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources/data_sources_history.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.pnp.loader.mjs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.yarnrc.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CLAUDE.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SCHEMA_DOCUMENTATION.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/app.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/assets/css/main.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/components/InventoryPreview.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/components/MarkdownBlock.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/components/PlayerPanel.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/components/PythonCodeBlock.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/components/QuestNode.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/components/python/quest/QuestClosingSection.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/components/python/quest/QuestHero.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/components/python/quest/QuestMissionBlocks.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/components/python/quest/QuestOpeningSection.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/components/python/quest/QuestOptionalBranches.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/components/python/quest/QuestPrevNextNav.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/components/python/quest/QuestRewardPanel.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/components/python/quest/QuestSidebarContext.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/components/python/quest/QuestSidebarToc.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/components/python/views/DungeonBossView.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/components/python/views/ExamProofView.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/components/python/views/LessonConceptView.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/components/python/views/TrailAdventureView.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/components/python/views/TrailApprenticeView.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/components/python/views/TrailGuardianView.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/composables/useLessonMeta.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/composables/useQuestSections.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/layouts/default.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/pages/cursos/python/index.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/pages/cursos/python/quests/[...slug].vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/pages/index.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/stores/progress.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/types/course.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/cursos/java/readme.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/cursos/python/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/cursos/python/game/inventario.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/cursos/python/game/modulo1.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/cursos/python/game/modulo2.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/cursos/python/game/modulo3.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/cursos/python/modulo1/aula-01-conceitos.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/cursos/python/modulo1/aula-01-trilha-aprendiz.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/cursos/python/modulo1/aula-01-trilha-aventura.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/cursos/python/modulo1/aula-02-conceitos.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/cursos/python/modulo1/aula-02-trilha-aprendiz.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/cursos/python/modulo1/aula-02-trilha-aventura.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/cursos/python/modulo1/aula-03-boss.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/cursos/python/modulo1/aula-03-exedicao_guilda.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/cursos/python/modulo1/aula-03-trilha-guardiao.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/cursos/python/modulo1/aula-04-conceitos.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/cursos/python/modulo1/aula-04-trilha-aprendiz.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/cursos/python/modulo1/aula-04-trilha-aventura.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/cursos/python/modulo1/aula-05-conceitos.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/cursos/python/modulo1/aula-05-trilha-aprendiz.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/cursos/python/modulo1/aula-05-trilha-aventura.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/cursos/python/modulo1/aula-06-boss.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/cursos/python/modulo1/aula-06-exedicao_guilda.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/cursos/python/modulo1/aula-06-trilha-guardiao.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/cursos/python/modulo1/aula-07-conceitos.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/cursos/python/modulo1/aula-07-trilha-aprendiz.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/cursos/python/modulo1/aula-07-trilha-aventura.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/cursos/python/modulo1/aula-08-conceitos.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/cursos/python/modulo1/aula-08-trilha-aprendiz.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/cursos/python/modulo1/aula-08-trilha-aventura.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/cursos/python/modulo1/aula-09-boss.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/cursos/python/modulo1/aula-09-exedicao_guilda.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/cursos/python/modulo1/aula-09-trilha-guardiao.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/cursos/python/modulo1/aula-10-conceitos.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/cursos/python/modulo1/aula-10-trilha-aprendiz.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/cursos/python/modulo1/aula-10-trilha-aventura.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/cursos/python/modulo1/aula-11-conceitos.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/cursos/python/modulo1/aula-11-trilha-aprendiz.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/cursos/python/modulo1/aula-11-trilha-aventura.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/cursos/python/modulo1/aula-12-boss.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/cursos/python/modulo1/aula-12-exedicao_guilda.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/cursos/python/modulo1/aula-12-trilha-guardiao.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/cursos/python/modulo1/aula-13-PROVA.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/cursos/python/modulo2/aula-01-conceitos.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/cursos/python/modulo2/aula-01-trilha-aprendiz.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/cursos/python/modulo2/aula-01-trilha-aventura.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/cursos/python/modulo2/aula-02-conceitos.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/cursos/python/modulo2/aula-02-trilha-aprendiz.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/cursos/python/modulo2/aula-02-trilha-aventura.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/cursos/python/modulo2/aula-03-boss.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/cursos/python/modulo2/aula-03-exedicao_guilda.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/cursos/python/modulo2/aula-03-trilha-guardiao.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/cursos/python/modulo2/aula-04-conceitos.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/cursos/python/modulo2/aula-04-trilha-aprendiz.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/cursos/python/modulo2/aula-04-trilha-aventura.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/cursos/python/modulo2/aula-05-conceitos.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/cursos/python/modulo2/aula-05-trilha-aprendiz.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/cursos/python/modulo2/aula-05-trilha-aventura.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/cursos/python/modulo2/aula-06-boss.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/cursos/python/modulo2/aula-06-exedicao_guilda.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/cursos/python/modulo2/aula-06-trilha-guardiao.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/cursos/python/modulo2/aula-07-conceitos.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/cursos/python/modulo2/aula-07-trilha-aprendiz.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/cursos/python/modulo2/aula-07-trilha-aventura.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/cursos/python/modulo2/aula-08-conceitos.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/cursos/python/modulo2/aula-08-trilha-aprendiz.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/cursos/python/modulo2/aula-08-trilha-aventura.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/cursos/python/modulo2/aula-09-boss.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/cursos/python/modulo2/aula-09-exedicao_guilda.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/cursos/python/modulo2/aula-09-trilha-guardiao.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/cursos/python/modulo2/aula-10-conceitos.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/cursos/python/modulo2/aula-10-trilha-aprendiz.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/cursos/python/modulo2/aula-10-trilha-aventura.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/cursos/python/modulo2/aula-11-conceitos.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/cursos/python/modulo2/aula-11-trilha-aprendiz.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/cursos/python/modulo2/aula-11-trilha-aventura.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/cursos/python/modulo2/aula-12-boss.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/cursos/python/modulo2/aula-12-exedicao_guilda.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/cursos/python/modulo2/aula-12-trilha-guardiao.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/cursos/python/modulo2/aula-13-PROVA.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/cursos/python/modulo3/aula-01-conceitos.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/cursos/python/modulo3/aula-01-trilha-aprendiz.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/cursos/python/modulo3/aula-01-trilha-aventura.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/cursos/python/modulo3/aula-02-conceitos.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/cursos/python/modulo3/aula-02-trilha-aprendiz.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/cursos/python/modulo3/aula-02-trilha-aventura.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/cursos/python/modulo3/aula-03-boss.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/cursos/python/modulo3/aula-03-exedicao_guilda.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/cursos/python/modulo3/aula-03-trilha-guardiao.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/cursos/python/modulo3/aula-04-conceitos.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/cursos/python/modulo3/aula-04-trilha-aprendiz.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/cursos/python/modulo3/aula-04-trilha-aventura.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/cursos/python/modulo3/aula-05-conceitos.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/cursos/python/modulo3/aula-05-trilha-aprendiz.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/cursos/python/modulo3/aula-05-trilha-aventura.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/cursos/python/modulo3/aula-06-boss.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/cursos/python/modulo3/aula-06-exedicao_guilda.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/cursos/python/modulo3/aula-06-trilha-guardiao.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/cursos/python/modulo3/aula-07-conceitos.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/cursos/python/modulo3/aula-07-trilha-aprendiz.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/cursos/python/modulo3/aula-07-trilha-aventura.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/cursos/python/modulo3/aula-08-conceitos.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/cursos/python/modulo3/aula-08-trilha-aprendiz.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/cursos/python/modulo3/aula-08-trilha-aventura.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/cursos/python/modulo3/aula-09-boss.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/cursos/python/modulo3/aula-09-exedicao_guilda.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/cursos/python/modulo3/aula-09-trilha-guardiao.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/cursos/python/modulo3/aula-10-conceitos.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/cursos/python/modulo3/aula-10-trilha-aprendiz.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/cursos/python/modulo3/aula-10-trilha-aventura.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/cursos/python/modulo3/aula-11-conceitos.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/cursos/python/modulo3/aula-11-trilha-aprendiz.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/cursos/python/modulo3/aula-11-trilha-aventura.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/cursos/python/modulo3/aula-12-boss.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/cursos/python/modulo3/aula-12-exedicao_guilda.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/cursos/python/modulo3/aula-12-trilha-guardiao.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/cursos/python/modulo3/aula-13-PROVA.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/fontes/aneel_continuidade.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/fontes/bndes_operacoes.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/fontes/cadastro_de_empregadores.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/fontes/camara_deputados_ms.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/fontes/camara_despesas.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/fontes/camara_frentes.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/fontes/camara_partidos.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/fontes/camara_proposicoes.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/fontes/camara_votacoes.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/fontes/camara_votos_nominais.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/fontes/catalogo.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/fontes/consumidor_reclamacoes.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/fontes/ibge_cnae.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/fontes/ibge_ipca.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/fontes/ibge_municipios_ms.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/fontes/ibge_nomes_censo.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/fontes/ibge_populacao_ms.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/fontes/inmet_estacoes.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/fontes/inpe_queimadas.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/fontes/ptransp_bolsafamilia.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/fontes/ptransp_cartoes.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/fontes/ptransp_ceis.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/fontes/ptransp_contratos.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/fontes/ptransp_convenios.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/fontes/ptransp_emendas.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/fontes/ptransp_licitacoes.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/fontes/ptransp_servidores.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/fontes/ptransp_viagens.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/eslint.config.mjs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/example.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/netlify.toml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nuxt.config.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/api/cursos/python/aulas/[...slug].get.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/api/cursos/python/campanha.get.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/api/cursos/python/inventario.get.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/utils/course-data.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tmp_normalize_modulos_json.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tsconfig.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/assets/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/assets/css/main.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/components/AchievementToast.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/components/CodeRunner.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/components/HtmlPreview.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/components/InventoryPreview.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/components/LevelUpModal.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/components/MarkdownBlock.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/components/PlayerPanel.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/components/PythonCodeBlock.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/components/QuestNode.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/components/XPCounter.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/components/python/quest/QuestClosingSection.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/components/python/quest/QuestHero.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/components/python/quest/QuestMissionBlocks.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/components/python/quest/QuestOpeningSection.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/components/python/quest/QuestOptionalBranches.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/components/python/quest/QuestPrevNextNav.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/components/python/quest/QuestRewardPanel.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/components/python/quest/QuestSidebarContext.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/components/python/quest/QuestSidebarToc.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/components/python/views/DungeonBossView.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/components/python/views/ExamProofView.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/components/python/views/LessonConceptView.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/components/python/views/TrailAdventureView.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/components/python/views/TrailApprenticeView.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/components/python/views/TrailGuardianView.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/layouts/default.vue" beforeDir="false" afterPath="$PROJECT_DIR$/app/layouts/default.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/pages/cursos/python/index.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/pages/cursos/python/masmorra/[id].vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/pages/cursos/python/quests/[...slug].vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/pages/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/app/pages/index.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/pages/professor/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/app/pages/professor/index.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/cursos/python/modulo1/aula-01-conceitos.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/cursos/python/modulo1/aula-01-conceitos.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/cursos/python/modulo1/aula-01-trilha-aprendiz.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/cursos/python/modulo1/aula-01-trilha-aprendiz.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/cursos/python/modulo1/aula-01-trilha-aventura.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/cursos/python/modulo1/aula-01-trilha-aventura.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/cursos/python/modulo1/aula-02-conceitos.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/cursos/python/modulo1/aula-02-conceitos.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/cursos/python/modulo1/aula-02-trilha-aprendiz.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/cursos/python/modulo1/aula-02-trilha-aprendiz.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/cursos/python/modulo1/aula-02-trilha-aventura.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/cursos/python/modulo1/aula-02-trilha-aventura.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/cursos/python/modulo1/aula-03-boss.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/cursos/python/modulo1/aula-03-boss.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/cursos/python/modulo1/aula-03-exedicao_guilda.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/cursos/python/modulo1/aula-03-exedicao_guilda.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/cursos/python/modulo1/aula-03-trilha-guardiao.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/cursos/python/modulo1/aula-03-trilha-guardiao.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/cursos/python/modulo1/aula-04-conceitos.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/cursos/python/modulo1/aula-04-conceitos.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/cursos/python/modulo1/aula-04-trilha-aprendiz.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/cursos/python/modulo1/aula-04-trilha-aprendiz.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/cursos/python/modulo1/aula-04-trilha-aventura.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/cursos/python/modulo1/aula-04-trilha-aventura.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/cursos/python/modulo1/aula-05-conceitos.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/cursos/python/modulo1/aula-05-conceitos.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/cursos/python/modulo1/aula-05-trilha-aprendiz.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/cursos/python/modulo1/aula-05-trilha-aprendiz.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/cursos/python/modulo1/aula-05-trilha-aventura.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/cursos/python/modulo1/aula-05-trilha-aventura.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/cursos/python/modulo1/aula-06-boss.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/cursos/python/modulo1/aula-06-boss.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/cursos/python/modulo1/aula-06-exedicao_guilda.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/cursos/python/modulo1/aula-06-exedicao_guilda.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/cursos/python/modulo1/aula-06-trilha-guardiao.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/cursos/python/modulo1/aula-06-trilha-guardiao.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/cursos/python/modulo1/aula-07-conceitos.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/cursos/python/modulo1/aula-07-conceitos.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/cursos/python/modulo1/aula-07-trilha-aprendiz.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/cursos/python/modulo1/aula-07-trilha-aprendiz.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/cursos/python/modulo1/aula-07-trilha-aventura.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/cursos/python/modulo1/aula-07-trilha-aventura.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/cursos/python/modulo1/aula-08-conceitos.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/cursos/python/modulo1/aula-08-conceitos.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/cursos/python/modulo1/aula-08-trilha-aprendiz.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/cursos/python/modulo1/aula-08-trilha-aprendiz.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/cursos/python/modulo1/aula-08-trilha-aventura.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/cursos/python/modulo1/aula-08-trilha-aventura.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/cursos/python/modulo1/aula-09-boss.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/cursos/python/modulo1/aula-09-boss.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/cursos/python/modulo1/aula-09-exedicao_guilda.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/cursos/python/modulo1/aula-09-exedicao_guilda.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/cursos/python/modulo1/aula-09-trilha-guardiao.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/cursos/python/modulo1/aula-09-trilha-guardiao.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/cursos/python/modulo1/aula-10-conceitos.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/cursos/python/modulo1/aula-10-conceitos.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/cursos/python/modulo1/aula-10-trilha-aprendiz.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/cursos/python/modulo1/aula-10-trilha-aprendiz.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/cursos/python/modulo1/aula-10-trilha-aventura.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/cursos/python/modulo1/aula-10-trilha-aventura.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/cursos/python/modulo1/aula-11-conceitos.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/cursos/python/modulo1/aula-11-conceitos.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/cursos/python/modulo1/aula-11-trilha-aprendiz.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/cursos/python/modulo1/aula-11-trilha-aprendiz.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/cursos/python/modulo1/aula-11-trilha-aventura.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/cursos/python/modulo1/aula-11-trilha-aventura.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/cursos/python/modulo1/aula-12-boss.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/cursos/python/modulo1/aula-12-boss.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/cursos/python/modulo1/aula-12-exedicao_guilda.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/cursos/python/modulo1/aula-12-exedicao_guilda.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/cursos/python/modulo1/aula-12-trilha-guardiao.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/cursos/python/modulo1/aula-12-trilha-guardiao.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/cursos/python/modulo1/aula-13-PROVA.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/cursos/python/modulo1/aula-13-PROVA.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/api/conquistas/check.post.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/api/conquistas/check.post.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/api/cursos/python/campanha.get.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/api/cursos/python/campanha.get.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -315,6 +189,15 @@
             <option name="id" value="d21d4ffc-4cbd-432c-9c1a-9e0d5ae48577" />
             <option name="modeId" value="file:///snapshot/cls-source/dist/assets/agents/Plan.agent.md" />
             <option name="modelType" value="builtin_family" />
+            <option name="modelValue" value="gpt-5.3-codex" />
+            <option name="status" value="Completed" />
+            <option name="targetType" value="LOCAL" />
+          </session>
+          <session>
+            <option name="chatType" value="PANEL" />
+            <option name="id" value="6a2fe042-e17e-4601-b7af-9b61a81ceea6" />
+            <option name="modeId" value="file:///snapshot/cls-source/dist/assets/agents/Plan.agent.md" />
+            <option name="modelType" value="builtin_family" />
             <option name="modelValue" value="auto" />
             <option name="targetType" value="LOCAL" />
           </session>
@@ -338,7 +221,7 @@
     </selectedModels>
   </component>
   <component name="EmbeddingIndexingInfo">
-    <option name="cachedIndexableFilesCount" value="103" />
+    <option name="cachedIndexableFilesCount" value="247" />
     <option name="fileBasedEmbeddingIndicesEnabled" value="true" />
   </component>
   <component name="Git.Settings">
@@ -366,6 +249,65 @@
     <commands />
     <urls />
   </component>
+  <component name="NextEditCompletionFeaturesState">
+    <decayedCancelled>
+      <entry key="MS100" value="1.0" />
+      <entry key="MS500" value="1.0" />
+      <entry key="S2" value="1.0" />
+      <entry key="S5" value="1.0" />
+      <entry key="S10" value="1.0" />
+      <entry key="S30" value="1.0" />
+      <entry key="S60" value="1.0" />
+      <entry key="M2" value="1.0" />
+      <entry key="M5" value="1.0000000000000013" />
+      <entry key="M10" value="1.0000000897426224" />
+      <entry key="M15" value="1.0000393751282666" />
+      <entry key="M30" value="1.0185897600859743" />
+      <entry key="H1" value="1.4225613423550652" />
+      <entry key="H2" value="3.0444499848314925" />
+      <entry key="H4" value="5.515202357623115" />
+      <entry key="D1" value="9.75709295799386" />
+      <entry key="W1" value="10.812136477221763" />
+    </decayedCancelled>
+    <decayedSelected>
+      <entry key="MS100" value="0.0" />
+      <entry key="MS500" value="0.0" />
+      <entry key="S2" value="0.0" />
+      <entry key="S5" value="0.0" />
+      <entry key="S10" value="0.0" />
+      <entry key="S30" value="0.0" />
+      <entry key="S60" value="0.0" />
+      <entry key="M2" value="0.0" />
+      <entry key="M5" value="0.0" />
+      <entry key="M10" value="0.0" />
+      <entry key="M15" value="0.0" />
+      <entry key="M30" value="0.0" />
+      <entry key="H1" value="0.0" />
+      <entry key="H2" value="0.0" />
+      <entry key="H4" value="0.0" />
+      <entry key="D1" value="0.0" />
+      <entry key="W1" value="0.0" />
+    </decayedSelected>
+    <decayedShown>
+      <entry key="MS100" value="0.0" />
+      <entry key="MS500" value="4.925377313237295E-108" />
+      <entry key="S2" value="1.4897379334219272E-27" />
+      <entry key="S5" value="1.8588483084633663E-11" />
+      <entry key="S10" value="4.3114363134150155E-6" />
+      <entry key="S30" value="0.016275736811265" />
+      <entry key="S60" value="0.1275763959800754" />
+      <entry key="M2" value="0.35717838117679435" />
+      <entry key="M5" value="0.6624514664903314" />
+      <entry key="M10" value="0.8139113051031062" />
+      <entry key="M15" value="0.871774787328081" />
+      <entry key="M30" value="0.9522574323285155" />
+      <entry key="H1" value="1.3888255316963731" />
+      <entry key="H2" value="3.0274360152347217" />
+      <entry key="H4" value="5.5066577984558585" />
+      <entry key="D1" value="9.755663448762405" />
+      <entry key="W1" value="10.811932124887429" />
+    </decayedShown>
+  </component>
   <component name="ProblemsViewState">
     <option name="selectedTabId" value="CurrentFile" />
   </component>
@@ -380,7 +322,7 @@
   <component name="ProjectSessionTemplates">
     <option name="panelTemplate">
       <template>
-        <option name="modeId" value="file:///snapshot/cls-source/dist/assets/agents/Plan.agent.md" />
+        <option name="modeId" value="Agent" />
         <option name="model">
           <model>
             <option name="modelType" value="builtin_family" />
@@ -395,67 +337,67 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Git.Working.Tree.Tab.closed.by.user": "closed",
-    "HTTP Request.rest-api_2 | #1.executor": "Run",
-    "HTTP Request.rest-api_5 | #1.executor": "Run",
-    "HTTP Request.rest-api_5 | #2.executor": "Run",
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "NIXITCH_NIXPKGS_CONFIG": "",
-    "NIXITCH_NIX_CONF_DIR": "",
-    "NIXITCH_NIX_OTHER_STORES": "",
-    "NIXITCH_NIX_PATH": "",
-    "NIXITCH_NIX_PROFILES": "",
-    "NIXITCH_NIX_REMOTE": "",
-    "NIXITCH_NIX_USER_PROFILE_DIR": "",
-    "Python.gerar_datasets.executor": "Run",
-    "RunOnceActivity.MCP Project settings loaded": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
-    "SHELLCHECK.PATH": "/Users/gedsonfaria/Library/Application Support/JetBrains/WebStorm2026.1/plugins/Shell Script/shellcheck",
-    "codeWithMe.voiceChat.enabledByDefault": "false",
-    "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
-    "copilot.sensitive.folder.allow.file_read./Users/gedsonfaria/_agents/skills/supabase-postgres-best-practices": "true",
-    "copilot.sensitive.folder.allow.file_read./private/tmp": "true",
-    "copilot.sensitive.folder.allow.file_write./private/tmp": "true",
-    "git-widget-placeholder": "master",
-    "javascript.preferred.runtime.type.id": "node",
-    "junie.onboarding.icon.badge.shown": "true",
-    "kronk.content.tree.expanded.paths": "|Modulo2|Content",
-    "last_opened_file_path": "/Users/gedsonfaria/JetBrains/WebstormProjects/alg1-2026/docs",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.stylelint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.stylelint": "",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_interpreter_path": "node",
-    "nodejs_package_manager_path": "npm",
-    "npm.build.executor": "Run",
-    "npm.dev.executor": "Run",
-    "npm.npm build.executor": "Run",
-    "npm.npm dev.executor": "Run",
-    "npm.postinstall.executor": "Run",
-    "npm.preview.executor": "Run",
-    "npm.typecheck.executor": "Run",
-    "run.code.analysis.last.selected.profile": "pProject Default",
-    "settings.editor.selected.configurable": "configurable.tailwindcss",
-    "to.speed.mode.migration.done": "true",
-    "ts.external.directory.path": "/Users/gedsonfaria/JetBrains/WebstormProjects/alg1-2026/node_modules/typescript/lib",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Git.Working.Tree.Tab.closed.by.user&quot;: &quot;closed&quot;,
+    &quot;HTTP Request.rest-api_2 | #1.executor&quot;: &quot;Run&quot;,
+    &quot;HTTP Request.rest-api_5 | #1.executor&quot;: &quot;Run&quot;,
+    &quot;HTTP Request.rest-api_5 | #2.executor&quot;: &quot;Run&quot;,
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;NIXITCH_NIXPKGS_CONFIG&quot;: &quot;&quot;,
+    &quot;NIXITCH_NIX_CONF_DIR&quot;: &quot;&quot;,
+    &quot;NIXITCH_NIX_OTHER_STORES&quot;: &quot;&quot;,
+    &quot;NIXITCH_NIX_PATH&quot;: &quot;&quot;,
+    &quot;NIXITCH_NIX_PROFILES&quot;: &quot;&quot;,
+    &quot;NIXITCH_NIX_REMOTE&quot;: &quot;&quot;,
+    &quot;NIXITCH_NIX_USER_PROFILE_DIR&quot;: &quot;&quot;,
+    &quot;Python.gerar_datasets.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.MCP Project settings loaded&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
+    &quot;SHELLCHECK.PATH&quot;: &quot;/Users/gedsonfaria/Library/Application Support/JetBrains/WebStorm2026.1/plugins/Shell Script/shellcheck&quot;,
+    &quot;codeWithMe.voiceChat.enabledByDefault&quot;: &quot;false&quot;,
+    &quot;com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1&quot;: &quot;true&quot;,
+    &quot;copilot.sensitive.folder.allow.file_read./Users/gedsonfaria/_agents/skills/supabase-postgres-best-practices&quot;: &quot;true&quot;,
+    &quot;copilot.sensitive.folder.allow.file_read./private/tmp&quot;: &quot;true&quot;,
+    &quot;copilot.sensitive.folder.allow.file_write./private/tmp&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;javascript.preferred.runtime.type.id&quot;: &quot;node&quot;,
+    &quot;junie.onboarding.icon.badge.shown&quot;: &quot;true&quot;,
+    &quot;kronk.content.tree.expanded.paths&quot;: &quot;|Modulo2|Content&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/gedsonfaria/JetBrains/WebstormProjects/alg1-2026/docs&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.stylelint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.stylelint&quot;: &quot;&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_interpreter_path&quot;: &quot;node&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;npm.build.executor&quot;: &quot;Run&quot;,
+    &quot;npm.dev.executor&quot;: &quot;Run&quot;,
+    &quot;npm.npm build.executor&quot;: &quot;Run&quot;,
+    &quot;npm.npm dev.executor&quot;: &quot;Run&quot;,
+    &quot;npm.postinstall.executor&quot;: &quot;Run&quot;,
+    &quot;npm.preview.executor&quot;: &quot;Run&quot;,
+    &quot;npm.typecheck.executor&quot;: &quot;Run&quot;,
+    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;configurable.tailwindcss&quot;,
+    &quot;to.speed.mode.migration.done&quot;: &quot;true&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;/Users/gedsonfaria/JetBrains/WebstormProjects/alg1-2026/node_modules/typescript/lib&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "postgresql"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;postgresql&quot;
     ],
-    "com.intellij.ide.scratch.LRUPopupBuilder$1/": [
-      "PostgreSQL"
+    &quot;com.intellij.ide.scratch.LRUPopupBuilder$1/&quot;: [
+      &quot;PostgreSQL&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/docs" />
@@ -536,7 +478,7 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-js-predefined-d6986cc7102b-31caf2ab9e3c-JavaScript-WS-261.23567.141" />
+        <option value="bundled-js-predefined-d6986cc7102b-31caf2ab9e3c-JavaScript-WS-261.24374.125" />
       </set>
     </attachedChunks>
   </component>
@@ -574,7 +516,8 @@
       <workItem from="1778671995457" duration="28069000" />
       <workItem from="1778720500257" duration="16524000" />
       <workItem from="1778781416751" duration="1375000" />
-      <workItem from="1778783686859" duration="40954000" />
+      <workItem from="1778783686859" duration="41676000" />
+      <workItem from="1778974226567" duration="8163000" />
     </task>
     <servers />
   </component>

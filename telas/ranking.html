@@ -1,0 +1,351 @@
+<!-- Python Arcane: Ranking of Sages (Leaderboard) -->
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Ranking of Sages - Python Arcane</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@600;700&amp;family=Hanken+Grotesk:wght@400&amp;family=JetBrains+Mono:wght@500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary": "#ffffff",
+                        "tertiary-fixed": "#ffdfa0",
+                        "surface-variant": "#2d3449",
+                        "primary-container": "#00fbfb",
+                        "inverse-surface": "#dae2fd",
+                        "error": "#ffb4ab",
+                        "on-error-container": "#ffdad6",
+                        "surface": "#0b1326",
+                        "surface-container-highest": "#2d3449",
+                        "secondary-container": "#7701d0",
+                        "surface-container-low": "#131b2e",
+                        "on-tertiary-fixed-variant": "#5c4300",
+                        "on-error": "#690005",
+                        "secondary-fixed-dim": "#dcb8ff",
+                        "on-secondary-fixed-variant": "#6700b5",
+                        "on-tertiary-fixed": "#261a00",
+                        "on-primary-container": "#007070",
+                        "on-primary": "#003737",
+                        "surface-dim": "#0b1326",
+                        "tertiary-container": "#ffdfa0",
+                        "secondary": "#dcb8ff",
+                        "on-tertiary-container": "#815f00",
+                        "surface-container": "#171f33",
+                        "on-tertiary": "#402d00",
+                        "secondary-fixed": "#efdbff",
+                        "surface-bright": "#31394d",
+                        "primary-fixed-dim": "#00dddd",
+                        "error-container": "#93000a",
+                        "primary-fixed": "#00fbfb",
+                        "surface-container-high": "#222a3d",
+                        "on-secondary-fixed": "#2c0051",
+                        "inverse-on-surface": "#283044",
+                        "on-background": "#dae2fd",
+                        "tertiary-fixed-dim": "#fbbc00",
+                        "outline": "#839493",
+                        "on-primary-fixed": "#002020",
+                        "on-secondary-container": "#dcb7ff",
+                        "on-surface": "#dae2fd",
+                        "inverse-primary": "#006a6a",
+                        "surface-container-lowest": "#060e20",
+                        "tertiary": "#ffffff",
+                        "surface-tint": "#00dddd",
+                        "on-primary-fixed-variant": "#004f4f",
+                        "background": "#0b1326",
+                        "on-surface-variant": "#b9cac9",
+                        "on-secondary": "#480081",
+                        "outline-variant": "#3a4a49"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "unit": "4px",
+                        "margin-mobile": "16px",
+                        "hud-padding": "12px",
+                        "gutter": "24px",
+                        "margin-desktop": "48px"
+                    },
+                    "fontFamily": {
+                        "headline-md": ["Space Grotesk"],
+                        "display-lg": ["Space Grotesk"],
+                        "headline-sm": ["Space Grotesk"],
+                        "body-lg": ["Hanken Grotesk"],
+                        "code-md": ["JetBrains Mono"],
+                        "body-md": ["Hanken Grotesk"],
+                        "label-caps": ["JetBrains Mono"]
+                    },
+                    "fontSize": {
+                        "headline-md": ["32px", { "lineHeight": "40px", "fontWeight": "600" }],
+                        "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "headline-sm": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "code-md": ["14px", { "lineHeight": "20px", "fontWeight": "500" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "label-caps": ["12px", { "lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "700" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background min-h-screen font-body-md overflow-x-hidden selection:bg-primary-container/30 selection:text-primary-fixed">
+<!-- TopAppBar from JSON -->
+<header class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-margin-desktop h-16 bg-surface-container-low dark:bg-surface-container-low border-b border-outline-variant/30 backdrop-blur-xl shadow-[0_4px_20px_rgba(0,0,0,0.5)]">
+<div class="font-display-lg text-display-lg text-primary-fixed tracking-tighter drop-shadow-[0_0_8px_rgba(0,251,251,0.6)]">
+            PYTHON ARCANE
+        </div>
+<nav class="hidden md:flex gap-6">
+<a class="text-on-surface-variant font-medium hover:text-primary-fixed-dim transition-colors duration-300" href="#">Level 12</a>
+<a class="text-on-surface-variant font-medium hover:text-primary-fixed-dim transition-colors duration-300" href="#">Quest: Binary Serpent</a>
+</nav>
+<div class="flex items-center gap-4">
+<button class="text-primary-fixed dark:text-primary-fixed-dim scale-98 active:opacity-80 transition-transform hover:text-primary-fixed-dim transition-colors duration-300">
+<span class="material-symbols-outlined">favorite</span>
+</button>
+<button class="text-primary-fixed dark:text-primary-fixed-dim scale-98 active:opacity-80 transition-transform hover:text-primary-fixed-dim transition-colors duration-300">
+<span class="material-symbols-outlined">bolt</span>
+</button>
+<button class="text-primary-fixed dark:text-primary-fixed-dim scale-98 active:opacity-80 transition-transform hover:text-primary-fixed-dim transition-colors duration-300">
+<span class="material-symbols-outlined">payments</span>
+</button>
+</div>
+</header>
+<!-- SideNavBar from JSON -->
+<aside class="fixed left-0 top-16 bottom-0 w-64 z-40 flex flex-col pt-8 bg-surface-container-lowest dark:bg-surface-container-lowest border-r border-outline-variant/20 bg-opacity-80 backdrop-blur-md hidden md:flex">
+<div class="px-6 mb-8 flex flex-col items-center">
+<div class="w-16 h-16 rounded-full bg-surface-container-high border-2 border-secondary mb-4 overflow-hidden relative">
+<img alt="Archmage Avatar" class="object-cover w-full h-full" data-alt="A portrait of a futuristic wizard wearing a sleek, dark cyberpunk hood with subtle neon violet accents glowing around the edges. The wizard's face is partially obscured by shadows, revealing glowing cyan eyes that reflect a high-tech magical interface. The background is a blurred, dark grimoire environment with floating holographic code snippets. The overall aesthetic is mysterious, powerful, and deeply rooted in a dark sci-fi fantasy world." src="https://lh3.googleusercontent.com/aida-public/AB6AXuATntPhQQkRUB0piNTHji3qFikDpO35LwH_qMTMqM1kvxIddKy9Ov5PldjQOcMOWu3dwhoNUFprOLO1JwZuWgBg3as4Ikc4L5Hk5f_41BXt8T_tRmSxtHjDlqQBEGV-Vyr7S1aDpLB7hRsKJb_swaRjU389ViGrNG3njqJRTCjQVNk3Q8oWU0OKCBKi-fIOmPDb0hPZNs_7tnQMuPTot4xX-N9CiUQD6rmQ4SJiAsm0xOZMwnYd1UbCzmK4KzHw-zPexnnc4OpUKnuT"/>
+</div>
+<div class="font-headline-sm text-headline-sm text-secondary tracking-widest text-center">Master Syntax</div>
+<div class="font-label-caps text-label-caps text-secondary dark:text-secondary-fixed mt-1 opacity-80 text-center">Level 12 Apprentice</div>
+</div>
+<nav class="flex-1 flex flex-col gap-2">
+<a class="flex items-center gap-3 text-on-surface-variant p-3 opacity-60 hover:opacity-100 hover:bg-surface-variant/40 hover:text-on-surface transition-all duration-200 active:translate-x-1 transition-transform" href="#">
+<span class="material-symbols-outlined">auto_stories</span>
+<span class="font-label-caps text-label-caps">Grimório</span>
+</a>
+<a class="flex items-center gap-3 text-on-surface-variant p-3 opacity-60 hover:opacity-100 hover:bg-surface-variant/40 hover:text-on-surface transition-all duration-200 active:translate-x-1 transition-transform" href="#">
+<span class="material-symbols-outlined">auto_fix_high</span>
+<span class="font-label-caps text-label-caps">Trilha</span>
+</a>
+<a class="flex items-center gap-3 bg-secondary-container/20 text-secondary border-l-4 border-secondary p-3 shadow-[inset_0_0_12px_rgba(119,1,208,0.4)] active:translate-x-1 transition-transform" href="#">
+<span class="material-symbols-outlined">swords</span>
+<span class="font-label-caps text-label-caps">Arena</span>
+</a>
+<a class="flex items-center gap-3 text-on-surface-variant p-3 opacity-60 hover:opacity-100 hover:bg-surface-variant/40 hover:text-on-surface transition-all duration-200 active:translate-x-1 transition-transform" href="#">
+<span class="material-symbols-outlined">pest_control</span>
+<span class="font-label-caps text-label-caps">Bestiário</span>
+</a>
+</nav>
+</aside>
+<!-- Main Content Area -->
+<main class="md:ml-64 pt-16 min-h-screen flex flex-col">
+<!-- HUD Elements -->
+<div class="absolute top-20 left-4 md:left-[272px] z-30 flex flex-col gap-2 pointer-events-none">
+<div class="flex items-center gap-2">
+<span class="font-code-md text-code-md text-error w-8 text-right drop-shadow-[0_0_4px_rgba(255,180,171,0.5)]">HP</span>
+<div class="h-2 w-32 bg-surface-container-high rounded-full overflow-hidden border border-outline-variant/30">
+<div class="h-full w-[80%] bg-gradient-to-r from-error-container to-error"></div>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<span class="font-code-md text-code-md text-primary-fixed w-8 text-right drop-shadow-[0_0_4px_rgba(0,251,251,0.5)]">MP</span>
+<div class="h-2 w-32 bg-surface-container-high rounded-full overflow-hidden border border-outline-variant/30">
+<div class="h-full w-[45%] bg-gradient-to-r from-inverse-primary to-primary-fixed animate-pulse"></div>
+</div>
+</div>
+</div>
+<div class="absolute top-20 right-4 md:right-8 z-30 flex items-center gap-4 pointer-events-none">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-tertiary-fixed-dim drop-shadow-[0_0_4px_rgba(251,188,0,0.5)]">toll</span>
+<span class="font-code-md text-code-md text-tertiary-fixed-dim drop-shadow-[0_0_4px_rgba(251,188,0,0.5)]">1,240</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary drop-shadow-[0_0_4px_rgba(220,184,255,0.5)]">stars</span>
+<span class="font-code-md text-code-md text-secondary drop-shadow-[0_0_4px_rgba(220,184,255,0.5)]">Level 12</span>
+</div>
+</div>
+<!-- XP Bar -->
+<div class="absolute top-16 left-0 w-full h-[2px] z-40 bg-surface-container">
+<div class="h-full bg-tertiary-fixed-dim w-[65%] shadow-[0_0_8px_rgba(251,188,0,0.8)]"></div>
+</div>
+<div class="flex-1 p-gutter max-w-[1200px] w-full mx-auto mt-8">
+<!-- Header Section -->
+<div class="mb-12 text-center">
+<h1 class="font-display-lg text-display-lg text-secondary tracking-tighter mb-4 drop-shadow-[0_0_12px_rgba(119,1,208,0.5)]">Ranking of Sages</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto">The eternal hall of fame. Behold the Grandmasters who have woven the most complex spells in the Arcane Universe.</p>
+<!-- Tabs -->
+<div class="flex justify-center mt-8 gap-4">
+<button class="px-6 py-2 bg-secondary-container/20 border border-secondary text-secondary font-label-caps text-label-caps rounded uppercase shadow-[inset_0_0_12px_rgba(119,1,208,0.4)] backdrop-blur-md">Global Ranking</button>
+<button class="px-6 py-2 bg-surface-container border border-outline-variant/30 text-on-surface-variant font-label-caps text-label-caps rounded uppercase hover:bg-surface-variant/40 hover:text-on-surface transition-colors">Guild Ranking</button>
+</div>
+</div>
+<!-- Top 3 Pedestals -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-end mb-16 mt-16 px-4">
+<!-- Rank 2 -->
+<div class="flex flex-col items-center order-2 md:order-1 relative">
+<div class="absolute -top-16 text-on-surface-variant opacity-20 font-display-lg text-[120px] font-bold leading-none select-none z-0">2</div>
+<div class="w-24 h-24 rounded-full border-4 border-surface-variant overflow-hidden mb-4 relative z-10 shadow-[0_0_15px_rgba(45,52,73,0.5)] bg-surface">
+<img alt="Player 2" class="w-full h-full object-cover" data-alt="A portrait of a wise cyber-mage with glowing digital tattoos on their face, set against a dark void. They wear an intricate midnight blue cloak woven with glowing silver threads. The lighting is dramatic, casting deep shadows while highlighting the cybernetic augments near their eyes. The mood is calm and calculating." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAScpIgVwCIHrskppUgDPLKJ5g1qoXxS-Hv5kfPT_110ObjMdGk_97ucHOUGzab7t0_noaurbCd4dNRWg9-sjHXXlck5Pm2iY8bz5RaWJY21n7oAKrr97tC5Eg1oB5mGI7QOCr031hnrrHfhvky2HI6ruyd1nZaQhXLbGy6pLrwmrrSrlgkeOkav02txlxRz64cB8bj3KRmVegHcpl9epakgeeTZCV3rCIs4W3E8t_4ezpvfd5p88KCWMz14FH6stQDlkSS1yCG9Udk"/>
+</div>
+<div class="bg-surface-container-high/80 backdrop-blur-xl border border-outline-variant/30 rounded-xl p-4 w-full text-center relative z-10">
+<div class="font-headline-sm text-headline-sm text-on-surface mb-1">NullPointer</div>
+<div class="font-code-md text-code-md text-secondary mb-2">Grandmaster</div>
+<div class="font-label-caps text-label-caps text-tertiary-fixed-dim">98,420 XP</div>
+</div>
+<div class="w-full h-32 bg-surface-container-lowest border-t border-x border-outline-variant/20 mt-4 rounded-t-lg relative overflow-hidden flex justify-center items-center opacity-80">
+<div class="absolute inset-0 bg-gradient-to-t from-surface-variant/20 to-transparent"></div>
+<span class="font-display-lg text-[48px] text-surface-variant font-bold">II</span>
+</div>
+</div>
+<!-- Rank 1 -->
+<div class="flex flex-col items-center order-1 md:order-2 relative -mt-12">
+<div class="absolute -top-20 text-tertiary-fixed-dim opacity-20 font-display-lg text-[160px] font-bold leading-none select-none z-0">1</div>
+<div class="absolute -top-10 z-20 material-symbols-outlined text-tertiary-fixed-dim text-4xl drop-shadow-[0_0_10px_rgba(251,188,0,0.8)]" style="font-variation-settings: 'FILL' 1;">workspace_premium</div>
+<div class="w-32 h-32 rounded-full border-4 border-tertiary-fixed-dim overflow-hidden mb-4 relative z-10 shadow-[0_0_30px_rgba(251,188,0,0.4)] bg-surface">
+<img alt="Player 1" class="w-full h-full object-cover" data-alt="A portrait of the ultimate tech-sorcerer, wearing a highly advanced dark obsidian helmet with an opaque cyan visor. Ethereal golden data streams orbit around their head like a digital halo. The background is pitch black, broken only by the intense, glowing gold and cyan lighting reflecting off the armor. The aesthetic is incredibly powerful and mysterious." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCpF98w3yFl1cmSfNIFqlI9dSn0XW69XGbk61DftY3oGY1PaIqFaSn5cA7sds1QpcHFai-_QrG5Lt3ZgBMH9_V539QhDm5q5S8_3TaYB9SV2PdrUZbDmHpuh323JFTcCJ2fsPmNgHvifAR7gV7eIhixPsnv69AMppwHP9_l_TjyHGDaAmQuP8MpW7EyGri69wD2T6NQCN-sJx_p7CSFUGcqf7K4XEWJ4uCV0SUYx7pxbKGQl6phFLB3tnGrP_6IDsj8vJgkhovFuItb"/>
+</div>
+<div class="bg-surface-container-highest/90 backdrop-blur-xl border border-tertiary-fixed-dim/50 rounded-xl p-6 w-full text-center relative z-10 shadow-[inset_0_0_20px_rgba(251,188,0,0.1)]">
+<div class="font-headline-sm text-headline-sm text-primary mb-1 drop-shadow-[0_0_4px_rgba(255,255,255,0.5)]">ByteWeaver</div>
+<div class="font-code-md text-code-md text-secondary mb-2 drop-shadow-[0_0_4px_rgba(220,184,255,0.5)]">Arch-Grandmaster</div>
+<div class="font-label-caps text-label-caps text-tertiary-fixed-dim text-lg">112,050 XP</div>
+</div>
+<div class="w-full h-40 bg-surface-container-lowest border-t-2 border-x border-tertiary-fixed-dim/30 mt-4 rounded-t-xl relative overflow-hidden flex justify-center items-center shadow-[0_-10px_30px_rgba(251,188,0,0.1)]">
+<div class="absolute inset-0 bg-gradient-to-t from-tertiary-fixed-dim/10 to-transparent"></div>
+<span class="font-display-lg text-[64px] text-tertiary-fixed-dim/30 font-bold">I</span>
+</div>
+</div>
+<!-- Rank 3 -->
+<div class="flex flex-col items-center order-3 md:order-3 relative">
+<div class="absolute -top-16 text-on-surface-variant opacity-20 font-display-lg text-[120px] font-bold leading-none select-none z-0">3</div>
+<div class="w-24 h-24 rounded-full border-4 border-surface-variant overflow-hidden mb-4 relative z-10 shadow-[0_0_15px_rgba(45,52,73,0.5)] bg-surface">
+<img alt="Player 3" class="w-full h-full object-cover" data-alt="A portrait of a fierce female spell-coder, sporting short, sharp dark hair and glowing violet cybernetic implants on her neck. She wears a minimalist, dark gray high-collared jacket. Soft, cool cyan light illuminates one side of her face, while deep purple shadows fall on the other. The setting is a dark, sleek laboratory environment." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBpJBiOh0Hh7pK4GqZq5V9X1aMKoMWyNIxcWwBct-te_Cu6yUtoYlXFLQfkjqGCwI3Iofm_hgude6o6D2sRyMbhNlC4s7HnbSAufUic8xiiT2p9LGXrvk916RhcI7ZgBw7GWcWxu2E3cs_a_f233j9BPthANvARQr_QxwHn7JV-UMuqOI325YjGWrYvtEK4jY1OWH_IJqIPm23CHWMEM46fppOE9w9b1Ni3DgLtZfTyQaeJXOFlIQuLpzbDb2jTZExe4ELO6cM5tQC6"/>
+</div>
+<div class="bg-surface-container-high/80 backdrop-blur-xl border border-outline-variant/30 rounded-xl p-4 w-full text-center relative z-10">
+<div class="font-headline-sm text-headline-sm text-on-surface mb-1">LoopCrafter</div>
+<div class="font-code-md text-code-md text-secondary mb-2">Grandmaster</div>
+<div class="font-label-caps text-label-caps text-tertiary-fixed-dim">94,100 XP</div>
+</div>
+<div class="w-full h-24 bg-surface-container-lowest border-t border-x border-outline-variant/20 mt-4 rounded-t-lg relative overflow-hidden flex justify-center items-center opacity-80">
+<div class="absolute inset-0 bg-gradient-to-t from-surface-variant/20 to-transparent"></div>
+<span class="font-display-lg text-[40px] text-surface-variant font-bold">III</span>
+</div>
+</div>
+</div>
+<!-- List Ranking -->
+<div class="bg-surface-container-low/80 backdrop-blur-xl border border-outline-variant/30 rounded-xl overflow-hidden mb-12 shadow-[0_8px_32px_rgba(0,0,0,0.5)]">
+<!-- List Header -->
+<div class="grid grid-cols-12 gap-4 p-4 border-b border-outline-variant/30 bg-surface-container/50 font-label-caps text-label-caps text-on-surface-variant uppercase tracking-widest">
+<div class="col-span-1 text-center">Rank</div>
+<div class="col-span-4 md:col-span-5">Mage Name</div>
+<div class="col-span-2 text-center hidden md:block">Level</div>
+<div class="col-span-3 md:col-span-2 text-right">Total XP</div>
+<div class="col-span-4 md:col-span-2 text-center">Badges</div>
+</div>
+<!-- List Items -->
+<div class="flex flex-col">
+<!-- Item 4 -->
+<div class="grid grid-cols-12 gap-4 p-4 border-b border-outline-variant/10 items-center hover:bg-surface-variant/20 transition-colors group">
+<div class="col-span-1 font-code-md text-code-md text-on-surface-variant text-center">4</div>
+<div class="col-span-4 md:col-span-5 flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-surface-variant overflow-hidden flex-shrink-0">
+<img alt="Player 4" class="w-full h-full object-cover" data-alt="A small avatar portrait of a mysterious tech user in a dark grey hood, face obscured by shadow. A faint cyan glow outlines their silhouette against a pitch-black background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDn8h3Hhd9adDmM9ZOTKSwuTzRXZHAHlJ-RACFjAgS036aWMu5etaUtU_8k_Q_iMTfvF36ZQD1CCaa9WYEv6_G2kvFy4GnZDJnJbltrXoamZkic-pKMSxZN53E10mn8RK6GC7Y7BMMzSEzkln1woQ55OtBNvpF2qTSZPcWOm-0okkxNuMYiP5jwCzVLhmIS5ODKjURSZxKPBuYbF23mvvR03Wt4KJGbZj7aVH9HM-FKUOhwAemGSzDppZ4bEaIj5kHPh4MRzIgbMqMX"/>
+</div>
+<span class="font-body-lg text-body-lg text-on-surface group-hover:text-primary-fixed transition-colors">VoidCaller</span>
+</div>
+<div class="col-span-2 text-center font-code-md text-code-md text-secondary hidden md:block">Lvl 98</div>
+<div class="col-span-3 md:col-span-2 text-right font-code-md text-code-md text-tertiary-fixed-dim">89,200</div>
+<div class="col-span-4 md:col-span-2 flex justify-center gap-1 text-secondary">
+<span class="material-symbols-outlined text-sm">local_fire_department</span>
+<span class="material-symbols-outlined text-sm">bolt</span>
+<span class="material-symbols-outlined text-sm opacity-30">ac_unit</span>
+</div>
+</div>
+<!-- Item 5 -->
+<div class="grid grid-cols-12 gap-4 p-4 border-b border-outline-variant/10 items-center hover:bg-surface-variant/20 transition-colors group">
+<div class="col-span-1 font-code-md text-code-md text-on-surface-variant text-center">5</div>
+<div class="col-span-4 md:col-span-5 flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-surface-variant overflow-hidden flex-shrink-0">
+<img alt="Player 5" class="w-full h-full object-cover" data-alt="A small avatar portrait of a female user with bright silver hair and glowing cyan eyes, wearing a dark turtleneck. The background is a deep, dark obsidian texture." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDlSFnV0ZRJ801yt2OlMTCT0AXVle5qLKdn6fC4WTNbtULTQ2WDSrNBGSSxvxDEkCaE-vpZWx4dyfmR2-5WtGyAT-nvUwJDxv-b-iUsu74P6qZdxgMauIUBwGFY6hpQ8b6hqiBZGIhHFSfLi5shoXBzKVWwByGHLTft-VJt3Dld40fv4mWZgMV4VFQzm5Ks5xgDchXUXPZb8zirrMHYuzqA26dgP06ZLJz8bQyeLohhM3yrGlB6vbHiB9YUf571r54OHxczlOKq6qAP"/>
+</div>
+<span class="font-body-lg text-body-lg text-on-surface group-hover:text-primary-fixed transition-colors">SyntaxSorceress</span>
+</div>
+<div class="col-span-2 text-center font-code-md text-code-md text-secondary hidden md:block">Lvl 95</div>
+<div class="col-span-3 md:col-span-2 text-right font-code-md text-code-md text-tertiary-fixed-dim">85,450</div>
+<div class="col-span-4 md:col-span-2 flex justify-center gap-1 text-secondary">
+<span class="material-symbols-outlined text-sm">auto_awesome</span>
+<span class="material-symbols-outlined text-sm opacity-30">bolt</span>
+<span class="material-symbols-outlined text-sm opacity-30">ac_unit</span>
+</div>
+</div>
+<!-- ... Gap ... -->
+<div class="p-4 text-center text-outline-variant">
+<span class="material-symbols-outlined">more_vert</span>
+</div>
+<!-- Current User Highlight (Rank 12) -->
+<div class="grid grid-cols-12 gap-4 p-4 border border-secondary bg-secondary-container/10 items-center shadow-[inset_0_0_20px_rgba(119,1,208,0.2)] group relative overflow-hidden">
+<div class="absolute left-0 top-0 bottom-0 w-1 bg-secondary shadow-[0_0_10px_rgba(220,184,255,0.8)]"></div>
+<div class="col-span-1 font-code-md text-code-md text-secondary text-center font-bold">12</div>
+<div class="col-span-4 md:col-span-5 flex items-center gap-3">
+<div class="w-10 h-10 rounded-full border-2 border-secondary bg-surface-variant overflow-hidden flex-shrink-0 relative">
+<img alt="Current User" class="w-full h-full object-cover" data-alt="A portrait of a futuristic wizard wearing a sleek, dark cyberpunk hood with subtle neon violet accents glowing around the edges. The wizard's face is partially obscured by shadows, revealing glowing cyan eyes that reflect a high-tech magical interface. The background is a blurred, dark grimoire environment with floating holographic code snippets. The overall aesthetic is mysterious, powerful, and deeply rooted in a dark sci-fi fantasy world." src="https://lh3.googleusercontent.com/aida-public/AB6AXuALp_v1GVkthqOyCJrOnmsOG77DYSD3EX0CrolHkFW2ZaUZWlBuDmP-R1wAmEY3mUBvNIrrRijOI5JnnTOcNIf0o9LhWzZdCfKSEqj1EEnjeIxeMaMwlaKmKJLLuGX7dI3qGFin63oT5CkCZnW7V07wcIUSwiFeJoe72-86q5l6YlfH71vhyzvG75Z36qssOuwiP1EnV2ueIkInySwsnULg_gqxrCFPF9G4mbjwsrCkzy7HiBo0yRh9qT6ehx_iAVDFnxdFgP9GdSGO"/>
+</div>
+<div class="flex flex-col">
+<span class="font-headline-sm text-headline-sm text-secondary drop-shadow-[0_0_4px_rgba(220,184,255,0.5)]">Master Syntax</span>
+<span class="font-label-caps text-label-caps text-on-surface-variant">Archmage (You)</span>
+</div>
+</div>
+<div class="col-span-2 text-center font-code-md text-code-md text-secondary font-bold hidden md:block">Lvl 82</div>
+<div class="col-span-3 md:col-span-2 text-right font-code-md text-code-md text-tertiary-fixed-dim font-bold">64,300</div>
+<div class="col-span-4 md:col-span-2 flex justify-center gap-1 text-secondary drop-shadow-[0_0_4px_rgba(220,184,255,0.6)]">
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">stars</span>
+<span class="material-symbols-outlined text-sm">menu_book</span>
+<span class="material-symbols-outlined text-sm">code</span>
+</div>
+</div>
+<!-- Item 13 -->
+<div class="grid grid-cols-12 gap-4 p-4 border-t border-outline-variant/10 items-center hover:bg-surface-variant/20 transition-colors group">
+<div class="col-span-1 font-code-md text-code-md text-on-surface-variant text-center">13</div>
+<div class="col-span-4 md:col-span-5 flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-surface-variant overflow-hidden flex-shrink-0">
+<img alt="Player 13" class="w-full h-full object-cover" data-alt="A small avatar portrait of a generic tech user in a dimly lit server room. Dark shadows obscure features, minimal cool blue lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCp7AMIzUsqtAET3oeuCt4bGJq1UnR4zbiGbwFdoIKMBvMB4ORetAurN-bFxgDBzEC8n9vwTLx1G3Al3b0DnHs4Npfun11G0gwNoS38oweVUZ8oruY3__W5Hh0yqE1lH4b1YaxZEV_uDcRUrDA3LYY7Jld2pg8HRoqIV7rEjPWZkQ6OyvOU02eJZLy4tdjGxXSkodT2e2dkQzaXJWH4PBfOjg6repvFjM_AlZzudVhaTfnOopLNCe2j4T9HqWfLB-XrAEF1rQsQ-E8D"/>
+</div>
+<span class="font-body-lg text-body-lg text-on-surface group-hover:text-primary-fixed transition-colors">CodeAlchemist</span>
+</div>
+<div class="col-span-2 text-center font-code-md text-code-md text-secondary hidden md:block">Lvl 81</div>
+<div class="col-span-3 md:col-span-2 text-right font-code-md text-code-md text-tertiary-fixed-dim">63,900</div>
+<div class="col-span-4 md:col-span-2 flex justify-center gap-1 text-secondary">
+<span class="material-symbols-outlined text-sm">science</span>
+<span class="material-symbols-outlined text-sm opacity-30">bolt</span>
+<span class="material-symbols-outlined text-sm opacity-30">ac_unit</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Pagination/Action -->
+<div class="flex justify-center mb-16">
+<button class="px-8 py-3 bg-surface-container-high border border-outline-variant/30 text-primary-fixed font-label-caps text-label-caps rounded flex items-center gap-2 hover:bg-surface-variant/50 hover:shadow-[0_0_15px_rgba(0,251,251,0.2)] transition-all">
+                    Load More Sages
+                    <span class="material-symbols-outlined text-sm">expand_more</span>
+</button>
+</div>
+</div>
+</main>
+</body></html>
+

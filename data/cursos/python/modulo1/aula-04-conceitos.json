@@ -80,5 +80,20 @@
         "texto_md": "* Sistemas mal formatados não são apenas feios: eles excluem. Quando um extrato do INSS, uma guia do FGTS ou uma consulta de benefício exibe números soltos sem contexto, quem não tem familiaridade com tecnologia simplesmente não entende. Aprender a formatar saídas é aprender a comunicar-se com respeito. É a diferença entre um código que resolve o problema do programador e um código que resolve o problema do usuário."
       }
     }
+  },
+  "rpg": {
+    "xp_reward": 50,
+    "variant": "lesson",
+    "oracle_hints": [
+      "Verifique a formatação exata da saída pedida.",
+      "Releia o enunciado com atenção antes de codar."
+    ],
+    "loot_drops": [
+      {
+        "item": "Fragmento de Experiência",
+        "type": "consumable",
+        "rarity": "common"
+      }
+    ]
   }
 }

@@ -106,5 +106,23 @@
       "missao_4": "/api/datasets/ibge_pib_municipal_razao.json",
       "missao_5": "/api/datasets/cgu_execucao_orcamentaria.json"
     }
+  },
+  "rpg": {
+    "xp_reward": 500,
+    "variant": "marathon",
+    "enemy_name": "O Analista de Dados Brutos",
+    "enemy_hp": 300,
+    "weakness": "f-strings e formatação",
+    "loot_drops": [
+      { "item": "Selo do Aritimante", "type": "achievement", "rarity": "rare" },
+      { "item": "Superpoder: fstring-pro", "type": "superpower", "rarity": "epic" },
+      { "item": "Cristal de Mana", "type": "consumable", "rarity": "uncommon", "quantity": 3 }
+    ],
+    "oracle_hints": [
+      "Para formatar moeda com duas casas decimais, use f'{valor:.2f}'.",
+      "Cuidado com divisão inteira (//) versus divisão real (/).",
+      "O percentual é calculado com (parte / todo) * 100.",
+      "Verifique se a saída segue exatamente o formato pedido, incluindo espaços."
+    ]
   }
 }

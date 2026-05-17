@@ -1,0 +1,270 @@
+<!-- Python Arcane: Scroll of Wisdom (Lesson) -->
+<!DOCTYPE html>
+
+<html class="dark" lang="pt-BR"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Scroll of Wisdom - Variáveis e Tipos Básicos</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&amp;family=JetBrains+Mono:wght@500;700&amp;family=Hanken+Grotesk:wght@400;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-primary-fixed": "#002020",
+                        "on-primary": "#003737",
+                        "tertiary-container": "#ffdfa0",
+                        "on-surface": "#dae2fd",
+                        "secondary-fixed-dim": "#dcb8ff",
+                        "secondary-container": "#7701d0",
+                        "inverse-on-surface": "#283044",
+                        "surface-dim": "#0b1326",
+                        "tertiary-fixed": "#ffdfa0",
+                        "surface-bright": "#31394d",
+                        "surface-container-highest": "#2d3449",
+                        "tertiary-fixed-dim": "#fbbc00",
+                        "on-tertiary-fixed": "#261a00",
+                        "error-container": "#93000a",
+                        "on-secondary": "#480081",
+                        "primary-container": "#00fbfb",
+                        "on-secondary-fixed": "#2c0051",
+                        "on-tertiary": "#402d00",
+                        "on-tertiary-container": "#815f00",
+                        "surface-variant": "#2d3449",
+                        "primary": "#ffffff",
+                        "surface-tint": "#00dddd",
+                        "secondary-fixed": "#efdbff",
+                        "on-error": "#690005",
+                        "primary-fixed-dim": "#00dddd",
+                        "on-primary-container": "#007070",
+                        "background": "#0b1326",
+                        "surface-container-high": "#222a3d",
+                        "primary-fixed": "#00fbfb",
+                        "outline-variant": "#3a4a49",
+                        "on-secondary-container": "#dcb7ff",
+                        "secondary": "#dcb8ff",
+                        "error": "#ffb4ab",
+                        "tertiary": "#ffffff",
+                        "surface": "#0b1326",
+                        "surface-container": "#171f33",
+                        "inverse-surface": "#dae2fd",
+                        "inverse-primary": "#006a6a",
+                        "surface-container-lowest": "#060e20",
+                        "on-surface-variant": "#b9cac9",
+                        "on-secondary-fixed-variant": "#6700b5",
+                        "outline": "#839493",
+                        "on-tertiary-fixed-variant": "#5c4300",
+                        "on-background": "#dae2fd",
+                        "on-primary-fixed-variant": "#004f4f",
+                        "surface-container-low": "#131b2e",
+                        "on-error-container": "#ffdad6"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "unit": "4px",
+                        "margin-desktop": "48px",
+                        "margin-mobile": "16px",
+                        "gutter": "24px",
+                        "hud-padding": "12px"
+                    },
+                    "fontFamily": {
+                        "display-lg": ["Space Grotesk"],
+                        "label-caps": ["JetBrains Mono"],
+                        "headline-md": ["Space Grotesk"],
+                        "code-md": ["JetBrains Mono"],
+                        "body-md": ["Hanken Grotesk"],
+                        "headline-sm": ["Space Grotesk"],
+                        "body-lg": ["Hanken Grotesk"]
+                    },
+                    "fontSize": {
+                        "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "label-caps": ["12px", { "lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "700" }],
+                        "headline-md": ["32px", { "lineHeight": "40px", "fontWeight": "600" }],
+                        "code-md": ["14px", { "lineHeight": "20px", "fontWeight": "500" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "headline-sm": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-background text-on-background min-h-screen selection:bg-primary-container/30 selection:text-primary">
+<!-- TopAppBar -->
+<header class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-margin-desktop h-16 bg-surface/80 backdrop-blur-xl border-b border-primary-container/20 shadow-[0_4px_20px_rgba(0,0,0,0.5)]">
+<div class="font-headline-md text-headline-md font-bold text-primary-container drop-shadow-[0_0_10px_rgba(0,251,251,0.6)]">Python Arcane</div>
+<div class="flex items-center gap-6">
+<button class="text-on-surface-variant hover:text-primary-container transition-colors duration-300 active:scale-95 active:opacity-80">
+<span class="material-symbols-outlined">bolt</span>
+</button>
+<button class="text-on-surface-variant hover:text-primary-container transition-colors duration-300 active:scale-95 active:opacity-80">
+<span class="material-symbols-outlined">auto_fix_high</span>
+</button>
+<button class="text-on-surface-variant hover:text-primary-container transition-colors duration-300 active:scale-95 active:opacity-80">
+<span class="material-symbols-outlined">monetization_on</span>
+</button>
+</div>
+</header>
+<!-- SideNavBar -->
+<nav class="hidden md:flex fixed left-0 top-0 h-full pt-20 flex-col space-y-4 docked left-0 h-full w-64 bg-surface-container/90 backdrop-blur-md border-r border-secondary-container/30 shadow-xl z-40">
+<div class="px-6 mb-8 flex items-center gap-4">
+<div class="w-12 h-12 rounded-full overflow-hidden border-2 border-secondary-container">
+<img alt="Archmage Avatar" class="w-full h-full object-cover" data-alt="A futuristic fantasy portrait of an archmage user avatar. The character is illuminated by soft, glowing cyan and violet neon lights against a dark obsidian background. They wear modern tech-wear robes with glowing arcane runes stitched into the fabric. The overall style is a blend of cyberpunk and high fantasy, maintaining a moody, cinematic aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDYelrWrw65EDWMK0P6MmNV3lKGAStfSij35Eivy8Fb3Jj7sG2p41K91L6ZNXmfUmcRC4K5dUkrQp4jKpW8v5AkokURw4Ie_B2xfxlN-X_IyrGmOcLKa0PWPHXcF3gc_Nea1-P4G0HHgJGPM-L6K6dvMiOX0S_1Y3qjeURYlb9RNMmyfM9e8mgWATrqnctKkho6nlb39NBQSPBVyu24mXY8sHxlf-TkO5BMIEUQit6dvFYZTT-aI2YLc745ij6sg8Bbq-6w92zN7nPd"/>
+</div>
+<div>
+<div class="font-body-md text-body-md text-primary font-bold">Archmage</div>
+<div class="font-label-caps text-label-caps text-on-surface-variant">Level 42 Pythonista</div>
+</div>
+</div>
+<a class="flex items-center gap-4 bg-secondary-container/20 text-primary-container border-l-4 border-primary-container py-3 px-6 shadow-[inset_0_0_15px_rgba(0,251,251,0.2)] hover:bg-surface-variant hover:text-primary transition-all duration-200 active:translate-x-1" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">auto_stories</span>
+<span class="font-label-caps text-label-caps">Grimoire</span>
+</a>
+<a class="flex items-center gap-4 text-on-surface-variant py-3 px-6 opacity-70 hover:bg-surface-variant hover:text-primary transition-all duration-200" href="#">
+<span class="material-symbols-outlined">explore</span>
+<span class="font-label-caps text-label-caps">Trail</span>
+</a>
+<a class="flex items-center gap-4 text-on-surface-variant py-3 px-6 opacity-70 hover:bg-surface-variant hover:text-primary transition-all duration-200" href="#">
+<span class="material-symbols-outlined">swords</span>
+<span class="font-label-caps text-label-caps">Arena</span>
+</a>
+<a class="flex items-center gap-4 text-on-surface-variant py-3 px-6 opacity-70 hover:bg-surface-variant hover:text-primary transition-all duration-200" href="#">
+<span class="material-symbols-outlined">pets</span>
+<span class="font-label-caps text-label-caps">Bestiary</span>
+</a>
+<div class="mt-auto p-6">
+<button class="w-full bg-secondary-container/30 text-secondary border border-secondary/50 font-label-caps text-label-caps py-3 rounded hover:bg-secondary-container hover:shadow-[0_0_15px_rgba(119,1,208,0.5)] transition-all duration-300">
+                Cast Spell
+            </button>
+</div>
+</nav>
+<!-- Main Content Grid -->
+<main class="pt-24 pb-12 px-margin-mobile md:px-margin-desktop md:ml-64 max-w-[1200px] mx-auto min-h-screen flex flex-col gap-gutter">
+<!-- Lesson Header -->
+<div class="flex flex-col gap-2">
+<div class="font-label-caps text-label-caps text-secondary tracking-widest">AULA 01</div>
+<h1 class="font-display-lg text-display-lg text-primary drop-shadow-[0_0_15px_rgba(255,255,255,0.2)]">Variáveis e Tipos Básicos</h1>
+</div>
+<!-- The Array Ritual (Video Player) -->
+<div class="relative w-full aspect-video bg-surface-container-highest rounded-lg border border-outline-variant/30 overflow-hidden shadow-[0_8px_32px_rgba(0,0,0,0.4)] group">
+<div class="absolute inset-0 bg-gradient-to-t from-surface-dim to-transparent z-10 opacity-60"></div>
+<img alt="Video Thumbnail" class="w-full h-full object-cover" data-alt="A glowing, abstract digital representation of computer memory and variables. The scene shows luminous cyan and magenta boxes floating in a dark, obsidian void, connected by thin, pulsing lines of data. The lighting is dramatic and moody, reflecting a cyberpunk arcane aesthetic. The overall image evokes a sense of deep technical magic and structured information." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB-33p6hjd0ssHlz6LK9Cm_1JrNG_yVpWyimqIXTBrhgTD-r5rroEB-v6b5J0y-6i8Tq8912O0xEiWFDdaejTgNsGA9gd_ETXwR4aK5YHt3HuKU_dTtcejJ7cyqhczym8CyC1xrDJ8Cdyem16SldghtwFGP5kSW0AaXXkmIA_IC1adZJDfNgcFNctx_M_MFVU9OAKGDBva8GMGbKsd2v8DXqhEfoAHRkUFYX4mqQ2OLDcrk1hrxuoynvJOwvuhG-DrV0AUdQgfCZwqy"/>
+<div class="absolute inset-0 z-20 flex items-center justify-center">
+<button class="w-20 h-20 rounded-full bg-primary-container/20 border-2 border-primary-container text-primary-container flex items-center justify-center backdrop-blur-md hover:bg-primary-container/40 hover:scale-110 transition-all duration-300 shadow-[0_0_30px_rgba(0,251,251,0.4)]">
+<span class="material-symbols-outlined text-4xl" style="font-variation-settings: 'FILL' 1;">play_arrow</span>
+</button>
+</div>
+<div class="absolute bottom-0 left-0 w-full p-6 z-20 flex justify-between items-end">
+<div>
+<h2 class="font-headline-sm text-headline-sm text-primary mb-1">The Array Ritual</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">Conjurando espaço na memória arcana.</p>
+</div>
+<div class="font-label-caps text-label-caps text-primary-container bg-surface-dim/80 px-3 py-1 rounded backdrop-blur border border-primary-container/30">
+                    12:45
+                </div>
+</div>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-gutter mt-4">
+<!-- Scroll of Wisdom (Lesson Text) -->
+<div class="lg:col-span-2 bg-surface-container/60 backdrop-blur-md rounded-xl border border-secondary-container/20 p-8 shadow-lg">
+<div class="flex items-center gap-3 mb-6">
+<span class="material-symbols-outlined text-secondary text-3xl">menu_book</span>
+<h3 class="font-headline-md text-headline-md text-secondary drop-shadow-[0_0_10px_rgba(119,1,208,0.3)]">Scroll of Wisdom</h3>
+</div>
+<div class="prose prose-invert max-w-none font-body-lg text-body-lg text-on-surface space-y-6 leading-relaxed">
+<p>No vasto vazio da memória de um computador, o mago invoca <strong>Variáveis</strong> para reter a essência da informação. Uma variável é como um frasco arcano: ela guarda um valor que pode ser inspecionado, manipulado ou transformado durante o feitiço (programa).</p>
+<p>Ao conjurar uma variável, você deve nomeá-la. Em Python, o ato de criação é simultâneo à atribuição de poder. O sinal de igualdade (<code>=</code>) não significa igualdade matemática, mas sim uma <em>transferência de energia</em> da direita para a esquerda.</p>
+<div class="bg-surface-container-highest p-4 rounded-lg border-l-2 border-primary-container my-6">
+<h4 class="font-headline-sm text-headline-sm text-primary-container mb-2">Os Tipos Fundamentais</h4>
+<ul class="list-none space-y-3 font-body-md text-body-md">
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary-container text-sm mt-1">diamond</span>
+<span><strong>Integer (int):</strong> A runa dos números inteiros, perfeita para contagens exatas de poções ou iterações de laços.</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-secondary text-sm mt-1">water_drop</span>
+<span><strong>Float (float):</strong> A essência fluida dos números decimais, necessária para cálculos de precisão alquímica.</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-tertiary-container text-sm mt-1">match_word</span>
+<span><strong>String (str):</strong> Fios de texto tecidos juntos. Encantamentos verbais que o programa deve recitar.</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-error text-sm mt-1">toggle_on</span>
+<span><strong>Boolean (bool):</strong> A dualidade absoluta. Verdadeiro (True) ou Falso (False), a base de toda lógica condicional.</span>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<!-- Mini-Oracle & Runa Quiz Column -->
+<div class="flex flex-col gap-gutter">
+<!-- Mini-Oracle (Code Snippet) -->
+<div class="bg-[#0b1326] rounded-xl border border-primary-container/20 overflow-hidden shadow-[0_4px_20px_rgba(0,0,0,0.6)] relative group">
+<div class="absolute inset-0 bg-primary-container/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
+<div class="flex items-center justify-between px-4 py-2 bg-surface-container-highest border-b border-outline-variant/30">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary-container text-sm">terminal</span>
+<span class="font-label-caps text-label-caps text-on-surface-variant">MINI-ORACLE</span>
+</div>
+<button class="text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-sm">content_copy</span>
+</button>
+</div>
+<div class="p-4 font-code-md text-code-md text-on-surface bg-[#060e20]">
+<pre class="m-0"><code class="language-python"><span class="text-secondary-fixed-dim"># Invocando as variáveis</span>
+nome_mago = <span class="text-tertiary-container">"Merlin"</span>
+nivel = <span class="text-primary-container">42</span>
+mana = <span class="text-primary-container">150.5</span>
+em_combate = <span class="text-error">False</span>
+
+<span class="text-secondary-fixed-dim"># Revelando a essência</span>
+<span class="text-inverse-primary">print</span>(<span class="text-tertiary-container">f"O mago </span><span class="text-primary">{</span>nome_mago<span class="text-primary">}</span><span class="text-tertiary-container"> despertou."</span>)
+<span class="text-inverse-primary">print</span>(<span class="text-tertiary-container">f"Poder Mágico: </span><span class="text-primary">{</span>mana<span class="text-primary">}</span><span class="text-tertiary-container"> MP"</span>)
+</code><span class="animate-pulse text-primary-container">_</span></pre>
+</div>
+</div>
+<!-- Runa de Conhecimento (Quiz Section) -->
+<div class="bg-surface-container-highest/80 backdrop-blur rounded-xl border border-tertiary-container/30 p-6 relative overflow-hidden">
+<!-- Subtle glow effect behind the quiz -->
+<div class="absolute top-0 right-0 w-32 h-32 bg-tertiary-container/10 rounded-full blur-3xl -mr-16 -mt-16 pointer-events-none"></div>
+<div class="flex items-center gap-2 mb-4 relative z-10">
+<span class="material-symbols-outlined text-tertiary-container">psychology_alt</span>
+<h3 class="font-headline-sm text-headline-sm text-tertiary-container">Runa de Conhecimento</h3>
+</div>
+<p class="font-body-md text-body-md text-on-surface mb-6 relative z-10">Qual tipo de variável seria melhor utilizado para armazenar a quantidade de ouro no seu inventário?</p>
+<div class="space-y-3 relative z-10">
+<button class="w-full text-left px-4 py-3 rounded border border-outline-variant hover:border-tertiary-container hover:bg-surface-container transition-colors font-code-md text-code-md text-on-surface-variant hover:text-tertiary-container group flex items-center justify-between">
+<span>String (str)</span>
+<span class="material-symbols-outlined text-tertiary-container opacity-0 group-hover:opacity-100 transition-opacity">radio_button_unchecked</span>
+</button>
+<button class="w-full text-left px-4 py-3 rounded border border-tertiary-container bg-tertiary-container/10 font-code-md text-code-md text-tertiary-container flex items-center justify-between shadow-[inset_0_0_10px_rgba(255,223,160,0.1)]">
+<span>Integer (int)</span>
+<span class="material-symbols-outlined text-tertiary-container" style="font-variation-settings: 'FILL' 1;">radio_button_checked</span>
+</button>
+<button class="w-full text-left px-4 py-3 rounded border border-outline-variant hover:border-tertiary-container hover:bg-surface-container transition-colors font-code-md text-code-md text-on-surface-variant hover:text-tertiary-container group flex items-center justify-between">
+<span>Boolean (bool)</span>
+<span class="material-symbols-outlined text-tertiary-container opacity-0 group-hover:opacity-100 transition-opacity">radio_button_unchecked</span>
+</button>
+</div>
+<div class="mt-6 pt-4 border-t border-outline-variant/30 flex justify-end relative z-10">
+<button class="bg-tertiary-container text-on-tertiary-container font-label-caps text-label-caps px-6 py-2 rounded hover:bg-tertiary-fixed transition-colors shadow-[0_0_15px_rgba(255,223,160,0.3)]">
+                            Selo de Aprovação
+                        </button>
+</div>
+</div>
+</div>
+</div>
+</main>
+</body></html>
+

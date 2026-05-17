@@ -73,5 +73,20 @@
         "texto_md": "* A conversão de tipos com `int()` e `float()` parece uma burocracia, mas representa um princípio: o computador não interpreta intenções, processa instruções. Quando um sistema de folha de pagamento não converte tipos corretamente, pode gerar erros silenciosos acumulados em meses. A atenção a tipos é prática de segurança de dados."
       }
     }
+  },
+  "rpg": {
+    "xp_reward": 50,
+    "variant": "lesson",
+    "oracle_hints": [
+      "Verifique a formatação exata da saída pedida.",
+      "Releia o enunciado com atenção antes de codar."
+    ],
+    "loot_drops": [
+      {
+        "item": "Fragmento de Experiência",
+        "type": "consumable",
+        "rarity": "common"
+      }
+    ]
   }
 }

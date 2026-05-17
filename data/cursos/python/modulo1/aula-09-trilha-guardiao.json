@@ -79,5 +79,23 @@
   },
   "premio": {
     "pontuacao": 120
+  },
+  "rpg": {
+    "xp_reward": 120,
+    "variant": "trail-guardian",
+    "oracle_hints": [
+      "Verifique a formatação exata da saída pedida.",
+      "Releia o enunciado com atenção antes de codar."
+    ],
+    "enemy_name": "Guardião do Julgamento",
+    "enemy_hp": 140,
+    "weakness": "regras compostas",
+    "loot_drops": [
+      {
+        "item": "Selo de Combate",
+        "type": "badge",
+        "rarity": "rare"
+      }
+    ]
   }
 }

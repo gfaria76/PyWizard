@@ -1,180 +1,177 @@
 <template>
-  <div class="min-h-screen p-6">
-    <div class="mx-auto max-w-4xl">
-      <!-- Header -->
-      <div class="mb-8">
-        <div class="flex items-center gap-3">
-          <div class="flex h-11 w-11 items-center justify-center rounded-xl bg-violet-500/15">
-            <UIcon name="i-lucide-wand-2" class="h-6 w-6 text-violet-400" />
+  <div class="p-8 max-w-4xl mx-auto">
+    <!-- Header -->
+    <header class="mb-10 flex items-end justify-between border-b border-outline-variant/40 pb-6 relative">
+      <div class="absolute bottom-[-1px] left-0 w-32 h-[1px] bg-secondary drop-shadow-[0_0_5px_rgba(220,184,255,1)]"></div>
+      <div>
+        <h1 class="font-display-lg text-display-lg text-primary drop-shadow-md mb-2 flex items-center gap-4">
+          <span class="material-symbols-outlined text-4xl text-secondary drop-shadow-[0_0_15px_rgba(220,184,255,0.8)]" style="font-variation-settings: 'FILL' 1;">auto_fix_high</span>
+          Sanctum do Mestre
+        </h1>
+        <p class="font-body-lg text-body-lg text-on-surface-variant">Poderes mágicos de gestão da turma</p>
+      </div>
+    </header>
+
+    <!-- Seletor de turma -->
+    <div class="cg-panel mb-6 rounded-xl p-5">
+      <label class="mb-2 block font-label-caps text-label-caps text-on-surface-variant">Turma ativa</label>
+      <USelect
+        v-model="turmaSelecionada"
+        :options="turmaOptions"
+        option-value="id"
+        option-label="nome"
+        placeholder="Selecione uma turma…"
+        class="w-full max-w-xs"
+      />
+    </div>
+
+    <!-- Grid de poderes -->
+    <div class="grid gap-4 sm:grid-cols-2">
+      <!-- Curar Turma -->
+      <div class="cg-panel rounded-xl p-5">
+        <div class="mb-4 flex items-center gap-3">
+          <div class="w-9 h-9 rounded-xl bg-primary-container/10 border border-primary-container/30 flex items-center justify-center">
+            <span class="material-symbols-outlined text-primary-container text-[20px]">favorite</span>
           </div>
           <div>
-            <h1 class="text-2xl font-black text-slate-100">Painel do Professor</h1>
-            <p class="text-sm text-slate-500">Poderes mágicos de gestão da turma</p>
+            <h2 class="font-headline-sm text-[18px] text-primary">Curar Turma</h2>
+            <p class="font-label-caps text-label-caps text-on-surface-variant">Repõe HP e Mana de todos</p>
           </div>
         </div>
+        <UButton
+          color="success"
+          variant="soft"
+          :loading="loading.curarTurma"
+          :disabled="!turmaSelecionada || loading.curarTurma"
+          class="w-full"
+          @click="curarTurma"
+        >
+          <span class="material-symbols-outlined text-[16px]">auto_awesome</span>
+          Curar toda a turma
+        </UButton>
       </div>
 
-      <!-- Seletor de turma -->
-      <div class="cg-panel mb-6 rounded-2xl p-5">
-        <label class="mb-2 block text-xs font-semibold uppercase tracking-wider text-slate-500">Turma ativa</label>
+      <!-- Curar Aluno -->
+      <div class="cg-panel rounded-xl p-5">
+        <div class="mb-4 flex items-center gap-3">
+          <div class="w-9 h-9 rounded-xl bg-secondary/10 border border-secondary/30 flex items-center justify-center">
+            <span class="material-symbols-outlined text-secondary text-[20px]">person_check</span>
+          </div>
+          <div>
+            <h2 class="font-headline-sm text-[18px] text-primary">Curar Aluno</h2>
+            <p class="font-label-caps text-label-caps text-on-surface-variant">Repõe HP e Mana de um aluno</p>
+          </div>
+        </div>
         <USelect
-          v-model="turmaSelecionada"
-          :options="turmaOptions"
+          v-model="alunoSelecionado"
+          :options="alunoOptions"
           option-value="id"
           option-label="nome"
-          placeholder="Selecione uma turma…"
-          class="w-full max-w-xs"
+          placeholder="Selecione um aluno…"
+          :disabled="!turmaSelecionada"
+          class="mb-3 w-full"
         />
+        <UButton
+          color="primary"
+          variant="soft"
+          :loading="loading.curarAluno"
+          :disabled="!alunoSelecionado || loading.curarAluno"
+          class="w-full"
+          @click="curarAluno"
+        >
+          Curar aluno
+        </UButton>
       </div>
 
-      <!-- Grid de poderes -->
-      <div class="grid gap-4 sm:grid-cols-2">
-        <!-- Curar Turma -->
-        <div class="cg-panel rounded-2xl p-5">
-          <div class="mb-4 flex items-center gap-3">
-            <div class="flex h-9 w-9 items-center justify-center rounded-xl bg-emerald-500/12">
-              <UIcon name="i-lucide-heart-pulse" class="h-5 w-5 text-emerald-400" />
-            </div>
-            <div>
-              <h2 class="font-bold text-slate-200">Curar Turma</h2>
-              <p class="text-xs text-slate-500">Repõe HP e Mana de todos</p>
-            </div>
+      <!-- Creditar Moedas -->
+      <div class="cg-panel rounded-xl p-5">
+        <div class="mb-4 flex items-center gap-3">
+          <div class="w-9 h-9 rounded-xl bg-tertiary-fixed-dim/10 border border-tertiary-fixed-dim/30 flex items-center justify-center">
+            <span class="material-symbols-outlined text-tertiary-fixed-dim text-[20px]">monetization_on</span>
           </div>
-          <UButton
-            color="success"
-            variant="soft"
-            :loading="loading.curarTurma"
-            :disabled="!turmaSelecionada || loading.curarTurma"
-            class="w-full"
-            @click="curarTurma"
-          >
-            <UIcon name="i-lucide-sparkles" class="h-4 w-4" />
-            Curar toda a turma
-          </UButton>
+          <div>
+            <h2 class="font-headline-sm text-[18px] text-primary">Creditar Moedas</h2>
+            <p class="font-label-caps text-label-caps text-on-surface-variant">Bônus manual para um aluno</p>
+          </div>
         </div>
-
-        <!-- Curar Aluno -->
-        <div class="cg-panel rounded-2xl p-5">
-          <div class="mb-4 flex items-center gap-3">
-            <div class="flex h-9 w-9 items-center justify-center rounded-xl bg-cyan-500/12">
-              <UIcon name="i-lucide-user-check" class="h-5 w-5 text-cyan-400" />
-            </div>
-            <div>
-              <h2 class="font-bold text-slate-200">Curar Aluno</h2>
-              <p class="text-xs text-slate-500">Repõe HP e Mana de um aluno</p>
-            </div>
-          </div>
-          <USelect
-            v-model="alunoSelecionado"
-            :options="alunoOptions"
-            option-value="id"
-            option-label="nome"
-            placeholder="Selecione um aluno…"
-            :disabled="!turmaSelecionada"
-            class="mb-3 w-full"
-          />
-          <UButton
-            color="primary"
-            variant="soft"
-            :loading="loading.curarAluno"
-            :disabled="!alunoSelecionado || loading.curarAluno"
-            class="w-full"
-            @click="curarAluno"
-          >
-            Curar aluno
-          </UButton>
-        </div>
-
-        <!-- Creditar Moedas -->
-        <div class="cg-panel rounded-2xl p-5">
-          <div class="mb-4 flex items-center gap-3">
-            <div class="flex h-9 w-9 items-center justify-center rounded-xl bg-amber-500/12">
-              <UIcon name="i-lucide-coins" class="h-5 w-5 text-amber-400" />
-            </div>
-            <div>
-              <h2 class="font-bold text-slate-200">Creditar Moedas</h2>
-              <p class="text-xs text-slate-500">Bônus manual para um aluno</p>
-            </div>
-          </div>
-          <USelect
-            v-model="alunoCreditar"
-            :options="alunoOptions"
-            option-value="id"
-            option-label="nome"
-            placeholder="Selecione um aluno…"
-            :disabled="!turmaSelecionada"
-            class="mb-2 w-full"
-          />
-          <div class="mb-3 flex gap-2">
-            <UInput
-              v-model.number="moedasCreditar"
-              type="number"
-              min="1"
-              max="1000"
-              placeholder="Qtd. 🪙"
-              class="flex-1"
-            />
-            <UInput
-              v-model="motivoCreditar"
-              placeholder="Motivo (opcional)"
-              class="flex-[2]"
-            />
-          </div>
-          <UButton
-            color="warning"
-            variant="soft"
-            :loading="loading.creditar"
-            :disabled="!alunoCreditar || !moedasCreditar || loading.creditar"
-            class="w-full"
-            @click="creditar"
-          >
-            Creditar {{ moedasCreditar || '' }} 🪙
-          </UButton>
-        </div>
-
-        <!-- Ativar Masmorra -->
-        <div class="cg-panel rounded-2xl p-5">
-          <div class="mb-4 flex items-center gap-3">
-            <div class="flex h-9 w-9 items-center justify-center rounded-xl bg-rose-500/12">
-              <UIcon name="i-lucide-castle" class="h-5 w-5 text-rose-400" />
-            </div>
-            <div>
-              <h2 class="font-bold text-slate-200">Ativar Masmorra</h2>
-              <p class="text-xs text-slate-500">Gacha de recompensas para quest</p>
-            </div>
-          </div>
+        <USelect
+          v-model="alunoCreditar"
+          :options="alunoOptions"
+          option-value="id"
+          option-label="nome"
+          placeholder="Selecione um aluno…"
+          :disabled="!turmaSelecionada"
+          class="mb-2 w-full"
+        />
+        <div class="mb-3 flex gap-2">
           <UInput
-            v-model="masmorraSlug"
-            placeholder="Quest slug (ex: modulo1/aula-03-boss)"
-            class="mb-2 w-full"
+            v-model.number="moedasCreditar"
+            type="number"
+            min="1"
+            max="1000"
+            placeholder="Qtd. 🪙"
+            class="flex-1"
           />
           <UInput
-            v-model="masmorraTitle"
-            placeholder="Título da masmorra"
-            class="mb-2 w-full"
+            v-model="motivoCreditar"
+            placeholder="Motivo (opcional)"
+            class="flex-[2]"
           />
-          <p class="mb-2 text-xs text-slate-500">Prêmios (1 por linha: tipo,moedas,xp,descrição)</p>
-          <textarea
-            v-model="premiosRaw"
-            rows="3"
-            placeholder="moedas,100,0,Baú de ouro&#10;xp,0,200,Runa de sabedoria"
-            class="mb-3 w-full resize-none rounded-xl border border-slate-600/30 bg-black/30 px-3 py-2 font-mono text-xs text-slate-300 placeholder-slate-600 focus:border-cyan-400/40 focus:outline-none"
-          />
-          <UButton
-            color="error"
-            variant="soft"
-            :loading="loading.masmorra"
-            :disabled="!turmaSelecionada || !masmorraSlug || !masmorraTitle || loading.masmorra"
-            class="w-full"
-            @click="ativarMasmorra"
-          >
-            <UIcon name="i-lucide-zap" class="h-4 w-4" />
-            Ativar masmorra
-          </UButton>
-          <p v-if="masmorraAtivada" class="mt-2 text-center text-xs text-emerald-400">
-            ✓ Masmorra criada! ID: {{ masmorraAtivada }}
-          </p>
         </div>
+        <UButton
+          color="warning"
+          variant="soft"
+          :loading="loading.creditar"
+          :disabled="!alunoCreditar || !moedasCreditar || loading.creditar"
+          class="w-full"
+          @click="creditar"
+        >
+          Creditar {{ moedasCreditar || '' }} 🪙
+        </UButton>
+      </div>
+
+      <!-- Ativar Masmorra -->
+      <div class="cg-panel rounded-xl p-5">
+        <div class="mb-4 flex items-center gap-3">
+          <div class="w-9 h-9 rounded-xl bg-error/10 border border-error/30 flex items-center justify-center">
+            <span class="material-symbols-outlined text-error text-[20px]">castle</span>
+          </div>
+          <div>
+            <h2 class="font-headline-sm text-[18px] text-primary">Ativar Masmorra</h2>
+            <p class="font-label-caps text-label-caps text-on-surface-variant">Gacha de recompensas para quest</p>
+          </div>
+        </div>
+        <UInput
+          v-model="masmorraSlug"
+          placeholder="Quest slug (ex: modulo1/aula-03-boss)"
+          class="mb-2 w-full"
+        />
+        <UInput
+          v-model="masmorraTitle"
+          placeholder="Título da masmorra"
+          class="mb-2 w-full"
+        />
+        <p class="mb-2 font-label-caps text-label-caps text-on-surface-variant">Prêmios (1 por linha: tipo,moedas,xp,descrição)</p>
+        <textarea
+          v-model="premiosRaw"
+          rows="3"
+          placeholder="moedas,100,0,Baú de ouro&#10;xp,0,200,Runa de sabedoria"
+          class="mb-3 w-full resize-none rounded-lg border border-outline-variant/30 bg-surface-container-lowest px-3 py-2 font-code-md text-code-md text-on-surface placeholder-on-surface-variant/40 focus:border-primary-container/40 focus:outline-none"
+        />
+        <UButton
+          color="error"
+          variant="soft"
+          :loading="loading.masmorra"
+          :disabled="!turmaSelecionada || !masmorraSlug || !masmorraTitle || loading.masmorra"
+          class="w-full"
+          @click="ativarMasmorra"
+        >
+          <span class="material-symbols-outlined text-[16px]">bolt</span>
+          Ativar masmorra
+        </UButton>
+        <p v-if="masmorraAtivada" class="mt-2 text-center font-label-caps text-label-caps text-primary-container">
+          ✓ Masmorra criada! ID: {{ masmorraAtivada }}
+        </p>
       </div>
     </div>
   </div>

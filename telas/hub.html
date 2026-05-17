@@ -1,0 +1,290 @@
+, m<!-- Python Arcane: Multiverse Hub -->
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Multiverse Hub - Python Arcane</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&amp;family=JetBrains+Mono:wght@500;700&amp;family=Hanken+Grotesk:wght@400&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-primary-fixed": "#002020",
+                        "on-primary": "#003737",
+                        "tertiary-container": "#ffdfa0",
+                        "on-surface": "#dae2fd",
+                        "secondary-fixed-dim": "#dcb8ff",
+                        "secondary-container": "#7701d0",
+                        "inverse-on-surface": "#283044",
+                        "surface-dim": "#0b1326",
+                        "tertiary-fixed": "#ffdfa0",
+                        "surface-bright": "#31394d",
+                        "surface-container-highest": "#2d3449",
+                        "tertiary-fixed-dim": "#fbbc00",
+                        "on-tertiary-fixed": "#261a00",
+                        "error-container": "#93000a",
+                        "on-secondary": "#480081",
+                        "primary-container": "#00fbfb",
+                        "on-secondary-fixed": "#2c0051",
+                        "on-tertiary": "#402d00",
+                        "on-tertiary-container": "#815f00",
+                        "surface-variant": "#2d3449",
+                        "primary": "#ffffff",
+                        "surface-tint": "#00dddd",
+                        "secondary-fixed": "#efdbff",
+                        "on-error": "#690005",
+                        "primary-fixed-dim": "#00dddd",
+                        "on-primary-container": "#007070",
+                        "background": "#0b1326",
+                        "surface-container-high": "#222a3d",
+                        "primary-fixed": "#00fbfb",
+                        "outline-variant": "#3a4a49",
+                        "on-secondary-container": "#dcb7ff",
+                        "secondary": "#dcb8ff",
+                        "error": "#ffb4ab",
+                        "tertiary": "#ffffff",
+                        "surface": "#0b1326",
+                        "surface-container": "#171f33",
+                        "inverse-surface": "#dae2fd",
+                        "inverse-primary": "#006a6a",
+                        "surface-container-lowest": "#060e20",
+                        "on-surface-variant": "#b9cac9",
+                        "on-secondary-fixed-variant": "#6700b5",
+                        "outline": "#839493",
+                        "on-tertiary-fixed-variant": "#5c4300",
+                        "on-background": "#dae2fd",
+                        "on-primary-fixed-variant": "#004f4f",
+                        "surface-container-low": "#131b2e",
+                        "on-error-container": "#ffdad6"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "unit": "4px",
+                        "margin-desktop": "48px",
+                        "margin-mobile": "16px",
+                        "gutter": "24px",
+                        "hud-padding": "12px"
+                    },
+                    "fontFamily": {
+                        "display-lg": ["Space Grotesk"],
+                        "label-caps": ["JetBrains Mono"],
+                        "headline-md": ["Space Grotesk"],
+                        "code-md": ["JetBrains Mono"],
+                        "body-md": ["Hanken Grotesk"],
+                        "headline-sm": ["Space Grotesk"],
+                        "body-lg": ["Hanken Grotesk"]
+                    },
+                    "fontSize": {
+                        "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "label-caps": ["12px", {"lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "700"}],
+                        "headline-md": ["32px", {"lineHeight": "40px", "fontWeight": "600"}],
+                        "code-md": ["14px", {"lineHeight": "20px", "fontWeight": "500"}],
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "headline-sm": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .material-symbols-outlined.fill-icon {
+            font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background min-h-screen font-body-md overflow-x-hidden">
+<!-- TopAppBar -->
+<header class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-margin-desktop h-16 bg-surface/80 backdrop-blur-xl border-b border-primary-container/20 shadow-[0_4px_20px_rgba(0,0,0,0.5)]">
+<div class="flex items-center gap-4">
+<span class="font-headline-md text-headline-md font-bold text-primary-container drop-shadow-[0_0_10px_rgba(0,251,251,0.6)]">Python Arcane</span>
+</div>
+<div class="flex items-center gap-4">
+<button class="text-on-surface-variant hover:text-primary-container transition-colors duration-300">
+<span class="material-symbols-outlined">bolt</span>
+</button>
+<button class="text-on-surface-variant hover:text-primary-container transition-colors duration-300">
+<span class="material-symbols-outlined">auto_fix_high</span>
+</button>
+<button class="text-on-surface-variant hover:text-primary-container transition-colors duration-300">
+<span class="material-symbols-outlined">monetization_on</span>
+</button>
+</div>
+</header>
+<!-- SideNavBar -->
+<nav class="hidden md:flex fixed left-0 top-0 h-full pt-20 flex-col space-y-4 bg-surface-container/90 backdrop-blur-md w-64 border-r border-secondary-container/30 shadow-xl z-40">
+<div class="px-6 pb-6 border-b border-secondary-container/30">
+<div class="flex items-center gap-4 mb-2">
+<div class="w-12 h-12 rounded-full bg-secondary-container/50 border border-primary-container overflow-hidden">
+<img alt="Archmage Avatar" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDxNZgAoD9QD0ZlPKJICPdxLoPev5xspKFtTljpjIV1w_UHekoGGgauRzBArEJJqkd_eQ2n_uOZBMqhvyCYQhL51cmG3u9fIBsVbYEWfTuGuGXNns0aY7tsvER6c_ZNpPUNi2q3AwINycoGUXL-m0dSrNtrCB4pAOPkTlzRKmRtl2sb-EsFUn83IFqmCdcl1hfnq8U1dl5GQiBn3wPh9FIPV5n-vNXrz5TCo98wkWVorywS3GloLNdrBMbossq_pO2R50HHTb72EnBd"/>
+</div>
+<div>
+<div class="font-headline-sm text-headline-sm text-secondary">Archmage</div>
+<div class="font-label-caps text-label-caps text-on-surface-variant">Level 42 Pythonista</div>
+</div>
+</div>
+<button class="w-full mt-4 bg-primary-container text-on-primary-container font-label-caps text-label-caps py-2 rounded font-bold hover:bg-surface-tint transition-colors shadow-[0_0_10px_rgba(0,251,251,0.4)]">
+                Cast Spell
+            </button>
+</div>
+<div class="flex-1 overflow-y-auto pt-4">
+<a class="flex items-center gap-4 text-on-surface-variant py-3 px-6 opacity-70 hover:bg-surface-variant hover:text-primary transition-all duration-200" href="#">
+<span class="material-symbols-outlined">auto_stories</span>
+<span class="font-body-md text-body-md">Grimoire</span>
+</a>
+<a class="flex items-center gap-4 bg-secondary-container/20 text-primary-container border-l-4 border-primary-container py-3 px-6 shadow-[inset_0_0_15px_rgba(0,251,251,0.2)]" href="#">
+<span class="material-symbols-outlined">explore</span>
+<span class="font-body-md text-body-md">Trail</span>
+</a>
+<a class="flex items-center gap-4 text-on-surface-variant py-3 px-6 opacity-70 hover:bg-surface-variant hover:text-primary transition-all duration-200" href="#">
+<span class="material-symbols-outlined">swords</span>
+<span class="font-body-md text-body-md">Arena</span>
+</a>
+<a class="flex items-center gap-4 text-on-surface-variant py-3 px-6 opacity-70 hover:bg-surface-variant hover:text-primary transition-all duration-200" href="#">
+<span class="material-symbols-outlined">pets</span>
+<span class="font-body-md text-body-md">Bestiary</span>
+</a>
+</div>
+</nav>
+<!-- Main Content Canvas -->
+<main class="md:ml-64 pt-20 px-margin-mobile md:px-margin-desktop pb-margin-desktop min-h-screen relative">
+<!-- Background Cosmic Image -->
+<div class="absolute inset-0 z-[-1] opacity-20 pointer-events-none" data-alt="A sprawling, cosmic view of a dark nebula with swirling clouds of deep violet and cyan stardust. Scattered across the void are glowing, ethereal constellations that faintly resemble geometric runes and code structures. The lighting is mysterious and cinematic, dominated by deep shadows and vibrant, magical neon accents. The overall style perfectly captures the fusion of dark, arcane fantasy and futuristic technical interfaces." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuD8rbj326Wwz8KKYOaKXFFlHzdhH_DF5jz9B_oBhb-xnNFw8oMbH_ldjF97nwEWy6v0hPEe4cBvsdEOu6hV9PKkFA_RSz3LiapfqDdX8Y8uIUpF9rdOgt6rqXrb1xidEkp4MmM_wp8QDT-MeuBm4qsDJVnISmG5yfv5CcozHeZxAhCFVArgmWdKBKxpr5ZIBLilKbbvhkBD5qdKhyhrWF2fuuJv5XEOm-0pPxaEM7rRispeZFxZKP_OQNDNIHgbI-WuV6R9YN7aQt5B'); background-size: cover; background-position: center;"></div>
+<div class="max-w-[1200px] mx-auto pt-8">
+<!-- Page Header -->
+<div class="mb-12">
+<h1 class="font-display-lg text-display-lg text-primary drop-shadow-[0_0_15px_rgba(255,255,255,0.3)] mb-2">Multiverse Hub</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl">Select your next realm of mastery. Each world holds ancient Pythonic secrets waiting to be compiled.</p>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter">
+<!-- Left Column: Map/Worlds -->
+<div class="lg:col-span-8 relative min-h-[600px] bg-surface-container-low/80 backdrop-blur-xl border border-secondary-container/20 rounded-xl p-8 shadow-[inset_0_0_40px_rgba(0,0,0,0.5)]">
+<!-- SVG Path Connectors (Simulated with absolute divs for visual flow) -->
+<svg class="absolute inset-0 w-full h-full pointer-events-none opacity-30" preserveaspectratio="none">
+<path d="M 150 150 Q 300 100 450 250 T 700 350" fill="transparent" stroke="var(--tw-colors-primary-container)" stroke-dasharray="5,5" stroke-width="2"></path>
+<path d="M 450 250 Q 500 450 300 500" fill="transparent" stroke="var(--tw-colors-on-surface-variant)" stroke-dasharray="5,5" stroke-width="2"></path>
+</svg>
+<!-- World Nodes -->
+<!-- Node 1: Unlocked, Completed -->
+<div class="absolute top-[10%] left-[10%] group cursor-pointer">
+<div class="relative w-24 h-24 rounded-full bg-surface-container border border-primary-container shadow-[0_0_20px_rgba(0,251,251,0.3)] flex items-center justify-center transition-transform duration-300 group-hover:scale-110">
+<span class="material-symbols-outlined text-primary-container text-4xl fill-icon drop-shadow-[0_0_8px_rgba(0,251,251,0.8)]">token</span>
+<div class="absolute -bottom-8 whitespace-nowrap text-center">
+<div class="font-label-caps text-label-caps text-primary-container">Syntax Sanctuary</div>
+</div>
+</div>
+</div>
+<!-- Node 2: Unlocked, Active -->
+<div class="absolute top-[30%] left-[45%] group cursor-pointer z-10">
+<div class="relative w-32 h-32 rounded-full bg-surface-container border-2 border-secondary shadow-[0_0_30px_rgba(220,184,255,0.4),inset_0_0_20px_rgba(119,1,208,0.5)] flex items-center justify-center transition-transform duration-300 group-hover:scale-105 animate-pulse">
+<span class="material-symbols-outlined text-secondary text-5xl fill-icon drop-shadow-[0_0_12px_rgba(220,184,255,0.8)]">public</span>
+<!-- Runic Ring -->
+<div class="absolute inset-[-10px] border border-secondary/50 rounded-full border-dashed animate-[spin_10s_linear_infinite]"></div>
+<div class="absolute -bottom-10 whitespace-nowrap text-center bg-surface-container-high/90 px-3 py-1 rounded border border-secondary-container/50 backdrop-blur-md">
+<div class="font-label-caps text-label-caps text-secondary">Loops Labyrinth</div>
+<div class="font-code-md text-code-md text-tertiary-fixed-dim text-[10px]">Active Quest</div>
+</div>
+</div>
+</div>
+<!-- Node 3: Locked -->
+<div class="absolute top-[50%] right-[15%] group cursor-not-allowed opacity-50 grayscale">
+<div class="relative w-24 h-24 rounded-full bg-surface-container border border-on-surface-variant flex items-center justify-center">
+<span class="material-symbols-outlined text-on-surface-variant text-4xl">lock</span>
+<div class="absolute -bottom-8 whitespace-nowrap text-center">
+<div class="font-label-caps text-label-caps text-on-surface-variant">Functions Forge</div>
+</div>
+</div>
+</div>
+<!-- Node 4: Locked -->
+<div class="absolute bottom-[15%] left-[30%] group cursor-not-allowed opacity-50 grayscale">
+<div class="relative w-20 h-20 rounded-full bg-surface-container border border-on-surface-variant flex items-center justify-center">
+<span class="material-symbols-outlined text-on-surface-variant text-3xl">lock</span>
+<div class="absolute -bottom-8 whitespace-nowrap text-center">
+<div class="font-label-caps text-label-caps text-on-surface-variant">Class Citadel</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Right Column: Status & Quests -->
+<div class="lg:col-span-4 flex flex-col gap-6">
+<!-- Player Status Card -->
+<div class="bg-surface-container-high/80 backdrop-blur-xl border border-secondary-container/30 rounded-xl p-6 relative overflow-hidden">
+<div class="absolute top-0 right-0 w-32 h-32 bg-secondary-container/20 rounded-full blur-3xl -mr-10 -mt-10 pointer-events-none"></div>
+<h2 class="font-headline-sm text-headline-sm text-primary mb-4 flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary">person</span>
+                            Vitals
+                        </h2>
+<div class="space-y-4">
+<!-- HP -->
+<div>
+<div class="flex justify-between mb-1">
+<span class="font-label-caps text-label-caps text-error">HP</span>
+<span class="font-code-md text-code-md text-error">850/1000</span>
+</div>
+<div class="h-2 w-full bg-surface-container-lowest rounded-full overflow-hidden">
+<div class="h-full bg-gradient-to-r from-error to-[#ff5c5c] rounded-full" style="width: 85%;"></div>
+</div>
+</div>
+<!-- Mana -->
+<div>
+<div class="flex justify-between mb-1">
+<span class="font-label-caps text-label-caps text-primary-container">Mana</span>
+<span class="font-code-md text-code-md text-primary-container">420/500</span>
+</div>
+<div class="h-2 w-full bg-surface-container-lowest rounded-full overflow-hidden">
+<div class="h-full bg-gradient-to-r from-surface-tint to-primary-container rounded-full" style="width: 84%;"></div>
+</div>
+</div>
+<!-- Resources -->
+<div class="flex justify-between mt-6 pt-4 border-t border-outline-variant/30">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-tertiary-fixed-dim">monetization_on</span>
+<span class="font-code-md text-code-md text-tertiary-container">1,240 G</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary">star</span>
+<span class="font-code-md text-code-md text-secondary">Lv. 42</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Active Quest Card -->
+<div class="bg-surface-container/90 backdrop-blur-xl border border-primary-container/20 rounded-xl p-6 relative">
+<div class="absolute -left-[1px] top-4 bottom-4 w-1 bg-primary-container rounded-r-full shadow-[0_0_10px_rgba(0,251,251,0.5)]"></div>
+<div class="flex justify-between items-start mb-4">
+<h2 class="font-headline-sm text-headline-sm text-primary">Active Quest</h2>
+<span class="bg-secondary-container/30 text-secondary border border-secondary/30 px-2 py-1 rounded font-label-caps text-label-caps text-[10px]">IN PROGRESS</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-primary-container mb-2 text-xl">The While Loop Enigma</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6 text-sm">
+                            Escape the infinite cycle of the Labyrinth by correctly defining an exit condition. Beware of off-by-one demons.
+                        </p>
+<div class="bg-surface-container-lowest p-3 rounded border border-outline-variant/30 mb-6 font-code-md text-code-md text-on-surface text-sm">
+<span class="text-secondary">while</span> <span class="text-tertiary-container">not</span> escaped:
+                            <br/>    <span class="text-on-surface-variant"># TODO: Find exit</span>
+</div>
+<button class="w-full bg-primary-container text-on-primary-container font-label-caps text-label-caps py-3 rounded font-bold hover:bg-surface-tint transition-all shadow-[0_0_15px_rgba(0,251,251,0.3)] hover:shadow-[0_0_25px_rgba(0,251,251,0.6)] flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-sm">play_arrow</span>
+                            Resume Cast
+                        </button>
+</div>
+</div>
+</div>
+</div>
+</main>
+</body></html>
+
