@@ -1,0 +1,95 @@
+{
+  "id": "python-M03-A32-CT",
+  "curso": "python",
+  "modulo": 3,
+  "aula": 32,
+  "numero": 32,
+  "tipo": "Aula",
+  "subtipo": "conceito",
+  "titulo": "Escopo Local vs Global",
+  "subtitulo": "Onde variaveis nascem, vivem e deixam de interferir",
+  "objetivo": "Distinguir escopo local e global, evitar dependência de estado compartilhado e escrever funções previsíveis que se comportam igual em chamadas repetidas.",
+  "duracao": "1h30",
+  "tags": [
+    "escopo",
+    "variaveis",
+    "global",
+    "estado"
+  ],
+  "secoes": {
+    "abertura": {
+      "objetivo": {
+        "texto_md": "Quando variável global vira atalho padrão, o sistema parece prático no início e imprevisível depois. Um resultado muda sem motivo aparente porque algum ponto distante alterou o mesmo estado. **Escopo** é justamente a disciplina que impede esse tipo de opacidade."
+      },
+      "retomada": {
+        "texto_md": "**Inventário que você traz:**\n\n* Parâmetros e retorno para troca explícita de dados (Aula 1.2).\n* Laços e acumuladores locais em funções (Aula 3.1).\n* Mutabilidade e efeitos colaterais (Aula 2.2)."
+      },
+      "situacao": {
+        "titulo": "O contador contaminado",
+        "texto_md": "Uma rotina de auditoria contava registros inválidos usando uma variável global. No primeiro lote, o número saiu correto. No segundo, o contador já começou alto por causa da execução anterior. O erro não era matemático — era de arquitetura de escopo."
+      },
+      "problematizacao": {
+        "texto_md": "* Por que uma funcao dependente de variável global é mais difícil de testar e validar?\n* Em uma base grande, como rastrear com segurança quem alterou uma global por último?"
+      }
+    },
+    "conceito": {
+      "titulo": "Conceito tecnico",
+      "texto_md": "**Escopo** é a região do código onde uma variável é visível e pode ser usada. Em Python existem duas regiões principais que importam para nós agora:\n\n* **Escopo local** — variáveis criadas **dentro** de uma funcao. Elas existem apenas durante aquela chamada e desaparecem quando a funcao termina. Cada chamada cria um conjunto novo de variáveis locais.\n* **Escopo global** — variáveis criadas no **nível do arquivo** (fora de qualquer funcao). Podem ser **lidas** de dentro de funções, mas tentar **atribuir** um novo valor dentro de uma funcao **cria, por padrão, uma variável local** com o mesmo nome (não muda a global).\n\n```python\ntaxa = 0.10                  # global\n\ndef calcular(valor):\n    bonus = valor * taxa     # lê a global 'taxa'  (ok)\n    return bonus             # 'bonus' é LOCAL — some ao retornar\n\nprint(calcular(100))\nprint(bonus)                 # NameError: 'bonus' não existe aqui fora\n```\n\n**Regra recomendada (padrão profissional):**\n\n1. **Receber** o que precisa por **parâmetro**.\n2. **Processar** com **variáveis locais**.\n3. **Devolver** o resultado por **`return`**.\n\nUma funcao escrita assim é **determinística**: para a mesma entrada, sempre devolve a mesma saída — sem depender de variáveis que estejam (ou não) num estado específico em algum lugar do arquivo.\n\n> ⚠️ **Sobre a palavra `global`:** existe a sintaxe `global nome` para forçar atribuição numa variável global de dentro da funcao. Evite. É quase sempre sinal de arquitetura frágil.",
+      "exemplos": [
+        {
+          "titulo": "1) Funcao puramente local",
+          "texto_md": "Tudo entra por parâmetro; tudo é processado em variáveis locais; resultado é retornado.",
+          "python": "def somar(a, b):\n    total = a + b      # 'total' é local\n    return total\n\nprint(somar(3, 4))     # 7\nprint(somar(10, 20))   # 30  (não há resíduo da chamada anterior)"
+        },
+        {
+          "titulo": "2) Leitura de global (sem alteração)",
+          "texto_md": "A funcao **lê** uma constante global. É um uso aceitável quando o valor é realmente fixo (constantes).",
+          "python": "TAXA_PADRAO = 0.10  # constante global, em maiúsculas por convenção\n\ndef calcular_bonus(venda):\n    return venda * TAXA_PADRAO\n\nprint(calcular_bonus(500.0))   # 50.0"
+        },
+        {
+          "titulo": "3) Versão melhor: receber a taxa por parâmetro",
+          "texto_md": "Mais explícito e mais testável — a funcao não depende de nada externo.",
+          "python": "def calcular_bonus_seguro(venda, taxa):\n    return venda * taxa\n\nprint(calcular_bonus_seguro(500.0, 0.10))   # 50.0\nprint(calcular_bonus_seguro(500.0, 0.15))   # 75.0"
+        }
+      ]
+    },
+    "pratica_guiada": {
+      "titulo": "Prática guiada",
+      "texto_md": "Vamos exercitar escopo em três passos progressivos.",
+      "exemplos": [
+        {
+          "titulo": "Passo 1 — Apenas variáveis locais",
+          "texto_md": "Calcula o maior valor de uma lista sem usar nada externo.",
+          "python": "def maior_local(valores):\n    maior = valores[0]\n    for v in valores:\n        if v > maior:\n            maior = v\n    return maior\n\nprint(maior_local([3, 7, 1, 9, 4]))   # 9"
+        },
+        {
+          "titulo": "Passo 2 — Lendo uma constante global",
+          "texto_md": "Uso aceitável: a alíquota é uma constante do sistema.",
+          "python": "ALIQUOTA = 0.075   # constante (não muda)\n\ndef calcular_imposto(valor):\n    return valor * ALIQUOTA\n\nprint(calcular_imposto(1000))   # 75.0"
+        },
+        {
+          "titulo": "Passo 3 — Versão determinística (sem global)",
+          "texto_md": "Chamadas repetidas com a mesma entrada produzem sempre o mesmo resultado, em qualquer ordem.",
+          "python": "def contar_maiores(valores, limite):\n    contador = 0\n    for v in valores:\n        if v > limite:\n            contador += 1\n    return contador\n\nlote_a = [10, 50, 70, 20]\nlote_b = [100, 30, 20]\n\nprint(\"Lote A:\", contar_maiores(lote_a, 40))   # 2\nprint(\"Lote B:\", contar_maiores(lote_b, 40))   # 1\nprint(\"Lote A de novo:\", contar_maiores(lote_a, 40))   # 2  (não contaminou)"
+        }
+      ]
+    },
+    "pratica_autonoma": {
+      "titulo": "Exercicio de Continuacao (Sua vez!)",
+      "texto_md": "**Enunciado:** Crie `somar_positivos(valores)` usando apenas variáveis locais e retorne a soma dos itens positivos. Imprima `Soma positiva: X.XX`.\n\n| Entrada (`valores`) | Saída Esperada |\n|---|---|\n| [1.0, -2.0, 4.0] | Soma positiva: 5.00 |\n| [-5.0, -1.0] | Soma positiva: 0.00 |\n| [10.0, 0.0, 2.5] | Soma positiva: 12.50 |"
+    },
+    "fechamento": {
+      "titulo": "Fechamento e Autoavaliação",
+      "quiz": {
+        "texto_md": "**1. Onde existe uma variável local?**\nA) Apenas dentro da funcao onde foi criada, durante aquela chamada.\nB) Em todos os arquivos do projeto.\nC) Só dentro do `print()`.\n\n::details{summary=\"Ver a resposta correta\"}\n**Correto: A.** Escopo local limita acesso e interferência.\n::\n\n**2. Qual o sintoma comum de uma funcao dependente de variável global?**\nA) O resultado muda entre chamadas sem alterar a entrada.\nB) O código sempre fica mais rápido.\nC) A funcao não precisa de retorno.\n\n::details{summary=\"Ver a resposta correta\"}\n**Correto: A.** Estado compartilhado faz a função \"lembrar\" de execuções anteriores e contaminar resultados futuros.\n::\n\n**3. Qual o desenho recomendado para funções previsíveis?**\nA) Ler e alterar globais em vários pontos.\nB) Receber parâmetros, processar localmente e retornar resultado.\nC) Remover parâmetros para simplificar.\n\n::details{summary=\"Ver a resposta correta\"}\n**Correto: B.** Essa arquitetura reduz acoplamento e facilita teste.\n::"
+      },
+      "leitura_complementar": {
+        "texto_md": "* Pesquise sobre **escopo LEGB** em Python (Local, Enclosing, Global, Built-in) e a palavra-chave `global`.\n* Prática diária: pegue uma rotina de contagem e descreva como tornaria cada execução independente da anterior."
+      },
+      "reflexao": {
+        "texto_md": "* Escopo é uma escolha de qualidade: ou você controla de onde vem o dado, ou o dado controla o seu resultado."
+      }
+    }
+  },
+  "premio": null
+}

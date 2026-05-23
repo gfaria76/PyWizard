@@ -42,6 +42,10 @@ export function useQuestSections(
 
   const concept = computed(() => asSection(sections.value.conceito))
   const guided = computed(() => asSection(sections.value.pratica_guiada))
+  const guidedExamples = computed(() => {
+    const raw = guided.value.exemplos
+    return Array.isArray(raw) ? raw.map(item => asSection(item)) : []
+  })
   const autonomous = computed(() => asSection(sections.value.pratica_autonoma))
 
   const autonomousStarter = computed(() => {
@@ -125,7 +129,7 @@ export function useQuestSections(
       if (concept.value.texto_md) {
         items.push({ id: 'sec-conceito', label: concept.value.titulo ?? 'Conceito', icon: 'i-lucide-book-marked' })
       }
-      if (guided.value.texto_md) {
+      if (guided.value.texto_md || guidedExamples.value.length) {
         items.push({ id: 'sec-pratica-guiada', label: guided.value.titulo ?? 'Prática guiada', icon: 'i-lucide-terminal-square' })
       }
       if (autonomous.value.texto_md) {
@@ -159,6 +163,7 @@ export function useQuestSections(
     openingSections,
     concept,
     guided,
+    guidedExamples,
     autonomous,
     autonomousStarter,
     examples,

@@ -1,0 +1,81 @@
+{
+  "id": "python-M01-A32-TV",
+  "curso": "python",
+  "modulo": 1,
+  "aula": 32,
+  "numero": 32,
+  "tipo": "Trilha",
+  "subtipo": "aventura",
+  "titulo": "Trilha da Aventura VIII: Pactos Lógicos",
+  "subtitulo": "5 desafios para casa sobre relacionais e lógicos",
+  "objetivo": "Aprofundar em casa o conteúdo de Operadores Relacionais e Lógicos.",
+  "duracao": "35min",
+  "tags": [
+    "trilha-aventura",
+    "relacionais e lógicos"
+  ],
+  "secoes": {
+    "abertura": {
+      "introducao": {
+        "texto_md": "# Trilha da Aventura VIII: Pactos Lógicos\n\nEsta trilha para casa amplia a prática do conteúdo de **Operadores Relacionais e Lógicos** com cinco novos desafios."
+      }
+    },
+    "preparacao": {
+      "titulo": "Mapa da aventura",
+      "texto_md": "* tente resolver sem olhar a solução da aula;\n* teste seus resultados;\n* anote dúvidas para levar ao próximo encontro."
+    },
+    "desafios": {
+      "titulo": "Cinco desafios da aventura",
+      "texto_md": "Cinco desafios de casa para reforçar relacionais e lógicos.",
+      "missoes": [
+        {
+          "titulo": "Controle da Biblioteca",
+          "texto_md": "**O Problema:** Receba atraso em dias e livro raro (0 ou 1). Imprima `Bloquear` se atraso > 7 ou livro_raro == 1.\n\n**Casos de Teste (Amostra):**\n\n| Entrada | Saída | Show |\n|---|---|---|\n| 3<br>1 | Bloquear | Sim |"
+        },
+        {
+          "titulo": "Atendimento Prioritário",
+          "texto_md": "**O Problema:** Receba idade e gestante (0 ou 1). Imprima `Prioritario` se idade >= 60 ou gestante == 1.\n\n**Casos de Teste (Amostra):**\n\n| Entrada | Saída | Show |\n|---|---|---|\n| 22<br>0 | Comum | Sim |"
+        },
+        {
+          "titulo": "Dupla Validação",
+          "texto_md": "**O Problema:** Receba código_ok e biometria_ok (0 ou 1). Imprima `Liberado` somente se ambos forem 1.\n\n**Casos de Teste (Amostra):**\n\n| Entrada | Saída | Show |\n|---|---|---|\n| 1<br>0 | Negado | Não |"
+        },
+        {
+          "titulo": "Chamada Completa",
+          "texto_md": "**O Problema:** Receba presente e documento (0 ou 1). Imprima `Confirmado` se ambos forem 1.\n\n**Casos de Teste (Amostra):**\n\n| Entrada | Saída | Show |\n|---|---|---|\n| 1<br>1 | Confirmado | Não |"
+        },
+        {
+          "titulo": "Critério de Bolsa",
+          "texto_md": "**O Problema:** Receba renda e filhos. Imprima `Analisar` se renda <= 350 e filhos >= 2.\n\n**Casos de Teste (Amostra):**\n\n| Entrada | Saída | Show |\n|---|---|---|\n| 300.0<br>2 | Analisar | Não |"
+        }
+      ]
+    },
+    "fechamento": {
+      "titulo": "Fechamento da Jornada",
+      "reflexao": {
+        "texto_md": "A prática em casa amplia a autonomia e prepara melhor para as trilhas acumulativas."
+      }
+    }
+  },
+  "premio": {
+    "pontuacao": 90
+  },
+  "rpg": {
+    "xp_reward": 90,
+    "variant": "trail",
+    "oracle_hints": [
+      "Verifique a formatação exata da saída pedida.",
+      "Releia o enunciado com atenção antes de codar."
+    ],
+    "enemy_name": "Serpente Lógica",
+    "enemy_hp": 80,
+    "weakness": "condicionais",
+    "loot_drops": [
+      {
+        "item": "Selo de Combate",
+        "type": "badge",
+        "rarity": "common"
+      }
+    ]
+  }
+}

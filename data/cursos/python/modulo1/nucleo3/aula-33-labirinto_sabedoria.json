@@ -1,0 +1,131 @@
+{
+  "id": "python-M01-A33-MS",
+  "curso": "python",
+  "modulo": 1,
+  "aula": 33,
+  "numero": 33,
+  "tipo": "Masmorra",
+  "subtipo": "simulado",
+  "titulo": "Labirinto da Sabedoria III: Simulado antes do Boss",
+  "subtitulo": "Treino individual com questões equivalentes às do boss «Maratona Prática III: O Auditor de Critérios»",
+  "objetivo": "Oferecer um simulado individual de pré-boss com questões equivalentes às do boss «Maratona Prática III: O Auditor de Critérios», permitindo calibrar tempo, formato de saída e identificação de pontos fracos antes da avaliação oficial.",
+  "duracao": "1h30",
+  "tags": [
+    "labirinto_sabedoria",
+    "simulado",
+    "pré-boss"
+  ],
+  "secoes": {
+    "abertura": {
+      "introducao": {
+        "texto_md": "# Labirinto da Sabedoria III\n\nEste é um simulado individual antes do boss «Maratona Prática III: O Auditor de Critérios». As questões aqui são equivalentes às do boss em escopo, formato e dificuldade, mas usam dados sintéticos diferentes. Resultado não conta para a nota final do núcleo; serve como termômetro pessoal e para identificar tópicos a revisar.\n\n**Regras do labirinto:**\n\n* Resolva os aquecimentos primeiro para calibrar formato de saída.\n* Tente todas as missões dentro do tempo estimado do boss.\n* Compare seu resultado com o gabarito e revise antes da maratona oficial.\n"
+      }
+    },
+    "aquecimento": {
+      "titulo": "Aquecimento (sem pontos)",
+      "texto_md": "Calibre leitura de entrada e precisão de saída antes das missões simuladas.",
+      "missoes": [
+        {
+          "titulo": "Aquecimento simulado A: Termômetro do Almoxarifado (SUS)",
+          "texto_md": "**O Treino:** O avaliador injeta `temperatura` (`Float`) e `limite_max` (`Float`). Se `temperatura > limite_max`, imprima `ALERTA: temperatura fora do limite`. Caso contrário, imprima `OK: temperatura dentro do limite`.\n\n**Casos de Teste (Amostra):**\n\n| Entrada | Saída | Show |\n|---|---|---|\n| `8.3`, `8.0` | ALERTA: temperatura fora do limite | Sim |\n| `7.9`, `8.0` | OK: temperatura dentro do limite | Sim |",
+          "meta": {
+            "tipo": "simulado_warmup",
+            "espelha": "warmup_a"
+          }
+        },
+        {
+          "titulo": "Aquecimento simulado B: Prioridade de Vacinação",
+          "texto_md": "**O Treino:** O avaliador injeta `idade` (`Int`) e `tem_comorbidade` (`Int`, 0 ou 1). Se a pessoa tiver 60 anos ou mais **ou** comorbidade, imprima `Prioridade: SIM`. Caso contrário, `Prioridade: NAO`.\n\n**Casos de Teste (Amostra):**\n\n| Entrada | Saída | Show |\n|---|---|---|\n| `65`, `0` | Prioridade: SIM | Sim |\n| `35`, `0` | Prioridade: NAO | Sim |",
+          "meta": {
+            "tipo": "simulado_warmup",
+            "espelha": "warmup_b"
+          }
+        }
+      ]
+    },
+    "maratona": {
+      "titulo": "Simulado completo (espelho do boss)",
+      "texto_md": "Cinco missões simuladas, equivalentes às do boss «Maratona Prática III: O Auditor de Critérios». Mesmas habilidades, dados sintéticos diferentes.",
+      "missoes": [
+        {
+          "titulo": "Simulado 1: variação equivalente — Triagem Fiscal de Empresas",
+          "texto_md": "**Treino equivalente à missão 1 do boss.** Mesmo conjunto de habilidades, dados sintéticos diferentes. Use para calibrar tempo e formato antes da maratona oficial.\n\n**O Treino:** O avaliador injeta `faturamento` (`Float`) e `imposto_recolhido` (`Float`). Uma empresa entra em auditoria se o faturamento for maior que 4,8 milhões **ou** se o imposto recolhido representar menos de 8% do faturamento. Imprima `Auditoria: NECESSARIA` ou `Auditoria: DISPENSA`.\n\n**Casos de Teste (Amostra):**\n\n| Entrada | Saída | Show |\n|---|---|---|\n| `5000000.0`, `500000.0` | Auditoria: NECESSARIA | Sim |\n| `3000000.0`, `300000.0` | Auditoria: DISPENSA | Sim |",
+          "meta": {
+            "tipo": "simulado",
+            "espelha_missao": "missao_1"
+          }
+        },
+        {
+          "titulo": "Simulado 2: variação equivalente — Triagem do CadÚnico",
+          "texto_md": "**Treino equivalente à missão 2 do boss.** Mesmo conjunto de habilidades, dados sintéticos diferentes. Use para calibrar tempo e formato antes da maratona oficial.\n\n**O Treino:** O avaliador injeta `renda_per_capita` (`Float`). Classifique a família como `Classificacao: Extremamente pobre` se a renda for até 218.0; `Classificacao: Pobre` se for maior que 218.0 e até 660.0; `Classificacao: Nao elegivel` caso contrário.\n\n**Casos de Teste (Amostra):**\n\n| Entrada | Saída | Show |\n|---|---|---|\n| `150.0` | Classificacao: Extremamente pobre | Sim |\n| `450.0` | Classificacao: Pobre | Sim |",
+          "meta": {
+            "tipo": "simulado",
+            "espelha_missao": "missao_2"
+          }
+        },
+        {
+          "titulo": "Simulado 3: variação equivalente — Monitoramento Especial do INPE",
+          "texto_md": "**Treino equivalente à missão 3 do boss.** Mesmo conjunto de habilidades, dados sintéticos diferentes. Use para calibrar tempo e formato antes da maratona oficial.\n\n**O Treino:** O avaliador injeta `desmatamento_ha` (`Float`) e `cobertura_pct` (`Float`). Um município entra em `Monitoramento: ESPECIAL` se o desmatamento for maior que 100 hectares **e** a cobertura florestal restante for menor que 50%. Caso contrário, `Monitoramento: REGULAR`.\n\n**Casos de Teste (Amostra):**\n\n| Entrada | Saída | Show |\n|---|---|---|\n| `150.0`, `35.0` | Monitoramento: ESPECIAL | Sim |\n| `150.0`, `55.0` | Monitoramento: REGULAR | Sim |",
+          "meta": {
+            "tipo": "simulado",
+            "espelha_missao": "missao_3"
+          }
+        },
+        {
+          "titulo": "Simulado 4: variação equivalente — Balança Rodoviária (ANTT)",
+          "texto_md": "**Treino equivalente à missão 4 do boss.** Mesmo conjunto de habilidades, dados sintéticos diferentes. Use para calibrar tempo e formato antes da maratona oficial.\n\n**O Treino:** O avaliador injeta `peso_kg` (`Float`) e `largura_m` (`Float`). A carga é regular somente se `peso_kg <= 45000` **e** `largura_m <= 2.6`. Se estiver regular, imprima `Autorizacao: DISPENSADA`. Se não estiver, imprima `Autorizacao: NECESSARIA`.\n\n**Casos de Teste (Amostra):**\n\n| Entrada | Saída | Show |\n|---|---|---|\n| `40000.0`, `2.5` | Autorizacao: DISPENSADA | Sim |\n| `50000.0`, `2.5` | Autorizacao: NECESSARIA | Sim |",
+          "meta": {
+            "tipo": "simulado",
+            "espelha_missao": "missao_4"
+          }
+        },
+        {
+          "titulo": "Simulado 5: variação equivalente — Sentinela Epidemiológica (Dengue)",
+          "texto_md": "**Treino equivalente à missão 5 do boss.** Mesmo conjunto de habilidades, dados sintéticos diferentes. Use para calibrar tempo e formato antes da maratona oficial.\n\n**O Treino:** O avaliador injeta `incidencia` (`Float`) e `larvitrampas_pct` (`Float`). Classifique:\n- `Nivel: Epidemia` se incidência >= 300 **e** larvitrampas >= 20\n- `Nivel: Alerta` se incidência >= 100 **ou** larvitrampas >= 10\n- `Nivel: Normal` caso contrário\n\n**Casos de Teste (Amostra):**\n\n| Entrada | Saída | Show |\n|---|---|---|\n| `350.0`, `25.0` | Nivel: Epidemia | Sim |\n| `200.0`, `5.0` | Nivel: Alerta | Sim |",
+          "meta": {
+            "tipo": "simulado",
+            "espelha_missao": "missao_5"
+          }
+        }
+      ]
+    },
+    "fechamento": {
+      "titulo": "Encerramento do Labirinto",
+      "reflexao": {
+        "texto_md": "* Quais missões consumiram mais tempo? Identifique gargalos.\n* Em quais formatos de saída houve erro? Revise antes do boss.\n* Marque os tópicos a reler nos `conceitos` correspondentes antes da maratona oficial.\n"
+      }
+    }
+  },
+  "premio": {
+    "pontuacao": 0,
+    "recursos": [
+      "Gabarito disponível após o término do simulado",
+      "Relatório de fraquezas: tópicos a revisar antes do boss"
+    ]
+  },
+  "rpg": {
+    "xp_reward": 80,
+    "variant": "labyrinth-simulation",
+    "oracle_hints": [
+      "Trate este labirinto como o boss real — formato de saída conta.",
+      "Cronometre cada missão para identificar onde perde tempo.",
+      "Se errar duas seguidas, volte aos conceitos antes de prosseguir."
+    ],
+    "enemy_name": "Eco do Boss III",
+    "enemy_hp": 200,
+    "weakness": "preparação prévia",
+    "loot_drops": [
+      {
+        "item": "Mapa do Labirinto",
+        "type": "consumable",
+        "rarity": "uncommon"
+      },
+      {
+        "item": "Pergaminho de Foco",
+        "type": "consumable",
+        "rarity": "common",
+        "quantity": 2
+      }
+    ]
+  }
+}

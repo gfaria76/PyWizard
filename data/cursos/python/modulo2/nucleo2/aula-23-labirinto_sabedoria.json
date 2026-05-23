@@ -1,0 +1,131 @@
+{
+  "id": "python-M02-A23-MS",
+  "curso": "python",
+  "modulo": 2,
+  "aula": 23,
+  "numero": 23,
+  "tipo": "Masmorra",
+  "subtipo": "simulado",
+  "titulo": "Labirinto da Sabedoria II: Simulado antes do Boss",
+  "subtitulo": "Treino individual com questões equivalentes às do boss «Maratona Prática II: O Inspetor do Tempo»",
+  "objetivo": "Oferecer um simulado individual de pré-boss com questões equivalentes às do boss «Maratona Prática II: O Inspetor do Tempo», permitindo calibrar tempo, formato de saída e identificação de pontos fracos antes da avaliação oficial.",
+  "duracao": "1h30",
+  "tags": [
+    "labirinto_sabedoria",
+    "simulado",
+    "pré-boss"
+  ],
+  "secoes": {
+    "abertura": {
+      "introducao": {
+        "texto_md": "# Labirinto da Sabedoria II\n\nEste é um simulado individual antes do boss «Maratona Prática II: O Inspetor do Tempo». As questões aqui são equivalentes às do boss em escopo, formato e dificuldade, mas usam dados sintéticos diferentes. Resultado não conta para a nota final do núcleo; serve como termômetro pessoal e para identificar tópicos a revisar.\n\n**Regras do labirinto:**\n\n* Resolva os aquecimentos primeiro para calibrar formato de saída.\n* Tente todas as missões dentro do tempo estimado do boss.\n* Compare seu resultado com o gabarito e revise antes da maratona oficial.\n"
+      }
+    },
+    "aquecimento": {
+      "titulo": "Aquecimento (sem pontos)",
+      "texto_md": "Calibre leitura de entrada e precisão de saída antes das missões simuladas.",
+      "missoes": [
+        {
+          "titulo": "Aquecimento simulado A: A Gota d'Água",
+          "texto_md": "**O Treino:** A Agência Nacional de Águas (ANA) desconfia que uma fábrica está violando o limite legal de captação hídrica por hora.\n\nO sistema injeta uma lista `consumos` com milhares de valores (`Floats`) representando os litros gastos a cada hora do ano. O limite legal é de `150.0` litros/hora. Percorra todo o histórico. Conte exatamente quantas vezes a fábrica violou o limite (valores estritamente maiores) e some o **volume total excedente** (apenas a quantidade de água que passou acima dos 150.0). Imprima o relatório.\n\n**Casos de Teste (Amostra):**\n\n| Entrada Oculta (`consumos`) | Saída Esperada | Show |\n|---|---|---|\n| [120.5, 160.0, 150.0, 180.2] | Infracoes detectadas: 2<br>Agua roubada: 40.20 L | Sim |\n| [100.0, 149.9] | Infracoes detectadas: 0<br>Agua roubada: 0.00 L | Sim |",
+          "meta": {
+            "tipo": "simulado_warmup",
+            "espelha": "warmup_a"
+          }
+        },
+        {
+          "titulo": "Aquecimento simulado B: O Diário de Bordo",
+          "texto_md": "**O Treino:** O departamento de segurança precisa testar o sistema de indexação temporal da catraca eletrônica.\n\nReceberá uma lista chamada `trabalhadores` (`Strings`) com os nomes de quem entrou no edifício pela ordem cronológica. O sistema precisa encontrar em que exato momento (índice) o trabalhador de nome `\"Inspetor\"` entrou no edifício. Percorra a lista acompanhando a posição. Quando encontrar o \"Inspetor\", guarde a posição, pare o laço (`break`) e imprima o resultado. *(Garantimos que o Inspetor visitou a fábrica).*\n\n**Casos de Teste (Amostra):**\n\n| Entrada Oculta (`trabalhadores`) | Saída Esperada | Show |\n|---|---|---|\n| [\"Ana\", \"Rui\", \"Inspetor\", \"Carlos\"] | Acesso do Inspetor no indice: 2 | Sim |\n| [\"Inspetor\", \"Joao\"] | Acesso do Inspetor no indice: 0 | Sim |",
+          "meta": {
+            "tipo": "simulado_warmup",
+            "espelha": "warmup_b"
+          }
+        }
+      ]
+    },
+    "maratona": {
+      "titulo": "Simulado completo (espelho do boss)",
+      "texto_md": "Cinco missões simuladas, equivalentes às do boss «Maratona Prática II: O Inspetor do Tempo». Mesmas habilidades, dados sintéticos diferentes.",
+      "missoes": [
+        {
+          "titulo": "Simulado 1: variação equivalente — O Ralo Financeiro (Portal da Transparência)",
+          "texto_md": "**Treino equivalente à missão 1 do boss.** Mesmo conjunto de habilidades, dados sintéticos diferentes. Use para calibrar tempo e formato antes da maratona oficial.\n\n**O Treino:** O sindicato está investigando gastos suntuosos através de cartões corporativos de diretores, enquanto a administração alega \"congelamento de salários\". Não nos interessam os cafés ou as passagens normais; queremos auditar o ralo financeiro de luxo.\n\nO avaliador entrega a lista `despesas` (`Floats`). Percorra as dezenas de milhares de faturas. Calcule a soma absoluta APENAS das faturas que ultrapassaram individualmente a marca de `500.00` reais. Para provar que não está adivinhando os números, imprima a quantidade de faturas de luxo detectadas e o montante total desviado.\n\n```mermaid\nstateDiagram-v2\n    [*] --> Aguardando_Fatura\n\n    Aguardando_Fatura --> Calculando_Desvio : recebeu fatura\n    Calculando_Desvio --> Aguardando_Fatura : próxima fatura\n    Calculando_Desvio --> Relatorio_Final : sem mais faturas\n\n    Relatorio_Final --> [*]\n```\n\n**Casos de Teste (Amostra):**\n\n| Entrada | Saída | Show |\n|---|---|---|\n| [12.50, 600.00, 45.00, 1000.00] | Faturas de luxo: 2<br>Desvio total: 1600.00 | Sim |\n| [499.99, 500.00, 10.00] | Faturas de luxo: 0<br>Desvio total: 0.00 | Não |\n| [500.01, 1500.50, 20.0] | Faturas de luxo: 2<br>Desvio total: 2000.51 | Não |",
+          "meta": {
+            "tipo": "simulado",
+            "espelha_missao": "missao_1"
+          }
+        },
+        {
+          "titulo": "Simulado 2: variação equivalente — A Queda de Tensão (ANEEL)",
+          "texto_md": "**Treino equivalente à missão 2 do boss.** Mesmo conjunto de habilidades, dados sintéticos diferentes. Use para calibrar tempo e formato antes da maratona oficial.\n\n**O Treino:** Os equipamentos de suporte de vida num hospital falham não apenas quando a energia vai totalmente abaixo, mas quando ocorre uma \"Queda Brusca\" de um minuto para o imediatamente seguinte.\n\nO sistema fornece a lista `voltagens` (`Floats`). Percorra a linha do tempo utilizando índices (com `range()`). Compare a voltagem do minuto atual com a voltagem do minuto imediatamente anterior. Se o sistema sofreu uma quebra estritamente maior que `15.0` volts de uma só vez (ex: estava em 220.0 e caiu para 200.0 no momento seguinte), registre o evento. Imprima o total de quedas críticas detectadas.\n\n```mermaid\nflowchart TD\n    A[(Sensor de Voltagem)] --> B(Ler dados)\n    B --> C(Processar dados)\n    C --> D(Atualizar registros)\n    D --> E(Próximo ciclo)\n    E --> B\n    E --> F([Exibir resultados])\n\n    style A stroke:#000000,fill:#E1F0D4\n    style C stroke:#000000,fill:#C3EFE0\n    style D stroke:#000000,fill:#C3EFE0\n    style F stroke:#000000,fill:#FFF2CC\n```\n\n**Casos de Teste (Amostra):**\n\n| Entrada | Saída | Show |\n|---|---|---|\n| [220.0, 210.0, 180.0, 180.0, 150.0] | Quedas criticas: 2 | Sim |\n| [220.0, 220.0, 230.0] | Quedas criticas: 0 | Sim |\n| [200.0, 185.0, 170.0, 155.0] | Quedas criticas: 0 | Não |",
+          "meta": {
+            "tipo": "simulado",
+            "espelha_missao": "missao_2"
+          }
+        },
+        {
+          "titulo": "Simulado 3: variação equivalente — O Mapa do Desperdício (Viagens Oficiais)",
+          "texto_md": "**Treino equivalente à missão 3 do boss.** Mesmo conjunto de habilidades, dados sintéticos diferentes. Use para calibrar tempo e formato antes da maratona oficial.\n\n**O Treino:** A auditoria detectou um volume anormal de despesas de viagem. Precisamos auditar a lista `sobras` (`Floats` de valores por evento) para descobrir não apenas o desperdício, mas *quando* ele disparou pela primeira vez.\n\n**A Missão:**\n1. Descubra a média rigorosa de desperdício diário do arquivo inteiro.\n2. Percorra a lista rastreando as coordenadas temporais (o índice de cada dia).\n3. Conte o total de dias cujo desperdício ultrapassou estritamente a média do ano.\n4. Para provar o rastreio, capture o índice (o dia) da **primeira vez absoluta** em que a média foi quebrada no ano. Imprima o total de dias em infração e o índice desse primeiro evento. Se nenhum dia quebrar a média, imprima `Sem quebras`.\n\n**Casos de Teste (Amostra):**\n\n| Entrada | Saída | Show |\n|---|---|---|\n| [10.0, 50.0, 10.0, 90.0] | Dias acima da media: 2<br>Primeira infracao no dia: 1 | Sim |\n| [5.0, 5.0, 5.0, 5.0] | Sem quebras | Sim |\n| [100.0, 0.0, 0.0, 0.0] | Dias acima da media: 1<br>Primeira infracao no dia: 0 | Não |",
+          "meta": {
+            "tipo": "simulado",
+            "espelha_missao": "missao_3"
+          }
+        },
+        {
+          "titulo": "Simulado 4: variação equivalente — A Inflação Silenciosa (IBGE)",
+          "texto_md": "**Treino equivalente à missão 4 do boss.** Mesmo conjunto de habilidades, dados sintéticos diferentes. Use para calibrar tempo e formato antes da maratona oficial.\n\n**O Treino:** O governo declarou que a inflação está controlada porque a soma total do carrinho de compras se manteve. Mas as famílias sentem o contrário nas prateleiras: itens básicos subiram enquanto itens de luxo desceram. Precisamos cruzar dados simultâneos para desmascarar a estatística.\n\nO avaliador injeta duas listas paralelas: `precos_antigos` e `precos_novos` (`Floats`). Use o seu conhecimento de índices para abrir as duas gavetas ao mesmo tempo.\nDescubra quantos produtos individuais ficaram estritamente **mais caros**. Além disso, crie uma lógica interna para descobrir qual foi o **maior aumento absoluto** ocorrido entre todos esses produtos que encareceram.\n\n```mermaid\nflowchart TB\n    A[(Conjunto de Dados)] --> B(Ler elemento)\n    B --> C(Processar informações)\n    C --> D(Atualizar métricas)\n    D --> E{fim}\n    E -- não --> B\n    E -- sim --> F([Resultado final])\n\n    style A stroke:#000000,fill:#E1F0D4\n    style C stroke:#000000,fill:#C3EFE0\n    style D stroke:#000000,fill:#C3EFE0\n    style F stroke:#000000,fill:#FFF2CC\n```\n\n**Casos de Teste (Amostra):**\n\n| Entradas | Saída | Show |\n|---|---|---|\n| Antigos: [10.5, 20.0, 5.0]<br>Novos: [11.0, 19.0, 7.5] | Produtos mais caros: 2<br>Maior aumento registrado: 2.50 | Sim |\n| Antigos: [100.0, 50.0]<br>Novos: [100.0, 45.0] | Produtos mais caros: 0<br>Maior aumento registrado: 0.00 | Sim |\n| Antigos: [1.99, 2.99, 3.99]<br>Novos: [2.00, 3.00, 5.00] | Produtos mais caros: 3<br>Maior aumento registrado: 1.01 | Não |",
+          "meta": {
+            "tipo": "simulado",
+            "espelha_missao": "missao_4"
+          }
+        },
+        {
+          "titulo": "Simulado 5: variação equivalente — O Valor da Proteção Social (Bolsa Família)",
+          "texto_md": "**Treino equivalente à missão 5 do boss.** Mesmo conjunto de habilidades, dados sintéticos diferentes. Use para calibrar tempo e formato antes da maratona oficial.\n\n**O Treino:** Um município pode registrar muitos beneficiários e, ainda assim, apresentar repasse médio insuficiente para garantir proteção social mínima. Vamos auditar esse desequilíbrio com dados reais.\n\nCruze as linhas temporais das listas `beneficiarios` e `pagamentos`. Um período é injusto se `beneficiarios >= 500` e `pagamentos < 300000.0`. Conte as ocorrências e some a diferença para atingir o piso de `300000.0` em cada período injusto. Imprima a quantidade de períodos injustos e a dívida acumulada.\n\n**Casos de Teste (Amostra):**\n\n| Entradas | Saída | Show |\n|---|---|---|\n| Beneficiarios: [400, 700, 1200, 800]<br>Pagamentos: [200000.0, 290000.0, 350000.0, 150000.0] | Periodos injustos: 2<br>Divida acumulada: 160000.00 | Sim |\n| Beneficiarios: [900, 600]<br>Pagamentos: [320000.0, 300000.0] | Periodos injustos: 0<br>Divida acumulada: 0.00 | Sim |\n| Beneficiarios: [500, 499, 1200]<br>Pagamentos: [299999.0, 100000.0, 200000.0] | Periodos injustos: 2<br>Divida acumulada: 100001.00 | Não |",
+          "meta": {
+            "tipo": "simulado",
+            "espelha_missao": "missao_5"
+          }
+        }
+      ]
+    },
+    "fechamento": {
+      "titulo": "Encerramento do Labirinto",
+      "reflexao": {
+        "texto_md": "* Quais missões consumiram mais tempo? Identifique gargalos.\n* Em quais formatos de saída houve erro? Revise antes do boss.\n* Marque os tópicos a reler nos `conceitos` correspondentes antes da maratona oficial.\n"
+      }
+    }
+  },
+  "premio": {
+    "pontuacao": 0,
+    "recursos": [
+      "Gabarito disponível após o término do simulado",
+      "Relatório de fraquezas: tópicos a revisar antes do boss"
+    ]
+  },
+  "rpg": {
+    "xp_reward": 80,
+    "variant": "labyrinth-simulation",
+    "oracle_hints": [
+      "Trate este labirinto como o boss real — formato de saída conta.",
+      "Cronometre cada missão para identificar onde perde tempo.",
+      "Se errar duas seguidas, volte aos conceitos antes de prosseguir."
+    ],
+    "enemy_name": "Eco do Boss II",
+    "enemy_hp": 200,
+    "weakness": "preparação prévia",
+    "loot_drops": [
+      {
+        "item": "Mapa do Labirinto",
+        "type": "consumable",
+        "rarity": "uncommon"
+      },
+      {
+        "item": "Pergaminho de Foco",
+        "type": "consumable",
+        "rarity": "common",
+        "quantity": 2
+      }
+    ]
+  }
+}

@@ -1,0 +1,117 @@
+{
+  "id": "python-M03-A14-MB",
+  "curso": "python",
+  "modulo": 3,
+  "aula": 14,
+  "numero": 14,
+  "tipo": "Masmorra",
+  "subtipo": "boss",
+  "titulo": "Maratona Prática I: A Central de Funções Públicas",
+  "subtitulo": "Organizando regras em blocos reutilizáveis e auditáveis",
+  "objetivo": "Aplicar `def`, parâmetros e `return` para encapsular regras públicas em funções reutilizáveis, legíveis e fáceis de testar.",
+  "duracao": "2h00",
+  "tags": [
+    "boss",
+    "funções",
+    "def",
+    "parâmetros",
+    "return",
+    "reutilização"
+  ],
+  "secoes": {
+    "abertura": {
+      "introducao": {
+        "texto_md": "# A Central de Funções Públicas\n\nNos módulos anteriores, você resolveu muitos problemas escrevendo a lógica inteira no corpo principal do programa. Isso funciona em exercícios curtos, mas falha quando um sistema real precisa repetir a mesma regra centenas de vezes. Um cálculo de tarifa social, uma triagem de risco nutricional ou uma estimativa de repasse precisa existir em um lugar só, com nome claro e comportamento previsível.\n\nNesta maratona, você deixa de ser apenas quem escreve scripts e passa a atuar como quem projeta pequenas APIs internas: funções bem nomeadas, com entrada explícita, retorno auditável e responsabilidade única. O objetivo é provar que você consegue transformar regras públicas em blocos reutilizáveis.\n\n---"
+      }
+    },
+    "aquecimento": {
+      "titulo": "FASE 1: Aquecimento de Sistemas (Warm-up)",
+      "texto_md": "**Tempo estimado:** 15 minutos.\n**Pontuação:** 0 pontos.\n**Objetivo:** calibrar assinatura de função, retorno e formatação antes das missões oficiais.",
+      "missoes": [
+        {
+          "titulo": "Aquecimento A: A Função do Vale-Alimentação",
+          "texto_md": "**O Problema:** Crie uma função `calcular_vale(salario)` que retorne **6%** do salário recebido. Depois, leia `salario`, chame a função e imprima `Desconto: R$ X.XX`.\n\n**Casos de Teste (Amostra):**\n\n| Entrada | Saída | Show |\n|---|---|---|\n| `2000.0` | Desconto: R$ 120.00 | Sim |\n| `1412.0` | Desconto: R$ 84.72 | Sim |",
+          "meta": {
+            "tipo": "warmup",
+            "dataset": "warmup_a"
+          }
+        },
+        {
+          "titulo": "Aquecimento B: A Função de Porte Escolar",
+          "texto_md": "**O Problema:** Crie uma função `classificar_porte(alunos)` que retorne `Pequena` se a escola tiver menos de 200 alunos, `Media` se tiver menos de 800, e `Grande` caso contrário. Leia `alunos`, chame a função e imprima `Porte: X`.\n\n**Casos de Teste (Amostra):**\n\n| Entrada | Saída | Show |\n|---|---|---|\n| `120` | Porte: Pequena | Sim |\n| `1200` | Porte: Grande | Sim |",
+          "meta": {
+            "tipo": "warmup",
+            "dataset": "warmup_b"
+          }
+        }
+      ]
+    },
+    "maratona": {
+      "titulo": "FASE 2: A Maratona (Missões Oficiais)",
+      "texto_md": "**Tempo estimado:** 1h45m.\n**Status:** Avaliação ativa.\n**Instruções:** em todas as missões, o avaliador espera uma função com o nome indicado no enunciado. Escreva a função, use `return` e depois produza a saída final exatamente como solicitado.",
+      "missoes": [
+        {
+          "titulo": "Missão 1: Tarifa Social de Energia",
+          "texto_md": "**O Problema:** Crie uma função `calcular_tarifa_social(consumo_kwh, tarifa_base)` que retorne o valor final a pagar com desconto: até 30 kWh → 65% de desconto; até 100 kWh → 40%; acima disso → sem desconto. Depois, leia `consumo_kwh` e `tarifa_base`, chame a função e imprima `Conta final: R$ X.XX`.\n\n**Casos de Teste (Amostra):**\n\n| Entrada | Saída | Show |\n|---|---|---|\n| `25`, `80.0` | Conta final: R$ 28.00 | Sim |\n| `60`, `120.0` | Conta final: R$ 72.00 | Sim |",
+          "meta": {
+            "tipo": "maratona",
+            "dataset": "missao_1"
+          }
+        },
+        {
+          "titulo": "Missão 2: Índice de Lotação Hospitalar",
+          "texto_md": "**O Problema:** Crie uma função `classificar_lotacao(leitos_ocupados, leitos_totais)` que retorne `Critica` se a ocupação for maior ou igual a 95%, `Alerta` se for maior ou igual a 80%, e `Estavel` caso contrário. Depois, imprima duas linhas:\n\n`Ocupacao: X.X%`\n`Status: X`\n\n**Casos de Teste (Amostra):**\n\n| Entrada | Saída | Show |\n|---|---|---|\n| `95`, `100` | Ocupacao: 95.0%<br>Status: Critica | Sim |\n| `64`, `80` | Ocupacao: 80.0%<br>Status: Alerta | Sim |",
+          "meta": {
+            "tipo": "maratona",
+            "dataset": "missao_2"
+          }
+        },
+        {
+          "titulo": "Missão 3: Repasse do Transporte Escolar",
+          "texto_md": "**O Problema:** Crie uma função `calcular_repasse(alunos, valor_por_aluno, meses)` que retorne dois valores: o valor mensal e o valor anual do repasse. Depois, imprima:\n\n`Mensal: R$ X.XX`\n`Anual: R$ X.XX`\n\n**Casos de Teste (Amostra):**\n\n| Entrada | Saída | Show |\n|---|---|---|\n| `300`, `42.5`, `10` | Mensal: R$ 12750.00<br>Anual: R$ 127500.00 | Sim |\n| `120`, `38.0`, `12` | Mensal: R$ 4560.00<br>Anual: R$ 54720.00 | Sim |",
+          "meta": {
+            "tipo": "maratona",
+            "dataset": "missao_3"
+          }
+        },
+        {
+          "titulo": "Missão 4: Elegibilidade para Cesta Emergencial",
+          "texto_md": "**O Problema:** Crie uma função `avaliar_cesta(renda_per_capita, criancas, idoso)` que retorne `Aprovada` se a renda for até 218.0 **ou** se a renda for até 350.0 e a família tiver pelo menos 2 crianças **ou** 1 idoso. Caso contrário, retorne `Negada`. Leia as três variáveis e imprima `Solicitacao: X`.\n\n**Casos de Teste (Amostra):**\n\n| Entrada | Saída | Show |\n|---|---|---|\n| `180.0`, `0`, `0` | Solicitacao: Aprovada | Sim |\n| `300.0`, `2`, `0` | Solicitacao: Aprovada | Sim |\n| `500.0`, `3`, `1` | Solicitacao: Negada | Não |",
+          "meta": {
+            "tipo": "maratona",
+            "dataset": "missao_4"
+          }
+        },
+        {
+          "titulo": "Missão 5: Boletim de Impacto Orçamentário",
+          "texto_md": "**O Problema:** Crie uma função `analisar_orcamento(previsto, executado)` que retorne três valores: valor não executado, taxa de execução e classificação (`Excelente` se taxa >= 95, `Boa` se taxa >= 80, `Critica` caso contrário). Depois, imprima:\n\n`Nao executado: R$ X.XX`\n`Taxa: X.X%`\n`Classificacao: X`\n\n**Casos de Teste (Amostra):**\n\n| Entrada | Saída | Show |\n|---|---|---|\n| `1000000.0`, `980000.0` | Nao executado: R$ 20000.00<br>Taxa: 98.0%<br>Classificacao: Excelente | Sim |\n| `500000.0`, `390000.0` | Nao executado: R$ 110000.00<br>Taxa: 78.0%<br>Classificacao: Critica | Sim |",
+          "meta": {
+            "tipo": "maratona",
+            "dataset": "missao_5"
+          }
+        }
+      ]
+    },
+    "backend": {
+      "titulo": "Atenção IA de Backend / Sistema Gerenciador:",
+      "texto_md": "Gerar no mínimo 10 casos por missão, cobrindo assinaturas corretas, retornos múltiplos e limiares de classificação.\n\n### Warmup A\n* Função esperada: `calcular_vale(salario)`\n* Gabarito: retornar `salario * 0.06`.\n\n### Warmup B\n* Função esperada: `classificar_porte(alunos)`\n* Gabarito: três faixas exclusivas.\n\n### Missão 1\n* Função esperada: `calcular_tarifa_social(consumo_kwh, tarifa_base)`\n* Gabarito: desconto por faixa de consumo.\n\n### Missão 2\n* Função esperada: `classificar_lotacao(leitos_ocupados, leitos_totais)`\n* Gabarito: calcular ocupação = `leitos_ocupados / leitos_totais`; retornar classificação.\n\n### Missão 3\n* Função esperada: `calcular_repasse(alunos, valor_por_aluno, meses)`\n* Gabarito: retorno de tupla `(mensal, anual)`.\n\n### Missão 4\n* Função esperada: `avaliar_cesta(renda_per_capita, criancas, idoso)`\n* Gabarito: regra composta com `or` e `and`.\n\n### Missão 5\n* Função esperada: `analisar_orcamento(previsto, executado)`\n* Gabarito: retorno triplo `(nao_executado, taxa, classificacao)`."
+    }
+  },
+  "premio": {
+    "pontuacao": 100,
+    "superpower_reward": "api-interna",
+    "recursos": [
+      "Comprar tempo: 3x5min (10 Moedas)",
+      "Comprar dica IA: 3 consultas (10 Moedas)"
+    ],
+    "testes_ocultos": {
+      "warmup_a": "/api/datasets/vale_alimentacao_funcao.json",
+      "warmup_b": "/api/datasets/porte_escolar_funcao.json",
+      "missao_1": "/api/datasets/tarifa_social_funcao.json",
+      "missao_2": "/api/datasets/lotacao_hospitalar_funcao.json",
+      "missao_3": "/api/datasets/repasse_transporte_escolar_funcao.json",
+      "missao_4": "/api/datasets/cesta_emergencial_funcao.json",
+      "missao_5": "/api/datasets/orcamento_classificacao_funcao.json"
+    }
+  }
+}

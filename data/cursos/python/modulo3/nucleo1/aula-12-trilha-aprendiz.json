@@ -1,0 +1,63 @@
+{
+  "id": "python-M03-A12-TA",
+  "curso": "python",
+  "modulo": 3,
+  "aula": 12,
+  "numero": 12,
+  "tipo": "Trilha",
+  "subtipo": "aprendiz",
+  "titulo": "Trilha do Aprendiz II: Runas do Return",
+  "subtitulo": "5 desafios em sala sobre parâmetros e retorno",
+  "objetivo": "Consolidar em sala o conteúdo de Parâmetros e Retornos.",
+  "duracao": "30min",
+  "tags": [
+    "trilha-aprendiz",
+    "parâmetros e retorno"
+  ],
+  "secoes": {
+    "abertura": {
+      "introducao": {
+        "texto_md": "# Trilha do Aprendiz II: Runas do Return\n\nEsta trilha em sala transforma o conteúdo de **Parâmetros e Retornos** em cinco desafios de prática imediata."
+      }
+    },
+    "preparacao": {
+      "titulo": "Preparação da trilha",
+      "texto_md": "* releia o conceito antes de começar;\n* avance do mais simples ao mais exigente;\n* confira o formato de saída."
+    },
+    "desafios": {
+      "titulo": "Cinco desafios da trilha",
+      "texto_md": "Cinco desafios em sala para consolidar parâmetros e retorno.",
+      "missoes": [
+        {
+          "titulo": "Retorno da Soma",
+          "texto_md": "**O Problema:** Crie `somar(a, b)` que retorne a soma. Imprima `somar(3, 4)`.\n\n**Casos de Teste (Amostra):**\n\n| Entrada | Saída | Show |\n|---|---|---|\n| sem entrada | 7 | Sim |"
+        },
+        {
+          "titulo": "Maior Valor",
+          "texto_md": "**O Problema:** Crie `maior(a, b)` que retorne o maior entre os dois.\n\n**Casos de Teste (Amostra):**\n\n| Entrada | Saída | Show |\n|---|---|---|\n| sem entrada | 9 | Sim |"
+        },
+        {
+          "titulo": "Mensagem Personalizada",
+          "texto_md": "**O Problema:** Crie `saudar(nome)` que retorne `Olá, nome`.\n\n**Casos de Teste (Amostra):**\n\n| Entrada | Saída | Show |\n|---|---|---|\n| sem entrada | Olá, Lia | Não |"
+        },
+        {
+          "titulo": "Par ou Ímpar Modular",
+          "texto_md": "**O Problema:** Crie `paridade(n)` que retorne `Par` ou `Impar`.\n\n**Casos de Teste (Amostra):**\n\n| Entrada | Saída | Show |\n|---|---|---|\n| sem entrada | Par | Não |"
+        },
+        {
+          "titulo": "Desconto Modular",
+          "texto_md": "**O Problema:** Crie `desconto(valor, abatimento)` que retorne o valor final.\n\n**Casos de Teste (Amostra):**\n\n| Entrada | Saída | Show |\n|---|---|---|\n| sem entrada | 42.0 | Não |"
+        }
+      ]
+    },
+    "fechamento": {
+      "titulo": "Fechamento da Trilha",
+      "reflexao": {
+        "texto_md": "Resolver em sala ajuda a transformar explicação em confiança prática."
+      }
+    }
+  },
+  "premio": {
+    "pontuacao": 70
+  }
+}

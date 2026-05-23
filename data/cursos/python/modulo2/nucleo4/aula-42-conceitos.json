@@ -1,0 +1,94 @@
+{
+  "id": "python-M02-A42-CT",
+  "curso": "python",
+  "modulo": 2,
+  "aula": 42,
+  "numero": 42,
+  "tipo": "Aula",
+  "subtipo": "conceito",
+  "titulo": "Matrizes: índices e precisão",
+  "subtitulo": "Encontrando a coordenada exata do problema",
+  "objetivo": "Utilizar `enumerate()` em matrizes para identificar a posição (linha, coluna) de um valor e processar a matriz linha a linha (média, total, busca).",
+  "duracao": "1h30",
+  "tags": [
+    "matriz",
+    "enumerate aninhado",
+    "índices"
+  ],
+  "secoes": {
+    "abertura": {
+      "objetivo": {
+        "texto_md": "Na aula anterior aprendemos a percorrer toda a matriz para encontrar totais globais. Mas saber que \"perdemos dinheiro este mês\" não basta — precisamos saber **exatamente em que semana e em que dia** isso aconteceu. Nesta aula você vai usar `enumerate()` aninhado para rastrear coordenadas e processar a matriz **linha a linha**."
+      },
+      "retomada": {
+        "texto_md": "**O que você já sabe e vai usar hoje:**\n\n* `for` aninhado para matrizes (Aula 4.1).\n* `enumerate(lista)` devolvendo `(índice, valor)` (Aula 2.2).\n* Média = `sum(lista) / len(lista)` (Aula 1.2)."
+      },
+      "situacao": {
+        "texto_md": "Um analista de armazém encontrou um registro 0 (falha de produção) no mês. O código diz \"erro detectado!\" mas não diz **onde**. O gerente pergunta: \"em que dia, em que prateleira?\". Sem coordenadas, é hora de imprimir 500 linhas e procurar à mão. Saber *o que* aconteceu é bom; saber *onde* é o que resolve.",
+        "titulo": "O problema do erro sem endereço"
+      },
+      "problematizacao": {
+        "texto_md": "* O que acontece com nossa capacidade de intervir quando temos os dados, mas perdemos as coordenadas de onde as falhas estão a ocorrer?\n* Como a adoção de índices (`i` e `j`) transforma um programa \"que lê dados\" numa ferramenta de auditoria rastreável?"
+      }
+    },
+    "conceito": {
+      "titulo": "Conceito técnico",
+      "texto_md": "Quando precisamos saber a **posição** dentro de uma matriz, combinamos dois `enumerate`: um para a linha, outro para a coluna.\n\n```python\nfor i, linha in enumerate(matriz):\n    for j, valor in enumerate(linha):\n        # i = índice da linha\n        # j = índice da coluna\n        # valor = matriz[i][j]\n        ...\n```\n\nIsso dá um \"GPS duplo\": para cada valor, conhecemos `(i, j)`.\n\n**Resumir uma matriz linha a linha:** quando queremos um total ou uma média **por linha** (e não para a matriz toda), o acumulador deve ser **criado/reiniciado dentro do laço externo** (antes do laço interno).\n\n```python\nfor i, linha in enumerate(matriz):\n    soma = 0                # zera para cada linha\n    for v in linha:\n        soma += v\n    print(f\"Linha {i}: {soma}\")\n```\n\nUm atalho elegante quando não precisamos das colunas individualmente é usar `sum(linha)` direto:\n\n```python\nfor i, linha in enumerate(matriz):\n    print(f\"Linha {i}: {sum(linha)}\")\n```",
+      "exemplos": [
+        {
+          "titulo": "1) enumerate aninhado: descobrindo coordenadas",
+          "texto_md": "Imprime cada valor da matriz com sua linha e coluna.",
+          "python": "tabela = [\n    [20, 22],\n    [18, 15],\n]\n\nfor i, linha in enumerate(tabela):\n    for j, valor in enumerate(linha):\n        print(f\"Linha {i}, Coluna {j}: {valor}\")"
+        },
+        {
+          "titulo": "2) Total por linha (acumulador reiniciado)",
+          "texto_md": "Calcula o total de vendas de cada semana, isoladamente.",
+          "python": "vendas = [\n    [10, 20, 30],  # semana 0\n    [5, 5, 5],     # semana 1\n]\n\nfor i, semana in enumerate(vendas):\n    total = 0\n    for v in semana:\n        total += v\n    print(f\"Semana {i}: total {total}\")"
+        },
+        {
+          "titulo": "3) Mesmo efeito com sum(linha)",
+          "texto_md": "Quando não precisamos do índice de coluna, `sum(linha)` é mais limpo.",
+          "python": "vendas = [\n    [10, 20, 30],\n    [5, 5, 5],\n]\n\nfor i, semana in enumerate(vendas):\n    print(f\"Semana {i}: total {sum(semana)}\")"
+        }
+      ]
+    },
+    "pratica_guiada": {
+      "titulo": "Prática guiada",
+      "texto_md": "Vamos praticar coordenadas e processamento por linha em três passos.",
+      "exemplos": [
+        {
+          "titulo": "Passo 1 — Rastrear coordenadas com enumerate duplo",
+          "texto_md": "Encontrar e relatar todas as ocorrências do valor `0` (falha de produção).",
+          "python": "producao = [\n    [100, 100, 100],\n    [100,   0, 100],\n    [100, 100, 100],\n]\n\nfalhas = 0\nfor i, semana in enumerate(producao):\n    for j, qtd in enumerate(semana):\n        if qtd == 0:\n            print(f\"ALERTA: falha na linha {i}, coluna {j}\")\n            falhas += 1\n\nprint(f\"Total de falhas: {falhas}\")"
+        },
+        {
+          "titulo": "Passo 2 — Média por linha",
+          "texto_md": "Imprime a média de cada linha com `sum` e `len` aplicados à linha.",
+          "python": "notas = [\n    [10, 20],\n    [30, 40],\n]\n\nfor i, linha in enumerate(notas):\n    media = sum(linha) / len(linha)\n    print(f\"Linha {i}: {media}\")"
+        },
+        {
+          "titulo": "Passo 3 — Encontrar a linha de maior total",
+          "texto_md": "Combina enumerate (para saber o índice da linha vencedora) com `sum(linha)`.",
+          "python": "vendas = [\n    [10, 20, 30],\n    [50, 5, 5],\n    [20, 20, 20],\n]\n\nmelhor_idx = 0\nmelhor_total = sum(vendas[0])\n\nfor i, semana in enumerate(vendas):\n    total = sum(semana)\n    if total > melhor_total:\n        melhor_total = total\n        melhor_idx = i\n\nprint(f\"Melhor semana: {melhor_idx} (total {melhor_total})\")"
+        }
+      ]
+    },
+    "pratica_autonoma": {
+      "titulo": "Exercício de Continuação (Sua vez!)",
+      "texto_md": "**Enunciado:** O sistema recebe uma matriz de inteiros. Percorra as linhas e calcule a média de cada linha usando `sum(linha)` e `len(linha)`. Imprima `Linha X: Y` para cada linha (a média deve aparecer como número de ponto flutuante).\n\n**Entradas e Saídas (Autocorreção):**\n\n| Entrada | Saída |\n|---|---|\n| [[10, 20], [30, 40]] | Linha 0: 15.0<br>Linha 1: 35.0 |\n| [[5, 5], [10, 10]] | Linha 0: 5.0<br>Linha 1: 10.0 |"
+    },
+    "fechamento": {
+      "titulo": "Fechamento e Autoavaliação",
+      "quiz": {
+        "texto_md": "**1. Por que usamos `enumerate()` no laço externo E no interno ao percorrer uma matriz?**\nA) Para tornar o código complexo.\nB) Para capturar tanto o índice da linha (`i`) quanto o da coluna (`j`), sabendo as coordenadas exatas do valor.\nC) Apenas para converter números em texto.\n\n::details{summary=\"Ver a resposta correta\"}\n**Correto: B.** Num mundo a duas dimensões, precisamos de um GPS duplo: \"linha X, coluna Y\".\n::\n\n**2. Quando queremos um total/média **por linha** da matriz, onde colocar o acumulador?**\nA) Fora de todos os laços, na primeira linha do programa.\nB) Logo após o primeiro `for` (antes do segundo), para que a soma reinicie a cada linha.\nC) Dentro do segundo `for`.\n\n::details{summary=\"Ver a resposta correta\"}\n**Correto: B.** Zerar o acumulador ao abrir cada linha garante que contamos apenas o que está nessa linha.\n::\n\n**3. Se construirmos uma lista secundária com as somas de cada linha da matriz, qual é o ganho?**\nA) Podemos apagar a matriz original sem perder dados.\nB) O programa exporta para Excel automaticamente.\nC) Podemos percorrer essa nova lista com facilidade (já é unidimensional) e comparar semanas entre si sem reabrir a matriz.\n\n::details{summary=\"Ver a resposta correta\"}\n**Correto: C.** Simplificar dimensões: reduzir uma matriz a uma lista de totais é uma das táticas de análise mais úteis.\n::"
+      },
+      "leitura_complementar": {
+        "texto_md": "* **Documentação Oficial:** Veja como bibliotecas de Data Science (NumPy, Pandas) evitam o `for` aninhado manual usando operações sobre vetores inteiros.\n* **Prática Diária:** Pense na disposição de um supermercado: corredor é a linha `i`; prateleira é a coluna `j`. Como escreveria as coordenadas para encontrar o azeite mais barato?"
+      },
+      "reflexao": {
+        "texto_md": "* A precisão é a arma de quem quer justiça. Saber que um erro aconteceu não permite cobrar; saber que aconteceu \"na linha 2, coluna 4\" retira qualquer argumento contrário. Dominar coordenadas devolve a capacidade de não aceitar respostas genéricas."
+      }
+    }
+  },
+  "premio": null
+}

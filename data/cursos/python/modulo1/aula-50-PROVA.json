@@ -1,0 +1,338 @@
+{
+  "id": "python-M01-A50-MP",
+  "curso": "python",
+  "modulo": 1,
+  "aula": 50,
+  "numero": 50,
+  "tipo": "Masmorra",
+  "subtipo": "prova",
+  "titulo": "Prova do Módulo I: O Analista Regulatório",
+  "subtitulo": "Variáveis, matemática, formatação e lógica condicional em dados públicos",
+  "objetivo": "Avaliar a autonomia do estudante nos conteúdos do Módulo I por meio de uma prova com banco de 20 questões e sorteio editorial de 5 por tentativa.",
+  "duracao": "1h30",
+  "tags": [
+    "prova",
+    "variáveis",
+    "operações matemáticas",
+    "f-strings",
+    "condicionais",
+    "divisão inteira",
+    "módulo"
+  ],
+  "secoes": {
+    "abertura": {
+      "introducao": {
+        "texto_md": "# Prova Final do Módulo I\n\nVocê concluiu o primeiro ciclo de formação e agora precisa demonstrar que consegue transformar regras simples em sistemas confiáveis. Esta prova simula situações reais de atendimento, triagem, cobrança e regulação em serviços públicos brasileiros. Aqui não basta \"ter entendido a ideia\" é preciso calcular corretamente, formatar bem a saída e respeitar exatamente os critérios institucionais descritos no enunciado.\n\n**Regras:**\n- Todas as questões possuem autocorreção automática.\n- Use apenas os conceitos estudados no Módulo I.\n- Não use listas, laços nem `def`.\n- Leia os formatos de saída com atenção total: uma palavra errada pode invalidar a submissão.\n\n---"
+      }
+    },
+    "questoes": {
+      "titulo": "Banco de Questões da Prova",
+      "texto_md": "A prova final trabalha com **20 questões no banco**. A aplicação deve sortear **5 questões** em equilíbrio editorial, com **3 médias + 2 difíceis** e no mínimo **5 variações equivalentes** entre combinações possíveis.",
+      "banco_questoes": [
+        {
+          "titulo": "Questão 1 — Auxílio-Transporte",
+          "texto_md": "**O Problema:** Resolva um problema do módulo 1 envolvendo os conteúdos já estudados. Esta questão pertence ao banco de 20 e pode ser sorteada para compor a prova final.\n\n**Casos de Teste (Amostra):**\n\n| Entrada | Saída | Show |\n|---|---|---|\n| caso de amostra | saida correta | Sim |\n| caso extra | saida correta | Não |",
+          "meta": {
+            "tipo": "banco-questoes",
+            "questao": "questao_1",
+            "pontos": "20",
+            "dificuldade": "media",
+            "variacoesEquivalentesMinimas": 5,
+            "sorteioEquilibrado": true
+          }
+        },
+        {
+          "titulo": "Questão 2 — Teste de Mesa do CadÚnico",
+          "texto_md": "**O Problema:** Resolva um problema do módulo 1 envolvendo os conteúdos já estudados. Esta questão pertence ao banco de 20 e pode ser sorteada para compor a prova final.\n\n**Casos de Teste (Amostra):**\n\n| Entrada | Saída | Show |\n|---|---|---|\n| caso de amostra | saida correta | Sim |\n| caso extra | saida correta | Não |",
+          "meta": {
+            "tipo": "banco-questoes",
+            "questao": "questao_2",
+            "pontos": "20",
+            "dificuldade": "media",
+            "variacoesEquivalentesMinimas": 5,
+            "sorteioEquilibrado": true
+          }
+        },
+        {
+          "titulo": "Questão 3 — Bug da Escala de Plantão",
+          "texto_md": "**O Problema:** Resolva um problema do módulo 1 envolvendo os conteúdos já estudados. Esta questão pertence ao banco de 20 e pode ser sorteada para compor a prova final.\n\n**Casos de Teste (Amostra):**\n\n| Entrada | Saída | Show |\n|---|---|---|\n| caso de amostra | saida correta | Sim |\n| caso extra | saida correta | Não |",
+          "meta": {
+            "tipo": "banco-questoes",
+            "questao": "questao_3",
+            "pontos": "20",
+            "dificuldade": "media",
+            "variacoesEquivalentesMinimas": 5,
+            "sorteioEquilibrado": true
+          }
+        },
+        {
+          "titulo": "Questão 4 — Classificação Tarifária da Água",
+          "texto_md": "**O Problema:** Resolva um problema do módulo 1 envolvendo os conteúdos já estudados. Esta questão pertence ao banco de 20 e pode ser sorteada para compor a prova final.\n\n**Casos de Teste (Amostra):**\n\n| Entrada | Saída | Show |\n|---|---|---|\n| caso de amostra | saida correta | Sim |\n| caso extra | saida correta | Não |",
+          "meta": {
+            "tipo": "banco-questoes",
+            "questao": "questao_4",
+            "pontos": "20",
+            "dificuldade": "media",
+            "variacoesEquivalentesMinimas": 5,
+            "sorteioEquilibrado": true
+          }
+        },
+        {
+          "titulo": "Questão 5 — Risco Habitacional",
+          "texto_md": "**O Problema:** Resolva um problema do módulo 1 envolvendo os conteúdos já estudados. Esta questão pertence ao banco de 20 e pode ser sorteada para compor a prova final.\n\n**Casos de Teste (Amostra):**\n\n| Entrada | Saída | Show |\n|---|---|---|\n| caso de amostra | saida correta | Sim |\n| caso extra | saida correta | Não |",
+          "meta": {
+            "tipo": "banco-questoes",
+            "questao": "questao_5",
+            "pontos": "20",
+            "dificuldade": "media",
+            "variacoesEquivalentesMinimas": 5,
+            "sorteioEquilibrado": true
+          }
+        },
+        {
+          "titulo": "Questão 6 — Elegibilidade de Bolsa",
+          "texto_md": "**O Problema:** Resolva um problema do módulo 1 envolvendo os conteúdos já estudados. Esta questão pertence ao banco de 20 e pode ser sorteada para compor a prova final.\n\n**Casos de Teste (Amostra):**\n\n| Entrada | Saída | Show |\n|---|---|---|\n| caso de amostra | saida correta | Sim |\n| caso extra | saida correta | Não |",
+          "meta": {
+            "tipo": "banco-questoes",
+            "questao": "questao_6",
+            "pontos": "20",
+            "dificuldade": "media",
+            "variacoesEquivalentesMinimas": 5,
+            "sorteioEquilibrado": true
+          }
+        },
+        {
+          "titulo": "Questão 7 — Painel de Frequência Escolar",
+          "texto_md": "**O Problema:** Resolva um problema do módulo 1 envolvendo os conteúdos já estudados. Esta questão pertence ao banco de 20 e pode ser sorteada para compor a prova final.\n\n**Casos de Teste (Amostra):**\n\n| Entrada | Saída | Show |\n|---|---|---|\n| caso de amostra | saida correta | Sim |\n| caso extra | saida correta | Não |",
+          "meta": {
+            "tipo": "banco-questoes",
+            "questao": "questao_7",
+            "pontos": "20",
+            "dificuldade": "media",
+            "variacoesEquivalentesMinimas": 5,
+            "sorteioEquilibrado": true
+          }
+        },
+        {
+          "titulo": "Questão 8 — Faixa de Consumo de Energia",
+          "texto_md": "**O Problema:** Resolva um problema do módulo 1 envolvendo os conteúdos já estudados. Esta questão pertence ao banco de 20 e pode ser sorteada para compor a prova final.\n\n**Casos de Teste (Amostra):**\n\n| Entrada | Saída | Show |\n|---|---|---|\n| caso de amostra | saida correta | Sim |\n| caso extra | saida correta | Não |",
+          "meta": {
+            "tipo": "banco-questoes",
+            "questao": "questao_8",
+            "pontos": "20",
+            "dificuldade": "media",
+            "variacoesEquivalentesMinimas": 5,
+            "sorteioEquilibrado": true
+          }
+        },
+        {
+          "titulo": "Questão 9 — Cálculo de Kits Emergenciais",
+          "texto_md": "**O Problema:** Resolva um problema do módulo 1 envolvendo os conteúdos já estudados. Esta questão pertence ao banco de 20 e pode ser sorteada para compor a prova final.\n\n**Casos de Teste (Amostra):**\n\n| Entrada | Saída | Show |\n|---|---|---|\n| caso de amostra | saida correta | Sim |\n| caso extra | saida correta | Não |",
+          "meta": {
+            "tipo": "banco-questoes",
+            "questao": "questao_9",
+            "pontos": "20",
+            "dificuldade": "media",
+            "variacoesEquivalentesMinimas": 5,
+            "sorteioEquilibrado": true
+          }
+        },
+        {
+          "titulo": "Questão 10 — Triagem de Atendimento",
+          "texto_md": "**O Problema:** Resolva um problema do módulo 1 envolvendo os conteúdos já estudados. Esta questão pertence ao banco de 20 e pode ser sorteada para compor a prova final.\n\n**Casos de Teste (Amostra):**\n\n| Entrada | Saída | Show |\n|---|---|---|\n| caso de amostra | saida correta | Sim |\n| caso extra | saida correta | Não |",
+          "meta": {
+            "tipo": "banco-questoes",
+            "questao": "questao_10",
+            "pontos": "20",
+            "dificuldade": "media",
+            "variacoesEquivalentesMinimas": 5,
+            "sorteioEquilibrado": true
+          }
+        },
+        {
+          "titulo": "Questão 11 — Relatório de Holerite",
+          "texto_md": "**O Problema:** Resolva um problema do módulo 1 envolvendo os conteúdos já estudados. Esta questão pertence ao banco de 20 e pode ser sorteada para compor a prova final.\n\n**Casos de Teste (Amostra):**\n\n| Entrada | Saída | Show |\n|---|---|---|\n| caso de amostra | saida correta | Sim |\n| caso extra | saida correta | Não |",
+          "meta": {
+            "tipo": "banco-questoes",
+            "questao": "questao_11",
+            "pontos": "20",
+            "dificuldade": "dificil",
+            "variacoesEquivalentesMinimas": 5,
+            "sorteioEquilibrado": true
+          }
+        },
+        {
+          "titulo": "Questão 12 — Classificação de Chuva",
+          "texto_md": "**O Problema:** Resolva um problema do módulo 1 envolvendo os conteúdos já estudados. Esta questão pertence ao banco de 20 e pode ser sorteada para compor a prova final.\n\n**Casos de Teste (Amostra):**\n\n| Entrada | Saída | Show |\n|---|---|---|\n| caso de amostra | saida correta | Sim |\n| caso extra | saida correta | Não |",
+          "meta": {
+            "tipo": "banco-questoes",
+            "questao": "questao_12",
+            "pontos": "20",
+            "dificuldade": "dificil",
+            "variacoesEquivalentesMinimas": 5,
+            "sorteioEquilibrado": true
+          }
+        },
+        {
+          "titulo": "Questão 13 — Fiscalização de Estoque",
+          "texto_md": "**O Problema:** Resolva um problema do módulo 1 envolvendo os conteúdos já estudados. Esta questão pertence ao banco de 20 e pode ser sorteada para compor a prova final.\n\n**Casos de Teste (Amostra):**\n\n| Entrada | Saída | Show |\n|---|---|---|\n| caso de amostra | saida correta | Sim |\n| caso extra | saida correta | Não |",
+          "meta": {
+            "tipo": "banco-questoes",
+            "questao": "questao_13",
+            "pontos": "20",
+            "dificuldade": "dificil",
+            "variacoesEquivalentesMinimas": 5,
+            "sorteioEquilibrado": true
+          }
+        },
+        {
+          "titulo": "Questão 14 — Controle de Presença",
+          "texto_md": "**O Problema:** Resolva um problema do módulo 1 envolvendo os conteúdos já estudados. Esta questão pertence ao banco de 20 e pode ser sorteada para compor a prova final.\n\n**Casos de Teste (Amostra):**\n\n| Entrada | Saída | Show |\n|---|---|---|\n| caso de amostra | saida correta | Sim |\n| caso extra | saida correta | Não |",
+          "meta": {
+            "tipo": "banco-questoes",
+            "questao": "questao_14",
+            "pontos": "20",
+            "dificuldade": "dificil",
+            "variacoesEquivalentesMinimas": 5,
+            "sorteioEquilibrado": true
+          }
+        },
+        {
+          "titulo": "Questão 15 — Tarifa de Ônibus",
+          "texto_md": "**O Problema:** Resolva um problema do módulo 1 envolvendo os conteúdos já estudados. Esta questão pertence ao banco de 20 e pode ser sorteada para compor a prova final.\n\n**Casos de Teste (Amostra):**\n\n| Entrada | Saída | Show |\n|---|---|---|\n| caso de amostra | saida correta | Sim |\n| caso extra | saida correta | Não |",
+          "meta": {
+            "tipo": "banco-questoes",
+            "questao": "questao_15",
+            "pontos": "20",
+            "dificuldade": "dificil",
+            "variacoesEquivalentesMinimas": 5,
+            "sorteioEquilibrado": true
+          }
+        },
+        {
+          "titulo": "Questão 16 — Faixa de IMC",
+          "texto_md": "**O Problema:** Resolva um problema do módulo 1 envolvendo os conteúdos já estudados. Esta questão pertence ao banco de 20 e pode ser sorteada para compor a prova final.\n\n**Casos de Teste (Amostra):**\n\n| Entrada | Saída | Show |\n|---|---|---|\n| caso de amostra | saida correta | Sim |\n| caso extra | saida correta | Não |",
+          "meta": {
+            "tipo": "banco-questoes",
+            "questao": "questao_16",
+            "pontos": "20",
+            "dificuldade": "dificil",
+            "variacoesEquivalentesMinimas": 5,
+            "sorteioEquilibrado": true
+          }
+        },
+        {
+          "titulo": "Questão 17 — Distribuição de Cestas",
+          "texto_md": "**O Problema:** Resolva um problema do módulo 1 envolvendo os conteúdos já estudados. Esta questão pertence ao banco de 20 e pode ser sorteada para compor a prova final.\n\n**Casos de Teste (Amostra):**\n\n| Entrada | Saída | Show |\n|---|---|---|\n| caso de amostra | saida correta | Sim |\n| caso extra | saida correta | Não |",
+          "meta": {
+            "tipo": "banco-questoes",
+            "questao": "questao_17",
+            "pontos": "20",
+            "dificuldade": "dificil",
+            "variacoesEquivalentesMinimas": 5,
+            "sorteioEquilibrado": true
+          }
+        },
+        {
+          "titulo": "Questão 18 — Classificação de Senha",
+          "texto_md": "**O Problema:** Resolva um problema do módulo 1 envolvendo os conteúdos já estudados. Esta questão pertence ao banco de 20 e pode ser sorteada para compor a prova final.\n\n**Casos de Teste (Amostra):**\n\n| Entrada | Saída | Show |\n|---|---|---|\n| caso de amostra | saida correta | Sim |\n| caso extra | saida correta | Não |",
+          "meta": {
+            "tipo": "banco-questoes",
+            "questao": "questao_18",
+            "pontos": "20",
+            "dificuldade": "dificil",
+            "variacoesEquivalentesMinimas": 5,
+            "sorteioEquilibrado": true
+          }
+        },
+        {
+          "titulo": "Questão 19 — Verificação de Documentos",
+          "texto_md": "**O Problema:** Resolva um problema do módulo 1 envolvendo os conteúdos já estudados. Esta questão pertence ao banco de 20 e pode ser sorteada para compor a prova final.\n\n**Casos de Teste (Amostra):**\n\n| Entrada | Saída | Show |\n|---|---|---|\n| caso de amostra | saida correta | Sim |\n| caso extra | saida correta | Não |",
+          "meta": {
+            "tipo": "banco-questoes",
+            "questao": "questao_19",
+            "pontos": "20",
+            "dificuldade": "dificil",
+            "variacoesEquivalentesMinimas": 5,
+            "sorteioEquilibrado": true
+          }
+        },
+        {
+          "titulo": "Questão 20 — Risco de Barragem",
+          "texto_md": "**O Problema:** Resolva um problema do módulo 1 envolvendo os conteúdos já estudados. Esta questão pertence ao banco de 20 e pode ser sorteada para compor a prova final.\n\n**Casos de Teste (Amostra):**\n\n| Entrada | Saída | Show |\n|---|---|---|\n| caso de amostra | saida correta | Sim |\n| caso extra | saida correta | Não |",
+          "meta": {
+            "tipo": "banco-questoes",
+            "questao": "questao_20",
+            "pontos": "20",
+            "dificuldade": "dificil",
+            "variacoesEquivalentesMinimas": 5,
+            "sorteioEquilibrado": true
+          }
+        }
+      ],
+      "sorteio": {
+        "total_banco": 20,
+        "questoes_sorteadas": 5,
+        "criterio": "sorteio editorial equilibrado por dificuldade",
+        "totalBanco": 20,
+        "questoesSorteadas": 5,
+        "distribuicaoDificuldade": {
+          "media": 3,
+          "dificil": 2
+        },
+        "variacoesEquilibradasMinimas": 5
+      },
+      "equilibrioEditorial": {
+        "dificuldadesDisponiveis": {
+          "media": 10,
+          "dificil": 10
+        },
+        "distribuicaoPorAplicacao": {
+          "media": 3,
+          "dificil": 2
+        },
+        "variacoesEquivalentesMinimas": 5
+      }
+    },
+    "backend": {
+      "titulo": "Atenção IA de Backend / Sistema Gerenciador:",
+      "texto_md": "Este bloco orienta a geração editorial do banco da prova final do Módulo I. O banco contém 20 questões e cada aplicação deve selecionar 5 questões. Gere no mínimo 10 casos por questão, com presença forte de valores de borda.\n\nRegras editoriais adicionais: manter sorteio equilibrado com **3 questões médias** e **2 difíceis** por aplicação, garantindo no mínimo **5 variações equivalentes** de prova no banco."
+    }
+  },
+  "desafios": [],
+  "premio": {
+    "pontuacao_academica": 100,
+    "superpower_reward": "regra-clara",
+    "recursos": [
+      "Comprar tempo adicional: 3x de 5min (10 Moedas)",
+      "Comprar dica IA: 3 consultas à lógica base (10 Moedas)"
+    ],
+    "testes_ocultos": {
+      "banco_questoes": "/api/datasets/modulo1_prova_banco_20.json"
+    }
+  },
+  "avaliacao": {
+    "pontuacao_maxima": 100,
+    "criterios": [
+      "Correção automática por testes ocultos das 5 questões sorteadas.",
+      "Aderência ao formato de saída exigido em cada questão.",
+      "Uso correto apenas dos conceitos estudados no Módulo I."
+    ],
+    "tipo_correcao": "automatica"
+  },
+  "rpg": {
+    "xp_reward": 50,
+    "variant": "trail",
+    "oracle_hints": [
+      "Verifique a formatação exata da saída pedida.",
+      "Releia o enunciado com atenção antes de codar."
+    ],
+    "loot_drops": [
+      {
+        "item": "Superpoder: regra-clara",
+        "type": "superpower",
+        "rarity": "epic"
+      }
+    ]
+  }
+}

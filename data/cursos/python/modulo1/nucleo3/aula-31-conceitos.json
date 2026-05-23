@@ -1,0 +1,110 @@
+{
+  "id": "python-M01-A31-CT",
+  "curso": "python",
+  "modulo": 1,
+  "aula": 31,
+  "numero": 31,
+  "tipo": "Aula",
+  "subtipo": "conceito",
+  "titulo": "Condicionais: If e Else",
+  "subtitulo": "Ensinando a máquina a escolher: decisão lógica com dados reais",
+  "objetivo": "Usar estruturas `if` e `else` para tomar decisões baseadas em condições, aplicando-as a triagens, critérios de elegibilidade e validações em contextos de políticas públicas.",
+  "duracao": "1h30",
+  "tags": [
+    "condicionais",
+    "if",
+    "else",
+    "comparação"
+  ],
+  "secoes": {
+    "abertura": {
+      "objetivo": {
+        "texto_md": "Até agora, nossos programas executavam tudo em linha reta. Mas o mundo real é feito de escolhas: um cidadão tem direito ao benefício ou não? O salário está acima ou abaixo do piso? A temperatura ultrapassou o limite crítico? Nesta aula você aprenderá a usar `if` e `else` — as estruturas que dão ao código a capacidade de **tomar decisões**."
+      },
+      "retomada": {
+        "texto_md": "**O que você já sabe e vai usar hoje:**\n\n* Variáveis e tipos (Aula 1.1).\n* `input()`, conversão de tipos e operadores matemáticos (Aulas 1.2 e 2.2).\n* Formatação com f-strings (Aula 2.1)."
+      },
+      "situacao": {
+        "texto_md": "O Cadastro Único define que famílias com renda per capita abaixo de R$ 218,00 por mês são classificadas como extremamente pobres. Sem condicionais, um sistema precisaria de um atendente humano para tomar essa decisão registro a registro. Com `if` e `else`, um único trecho de código toma a decisão instantaneamente para milhões de cadastros.",
+        "titulo": "A triagem que deveria ser automática"
+      },
+      "problematizacao": {
+        "texto_md": "* Em que outras situações da política pública (saúde, educação, previdência) existe um critério numérico de corte que determina quem recebe um benefício?\n* Quando um critério é aplicado manualmente, que inconsistências podem surgir que seriam eliminadas por um sistema automatizado?"
+      }
+    },
+    "conceito": {
+      "titulo": "Conceito técnico",
+      "texto_md": "A estrutura `if` avalia uma **condição** — uma expressão que dá `True` ou `False`. Se for `True`, o bloco indentado é executado; caso contrário, é pulado. O `else` é opcional: quando presente, define o caminho a seguir quando a condição é `False`.\n\nA **indentação** (4 espaços por convenção) **não é decorativa**: ela delimita o bloco do `if`. Tudo que estiver indentado pertence ao bloco; a primeira linha sem indentação está fora.\n\nAs condições são escritas com **operadores de comparação**, que sempre devolvem `True` ou `False`:\n\n| Operador | Significado | Exemplo |\n|---|---|---|\n| `==` | Igual a | `idade == 18` |\n| `!=` | Diferente de | `status != \"ativo\"` |\n| `>` | Maior que | `temperatura > 37.5` |\n| `<` | Menor que | `renda < 218` |\n| `>=` | Maior ou igual | `idade >= 60` |\n| `<=` | Menor ou igual | `peso <= 100` |\n\n> ⚠️ **Cuidado:** `=` (um sinal) atribui valor. `==` (dois sinais) **compara**. Trocar um pelo outro é o erro mais comum de quem está começando.",
+      "exemplos": [
+        {
+          "titulo": "1) if / else básico",
+          "texto_md": "Classificar uma família a partir da renda per capita.",
+          "python": "renda_per_capita = float(input(\"Renda per capita mensal (R$): \"))\n\nif renda_per_capita < 218.00:\n    print(\"Classificação: Extremamente pobre\")\n    print(\"Elegível para Bolsa Família\")\nelse:\n    print(\"Classificação: Acima da linha de extrema pobreza\")\n    print(\"Não elegível pelo critério de renda\")"
+        },
+        {
+          "titulo": "2) if sem else",
+          "texto_md": "Quando não há ação a executar no caso `False`, o `else` pode ser omitido.",
+          "python": "temperatura = float(input(\"Temperatura corporal (°C): \"))\n\nif temperatura > 37.5:\n    print(\"ALERTA: febre detectada — encaminhar para triagem\")\n\nprint(\"Avaliação concluída.\")  # sempre executa"
+        },
+        {
+          "titulo": "3) = versus ==",
+          "texto_md": "Comparar valores requer `==`. Note a diferença prática.",
+          "python": "idade = 17                # = atribui o valor 17\nprint(idade == 18)        # False  (17 não é igual a 18)\nprint(idade >= 18)        # False\nprint(idade < 18)         # True"
+        }
+      ]
+    },
+    "pratica_guiada": {
+      "titulo": "Prática guiada",
+      "texto_md": "Vamos exercitar `if` e `else` em três passos progressivos.",
+      "exemplos": [
+        {
+          "titulo": "Passo 1 — Decisão simples com if/else",
+          "texto_md": "Verificar se um candidato atingiu a maioridade.",
+          "python": "idade = int(input(\"Idade do candidato: \"))\n\nif idade >= 18:\n    print(\"Pode votar.\")\nelse:\n    print(\"Ainda não pode votar.\")"
+        },
+        {
+          "titulo": "Passo 2 — Faixa numérica com >= e <=",
+          "texto_md": "Atribuir conceito a uma nota. Usamos `>=` para incluir o limite.",
+          "python": "nota = float(input(\"Nota final (0-10): \"))\n\nif nota >= 7.0:\n    print(f\"Nota {nota:.1f}: APROVADO\")\nelse:\n    print(f\"Nota {nota:.1f}: REPROVADO\")"
+        },
+        {
+          "titulo": "Passo 3 — Triagem com mensagens detalhadas",
+          "texto_md": "Usamos um `if` interno apenas para acrescentar o motivo da reprovação.",
+          "python": "nome = input(\"Nome do paciente: \")\ntemperatura = float(input(\"Temperatura (°C): \"))\n\nif temperatura <= 37.5:\n    print(f\"{nome}: triagem NORMAL\")\nelse:\n    print(f\"{nome}: triagem com FEBRE\")\n    if temperatura >= 39.0:\n        print(\"  -> encaminhar para atendimento prioritário\")"
+        }
+      ]
+    },
+    "pratica_autonoma": {
+      "titulo": "Exercício de Continuação (Sua vez!)",
+      "texto_md": "**Enunciado:** Um sistema de controle de acesso a uma área restrita recebe a idade do visitante. Se a idade for maior ou igual a 18, exibe `Acesso: LIBERADO`. Caso contrário, exibe `Acesso: NEGADO`.\n\n**Entradas e Saídas (Autocorreção):**\n\n| Entrada | Saída |\n|---|---|\n| 18 | Acesso: LIBERADO |\n| 16 | Acesso: NEGADO |"
+    },
+    "fechamento": {
+      "titulo": "Fechamento e Autoavaliação",
+      "quiz": {
+        "texto_md": "**1. O que o `if` verifica?**\nA) Se uma variável foi criada.\nB) Uma condição que resulta em `True` ou `False`.\nC) O tipo de dado de uma variável.\n\n::details{summary=\"Ver a resposta correta\"}\n**Correto: B.** O `if` avalia uma expressão booleana. Se ela for `True`, o bloco indentado abaixo é executado.\n::\n\n**2. Qual é a diferença entre `=` e `==` em Python?**\nA) São sinônimos e podem ser trocados livremente.\nB) `=` atribui um valor a uma variável; `==` compara dois valores e retorna `True` ou `False`.\nC) `==` atribui e `=` compara.\n\n::details{summary=\"Ver a resposta correta\"}\n**Correto: B.** Confundir os dois é um dos erros mais comuns para iniciantes. `x = 5` salva o valor 5 em x; `x == 5` pergunta se x é igual a 5.\n::\n\n**3. O que acontece se a condição do `if` for `False` e não existir `else`?**\nA) O programa dá erro.\nB) O Python executa o bloco do `if` assim mesmo.\nC) O bloco do `if` é pulado e a execução continua normalmente após o bloco.\n\n::details{summary=\"Ver a resposta correta\"}\n**Correto: C.** O `else` é opcional. Sem ele, se a condição for `False`, o programa simplesmente ignora o bloco e continua na próxima linha fora do `if`.\n::"
+      },
+      "leitura_complementar": {
+        "texto_md": "* **Documentação Oficial:** Pesquise por \"Python if statements\" e leia a seção sobre \"compound statements\" para entender a estrutura geral das condicionais.\n* **Prática contextual:** Pesquise os critérios de elegibilidade de algum benefício social do seu município. Tente transformar esses critérios em condições `if/else` no Python."
+      },
+      "reflexao": {
+        "texto_md": "* As condicionais digitais aplicam critérios de forma consistente para milhões de registros ao mesmo tempo. Mas elas também têm um risco: se o critério codificado for injusto ou incompleto, a imparcialidade do código **amplifica** a injustiça em escala. Programar condicionais é também assumir a responsabilidade de questionar: o critério que vou codar é justo? Quem ele inclui e quem ele exclui?"
+      }
+    }
+  },
+  "premio": null,
+  "rpg": {
+    "xp_reward": 50,
+    "variant": "lesson",
+    "oracle_hints": [
+      "Verifique a formatação exata da saída pedida.",
+      "Releia o enunciado com atenção antes de codar."
+    ],
+    "loot_drops": [
+      {
+        "item": "Fragmento de Experiência",
+        "type": "consumable",
+        "rarity": "common"
+      }
+    ]
+  }
+}

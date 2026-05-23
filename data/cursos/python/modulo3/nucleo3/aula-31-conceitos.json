@@ -1,0 +1,95 @@
+{
+  "id": "python-M03-A31-CT",
+  "curso": "python",
+  "modulo": 3,
+  "aula": 31,
+  "numero": 31,
+  "tipo": "Aula",
+  "subtipo": "conceito",
+  "titulo": "Estruturas de Repeticao em Funcoes",
+  "subtitulo": "For e while como motores de processamento modular em lote",
+  "objetivo": "Encapsular laços `for` e `while` dentro de funções, usando acumuladores **locais** para processar sequências e listas com repetibilidade e previsibilidade.",
+  "duracao": "1h30",
+  "tags": [
+    "for",
+    "while",
+    "funcoes",
+    "acumuladores"
+  ],
+  "secoes": {
+    "abertura": {
+      "objetivo": {
+        "texto_md": "Uma funcao só vira ferramenta de escala quando consegue repetir uma regra sem depender de cópia manual. O laço dentro da funcao é o que transforma uma análise de um caso isolado em análise de centenas de casos com a mesma disciplina."
+      },
+      "retomada": {
+        "texto_md": "**Inventário mobilizado:**\n\n* Laços `for` e `while` do Módulo II.\n* Funções com parâmetros e retorno (Aulas 1.1, 1.2).\n* Processamento de listas em funções (Aula 2.1) e cuidado com mutabilidade (Aula 2.2)."
+      },
+      "situacao": {
+        "titulo": "A regra que precisava rodar o mês inteiro",
+        "texto_md": "Um painel ambiental recebia milhares de medições diárias. Sem laço encapsulado em funcao, a equipe repetia blocos inteiros de código para cada lote. A cada ajuste de regra, surgiam divergências entre blocos."
+      },
+      "problematizacao": {
+        "texto_md": "* Qual a diferença prática entre repetir no corpo principal e repetir dentro de uma funcao reutilizável?\n* Por que um acumulador global é uma armadilha quando a funcao é chamada várias vezes?"
+      }
+    },
+    "conceito": {
+      "titulo": "Conceito tecnico",
+      "texto_md": "Dentro de funções, o laço é o **motor** que transforma uma regra única em processamento em lote. Duas escolhas:\n\n* **`for`** — use para percorrer uma **coleção conhecida** (uma lista recebida como parâmetro, um range de números).\n* **`while`** — use para **repetir enquanto uma condição for verdadeira**. É a escolha quando você não sabe de antemão quantas iterações vão acontecer (ex.: ler entradas até uma sentinela; processar até esgotar um saldo).\n\n**Regra de ouro dos acumuladores em funções:** crie-os **dentro** da funcao, **antes** do laço. Nunca dependa de uma variável global para acumular dentro de uma funcao — ela pode estar suja de uma chamada anterior, e o resultado deixa de ser determinístico.\n\n```python\ndef somar(valores):\n    total = 0          # ✅ acumulador LOCAL\n    for v in valores:\n        total += v\n    return total\n```\n\nUma funcao com laço local pode ser chamada quantas vezes for, em qualquer ordem, com qualquer entrada, sempre produzindo o resultado correto para aquela entrada.",
+      "exemplos": [
+        {
+          "titulo": "1) for em funcao: somar lote",
+          "texto_md": "Percorre a lista recebida e devolve o total. Acumulador nasce e morre dentro da funcao.",
+          "python": "def somar_lote(valores):\n    total = 0\n    for v in valores:\n        total += v\n    return total\n\nprint(somar_lote([10, 20, 30]))   # 60\nprint(somar_lote([1, 2]))          # 3"
+        },
+        {
+          "titulo": "2) while em funcao: contar até sentinela",
+          "texto_md": "Avança índice por índice até encontrar o marcador (ou até o fim da lista).",
+          "python": "def contar_ate_sentinela(valores, marcador):\n    i = 0\n    while i < len(valores) and valores[i] != marcador:\n        i += 1\n    return i\n\nprint(contar_ate_sentinela([4, 5, 0, 9], 0))   # 2 (achou o 0 no índice 2)"
+        },
+        {
+          "titulo": "3) for com retorno múltiplo (resumo)",
+          "texto_md": "Devolve soma total **e** quantidade de itens acima do limite, em uma única passagem.",
+          "python": "def resumo_alertas(valores, limite):\n    soma = 0\n    qtd = 0\n    for v in valores:\n        soma += v\n        if v >= limite:\n            qtd += 1\n    return soma, qtd\n\nsoma, qtd = resumo_alertas([12, 80, 51, 9], 50)\nprint(\"Soma:\", soma, \"  Críticos:\", qtd)"
+        }
+      ]
+    },
+    "pratica_guiada": {
+      "titulo": "Prática guiada",
+      "texto_md": "Vamos exercitar laços em funções com três cenários: `for`, `while` e retorno múltiplo.",
+      "exemplos": [
+        {
+          "titulo": "Passo 1 — for com acumulador local",
+          "texto_md": "Calcula a média de uma lista usando `for` (sem usar `sum()` para praticar acumulador).",
+          "python": "def media_local(valores):\n    soma = 0\n    qtd = 0\n    for v in valores:\n        soma += v\n        qtd += 1\n    return soma / qtd\n\nprint(media_local([10, 20, 30]))   # 20.0\nprint(media_local([4, 4]))          # 4.0"
+        },
+        {
+          "titulo": "Passo 2 — while validando entrada",
+          "texto_md": "A funcao pede ao usuário um valor positivo, repetindo até receber.",
+          "python": "def pedir_positivo(rotulo):\n    while True:\n        n = int(input(f\"{rotulo}: \"))\n        if n > 0:\n            return n\n        print(\"Inválido. Tente novamente.\")\n\nidade = pedir_positivo(\"Idade\")\nprint(\"Idade aceita:\", idade)"
+        },
+        {
+          "titulo": "Passo 3 — Triagem em lote com retorno múltiplo",
+          "texto_md": "Soma o total de ocorrências e conta quantas são críticas em uma única passagem.",
+          "python": "def triagem(valores, limite):\n    total = 0\n    criticos = 0\n    for v in valores:\n        total += v\n        if v >= limite:\n            criticos += 1\n    return total, criticos\n\ntotal, criticos = triagem([15, 70, 22, 90, 10], 60)\nprint(f\"Total: {total}\")\nprint(f\"Críticos: {criticos}\")"
+        }
+      ]
+    },
+    "pratica_autonoma": {
+      "titulo": "Exercicio de Continuacao (Sua vez!)",
+      "texto_md": "**Enunciado:** Crie `contar_pares(valores)` que percorra a lista e retorne quantos números pares existem. Imprima `Pares: N`.\n\n| Entrada (`valores`) | Saída Esperada |\n|---|---|\n| [1, 2, 3, 4] | Pares: 2 |\n| [1, 3, 5] | Pares: 0 |\n| [2, 2, 2] | Pares: 3 |"
+    },
+    "fechamento": {
+      "titulo": "Fechamento e Autoavaliação",
+      "quiz": {
+        "texto_md": "**1. Quando `for` costuma ser mais natural?**\nA) Quando percorremos uma coleção conhecida (lista, range).\nB) Quando não existe repetição.\nC) Quando queremos importar um módulo.\n\n::details{summary=\"Ver a resposta correta\"}\n**Correto: A.** `for` foi desenhado para iterar coleções já existentes.\n::\n\n**2. Qual o risco de acumulador global em funções?**\nA) Nenhum risco.\nB) Contaminação entre chamadas sucessivas — uma chamada herda o valor da chamada anterior.\nC) Erro de sintaxe inevitável.\n\n::details{summary=\"Ver a resposta correta\"}\n**Correto: B.** Estado global compartilhado torna o resultado dependente do histórico de chamadas e da ordem em que elas acontecem.\n::\n\n**3. O que torna um laço em funcao auditável?**\nA) Variável local + critério explícito + retorno claro.\nB) Impressão aleatória dos dados.\nC) Dependência de ordem externa não documentada.\n\n::details{summary=\"Ver a resposta correta\"}\n**Correto: A.** Transparência no fluxo facilita verificação e teste.\n::"
+      },
+      "leitura_complementar": {
+        "texto_md": "* Revise os padrões de acumulador e contador com `for` e `while`.\n* Prática diária: pegue uma tarefa repetitiva do seu contexto e descreva qual parte viraria laço dentro de uma funcao."
+      },
+      "reflexao": {
+        "texto_md": "* Escala sem método vira exaustão. Escala com funcao + laço local vira previsibilidade."
+      }
+    }
+  },
+  "premio": null
+}

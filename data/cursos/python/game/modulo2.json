@@ -4,12 +4,12 @@
   "schema": 1,
   "aulas": [
     {
-      "numero": 1,
-      "rotulo": "1C",
+      "numero": 11,
+      "rotulo": "11C",
       "tipo_aula": "A",
       "subtipo": "conceito",
       "titulo": "Listas: criação, acesso e métodos básicos",
-      "arquivo": "modulo2/aula-01-conceitos.json",
+      "arquivo": "modulo2/nucleo1/aula-11-conceitos.json",
       "inventario_novo": [
         {
           "id": "m2-a1-lista-fundamentos",
@@ -28,12 +28,12 @@
       "premio": null
     },
     {
-      "numero": 1,
-      "rotulo": "1TA",
+      "numero": 11,
+      "rotulo": "11TA",
       "tipo_aula": "A",
       "subtipo": "aprendiz",
       "titulo": "Trilha do Aprendiz I: Cofres das Listas",
-      "arquivo": "modulo2/aula-01-trilha-aprendiz.json",
+      "arquivo": "modulo2/nucleo1/aula-11-trilha-aprendiz.json",
       "inventario_novo": [
         {
           "id": "m2-aula-01-trilha-aprendiz",
@@ -48,12 +48,33 @@
       }
     },
     {
-      "numero": 1,
-      "rotulo": "1TV",
+      "numero": 11,
+      "rotulo": "11TG",
+      "tipo_aula": "E",
+      "subtipo": "guardiao",
+      "titulo": "Trilha do Guardião I.1: Forja de Listas: criação, acesso e métodos básicos",
+      "arquivo": "modulo2/nucleo1/aula-11-trilha-guardiao.json",
+      "inventario_novo": [
+        {
+          "id": "m2-aula-11-trilha-guardiao",
+          "tipo": "trilha",
+          "nome": "Insígnia do Guardião",
+          "descricao": "Recompensa editorial associada a Trilha do Guardião I.1: Forja de Listas: criação, acesso e métodos básicos."
+        }
+      ],
+      "premio": {
+        "pontuacao": 120,
+        "descricao_md": "Trilha do Guardião I.1: Forja de Listas: criação, acesso e métodos básicos"
+      },
+      "obrigatoria": false
+    },
+    {
+      "numero": 11,
+      "rotulo": "11TV",
       "tipo_aula": "A",
       "subtipo": "aventura",
       "titulo": "Trilha da Aventura I: Mochilas de Dados",
-      "arquivo": "modulo2/aula-01-trilha-aventura.json",
+      "arquivo": "modulo2/nucleo1/aula-11-trilha-aventura.json",
       "inventario_novo": [
         {
           "id": "m2-aula-01-trilha-aventura",
@@ -69,12 +90,12 @@
       "obrigatoria": false
     },
     {
-      "numero": 2,
-      "rotulo": "2C",
+      "numero": 12,
+      "rotulo": "12C",
       "tipo_aula": "A",
       "subtipo": "conceito",
       "titulo": "Funções nativas de lista",
-      "arquivo": "modulo2/aula-02-conceitos.json",
+      "arquivo": "modulo2/nucleo1/aula-12-conceitos.json",
       "inventario_novo": [
         {
           "id": "m2-a2-indicadores-lista",
@@ -87,12 +108,12 @@
       "premio": null
     },
     {
-      "numero": 2,
-      "rotulo": "2TA",
+      "numero": 12,
+      "rotulo": "12TA",
       "tipo_aula": "A",
       "subtipo": "aprendiz",
       "titulo": "Trilha do Aprendiz II: Oráculos da Lista",
-      "arquivo": "modulo2/aula-02-trilha-aprendiz.json",
+      "arquivo": "modulo2/nucleo1/aula-12-trilha-aprendiz.json",
       "inventario_novo": [
         {
           "id": "m2-aula-02-trilha-aprendiz",
@@ -107,33 +128,12 @@
       }
     },
     {
-      "numero": 2,
-      "rotulo": "2TV",
-      "tipo_aula": "A",
-      "subtipo": "aventura",
-      "titulo": "Trilha da Aventura II: Relatórios da Sequência",
-      "arquivo": "modulo2/aula-02-trilha-aventura.json",
-      "inventario_novo": [
-        {
-          "id": "m2-aula-02-trilha-aventura",
-          "tipo": "trilha",
-          "nome": "Marca da Aventura",
-          "descricao": "Recompensa editorial associada a Trilha da Aventura II: Relatórios da Sequência."
-        }
-      ],
-      "premio": {
-        "pontuacao": 90,
-        "descricao_md": "Trilha da Aventura II: Relatórios da Sequência"
-      },
-      "obrigatoria": false
-    },
-    {
-      "numero": 3,
-      "rotulo": "3TG",
+      "numero": 12,
+      "rotulo": "12TG",
       "tipo_aula": "E",
       "subtipo": "guardiao",
       "titulo": "Trilha do Guardião I: Câmara das Listas",
-      "arquivo": "modulo2/aula-03-trilha-guardiao.json",
+      "arquivo": "modulo2/nucleo1/aula-12-trilha-guardiao.json",
       "inventario_novo": [
         {
           "id": "m2-aula-03-trilha-guardiao",
@@ -149,12 +149,33 @@
       "obrigatoria": false
     },
     {
-      "numero": 3,
-      "rotulo": "3EG",
+      "numero": 12,
+      "rotulo": "12TV",
+      "tipo_aula": "A",
+      "subtipo": "aventura",
+      "titulo": "Trilha da Aventura II: Relatórios da Sequência",
+      "arquivo": "modulo2/nucleo1/aula-12-trilha-aventura.json",
+      "inventario_novo": [
+        {
+          "id": "m2-aula-02-trilha-aventura",
+          "tipo": "trilha",
+          "nome": "Marca da Aventura",
+          "descricao": "Recompensa editorial associada a Trilha da Aventura II: Relatórios da Sequência."
+        }
+      ],
+      "premio": {
+        "pontuacao": 90,
+        "descricao_md": "Trilha da Aventura II: Relatórios da Sequência"
+      },
+      "obrigatoria": false
+    },
+    {
+      "numero": 13,
+      "rotulo": "13EG",
       "tipo_aula": "E",
       "subtipo": "grupo",
       "titulo": "Exedição da Guilda 1: Câmara das Listas",
-      "arquivo": "modulo2/aula-03-exedicao_guilda.json",
+      "arquivo": "modulo2/nucleo1/aula-13-exedicao_guilda.json",
       "inventario_novo": [
         {
           "id": "m2-aula-03-exedicao_guilda",
@@ -170,10 +191,31 @@
       "obrigatoria": false
     },
     {
-      "numero": 3,
+      "numero": 13,
+      "rotulo": "13MS",
+      "tipo_aula": "E",
+      "subtipo": "simulado",
+      "titulo": "Labirinto da Sabedoria I: Simulado antes do Boss",
+      "arquivo": "modulo2/nucleo1/aula-13-labirinto_sabedoria.json",
+      "inventario_novo": [
+        {
+          "id": "m2-aula-13-labirinto_sabedoria",
+          "tipo": "simulado",
+          "nome": "Mapa do Labirinto",
+          "descricao": "Recompensa editorial associada a Labirinto da Sabedoria I: Simulado antes do Boss."
+        }
+      ],
+      "premio": {
+        "pontuacao": 0,
+        "descricao_md": "Labirinto da Sabedoria I: Simulado antes do Boss"
+      },
+      "obrigatoria": false
+    },
+    {
+      "numero": 14,
       "tipo_aula": "E",
       "titulo": "Maratona Prática I: O Despertar Analítico",
-      "arquivo": "modulo2/aula-03-boss.json",
+      "arquivo": "modulo2/nucleo1/aula-14-boss.json",
       "inventario_novo": [
         {
           "id": "m2-a3-slicing",
@@ -202,12 +244,12 @@
       }
     },
     {
-      "numero": 4,
-      "rotulo": "4C",
+      "numero": 21,
+      "rotulo": "21C",
       "tipo_aula": "A",
       "subtipo": "conceito",
       "titulo": "Laço for percorrendo listas",
-      "arquivo": "modulo2/aula-04-conceitos.json",
+      "arquivo": "modulo2/nucleo2/aula-21-conceitos.json",
       "inventario_novo": [
         {
           "id": "m2-a4-for-acumulador",
@@ -220,12 +262,12 @@
       "premio": null
     },
     {
-      "numero": 4,
-      "rotulo": "4TA",
+      "numero": 21,
+      "rotulo": "21TA",
       "tipo_aula": "A",
       "subtipo": "aprendiz",
       "titulo": "Trilha do Aprendiz IV: Passos do For",
-      "arquivo": "modulo2/aula-04-trilha-aprendiz.json",
+      "arquivo": "modulo2/nucleo2/aula-21-trilha-aprendiz.json",
       "inventario_novo": [
         {
           "id": "m2-aula-04-trilha-aprendiz",
@@ -240,12 +282,33 @@
       }
     },
     {
-      "numero": 4,
-      "rotulo": "4TV",
+      "numero": 21,
+      "rotulo": "21TG",
+      "tipo_aula": "E",
+      "subtipo": "guardiao",
+      "titulo": "Trilha do Guardião II.1: Forja de Laço for percorrendo listas",
+      "arquivo": "modulo2/nucleo2/aula-21-trilha-guardiao.json",
+      "inventario_novo": [
+        {
+          "id": "m2-aula-21-trilha-guardiao",
+          "tipo": "trilha",
+          "nome": "Insígnia do Guardião",
+          "descricao": "Recompensa editorial associada a Trilha do Guardião II.1: Forja de Laço for percorrendo listas."
+        }
+      ],
+      "premio": {
+        "pontuacao": 120,
+        "descricao_md": "Trilha do Guardião II.1: Forja de Laço for percorrendo listas"
+      },
+      "obrigatoria": false
+    },
+    {
+      "numero": 21,
+      "rotulo": "21TV",
       "tipo_aula": "A",
       "subtipo": "aventura",
       "titulo": "Trilha da Aventura IV: Marcha dos Registros",
-      "arquivo": "modulo2/aula-04-trilha-aventura.json",
+      "arquivo": "modulo2/nucleo2/aula-21-trilha-aventura.json",
       "inventario_novo": [
         {
           "id": "m2-aula-04-trilha-aventura",
@@ -261,12 +324,12 @@
       "obrigatoria": false
     },
     {
-      "numero": 5,
-      "rotulo": "5C",
+      "numero": 22,
+      "rotulo": "22C",
       "tipo_aula": "A",
       "subtipo": "conceito",
       "titulo": "Laço for com range() e enumerate()",
-      "arquivo": "modulo2/aula-05-conceitos.json",
+      "arquivo": "modulo2/nucleo2/aula-22-conceitos.json",
       "inventario_novo": [
         {
           "id": "m2-a5-enumerate-range",
@@ -279,12 +342,12 @@
       "premio": null
     },
     {
-      "numero": 5,
-      "rotulo": "5TA",
+      "numero": 22,
+      "rotulo": "22TA",
       "tipo_aula": "A",
       "subtipo": "aprendiz",
       "titulo": "Trilha do Aprendiz V: Janelas do Índice",
-      "arquivo": "modulo2/aula-05-trilha-aprendiz.json",
+      "arquivo": "modulo2/nucleo2/aula-22-trilha-aprendiz.json",
       "inventario_novo": [
         {
           "id": "m2-aula-05-trilha-aprendiz",
@@ -299,33 +362,12 @@
       }
     },
     {
-      "numero": 5,
-      "rotulo": "5TV",
-      "tipo_aula": "A",
-      "subtipo": "aventura",
-      "titulo": "Trilha da Aventura V: Mapa das Posições",
-      "arquivo": "modulo2/aula-05-trilha-aventura.json",
-      "inventario_novo": [
-        {
-          "id": "m2-aula-05-trilha-aventura",
-          "tipo": "trilha",
-          "nome": "Marca da Aventura",
-          "descricao": "Recompensa editorial associada a Trilha da Aventura V: Mapa das Posições."
-        }
-      ],
-      "premio": {
-        "pontuacao": 90,
-        "descricao_md": "Trilha da Aventura V: Mapa das Posições"
-      },
-      "obrigatoria": false
-    },
-    {
-      "numero": 6,
-      "rotulo": "6TG",
+      "numero": 22,
+      "rotulo": "22TG",
       "tipo_aula": "E",
       "subtipo": "guardiao",
       "titulo": "Trilha do Guardião II: Ponte dos Laços",
-      "arquivo": "modulo2/aula-06-trilha-guardiao.json",
+      "arquivo": "modulo2/nucleo2/aula-22-trilha-guardiao.json",
       "inventario_novo": [
         {
           "id": "m2-aula-06-trilha-guardiao",
@@ -341,12 +383,33 @@
       "obrigatoria": false
     },
     {
-      "numero": 6,
-      "rotulo": "6EG",
+      "numero": 22,
+      "rotulo": "22TV",
+      "tipo_aula": "A",
+      "subtipo": "aventura",
+      "titulo": "Trilha da Aventura V: Mapa das Posições",
+      "arquivo": "modulo2/nucleo2/aula-22-trilha-aventura.json",
+      "inventario_novo": [
+        {
+          "id": "m2-aula-05-trilha-aventura",
+          "tipo": "trilha",
+          "nome": "Marca da Aventura",
+          "descricao": "Recompensa editorial associada a Trilha da Aventura V: Mapa das Posições."
+        }
+      ],
+      "premio": {
+        "pontuacao": 90,
+        "descricao_md": "Trilha da Aventura V: Mapa das Posições"
+      },
+      "obrigatoria": false
+    },
+    {
+      "numero": 23,
+      "rotulo": "23EG",
       "tipo_aula": "E",
       "subtipo": "grupo",
       "titulo": "Exedição da Guilda 2: Ponte dos Laços",
-      "arquivo": "modulo2/aula-06-exedicao_guilda.json",
+      "arquivo": "modulo2/nucleo2/aula-23-exedicao_guilda.json",
       "inventario_novo": [
         {
           "id": "m2-aula-06-exedicao_guilda",
@@ -362,10 +425,31 @@
       "obrigatoria": false
     },
     {
-      "numero": 6,
+      "numero": 23,
+      "rotulo": "23MS",
+      "tipo_aula": "E",
+      "subtipo": "simulado",
+      "titulo": "Labirinto da Sabedoria II: Simulado antes do Boss",
+      "arquivo": "modulo2/nucleo2/aula-23-labirinto_sabedoria.json",
+      "inventario_novo": [
+        {
+          "id": "m2-aula-23-labirinto_sabedoria",
+          "tipo": "simulado",
+          "nome": "Mapa do Labirinto",
+          "descricao": "Recompensa editorial associada a Labirinto da Sabedoria II: Simulado antes do Boss."
+        }
+      ],
+      "premio": {
+        "pontuacao": 0,
+        "descricao_md": "Labirinto da Sabedoria II: Simulado antes do Boss"
+      },
+      "obrigatoria": false
+    },
+    {
+      "numero": 24,
       "tipo_aula": "E",
       "titulo": "Maratona Prática II: O Inspetor do Tempo",
-      "arquivo": "modulo2/aula-06-boss.json",
+      "arquivo": "modulo2/nucleo2/aula-24-boss.json",
       "inventario_novo": [
         {
           "id": "m2-a6-zip",
@@ -394,12 +478,12 @@
       }
     },
     {
-      "numero": 7,
-      "rotulo": "7C",
+      "numero": 31,
+      "rotulo": "31C",
       "tipo_aula": "A",
       "subtipo": "conceito",
       "titulo": "Laço while: menus e sentinelas",
-      "arquivo": "modulo2/aula-07-conceitos.json",
+      "arquivo": "modulo2/nucleo3/aula-31-conceitos.json",
       "inventario_novo": [
         {
           "id": "m2-a7-while-sentinela",
@@ -412,12 +496,12 @@
       "premio": null
     },
     {
-      "numero": 7,
-      "rotulo": "7TA",
+      "numero": 31,
+      "rotulo": "31TA",
       "tipo_aula": "A",
       "subtipo": "aprendiz",
       "titulo": "Trilha do Aprendiz VII: Sentinelas do Loop",
-      "arquivo": "modulo2/aula-07-trilha-aprendiz.json",
+      "arquivo": "modulo2/nucleo3/aula-31-trilha-aprendiz.json",
       "inventario_novo": [
         {
           "id": "m2-aula-07-trilha-aprendiz",
@@ -432,12 +516,33 @@
       }
     },
     {
-      "numero": 7,
-      "rotulo": "7TV",
+      "numero": 31,
+      "rotulo": "31TG",
+      "tipo_aula": "E",
+      "subtipo": "guardiao",
+      "titulo": "Trilha do Guardião III.1: Forja de Laço while: menus e sentinelas",
+      "arquivo": "modulo2/nucleo3/aula-31-trilha-guardiao.json",
+      "inventario_novo": [
+        {
+          "id": "m2-aula-31-trilha-guardiao",
+          "tipo": "trilha",
+          "nome": "Insígnia do Guardião",
+          "descricao": "Recompensa editorial associada a Trilha do Guardião III.1: Forja de Laço while: menus e sentinelas."
+        }
+      ],
+      "premio": {
+        "pontuacao": 120,
+        "descricao_md": "Trilha do Guardião III.1: Forja de Laço while: menus e sentinelas"
+      },
+      "obrigatoria": false
+    },
+    {
+      "numero": 31,
+      "rotulo": "31TV",
       "tipo_aula": "A",
       "subtipo": "aventura",
       "titulo": "Trilha da Aventura VII: Portas do While",
-      "arquivo": "modulo2/aula-07-trilha-aventura.json",
+      "arquivo": "modulo2/nucleo3/aula-31-trilha-aventura.json",
       "inventario_novo": [
         {
           "id": "m2-aula-07-trilha-aventura",
@@ -453,12 +558,12 @@
       "obrigatoria": false
     },
     {
-      "numero": 8,
-      "rotulo": "8C",
+      "numero": 32,
+      "rotulo": "32C",
       "tipo_aula": "A",
       "subtipo": "conceito",
       "titulo": "A Esteira de Processamento: while com for e if",
-      "arquivo": "modulo2/aula-08-conceitos.json",
+      "arquivo": "modulo2/nucleo3/aula-32-conceitos.json",
       "inventario_novo": [
         {
           "id": "m2-a8-pipeline-controle",
@@ -470,12 +575,12 @@
       "premio": null
     },
     {
-      "numero": 8,
-      "rotulo": "8TA",
+      "numero": 32,
+      "rotulo": "32TA",
       "tipo_aula": "A",
       "subtipo": "aprendiz",
       "titulo": "Trilha do Aprendiz VIII: Esteira do Controle",
-      "arquivo": "modulo2/aula-08-trilha-aprendiz.json",
+      "arquivo": "modulo2/nucleo3/aula-32-trilha-aprendiz.json",
       "inventario_novo": [
         {
           "id": "m2-aula-08-trilha-aprendiz",
@@ -490,33 +595,12 @@
       }
     },
     {
-      "numero": 8,
-      "rotulo": "8TV",
-      "tipo_aula": "A",
-      "subtipo": "aventura",
-      "titulo": "Trilha da Aventura VIII: Oficina dos Fluxos",
-      "arquivo": "modulo2/aula-08-trilha-aventura.json",
-      "inventario_novo": [
-        {
-          "id": "m2-aula-08-trilha-aventura",
-          "tipo": "trilha",
-          "nome": "Marca da Aventura",
-          "descricao": "Recompensa editorial associada a Trilha da Aventura VIII: Oficina dos Fluxos."
-        }
-      ],
-      "premio": {
-        "pontuacao": 90,
-        "descricao_md": "Trilha da Aventura VIII: Oficina dos Fluxos"
-      },
-      "obrigatoria": false
-    },
-    {
-      "numero": 9,
-      "rotulo": "9TG",
+      "numero": 32,
+      "rotulo": "32TG",
       "tipo_aula": "E",
       "subtipo": "guardiao",
       "titulo": "Trilha do Guardião III: Sentinelas do Fluxo",
-      "arquivo": "modulo2/aula-09-trilha-guardiao.json",
+      "arquivo": "modulo2/nucleo3/aula-32-trilha-guardiao.json",
       "inventario_novo": [
         {
           "id": "m2-aula-09-trilha-guardiao",
@@ -532,12 +616,33 @@
       "obrigatoria": false
     },
     {
-      "numero": 9,
-      "rotulo": "9EG",
+      "numero": 32,
+      "rotulo": "32TV",
+      "tipo_aula": "A",
+      "subtipo": "aventura",
+      "titulo": "Trilha da Aventura VIII: Oficina dos Fluxos",
+      "arquivo": "modulo2/nucleo3/aula-32-trilha-aventura.json",
+      "inventario_novo": [
+        {
+          "id": "m2-aula-08-trilha-aventura",
+          "tipo": "trilha",
+          "nome": "Marca da Aventura",
+          "descricao": "Recompensa editorial associada a Trilha da Aventura VIII: Oficina dos Fluxos."
+        }
+      ],
+      "premio": {
+        "pontuacao": 90,
+        "descricao_md": "Trilha da Aventura VIII: Oficina dos Fluxos"
+      },
+      "obrigatoria": false
+    },
+    {
+      "numero": 33,
+      "rotulo": "33EG",
       "tipo_aula": "E",
       "subtipo": "grupo",
       "titulo": "Exedição da Guilda 3: Sentinelas do Fluxo",
-      "arquivo": "modulo2/aula-09-exedicao_guilda.json",
+      "arquivo": "modulo2/nucleo3/aula-33-exedicao_guilda.json",
       "inventario_novo": [
         {
           "id": "m2-aula-09-exedicao_guilda",
@@ -553,10 +658,31 @@
       "obrigatoria": false
     },
     {
-      "numero": 9,
+      "numero": 33,
+      "rotulo": "33MS",
+      "tipo_aula": "E",
+      "subtipo": "simulado",
+      "titulo": "Labirinto da Sabedoria III: Simulado antes do Boss",
+      "arquivo": "modulo2/nucleo3/aula-33-labirinto_sabedoria.json",
+      "inventario_novo": [
+        {
+          "id": "m2-aula-33-labirinto_sabedoria",
+          "tipo": "simulado",
+          "nome": "Mapa do Labirinto",
+          "descricao": "Recompensa editorial associada a Labirinto da Sabedoria III: Simulado antes do Boss."
+        }
+      ],
+      "premio": {
+        "pontuacao": 0,
+        "descricao_md": "Labirinto da Sabedoria III: Simulado antes do Boss"
+      },
+      "obrigatoria": false
+    },
+    {
+      "numero": 34,
       "tipo_aula": "E",
       "titulo": "Maratona Prática III: A Esteira de Auditoria",
-      "arquivo": "modulo2/aula-09-boss.json",
+      "arquivo": "modulo2/nucleo3/aula-34-boss.json",
       "inventario_novo": [
         {
           "id": "m2-a9-list-comprehension",
@@ -585,12 +711,12 @@
       }
     },
     {
-      "numero": 10,
-      "rotulo": "10C",
+      "numero": 41,
+      "rotulo": "41C",
       "tipo_aula": "A",
       "subtipo": "conceito",
       "titulo": "Matrizes: o quadro geral",
-      "arquivo": "modulo2/aula-10-conceitos.json",
+      "arquivo": "modulo2/nucleo4/aula-41-conceitos.json",
       "inventario_novo": [
         {
           "id": "m2-a10-for-aninhado",
@@ -603,12 +729,12 @@
       "premio": null
     },
     {
-      "numero": 10,
-      "rotulo": "10TA",
+      "numero": 41,
+      "rotulo": "41TA",
       "tipo_aula": "A",
       "subtipo": "aprendiz",
       "titulo": "Trilha do Aprendiz X: Quadros da Matriz",
-      "arquivo": "modulo2/aula-10-trilha-aprendiz.json",
+      "arquivo": "modulo2/nucleo4/aula-41-trilha-aprendiz.json",
       "inventario_novo": [
         {
           "id": "m2-aula-10-trilha-aprendiz",
@@ -623,12 +749,33 @@
       }
     },
     {
-      "numero": 10,
-      "rotulo": "10TV",
+      "numero": 41,
+      "rotulo": "41TG",
+      "tipo_aula": "E",
+      "subtipo": "guardiao",
+      "titulo": "Trilha do Guardião IV.1: Forja de Matrizes: o quadro geral",
+      "arquivo": "modulo2/nucleo4/aula-41-trilha-guardiao.json",
+      "inventario_novo": [
+        {
+          "id": "m2-aula-41-trilha-guardiao",
+          "tipo": "trilha",
+          "nome": "Insígnia do Guardião",
+          "descricao": "Recompensa editorial associada a Trilha do Guardião IV.1: Forja de Matrizes: o quadro geral."
+        }
+      ],
+      "premio": {
+        "pontuacao": 120,
+        "descricao_md": "Trilha do Guardião IV.1: Forja de Matrizes: o quadro geral"
+      },
+      "obrigatoria": false
+    },
+    {
+      "numero": 41,
+      "rotulo": "41TV",
       "tipo_aula": "A",
       "subtipo": "aventura",
       "titulo": "Trilha da Aventura X: Salas da Tabela",
-      "arquivo": "modulo2/aula-10-trilha-aventura.json",
+      "arquivo": "modulo2/nucleo4/aula-41-trilha-aventura.json",
       "inventario_novo": [
         {
           "id": "m2-aula-10-trilha-aventura",
@@ -644,12 +791,12 @@
       "obrigatoria": false
     },
     {
-      "numero": 11,
-      "rotulo": "11C",
+      "numero": 42,
+      "rotulo": "42C",
       "tipo_aula": "A",
       "subtipo": "conceito",
       "titulo": "Matrizes: índices e precisão",
-      "arquivo": "modulo2/aula-11-conceitos.json",
+      "arquivo": "modulo2/nucleo4/aula-42-conceitos.json",
       "inventario_novo": [
         {
           "id": "m2-a11-duplo-enumerate",
@@ -662,12 +809,12 @@
       "premio": null
     },
     {
-      "numero": 11,
-      "rotulo": "11TA",
+      "numero": 42,
+      "rotulo": "42TA",
       "tipo_aula": "A",
       "subtipo": "aprendiz",
       "titulo": "Trilha do Aprendiz XI: Coordenadas da Auditoria",
-      "arquivo": "modulo2/aula-11-trilha-aprendiz.json",
+      "arquivo": "modulo2/nucleo4/aula-42-trilha-aprendiz.json",
       "inventario_novo": [
         {
           "id": "m2-aula-11-trilha-aprendiz",
@@ -682,33 +829,12 @@
       }
     },
     {
-      "numero": 11,
-      "rotulo": "11TV",
-      "tipo_aula": "A",
-      "subtipo": "aventura",
-      "titulo": "Trilha da Aventura XI: Mapa das Coordenadas",
-      "arquivo": "modulo2/aula-11-trilha-aventura.json",
-      "inventario_novo": [
-        {
-          "id": "m2-aula-11-trilha-aventura",
-          "tipo": "trilha",
-          "nome": "Marca da Aventura",
-          "descricao": "Recompensa editorial associada a Trilha da Aventura XI: Mapa das Coordenadas."
-        }
-      ],
-      "premio": {
-        "pontuacao": 90,
-        "descricao_md": "Trilha da Aventura XI: Mapa das Coordenadas"
-      },
-      "obrigatoria": false
-    },
-    {
-      "numero": 12,
-      "rotulo": "12TG",
+      "numero": 42,
+      "rotulo": "42TG",
       "tipo_aula": "E",
       "subtipo": "guardiao",
       "titulo": "Trilha do Guardião IV: Salão das Matrizes",
-      "arquivo": "modulo2/aula-12-trilha-guardiao.json",
+      "arquivo": "modulo2/nucleo4/aula-42-trilha-guardiao.json",
       "inventario_novo": [
         {
           "id": "m2-aula-12-trilha-guardiao",
@@ -724,12 +850,33 @@
       "obrigatoria": false
     },
     {
-      "numero": 12,
-      "rotulo": "12EG",
+      "numero": 42,
+      "rotulo": "42TV",
+      "tipo_aula": "A",
+      "subtipo": "aventura",
+      "titulo": "Trilha da Aventura XI: Mapa das Coordenadas",
+      "arquivo": "modulo2/nucleo4/aula-42-trilha-aventura.json",
+      "inventario_novo": [
+        {
+          "id": "m2-aula-11-trilha-aventura",
+          "tipo": "trilha",
+          "nome": "Marca da Aventura",
+          "descricao": "Recompensa editorial associada a Trilha da Aventura XI: Mapa das Coordenadas."
+        }
+      ],
+      "premio": {
+        "pontuacao": 90,
+        "descricao_md": "Trilha da Aventura XI: Mapa das Coordenadas"
+      },
+      "obrigatoria": false
+    },
+    {
+      "numero": 43,
+      "rotulo": "43EG",
       "tipo_aula": "E",
       "subtipo": "grupo",
       "titulo": "Exedição da Guilda 4: Salão das Matrizes",
-      "arquivo": "modulo2/aula-12-exedicao_guilda.json",
+      "arquivo": "modulo2/nucleo4/aula-43-exedicao_guilda.json",
       "inventario_novo": [
         {
           "id": "m2-aula-12-exedicao_guilda",
@@ -745,10 +892,31 @@
       "obrigatoria": false
     },
     {
-      "numero": 12,
+      "numero": 43,
+      "rotulo": "43MS",
+      "tipo_aula": "E",
+      "subtipo": "simulado",
+      "titulo": "Labirinto da Sabedoria IV: Simulado antes do Boss",
+      "arquivo": "modulo2/nucleo4/aula-43-labirinto_sabedoria.json",
+      "inventario_novo": [
+        {
+          "id": "m2-aula-43-labirinto_sabedoria",
+          "tipo": "simulado",
+          "nome": "Mapa do Labirinto",
+          "descricao": "Recompensa editorial associada a Labirinto da Sabedoria IV: Simulado antes do Boss."
+        }
+      ],
+      "premio": {
+        "pontuacao": 0,
+        "descricao_md": "Labirinto da Sabedoria IV: Simulado antes do Boss"
+      },
+      "obrigatoria": false
+    },
+    {
+      "numero": 44,
       "tipo_aula": "E",
       "titulo": "Maratona Prática IV: O Auditor Chefe",
-      "arquivo": "modulo2/aula-12-boss.json",
+      "arquivo": "modulo2/nucleo4/aula-44-boss.json",
       "inventario_novo": [
         {
           "id": "m2-a12-sorted-key",
@@ -777,10 +945,10 @@
       }
     },
     {
-      "numero": 13,
+      "numero": 50,
       "tipo_aula": "E",
       "titulo": "Prova do Módulo II: Auditoria Final de Sistemas",
-      "arquivo": "modulo2/aula-13-PROVA.json",
+      "arquivo": "modulo2/aula-50-PROVA.json",
       "inventario_novo": [
         {
           "id": "m2-a13-unpacking",

@@ -1,0 +1,128 @@
+{
+  "id": "python-M01-A24-MB",
+  "curso": "python",
+  "modulo": 1,
+  "aula": 24,
+  "numero": 24,
+  "tipo": "Masmorra",
+  "subtipo": "boss",
+  "titulo": "Maratona Prática II: O Contador de Contribuintes",
+  "subtitulo": "Matemática inteira, módulo e f-strings sob pressão real",
+  "objetivo": "Aplicar operadores `//`, `%`, conversão de unidades, f-strings avançadas e cálculos de distribuição para processar bases de dados governamentais sem uso de listas ou laços.",
+  "duracao": "2h00",
+  "tags": [],
+  "secoes": {
+    "abertura": {
+      "introducao": {
+        "texto_md": "# A Aritmética do Estado\n\nEm relatórios públicos, a pergunta quase nunca é apenas \"quanto deu\". A pergunta real é: quanto coube para cada parte, o que sobrou, quantos blocos completos cabem, quanto falta para completar a próxima faixa. Esse é o território da divisão inteira e do módulo. Quando a matemática é mal aplicada, o erro parece pequeno no papel, mas se torna grave quando distribuído em milhares de escolas, postos de saúde ou contribuintes.\n\nNesta maratona, você vai operar sobre entradas simples e extrair delas respostas práticas: pacotes completos, saldos, excedentes, tempo convertido, distribuição justa e atrasos acumulados. É a matemática das sobras, dos limites e da materialidade real.\n\n---"
+      }
+    },
+    "aquecimento": {
+      "titulo": "FASE 1: Aquecimento de Sistemas (Warm-up)",
+      "texto_md": "**Tempo estimado:** 15 minutos.\n**Pontuação:** 0 pontos.\n**Objetivo:** aquecer com divisões práticas e conversões simples.",
+      "missoes": [
+        {
+          "titulo": "Aquecimento A: Caixas de Livros do FNDE",
+          "texto_md": "**O Problema:** O avaliador injeta `total_livros` (`Int`). Cada caixa comporta exatamente 30 livros. Calcule quantas caixas completas serão usadas e quantos livros sobram. Imprima:\n\n`Caixas completas: N`\n`Livros restantes: N`\n\n**Casos de Teste (Amostra):**\n\n| Entrada | Saída | Show |\n|---|---|---|\n| `95` | Caixas completas: 3<br>Livros restantes: 5 | Sim |\n| `60` | Caixas completas: 2<br>Livros restantes: 0 | Sim |",
+          "meta": {
+            "tipo": "warmup",
+            "dataset": "warmup_a"
+          }
+        },
+        {
+          "titulo": "Aquecimento B: Conversão de Jornada",
+          "texto_md": "**O Problema:** O avaliador injeta `minutos_trabalhados` (`Int`). Converta o total em horas completas e minutos restantes. Imprima `Jornada: Nh Nmin`.\n\n**Casos de Teste (Amostra):**\n\n| Entrada | Saída | Show |\n|---|---|---|\n| `530` | Jornada: 8h 50min | Sim |\n| `480` | Jornada: 8h 0min | Sim |",
+          "meta": {
+            "tipo": "warmup",
+            "dataset": "warmup_b"
+          }
+        }
+      ]
+    },
+    "maratona": {
+      "titulo": "FASE 2: A Maratona (Missões Oficiais)",
+      "texto_md": "**Tempo estimado:** 1h45m.\n**Status:** Avaliação ativa.\n**Instruções:** cuidado com a diferença entre `/`, `//` e `%`. A correção automática vai testar principalmente os casos em que há sobra.",
+      "missoes": [
+        {
+          "titulo": "Missão 1: O Rateio Escolar (FNDE)",
+          "texto_md": "**O Problema:** O avaliador injeta `verba_total_centavos` (`Int`) e `num_escolas` (`Int`). A verba precisa ser distribuída igualmente entre escolas, em centavos. Calcule quanto cada escola recebe e qual saldo volta ao caixa. Imprima:\n\n`Por escola: R$ X.XX`\n`Saldo retornado: R$ X.XX`\n\n**Casos de Teste (Amostra):**\n\n| Entrada | Saída | Show |\n|---|---|---|\n| `100000`, `7` | Por escola: R$ 142.85<br>Saldo retornado: R$ 0.05 | Sim |\n| `50000`, `10` | Por escola: R$ 50.00<br>Saldo retornado: R$ 0.00 | Sim |",
+          "meta": {
+            "tipo": "maratona",
+            "dataset": "missao_1"
+          }
+        },
+        {
+          "titulo": "Missão 2: A Conta de Energia por Faixas (ANEEL)",
+          "texto_md": "**O Problema:** O avaliador injeta `consumo_total` (`Int`) e `tarifa_pacote` (`Float`). Cada pacote cobre 50 kWh. Calcule quantos pacotes completos cabem, quantos kWh ficam excedentes e o custo apenas dos pacotes completos. Imprima:\n\n`Pacotes: N`\n`Excedente: N kWh`\n`Custo dos pacotes: R$ X.XX`\n\n**Casos de Teste (Amostra):**\n\n| Entrada | Saída | Show |\n|---|---|---|\n| `183`, `28.50` | Pacotes: 3<br>Excedente: 33 kWh<br>Custo dos pacotes: R$ 85.50 | Sim |\n| `200`, `28.50` | Pacotes: 4<br>Excedente: 0 kWh<br>Custo dos pacotes: R$ 114.00 | Sim |",
+          "meta": {
+            "tipo": "maratona",
+            "dataset": "missao_2"
+          }
+        },
+        {
+          "titulo": "Missão 3: Planejamento Rodoviário (DNIT)",
+          "texto_md": "**O Problema:** O avaliador injeta `total_km` (`Int`) e `km_por_dia` (`Int`). Calcule quantos dias completos de obra são necessários e quantos quilômetros sobram para um último dia parcial. Imprima:\n\n`Dias completos: N`\n`Km restantes: N`\n`Equipes-dia totais: N`\n\n**Casos de Teste (Amostra):**\n\n| Entrada | Saída | Show |\n|---|---|---|\n| `150`, `12` | Dias completos: 12<br>Km restantes: 6<br>Equipes-dia totais: 13 | Sim |\n| `120`, `12` | Dias completos: 10<br>Km restantes: 0<br>Equipes-dia totais: 10 | Sim |",
+          "meta": {
+            "tipo": "maratona",
+            "dataset": "missao_3"
+          }
+        },
+        {
+          "titulo": "Missão 4: A Multa do IRPF por Atraso",
+          "texto_md": "**O Problema:** O avaliador injeta `imposto_devido` (`Float`) e `meses_atraso` (`Int`). A multa é de 1% ao mês. Calcule o valor da multa e o total a pagar. Imprima:\n\n`Meses de atraso: N`\n`Multa: R$ X.XX`\n`Total a pagar: R$ X.XX`\n\n**Casos de Teste (Amostra):**\n\n| Entrada | Saída | Show |\n|---|---|---|\n| `5000.0`, `3` | Meses de atraso: 3<br>Multa: R$ 150.00<br>Total a pagar: R$ 5150.00 | Sim |\n| `3000.0`, `8` | Meses de atraso: 8<br>Multa: R$ 240.00<br>Total a pagar: R$ 3240.00 | Sim |",
+          "meta": {
+            "tipo": "maratona",
+            "dataset": "missao_4"
+          }
+        },
+        {
+          "titulo": "Missão 5: Grade Demográfica (IBGE)",
+          "texto_md": "**O Problema:** O avaliador injeta `populacao` (`Int`), `area_km2` (`Float`) e `celulas_grade` (`Int`). Calcule a densidade demográfica, a área média por célula e quantos habitantes ficam em cada célula inteira, com sobra. Imprima:\n\n`Densidade: X.XX hab/km2`\n`Area por celula: X.XX km2`\n`Habitantes por celula: N`\n`Sobra populacional: N`\n\n**Casos de Teste (Amostra):**\n\n| Entrada | Saída | Show |\n|---|---|---|\n| `50000`, `500.0`, `10` | Densidade: 100.00 hab/km2<br>Area por celula: 50.00 km2<br>Habitantes por celula: 5000<br>Sobra populacional: 0 | Sim |\n| `100003`, `1000.0`, `10` | Densidade: 100.00 hab/km2<br>Area por celula: 100.00 km2<br>Habitantes por celula: 10000<br>Sobra populacional: 3 | Sim |",
+          "meta": {
+            "tipo": "maratona",
+            "dataset": "missao_5"
+          }
+        }
+      ]
+    },
+    "backend": {
+      "titulo": "Atenção IA de Backend / Sistema Gerenciador:",
+      "texto_md": "Gerar no mínimo 10 casos por missão. Priorizar casos em que há sobra, resto ou divisão não exata.\n\n### Warmups\n* `total_livros` para caixas de 30 unidades.\n* `minutos_trabalhados` para conversão por 60.\n\n### Missão 1\n* `verba_total_centavos`, `num_escolas`\n* Gabarito com `//` e `%` sobre centavos, convertendo para reais na saída.\n\n### Missão 2\n* `consumo_total`, `tarifa_pacote`\n* Gabarito com pacotes de 50 kWh.\n\n### Missão 3\n* `total_km`, `km_por_dia`\n* Gabarito com dia extra se `total_km % km_por_dia > 0`.\n\n### Missão 4\n* `imposto_devido`, `meses_atraso`\n* Gabarito: multa = imposto * 0.01 * meses.\n\n### Missão 5\n* `populacao`, `area_km2`, `celulas_grade`\n* Gabarito com densidade, área média e distribuição inteira da população."
+    }
+  },
+  "premio": {
+    "pontuacao": 100,
+    "superpower_reward": "modulo-operator",
+    "recursos": [
+      "Comprar tempo: 3x5min (10 Moedas)",
+      "Comprar dica IA: 3 consultas (10 Moedas)"
+    ],
+    "testes_ocultos": {
+      "warmup_a": "/api/datasets/fnde_caixas_livros.json",
+      "warmup_b": "/api/datasets/jornada_conversao.json",
+      "missao_1": "/api/datasets/fnde_rateio_escolar.json",
+      "missao_2": "/api/datasets/aneel_faixas_consumo.json",
+      "missao_3": "/api/datasets/dnit_manutencao_rodovias.json",
+      "missao_4": "/api/datasets/receita_multa_irpf.json",
+      "missao_5": "/api/datasets/ibge_grade_demografica.json"
+    }
+  },
+  "rpg": {
+    "xp_reward": 100,
+    "variant": "marathon",
+    "oracle_hints": [
+      "Verifique a formatação exata da saída pedida.",
+      "Releia o enunciado com atenção antes de codar."
+    ],
+    "enemy_name": "O Analista de Dados Brutos",
+    "enemy_hp": 300,
+    "weakness": "f-strings e formatação",
+    "loot_drops": [
+      {
+        "item": "Superpoder: modulo-operator",
+        "type": "superpower",
+        "rarity": "epic"
+      }
+    ]
+  }
+}

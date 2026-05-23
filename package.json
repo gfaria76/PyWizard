@@ -2,7 +2,7 @@
   "name": "alg1-2026",
   "private": true,
   "type": "module",
-  "packageManager": "npm@11.14.1",
+  "packageManager": "pnpm@11.2.2",
   "scripts": {
     "build": "nuxt build",
     "dev": "nuxt dev --host",

@@ -1,0 +1,89 @@
+{
+  "id": "python-M02-A41-CT",
+  "curso": "python",
+  "modulo": 2,
+  "aula": 41,
+  "numero": 41,
+  "tipo": "Aula",
+  "subtipo": "conceito",
+  "titulo": "Matrizes: o quadro geral",
+  "subtitulo": "Lendo listas dentro de listas: a realidade tem várias dimensões",
+  "objetivo": "Compreender o conceito de matrizes (listas de listas) e utilizar o laço `for` aninhado simples para percorrer, somar e filtrar dados bidimensionais.",
+  "duracao": "1h30",
+  "tags": [
+    "matriz",
+    "for aninhado",
+    "lista de listas"
+  ],
+  "secoes": {
+    "abertura": {
+      "objetivo": {
+        "texto_md": "Até agora trabalhamos com listas simples: uma fila de valores. Mas dados reais formam **tabelas**: um mês é composto por várias semanas; cada semana, por vários dias. Em Python, representamos isso com **matrizes** — uma lista que contém outras listas. Para percorrê-las, precisamos de um `for` dentro de outro `for`."
+      },
+      "retomada": {
+        "texto_md": "**O que você já sabe e vai usar hoje:**\n\n* O laço `for item in lista` (Aula 2.1).\n* Contadores e acumuladores (Aula 2.1).\n* `if` para filtrar.\n* `sum()`, `len()` (Aula 1.2)."
+      },
+      "situacao": {
+        "texto_md": "O RH enviou ao trabalhador o registro de horas no formato de tabela: 3 semanas, 5 dias cada. Tentar `sum()` na tabela inteira não funciona — Python não soma listas com listas. Precisamos abrir semana a semana, ler dia a dia, e só então somar.",
+        "titulo": "O problema da tabela achatada"
+      },
+      "problematizacao": {
+        "texto_md": "* O que perdemos quando dados são apresentados em tabelas e não sabemos lê-las de forma autônoma?\n* Como a capacidade de construir laços aninhados nos devolve o poder de investigar bases de dados complexas?"
+      }
+    },
+    "conceito": {
+      "titulo": "Conceito técnico",
+      "texto_md": "Uma **matriz** em Python é simplesmente uma **lista cujos itens são, eles próprios, listas**. Cada lista interna é uma **linha**; cada posição dentro da lista interna é uma **coluna**.\n\n```python\nmatriz = [\n    [8, 8, 8, 8, 8],    # linha 0 (semana 1)\n    [8, 10, 12, 8, 8],  # linha 1 (semana 2)\n    [8, 8, 8, 8, 8],    # linha 2 (semana 3)\n]\n```\n\nPara acessar um elemento individual usamos **dois índices**: `matriz[linha][coluna]`. Por exemplo, `matriz[1][2]` é `12` (semana 2, dia 3).\n\nPara percorrer toda a matriz usamos um **`for` aninhado** — um `for` dentro do outro. O **laço externo** pega uma linha por vez (uma sub-lista inteira); o **laço interno** percorre os números dessa linha.\n\n```python\nfor linha in matriz:           # 1 vez por linha\n    for valor in linha:        # 1 vez por valor dentro da linha\n        # use 'valor' aqui\n```\n\nSe a matriz tem `L` linhas e `C` colunas, o bloco mais interno executa **`L × C`** vezes no total.\n\n> 🚫 **`sum(matriz)` não funciona** quando a matriz é uma lista de listas. `sum()` espera números, e os itens da matriz externa são listas. Por isso o `for` aninhado é necessário.",
+      "exemplos": [
+        {
+          "titulo": "1) Declarando e acessando elementos",
+          "texto_md": "Mostra como guardar dados em forma de tabela e como acessar uma célula.",
+          "python": "horas = [\n    [8, 8, 8, 8, 8],\n    [8, 10, 12, 8, 8],\n    [8, 8, 8, 8, 8],\n]\n\nprint(horas[1][2])       # 12\nprint(len(horas))        # 3 (linhas)\nprint(len(horas[0]))     # 5 (colunas)"
+        },
+        {
+          "titulo": "2) for aninhado simples",
+          "texto_md": "Imprime cada hora da matriz, percorrendo linha por linha.",
+          "python": "horas = [\n    [8, 8, 8],\n    [8, 10, 12],\n]\n\nfor semana in horas:\n    for h in semana:\n        print(f\"Trabalhou: {h}h\")"
+        }
+      ]
+    },
+    "pratica_guiada": {
+      "titulo": "Prática guiada",
+      "texto_md": "Vamos exercitar matrizes em três passos: matriz menor, soma, contagem com filtro.",
+      "exemplos": [
+        {
+          "titulo": "Passo 1 — Matriz 2x3 e leitura básica",
+          "texto_md": "Comece pequeno: imprima cada valor da matriz com seu papel (linha/coluna).",
+          "python": "vendas = [\n    [10, 20, 30],\n    [40, 50, 60],\n]\n\nfor linha in vendas:\n    for v in linha:\n        print(v)"
+        },
+        {
+          "titulo": "Passo 2 — Somar a matriz inteira (3x5)",
+          "texto_md": "Use um acumulador único e o `for` aninhado.",
+          "python": "horas = [\n    [8, 8, 8, 8, 8],\n    [8, 10, 12, 10, 8],\n    [8, 8, 8, 8, 8],\n]\n\ntotal = 0\nfor semana in horas:\n    for h in semana:\n        total += h\n\nprint(f\"Total mensal: {total} horas\")"
+        },
+        {
+          "titulo": "Passo 3 — Combinar acumulação + contagem com filtro",
+          "texto_md": "Total de horas e quantos dias foram \"exaustivos\" (mais de 8 horas).",
+          "python": "horas = [\n    [8, 8, 8, 8, 8],\n    [8, 10, 12, 10, 8],\n    [8, 8, 8, 8, 8],\n]\n\ntotal = 0\ndias_exaustivos = 0\n\nfor semana in horas:\n    for h in semana:\n        total += h\n        if h > 8:\n            dias_exaustivos += 1\n\nprint(f\"Total: {total} horas\")\nprint(f\"Dias exaustivos (>8h): {dias_exaustivos}\")"
+        }
+      ]
+    },
+    "pratica_autonoma": {
+      "titulo": "Exercício de Continuação (Sua vez!)",
+      "texto_md": "**Enunciado:** O sistema recebe uma matriz (lista de listas) com os gastos diários de uma loja ao longo de várias semanas. Conte quantos dias a loja teve `0` gastos e imprima `Dias sem gastos: N`.\n\n**Entradas e Saídas (Autocorreção):**\n\n| Entrada | Saída |\n|---|---|\n| [[10, 0], [0, 10]] | Dias sem gastos: 2 |\n| [[5, 2], [3, 1]] | Dias sem gastos: 0 |"
+    },
+    "fechamento": {
+      "titulo": "Fechamento e Autoavaliação",
+      "quiz": {
+        "texto_md": "**1. No laço externo `for linha in matriz:`, o que a variável `linha` recebe a cada iteração?**\nA) Um número inteiro indicando o índice da linha.\nB) A sub-lista completa (uma linha inteira da matriz), que será então percorrida pelo laço interno.\nC) Uma palavra criada pelo Python.\n\n::details{summary=\"Ver a resposta correta\"}\n**Correto: B.** O laço externo entrega uma linha (sub-lista) inteira. Por isso o laço interno consegue fazer `for v in linha:`.\n::\n\n**2. Qual o risco de usar `sum(matriz)` diretamente sem laços aninhados?**\nA) `sum()` só soma números, não listas. Sem o laço para extrair os valores, o código dá erro.\nB) O computador bloqueia.\nC) Não há risco.\n\n::details{summary=\"Ver a resposta correta\"}\n**Correto: A.** Para o Python, uma matriz é uma lista de listas. `sum()` espera somar números, e os itens da matriz externa são listas.\n::\n\n**3. Se uma matriz tem 3 linhas e 4 colunas, quantas vezes o bloco mais interno do `for` aninhado executa no total?**\nA) 3\nB) 4\nC) 12\n\n::details{summary=\"Ver a resposta correta\"}\n**Correto: C.** O laço externo executa 3 vezes; para cada uma, o interno executa 4. Total: 3 × 4 = 12.\n::"
+      },
+      "leitura_complementar": {
+        "texto_md": "* **Documentação Oficial:** Explore o conceito de \"2D Lists\" em tutoriais de Python — base do Excel, tabuleiro de xadrez, mapas de pixels.\n* **Prática Diária:** Olhe para o calendário do seu celular. Ele é uma matriz: linha = semana, coluna = dia."
+      },
+      "reflexao": {
+        "texto_md": "* Tabelas complexas e arquivos gigantes são uma forma comum de sobrecarregar a interpretação. Dominar o `for` aninhado é ganhar o poder de não se deixar esmagar pelo volume: para o código, a tabela gigante é apenas uma série de gavetas a abrir uma a uma."
+      }
+    }
+  },
+  "premio": null
+}

@@ -1,0 +1,111 @@
+{
+  "id": "python-M01-A32-CT",
+  "curso": "python",
+  "modulo": 1,
+  "aula": 32,
+  "numero": 32,
+  "tipo": "Aula",
+  "subtipo": "conceito",
+  "titulo": "Operadores Relacionais e Lógicos",
+  "subtitulo": "Combinando critérios: quando um 'e' ou 'ou' muda tudo",
+  "objetivo": "Usar os operadores lógicos (`and`, `or`, `not`) junto com `if/else` para avaliar condições compostas em sistemas de triagem e validação.",
+  "duracao": "1h30",
+  "tags": [
+    "operadores lógicos",
+    "and",
+    "or",
+    "not",
+    "condicionais"
+  ],
+  "secoes": {
+    "abertura": {
+      "objetivo": {
+        "texto_md": "Os critérios da vida real raramente são simples. O BPC exige que a pessoa tenha **deficiência comprovada** OU seja idosa com **65 anos ou mais** E que a renda familiar per capita seja de no máximo **1/4 do salário mínimo**. São três condições que precisam ser avaliadas em conjunto com `and` e `or`. Nesta aula você aprenderá a combinar múltiplos critérios em uma única expressão lógica."
+      },
+      "retomada": {
+        "texto_md": "**O que você já sabe e vai usar hoje:**\n\n* Operadores de comparação `>`, `<`, `>=`, `<=`, `==`, `!=` (Aula 3.1).\n* Estrutura `if/else` para tomar decisões (Aula 3.1).\n* Tipos `bool` — valores `True` e `False` (Aula 1.1)."
+      },
+      "situacao": {
+        "texto_md": "Um sistema de vacinação prioriza pessoas com 60 anos ou mais **e** que possuam alguma comorbidade. Se o sistema só verificar a idade, idosos sem comorbidade entrariam indevidamente. Se verificar só a comorbidade, adultos jovens de risco seriam priorizados antes dos idosos. O `and` garante que **ambos** os critérios sejam atendidos.",
+        "titulo": "O critério que precisa de dois 'e'"
+      },
+      "problematizacao": {
+        "texto_md": "* Pense na isenção de IPTU para idosos: válida para quem tem 60 anos **e** renda de até 3 salários mínimos **e** possui um único imóvel. Como traduzimos isso em Python?\n* Qual é a diferença entre usar `and` versus `or` quando combinamos critérios de elegibilidade? Que tipo de erro grave pode surgir se usarmos o operador errado?"
+      }
+    },
+    "conceito": {
+      "titulo": "Conceito técnico",
+      "texto_md": "Os **operadores lógicos** combinam duas ou mais expressões booleanas (que valem `True` ou `False`) em uma única expressão booleana. Em Python são apenas três:\n\n* **`and`** — verdadeiro **somente** se as duas condições forem verdadeiras.\n* **`or`** — verdadeiro se **pelo menos uma** das condições for verdadeira.\n* **`not`** — **inverte** o valor: `True` vira `False` e vice-versa.\n\n**Tabela-verdade:**\n\n| A | B | A and B | A or B | not A |\n|---|---|---|---|---|\n| True | True | True | True | False |\n| True | False | False | True | False |\n| False | True | False | True | True |\n| False | False | False | False | True |\n\n> Use parênteses para deixar claro o que se compara antes de combinar: `(idade >= 60) and (tem_comorbidade)`.",
+      "exemplos": [
+        {
+          "titulo": "1) and — todas as condições precisam ser verdadeiras",
+          "texto_md": "Verificar se uma pessoa atende aos critérios do BPC (idoso + renda baixa).",
+          "python": "idade = 65\nrenda_per_capita = 300.0\n\nelegivel = (idade >= 65) and (renda_per_capita <= 353.0)\nprint(elegivel)  # True"
+        },
+        {
+          "titulo": "2) or — basta uma condição ser verdadeira",
+          "texto_md": "BPC aceita quem é idoso OU tem deficiência (qualquer um dos dois).",
+          "python": "tem_deficiencia = False\ntem_65_anos = True\n\npode_pleitear = tem_deficiencia or tem_65_anos\nprint(pode_pleitear)  # True"
+        },
+        {
+          "titulo": "3) not — inverter a verificação",
+          "texto_md": "Reagir à ausência de uma condição.",
+          "python": "cadastro_ativo = False\n\nif not cadastro_ativo:\n    print(\"ALERTA: cadastro inativo — encaminhar para regularização\")"
+        }
+      ]
+    },
+    "pratica_guiada": {
+      "titulo": "Prática guiada",
+      "texto_md": "Vamos exercitar `and`, `or` e `not` em três cenários progressivos.",
+      "exemplos": [
+        {
+          "titulo": "Passo 1 — and: dois critérios ao mesmo tempo",
+          "texto_md": "Validar idade entre 18 e 65 anos (faixa de trabalho ativo).",
+          "python": "idade = int(input(\"Idade do candidato: \"))\n\nif idade >= 18 and idade <= 65:\n    print(\"Faixa de trabalho ativo.\")\nelse:\n    print(\"Fora da faixa de trabalho ativo.\")"
+        },
+        {
+          "titulo": "Passo 2 — or: aceitar um entre vários critérios",
+          "texto_md": "Direito à gratuidade no transporte municipal: estudante OU idoso.",
+          "python": "eh_estudante = input(\"É estudante? (sim/nao): \") == \"sim\"\nidade = int(input(\"Idade: \"))\n\nif eh_estudante or idade >= 65:\n    print(\"Gratuidade: CONCEDIDA\")\nelse:\n    print(\"Gratuidade: NEGADA\")"
+        },
+        {
+          "titulo": "Passo 3 — not combinado com and/or",
+          "texto_md": "Liberar acesso somente para cadastro ativo E que NÃO esteja com pendências.",
+          "python": "cadastro_ativo = input(\"Cadastro ativo? (sim/nao): \") == \"sim\"\ntem_pendencia = input(\"Tem pendência? (sim/nao): \") == \"sim\"\n\nif cadastro_ativo and not tem_pendencia:\n    print(\"Acesso: LIBERADO\")\nelse:\n    print(\"Acesso: BLOQUEADO\")"
+        }
+      ]
+    },
+    "pratica_autonoma": {
+      "titulo": "Exercício de Continuação (Sua vez!)",
+      "texto_md": "**Enunciado:** Um sistema de habilitação verifica dois critérios para aprovação no DETRAN: a nota teórica deve ser **maior ou igual a 7.0** E a nota prática deve ser **maior ou igual a 6.0**. O programa recebe as duas notas (float). Se ambas forem aprovadas, exibe `Resultado: APROVADO`. Caso contrário, exibe `Resultado: REPROVADO`.\n\n**Entradas e Saídas (Autocorreção):**\n\n| Entrada | Saída |\n|---|---|\n| 7.5<br>6.5 | Resultado: APROVADO |\n| 8.0<br>5.9 | Resultado: REPROVADO |"
+    },
+    "fechamento": {
+      "titulo": "Fechamento e Autoavaliação",
+      "quiz": {
+        "texto_md": "**1. Qual é o resultado de `(5 > 3) and (2 > 10)`?**\nA) True\nB) False\nC) Erro\n\n::details{summary=\"Ver a resposta correta\"}\n**Correto: B) False.** Com `and`, **ambas** as condições precisam ser `True`. `5 > 3` é `True`, mas `2 > 10` é `False`. `True and False` = `False`.\n::\n\n**2. Qual é o resultado de `(5 > 10) or (3 == 3)`?**\nA) False\nB) Erro\nC) True\n\n::details{summary=\"Ver a resposta correta\"}\n**Correto: C) True.** Com `or`, basta **uma** condição ser `True`. `5 > 10` é `False`, mas `3 == 3` é `True`. `False or True` = `True`.\n::\n\n**3. O que `not True` retorna?**\nA) True\nB) 0\nC) False\n\n::details{summary=\"Ver a resposta correta\"}\n**Correto: C) False.** O operador `not` inverte o valor lógico.\n::"
+      },
+      "leitura_complementar": {
+        "texto_md": "* **Documentação Oficial:** Pesquise por \"Python boolean operations\" para ver a ordem de precedência dos operadores lógicos (`not` > `and` > `or`).\n* **Prática contextual:** Pesquise os critérios do BPC e traduza cada um em uma expressão booleana Python."
+      },
+      "reflexao": {
+        "texto_md": "* A linguagem lógica dos computadores e a linguagem lógica das leis são surpreendentemente parecidas. Ambas usam `E`, `OU` e `NÃO` para definir quem está incluído ou excluído de uma regra. Programar sistemas públicos é, no fundo, **implementar políticas sociais em código**."
+      }
+    }
+  },
+  "premio": null,
+  "rpg": {
+    "xp_reward": 50,
+    "variant": "lesson",
+    "oracle_hints": [
+      "Verifique a formatação exata da saída pedida.",
+      "Releia o enunciado com atenção antes de codar."
+    ],
+    "loot_drops": [
+      {
+        "item": "Fragmento de Experiência",
+        "type": "consumable",
+        "rarity": "common"
+      }
+    ]
+  }
+}

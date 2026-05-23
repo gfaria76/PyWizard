@@ -1,0 +1,131 @@
+{
+  "id": "python-M01-A23-MS",
+  "curso": "python",
+  "modulo": 1,
+  "aula": 23,
+  "numero": 23,
+  "tipo": "Masmorra",
+  "subtipo": "simulado",
+  "titulo": "Labirinto da Sabedoria II: Simulado antes do Boss",
+  "subtitulo": "Treino individual com questões equivalentes às do boss «Maratona Prática II: O Contador de Contribuintes»",
+  "objetivo": "Oferecer um simulado individual de pré-boss com questões equivalentes às do boss «Maratona Prática II: O Contador de Contribuintes», permitindo calibrar tempo, formato de saída e identificação de pontos fracos antes da avaliação oficial.",
+  "duracao": "1h30",
+  "tags": [
+    "labirinto_sabedoria",
+    "simulado",
+    "pré-boss"
+  ],
+  "secoes": {
+    "abertura": {
+      "introducao": {
+        "texto_md": "# Labirinto da Sabedoria II\n\nEste é um simulado individual antes do boss «Maratona Prática II: O Contador de Contribuintes». As questões aqui são equivalentes às do boss em escopo, formato e dificuldade, mas usam dados sintéticos diferentes. Resultado não conta para a nota final do núcleo; serve como termômetro pessoal e para identificar tópicos a revisar.\n\n**Regras do labirinto:**\n\n* Resolva os aquecimentos primeiro para calibrar formato de saída.\n* Tente todas as missões dentro do tempo estimado do boss.\n* Compare seu resultado com o gabarito e revise antes da maratona oficial.\n"
+      }
+    },
+    "aquecimento": {
+      "titulo": "Aquecimento (sem pontos)",
+      "texto_md": "Calibre leitura de entrada e precisão de saída antes das missões simuladas.",
+      "missoes": [
+        {
+          "titulo": "Aquecimento simulado A: Caixas de Livros do FNDE",
+          "texto_md": "**O Treino:** O avaliador injeta `total_livros` (`Int`). Cada caixa comporta exatamente 30 livros. Calcule quantas caixas completas serão usadas e quantos livros sobram. Imprima:\n\n`Caixas completas: N`\n`Livros restantes: N`\n\n**Casos de Teste (Amostra):**\n\n| Entrada | Saída | Show |\n|---|---|---|\n| `95` | Caixas completas: 3<br>Livros restantes: 5 | Sim |\n| `60` | Caixas completas: 2<br>Livros restantes: 0 | Sim |",
+          "meta": {
+            "tipo": "simulado_warmup",
+            "espelha": "warmup_a"
+          }
+        },
+        {
+          "titulo": "Aquecimento simulado B: Conversão de Jornada",
+          "texto_md": "**O Treino:** O avaliador injeta `minutos_trabalhados` (`Int`). Converta o total em horas completas e minutos restantes. Imprima `Jornada: Nh Nmin`.\n\n**Casos de Teste (Amostra):**\n\n| Entrada | Saída | Show |\n|---|---|---|\n| `530` | Jornada: 8h 50min | Sim |\n| `480` | Jornada: 8h 0min | Sim |",
+          "meta": {
+            "tipo": "simulado_warmup",
+            "espelha": "warmup_b"
+          }
+        }
+      ]
+    },
+    "maratona": {
+      "titulo": "Simulado completo (espelho do boss)",
+      "texto_md": "Cinco missões simuladas, equivalentes às do boss «Maratona Prática II: O Contador de Contribuintes». Mesmas habilidades, dados sintéticos diferentes.",
+      "missoes": [
+        {
+          "titulo": "Simulado 1: variação equivalente — O Rateio Escolar (FNDE)",
+          "texto_md": "**Treino equivalente à missão 1 do boss.** Mesmo conjunto de habilidades, dados sintéticos diferentes. Use para calibrar tempo e formato antes da maratona oficial.\n\n**O Treino:** O avaliador injeta `verba_total_centavos` (`Int`) e `num_escolas` (`Int`). A verba precisa ser distribuída igualmente entre escolas, em centavos. Calcule quanto cada escola recebe e qual saldo volta ao caixa. Imprima:\n\n`Por escola: R$ X.XX`\n`Saldo retornado: R$ X.XX`\n\n**Casos de Teste (Amostra):**\n\n| Entrada | Saída | Show |\n|---|---|---|\n| `100000`, `7` | Por escola: R$ 142.85<br>Saldo retornado: R$ 0.05 | Sim |\n| `50000`, `10` | Por escola: R$ 50.00<br>Saldo retornado: R$ 0.00 | Sim |",
+          "meta": {
+            "tipo": "simulado",
+            "espelha_missao": "missao_1"
+          }
+        },
+        {
+          "titulo": "Simulado 2: variação equivalente — A Conta de Energia por Faixas (ANEEL)",
+          "texto_md": "**Treino equivalente à missão 2 do boss.** Mesmo conjunto de habilidades, dados sintéticos diferentes. Use para calibrar tempo e formato antes da maratona oficial.\n\n**O Treino:** O avaliador injeta `consumo_total` (`Int`) e `tarifa_pacote` (`Float`). Cada pacote cobre 50 kWh. Calcule quantos pacotes completos cabem, quantos kWh ficam excedentes e o custo apenas dos pacotes completos. Imprima:\n\n`Pacotes: N`\n`Excedente: N kWh`\n`Custo dos pacotes: R$ X.XX`\n\n**Casos de Teste (Amostra):**\n\n| Entrada | Saída | Show |\n|---|---|---|\n| `183`, `28.50` | Pacotes: 3<br>Excedente: 33 kWh<br>Custo dos pacotes: R$ 85.50 | Sim |\n| `200`, `28.50` | Pacotes: 4<br>Excedente: 0 kWh<br>Custo dos pacotes: R$ 114.00 | Sim |",
+          "meta": {
+            "tipo": "simulado",
+            "espelha_missao": "missao_2"
+          }
+        },
+        {
+          "titulo": "Simulado 3: variação equivalente — Planejamento Rodoviário (DNIT)",
+          "texto_md": "**Treino equivalente à missão 3 do boss.** Mesmo conjunto de habilidades, dados sintéticos diferentes. Use para calibrar tempo e formato antes da maratona oficial.\n\n**O Treino:** O avaliador injeta `total_km` (`Int`) e `km_por_dia` (`Int`). Calcule quantos dias completos de obra são necessários e quantos quilômetros sobram para um último dia parcial. Imprima:\n\n`Dias completos: N`\n`Km restantes: N`\n`Equipes-dia totais: N`\n\n**Casos de Teste (Amostra):**\n\n| Entrada | Saída | Show |\n|---|---|---|\n| `150`, `12` | Dias completos: 12<br>Km restantes: 6<br>Equipes-dia totais: 13 | Sim |\n| `120`, `12` | Dias completos: 10<br>Km restantes: 0<br>Equipes-dia totais: 10 | Sim |",
+          "meta": {
+            "tipo": "simulado",
+            "espelha_missao": "missao_3"
+          }
+        },
+        {
+          "titulo": "Simulado 4: variação equivalente — A Multa do IRPF por Atraso",
+          "texto_md": "**Treino equivalente à missão 4 do boss.** Mesmo conjunto de habilidades, dados sintéticos diferentes. Use para calibrar tempo e formato antes da maratona oficial.\n\n**O Treino:** O avaliador injeta `imposto_devido` (`Float`) e `meses_atraso` (`Int`). A multa é de 1% ao mês. Calcule o valor da multa e o total a pagar. Imprima:\n\n`Meses de atraso: N`\n`Multa: R$ X.XX`\n`Total a pagar: R$ X.XX`\n\n**Casos de Teste (Amostra):**\n\n| Entrada | Saída | Show |\n|---|---|---|\n| `5000.0`, `3` | Meses de atraso: 3<br>Multa: R$ 150.00<br>Total a pagar: R$ 5150.00 | Sim |\n| `3000.0`, `8` | Meses de atraso: 8<br>Multa: R$ 240.00<br>Total a pagar: R$ 3240.00 | Sim |",
+          "meta": {
+            "tipo": "simulado",
+            "espelha_missao": "missao_4"
+          }
+        },
+        {
+          "titulo": "Simulado 5: variação equivalente — Grade Demográfica (IBGE)",
+          "texto_md": "**Treino equivalente à missão 5 do boss.** Mesmo conjunto de habilidades, dados sintéticos diferentes. Use para calibrar tempo e formato antes da maratona oficial.\n\n**O Treino:** O avaliador injeta `populacao` (`Int`), `area_km2` (`Float`) e `celulas_grade` (`Int`). Calcule a densidade demográfica, a área média por célula e quantos habitantes ficam em cada célula inteira, com sobra. Imprima:\n\n`Densidade: X.XX hab/km2`\n`Area por celula: X.XX km2`\n`Habitantes por celula: N`\n`Sobra populacional: N`\n\n**Casos de Teste (Amostra):**\n\n| Entrada | Saída | Show |\n|---|---|---|\n| `50000`, `500.0`, `10` | Densidade: 100.00 hab/km2<br>Area por celula: 50.00 km2<br>Habitantes por celula: 5000<br>Sobra populacional: 0 | Sim |\n| `100003`, `1000.0`, `10` | Densidade: 100.00 hab/km2<br>Area por celula: 100.00 km2<br>Habitantes por celula: 10000<br>Sobra populacional: 3 | Sim |",
+          "meta": {
+            "tipo": "simulado",
+            "espelha_missao": "missao_5"
+          }
+        }
+      ]
+    },
+    "fechamento": {
+      "titulo": "Encerramento do Labirinto",
+      "reflexao": {
+        "texto_md": "* Quais missões consumiram mais tempo? Identifique gargalos.\n* Em quais formatos de saída houve erro? Revise antes do boss.\n* Marque os tópicos a reler nos `conceitos` correspondentes antes da maratona oficial.\n"
+      }
+    }
+  },
+  "premio": {
+    "pontuacao": 0,
+    "recursos": [
+      "Gabarito disponível após o término do simulado",
+      "Relatório de fraquezas: tópicos a revisar antes do boss"
+    ]
+  },
+  "rpg": {
+    "xp_reward": 80,
+    "variant": "labyrinth-simulation",
+    "oracle_hints": [
+      "Trate este labirinto como o boss real — formato de saída conta.",
+      "Cronometre cada missão para identificar onde perde tempo.",
+      "Se errar duas seguidas, volte aos conceitos antes de prosseguir."
+    ],
+    "enemy_name": "Eco do Boss II",
+    "enemy_hp": 200,
+    "weakness": "preparação prévia",
+    "loot_drops": [
+      {
+        "item": "Mapa do Labirinto",
+        "type": "consumable",
+        "rarity": "uncommon"
+      },
+      {
+        "item": "Pergaminho de Foco",
+        "type": "consumable",
+        "rarity": "common",
+        "quantity": 2
+      }
+    ]
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "id": "python-M02-A12-CT",
+  "curso": "python",
+  "modulo": 2,
+  "aula": 12,
+  "numero": 12,
+  "tipo": "Aula",
+  "subtipo": "conceito",
+  "titulo": "Funções nativas de lista",
+  "subtitulo": "Medir antes de opinar: extraindo a verdade dos números",
+  "objetivo": "Aplicar `min`, `max`, `sum`, `len` e `sorted` para gerar indicadores e comparar listas sem perder os dados originais.",
+  "duracao": "1h30",
+  "tags": [
+    "funções nativas",
+    "estatística básica",
+    "sorted"
+  ],
+  "secoes": {
+    "abertura": {
+      "objetivo": {
+        "texto_md": "No nosso cotidiano lidamos com dezenas de valores numéricos sem perceber. Ler esses dados de forma solta não é suficiente. Nesta aula você vai aprender a extrair **indicadores reais** (valores extremos, soma total, quantidade e média) usando as ferramentas nativas do Python sobre listas."
+      },
+      "retomada": {
+        "texto_md": "**O que você já sabe e vai usar hoje:**\n\n* Criação de listas com `[ ]` e acesso por índice (Aula 1.1).\n* `len(lista)` para contar itens (Aula 1.1).\n* Formatação com f-strings — `:.2f` para duas casas decimais (Módulo I, Aula 2.1)."
+      },
+      "situacao": {
+        "texto_md": "Uma pequena fábrica têxtil tem cinco funcionários. O contador anuncia que a fábrica gasta R$ 10.400,00 por mês em salários e que, na média, todo mundo ganha mais de três mil reais. Mas se colocarmos os pagamentos em uma lista — `[1200, 1200, 1200, 1200, 5600]` — a média esconde o contraste: quatro recebem o piso e um recebe quase cinco vezes mais.",
+        "titulo": "O perigo de olhar apenas o montante final"
+      },
+      "problematizacao": {
+        "texto_md": "* Se olharmos apenas para o indicador de média, o que acontece com a realidade de quem está ganhando menos?\n* Por que usar `min` e `max` lado a lado com a média é importante para ter uma visão justa do conjunto?"
+      }
+    },
+    "conceito": {
+      "titulo": "Conceito técnico",
+      "texto_md": "O Python tem **funções nativas** (já embutidas, sem precisar `import`) que recebem uma lista e devolvem um indicador:\n\n| Função | O que devolve | Exemplo |\n|---|---|---|\n| `min(lista)` | menor valor | `min([3, 1, 7]) → 1` |\n| `max(lista)` | maior valor | `max([3, 1, 7]) → 7` |\n| `sum(lista)` | soma de todos | `sum([3, 1, 7]) → 11` |\n| `len(lista)` | quantidade de itens | `len([3, 1, 7]) → 3` |\n| `sorted(lista)` | **nova lista** ordenada | `sorted([3, 1, 7]) → [1, 3, 7]` |\n\nPara calcular a **média** de uma lista numérica usamos `sum(lista) / len(lista)`.\n\n> Atenção: existe uma diferença importante entre `sorted(lista)` e `lista.sort()`:\n>\n> * `sorted(lista)` **retorna uma nova lista ordenada** e não toca na original.\n> * `lista.sort()` **modifica a própria lista**; não retorna nada útil (devolve `None`).\n>\n> Use `sorted()` quando quiser preservar a ordem original (ex.: para mostrar lado a lado).",
+      "exemplos": [
+        {
+          "titulo": "1) min, max, sum, len",
+          "texto_md": "Aplicando as quatro funções básicas em uma lista de diárias.",
+          "python": "diarias = [80, 150, 80, 200, 100]\n\nprint(\"Menor diária:\", min(diarias))   # 80\nprint(\"Maior diária:\", max(diarias))   # 200\nprint(\"Total gasto:\", sum(diarias))    # 610\nprint(\"Trabalhadores:\", len(diarias))  # 5"
+        },
+        {
+          "titulo": "2) Média = soma / quantidade",
+          "texto_md": "A média é sempre `sum(lista) / len(lista)`. Use `:.2f` para limitar a duas casas decimais.",
+          "python": "diarias = [80, 150, 80, 200, 100]\n\nmedia = sum(diarias) / len(diarias)\nprint(f\"Média paga: R$ {media:.2f}\")  # 122.00"
+        },
+        {
+          "titulo": "3) sorted() vs .sort()",
+          "texto_md": "Observe como `sorted()` preserva a lista original; já `.sort()` a altera para sempre.",
+          "python": "precos = [12.50, 4.00, 8.90]\n\norganizados = sorted(precos)\nprint(\"Original:\", precos)        # [12.5, 4.0, 8.9]   (intocada)\nprint(\"Ordenada:\", organizados)   # [4.0, 8.9, 12.5]\n\nprecos.sort()\nprint(\"Após .sort():\", precos)    # [4.0, 8.9, 12.5]   (mudou para sempre)"
+        }
+      ]
+    },
+    "pratica_guiada": {
+      "titulo": "Prática guiada",
+      "texto_md": "Vamos aplicar as funções nativas em três passos progressivos.",
+      "exemplos": [
+        {
+          "titulo": "Passo 1 — Soma e quantidade",
+          "texto_md": "Calcular total e quantidade de uma lista informada pelo usuário.",
+          "python": "gastos = [120.0, 90.0, 150.0, 60.0]\n\ntotal = sum(gastos)\nqtd = len(gastos)\n\nprint(f\"Quantidade de contas: {qtd}\")\nprint(f\"Total gasto: R$ {total:.2f}\")"
+        },
+        {
+          "titulo": "Passo 2 — Acrescentar média, mínimo e máximo",
+          "texto_md": "Os mesmos dados, com indicadores mais ricos para análise.",
+          "python": "gastos = [120.0, 90.0, 150.0, 60.0]\n\ntotal = sum(gastos)\nmedia = total / len(gastos)\n\nprint(f\"Conta mais cara: R$ {max(gastos):.2f}\")\nprint(f\"Conta mais barata: R$ {min(gastos):.2f}\")\nprint(f\"Total: R$ {total:.2f}\")\nprint(f\"Média: R$ {media:.2f}\")"
+        },
+        {
+          "titulo": "Passo 3 — sorted() para mostrar lado a lado",
+          "texto_md": "Apresente a lista na ordem original e em ordem crescente, sem perder o histórico.",
+          "python": "gastos = [120.0, 90.0, 150.0, 60.0]\n\norganizado = sorted(gastos)\n\nprint(\"Ordem de chegada:\", gastos)\nprint(\"Do menor ao maior:\", organizado)"
+        }
+      ]
+    },
+    "pratica_autonoma": {
+      "titulo": "Exercício de Continuação (Sua vez!)",
+      "texto_md": "**Enunciado:** Um entregador de aplicativo quer descobrir a média de dinheiro que fez nas últimas corridas. O programa recebe uma lista com os valores em reais de cada entrega. Utilizando `sum()` e `len()`, calcule a média e imprima formatado com duas casas decimais como `Media: X.XX`.\n\n**Entradas e Saídas (Autocorreção):**\n\n| Entrada | Saída |\n|---|---|\n| [10, 15, 20] | Media: 15.00 |\n| [5.5, 6.5] | Media: 6.00 |"
+    },
+    "fechamento": {
+      "titulo": "Fechamento e Autoavaliação",
+      "quiz": {
+        "texto_md": "**1. Qual função devolve a quantidade de itens em uma lista?**\nA) `sum()`\nB) `len()`\nC) `max()`\n\n::details{summary=\"Ver a resposta correta\"}\n**Correto: B) `len()`.** Conta a quantidade total de elementos dentro da lista.\n::\n\n**2. Qual é a principal diferença entre `sorted(lista)` e `lista.sort()`?**\nA) `sorted()` altera a lista original; `sort()` gera erro se os dados não forem números.\nB) `sorted()` devolve uma nova lista ordenada preservando a original; `sort()` modifica a própria lista de forma definitiva.\nC) Não existe diferença, ambos funcionam exatamente da mesma forma.\n\n::details{summary=\"Ver a resposta correta\"}\n**Correto: B.** `sorted()` devolve uma nova lista ordenada (a original continua igual); `.sort()` muda a lista original e não devolve nada útil.\n::\n\n**3. Como calculamos a média correta de um conjunto de dados em Python?**\nA) Dividindo `sum(lista)` por `len(lista)`.\nB) Somando `min()` com `max()` e dividindo por 2.\nC) Existe uma função nativa chamada `media()` que resolve sozinha.\n\n::details{summary=\"Ver a resposta correta\"}\n**Correto: A.** A média é `sum(lista) / len(lista)`. Não existe uma função nativa `media()` em Python.\n::"
+      },
+      "leitura_complementar": {
+        "texto_md": "* **Documentação Oficial:** Pesquise pelas \"Built-in Functions\" do Python para aprofundar `sum`, `len`, `min`, `max`, `sorted`.\n* **Prática Diária:** Pegue o valor das suas últimas quatro contas (água/luz) e descubra a variação entre o mês mais caro e o mais barato."
+      },
+      "reflexao": {
+        "texto_md": "* Quando alguém afirmar que \"a média salarial da região está subindo\", desconfie. A média sozinha é um número cego: se 4 trabalhadores ganham o mínimo e um acionista retira milhões, a média dirá que todos enriqueceram. Dominar as funções nativas de dados — incluindo mínimo, máximo e ordenação — te dá autonomia para observar como as desigualdades funcionam nos bastidores."
+      }
+    }
+  },
+  "premio": null
+}

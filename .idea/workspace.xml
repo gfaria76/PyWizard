@@ -5,22 +5,170 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="406385b9-2d31-4267-a23d-2632bb107856" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/app/pages/[curso]/[modulo]/[nucleo]/index.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/pages/[curso]/index.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/cursos/python/modulo1/nucleo1/aula-11-trilha-guardiao.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/cursos/python/modulo1/nucleo1/aula-13-labirinto_sabedoria.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/cursos/python/modulo1/nucleo2/aula-21-trilha-guardiao.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/cursos/python/modulo1/nucleo2/aula-23-labirinto_sabedoria.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/cursos/python/modulo1/nucleo3/aula-31-trilha-guardiao.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/cursos/python/modulo1/nucleo3/aula-33-labirinto_sabedoria.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/cursos/python/modulo1/nucleo4/aula-41-trilha-guardiao.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/cursos/python/modulo1/nucleo4/aula-43-labirinto_sabedoria.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/cursos/python/modulo2/nucleo1/aula-11-trilha-guardiao.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/cursos/python/modulo2/nucleo1/aula-13-labirinto_sabedoria.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/cursos/python/modulo2/nucleo2/aula-21-trilha-guardiao.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/cursos/python/modulo2/nucleo2/aula-23-labirinto_sabedoria.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/cursos/python/modulo2/nucleo3/aula-31-trilha-guardiao.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/cursos/python/modulo2/nucleo3/aula-33-labirinto_sabedoria.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/cursos/python/modulo2/nucleo4/aula-41-trilha-guardiao.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/cursos/python/modulo2/nucleo4/aula-43-labirinto_sabedoria.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/cursos/python/modulo3/nucleo1/aula-11-trilha-guardiao.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/cursos/python/modulo3/nucleo1/aula-13-labirinto_sabedoria.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/cursos/python/modulo3/nucleo2/aula-21-trilha-guardiao.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/cursos/python/modulo3/nucleo2/aula-23-labirinto_sabedoria.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/cursos/python/modulo3/nucleo3/aula-31-trilha-guardiao.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/cursos/python/modulo3/nucleo3/aula-33-labirinto_sabedoria.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/cursos/python/modulo3/nucleo4/aula-41-trilha-guardiao.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/cursos/python/modulo3/nucleo4/aula-43-labirinto_sabedoria.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/cursos/sql/readme.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/cursos/vue_vuetify/readme.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.claude/settings.local.json" beforeDir="false" afterPath="$PROJECT_DIR$/.claude/settings.local.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/ShadcnHelperSettings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/ShadcnHelperSettings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SCHEMA_DOCUMENTATION.md" beforeDir="false" afterPath="$PROJECT_DIR$/SCHEMA_DOCUMENTATION.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/assets/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/assets/css/main.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/components/ConstellationMap.vue" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/ConstellationMap.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/components/NodeShape.vue" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/NodeShape.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/components/code/CodeEditor.vue" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/code/CodeEditor.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/components/quest/MarkdownBlock.vue" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/quest/MarkdownBlock.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/components/quest/QuestCard.vue" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/quest/QuestCard.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/components/rpg/BeastCard.vue" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/rpg/BeastCard.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/components/rpg/LootItem.vue" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/rpg/LootItem.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/components/rpg/SkillCard.vue" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/rpg/SkillCard.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/pages/python/arena/[...slug].vue" beforeDir="false" afterPath="$PROJECT_DIR$/app/pages/python/arena/[...slug].vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/pages/python/bestiary.vue" beforeDir="false" afterPath="$PROJECT_DIR$/app/pages/python/bestiary.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.pnp.loader.mjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.yarnrc.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/components/game/GameHUD.vue" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/game/GameHUD.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/components/nav/StudentNav.vue" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/nav/StudentNav.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/composables/useQuestSections.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/composables/useQuestSections.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/layouts/student.vue" beforeDir="false" afterPath="$PROJECT_DIR$/app/layouts/student.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/pages/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/app/pages/index.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/pages/python/arena/[...slug].vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/pages/python/bestiary.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/pages/python/grimoire.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/pages/python/index.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/pages/python/ranking.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/cursos/python/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/cursos/python/game/modulo1.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/cursos/python/game/modulo1.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/cursos/python/game/modulo2.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/cursos/python/game/modulo2.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/cursos/python/game/modulo3.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/cursos/python/game/modulo3.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/cursos/python/modulo1/aula-01-conceitos.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/cursos/python/modulo1/nucleo1/aula-11-conceitos.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/cursos/python/modulo1/aula-01-trilha-aprendiz.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/cursos/python/modulo1/nucleo1/aula-11-trilha-aprendiz.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/cursos/python/modulo1/aula-01-trilha-aventura.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/cursos/python/modulo1/nucleo1/aula-11-trilha-aventura.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/cursos/python/modulo1/aula-02-conceitos.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/cursos/python/modulo1/nucleo1/aula-12-conceitos.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/cursos/python/modulo1/aula-02-trilha-aprendiz.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/cursos/python/modulo1/nucleo1/aula-12-trilha-aprendiz.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/cursos/python/modulo1/aula-02-trilha-aventura.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/cursos/python/modulo1/nucleo1/aula-12-trilha-aventura.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/cursos/python/modulo1/aula-03-boss.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/cursos/python/modulo1/nucleo1/aula-14-boss.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/cursos/python/modulo1/aula-03-exedicao_guilda.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/cursos/python/modulo1/nucleo1/aula-13-exedicao_guilda.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/cursos/python/modulo1/aula-03-trilha-guardiao.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/cursos/python/modulo1/nucleo1/aula-12-trilha-guardiao.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/cursos/python/modulo1/aula-04-conceitos.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/cursos/python/modulo1/nucleo2/aula-21-conceitos.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/cursos/python/modulo1/aula-04-trilha-aprendiz.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/cursos/python/modulo1/nucleo2/aula-21-trilha-aprendiz.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/cursos/python/modulo1/aula-04-trilha-aventura.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/cursos/python/modulo1/nucleo2/aula-21-trilha-aventura.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/cursos/python/modulo1/aula-05-conceitos.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/cursos/python/modulo1/nucleo2/aula-22-conceitos.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/cursos/python/modulo1/aula-05-trilha-aprendiz.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/cursos/python/modulo1/nucleo2/aula-22-trilha-aprendiz.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/cursos/python/modulo1/aula-05-trilha-aventura.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/cursos/python/modulo1/nucleo2/aula-22-trilha-aventura.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/cursos/python/modulo1/aula-06-boss.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/cursos/python/modulo1/nucleo2/aula-24-boss.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/cursos/python/modulo1/aula-06-exedicao_guilda.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/cursos/python/modulo1/nucleo2/aula-23-exedicao_guilda.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/cursos/python/modulo1/aula-06-trilha-guardiao.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/cursos/python/modulo1/nucleo2/aula-22-trilha-guardiao.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/cursos/python/modulo1/aula-07-conceitos.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/cursos/python/modulo1/nucleo3/aula-31-conceitos.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/cursos/python/modulo1/aula-07-trilha-aprendiz.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/cursos/python/modulo1/nucleo3/aula-31-trilha-aprendiz.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/cursos/python/modulo1/aula-07-trilha-aventura.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/cursos/python/modulo1/nucleo3/aula-31-trilha-aventura.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/cursos/python/modulo1/aula-08-conceitos.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/cursos/python/modulo1/nucleo3/aula-32-conceitos.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/cursos/python/modulo1/aula-08-trilha-aprendiz.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/cursos/python/modulo1/nucleo3/aula-32-trilha-aprendiz.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/cursos/python/modulo1/aula-08-trilha-aventura.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/cursos/python/modulo1/nucleo3/aula-32-trilha-aventura.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/cursos/python/modulo1/aula-09-boss.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/cursos/python/modulo1/nucleo3/aula-34-boss.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/cursos/python/modulo1/aula-09-exedicao_guilda.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/cursos/python/modulo1/nucleo3/aula-33-exedicao_guilda.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/cursos/python/modulo1/aula-09-trilha-guardiao.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/cursos/python/modulo1/nucleo3/aula-32-trilha-guardiao.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/cursos/python/modulo1/aula-10-conceitos.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/cursos/python/modulo1/nucleo4/aula-41-conceitos.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/cursos/python/modulo1/aula-10-trilha-aprendiz.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/cursos/python/modulo1/nucleo4/aula-41-trilha-aprendiz.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/cursos/python/modulo1/aula-10-trilha-aventura.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/cursos/python/modulo1/nucleo4/aula-41-trilha-aventura.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/cursos/python/modulo1/aula-11-conceitos.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/cursos/python/modulo1/nucleo4/aula-42-conceitos.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/cursos/python/modulo1/aula-11-trilha-aprendiz.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/cursos/python/modulo1/nucleo4/aula-42-trilha-aprendiz.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/cursos/python/modulo1/aula-11-trilha-aventura.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/cursos/python/modulo1/nucleo4/aula-42-trilha-aventura.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/cursos/python/modulo1/aula-12-boss.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/cursos/python/modulo1/nucleo4/aula-44-boss.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/cursos/python/modulo1/aula-12-exedicao_guilda.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/cursos/python/modulo1/nucleo4/aula-43-exedicao_guilda.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/cursos/python/modulo1/aula-12-trilha-guardiao.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/cursos/python/modulo1/nucleo4/aula-42-trilha-guardiao.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/cursos/python/modulo1/aula-13-PROVA.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/cursos/python/modulo1/aula-50-PROVA.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/cursos/python/modulo2/aula-01-conceitos.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/cursos/python/modulo2/nucleo1/aula-11-conceitos.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/cursos/python/modulo2/aula-01-trilha-aprendiz.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/cursos/python/modulo2/nucleo1/aula-11-trilha-aprendiz.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/cursos/python/modulo2/aula-01-trilha-aventura.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/cursos/python/modulo2/nucleo1/aula-11-trilha-aventura.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/cursos/python/modulo2/aula-02-conceitos.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/cursos/python/modulo2/nucleo1/aula-12-conceitos.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/cursos/python/modulo2/aula-02-trilha-aprendiz.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/cursos/python/modulo2/nucleo1/aula-12-trilha-aprendiz.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/cursos/python/modulo2/aula-02-trilha-aventura.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/cursos/python/modulo2/nucleo1/aula-12-trilha-aventura.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/cursos/python/modulo2/aula-03-boss.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/cursos/python/modulo2/nucleo1/aula-14-boss.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/cursos/python/modulo2/aula-03-exedicao_guilda.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/cursos/python/modulo2/nucleo1/aula-13-exedicao_guilda.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/cursos/python/modulo2/aula-03-trilha-guardiao.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/cursos/python/modulo2/nucleo1/aula-12-trilha-guardiao.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/cursos/python/modulo2/aula-04-conceitos.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/cursos/python/modulo2/nucleo2/aula-21-conceitos.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/cursos/python/modulo2/aula-04-trilha-aprendiz.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/cursos/python/modulo2/nucleo2/aula-21-trilha-aprendiz.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/cursos/python/modulo2/aula-04-trilha-aventura.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/cursos/python/modulo2/nucleo2/aula-21-trilha-aventura.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/cursos/python/modulo2/aula-05-conceitos.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/cursos/python/modulo2/nucleo2/aula-22-conceitos.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/cursos/python/modulo2/aula-05-trilha-aprendiz.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/cursos/python/modulo2/nucleo2/aula-22-trilha-aprendiz.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/cursos/python/modulo2/aula-05-trilha-aventura.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/cursos/python/modulo2/nucleo2/aula-22-trilha-aventura.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/cursos/python/modulo2/aula-06-boss.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/cursos/python/modulo2/nucleo2/aula-24-boss.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/cursos/python/modulo2/aula-06-exedicao_guilda.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/cursos/python/modulo2/nucleo2/aula-23-exedicao_guilda.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/cursos/python/modulo2/aula-06-trilha-guardiao.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/cursos/python/modulo2/nucleo2/aula-22-trilha-guardiao.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/cursos/python/modulo2/aula-07-conceitos.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/cursos/python/modulo2/nucleo3/aula-31-conceitos.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/cursos/python/modulo2/aula-07-trilha-aprendiz.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/cursos/python/modulo2/nucleo3/aula-31-trilha-aprendiz.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/cursos/python/modulo2/aula-07-trilha-aventura.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/cursos/python/modulo2/nucleo3/aula-31-trilha-aventura.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/cursos/python/modulo2/aula-08-conceitos.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/cursos/python/modulo2/nucleo3/aula-32-conceitos.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/cursos/python/modulo2/aula-08-trilha-aprendiz.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/cursos/python/modulo2/nucleo3/aula-32-trilha-aprendiz.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/cursos/python/modulo2/aula-08-trilha-aventura.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/cursos/python/modulo2/nucleo3/aula-32-trilha-aventura.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/cursos/python/modulo2/aula-09-boss.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/cursos/python/modulo2/nucleo3/aula-34-boss.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/cursos/python/modulo2/aula-09-exedicao_guilda.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/cursos/python/modulo2/nucleo3/aula-33-exedicao_guilda.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/cursos/python/modulo2/aula-09-trilha-guardiao.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/cursos/python/modulo2/nucleo3/aula-32-trilha-guardiao.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/cursos/python/modulo2/aula-10-conceitos.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/cursos/python/modulo2/nucleo4/aula-41-conceitos.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/cursos/python/modulo2/aula-10-trilha-aprendiz.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/cursos/python/modulo2/nucleo4/aula-41-trilha-aprendiz.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/cursos/python/modulo2/aula-10-trilha-aventura.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/cursos/python/modulo2/nucleo4/aula-41-trilha-aventura.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/cursos/python/modulo2/aula-11-conceitos.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/cursos/python/modulo2/nucleo4/aula-42-conceitos.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/cursos/python/modulo2/aula-11-trilha-aprendiz.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/cursos/python/modulo2/nucleo4/aula-42-trilha-aprendiz.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/cursos/python/modulo2/aula-11-trilha-aventura.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/cursos/python/modulo2/nucleo4/aula-42-trilha-aventura.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/cursos/python/modulo2/aula-12-boss.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/cursos/python/modulo2/nucleo4/aula-44-boss.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/cursos/python/modulo2/aula-12-exedicao_guilda.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/cursos/python/modulo2/nucleo4/aula-43-exedicao_guilda.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/cursos/python/modulo2/aula-12-trilha-guardiao.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/cursos/python/modulo2/nucleo4/aula-42-trilha-guardiao.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/cursos/python/modulo2/aula-13-PROVA.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/cursos/python/modulo2/aula-50-PROVA.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/cursos/python/modulo3/aula-01-conceitos.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/cursos/python/modulo3/nucleo1/aula-11-conceitos.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/cursos/python/modulo3/aula-01-trilha-aprendiz.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/cursos/python/modulo3/nucleo1/aula-11-trilha-aprendiz.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/cursos/python/modulo3/aula-01-trilha-aventura.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/cursos/python/modulo3/nucleo1/aula-11-trilha-aventura.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/cursos/python/modulo3/aula-02-conceitos.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/cursos/python/modulo3/nucleo1/aula-12-conceitos.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/cursos/python/modulo3/aula-02-trilha-aprendiz.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/cursos/python/modulo3/nucleo1/aula-12-trilha-aprendiz.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/cursos/python/modulo3/aula-02-trilha-aventura.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/cursos/python/modulo3/nucleo1/aula-12-trilha-aventura.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/cursos/python/modulo3/aula-03-boss.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/cursos/python/modulo3/nucleo1/aula-14-boss.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/cursos/python/modulo3/aula-03-exedicao_guilda.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/cursos/python/modulo3/nucleo1/aula-13-exedicao_guilda.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/cursos/python/modulo3/aula-03-trilha-guardiao.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/cursos/python/modulo3/nucleo1/aula-12-trilha-guardiao.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/cursos/python/modulo3/aula-04-conceitos.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/cursos/python/modulo3/nucleo2/aula-21-conceitos.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/cursos/python/modulo3/aula-04-trilha-aprendiz.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/cursos/python/modulo3/nucleo2/aula-21-trilha-aprendiz.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/cursos/python/modulo3/aula-04-trilha-aventura.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/cursos/python/modulo3/nucleo2/aula-21-trilha-aventura.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/cursos/python/modulo3/aula-05-conceitos.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/cursos/python/modulo3/nucleo2/aula-22-conceitos.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/cursos/python/modulo3/aula-05-trilha-aprendiz.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/cursos/python/modulo3/nucleo2/aula-22-trilha-aprendiz.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/cursos/python/modulo3/aula-05-trilha-aventura.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/cursos/python/modulo3/nucleo2/aula-22-trilha-aventura.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/cursos/python/modulo3/aula-06-boss.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/cursos/python/modulo3/nucleo2/aula-24-boss.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/cursos/python/modulo3/aula-06-exedicao_guilda.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/cursos/python/modulo3/nucleo2/aula-23-exedicao_guilda.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/cursos/python/modulo3/aula-06-trilha-guardiao.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/cursos/python/modulo3/nucleo2/aula-22-trilha-guardiao.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/cursos/python/modulo3/aula-07-conceitos.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/cursos/python/modulo3/nucleo3/aula-31-conceitos.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/cursos/python/modulo3/aula-07-trilha-aprendiz.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/cursos/python/modulo3/nucleo3/aula-31-trilha-aprendiz.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/cursos/python/modulo3/aula-07-trilha-aventura.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/cursos/python/modulo3/nucleo3/aula-31-trilha-aventura.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/cursos/python/modulo3/aula-08-conceitos.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/cursos/python/modulo3/nucleo3/aula-32-conceitos.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/cursos/python/modulo3/aula-08-trilha-aprendiz.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/cursos/python/modulo3/nucleo3/aula-32-trilha-aprendiz.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/cursos/python/modulo3/aula-08-trilha-aventura.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/cursos/python/modulo3/nucleo3/aula-32-trilha-aventura.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/cursos/python/modulo3/aula-09-boss.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/cursos/python/modulo3/nucleo3/aula-34-boss.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/cursos/python/modulo3/aula-09-exedicao_guilda.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/cursos/python/modulo3/nucleo3/aula-33-exedicao_guilda.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/cursos/python/modulo3/aula-09-trilha-guardiao.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/cursos/python/modulo3/nucleo3/aula-32-trilha-guardiao.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/cursos/python/modulo3/aula-10-conceitos.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/cursos/python/modulo3/nucleo4/aula-41-conceitos.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/cursos/python/modulo3/aula-10-trilha-aprendiz.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/cursos/python/modulo3/nucleo4/aula-41-trilha-aprendiz.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/cursos/python/modulo3/aula-10-trilha-aventura.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/cursos/python/modulo3/nucleo4/aula-41-trilha-aventura.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/cursos/python/modulo3/aula-11-conceitos.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/cursos/python/modulo3/nucleo4/aula-42-conceitos.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/cursos/python/modulo3/aula-11-trilha-aprendiz.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/cursos/python/modulo3/nucleo4/aula-42-trilha-aprendiz.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/cursos/python/modulo3/aula-11-trilha-aventura.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/cursos/python/modulo3/nucleo4/aula-42-trilha-aventura.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/cursos/python/modulo3/aula-12-boss.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/cursos/python/modulo3/nucleo4/aula-44-boss.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/cursos/python/modulo3/aula-12-exedicao_guilda.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/cursos/python/modulo3/nucleo4/aula-43-exedicao_guilda.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/cursos/python/modulo3/aula-12-trilha-guardiao.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/cursos/python/modulo3/nucleo4/aula-42-trilha-guardiao.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/cursos/python/modulo3/aula-13-PROVA.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/cursos/python/modulo3/aula-50-PROVA.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/utils/course-data.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/utils/course-data.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/telas.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tmp_normalize_modulos_json.py" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,7 +178,7 @@
   <component name="CopilotChats">
     <option name="panelChat">
       <chat>
-        <option name="activeSessionId" value="d21d4ffc-4cbd-432c-9c1a-9e0d5ae48577" />
+        <option name="activeSessionId" value="119c201a-c731-4bb8-bf98-46738ab26799" />
         <option name="sessions">
           <session>
             <option name="chatType" value="PANEL" />
@@ -132,7 +280,7 @@
             <option name="id" value="d21d4ffc-4cbd-432c-9c1a-9e0d5ae48577" />
             <option name="modeId" value="file:///snapshot/cls-source/dist/assets/agents/Plan.agent.md" />
             <option name="modelType" value="builtin_family" />
-            <option name="modelValue" value="gpt-5.3-codex" />
+            <option name="modelValue" value="gemini-3.1-pro-preview" />
             <option name="status" value="Completed" />
             <option name="targetType" value="LOCAL" />
           </session>
@@ -140,6 +288,23 @@
             <option name="chatType" value="PANEL" />
             <option name="id" value="6a2fe042-e17e-4601-b7af-9b61a81ceea6" />
             <option name="modeId" value="file:///snapshot/cls-source/dist/assets/agents/Plan.agent.md" />
+            <option name="modelType" value="builtin_family" />
+            <option name="modelValue" value="auto" />
+            <option name="targetType" value="LOCAL" />
+          </session>
+          <session>
+            <option name="chatType" value="PANEL" />
+            <option name="id" value="9f7ad96b-a5f3-494e-b595-e3e9d403956d" />
+            <option name="modeId" value="Agent" />
+            <option name="modelType" value="builtin_family" />
+            <option name="modelValue" value="auto" />
+            <option name="status" value="Completed" />
+            <option name="targetType" value="LOCAL" />
+          </session>
+          <session>
+            <option name="chatType" value="PANEL" />
+            <option name="id" value="119c201a-c731-4bb8-bf98-46738ab26799" />
+            <option name="modeId" value="Agent" />
             <option name="modelType" value="builtin_family" />
             <option name="modelValue" value="auto" />
             <option name="targetType" value="LOCAL" />
@@ -164,7 +329,7 @@
     </selectedModels>
   </component>
   <component name="EmbeddingIndexingInfo">
-    <option name="cachedIndexableFilesCount" value="247" />
+    <option name="cachedIndexableFilesCount" value="284" />
     <option name="fileBasedEmbeddingIndicesEnabled" value="true" />
   </component>
   <component name="Git.Settings">
@@ -178,7 +343,7 @@
 }</component>
   <component name="GithubPullRequestsUISettings">{
   &quot;selectedUrlAndAccountId&quot;: {
-    &quot;url&quot;: &quot;https://github.com/gfaria76/alg1-2026.git&quot;,
+    &quot;url&quot;: &quot;https://github.com/gfaria76/PyWizard.git&quot;,
     &quot;accountId&quot;: &quot;95797359-c426-4462-a9f5-e2507bb30fd4&quot;
   }
 }</component>
@@ -194,61 +359,61 @@
   </component>
   <component name="NextEditCompletionFeaturesState">
     <decayedCancelled>
-      <entry key="MS100" value="1.1504603920402146" />
-      <entry key="MS500" value="2.4523208408381088" />
-      <entry key="S2" value="3.4866636083035876" />
-      <entry key="S5" value="3.7816846819039864" />
-      <entry key="S10" value="3.8885483366246048" />
-      <entry key="S30" value="3.962326919961934" />
-      <entry key="S60" value="3.981097330673863" />
-      <entry key="M2" value="3.990533700631672" />
-      <entry key="M5" value="4.027813698413116" />
-      <entry key="M10" value="4.86492726525703" />
-      <entry key="M15" value="6.618419493038294" />
-      <entry key="M30" value="11.924615452176361" />
-      <entry key="H1" value="17.79083433245278" />
-      <entry key="H2" value="22.284769239440283" />
-      <entry key="H4" value="25.86020960979259" />
-      <entry key="D1" value="34.74978439943536" />
-      <entry key="W1" value="38.293660063923056" />
+      <entry key="MS100" value="1.682169961360212" />
+      <entry key="MS500" value="3.0735765905868146" />
+      <entry key="S2" value="3.725825984008344" />
+      <entry key="S5" value="4.113117198329975" />
+      <entry key="S10" value="5.1018848625577595" />
+      <entry key="S30" value="8.71387778339637" />
+      <entry key="S60" value="16.003087323089012" />
+      <entry key="M2" value="28.158648458160133" />
+      <entry key="M5" value="43.414799557749866" />
+      <entry key="M10" value="50.873067542988665" />
+      <entry key="M15" value="53.712069107860124" />
+      <entry key="M30" value="56.74947874561536" />
+      <entry key="H1" value="58.34713890714171" />
+      <entry key="H2" value="59.19122368601399" />
+      <entry key="H4" value="63.94510115592877" />
+      <entry key="D1" value="390.74352466863115" />
+      <entry key="W1" value="757.4819529458141" />
     </decayedCancelled>
     <decayedSelected>
       <entry key="MS100" value="0.0" />
       <entry key="MS500" value="0.0" />
       <entry key="S2" value="0.0" />
-      <entry key="S5" value="3.748955004774548E-174" />
-      <entry key="S10" value="1.9362218376969482E-87" />
-      <entry key="S30" value="1.2463835391009092E-29" />
-      <entry key="S60" value="3.5304157532802117E-15" />
-      <entry key="M2" value="5.9417301800739925E-8" />
-      <entry key="M5" value="0.0012869603605145201" />
-      <entry key="M10" value="0.03587422975499989" />
-      <entry key="M15" value="0.10877315448000252" />
-      <entry key="M30" value="0.32980775382031646" />
-      <entry key="H1" value="0.5742889114551285" />
-      <entry key="H2" value="0.7578185214516259" />
-      <entry key="H4" value="0.8705277258373944" />
-      <entry key="D1" value="0.9771556960240952" />
-      <entry key="W1" value="0.9967041179115571" />
+      <entry key="S5" value="0.0" />
+      <entry key="S10" value="0.0" />
+      <entry key="S30" value="0.0" />
+      <entry key="S60" value="0.0" />
+      <entry key="M2" value="7.739761959927406E-255" />
+      <entry key="M5" value="2.2672076941990816E-102" />
+      <entry key="M10" value="1.5069011117729882E-51" />
+      <entry key="M15" value="1.3248488205725834E-34" />
+      <entry key="M30" value="1.2528467869337743E-17" />
+      <entry key="H1" value="4.518232697980724E-9" />
+      <entry key="H2" value="1.0049836599711984E-4" />
+      <entry key="H4" value="0.016492528699601845" />
+      <entry key="D1" value="1.249786620215393" />
+      <entry key="W1" value="2.646670610802683" />
     </decayedSelected>
     <decayedShown>
-      <entry key="MS100" value="1.0377483376980958" />
-      <entry key="MS500" value="2.3993622441408853" />
-      <entry key="S2" value="3.4657635092861225" />
-      <entry key="S5" value="3.772399347826239" />
-      <entry key="S10" value="3.883735895254057" />
-      <entry key="S30" value="3.9606834901992833" />
-      <entry key="S60" value="3.9802706052924433" />
-      <entry key="M2" value="3.990119135304354" />
-      <entry key="M5" value="4.028918781729975" />
-      <entry key="M10" value="4.900498502034549" />
-      <entry key="M15" value="6.726692276582208" />
-      <entry key="M30" value="12.253720083900832" />
-      <entry key="H1" value="18.364489361105413" />
-      <entry key="H2" value="23.04167111851463" />
-      <entry key="H4" value="26.729014994774072" />
-      <entry key="D1" value="35.72582860025909" />
-      <entry key="W1" value="39.29016197069592" />
+      <entry key="MS100" value="1.5974847119716855" />
+      <entry key="MS500" value="3.0431851470423092" />
+      <entry key="S2" value="3.7167406202867084" />
+      <entry key="S5" value="4.109144088581003" />
+      <entry key="S10" value="5.099468002912305" />
+      <entry key="S30" value="8.71249501024542" />
+      <entry key="S60" value="16.00172784516554" />
+      <entry key="M2" value="28.157381975661803" />
+      <entry key="M5" value="43.41398963627181" />
+      <entry key="M10" value="50.87258734242529" />
+      <entry key="M15" value="53.7117297825565" />
+      <entry key="M30" value="56.74929878957968" />
+      <entry key="H1" value="58.34704622120956" />
+      <entry key="H2" value="59.191277094012605" />
+      <entry key="H4" value="63.961560818209655" />
+      <entry key="D1" value="391.99283847054323" />
+      <entry key="W1" value="760.1284365650246" />
     </decayedShown>
   </component>
   <component name="ProblemsViewState">
@@ -306,11 +471,11 @@
     "copilot.sensitive.folder.allow.file_read./Users/gedsonfaria/_agents/skills/supabase-postgres-best-practices": "true",
     "copilot.sensitive.folder.allow.file_read./private/tmp": "true",
     "copilot.sensitive.folder.allow.file_write./private/tmp": "true",
-    "git-widget-placeholder": "master",
+    "git-widget-placeholder": "main",
     "javascript.preferred.runtime.type.id": "node",
     "junie.onboarding.icon.badge.shown": "true",
     "kronk.content.tree.expanded.paths": "|Modulo2|Content",
-    "last_opened_file_path": "/Users/gedsonfaria/JetBrains/WebstormProjects/alg1-2026/docs",
+    "last_opened_file_path": "/Users/gedsonfaria/JetBrains/WebstormProjects/alg1-2026",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.stylelint": "true",
     "node.js.detected.package.tslint": "true",
@@ -327,7 +492,7 @@
     "npm.preview.executor": "Run",
     "npm.typecheck.executor": "Run",
     "run.code.analysis.last.selected.profile": "pProject Default",
-    "settings.editor.selected.configurable": "org.jetbrains.plugins.github.ui.GithubSettingsConfigurable",
+    "settings.editor.selected.configurable": "ml.llm.AcpAgentsConfigurable",
     "to.speed.mode.migration.done": "true",
     "ts.external.directory.path": "/Users/gedsonfaria/JetBrains/WebstormProjects/alg1-2026/node_modules/typescript/lib",
     "vue.rearranger.settings.migration": "true"
@@ -343,21 +508,21 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/docs" />
-      <recent name="$PROJECT_DIR$/scripts/fontes_raw" />
-      <recent name="$PROJECT_DIR$/content/modulo2" />
       <recent name="$PROJECT_DIR$" />
-      <recent name="$PROJECT_DIR$/public" />
+      <recent name="$PROJECT_DIR$/data/cursos/python/modulo1" />
+      <recent name="$PROJECT_DIR$/data/cursos" />
+      <recent name="$PROJECT_DIR$/app/pages" />
+      <recent name="$PROJECT_DIR$/docs" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/data" />
-      <recent name="$PROJECT_DIR$/docs" />
-      <recent name="$PROJECT_DIR$/data/cursos" />
-      <recent name="$PROJECT_DIR$/content/python_basico/extras" />
-      <recent name="$PROJECT_DIR$/content/python_basico" />
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/app/pages/[curso]/[modulo]/[nucleo]" />
+      <recent name="$PROJECT_DIR$/data/cursos/python/modulo1/nucleo4" />
+      <recent name="$PROJECT_DIR$/data/cursos/python/modulo1/nucleo3" />
+      <recent name="$PROJECT_DIR$/data/cursos/python/modulo1/nucleo2" />
     </key>
   </component>
-  <component name="RunManager" selected="npm.typecheck">
+  <component name="RunManager" selected="npm.dev">
     <configuration name="build" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/package.json" />
       <command value="run" />
@@ -460,7 +625,11 @@
       <workItem from="1778720500257" duration="16524000" />
       <workItem from="1778781416751" duration="1375000" />
       <workItem from="1778783686859" duration="41676000" />
-      <workItem from="1778974226567" duration="15942000" />
+      <workItem from="1778974226567" duration="35432000" />
+      <workItem from="1779132494878" duration="668000" />
+      <workItem from="1779400014634" duration="33000" />
+      <workItem from="1779412758205" duration="1593000" />
+      <workItem from="1779447936443" duration="11231000" />
     </task>
     <servers />
   </component>

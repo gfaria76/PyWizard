@@ -13,7 +13,15 @@
       "Bash(git add *)",
       "Bash(git commit -m ' *)",
       "Bash(grep \"\\\\.json$\")",
-      "Bash(git commit *)"
+      "Bash(git commit *)",
+      "Bash(git checkout *)",
+      "Bash(git fetch *)",
+      "Bash(gh pr *)",
+      "Bash(node -e 'JSON.parse\\(require\\('\\\\''fs'\\\\''\\).readFileSync\\('\\\\''__TRACKED_VAR__'\\\\''\\)\\)')",
+      "Bash(node -e 'const j = JSON.parse\\(require\\('\\\\''fs'\\\\''\\).readFileSync\\('\\\\''__TRACKED_VAR__'\\\\''\\)\\); const s = j.secoes; if \\(s && s.desafios\\) console.log\\('\\\\''Still has desafios: __TRACKED_VAR__'\\\\''\\);')",
+      "Bash(rm app/pages/\\\\[curso\\\\]/\\\\[modulo\\\\]/\\\\[nucleo\\\\]/index.vue app/pages/\\\\[curso\\\\]/\\\\[modulo\\\\]/\\\\[nucleo\\\\]/\\\\[aula\\\\].vue)",
+      "Bash(rmdir app/pages/\\\\[curso\\\\]/\\\\[modulo\\\\]/\\\\[nucleo\\\\])",
+      "Bash(ps -p 69896 -o pid,etime,command)"
     ]
   }
 }

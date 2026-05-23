@@ -1,0 +1,95 @@
+{
+  "id": "python-M03-A21-CT",
+  "curso": "python",
+  "modulo": 3,
+  "aula": 21,
+  "numero": 21,
+  "tipo": "Aula",
+  "subtipo": "conceito",
+  "titulo": "Listas em Funcoes",
+  "subtitulo": "Processar colecoes em lote com regras reutilizaveis",
+  "objetivo": "Criar funcoes que recebem listas, percorrem elementos com laço, aplicam filtros e retornam novas coleções ou indicadores consolidados com previsibilidade.",
+  "duracao": "1h30",
+  "tags": [
+    "listas",
+    "funcoes",
+    "for",
+    "filtro"
+  ],
+  "secoes": {
+    "abertura": {
+      "objetivo": {
+        "texto_md": "Dados reais quase nunca chegam isolados. Eles chegam em lotes: lista de contratos, lista de pagamentos, lista de ocorrências. Quem processa lote com regra reutilizável ganha escala e consistência; quem processa item por item manualmente fica refém de erro e atrasos. Nesta aula você vai combinar **lista + funcao** para transformar volume em decisão."
+      },
+      "retomada": {
+        "texto_md": "**Ferramentas que você já domina:**\n\n* Declarar funcao com `def` e retorno com `return` (Aulas 1.1 e 1.2).\n* Laços `for` para percorrer coleções (Módulo II).\n* Condicionais para filtrar e classificar dados (Módulo I)."
+      },
+      "situacao": {
+        "titulo": "O filtro mensal que consumia horas",
+        "texto_md": "Uma equipe separava manualmente os contratos acima de determinado valor para revisão. A tarefa era repetida todo mês com milhares de registros. Com uma funcao de filtro por lista, o processo passa de horas para segundos — e ainda fica reproduzível."
+      },
+      "problematizacao": {
+        "texto_md": "* Qual o risco de espalhar lógica de filtro em vários pontos do sistema em vez de centralizar em uma funcao?\n* Quando uma funcao deve retornar **nova lista** e quando deve retornar apenas **um número** (contagem, soma)?"
+      }
+    },
+    "conceito": {
+      "titulo": "Conceito tecnico",
+      "texto_md": "Uma **funcao de lista** recebe uma coleção pelo parâmetro, percorre os itens com `for` e devolve um resultado. As três operações mais comuns são:\n\n* **Filtrar** — recebe uma lista, devolve **outra lista** só com os itens que satisfazem uma condição.\n* **Transformar (mapear)** — recebe uma lista, devolve **nova lista** com cada item modificado por uma regra (ex.: aplicar reajuste).\n* **Agregar (reduzir)** — recebe uma lista, devolve **um único valor** (soma, média, contagem, máximo).\n\n```python\n# Padrão básico\ndef processar(lista):\n    saida = []                 # acumulador (ou número)\n    for item in lista:\n        if satisfaz_regra(item):\n            saida.append(item) # ou: saida += valor; contador += 1\n    return saida\n```\n\nO segredo é que a funcao **não imprime** nada (em geral) — ela apenas devolve o resultado. Quem chama decide se exibe na tela, salva em arquivo ou usa em outro cálculo.\n\n> 💡 **Dica:** prefira **criar uma nova lista** em vez de alterar a lista recebida. Isso evita efeitos colaterais — assunto da próxima aula.",
+      "exemplos": [
+        {
+          "titulo": "1) Filtrar acima de um limite",
+          "texto_md": "Devolve uma nova lista contendo apenas os valores maiores que o limite recebido.",
+          "python": "def filtrar_acima(valores, limite):\n    saida = []\n    for v in valores:\n        if v > limite:\n            saida.append(v)\n    return saida\n\nprint(filtrar_acima([10, 80, 55, 20], 50))   # [80, 55]"
+        },
+        {
+          "titulo": "2) Transformar (aplicar reajuste)",
+          "texto_md": "Devolve uma nova lista com cada valor multiplicado por `(1 + taxa)`.",
+          "python": "def aplicar_reajuste(valores, taxa):\n    novos = []\n    for v in valores:\n        novos.append(v * (1 + taxa))\n    return novos\n\nprint(aplicar_reajuste([100.0, 200.0], 0.10))  # [110.0, 220.0]"
+        },
+        {
+          "titulo": "3) Agregar (contar críticos)",
+          "texto_md": "Devolve um único número: quantos itens da lista atingiram ou superaram o limite.",
+          "python": "def contar_criticos(valores, limite):\n    total = 0\n    for v in valores:\n        if v >= limite:\n            total += 1\n    return total\n\nprint(contar_criticos([30, 70, 90, 40], 70))   # 2"
+        }
+      ]
+    },
+    "pratica_guiada": {
+      "titulo": "Prática guiada",
+      "texto_md": "Vamos exercitar funcoes de lista em três passos: filtro, transformação, agregação.",
+      "exemplos": [
+        {
+          "titulo": "Passo 1 — Filtro (lista para lista)",
+          "texto_md": "Devolve apenas as despesas críticas (acima de um teto).",
+          "python": "def despesas_criticas(valores, teto):\n    saida = []\n    for v in valores:\n        if v >= teto:\n            saida.append(v)\n    return saida\n\ndespesas = [450.0, 1200.0, 800.0, 90.0, 1600.0]\nprint(despesas_criticas(despesas, 800.0))   # [1200.0, 800.0, 1600.0]"
+        },
+        {
+          "titulo": "Passo 2 — Transformação (arredondar para inteiro)",
+          "texto_md": "Recebe valores decimais e devolve uma nova lista com inteiros.",
+          "python": "def arredondar(valores):\n    saida = []\n    for v in valores:\n        saida.append(round(v))\n    return saida\n\nprint(arredondar([1.4, 2.7, 3.5]))   # [1, 3, 4]"
+        },
+        {
+          "titulo": "Passo 3 — Filtro + agregação no mesmo retorno",
+          "texto_md": "Devolve a lista filtrada **e** o total — útil para auditoria.",
+          "python": "def auditar_criticas(valores, teto):\n    criticas = []\n    total = 0.0\n    for v in valores:\n        if v >= teto:\n            criticas.append(v)\n            total += v\n    return criticas, total\n\nlista, total = auditar_criticas([450.0, 1200.0, 800.0, 90.0, 1600.0], 800.0)\nprint(\"Críticas:\", lista)\nprint(f\"Total crítico: R$ {total:.2f}\")"
+        }
+      ]
+    },
+    "pratica_autonoma": {
+      "titulo": "Exercicio de Continuacao (Sua vez!)",
+      "texto_md": "**Enunciado:** Crie `aprovados(valores, minimo)` que retorne uma nova lista com os itens maiores ou iguais a `minimo`. Depois, imprima `Aprovados: [...]`.\n\n| Entrada | Saída Esperada |\n|---|---|\n| valores=[5, 8, 9], minimo=7 | Aprovados: [8, 9] |\n| valores=[1, 2], minimo=7 | Aprovados: [] |\n| valores=[7, 7, 6], minimo=7 | Aprovados: [7, 7] |"
+    },
+    "fechamento": {
+      "titulo": "Fechamento e Autoavaliação",
+      "quiz": {
+        "texto_md": "**1. Qual a vantagem de encapsular processamento de lista em funcao?**\nA) Eliminar a necessidade de testes.\nB) Reutilizar a regra com entradas diferentes sem copiar código.\nC) Proibir o uso de `for`.\n\n::details{summary=\"Ver a resposta correta\"}\n**Correto: B.** Esse é o ganho central — escala e manutenção em um único lugar.\n::\n\n**2. Quando retornar uma lista (em vez de um número) é adequado?**\nA) Quando queremos preservar o conjunto de itens que atendem a um critério (para inspeção, auditoria, exibição).\nB) Apenas quando não existe `if`.\nC) Nunca.\n\n::details{summary=\"Ver a resposta correta\"}\n**Correto: A.** Retornar lista atende cenários de filtro e transformação.\n::\n\n**3. O que torna uma funcao de lote auditável?**\nA) Nome aleatório e efeito colateral oculto.\nB) Assinatura clara, critério explícito e saída determinística (mesma entrada → mesma saída).\nC) Uso obrigatório de variáveis globais.\n\n::details{summary=\"Ver a resposta correta\"}\n**Correto: B.** Auditabilidade depende de previsibilidade e clareza.\n::"
+      },
+      "leitura_complementar": {
+        "texto_md": "* Revise técnicas de percorrer listas com `for` e construir lista de saída incremental com `append`.\n* Prática diária: pegue um filtro manual que você faria em planilha e descreva a funcao equivalente."
+      },
+      "reflexao": {
+        "texto_md": "* Processar lote com método é uma forma de recuperar tempo e reduzir arbitrariedade. O que era repetição cansativa vira regra verificável."
+      }
+    }
+  },
+  "premio": null
+}

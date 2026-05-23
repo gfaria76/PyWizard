@@ -54,9 +54,9 @@ const nome = computed(() => {
 const level = computed(() => progress.stats.level)
 
 const navLinks = [
+  { to: '/', icon: 'hub', label: 'Cursos' },
+  { to: '/python/1', icon: 'explore', label: 'Trail' },
   { to: '/python/grimoire', icon: 'auto_stories', label: 'Grimoire' },
-  { to: '/python', icon: 'explore', label: 'Trail' },
-  { to: '/python/arena', icon: 'swords', label: 'Arena' },
   { to: '/python/bestiary', icon: 'pets', label: 'Bestiary' },
   { to: '/python/ranking', icon: 'leaderboard', label: 'Ranking' },
 ]
