@@ -1,0 +1,82 @@
+{
+  "id": "python-1.4.2-TV",
+  "curso": "python",
+  "modulo": 1,
+  "aula": 2,
+  "numero": "1.4.2",
+  "tipo": "trilha",
+  "subtipo": "aventura",
+  "titulo": "Salas Aninhadas",
+  "subtitulo": "5 desafios para casa sobre if aninhado",
+  "objetivo": "Aprofundar em casa o conteúdo de If-Else Aninhado e Validações Complexas.",
+  "duracao": "35min",
+  "tags": [
+    "trilha-aventura",
+    "if aninhado"
+  ],
+  "secoes": {
+    "abertura": {
+      "introducao": {
+        "texto_md": "# Trilha da Aventura XI: Salas Aninhadas\n\nEsta trilha para casa amplia a prática do conteúdo de **If-Else Aninhado e Validações Complexas** com cinco novos desafios."
+      }
+    },
+    "preparacao": {
+      "titulo": "Mapa da aventura",
+      "texto_md": "* tente resolver sem olhar a solução da aula;\n* teste seus resultados;\n* anote dúvidas para levar ao próximo encontro."
+    },
+    "desafios": {
+      "titulo": "Cinco desafios da aventura",
+      "texto_md": "Cinco desafios de casa para reforçar if aninhado.",
+      "missoes": [
+        {
+          "titulo": "Auxílio de Emergência",
+          "texto_md": "**O Problema:** Receba renda e desastre (0 ou 1). Se renda <= 350, faça uma validação adicional para decidir o tipo de apoio.\n\n**Casos de Teste (Amostra):**\n\n| Entrada | Saída | Show |\n|---|---|---|\n| 280.0<br>1 | Apoio maximo | Sim |"
+        },
+        {
+          "titulo": "Acesso ao Laboratório",
+          "texto_md": "**O Problema:** Receba crachá e treinamento (0 ou 1). Só com crachá válido a segunda verificação deve acontecer.\n\n**Casos de Teste (Amostra):**\n\n| Entrada | Saída | Show |\n|---|---|---|\n| 1<br>0 | Treinamento pendente | Sim |"
+        },
+        {
+          "titulo": "Reforço Escolar",
+          "texto_md": "**O Problema:** Receba nota e faltas. Se nota < 6, avalie as faltas para decidir `Reforco urgente` ou `Reforco simples`.\n\n**Casos de Teste (Amostra):**\n\n| Entrada | Saída | Show |\n|---|---|---|\n| 5.0<br>12 | Reforco urgente | Não |"
+        },
+        {
+          "titulo": "Defesa Civil",
+          "texto_md": "**O Problema:** Receba chuva e trinca (0 ou 1). Se chuva >= 80, avalie trinca para definir `Risco maximo` ou `Risco alto`.\n\n**Casos de Teste (Amostra):**\n\n| Entrada | Saída | Show |\n|---|---|---|\n| 90.0<br>0 | Risco alto | Não |"
+        },
+        {
+          "titulo": "Conselho Tutelar",
+          "texto_md": "**O Problema:** Receba idade e evasao (0 ou 1). Se idade < 18, avalie evasão para decidir o encaminhamento.\n\n**Casos de Teste (Amostra):**\n\n| Entrada | Saída | Show |\n|---|---|---|\n| 15<br>1 | Encaminhamento imediato | Não |"
+        }
+      ]
+    },
+    "fechamento": {
+      "titulo": "Fechamento da Jornada",
+      "reflexao": {
+        "texto_md": "A prática em casa amplia a autonomia e prepara melhor para as trilhas acumulativas."
+      }
+    }
+  },
+  "premio": {
+    "pontuacao": 90
+  },
+  "rpg": {
+    "xp_reward": 90,
+    "variant": "trail",
+    "oracle_hints": [
+      "Verifique a formatação exata da saída pedida.",
+      "Releia o enunciado com atenção antes de codar."
+    ],
+    "enemy_name": "Espelho do Elif",
+    "enemy_hp": 90,
+    "weakness": "decisões múltiplas",
+    "loot_drops": [
+      {
+        "item": "Selo de Combate",
+        "type": "badge",
+        "rarity": "common"
+      }
+    ]
+  },
+  "nucleo": 4
+}

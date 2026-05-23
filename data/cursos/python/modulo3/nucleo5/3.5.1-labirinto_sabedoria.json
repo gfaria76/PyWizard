@@ -1,0 +1,143 @@
+{
+  "id": "python-3.5.1-MS",
+  "curso": "python",
+  "modulo": 3,
+  "nucleo": 5,
+  "aula": 1,
+  "numero": "3.5.1",
+  "tipo": "masmorra",
+  "subtipo": "simulado",
+  "titulo": "Salão da Sabedoria Final do Módulo III",
+  "subtitulo": "Simulado integrado pré-prova com 8 missões representativas dos 4 núcleos do Módulo III",
+  "objetivo": "Consolidar o domínio de funções, escopo, mutabilidade, *args/**kwargs e modularização por meio de um simulado individual com 8 missões representativas. Calibra ritmo, formato de saída e pontos fracos antes da Prova Final.",
+  "duracao": "2h00",
+  "tags": [
+    "labirinto_sabedoria",
+    "simulado",
+    "pré-prova",
+    "modulo-3"
+  ],
+  "secoes": {
+    "abertura": {
+      "introducao": {
+        "texto_md": "# Salão da Sabedoria Final do Módulo III\n\nEste simulado individual reúne missões equivalentes às dos labirintos dos 4 núcleos do Módulo III. Use-o antes da Prova Final para calibrar tempo, formato de saída e identificar tópicos a revisar. O resultado não conta para a nota final do módulo.\n\n**Regras do labirinto:**\n\n* Tente todas as missões dentro do tempo estimado da Prova.\n* As missões cobrem funções, escopo, mutabilidade, *args/**kwargs e modularização.\n* Compare seu resultado com o gabarito e revise antes da Prova oficial.\n"
+      }
+    },
+    "maratona": {
+      "titulo": "Simulado integrado (8 missões dos 4 núcleos)",
+      "texto_md": "Duas missões representativas de cada núcleo, com escopo, formato e dificuldade equivalentes aos dos respectivos bosses. Dados sintéticos.",
+      "missoes": [
+        {
+          "titulo": "Núcleo 1 — Tarifa Social de Energia",
+          "texto_md": "**O Treino:** Crie uma função `calcular_tarifa_social(consumo_kwh, tarifa_base)` que retorne o valor final a pagar com desconto: até 30 kWh → 65% de desconto; até 100 kWh → 40%; acima disso → sem desconto. Depois, leia `consumo_kwh` e `tarifa_base`, chame a função e imprima `Conta final: R$ X.XX`.\n\n**Casos de Teste (Amostra):**\n\n| Entrada | Saída | Show |\n|---|---|---|\n| `25`, `80.0` | Conta final: R$ 28.00 | Sim |\n| `60`, `120.0` | Conta final: R$ 72.00 | Sim |",
+          "meta": {
+            "tipo": "simulado",
+            "espelha_missao": "missao_1",
+            "origem_nucleo": 1
+          }
+        },
+        {
+          "titulo": "Núcleo 1 — Repasse do Transporte Escolar",
+          "texto_md": "**O Treino:** Crie uma função `calcular_repasse(alunos, valor_por_aluno, meses)` que retorne dois valores: o valor mensal e o valor anual do repasse. Depois, imprima:\n\n`Mensal: R$ X.XX`\n`Anual: R$ X.XX`\n\n**Casos de Teste (Amostra):**\n\n| Entrada | Saída | Show |\n|---|---|---|\n| `300`, `42.5`, `10` | Mensal: R$ 12750.00<br>Anual: R$ 127500.00 | Sim |\n| `120`, `38.0`, `12` | Mensal: R$ 4560.00<br>Anual: R$ 54720.00 | Sim |",
+          "meta": {
+            "tipo": "simulado",
+            "espelha_missao": "missao_3",
+            "origem_nucleo": 1
+          }
+        },
+        {
+          "titulo": "Núcleo 2 — Higienização de Diárias",
+          "texto_md": "**O Treino:** Crie uma função `diarias_validas(diarias)` que receba uma lista de valores e retorne uma **nova lista** contendo apenas as diárias estritamente positivas. A lista original não pode ser alterada. Depois, imprima:\n\n`Validas: N`\n`Soma: X.XX`\n\n**Casos de Teste (Amostra):**\n\n| Entrada Oculta (`diarias`) | Saída Esperada | Show |\n|---|---|---|\n| [150.0, 0.0, -20.0, 300.0] | Validas: 2<br>Soma: 450.00 | Sim |\n| [0.0, 0.0] | Validas: 0<br>Soma: 0.00 | Sim |",
+          "meta": {
+            "tipo": "simulado",
+            "espelha_missao": "missao_1",
+            "origem_nucleo": 2
+          }
+        },
+        {
+          "titulo": "Núcleo 2 — Reajuste de Benefícios em Lote",
+          "texto_md": "**O Treino:** Crie uma função `reajustar_beneficios(valores, percentual)` que retorne uma nova lista com cada valor reajustado pelo percentual informado. A lista original deve permanecer intacta. Depois, imprima a média dos valores reajustados no formato `Media reajustada: X.XX`.\n\n**Casos de Teste (Amostra):**\n\n| Entradas | Saída | Show |\n|---|---|---|\n| `[100.0, 200.0, 300.0]`, `10.0` | Media reajustada: 220.00 | Sim |\n| `[1412.0]`, `5.0` | Media reajustada: 1482.60 | Sim |",
+          "meta": {
+            "tipo": "simulado",
+            "espelha_missao": "missao_3",
+            "origem_nucleo": 2
+          }
+        },
+        {
+          "titulo": "Núcleo 3 — Soma de Repasses por Município",
+          "texto_md": "**O Treino:** Crie uma função `somar_repasses(repasses)` que retorne a soma total dos valores de uma lista de repasses. Depois, imprima:\n\n`Total: R$ X.XX`\n`Media: R$ X.XX`\n\n**Casos de Teste (Amostra):**\n\n| Entrada Oculta (`repasses`) | Saída Esperada | Show |\n|---|---|---|\n| [1000.0, 2000.0, 500.0] | Total: R$ 3500.00<br>Media: R$ 1166.67 | Sim |\n| [800.0, 1200.0] | Total: R$ 2000.00<br>Media: R$ 1000.00 | Sim |",
+          "meta": {
+            "tipo": "simulado",
+            "espelha_missao": "missao_1",
+            "origem_nucleo": 3
+          }
+        },
+        {
+          "titulo": "Núcleo 3 — Média até o Marcador",
+          "texto_md": "**O Treino:** Crie uma função `media_ate_zero(valores)` que percorra a lista com `while`, somando apenas os valores antes do primeiro `0.0`, e retorne a média. Depois, imprima `Media valida: X.XX`.\n\n**Casos de Teste (Amostra):**\n\n| Entrada Oculta (`valores`) | Saída Esperada | Show |\n|---|---|---|\n| [100.0, 200.0, 0.0, 999.0] | Media valida: 150.00 | Sim |\n| [50.0, 50.0, 50.0, 0.0] | Media valida: 50.00 | Sim |",
+          "meta": {
+            "tipo": "simulado",
+            "espelha_missao": "missao_3",
+            "origem_nucleo": 3
+          }
+        },
+        {
+          "titulo": "Núcleo 4 — Escala de Visitas Domiciliares",
+          "texto_md": "**O Treino:** Importe `math` e crie uma função `visitas_por_dia(total_familias, capacidade_equipe)` que retorne quantos dias completos de operação serão necessários para atender todas as famílias, usando arredondamento para cima. Depois, imprima `Dias: N`.\n\n**Casos de Teste (Amostra):**\n\n| Entrada | Saída | Show |\n|---|---|---|\n| `125`, `18` | Dias: 7 | Sim |\n| `90`, `30` | Dias: 3 | Sim |",
+          "meta": {
+            "tipo": "simulado",
+            "espelha_missao": "missao_1",
+            "origem_nucleo": 4
+          }
+        },
+        {
+          "titulo": "Núcleo 4 — Gerador de Relatório Nomeado",
+          "texto_md": "**O Treino:** Crie uma função `montar_relatorio(**dados)` que receba as chaves `orgao`, `valor` e `status` e retorne a string `Orgao: X | Valor: R$ X.XX | Status: X`. Depois, imprima a string retornada.\n\n**Casos de Teste (Amostra):**\n\n| Entrada Oculta | Saída Esperada | Show |\n|---|---|---|\n| `orgao=FNDE, valor=120000.0, status=Regular` | Orgao: FNDE<br>Valor: R$ 120000.00<br>Status: Regular | Sim |\n| `orgao=SESAU, valor=9800.5, status=Alerta` | Orgao: SESAU<br>Valor: R$ 9800.50<br>Status: Alerta | Sim |",
+          "meta": {
+            "tipo": "simulado",
+            "espelha_missao": "missao_3",
+            "origem_nucleo": 4
+          }
+        }
+      ]
+    },
+    "fechamento": {
+      "titulo": "Encerramento do Salão",
+      "reflexao": {
+        "texto_md": "* Quais núcleos consumiram mais tempo? Marque os conceitos a revisar antes da Prova.\n* Em quais formatos de saída houve erro? Releia os enunciados e ajuste antes da avaliação oficial.\n* Se errar duas seguidas em um núcleo, volte aos conceitos daquele núcleo antes de prosseguir.\n"
+      }
+    }
+  },
+  "premio": {
+    "pontuacao": 0,
+    "recursos": [
+      "Gabarito disponível após o término do simulado",
+      "Relatório de fraquezas por núcleo: tópicos a revisar antes da Prova"
+    ]
+  },
+  "rpg": {
+    "xp_reward": 120,
+    "variant": "labyrinth-simulation-final",
+    "oracle_hints": [
+      "Trate este salão como a Prova real — formato de saída conta.",
+      "Cronometre cada missão para identificar onde perde tempo.",
+      "Se errar em um núcleo específico, revise antes de prosseguir."
+    ],
+    "enemy_name": "Guardião do Salão M3",
+    "enemy_hp": 350,
+    "weakness": "preparação integrada",
+    "loot_drops": [
+      {
+        "item": "Mapa do Salão",
+        "type": "consumable",
+        "rarity": "rare"
+      },
+      {
+        "item": "Pergaminho de Foco",
+        "type": "consumable",
+        "rarity": "common",
+        "quantity": 3
+      }
+    ]
+  }
+}

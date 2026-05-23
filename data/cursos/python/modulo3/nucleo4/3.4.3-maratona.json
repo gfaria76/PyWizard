@@ -1,0 +1,118 @@
+{
+  "id": "python-3.4.3-MB",
+  "curso": "python",
+  "modulo": 3,
+  "aula": 3,
+  "numero": "3.4.3",
+  "tipo": "masmorra",
+  "subtipo": "boss",
+  "titulo": "Bibliotecas e Interfaces Flexíveis",
+  "subtitulo": "Import, `math` e funções adaptáveis para sistemas maiores",
+  "objetivo": "Aplicar modularização básica com `import`, recursos do módulo `math` e funções com parâmetros flexíveis para construir soluções mais expressivas e reaproveitáveis.",
+  "duracao": "2h00",
+  "tags": [
+    "boss",
+    "import",
+    "math",
+    "args",
+    "kwargs",
+    "modularização"
+  ],
+  "secoes": {
+    "abertura": {
+      "introducao": {
+        "texto_md": "# Bibliotecas e Interfaces Flexíveis\n\nChegar ao fim do módulo 3 significa alcançar uma nova etapa: você já não escreve apenas lógica correta, mas começa a compor programas maiores com ajuda de bibliotecas e funções mais adaptáveis. Sistemas reais não reimplementam tudo do zero. Eles importam ferramentas, organizam responsabilidades e criam funções capazes de receber diferentes combinações de dados sem virar código caótico.\n\nNesta maratona, você vai trabalhar no ponto de transição entre script e software: uso consciente de `import`, apoio de `math` e funções flexíveis o suficiente para lidar com cenários variados sem perder legibilidade.\n\n---"
+      }
+    },
+    "aquecimento": {
+      "titulo": "FASE 1: Aquecimento de Sistemas (Warm-up)",
+      "texto_md": "**Tempo estimado:** 15 minutos.\n**Pontuação:** 0 pontos.\n**Objetivo:** praticar importação de biblioteca e assinatura variável antes da maratona oficial.",
+      "missoes": [
+        {
+          "titulo": "Aquecimento A: Arredondamento de Equipes",
+          "texto_md": "**O Problema:** Importe `math` e crie uma função `equipes_necessarias(pessoas, capacidade)` que retorne o número de equipes usando `math.ceil`. Depois, imprima `Equipes: N`.\n\n**Casos de Teste (Amostra):**\n\n| Entrada | Saída | Show |\n|---|---|---|\n| `53`, `10` | Equipes: 6 | Sim |\n| `20`, `5` | Equipes: 4 | Sim |",
+          "meta": {
+            "tipo": "warmup",
+            "dataset": "warmup_a"
+          }
+        },
+        {
+          "titulo": "Aquecimento B: Soma Flexível de Itens",
+          "texto_md": "**O Problema:** Crie uma função `somar_itens(*valores)` que retorne a soma de todos os argumentos recebidos. Depois, imprima `Total: X.XX`.\n\n**Casos de Teste (Amostra):**\n\n| Entrada Oculta | Saída Esperada | Show |\n|---|---|---|\n| `10.0, 20.0, 30.0` | Total: 60.00 | Sim |\n| `5.5, 4.5` | Total: 10.00 | Sim |",
+          "meta": {
+            "tipo": "warmup",
+            "dataset": "warmup_b"
+          }
+        }
+      ]
+    },
+    "maratona": {
+      "titulo": "FASE 2: A Maratona (Missões Oficiais)",
+      "texto_md": "**Tempo estimado:** 1h45m.\n**Status:** Avaliação ativa.\n**Instruções:** use os nomes de função indicados, importe bibliotecas apenas quando solicitado e mantenha a saída final exatamente no formato exigido.",
+      "missoes": [
+        {
+          "titulo": "Missão 1: Escala de Visitas Domiciliares",
+          "texto_md": "**O Problema:** Importe `math` e crie uma função `visitas_por_dia(total_familias, capacidade_equipe)` que retorne quantos dias completos de operação serão necessários para atender todas as famílias, usando arredondamento para cima. Depois, imprima `Dias: N`.\n\n**Casos de Teste (Amostra):**\n\n| Entrada | Saída | Show |\n|---|---|---|\n| `125`, `18` | Dias: 7 | Sim |\n| `90`, `30` | Dias: 3 | Sim |",
+          "meta": {
+            "tipo": "maratona",
+            "dataset": "missao_1"
+          }
+        },
+        {
+          "titulo": "Missão 2: Consolidador Flexível de Despesas",
+          "texto_md": "**O Problema:** Crie uma função `somar_despesas(*despesas)` que retorne a soma total recebida. Depois, use-a para imprimir:\n\n`Total: R$ X.XX`\n`Media: R$ X.XX`\n\nA média deve ser calculada com base na quantidade de argumentos recebidos.\n\n**Casos de Teste (Amostra):**\n\n| Entrada Oculta | Saída Esperada | Show |\n|---|---|---|\n| `120.0, 300.0, 180.0` | Total: R$ 600.00<br>Media: R$ 200.00 | Sim |\n| `50.0, 50.0` | Total: R$ 100.00<br>Media: R$ 50.00 | Sim |",
+          "meta": {
+            "tipo": "maratona",
+            "dataset": "missao_2"
+          }
+        },
+        {
+          "titulo": "Missão 3: Gerador de Relatório Nomeado",
+          "texto_md": "**O Problema:** Crie uma função `montar_relatorio(**dados)` que receba as chaves `orgao`, `valor` e `status` e retorne a string `Orgao: X | Valor: R$ X.XX | Status: X`. Depois, imprima a string retornada.\n\n**Casos de Teste (Amostra):**\n\n| Entrada Oculta | Saída Esperada | Show |\n|---|---|---|\n| `orgao=FNDE, valor=120000.0, status=Regular` | Orgao: FNDE<br>Valor: R$ 120000.00<br>Status: Regular | Sim |\n| `orgao=SESAU, valor=9800.5, status=Alerta` | Orgao: SESAU<br>Valor: R$ 9800.50<br>Status: Alerta | Sim |",
+          "meta": {
+            "tipo": "maratona",
+            "dataset": "missao_3"
+          }
+        },
+        {
+          "titulo": "Missão 4: Distância Logística Simplificada",
+          "texto_md": "**O Problema:** Importe `math` e crie uma função `distancia_rede(x1, y1, x2, y2)` que calcule a distância euclidiana entre dois pontos usando a fórmula `sqrt((x2-x1)**2 + (y2-y1)**2)`. Depois, imprima `Distancia: X.XX km`.\n\n**Casos de Teste (Amostra):**\n\n| Entrada | Saída | Show |\n|---|---|---|\n| `0`, `0`, `3`, `4` | Distancia: 5.00 km | Sim |\n| `1`, `1`, `1`, `6` | Distancia: 5.00 km | Sim |",
+          "meta": {
+            "tipo": "maratona",
+            "dataset": "missao_4"
+          }
+        },
+        {
+          "titulo": "Missão 5: Painel Configurável de Meta",
+          "texto_md": "**O Problema:** Crie uma função `avaliar_meta(valor_atual, meta, **config)` que retorne `Atingida` se `valor_atual >= meta`. Caso contrário, retorne `Em risco` quando `config` contiver `tolerancia=True` e `valor_atual >= meta * 0.9`; nos demais casos, retorne `Nao atingida`. Depois, imprima `Status: X`.\n\n**Casos de Teste (Amostra):**\n\n| Entrada Oculta | Saída Esperada | Show |\n|---|---|---|\n| `95.0, 100.0, tolerancia=True` | Status: Em risco | Sim |\n| `105.0, 100.0, tolerancia=False` | Status: Atingida | Sim |\n| `70.0, 100.0, tolerancia=True` | Status: Nao atingida | Não |",
+          "meta": {
+            "tipo": "maratona",
+            "dataset": "missao_5"
+          }
+        }
+      ]
+    },
+    "backend": {
+      "titulo": "Atenção IA de Backend / Sistema Gerenciador:",
+      "texto_md": "Gerar no mínimo 10 casos por missão. Validar explicitamente o uso das assinaturas pedidas e a consistência de `import math` nas missões correspondentes.\n\n### Warmup A\n* Função esperada: `equipes_necessarias(pessoas, capacidade)`\n* Gabarito: `math.ceil(pessoas / capacidade)`.\n\n### Warmup B\n* Função esperada: `somar_itens(*valores)`\n* Gabarito: soma flexível de argumentos.\n\n### Missão 1\n* Função esperada: `visitas_por_dia(total_familias, capacidade_equipe)`\n* Gabarito: arredondamento para cima.\n\n### Missão 2\n* Função esperada: `somar_despesas(*despesas)`\n* Gabarito: soma total e média pela quantidade de argumentos.\n\n### Missão 3\n* Função esperada: `montar_relatorio(**dados)`\n* Gabarito: string formatada a partir das chaves nomeadas.\n\n### Missão 4\n* Função esperada: `distancia_rede(x1, y1, x2, y2)`\n* Gabarito: usar `math.sqrt`.\n\n### Missão 5\n* Função esperada: `avaliar_meta(valor_atual, meta, **config)`\n* Gabarito: considerar `config.get('tolerancia', False)`."
+    }
+  },
+  "premio": {
+    "pontuacao": 100,
+    "superpower_reward": "orquestrador-modular",
+    "recursos": [
+      "Comprar tempo: 3x5min (10 Moedas)",
+      "Comprar dica IA: 3 consultas (10 Moedas)"
+    ],
+    "testes_ocultos": {
+      "warmup_a": "/api/datasets/equipes_necessarias_funcao.json",
+      "warmup_b": "/api/datasets/soma_itens_args_funcao.json",
+      "missao_1": "/api/datasets/visitas_domiciliares_funcao.json",
+      "missao_2": "/api/datasets/consolidado_despesas_args_funcao.json",
+      "missao_3": "/api/datasets/relatorio_kwargs_funcao.json",
+      "missao_4": "/api/datasets/distancia_rede_math_funcao.json",
+      "missao_5": "/api/datasets/meta_tolerancia_kwargs_funcao.json"
+    }
+  },
+  "nucleo": 4
+}

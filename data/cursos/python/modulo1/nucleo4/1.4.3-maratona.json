@@ -1,0 +1,129 @@
+{
+  "id": "python-1.4.3-MB",
+  "curso": "python",
+  "modulo": 1,
+  "aula": 3,
+  "numero": "1.4.3",
+  "tipo": "masmorra",
+  "subtipo": "boss",
+  "titulo": "O Regulamentador",
+  "subtitulo": "Elif, condicionais aninhadas e lógica multi-critério em dados públicos",
+  "objetivo": "Construir sistemas de classificação graduada e triagem multi-nível utilizando `if/elif/else` e condicionais aninhadas para processar decisões complexas em bases governamentais.",
+  "duracao": "2h00",
+  "tags": [],
+  "secoes": {
+    "abertura": {
+      "introducao": {
+        "texto_md": "# O Código das Regras Públicas\n\nHá uma diferença entre um sistema que apenas responde sim ou não e um sistema que realmente implementa uma política pública. O primeiro toma decisões simples. O segundo reproduz tabelas de alíquota, níveis de risco, prioridades, agravantes e exceções. Nesta maratona, você entra no território onde o código começa a se parecer com regulamento.\n\nSeu desafio é transformar faixas, prioridades e critérios encadeados em decisões corretas e auditáveis. É aqui que a programação deixa de ser só técnica e passa a ser também interpretação rigorosa de regras.\n\n---"
+      }
+    },
+    "aquecimento": {
+      "titulo": "FASE 1: Aquecimento de Sistemas (Warm-up)",
+      "texto_md": "**Tempo estimado:** 15 minutos.\n**Pontuação:** 0 pontos.\n**Objetivo:** calibrar classificações por faixa antes das regras complexas.",
+      "missoes": [
+        {
+          "titulo": "Aquecimento A: Porte Municipal (IBGE)",
+          "texto_md": "**O Problema:** O avaliador injeta `populacao` (`Int`). Classifique: < 5000 → `Porte: Muito pequeno`; < 20000 → `Porte: Pequeno`; < 100000 → `Porte: Medio`; < 500000 → `Porte: Grande`; caso contrário → `Porte: Metropole`.\n\n**Casos de Teste (Amostra):**\n\n| Entrada | Saída | Show |\n|---|---|---|\n| `3000` | Porte: Muito pequeno | Sim |\n| `1200000` | Porte: Metropole | Sim |",
+          "meta": {
+            "tipo": "warmup",
+            "dataset": "warmup_a"
+          }
+        },
+        {
+          "titulo": "Aquecimento B: Qualidade da Água (ANA)",
+          "texto_md": "**O Problema:** O avaliador injeta `iqa` (`Float`). Classifique: >= 80 → `Qualidade: Otima`; >= 52 → `Qualidade: Boa`; >= 37 → `Qualidade: Regular`; >= 20 → `Qualidade: Ruim`; caso contrário → `Qualidade: Pessima`.\n\n**Casos de Teste (Amostra):**\n\n| Entrada | Saída | Show |\n|---|---|---|\n| `75.0` | Qualidade: Boa | Sim |\n| `15.0` | Qualidade: Pessima | Sim |",
+          "meta": {
+            "tipo": "warmup",
+            "dataset": "warmup_b"
+          }
+        }
+      ]
+    },
+    "maratona": {
+      "titulo": "FASE 2: A Maratona (Missões Oficiais)",
+      "texto_md": "**Tempo estimado:** 1h45m.\n**Status:** Avaliação ativa.\n**Instruções:** faixas se excluem mutuamente. Leia primeiro os limiares, depois escreva o fluxo em ordem do mais específico para o mais geral.",
+      "missoes": [
+        {
+          "titulo": "Missão 1: A Tabela do IRPF",
+          "texto_md": "**O Problema:** O avaliador injeta `salario_mensal` (`Float`). Classifique a faixa do IRPF e calcule o imposto simplificado sobre o total. Imprima:\n\n`Faixa: X`\n`Imposto estimado: R$ X.XX`\n\nFaixas: <= 2259.20 → `Isento`; <= 2826.65 → `7.5%`; <= 3751.05 → `15%`; <= 4664.68 → `22.5%`; acima → `27.5%`.\n\n**Casos de Teste (Amostra):**\n\n| Entrada | Saída | Show |\n|---|---|---|\n| `2000.0` | Faixa: Isento<br>Imposto estimado: R$ 0.00 | Sim |\n| `3000.0` | Faixa: 15%<br>Imposto estimado: R$ 450.00 | Sim |",
+          "meta": {
+            "tipo": "maratona",
+            "dataset": "missao_1"
+          }
+        },
+        {
+          "titulo": "Missão 2: Cobertura Vacinal por Região",
+          "texto_md": "**O Problema:** O avaliador injeta `cobertura_pct` (`Float`) e `amazonia` (`Int`, 0 ou 1). Na Amazônia Legal: >=95 → `Nivel: Adequado`; >=80 → `Nivel: Alerta`; abaixo → `Nivel: Critico`. Nos demais municípios: >=90 → `Nivel: Adequado`; >=70 → `Nivel: Alerta`; abaixo → `Nivel: Critico`.\n\n**Casos de Teste (Amostra):**\n\n| Entrada | Saída | Show |\n|---|---|---|\n| `92.0`, `1` | Nivel: Alerta | Sim |\n| `92.0`, `0` | Nivel: Adequado | Sim |",
+          "meta": {
+            "tipo": "maratona",
+            "dataset": "missao_2"
+          }
+        },
+        {
+          "titulo": "Missão 3: Sistema de Multas (DETRAN)",
+          "texto_md": "**O Problema:** O avaliador injeta `tipo_infracao` (`String`: `L`, `M`, `G`, `GV`) e `reincidente` (`Int`, 0 ou 1). Valores base: L=88.38, M=130.16, G=195.23, GV=880.41. Se reincidente, o valor dobra. Se for `GV`, além da multa imprima `Adicional: Suspensao de CNH`.\n\n**Casos de Teste (Amostra):**\n\n| Entrada | Saída | Show |\n|---|---|---|\n| `L`, `0` | Multa: R$ 88.38 | Sim |\n| `GV`, `0` | Multa: R$ 880.41<br>Adicional: Suspensao de CNH | Sim |",
+          "meta": {
+            "tipo": "maratona",
+            "dataset": "missao_3"
+          }
+        },
+        {
+          "titulo": "Missão 4: Faixa Habitacional (MCMV)",
+          "texto_md": "**O Problema:** O avaliador injeta `renda_familiar` (`Float`) e `grupo_prioritario` (`Int`, 0 ou 1). Classifique a faixa habitacional e o subsídio: <=2640 → Faixa 1, subsídio 55000; <=4400 → Faixa 2, subsídio 29000; <=8000 → Faixa 3, sem subsídio; acima → Fora do programa. Na Faixa 1, se for grupo prioritário, soma 5000 ao subsídio.\n\n**Casos de Teste (Amostra):**\n\n| Entrada | Saída | Show |\n|---|---|---|\n| `2000.0`, `1` | Faixa: Faixa 1<br>Subsidio: R$ 60000.00 | Sim |\n| `3500.0`, `0` | Faixa: Faixa 2<br>Subsidio: R$ 29000.00 | Sim |",
+          "meta": {
+            "tipo": "maratona",
+            "dataset": "missao_4"
+          }
+        },
+        {
+          "titulo": "Missão 5: Estado Nutricional (SISVAN)",
+          "texto_md": "**O Problema:** O avaliador injeta `z_score` (`Float`) e `idade_meses` (`Int`). Classifique: < -3 → `Estado: Magreza acentuada`; < -2 → `Estado: Magreza`; < 1 → `Estado: Adequado`; < 2 → `Estado: Risco de sobrepeso`; acima → `Estado: Sobrepeso`. Se `z_score < -2` e `idade_meses < 6`, adicione `Urgencia: TRIAGEM IMEDIATA`.\n\n**Casos de Teste (Amostra):**\n\n| Entrada | Saída | Show |\n|---|---|---|\n| `-1.5`, `12` | Estado: Adequado | Sim |\n| `-2.5`, `4` | Estado: Magreza<br>Urgencia: TRIAGEM IMEDIATA | Sim |",
+          "meta": {
+            "tipo": "maratona",
+            "dataset": "missao_5"
+          }
+        }
+      ]
+    },
+    "backend": {
+      "titulo": "Atenção IA de Backend / Sistema Gerenciador:",
+      "texto_md": "Gerar no mínimo 10 casos por missão, com ênfase em limiares exatos.\n\n### Warmups\n* porte municipal e IQA com testes nos pontos de troca de faixa.\n\n### Missão 1\n* `salario_mensal` com os cinco intervalos do IRPF.\n\n### Missão 2\n* `cobertura_pct`, `amazonia` cobrindo as seis combinações relevantes.\n\n### Missão 3\n* `tipo_infracao`, `reincidente` cobrindo as oito combinações.\n\n### Missão 4\n* `renda_familiar`, `grupo_prioritario` cobrindo as quatro faixas e o adicional da faixa 1.\n\n### Missão 5\n* `z_score`, `idade_meses` cobrindo todos os estados e o caso de urgência neonatal."
+    }
+  },
+  "premio": {
+    "pontuacao": 100,
+    "superpower_reward": "elif-master",
+    "recursos": [
+      "Comprar tempo: 3x5min (10 Moedas)",
+      "Comprar dica IA: 3 consultas (10 Moedas)"
+    ],
+    "testes_ocultos": {
+      "warmup_a": "/api/datasets/ibge_porte_municipal.json",
+      "warmup_b": "/api/datasets/ana_qualidade_agua.json",
+      "missao_1": "/api/datasets/receita_irpf_faixas.json",
+      "missao_2": "/api/datasets/saude_cobertura_vacinal_regional.json",
+      "missao_3": "/api/datasets/detran_multas_reincidencia.json",
+      "missao_4": "/api/datasets/mcmv_faixas_habitacao.json",
+      "missao_5": "/api/datasets/sisvan_estado_nutricional.json"
+    }
+  },
+  "rpg": {
+    "xp_reward": 100,
+    "variant": "marathon",
+    "oracle_hints": [
+      "Verifique a formatação exata da saída pedida.",
+      "Releia o enunciado com atenção antes de codar."
+    ],
+    "enemy_name": "O Filtrador de Regras",
+    "enemy_hp": 400,
+    "weakness": "condicionais avançadas",
+    "loot_drops": [
+      {
+        "item": "Superpoder: elif-master",
+        "type": "superpower",
+        "rarity": "epic"
+      }
+    ]
+  },
+  "nucleo": 4
+}

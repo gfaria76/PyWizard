@@ -57,7 +57,7 @@
         <!-- Prova final do módulo (item separado) -->
         <li v-if="prova">
           <NuxtLink
-            :to="`/${courseId}/${moduleNumber}/${Math.floor(prova.numero / 10)}/${prova.numero}/${activitySlugTail(prova)}`"
+            :to="`/${courseId}/${moduleNumber}/${prova.nucleo}/${prova.aula}/${activitySlugTail(prova)}`"
             class="block glass-panel rounded-xl p-6 border border-tertiary-fixed-dim/40 hover:border-tertiary-fixed-dim hover:-translate-y-0.5 transition-all"
           >
             <div class="flex items-start gap-4">

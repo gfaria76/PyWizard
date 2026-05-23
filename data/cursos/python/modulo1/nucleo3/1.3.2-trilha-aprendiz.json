@@ -1,0 +1,82 @@
+{
+  "id": "python-1.3.2-TA",
+  "curso": "python",
+  "modulo": 1,
+  "aula": 2,
+  "numero": "1.3.2",
+  "tipo": "trilha",
+  "subtipo": "aprendiz",
+  "titulo": "Selos da Verdade",
+  "subtitulo": "5 desafios em sala sobre relacionais e lógicos",
+  "objetivo": "Consolidar em sala o conteúdo de Operadores Relacionais e Lógicos.",
+  "duracao": "30min",
+  "tags": [
+    "trilha-aprendiz",
+    "relacionais e lógicos"
+  ],
+  "secoes": {
+    "abertura": {
+      "introducao": {
+        "texto_md": "# Trilha do Aprendiz VIII: Selos da Verdade\n\nEsta trilha em sala transforma o conteúdo de **Operadores Relacionais e Lógicos** em cinco desafios de prática imediata."
+      }
+    },
+    "preparacao": {
+      "titulo": "Preparação da trilha",
+      "texto_md": "* releia o conceito antes de começar;\n* avance do mais simples ao mais exigente;\n* confira o formato de saída."
+    },
+    "desafios": {
+      "titulo": "Cinco desafios da trilha",
+      "texto_md": "Cinco desafios em sala para consolidar relacionais e lógicos.",
+      "missoes": [
+        {
+          "titulo": "Critério Duplo",
+          "texto_md": "**O Problema:** Receba nota e frequência. Imprima `Aprovado` somente se nota >= 6 e frequência >= 75.\n\n**Casos de Teste (Amostra):**\n\n| Entrada | Saída | Show |\n|---|---|---|\n| 7.0<br>80 | Aprovado | Sim |"
+        },
+        {
+          "titulo": "Faixa de Risco",
+          "texto_md": "**O Problema:** Receba idade e doença prévia (0 ou 1). Imprima `Risco` se idade >= 60 ou doença == 1.\n\n**Casos de Teste (Amostra):**\n\n| Entrada | Saída | Show |\n|---|---|---|\n| 30<br>1 | Risco | Sim |"
+        },
+        {
+          "titulo": "Acesso ao Sistema",
+          "texto_md": "**O Problema:** Receba `ativo` e `senha_ok` (0 ou 1). Imprima `Entrar` se ambos forem 1.\n\n**Casos de Teste (Amostra):**\n\n| Entrada | Saída | Show |\n|---|---|---|\n| 1<br>1 | Entrar | Sim |"
+        },
+        {
+          "titulo": "Desconto Combinado",
+          "texto_md": "**O Problema:** Receba idade e estudante (0 ou 1). Imprima `Desconto` se idade < 18 ou estudante == 1.\n\n**Casos de Teste (Amostra):**\n\n| Entrada | Saída | Show |\n|---|---|---|\n| 20<br>1 | Desconto | Não |"
+        },
+        {
+          "titulo": "Intervalo Seguro",
+          "texto_md": "**O Problema:** Receba um número e imprima `Dentro` se estiver entre 10 e 20 inclusive.\n\n**Casos de Teste (Amostra):**\n\n| Entrada | Saída | Show |\n|---|---|---|\n| 15 | Dentro | Não |"
+        }
+      ]
+    },
+    "fechamento": {
+      "titulo": "Fechamento da Trilha",
+      "reflexao": {
+        "texto_md": "Resolver em sala ajuda a transformar explicação em confiança prática."
+      }
+    }
+  },
+  "premio": {
+    "pontuacao": 70
+  },
+  "rpg": {
+    "xp_reward": 70,
+    "variant": "trail",
+    "oracle_hints": [
+      "Verifique a formatação exata da saída pedida.",
+      "Releia o enunciado com atenção antes de codar."
+    ],
+    "enemy_name": "Espírito da Bifurcação",
+    "enemy_hp": 65,
+    "weakness": "condicionais",
+    "loot_drops": [
+      {
+        "item": "Selo de Combate",
+        "type": "badge",
+        "rarity": "common"
+      }
+    ]
+  },
+  "nucleo": 3
+}

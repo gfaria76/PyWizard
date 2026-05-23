@@ -1,0 +1,96 @@
+{
+  "id": "python-3.4.2-CT",
+  "curso": "python",
+  "modulo": 3,
+  "aula": 2,
+  "numero": "3.4.2",
+  "tipo": "aula",
+  "subtipo": "conceito",
+  "titulo": "Parametros Flexiveis: *args e **kwargs",
+  "subtitulo": "Funcoes adaptaveis sem perder contrato e legibilidade",
+  "objetivo": "Aplicar `*args` e `**kwargs` para lidar com entradas variáveis com controle de contrato, mantendo funções claras e com saída determinística.",
+  "duracao": "1h30",
+  "tags": [
+    "args",
+    "kwargs",
+    "flexibilidade",
+    "interface"
+  ],
+  "secoes": {
+    "abertura": {
+      "objetivo": {
+        "texto_md": "Nem toda rotina recebe o mesmo número de entradas todo dia. Relatórios financeiros mudam de volume, configurações mudam por contexto e o código precisa absorver essa variação sem virar bagunça. `*args` e `**kwargs` existem para esse ponto: abrir flexibilidade, mas com disciplina de saída e validação."
+      },
+      "retomada": {
+        "texto_md": "**Base necessária:**\n\n* Parâmetros obrigatórios e padrão (Aula 1.2).\n* Retorno simples e múltiplo (Aula 1.2).\n* Laços e listas em funções (Aula 3.1).\n* `import` e modularização (aula anterior)."
+      },
+      "situacao": {
+        "titulo": "A funcao engessada que quebrou no fechamento",
+        "texto_md": "Uma rotina aceitava exatamente três despesas. No fechamento trimestral chegaram sete itens e a equipe abriu exceção manual. Na semana seguinte, vieram dois itens. Sem flexibilidade controlada, a rotina sempre quebra no mundo real."
+      },
+      "problematizacao": {
+        "texto_md": "* Quando `*args` melhora a interface e quando esconde demais o significado dos dados?\n* Como usar `**kwargs` sem transformar a funcao em caixa-preta sem contrato?"
+      }
+    },
+    "conceito": {
+      "titulo": "Conceito tecnico",
+      "texto_md": "Em algumas situações queremos uma funcao que aceite **um número variável de argumentos**. Python oferece duas sintaxes especiais:\n\n* **`*args`** — coleta os argumentos **posicionais extras** em uma **tupla**. Tupla é uma coleção parecida com lista, mas imutável (não pode ter `append`/`pop`). Para iterar, basta `for v in args:`.\n* **`**kwargs`** — coleta os argumentos **nomeados extras** em um **dicionário**. Dicionário é uma coleção `chave: valor` (ex.: `{\"taxa\": 0.1, \"cor\": \"azul\"}`). Para ler, use `kwargs.get(\"chave\", padrão)`.\n\nOs **nomes** `args` e `kwargs` são apenas convenção — o que define o comportamento são os asteriscos `*` e `**`. Você pode escrever `*valores` ou `**config` e funcionaria igual.\n\n```python\ndef somar_tudo(*numeros):           # *numeros vira tupla\n    total = 0\n    for n in numeros:\n        total += n\n    return total\n\nprint(somar_tudo(10, 20, 30))        # 60\nprint(somar_tudo(5))                  # 5\nprint(somar_tudo())                   # 0  (tupla vazia)\n\ndef configurar(**opcoes):            # **opcoes vira dicionário\n    cor = opcoes.get(\"cor\", \"preto\")\n    tamanho = opcoes.get(\"tamanho\", \"M\")\n    return f\"{cor}, tamanho {tamanho}\"\n\nprint(configurar(cor=\"azul\"))                # azul, tamanho M\nprint(configurar(tamanho=\"G\", cor=\"verde\"))   # verde, tamanho G\n```\n\n**Quando usar — e quando NÃO usar:**\n\n* ✅ **Use `*args`** quando faz sentido somar/processar um número arbitrário de valores do **mesmo tipo** (ex.: somar despesas).\n* ✅ **Use `**kwargs`** quando você está repassando configurações opcionais (ex.: customizar formato de saída).\n* ❌ **Não use** apenas para evitar declarar parâmetros. Se a funcao precisa de \"nome\", \"idade\" e \"cpf\", **declare cada um explicitamente** — não esconda em `**kwargs`. Parâmetros nomeados são mais legíveis e mais seguros.\n* ❌ **Não use** para listas que você **já tem** prontas — passe a lista diretamente.\n\n> 🔑 **Regra de ouro:** mantenha os parâmetros essenciais **explícitos** e use `*args`/`**kwargs` apenas para o que é genuinamente variável.",
+      "exemplos": [
+        {
+          "titulo": "1) Soma flexível com *args",
+          "texto_md": "Aceita qualquer quantidade de valores. Internamente, percorremos com `for`.",
+          "python": "def somar_itens(*valores):\n    total = 0.0\n    for v in valores:\n        total += v\n    return total\n\nprint(somar_itens(10.0, 20.0, 30.0))         # 60.0\nprint(somar_itens(5.0))                       # 5.0\nprint(somar_itens())                          # 0.0"
+        },
+        {
+          "titulo": "2) Configuração com **kwargs",
+          "texto_md": "Quem chama escolhe quais configurações passar. `get()` permite definir padrão se a chave não vier.",
+          "python": "def montar_relatorio(**dados):\n    orgao = dados.get(\"orgao\", \"N/D\")\n    status = dados.get(\"status\", \"Sem status\")\n    return f\"Órgão: {orgao} | Status: {status}\"\n\nprint(montar_relatorio(orgao=\"FNDE\", status=\"Regular\"))\nprint(montar_relatorio(orgao=\"INSS\"))\nprint(montar_relatorio())"
+        },
+        {
+          "titulo": "3) Combinando parâmetros explícitos + *args + **kwargs",
+          "texto_md": "A ordem é: primeiro parâmetros explícitos, depois `*args`, depois `**kwargs`. Note que valores essenciais ficam **fora** do `*args`.",
+          "python": "def totalizar(titulo, *valores, **config):\n    total = sum(valores)\n    taxa = config.get(\"taxa\", 0.0)\n    return f\"{titulo}: R$ {total * (1 + taxa):.2f}\"\n\nprint(totalizar(\"Despesas\", 100, 200))                  # Despesas: R$ 300.00\nprint(totalizar(\"Despesas\", 100, 200, taxa=0.10))       # Despesas: R$ 330.00"
+        }
+      ]
+    },
+    "pratica_guiada": {
+      "titulo": "Prática guiada",
+      "texto_md": "Vamos exercitar `*args`, `**kwargs` e a combinação dos dois em três passos.",
+      "exemplos": [
+        {
+          "titulo": "Passo 1 — Só *args (média de N valores)",
+          "texto_md": "Aceita qualquer quantidade de valores e devolve a média.",
+          "python": "def media_flexivel(*valores):\n    return sum(valores) / len(valores)\n\nprint(media_flexivel(10, 20, 30))       # 20.0\nprint(media_flexivel(8, 7, 9, 6))       # 7.5"
+        },
+        {
+          "titulo": "Passo 2 — Só **kwargs (status de meta)",
+          "texto_md": "Configurações opcionais ditam o formato da saída.",
+          "python": "def resumo_meta(valor_atual, meta, **config):\n    mostrar_percentual = config.get(\"percentual\", False)\n    if mostrar_percentual:\n        taxa = (valor_atual / meta) * 100\n        return f\"{valor_atual:.2f}/{meta:.2f} ({taxa:.1f}%)\"\n    return f\"{valor_atual:.2f}/{meta:.2f}\"\n\nprint(resumo_meta(90.0, 100.0))                    # 90.00/100.00\nprint(resumo_meta(90.0, 100.0, percentual=True))   # 90.00/100.00 (90.0%)"
+        },
+        {
+          "titulo": "Passo 3 — Combinando *args e **kwargs",
+          "texto_md": "A funcao soma um número arbitrário de repasses e aplica uma taxa opcional.",
+          "python": "def calcular_total(*repasses, taxa=0.0):\n    bruto = sum(repasses)\n    return bruto * (1 + taxa)\n\nprint(f\"Sem taxa:  R$ {calcular_total(100, 200, 50):.2f}\")          # 350.00\nprint(f\"Com taxa:  R$ {calcular_total(100, 200, 50, taxa=0.1):.2f}\") # 385.00"
+        }
+      ]
+    },
+    "pratica_autonoma": {
+      "titulo": "Exercicio de Continuacao (Sua vez!)",
+      "texto_md": "**Enunciado:** Crie `media_flexivel(*valores)` que retorne a média dos argumentos recebidos. Imprima `Media: X.XX`.\n\n| Entrada | Saída Esperada |\n|---|---|\n| 10.0, 20.0, 30.0 | Media: 20.00 |\n| 5.0, 5.0 | Media: 5.00 |\n| 8.0, 7.0, 9.0, 6.0 | Media: 7.50 |"
+    },
+    "fechamento": {
+      "titulo": "Fechamento e Autoavaliação",
+      "quiz": {
+        "texto_md": "**1. O que `*args` captura dentro da funcao?**\nA) Apenas dicionários.\nB) Argumentos posicionais extras, agrupados numa tupla.\nC) Comentários de código.\n\n::details{summary=\"Ver a resposta correta\"}\n**Correto: B.** `*args` organiza entradas posicionais variáveis em tupla, prontas para iteração.\n::\n\n**2. O que `**kwargs` captura?**\nA) Argumentos nomeados extras, agrupados num dicionário.\nB) Apenas listas.\nC) Variáveis globais.\n\n::details{summary=\"Ver a resposta correta\"}\n**Correto: A.** `**kwargs` concentra configurações nomeadas em um dicionário.\n::\n\n**3. Qual a boa prática ao usar parâmetros flexíveis?**\nA) Substituir todos os parâmetros essenciais por `**kwargs`.\nB) Manter parâmetros essenciais explícitos e usar `*args`/`**kwargs` só para o que é genuinamente variável.\nC) Nunca declarar nenhum parâmetro com nome.\n\n::details{summary=\"Ver a resposta correta\"}\n**Correto: B.** Flexibilidade sem contrato vira ambiguidade. Parâmetros explícitos documentam a intenção.\n::"
+      },
+      "leitura_complementar": {
+        "texto_md": "* Revise `*args` e `**kwargs` na documentacao Python, com foco em legibilidade da assinatura.\n* Explore o conceito de **desempacotamento**: `print(*lista)` espalha os itens da lista como argumentos posicionais.\n* Prática diária: identifique uma rotina que recebe quantidade variável de entradas e descreva uma assinatura flexível adequada."
+      },
+      "reflexao": {
+        "texto_md": "* Flexibilidade técnica não é improviso; é a capacidade de adaptar a entrada sem abrir mão do critério."
+      }
+    }
+  },
+  "premio": null,
+  "nucleo": 4
+}

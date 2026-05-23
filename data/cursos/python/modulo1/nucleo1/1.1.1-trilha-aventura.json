@@ -1,0 +1,83 @@
+{
+  "id": "python-1.1.1-TV",
+  "curso": "python",
+  "modulo": 1,
+  "nucleo": 1,
+  "aula": 1,
+  "numero": "1.1.1",
+  "tipo": "trilha",
+  "subtipo": "aventura",
+  "titulo": "Lanternas da Aldeia",
+  "subtitulo": "5 desafios para casa sobre variáveis e tipos básicos",
+  "objetivo": "Ampliar em casa a prática de modelagem de dados simples com variáveis.",
+  "duracao": "35min",
+  "tags": [
+    "trilha-aventura",
+    "variáveis",
+    "tipos"
+  ],
+  "secoes": {
+    "abertura": {
+      "introducao": {
+        "texto_md": "# Estrada da Aventura\n\nA aula acabou, mas o grimório segue aberto. Esta trilha para casa fortalece autonomia e repetição consciente."
+      }
+    },
+    "preparacao": {
+      "titulo": "Mochila do aventureiro",
+      "texto_md": "* antes de programar, liste os dados;\n* decida qual tipo cada valor deve receber;\n* revise se o texto exibido está completo."
+    },
+    "desafios": {
+      "titulo": "Cinco lanternas da aldeia",
+      "texto_md": "Cinco desafios de casa para reforçar a aula 1.",
+      "missoes": [
+        {
+          "titulo": "Lanterna 1: Cadastro do Mercado",
+          "texto_md": "**O Problema:** Declare `produto = \"Arroz\"`, `preco = 27.9` e `estoque = 40`. Imprima os três valores.\n\n**Casos de Teste (Amostra):**\n\n| Entrada | Saída | Show |\n|---|---|---|\n| sem entrada | Produto: Arroz<br>Preco: 27.9<br>Estoque: 40 | Sim |"
+        },
+        {
+          "titulo": "Lanterna 2: Chave da Verdade",
+          "texto_md": "**O Problema:** Crie `vaga_aberta = True` e imprima o valor e o tipo.\n\n**Casos de Teste (Amostra):**\n\n| Entrada | Saída | Show |\n|---|---|---|\n| sem entrada | True<br><class 'bool'> | Sim |"
+        },
+        {
+          "titulo": "Lanterna 3: Etiquetas do Posto",
+          "texto_md": "**O Problema:** Modele `paciente = \"Marcos\"`, `idade = 67` e `consulta_agendada = False`. Imprima as informações.\n\n**Casos de Teste (Amostra):**\n\n| Entrada | Saída | Show |\n|---|---|---|\n| sem entrada | Paciente: Marcos<br>Idade: 67<br>Consulta agendada: False | Não |"
+        },
+        {
+          "titulo": "Lanterna 4: Moedas do Cofre",
+          "texto_md": "**O Problema:** Crie uma variável para cada tipo básico e imprima `type()` de cada uma.\n\n**Casos de Teste (Amostra):**\n\n| Entrada | Saída | Show |\n|---|---|---|\n| sem entrada | <class 'int'><br><class 'float'><br><class 'str'><br><class 'bool'> | Não |"
+        },
+        {
+          "titulo": "Lanterna 5: Bússola da Feira",
+          "texto_md": "**O Problema:** Modele `banca = \"Frutas do Norte\"`, `caixas = 18`, `preco_caixa = 14.75` e `aberta = True`. Imprima os quatro valores.\n\n**Casos de Teste (Amostra):**\n\n| Entrada | Saída | Show |\n|---|---|---|\n| sem entrada | Banca: Frutas do Norte<br>Caixas: 18<br>Preco por caixa: 14.75<br>Aberta: True | Não |"
+        }
+      ]
+    },
+    "fechamento": {
+      "titulo": "Fechamento da Trilha",
+      "reflexao": {
+        "texto_md": "Toda aventura concluída em casa aumenta sua autonomia e transforma sintaxe em hábito."
+      }
+    }
+  },
+  "premio": {
+    "pontuacao": 90
+  },
+  "rpg": {
+    "xp_reward": 90,
+    "variant": "trail",
+    "enemy_name": "Espectro Errante",
+    "enemy_hp": 65,
+    "weakness": "tipos de dados",
+    "loot_drops": [
+      {
+        "item": "Marca da Aventura",
+        "type": "badge",
+        "rarity": "uncommon"
+      }
+    ],
+    "oracle_hints": [
+      "Cuidado com booleans: True e False começam com letra maiúscula.",
+      "Não confunda int com float — 40 é diferente de 40.0."
+    ]
+  }
+}

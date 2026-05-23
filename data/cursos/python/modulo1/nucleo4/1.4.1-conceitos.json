@@ -1,0 +1,105 @@
+{
+  "id": "python-1.4.1-CT",
+  "curso": "python",
+  "modulo": 1,
+  "aula": 1,
+  "numero": "1.4.1",
+  "tipo": "aula",
+  "subtipo": "conceito",
+  "titulo": "Decisões Múltiplas: Elif",
+  "subtitulo": "Quando há mais de dois caminhos: classificação em faixas",
+  "objetivo": "Usar `elif` para estruturar cadeias de decisão com múltiplos caminhos exclusivos, aplicando classificações por faixas (salariais, etárias, de risco).",
+  "duracao": "1h30",
+  "tags": [
+    "elif",
+    "condicionais",
+    "faixas"
+  ],
+  "secoes": {
+    "abertura": {
+      "objetivo": {
+        "texto_md": "O imposto de renda não tem apenas duas faixas. A faixa etária de risco para doenças não é só `menor de 60` ou `maior de 60`. O mundo real opera em **faixas** — e para cada faixa existe uma resposta diferente. A estrutura `elif` permite criar uma cadeia de condições exclusivas onde o código segue exatamente **um** dos caminhos possíveis."
+      },
+      "retomada": {
+        "texto_md": "**O que você já sabe e vai usar hoje:**\n\n* `if/else` para decisões binárias (Aula 3.1).\n* Operadores `and`, `or`, `not` (Aula 3.2).\n* Formatação com f-strings (Aula 2.1)."
+      },
+      "situacao": {
+        "texto_md": "A Receita Federal define cinco faixas de tributação para o IRPF: isento (até R$ 2.259,20), 7,5%, 15%, 22,5% e 27,5%. Se usássemos apenas `if/else` aninhados, o código ficaria confuso. Com `elif`, a lógica fica linear e diretamente mapeável para o decreto legal.",
+        "titulo": "A tabela do IRPF em código"
+      },
+      "problematizacao": {
+        "texto_md": "* Por que usar múltiplos `if` separados para verificar faixas pode ser logicamente perigoso? O que acontece se um valor cair em mais de uma condição?\n* Se a tabela do IRPF mudar (e muda todo ano), que vantagem tem um código com `elif` para manutenção?"
+      }
+    },
+    "conceito": {
+      "titulo": "Conceito técnico",
+      "texto_md": "O `elif` (abreviação de \"else if\") cria um teste adicional que só é avaliado se **todas as condições anteriores foram falsas**. Quando uma condição da cadeia é verdadeira, seu bloco é executado e **todas as condições seguintes são ignoradas**. O `else` final (opcional) cobre o caso \"nenhuma das anteriores\".\n\nNuma cadeia `if / elif / elif / ... / else`, **exatamente um** bloco é executado. Isso garante que as faixas sejam mutuamente exclusivas.\n\n> ⚠️ **Não confunda com múltiplos `if` independentes.** Se você escrever vários `if` em sequência (sem `elif`), cada um é avaliado isoladamente — e mais de um pode disparar para o mesmo valor.\n\n```python\n# ERRADO — pode imprimir vários conceitos para a mesma nota\nif nota >= 9: print(\"A\")\nif nota >= 7: print(\"B\")\nif nota >= 5: print(\"C\")\n\n# CORRETO — exatamente um conceito\nif   nota >= 9: print(\"A\")\nelif nota >= 7: print(\"B\")\nelif nota >= 5: print(\"C\")\nelse:           print(\"D\")\n```",
+      "exemplos": [
+        {
+          "titulo": "1) Classificação em faixas (qualidade do ar)",
+          "texto_md": "Cada faixa é testada em ordem até uma condição ser verdadeira.",
+          "python": "iqa = float(input(\"Índice de qualidade do ar: \"))\n\nif iqa <= 40:\n    classificacao = \"Boa\"\nelif iqa <= 80:\n    classificacao = \"Moderada\"\nelif iqa <= 120:\n    classificacao = \"Ruim para grupos sensíveis\"\nelif iqa <= 200:\n    classificacao = \"Ruim\"\nelse:\n    classificacao = \"Muito Ruim / Perigosa\"\n\nprint(f\"IQA {iqa} — Qualidade: {classificacao}\")"
+        },
+        {
+          "titulo": "2) Tabela simplificada do IRPF",
+          "texto_md": "Cinco faixas mutuamente exclusivas, cada uma com sua alíquota.",
+          "python": "salario = float(input(\"Salário mensal bruto (R$): \"))\n\nif salario <= 2259.20:\n    aliquota = 0.0\nelif salario <= 2826.65:\n    aliquota = 0.075\nelif salario <= 3751.05:\n    aliquota = 0.15\nelif salario <= 4664.68:\n    aliquota = 0.225\nelse:\n    aliquota = 0.275\n\nprint(f\"Alíquota aplicável: {aliquota:.1%}\")\nprint(f\"Imposto estimado: R$ {salario * aliquota:.2f}\")"
+        }
+      ]
+    },
+    "pratica_guiada": {
+      "titulo": "Prática guiada",
+      "texto_md": "Vamos praticar `elif` em três cenários: três faixas, quatro faixas e cinco faixas.",
+      "exemplos": [
+        {
+          "titulo": "Passo 1 — Três faixas (conceito escolar)",
+          "texto_md": "Classificar uma nota em A, B ou C usando duas condições e um `else` final.",
+          "python": "nota = float(input(\"Nota (0-10): \"))\n\nif nota >= 9.0:\n    conceito = \"A\"\nelif nota >= 7.0:\n    conceito = \"B\"\nelse:\n    conceito = \"C\"\n\nprint(f\"Nota {nota:.1f} -> Conceito {conceito}\")"
+        },
+        {
+          "titulo": "Passo 2 — Quatro faixas (risco de desmatamento)",
+          "texto_md": "Classificação progressiva baseada em cobertura florestal.",
+          "python": "cobertura = float(input(\"Cobertura florestal restante (%): \"))\n\nif cobertura >= 80:\n    risco = \"BAIXO\"\nelif cobertura >= 60:\n    risco = \"MODERADO\"\nelif cobertura >= 40:\n    risco = \"ALTO\"\nelse:\n    risco = \"CRÍTICO — EMERGÊNCIA AMBIENTAL\"\n\nprint(f\"Cobertura: {cobertura:.1f}%  |  Risco: {risco}\")"
+        },
+        {
+          "titulo": "Passo 3 — Cinco faixas (IRPF completo)",
+          "texto_md": "Tabela completa do IRPF com cinco alíquotas e mensagem por faixa.",
+          "python": "salario = float(input(\"Salário mensal bruto (R$): \"))\n\nif salario <= 2259.20:\n    aliquota, faixa = 0.0, \"Isento\"\nelif salario <= 2826.65:\n    aliquota, faixa = 0.075, \"7,5%\"\nelif salario <= 3751.05:\n    aliquota, faixa = 0.15, \"15%\"\nelif salario <= 4664.68:\n    aliquota, faixa = 0.225, \"22,5%\"\nelse:\n    aliquota, faixa = 0.275, \"27,5%\"\n\nprint(f\"Faixa: {faixa}\")\nprint(f\"Imposto estimado: R$ {salario * aliquota:.2f}\")"
+        }
+      ]
+    },
+    "pratica_autonoma": {
+      "titulo": "Exercício de Continuação (Sua vez!)",
+      "texto_md": "**Enunciado:** Um sistema de saúde classifica o IMC (Índice de Massa Corporal) em categorias. O programa recebe o IMC (float). Classifique: `Abaixo do peso` (< 18.5), `Normal` (≥ 18.5 e < 25.0), `Sobrepeso` (≥ 25.0 e < 30.0), `Obesidade` (≥ 30.0). Exiba `IMC: CATEGORIA`.\n\n**Entradas e Saídas (Autocorreção):**\n\n| Entrada | Saída |\n|---|---|\n| 17.0 | IMC: Abaixo do peso |\n| 22.0 | IMC: Normal |"
+    },
+    "fechamento": {
+      "titulo": "Fechamento e Autoavaliação",
+      "quiz": {
+        "texto_md": "**1. Quando o bloco de um `elif` é executado?**\nA) Sempre, independentemente das condições anteriores.\nB) Apenas quando o `if` anterior também foi verdadeiro.\nC) Apenas quando todas as condições anteriores foram falsas e a sua é verdadeira.\n\n::details{summary=\"Ver a resposta correta\"}\n**Correto: C.** O `elif` só é avaliado se o `if` (e os `elif` anteriores) foram `False`.\n::\n\n**2. Em uma cadeia `if/elif/elif/else`, quantos blocos podem ser executados no máximo?**\nA) Todos os blocos que tiverem condição verdadeira.\nB) Apenas um — o primeiro cuja condição for verdadeira (ou o `else` se nenhum for).\nC) Dois: o `if` e o `else`.\n\n::details{summary=\"Ver a resposta correta\"}\n**Correto: B.** Em uma cadeia `if/elif/.../else`, exatamente **um** bloco é executado.\n::\n\n**3. Qual o problema de usar múltiplos `if` independentes para classificar faixas de valor?**\nA) O Python proíbe múltiplos `if` seguidos.\nB) Pode executar mais de um bloco se o valor se enquadrar em mais de uma condição, gerando saídas incorretas.\nC) Fica mais rápido mas menos legível.\n\n::details{summary=\"Ver a resposta correta\"}\n**Correto: B.** Com múltiplos `if` independentes, cada condição é avaliada separadamente. Um valor de `nota = 9` satisfaria `nota >= 9`, `nota >= 7` e `nota >= 5` ao mesmo tempo, imprimindo três conceitos ao invés de um.\n::"
+      },
+      "leitura_complementar": {
+        "texto_md": "* **Documentação Oficial:** Pesquise \"Python elif\" para entender o fluxo de controle.\n* **Prática contextual:** Acesse o site da Receita Federal e codifique a tabela completa do IRPF atual com `elif`. Compare com a do ano anterior — que linhas precisariam mudar?"
+      },
+      "reflexao": {
+        "texto_md": "* As tabelas progressivas do IRPF existem para que quem ganha mais pague proporcionalmente mais. Aprender `elif` é, na prática, aprender a programar política tributária. Sistemas de arrecadação, triagem de saúde, ranqueamento de candidatos — todos usam exatamente essa estrutura."
+      }
+    }
+  },
+  "premio": null,
+  "rpg": {
+    "xp_reward": 50,
+    "variant": "lesson",
+    "oracle_hints": [
+      "Verifique a formatação exata da saída pedida.",
+      "Releia o enunciado com atenção antes de codar."
+    ],
+    "loot_drops": [
+      {
+        "item": "Fragmento de Experiência",
+        "type": "consumable",
+        "rarity": "common"
+      }
+    ]
+  },
+  "nucleo": 4
+}

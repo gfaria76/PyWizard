@@ -35,12 +35,12 @@
       <ul class="space-y-4 max-w-3xl">
         <li v-for="aula in aulas" :key="aula.numero">
           <NuxtLink
-            :to="`/${courseId}/${moduleNumber}/${nucleoNumber}/${aula.numero}`"
+            :to="`/${courseId}/${moduleNumber}/${nucleoNumber}/${aula.aula}`"
             class="block glass-panel rounded-xl p-6 border border-outline-variant/30 hover:border-primary-fixed/60 hover:-translate-y-0.5 transition-all"
           >
             <div class="flex items-start gap-4">
               <div class="shrink-0 w-12 h-12 rounded-lg bg-primary-fixed/15 border border-primary-fixed/40 flex items-center justify-center font-code-md text-base text-primary-fixed">
-                {{ aula.numero }}
+                {{ aula.aula }}
               </div>
               <div class="flex-1 min-w-0">
                 <p class="font-label-caps text-[10px] tracking-widest text-primary-fixed uppercase mb-1">
@@ -99,7 +99,7 @@ const aulas = computed(() => {
   if (!modulo.value) return []
   return modulo.value.aulas
     .filter(a => a.nucleo === nucleoNumber.value)
-    .sort((a, b) => a.numero - b.numero)
+    .sort((a, b) => a.aula - b.aula)
 })
 
 function subtypeShort(subtype: string): string {
@@ -109,6 +109,7 @@ function subtypeShort(subtype: string): string {
     aventura: 'Aventura',
     guardiao: 'Guardião',
     grupo: 'Grupo',
+    simulado: 'Labirinto',
     boss: 'Boss',
     prova: 'Prova',
   }

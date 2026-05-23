@@ -118,16 +118,16 @@ const nucleoNumber = computed(() => Number(route.params.nucleo))
 const lessonNumber = computed(() => Number(route.params.aula))
 const activitySlug = computed(() => String(route.params.atividade ?? ''))
 
-const fullSlug = computed(() => `modulo${moduleNumber.value}/${activitySlug.value}`)
+const fullSlug = computed(() => `modulo${moduleNumber.value}/nucleo${nucleoNumber.value}/${activitySlug.value}`)
 
 const { data: lesson, pending, error } = await useFetch<Lesson>(
   () => `/api/cursos/${courseId.value}/aulas/${fullSlug.value}`,
   { key: () => `activity:${courseId.value}:${fullSlug.value}` },
 )
 
-watch(activitySlug, (slug) => {
-  if (slug) {
-    flow.setActivity(courseId.value, moduleNumber.value, lessonNumber.value, `modulo${moduleNumber.value}/${slug}`)
+watch(fullSlug, (slug) => {
+  if (slug && activitySlug.value) {
+    flow.setActivity(courseId.value, moduleNumber.value, lessonNumber.value, slug)
   }
 }, { immediate: true })
 

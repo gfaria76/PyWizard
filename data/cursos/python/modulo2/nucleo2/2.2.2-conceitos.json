@@ -1,0 +1,96 @@
+{
+  "id": "python-2.2.2-CT",
+  "curso": "python",
+  "modulo": 2,
+  "aula": 2,
+  "numero": "2.2.2",
+  "tipo": "aula",
+  "subtipo": "conceito",
+  "titulo": "Laço for com range() e enumerate()",
+  "subtitulo": "O tempo e a posição também são dados",
+  "objetivo": "Percorrer listas acessando simultaneamente o valor e a sua posição (índice), permitindo comparar períodos consecutivos e detectar variações.",
+  "duracao": "1h30",
+  "tags": [
+    "for",
+    "range",
+    "enumerate",
+    "índice"
+  ],
+  "secoes": {
+    "abertura": {
+      "objetivo": {
+        "texto_md": "Registrar que pagamos R$ 50 de luz ou de transporte é importante, mas saber **quando** isso aconteceu muda tudo. Na vida real, a posição de um registro é uma informação tão vital quanto o próprio valor. Nesta aula você vai aprender a percorrer dados usando `enumerate()` e `range()`. Estas ferramentas dão acesso ao **índice** durante o laço, permitindo comparar o \"hoje\" com o \"ontem\"."
+      },
+      "retomada": {
+        "texto_md": "**O que você já sabe e vai usar hoje:**\n\n* `for item in lista` para contar e acumular (Aula 2.1).\n* Acesso a posições com `lista[i]` (Aula 1.1).\n* `len(lista)` para saber o tamanho (Aula 1.2)."
+      },
+      "situacao": {
+        "texto_md": "Uma família anota o valor final do carrinho do supermercado a cada semana: `[85, 88, 92, 98]`. Com `sum()` saberíamos apenas o total. O problema real, porém, é o **salto** constante de uma semana para a outra. Sem acessar os índices para calcular `[i] - [i-1]`, não dá para medir esse aumento silencioso.",
+        "titulo": "O problema do aumento silencioso"
+      },
+      "problematizacao": {
+        "texto_md": "* Se olharmos para um conjunto de despesas sem ligá-las ao tempo (sua posição no mês), o que perdemos na nossa capacidade de planejamento?\n* Ao medirmos sistematicamente a variação entre o que pagamos hoje e ontem, como essa informação nos ajuda a entender padrões?"
+      }
+    },
+    "conceito": {
+      "titulo": "Conceito técnico",
+      "texto_md": "Quando precisamos do **índice** durante a iteração, o `for item in lista` não basta — precisamos saber **em que posição** estamos. Há duas formas:\n\n* **`enumerate(lista)`** — devolve, a cada iteração, um par `(índice, valor)`. Use quando você quer **valor + posição** ao mesmo tempo.\n\n```python\nfor i, valor in enumerate(lista):\n    print(i, valor)\n```\n\n* **`range(início, fim)`** — gera uma sequência de números inteiros que começa em `início` e vai **até `fim - 1`** (o `fim` **não é incluído**). Use quando você quer iterar pelos índices diretamente. `range(1, len(lista))` é o padrão para comparar `lista[i]` com `lista[i-1]`.\n\n```python\nfor i in range(1, len(lista)):\n    diferenca = lista[i] - lista[i - 1]\n```\n\n> 🔑 **Resumo prático:** use `enumerate` quando quiser usar índice **e** valor; use `range(1, len(lista))` quando precisar comparar elementos vizinhos.",
+      "exemplos": [
+        {
+          "titulo": "1) enumerate — índice e valor juntos",
+          "texto_md": "Registramos vendas e queremos dizer \"Dia 1: ...\", \"Dia 2: ...\". Somamos 1 ao índice apenas para a leitura humana.",
+          "python": "vendas = [35.0, 42.5, 20.0]\n\nfor i, valor in enumerate(vendas):\n    print(f\"Dia {i + 1}: R$ {valor:.2f}\")"
+        },
+        {
+          "titulo": "2) range(1, len(lista)) — comparar com o anterior",
+          "texto_md": "Detectamos as semanas em que o preço do botijão subiu em relação à semana anterior.",
+          "python": "precos_gas = [25.0, 26.5, 28.0, 27.5]\n\nfor i in range(1, len(precos_gas)):\n    diferenca = precos_gas[i] - precos_gas[i - 1]\n    if diferenca > 0:\n        print(f\"Semana {i}: subiu R$ {diferenca:.2f}\")"
+        },
+        {
+          "titulo": "3) range com passo (step)",
+          "texto_md": "O terceiro parâmetro de `range` permite avançar de N em N. Aqui pegamos apenas as posições pares.",
+          "python": "valores = [10, 20, 30, 40, 50, 60]\n\nfor i in range(0, len(valores), 2):\n    print(f\"Índice {i}: {valores[i]}\")\n# Índice 0: 10\n# Índice 2: 30\n# Índice 4: 50"
+        }
+      ]
+    },
+    "pratica_guiada": {
+      "titulo": "Prática guiada",
+      "texto_md": "Vamos exercitar `range`, `enumerate` e a comparação com o anterior em três passos.",
+      "exemplos": [
+        {
+          "titulo": "Passo 1 — range() para gerar índices",
+          "texto_md": "Imprime cada item da lista mostrando explicitamente o índice.",
+          "python": "horas = [8, 9, 7, 10]\n\nfor i in range(len(horas)):\n    print(f\"Posição {i}: {horas[i]} horas\")"
+        },
+        {
+          "titulo": "Passo 2 — enumerate() com filtro",
+          "texto_md": "Mostra apenas os dias em que a produção ficou acima da média.",
+          "python": "pecas = [42, 50, 38, 60, 47]\n\nmedia = sum(pecas) / len(pecas)\nprint(f\"Média: {media:.2f}\")\nprint(\"Dias acima da média:\")\nfor dia, qtd in enumerate(pecas):\n    if qtd > media:\n        print(f\"  Dia {dia + 1}: {qtd} peças\")"
+        },
+        {
+          "titulo": "Passo 3 — Comparar com o dia anterior",
+          "texto_md": "Detecta dias em que a produção caiu em relação ao dia anterior.",
+          "python": "pecas = [42, 50, 38, 60, 47]\n\nfor i in range(1, len(pecas)):\n    if pecas[i] < pecas[i - 1]:\n        queda = pecas[i - 1] - pecas[i]\n        print(f\"Dia {i + 1}: queda de {queda} peças em relação ao dia anterior\")"
+        }
+      ]
+    },
+    "pratica_autonoma": {
+      "titulo": "Exercício de Continuação (Sua vez!)",
+      "texto_md": "**Enunciado:** Um agricultor anotou a quantidade (em kg) de tomate colhido nos últimos dias. O sistema recebe essa lista. Use `enumerate()` para imprimir cada posição e o valor. **Atenção:** a contagem do dia deve começar em zero (o índice real do computador), no formato `Dia N: V kg`.\n\n**Entradas e Saídas (Autocorreção):**\n\n| Entrada | Saída |\n|---|---|\n| [10, 15] | Dia 0: 10 kg<br>Dia 1: 15 kg |\n| [5] | Dia 0: 5 kg |"
+    },
+    "fechamento": {
+      "titulo": "Fechamento e Autoavaliação",
+      "quiz": {
+        "texto_md": "**1. Em `for i, valor in enumerate(lista):`, o que a variável `i` recebe?**\nA) O valor armazenado na lista.\nB) O índice (posição, começando em 0) do item atual.\nC) O tamanho total da lista.\n\n::details{summary=\"Ver a resposta correta\"}\n**Correto: B.** `enumerate` devolve sempre um par `(índice, valor)`.\n::\n\n**2. Para conseguir subtrair o valor de \"hoje\" pelo de \"ontem\", qual estrutura dá o controle adequado?**\nA) `for valor in lista:`\nB) Apenas a função `sum()`.\nC) `for i in range(1, len(lista)):`, pois permite acessar `lista[i]` e `lista[i - 1]`.\n\n::details{summary=\"Ver a resposta correta\"}\n**Correto: C.** Iterando pelos índices, podemos olhar para trás e para frente no histórico.\n::\n\n**3. Quais valores `range(1, 5)` gera para o `for`?**\nA) Apenas 1 e 5.\nB) 1, 2, 3 e 4.\nC) 1, 2, 3, 4 e 5.\n\n::details{summary=\"Ver a resposta correta\"}\n**Correto: B.** O `range(a, b)` inclui o início e exclui o fim.\n::"
+      },
+      "leitura_complementar": {
+        "texto_md": "* **Documentação Oficial:** Explore o terceiro parâmetro de `range()` (o passo), que permite avançar de 2 em 2.\n* **Prática Diária:** Acompanhe o preço da gasolina por 10 dias e construa um detector de variação usando `range()` para descobrir o dia em que o aumento foi mais brusco."
+      },
+      "reflexao": {
+        "texto_md": "* Observar um valor alto isolado assusta, mas detectar uma tendência de aumentos pequenos e constantes é a chave para ler a realidade. A corrosão do orçamento doméstico raramente acontece em um único dia; ela ocorre centavo a centavo. Dominar a comparação \"agora vs. antes\" é deixar de reagir apenas às emergências."
+      }
+    }
+  },
+  "premio": null,
+  "nucleo": 2
+}

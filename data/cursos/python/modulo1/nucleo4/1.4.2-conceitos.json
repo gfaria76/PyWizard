@@ -1,0 +1,109 @@
+{
+  "id": "python-1.4.2-CT",
+  "curso": "python",
+  "modulo": 1,
+  "aula": 2,
+  "numero": "1.4.2",
+  "tipo": "aula",
+  "subtipo": "conceito",
+  "titulo": "If-Else Aninhado e Validações Complexas",
+  "subtitulo": "Regras dentro de regras: triagens graduadas do mundo real",
+  "objetivo": "Construir estruturas `if/elif/else` aninhadas e combinar operadores lógicos para modelar critérios de elegibilidade multi-fator.",
+  "duracao": "1h30",
+  "tags": [
+    "if aninhado",
+    "condicionais compostas"
+  ],
+  "secoes": {
+    "abertura": {
+      "objetivo": {
+        "texto_md": "Em sistemas reais, as regras raramente estão em um único nível. A elegibilidade para uma moradia popular exige verificar primeiro se a pessoa está no CadÚnico, depois verificar a renda, e dentro da faixa de renda verificar se há crianças pequenas ou deficientes no domicílio para definir a prioridade. São **regras dentro de regras** — condicionais aninhadas."
+      },
+      "retomada": {
+        "texto_md": "**O que você já sabe e vai usar hoje:**\n\n* `if/else` simples (Aula 3.1), operadores `and`/`or`/`not` (Aula 3.2) e cadeias `elif` (Aula 4.1).\n* Formatação com f-strings e operadores matemáticos (Aulas 2.1 e 1.2)."
+      },
+      "situacao": {
+        "texto_md": "O programa MCMV prioriza inscritos em três níveis: primeiro verifica se a renda está na faixa 1 (≤ R$ 2.640). Dentro dessa faixa, verifica se há idoso, criança até 5 anos ou pessoa com deficiência no domicílio — esses casos têm prioridade absoluta. A segunda verificação **só faz sentido** se a primeira já passou.",
+        "titulo": "A lógica da fila habitacional"
+      },
+      "problematizacao": {
+        "texto_md": "* Quando aninhamos um `if` dentro de outro, o que acontece com a legibilidade do código à medida que adicionamos mais níveis? Qual é a alternativa para não chegar em 5 ou 6 níveis de indentação?\n* Em um sistema de saúde que primeiro verifica risco de doença e depois o plano: como a ordem dos `if` aninhados importa para a lógica correta?"
+      }
+    },
+    "conceito": {
+      "titulo": "Conceito técnico",
+      "texto_md": "Um `if` aninhado é um `if` (ou `elif`/`else`) colocado **dentro** do bloco indentado de outro `if`. A regra é simples: o `if` interno **só é avaliado** se o externo for verdadeiro. A indentação extra marca o nível de aninhamento.\n\n**Quando aninhar e quando usar `and`?**\n\n* Use **aninhamento** quando o bloco externo já tem ação própria (mensagens, cálculos) que precisam acontecer antes da segunda verificação.\n* Use **`and`** quando duas condições juntas decidem uma única ação, sem nada entre elas.\n\n```python\n# Aninhado (mais verboso) — útil quando há ação intermediária\nif renda <= 2640.0:\n    print(\"Elegível para MCMV\")\n    if tem_vulneravel:\n        print(\"Prioridade ALTA\")\n\n# Com and (mais compacto) — quando só importa o resultado combinado\nif renda <= 2640.0 and tem_vulneravel:\n    prioridade = \"ALTA\"\n```\n\nEvite passar de 3 níveis de aninhamento — quando isso acontece, normalmente é sinal de que partes da lógica podem virar funções (assunto do Módulo 3).",
+      "exemplos": [
+        {
+          "titulo": "1) Aninhamento clássico (MCMV)",
+          "texto_md": "Mensagem específica em cada nível.",
+          "python": "renda = float(input(\"Renda familiar (R$): \"))\nvulneravel = input(\"Há idoso/criança<5/deficiente? (sim/nao): \") == \"sim\"\n\nif renda <= 2640.0:\n    print(\"Elegível para MCMV (Faixa 1)\")\n    if vulneravel:\n        print(\"Prioridade ALTA — grupo vulnerável\")\n    else:\n        print(\"Prioridade NORMAL\")\nelse:\n    print(\"Renda acima da Faixa 1 — programa de renda média\")"
+        },
+        {
+          "titulo": "2) Aninhamento vs and lado a lado",
+          "texto_md": "As duas versões abaixo produzem o mesmo resultado — escolha a mais legível para cada caso.",
+          "python": "# Versão aninhada\nif renda <= 2640.0:\n    if vulneravel:\n        prioridade = \"ALTA\"\n\n# Versão equivalente com and\nif renda <= 2640.0 and vulneravel:\n    prioridade = \"ALTA\""
+        },
+        {
+          "titulo": "3) Quando o aninhamento é realmente necessário",
+          "texto_md": "Há ação intermediária (`print(\"Febre detectada\")`) antes do teste interno; o `and` não daria conta sozinho.",
+          "python": "idade = int(input(\"Idade: \"))\ntemperatura = float(input(\"Temperatura (°C): \"))\n\nif temperatura >= 38.0:\n    print(\"Febre detectada\")\n    if idade < 2 or idade >= 70:\n        print(\"URGÊNCIA: grupo de risco — atendimento imediato\")\n    else:\n        print(\"Atendimento padrão — registrar e monitorar\")\nelse:\n    print(\"Sem febre — triagem concluída\")"
+        }
+      ]
+    },
+    "pratica_guiada": {
+      "titulo": "Prática guiada",
+      "texto_md": "Vamos construir validações aninhadas progressivamente — dois níveis, depois três.",
+      "exemplos": [
+        {
+          "titulo": "Passo 1 — Dois níveis (acesso a serviço)",
+          "texto_md": "Só verifica idade depois de confirmar que o cidadão está cadastrado.",
+          "python": "cadastrado = input(\"Cidadão cadastrado? (sim/nao): \") == \"sim\"\nidade = int(input(\"Idade: \"))\n\nif cadastrado:\n    if idade >= 18:\n        print(\"Acesso completo.\")\n    else:\n        print(\"Acesso restrito (menor de idade).\")\nelse:\n    print(\"Cidadão não cadastrado — encaminhar ao CRAS.\")"
+        },
+        {
+          "titulo": "Passo 2 — Comparando aninhado vs and",
+          "texto_md": "Mesmo caso resolvido das duas formas; observe quando cada uma é mais clara.",
+          "python": "renda = float(input(\"Renda familiar (R$): \"))\nvulneravel = input(\"Tem vulnerável? (sim/nao): \") == \"sim\"\n\n# Aninhado: mensagens por nível\nif renda <= 2640.0:\n    print(\"Elegível MCMV.\")\n    if vulneravel:\n        print(\"Prioridade ALTA.\")\n\n# Versão com and: ação única combinada\nif renda <= 2640.0 and vulneravel:\n    print(\"(combinado) Encaminhar para fila ALTA.\")"
+        },
+        {
+          "titulo": "Passo 3 — Três níveis (alerta de queimadas — INPE)",
+          "texto_md": "Bioma, depois quantidade de focos, depois faixa de risco. Aninhamento legítimo.",
+          "python": "bioma = input(\"Bioma (amazonia/cerrado/outros): \").lower()\nfocos = int(input(\"Focos detectados hoje: \"))\n\nif focos > 0:\n    print(f\"Focos registrados: {focos}\")\n    if bioma == \"amazonia\":\n        if focos >= 50:\n            print(\"ALERTA: CRÍTICO — Amazônia em emergência\")\n        elif focos >= 20:\n            print(\"ALERTA: ALTO\")\n        else:\n            print(\"ALERTA: MODERADO\")\n    elif bioma == \"cerrado\":\n        if focos >= 100:\n            print(\"ALERTA: CRÍTICO — Cerrado em colapso\")\n        else:\n            print(\"ALERTA: ATENÇÃO\")\n    else:\n        print(\"ALERTA: REGISTRADO — protocolo padrão\")\nelse:\n    print(\"Sem focos detectados hoje — situação normal\")"
+        }
+      ]
+    },
+    "pratica_autonoma": {
+      "titulo": "Exercício de Continuação (Sua vez!)",
+      "texto_md": "**Enunciado:** Um sistema de crédito verifica primeiro se a pontuação de crédito (int) é ≥ 600. Se sim, e o histórico for `limpo` (string), exibe `Credito: APROVADO`. Se pontuação ≥ 600 mas histórico for `sujo`, exibe `Credito: ANALISE`. Se pontuação < 600, exibe `Credito: NEGADO`.\n\n**Entradas e Saídas (Autocorreção):**\n\n| Entrada | Saída |\n|---|---|\n| 700<br>limpo | Credito: APROVADO |\n| 650<br>sujo | Credito: ANALISE |\n| 500<br>limpo | Credito: NEGADO |"
+    },
+    "fechamento": {
+      "titulo": "Fechamento e Autoavaliação",
+      "quiz": {
+        "texto_md": "**1. O que diferencia um `if` aninhado de uma cadeia `elif`?**\nA) O `if` aninhado avalia uma nova condição somente dentro de um bloco já ativo; o `elif` avalia uma nova condição apenas se todas as anteriores falharam.\nB) São equivalentes e produzem sempre o mesmo resultado.\nC) O `elif` aninhado roda mais rápido que o `if` aninhado.\n\n::details{summary=\"Ver a resposta correta\"}\n**Correto: A.** O `if` aninhado entra em outro nível de verificação dentro de uma condição já satisfeita. O `elif` está no mesmo nível, verificando alternativas depois que o `if` original falhou.\n::\n\n**2. Dada a estrutura abaixo, o que é impresso se `x = 15`?**\n```python\nif x > 10:\n    if x > 20:\n        print(\"Grande\")\n    else:\n        print(\"Médio\")\nelse:\n    print(\"Pequeno\")\n```\nA) Médio\nB) Grande\nC) Pequeno\n\n::details{summary=\"Ver a resposta correta\"}\n**Correto: A) Médio.** `x = 15` satisfaz `x > 10`, então entra no bloco externo. Dentro dele, `x > 20` é falso (15 < 20), portanto cai no `else` interno.\n::\n\n**3. Quando é preferível usar `and` em vez de `if` aninhado?**\nA) Quando há muitos `elif` na estrutura.\nB) Quando duas condições precisam ser satisfeitas para uma única ação e não há mensagens intermediárias entre elas.\nC) Sempre que possível, pois `and` é mais rápido.\n\n::details{summary=\"Ver a resposta correta\"}\n**Correto: B.** Se você só precisa executar uma ação quando duas condições são simultaneamente verdadeiras, o `and` torna o código mais compacto e legível.\n::"
+      },
+      "leitura_complementar": {
+        "texto_md": "* **Documentação Oficial:** Pesquise \"Python nested if\" para ver exemplos e boas práticas.\n* **Prática contextual:** Pesquise um edital de licitação ou os critérios de um programa habitacional. Mapeie as condições em fluxograma e depois codifique com `if/elif/else` aninhados."
+      },
+      "reflexao": {
+        "texto_md": "* Quando implementamos um sistema de triagem com condicionais aninhadas, estamos traduzindo uma **política pública** para código. A ordem dos critérios importa: programar sistemas públicos exige não apenas saber `if`, mas entender as consequências de cada condição para as pessoas que serão classificadas por elas."
+      }
+    }
+  },
+  "premio": null,
+  "rpg": {
+    "xp_reward": 50,
+    "variant": "lesson",
+    "oracle_hints": [
+      "Verifique a formatação exata da saída pedida.",
+      "Releia o enunciado com atenção antes de codar."
+    ],
+    "loot_drops": [
+      {
+        "item": "Fragmento de Experiência",
+        "type": "consumable",
+        "rarity": "common"
+      }
+    ]
+  },
+  "nucleo": 4
+}

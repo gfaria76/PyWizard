@@ -1,0 +1,114 @@
+{
+  "id": "python-1.2.1-CT",
+  "curso": "python",
+  "modulo": 1,
+  "aula": 1,
+  "numero": "1.2.1",
+  "tipo": "aula",
+  "subtipo": "conceito",
+  "titulo": "F-strings e Formatação de Saída",
+  "subtitulo": "Apresentando dados reais com clareza: quem lê merece entender",
+  "objetivo": "Dominar a criação de saídas formatadas com f-strings, controlar casas decimais e combinar texto e variáveis para produzir relatórios legíveis com dados do mundo real.",
+  "duracao": "1h30",
+  "tags": [
+    "f-strings",
+    "formatação de saída",
+    "comunicação de dados"
+  ],
+  "secoes": {
+    "abertura": {
+      "objetivo": {
+        "texto_md": "Calcular um resultado correto não basta: ele precisa ser comunicado de forma que qualquer pessoa compreenda. Nesta aula você aprenderá a usar **f-strings** para construir saídas organizadas, formatar valores monetários, percentuais e textos combinados com variáveis. Comunicar bem os dados é a diferença entre uma informação que transforma e um número que ninguém usa."
+      },
+      "retomada": {
+        "texto_md": "**O que você já sabe e vai usar hoje:**\n\n* Variáveis e os tipos `int`, `float`, `str` e `bool` (Aula 1.1).\n* `input()` com conversão de tipos (`int()`, `float()`) e operadores matemáticos (Aula 1.2)."
+      },
+      "situacao": {
+        "texto_md": "Imagine que o sistema de assistência social de um município calcula o valor do auxílio moradia de uma família e exibe na tela: `675.0`. Sem contexto, sem símbolo de moeda, sem casas decimais padronizadas. Agora imagine o mesmo resultado como: `Valor do auxílio: R$ 675.00`. A informação não mudou — a comunicação, sim. Em sistemas críticos, isso evita erros de interpretação.",
+        "titulo": "O número sem contexto"
+      },
+      "problematizacao": {
+        "texto_md": "* Por que formatos de saída padronizados reduzem erros em sistemas públicos que lidam com grandes volumes de dados?\n* Se um programa exibe `Media: 3466.6666666...`, que problema prático isso causa para o cidadão que recebe esse extrato? Como a formatação resolve isso?"
+      }
+    },
+    "conceito": {
+      "titulo": "Conceito técnico",
+      "texto_md": "Uma **f-string** (\"formatted string\") é uma string precedida pela letra `f` que permite incluir variáveis e expressões diretamente no meio do texto, dentro de chaves `{}`. É a forma moderna e legível de produzir saídas em Python.\n\nDentro das chaves podemos usar **especificadores de formatação** após dois-pontos:\n\n* `:.2f` — fixa o número com **2 casas decimais** (ideal para valores monetários).\n* `:.1%` — multiplica por 100 e exibe como **porcentagem** com 1 casa decimal.\n* É possível incluir **expressões inteiras** dentro das chaves (não só variáveis).",
+      "exemplos": [
+        {
+          "titulo": "1) Combinando texto e variáveis",
+          "texto_md": "Coloque `f` antes das aspas e cada variável dentro de chaves `{}`.",
+          "python": "nome = \"Maria Silva\"\ncargo = \"Auxiliar de Serviços Gerais\"\nsalario = 1412.00\n\nprint(f\"Funcionária: {nome}\")\nprint(f\"Cargo: {cargo}\")\nprint(f\"Salário base: R$ {salario}\")"
+        },
+        {
+          "titulo": "2) Controlando casas decimais com :.2f",
+          "texto_md": "O especificador `:.2f` força o número a aparecer com exatamente 2 casas decimais — padrão para reais.",
+          "python": "salario_bruto = 2789.333333\nimposto = 417.4\n\nprint(salario_bruto)                # 2789.333333\nprint(f\"{salario_bruto:.2f}\")        # 2789.33\nprint(f\"Imposto: R$ {imposto:.2f}\")  # Imposto: R$ 417.40"
+        },
+        {
+          "titulo": "3) Expressões dentro da f-string",
+          "texto_md": "As chaves aceitam contas completas; não é preciso criar variáveis intermediárias.",
+          "python": "preco = 45.90\nqtd = 3\naliquota = 0.12\n\nprint(f\"Subtotal: R$ {preco * qtd:.2f}\")\nprint(f\"Imposto: R$ {preco * qtd * aliquota:.2f}\")\nprint(f\"Total: R$ {preco * qtd * (1 + aliquota):.2f}\")"
+        },
+        {
+          "titulo": "4) Porcentagens com :.1%",
+          "texto_md": "Use `:.1%` para transformar um decimal em porcentagem automaticamente.",
+          "python": "total = 12450\natendidos = 9870\n\ntaxa = atendidos / total\nprint(f\"Taxa de atendimento: {taxa:.1%}\")  # 79.3%"
+        }
+      ]
+    },
+    "pratica_guiada": {
+      "titulo": "Prática guiada",
+      "texto_md": "Vamos construir, em três passos, um recibo de salário líquido formatado.",
+      "exemplos": [
+        {
+          "titulo": "Passo 1 — Apenas :.2f para valores monetários",
+          "texto_md": "Crie um relatório simples com salário e imposto, usando `:.2f` em cada um.",
+          "python": "nome = \"Carlos\"\nsalario = 2500.50\nimposto = 275.0555\n\nprint(f\"Funcionário: {nome}\")\nprint(f\"Salário: R$ {salario:.2f}\")\nprint(f\"Imposto: R$ {imposto:.2f}\")"
+        },
+        {
+          "titulo": "Passo 2 — Adicionar uma porcentagem com :.1%",
+          "texto_md": "Mostre também qual percentual do salário foi descontado.",
+          "python": "salario = 2500.50\nimposto = 275.0555\n\ntaxa = imposto / salario\nprint(f\"Salário:        R$ {salario:.2f}\")\nprint(f\"Imposto:        R$ {imposto:.2f} ({taxa:.1%})\")"
+        },
+        {
+          "titulo": "Passo 3 — Recibo completo com cálculo dentro da f-string",
+          "texto_md": "Reúna tudo em um recibo legível. Note o cálculo `salario - imposto` dentro das chaves.",
+          "python": "nome = input(\"Nome do trabalhador: \")\nsalario = float(input(\"Salário bruto (R$): \"))\nimposto = float(input(\"Total de deduções (R$): \"))\n\nprint()\nprint(f\"--- RECIBO: {nome} ---\")\nprint(f\"Salário bruto:   R$ {salario:.2f}\")\nprint(f\"Deduções:        R$ {imposto:.2f} ({imposto/salario:.1%})\")\nprint(f\"Salário líquido: R$ {salario - imposto:.2f}\")"
+        }
+      ]
+    },
+    "pratica_autonoma": {
+      "texto_md": "**Enunciado:** Um programa de caixa recebe o preço unitário de um produto e a quantidade comprada. Deve exibir o valor total formatado com duas casas decimais, no formato exato: `Total: R$ X.XX`.\n\n**Entradas e Saídas (Autocorreção):**\n\n| Entrada | Saída |\n|---|---|\n| 10.5<br>3 | Total: R$ 31.50 |\n| 7.0<br>2 | Total: R$ 14.00 |",
+      "titulo": "Exercício de Continuação (Sua vez!)"
+    },
+    "fechamento": {
+      "titulo": "Fechamento e Autoavaliação",
+      "quiz": {
+        "texto_md": "**1. Qual é a saída do código `print(f\"{1/3:.2f}\")`?**\nA) 0.3333333\nB) 0.33\nC) 33.33%\n\n::details{summary=\"Ver a resposta correta\"}\n**Correto: B) 0.33.** O especificador `:.2f` arredonda para 2 casas decimais.\n::\n\n**2. Como exibir a variável `taxa = 0.075` como porcentagem com uma casa decimal?**\nA) `f\"{taxa:.2f}%\"`\nB) `f\"{taxa * 100:.1f}%\"`\nC) `f\"{taxa:.1%}\"`\n\n::details{summary=\"Ver a resposta correta\"}\n**Correto: C) `f\"{taxa:.1%}\"`.** O especificador `:.1%` multiplica por 100 e adiciona `%` automaticamente. A opção B também produz `7.5%`, mas é mais trabalhosa.\n::\n\n**3. O que diferencia `print(salario)` de `print(f\"Salário: R$ {salario:.2f}\")`?**\nA) Nada, o Python formata automaticamente de qualquer forma.\nB) A segunda versão cria uma nova variável no código.\nC) A primeira exibe o número bruto; a segunda cria uma mensagem formatada e padronizada.\n\n::details{summary=\"Ver a resposta correta\"}\n**Correto: C.** A f-string produz saídas legíveis, padronizadas e adequadas para sistemas reais de relatório.\n::"
+      },
+      "leitura_complementar": {
+        "texto_md": "* **Documentação Oficial:** Pesquise por \"Python Format Specification Mini-Language\" para conhecer todos os especificadores de formatação disponíveis (largura, alinhamento, preenchimento com zeros).\n* **Prática contextual:** Refaça o cálculo do seu holerite atual (salário bruto, INSS, IRRF, líquido) usando variáveis e f-strings. Compare a legibilidade de um `print(resultado)` simples com um recibo formatado."
+      },
+      "reflexao": {
+        "texto_md": "* Sistemas mal formatados não são apenas feios: eles excluem. Quando um extrato do INSS, uma guia do FGTS ou uma consulta de benefício exibe números soltos sem contexto, quem não tem familiaridade com tecnologia simplesmente não entende. Aprender a formatar saídas é aprender a comunicar-se com respeito."
+      }
+    }
+  },
+  "rpg": {
+    "xp_reward": 50,
+    "variant": "lesson",
+    "oracle_hints": [
+      "Verifique a formatação exata da saída pedida.",
+      "Releia o enunciado com atenção antes de codar."
+    ],
+    "loot_drops": [
+      {
+        "item": "Fragmento de Experiência",
+        "type": "consumable",
+        "rarity": "common"
+      }
+    ]
+  },
+  "nucleo": 2
+}

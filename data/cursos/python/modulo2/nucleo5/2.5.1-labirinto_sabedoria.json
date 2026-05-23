@@ -1,0 +1,143 @@
+{
+  "id": "python-2.5.1-MS",
+  "curso": "python",
+  "modulo": 2,
+  "nucleo": 5,
+  "aula": 1,
+  "numero": "2.5.1",
+  "tipo": "masmorra",
+  "subtipo": "simulado",
+  "titulo": "Salão da Sabedoria Final do Módulo II",
+  "subtitulo": "Simulado integrado pré-prova com 8 missões representativas dos 4 núcleos do Módulo II",
+  "objetivo": "Consolidar o domínio de coleções (listas), laços `for` e `while`, e matrizes por meio de um simulado individual com 8 missões representativas. Calibra ritmo, formato de saída e pontos fracos antes da Prova Final.",
+  "duracao": "2h00",
+  "tags": [
+    "labirinto_sabedoria",
+    "simulado",
+    "pré-prova",
+    "modulo-2"
+  ],
+  "secoes": {
+    "abertura": {
+      "introducao": {
+        "texto_md": "# Salão da Sabedoria Final do Módulo II\n\nEste simulado individual reúne missões equivalentes às dos labirintos dos 4 núcleos do Módulo II. Use-o antes da Prova Final para calibrar tempo, formato de saída e identificar tópicos a revisar. O resultado não conta para a nota final do módulo.\n\n**Regras do labirinto:**\n\n* Tente todas as missões dentro do tempo estimado da Prova.\n* As missões cobrem coleções (listas), laços `for` e `while`, e matrizes.\n* Compare seu resultado com o gabarito e revise antes da Prova oficial.\n"
+      }
+    },
+    "maratona": {
+      "titulo": "Simulado integrado (8 missões dos 4 núcleos)",
+      "texto_md": "Duas missões representativas de cada núcleo, com escopo, formato e dificuldade equivalentes aos dos respectivos bosses. Dados sintéticos.",
+      "missoes": [
+        {
+          "titulo": "Núcleo 1 — A Distorção Máxima (Portal da Transparência)",
+          "texto_md": "**O Treino:** Um consórcio de jornalistas precisa provar a disparidade absurda de pagamentos dentro da mesma entidade pública.\n\nO avaliador injeta uma lista contendo os salários base (`Floats`) de todos os funcionários ativos de um órgão do Poder Executivo. Encontre o teto máximo e o piso mínimo salarial deste dataset. Calcule a diferença matemática absoluta entre eles e imprima esta discrepância formatada com duas casas decimais.\n\n```mermaid\nflowchart LR\n    A[(Base de Salários)] --> B(Maior Salário)\n    A --> C(Menor Salário)\n    B & C --> D(Diferença Absoluta)\n    D --> E([Discrepância])\n\n    style A stroke:#000000,fill:#E1F0D4\n    style B stroke:#000000,fill:#C3EFE0\n    style C stroke:#000000,fill:#F6ACD8\n    style D stroke:#000000,fill:#DBCDF8\n    style E stroke:#000000,fill:#FFF2CC\n```\n\n**Casos de Teste (Amostra):**\n\n| Entrada | Saída | Show |\n|---|---|---|\n| [820.0, 950.0, 5600.0, 820.0] | Discrepancia: 4780.00 | Sim |\n| [1500.0, 12000.0] | Discrepancia: 10500.00 | Não |\n| [1000.0, 1000.0, 1000.0] | Discrepancia: 0.00 | Não |",
+          "meta": {
+            "tipo": "simulado",
+            "espelha_missao": "missao_1",
+            "origem_nucleo": 1
+          }
+        },
+        {
+          "titulo": "Núcleo 1 — A Intervenção Estratégica (Câmara dos Deputados)",
+          "texto_md": "**O Treino:** A fila de votação de proposições da Câmara segue uma ordem cronológica rígida representada por Códigos de ID (`Inteiros`). Uma urgência política ocorreu e você tem de intervir na memória do sistema alterando a fila exata de milhares de IDs na seguinte ordem estrita:\n\n1. O Projeto de Urgência de código `999` tem prioridade e deve ser inserido como a **segunda** tarefa da fila (índice 1), empurrando as restantes para trás.\n2. O plenário cancelou o projeto de código `500`. Encontre e exclua a **primeira** ocorrência deste código.\n3. O projeto que ficou na primeira posição absoluta (índice 0) acabou de ser votado e deve sair da fila.\n4. Para provar a validade da nova fila, imprima o total de projetos pendentes, e nas linhas seguintes, indique qual projeto passou a ocupar o início e o fim da lista de votações.\n\n**Casos de Teste (Amostra):**\n\n| Entrada | Saída | Show |\n|---|---|---|\n| [101, 202, 500, 303] | Tamanho: 3<br>Primeira: 999<br>Ultima: 303 | Sim |\n| [1, 500, 2, 3, 500] | Tamanho: 4<br>Primeira: 999<br>Ultima: 500 | Não |\n| [42, 500, 43] | Tamanho: 2<br>Primeira: 999<br>Ultima: 43 | Não |",
+          "meta": {
+            "tipo": "simulado",
+            "espelha_missao": "missao_3",
+            "origem_nucleo": 1
+          }
+        },
+        {
+          "titulo": "Núcleo 2 — O Ralo Financeiro (Portal da Transparência)",
+          "texto_md": "**O Treino:** O sindicato está investigando gastos suntuosos através de cartões corporativos de diretores, enquanto a administração alega \"congelamento de salários\". Não nos interessam os cafés ou as passagens normais; queremos auditar o ralo financeiro de luxo.\n\nO avaliador entrega a lista `despesas` (`Floats`). Percorra as dezenas de milhares de faturas. Calcule a soma absoluta APENAS das faturas que ultrapassaram individualmente a marca de `500.00` reais. Para provar que não está adivinhando os números, imprima a quantidade de faturas de luxo detectadas e o montante total desviado.\n\n```mermaid\nstateDiagram-v2\n    [*] --> Aguardando_Fatura\n\n    Aguardando_Fatura --> Calculando_Desvio : recebeu fatura\n    Calculando_Desvio --> Aguardando_Fatura : próxima fatura\n    Calculando_Desvio --> Relatorio_Final : sem mais faturas\n\n    Relatorio_Final --> [*]\n```\n\n**Casos de Teste (Amostra):**\n\n| Entrada | Saída | Show |\n|---|---|---|\n| [12.50, 600.00, 45.00, 1000.00] | Faturas de luxo: 2<br>Desvio total: 1600.00 | Sim |\n| [499.99, 500.00, 10.00] | Faturas de luxo: 0<br>Desvio total: 0.00 | Não |\n| [500.01, 1500.50, 20.0] | Faturas de luxo: 2<br>Desvio total: 2000.51 | Não |",
+          "meta": {
+            "tipo": "simulado",
+            "espelha_missao": "missao_1",
+            "origem_nucleo": 2
+          }
+        },
+        {
+          "titulo": "Núcleo 2 — O Mapa do Desperdício (Viagens Oficiais)",
+          "texto_md": "**O Treino:** A auditoria detectou um volume anormal de despesas de viagem. Precisamos auditar a lista `sobras` (`Floats` de valores por evento) para descobrir não apenas o desperdício, mas *quando* ele disparou pela primeira vez.\n\n**A Missão:**\n1. Descubra a média rigorosa de desperdício diário do arquivo inteiro.\n2. Percorra a lista rastreando as coordenadas temporais (o índice de cada dia).\n3. Conte o total de dias cujo desperdício ultrapassou estritamente a média do ano.\n4. Para provar o rastreio, capture o índice (o dia) da **primeira vez absoluta** em que a média foi quebrada no ano. Imprima o total de dias em infração e o índice desse primeiro evento. Se nenhum dia quebrar a média, imprima `Sem quebras`.\n\n**Casos de Teste (Amostra):**\n\n| Entrada | Saída | Show |\n|---|---|---|\n| [10.0, 50.0, 10.0, 90.0] | Dias acima da media: 2<br>Primeira infracao no dia: 1 | Sim |\n| [5.0, 5.0, 5.0, 5.0] | Sem quebras | Sim |\n| [100.0, 0.0, 0.0, 0.0] | Dias acima da media: 1<br>Primeira infracao no dia: 0 | Não |",
+          "meta": {
+            "tipo": "simulado",
+            "espelha_missao": "missao_3",
+            "origem_nucleo": 2
+          }
+        },
+        {
+          "titulo": "Núcleo 3 — A Sentinela do Orçamento (CGU)",
+          "texto_md": "**O Treino:** A Controladoria-Geral da União liberou um fluxo de diárias de viagem. Precisamos somar os gastos, mas o fluxo não tem um tamanho fixo; ele encerra com uma marcação específica.\n\nO avaliador injeta uma lista `diarias` (`Floats`). Percorra a lista. Se encontrar o valor `0.0`, acione o `break` (este valor indica o fim do lote contábil). Calcule a média das diárias processadas *antes* da quebra. Imprima o total de diárias válidas e a média com duas casas decimais.\n\n```mermaid\nflowchart LR\n    A[(Lote de Diárias)] --> B(Calcular Soma)\n        B -- próximo --> B\n    B -- 0.0 --> E([Cálculo da Média])\n\n    style A stroke:#000000,fill:#E1F0D4\n    style B stroke:#000000,fill:#FFF2CC\n    style E stroke:#000000,fill:#DBCDF8\n```\n\n**Casos de Teste (Amostra):**\n\n| Entrada (`diarias`) | Saída | Show |\n|---|---|---|\n| [150.0, 200.0, 0.0, 999.0] | Validas: 2<br>Media: 175.00 | Sim |\n| [100.0, 100.0, 100.0, 0.0] | Validas: 3<br>Media: 100.00 | Não |\n| [500.0, 0.0] | Validas: 1<br>Media: 500.00 | Não |",
+          "meta": {
+            "tipo": "simulado",
+            "espelha_missao": "missao_1",
+            "origem_nucleo": 3
+          }
+        },
+        {
+          "titulo": "Núcleo 3 — O Pente Fino do PROCON",
+          "texto_md": "**O Treino:** O leitor de código de barras do supermercado investigado gera lixo eletrônico: frequentemente registra o valor `-1.0` por falha de leitura.\n\nO sistema injeta a lista `precos` (`Floats`). Percorra-a. Se o valor for `-1.0`, use `continue` para saltar essa iteração e ignorar o erro. Adicione os preços válidos a uma soma total e conte-os. Imprima o total de itens válidos e a soma formatada com duas casas decimais.\n\n**Casos de Teste (Amostra):**\n\n| Entrada (`precos`) | Saída | Show |\n|---|---|---|\n| [5.50, -1.0, 4.50, -1.0, 10.0] | Itens validos: 3<br>Soma: 20.00 | Sim |\n| [-1.0, -1.0, 50.0] | Itens validos: 1<br>Soma: 50.00 | Não |\n| [10.0, 20.0, 30.0] | Itens validos: 3<br>Soma: 60.00 | Não |",
+          "meta": {
+            "tipo": "simulado",
+            "espelha_missao": "missao_3",
+            "origem_nucleo": 3
+          }
+        },
+        {
+          "titulo": "Núcleo 4 — O Funil da Desigualdade (IPCA por Linha)",
+          "texto_md": "**O Treino:** O IPCA agregado costuma esconder disparidades fortes entre categorias de consumo. Se calcularmos só a média nacional, apagamos a inflação real das famílias trabalhadoras. Precisamos isolar linha por linha.\n\nA matriz `notas` contém `Floats`. Cada \"linha\" da matriz é uma escola diferente. Você deve calcular a média **exclusiva de cada linha** (zerando o acumulador ao mudar de escola). Sempre que a média de uma escola ficar abaixo de `450.0`, registre uma infração de ensino.\nNo final, imprima o total de escolas que ficaram abaixo do nível crítico de ensino.\n\n```mermaid\nflowchart TB\n    A[(Escolas)] --> B(ler Escola)\n    B --> C{Média}\n    C -- Sim --> D(Nota Crítica)\n    C -- Não --> B\n    D -- próxima --> B\n\n    style A stroke:#000000,fill:#E1F0D4\n    style B stroke:#000000,fill:#C3E0E0\n    style C stroke:#000000,fill:#C3EFE0\n    style D stroke:#000000,fill:#F69F9F\n```\n\n**Casos de Teste (Amostra):**\n\n| Entrada | Saída | Show |\n|---|---|---|\n| [[500.0, 500.0], [400.0, 420.0], [600.0, 300.0]] | Escolas em estado critico: 2 | Sim |\n| [[600.0, 700.0], [450.0, 450.0]] | Escolas em estado critico: 0 | Não |\n| [[100.0, 100.0]] | Escolas em estado critico: 1 | Não |",
+          "meta": {
+            "tipo": "simulado",
+            "espelha_missao": "missao_1",
+            "origem_nucleo": 4
+          }
+        },
+        {
+          "titulo": "Núcleo 4 — A Variação do Tesouro (BNDES - Comparação Linha a Linha)",
+          "texto_md": "**O Treino:** Os desembolsos por carteira do BNDES oscilam mês a mês. Precisamos não saber apenas o total anual, mas **quantas vezes houve crescimento** em relação à janela imediatamente anterior.\n\nA matriz `arrecadacao` tem várias linhas de valores (`Floats`).\n1. Primeiro, calcule a soma total de CADA linha (mês) e guarde essas somas numa lista secundária `totais_mensais`.\n2. Em seguida, percorra essa nova lista comparando o mês atual com o mês imediatamente anterior.\n3. Conte quantas vezes a soma do mês atual foi **estritamente maior** que a do mês passado. Imprima a resposta.\n\n**Casos de Teste (Amostra):**\n\n| Entrada | Saída | Show |\n|---|---|---|\n| [[10.0, 10.0], [5.0, 5.0], [20.0, 20.0], [20.0, 20.0]] | Meses em crescimento: 1 | Sim |\n| [[1.0, 2.0], [2.0, 2.0], [3.0, 3.0]] | Meses em crescimento: 2 | Sim |\n| [[100.0, 100.0], [50.0, 50.0], [10.0, 10.0]] | Meses em crescimento: 0 | Não |",
+          "meta": {
+            "tipo": "simulado",
+            "espelha_missao": "missao_3",
+            "origem_nucleo": 4
+          }
+        }
+      ]
+    },
+    "fechamento": {
+      "titulo": "Encerramento do Salão",
+      "reflexao": {
+        "texto_md": "* Quais núcleos consumiram mais tempo? Marque os conceitos a revisar antes da Prova.\n* Em quais formatos de saída houve erro? Releia os enunciados e ajuste antes da avaliação oficial.\n* Se errar duas seguidas em um núcleo, volte aos conceitos daquele núcleo antes de prosseguir.\n"
+      }
+    }
+  },
+  "premio": {
+    "pontuacao": 0,
+    "recursos": [
+      "Gabarito disponível após o término do simulado",
+      "Relatório de fraquezas por núcleo: tópicos a revisar antes da Prova"
+    ]
+  },
+  "rpg": {
+    "xp_reward": 120,
+    "variant": "labyrinth-simulation-final",
+    "oracle_hints": [
+      "Trate este salão como a Prova real — formato de saída conta.",
+      "Cronometre cada missão para identificar onde perde tempo.",
+      "Se errar em um núcleo específico, revise antes de prosseguir."
+    ],
+    "enemy_name": "Guardião do Salão M2",
+    "enemy_hp": 350,
+    "weakness": "preparação integrada",
+    "loot_drops": [
+      {
+        "item": "Mapa do Salão",
+        "type": "consumable",
+        "rarity": "rare"
+      },
+      {
+        "item": "Pergaminho de Foco",
+        "type": "consumable",
+        "rarity": "common",
+        "quantity": 3
+      }
+    ]
+  }
+}

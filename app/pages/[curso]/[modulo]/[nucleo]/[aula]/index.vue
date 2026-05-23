@@ -98,12 +98,12 @@ const nucleoNumber = computed(() => Number(route.params.nucleo))
 const lessonNumber = computed(() => Number(route.params.aula))
 
 const { data: payload, pending, error } = await useFetch<CourseLessonPayload>(
-  () => `/api/cursos/${courseId.value}/modulos/${moduleNumber.value}/aulas/${lessonNumber.value}`,
-  { key: () => `lesson-activities:${courseId.value}:${moduleNumber.value}:${lessonNumber.value}` },
+  () => `/api/cursos/${courseId.value}/modulos/${moduleNumber.value}/nucleos/${nucleoNumber.value}/aulas/${lessonNumber.value}`,
+  { key: () => `lesson-activities:${courseId.value}:${moduleNumber.value}:${nucleoNumber.value}:${lessonNumber.value}` },
 )
 
 watch(payload, (p) => {
-  if (p) flow.setLesson(courseId.value, moduleNumber.value, p.aula.numero)
+  if (p) flow.setLesson(courseId.value, moduleNumber.value, p.aula.aula)
 }, { immediate: true })
 
 function slugTail(slug: string): string {

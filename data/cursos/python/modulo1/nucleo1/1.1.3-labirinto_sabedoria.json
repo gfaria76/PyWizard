@@ -1,0 +1,110 @@
+{
+  "id": "python-1.1.3-MS",
+  "curso": "python",
+  "modulo": 1,
+  "nucleo": 1,
+  "aula": 3,
+  "numero": "1.1.3",
+  "tipo": "masmorra",
+  "subtipo": "simulado",
+  "titulo": "Câmara das Runas Primárias",
+  "subtitulo": "Treino individual com questões equivalentes às do boss «O Analista de Dados Brutos»",
+  "objetivo": "Oferecer um simulado individual de pré-boss com questões equivalentes às do boss «O Analista de Dados Brutos», permitindo calibrar tempo, formato de saída e identificação de pontos fracos antes da avaliação oficial.",
+  "duracao": "1h30",
+  "tags": [
+    "labirinto_sabedoria",
+    "simulado",
+    "pré-boss"
+  ],
+  "secoes": {
+    "abertura": {
+      "introducao": {
+        "texto_md": "# Labirinto da Sabedoria \n\nEste é um simulado individual antes do boss «O Analista de Dados Brutos». As questões aqui são equivalentes às do boss em escopo, formato e dificuldade, mas usam dados sintéticos diferentes. Resultado não conta para a nota final do núcleo; serve como termômetro pessoal e para identificar tópicos a revisar.\n\n**Regras do labirinto:**\n\n* Tente todas as missões dentro do tempo estimado do boss.\n* Compare seu resultado com o gabarito e revise antes da maratona oficial.\n"
+      }
+    },
+    "maratona": {
+      "titulo": "Simulado completo (espelho do boss)",
+      "texto_md": "Cinco missões simuladas, equivalentes às do boss ««O Analista de Dados Brutos». Mesmas habilidades, dados sintéticos diferentes.",
+      "missoes": [
+        {
+          "titulo": "A Distorção Salarial (Portal da Transparência)",
+          "texto_md": "**O Treino:** Um consórcio de jornalistas quer provar a disparidade entre o salário-base de um trabalhador e o teto de remuneração em um órgão público. O avaliador injeta `salario_teto` (`Float`) e `salario_base` (`Float`). Calcule a diferença absoluta entre os dois e o percentual que o teto representa em relação ao base. Imprima:\n\n`Diferenca: R$ X.XX`\n`Teto representa: X.X% do base`\n\n**Casos de Teste (Amostra):**\n\n| Entrada | Saída | Show |\n|---|---|---|\n| `39293.32`, `1412.0` | Diferenca: R$ 37881.32<br>Teto representa: 2782.8% do base | Sim |\n| `10000.0`, `2000.0` | Diferenca: R$ 8000.00<br>Teto representa: 500.0% do base | Sim |",
+          "meta": {
+            "tipo": "simulado",
+            "espelha_missao": "missao_1"
+          }
+        },
+        {
+          "titulo": "Projeção Previdenciária (INSS)",
+          "texto_md": "**O Treino:** O avaliador injeta `beneficio_mensal` (`Float`) e `anos_restantes` (`Int`). Calcule quantos meses faltam (`anos_restantes * 12`) e o total projetado de recebimento ao longo do período. Imprima:\n\n`Meses projetados: N`\n`Total acumulado: R$ X.XX`\n\n**Casos de Teste (Amostra):**\n\n| Entrada | Saída | Show |\n|---|---|---|\n| `1412.0`, `20` | Meses projetados: 240<br>Total acumulado: R$ 338880.00 | Sim |\n| `3000.0`, `15` | Meses projetados: 180<br>Total acumulado: R$ 540000.00 | Sim |",
+          "meta": {
+            "tipo": "simulado",
+            "espelha_missao": "missao_2"
+          }
+        },
+        {
+          "titulo": "Déficit de Saneamento (SNIS)",
+          "texto_md": "**O Treino:** O avaliador injeta `total_domicilios` (`Int`) e `com_esgoto` (`Int`). Calcule quantos domicílios estão sem acesso à rede e a taxa percentual de cobertura. Imprima:\n\n`Sem esgoto: N`\n`Cobertura: X.X%`\n`Deficit absoluto: N domicilios`\n\n**Casos de Teste (Amostra):**\n\n| Entrada | Saída | Show |\n|---|---|---|\n| `10000`, `6500` | Sem esgoto: 3500<br>Cobertura: 65.0%<br>Deficit absoluto: 3500 domicilios | Sim |\n| `5000`, `5000` | Sem esgoto: 0<br>Cobertura: 100.0%<br>Deficit absoluto: 0 domicilios | Sim |",
+          "meta": {
+            "tipo": "simulado",
+            "espelha_missao": "missao_3"
+          }
+        },
+        {
+          "titulo": "Desigualdade Regional (PIB per capita)",
+          "texto_md": "**O Treino:** O avaliador injeta `pib_nacional` (`Float`) e `pib_municipal` (`Float`). Calcule quantas vezes o PIB nacional per capita é maior que o municipal e a diferença absoluta entre eles. Imprima:\n\n`Razao: X.Xx`\n`Diferenca: R$ X.XX`\n\n**Casos de Teste (Amostra):**\n\n| Entrada | Saída | Show |\n|---|---|---|\n| `40000.0`, `8000.0` | Razao: 5.0x<br>Diferenca: R$ 32000.00 | Sim |\n| `40000.0`, `20000.0` | Razao: 2.0x<br>Diferenca: R$ 20000.00 | Sim |",
+          "meta": {
+            "tipo": "simulado",
+            "espelha_missao": "missao_4"
+          }
+        },
+        {
+          "titulo": "Execução Orçamentária (CGU)",
+          "texto_md": "**O Treino:** O avaliador injeta `orcamento_previsto` (`Float`) e `orcamento_executado` (`Float`). Calcule o valor não executado e a taxa de execução do orçamento. Imprima:\n\n`Executado: R$ X.XX`\n`Nao executado: R$ X.XX`\n`Taxa de execucao: X.X%`\n\n**Casos de Teste (Amostra):**\n\n| Entrada | Saída | Show |\n|---|---|---|\n| `1000000.0`, `875000.0` | Executado: R$ 875000.00<br>Nao executado: R$ 125000.00<br>Taxa de execucao: 87.5% | Sim |\n| `500000.0`, `500000.0` | Executado: R$ 500000.00<br>Nao executado: R$ 0.00<br>Taxa de execucao: 100.0% | Sim |",
+          "meta": {
+            "tipo": "simulado",
+            "espelha_missao": "missao_5"
+          }
+        }
+      ]
+    },
+    "fechamento": {
+      "titulo": "Encerramento do Labirinto",
+      "reflexao": {
+        "texto_md": "* Quais missões consumiram mais tempo? Identifique gargalos.\n* Em quais formatos de saída houve erro? Revise antes do boss.\n* Marque os tópicos a reler nos `conceitos` correspondentes antes da maratona oficial.\n"
+      }
+    }
+  },
+  "premio": {
+    "pontuacao": 0,
+    "recursos": [
+      "Gabarito disponível após o término do simulado",
+      "Relatório de fraquezas: tópicos a revisar antes do boss"
+    ]
+  },
+  "rpg": {
+    "xp_reward": 80,
+    "variant": "labyrinth-simulation",
+    "oracle_hints": [
+      "Trate este labirinto como o boss real — formato de saída conta.",
+      "Cronometre cada missão para identificar onde perde tempo.",
+      "Se errar duas seguidas, volte aos conceitos antes de prosseguir."
+    ],
+    "enemy_name": "Eco do Boss I",
+    "enemy_hp": 200,
+    "weakness": "preparação prévia",
+    "loot_drops": [
+      {
+        "item": "Mapa do Labirinto",
+        "type": "consumable",
+        "rarity": "uncommon"
+      },
+      {
+        "item": "Pergaminho de Foco",
+        "type": "consumable",
+        "rarity": "common",
+        "quantity": 2
+      }
+    ]
+  }
+}

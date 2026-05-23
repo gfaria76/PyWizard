@@ -2,25 +2,29 @@
 
 Referência técnica completa do projeto ALG1-2026. Fonte de verdade para decisões de código e arquitetura.
 
+> Visão geral (setup, stack, navegação) está em [`README.md`](./README.md).
+> Schema dos JSONs de aula está em [`SCHEMA_DOCUMENTATION.md`](./SCHEMA_DOCUMENTATION.md).
+
 ---
 
 ## Comandos
 
 ```bash
 # Dev
-pnpm dev                  # Dev server em http://localhost:3000
-pnpm build && pnpm preview
+npm install
+npm run dev               # Dev server em http://localhost:3000
+npm run build && npm run preview
 
 # Qualidade
-pnpm lint
-pnpm typecheck
+npm run lint
+npm run typecheck
 
 # Supabase CLI (banco não conectado em dev ainda)
-pnpm exec supabase start
-pnpm exec supabase db reset
-pnpm exec supabase migration new <nome>
-pnpm exec supabase db push
-pnpm exec supabase gen types typescript --local > app/types/database.types.ts
+npx supabase start
+npx supabase db reset
+npx supabase migration new <nome>
+npx supabase db push
+npx supabase gen types typescript --local > app/types/database.types.ts
 ```
 
 ---
@@ -49,8 +53,8 @@ pnpm exec supabase gen types typescript --local > app/types/database.types.ts
 
 | Subsistema | Status |
 |---|---|
-| Conteúdo (39 aulas JSON) | Ativo |
-| Frontend (curso, aulas, layouts) | Ativo |
+| Conteúdo (138 arquivos JSON: 46 por módulo × 3 módulos) | Ativo |
+| Frontend (curso → módulo → núcleo → aula → atividade) | Ativo |
 | Banco de dados (Supabase) | Stub — retorna 503 |
 | Maratonas / submissões / chat | Aguardando DB |
 | AI tutoria (`/api/ai/dica`) | Ativo (requer `AI_PROVIDER`) |
@@ -72,25 +76,22 @@ pnpm exec supabase gen types typescript --local > app/types/database.types.ts
 
 ## Conteúdo das Aulas (JSON Schema)
 
-Conteúdo em `data/cursos/python/modulo{1,2,3}`. O projeto usa um metamodelo **aditivo**: preserva os campos legados e adiciona metadados pedagógicos mais explícitos.
+Conteúdo em `data/cursos/python/moduloN/nucleoN/` (núcleos 1–4 com aulas regulares; núcleo 5 com prova final + labirinto consolidado).
 
 ```json
 {
-  "id": "python-M01-A01-CT",
-  "idLegado": "modulo1/aula-01-conceitos",
+  "id": "python-1.1.1-CT",
   "curso": "python",
   "modulo": 1,
+  "nucleo": 1,
   "aula": 1,
-  "numero": 1,
-  "tipo": "Aula",
+  "numero": "1.1.1",
+  "tipo": "aula",
   "subtipo": "conceito",
   "titulo": "Variáveis e Tipos Básicos",
   "subtitulo": "O começo de tudo",
   "duracao": "1h30",
   "tags": ["variáveis", "tipos"],
-  "acesso": {},
-  "recompensasRpg": {},
-  "regrasPedagogicas": {},
   "secoes": {
     "abertura": {
       "objetivo": { "texto_md": "..." },
@@ -101,9 +102,16 @@ Conteúdo em `data/cursos/python/modulo{1,2,3}`. O projeto usa um metamodelo **a
     "conceito": {
       "titulo": "...",
       "texto_md": "...",
-      "exemplos": [{ "texto_md": "...", "python": "..." }]
+      "exemplos": [{ "titulo": "...", "texto_md": "...", "python": "..." }]
     },
-    "pratica_guiada": { "titulo": "...", "texto_md": "...", "python": "..." },
+    "pratica_guiada": {
+      "titulo": "...",
+      "texto_md": "...",
+      "exemplos": [
+        { "titulo": "Passo 1 — ...", "texto_md": "...", "python": "..." },
+        { "titulo": "Passo 2 — ...", "texto_md": "...", "python": "..." }
+      ]
+    },
     "pratica_autonoma": { "titulo": "...", "texto_md": "..." },
     "fechamento": {
       "quiz": { "texto_md": "..." },
@@ -114,48 +122,83 @@ Conteúdo em `data/cursos/python/modulo{1,2,3}`. O projeto usa um metamodelo **a
 }
 ```
 
-### Campos novos do metamodelo
+### Convenções do schema
 
-- `id` no padrão `python-M01-A01-CT`
-- `idLegado` para retrocompatibilidade editorial
-- `curso`, `aula`, `tipo`, `subtipo`
-- `acesso`, `recompensasRpg`, `regrasPedagogicas`
+- `id` no padrão `<curso>-<M.N.Y>-<COD>` (ex.: `python-1.1.1-CT`, `python-1.5.1-MP`).
+- `numero` é **string** `"M.N.Y"` (M=módulo, N=núcleo, Y=aula local 1–3); `nucleo` e `aula` são inteiros redundantes para facilitar indexação.
+- `tipo` em **caixa baixa** (`aula`, `trilha`, `masmorra`).
+- `titulo` sem prefixo numerado de tipo/subtipo (não use "Trilha do Aprendiz I:", "Maratona Prática III:", "Labirinto IV:").
+- Conceito tem `pratica_guiada.exemplos[]` com 2–3 passos progressivos (Básico → Intermediário → Integração).
+- Conceitos **não** têm `desafios` (essa chave existe apenas em trilhas/masmorras).
 
 ### Códigos editoriais
 
-- `CT` — Aula teórica
-- `TA` — Trilha Aprendiz
-- `TV` — Trilha Aventura
-- `TG` — Trilha Guardião
-- `MG` — Masmorra Grupo
-- `MB` — Masmorra Boss
-- `MP` — Masmorra Prova
+| Código | Subtipo | Arquivo (sob `moduloN/nucleoN/`) |
+|---|---|---|
+| `CT` | conceito | `M.N.Y-conceitos.json` |
+| `TA` | aprendiz | `M.N.Y-trilha-aprendiz.json` |
+| `TV` | aventura | `M.N.Y-trilha-aventura.json` |
+| `TG` | guardiao | `M.N.Y-trilha-guardiao.json` |
+| `MG` | grupo | `M.N.Y-exedicao_guilda.json` |
+| `MS` | simulado | `M.N.Y-labirinto_sabedoria.json` |
+| `MB` | boss | `M.N.Y-maratona.json` |
+| `MP` | prova | `M.5.1-prova.json` |
 
 ### Subtipos canônicos (`subtipo`)
 
-- `conceito`
-- `aprendiz`
-- `aventura`
-- `guardiao`
-- `grupo`
-- `boss`
-- `prova`
+`conceito` · `aprendiz` · `aventura` · `guardiao` · `grupo` · `simulado` · `boss` · `prova`
+
+### Convenção de numeração
+
+- Aulas regulares: `numero = "M.N.Y"` onde N ∈ {1..4} e Y ∈ {1, 2, 3}.
+- Aula 3 do núcleo encerra com `grupo + simulado + boss` (todos com `numero = "M.N.3"`).
+- Núcleo 5 contém a avaliação final do módulo: `simulado + prova` com `numero = "M.5.1"`.
 
 ### Regra especial das provas
 
-Arquivos `aula-13-PROVA.json` mantêm banco com 20 questões e agora documentam explicitamente:
+`M.5.1-prova.json` mantém banco com 20 questões; o frontend sorteia 5 por aplicação de forma determinística pelo slug, usando `pickQuestionPool` em `app/composables/useQuestSections.ts`:
 
-- sorteio de 5 questões por aplicação
-- distribuição `3 médias + 2 difíceis`
-- mínimo de `5` variações equivalentes
+- distribuição alvo: `3 médias + 2 difíceis`
+- mínimo de 5 variações equivalentes por questão
 
-Referência completa: `SCHEMA_DOCUMENTATION.md`.
+Referência completa do schema: `SCHEMA_DOCUMENTATION.md`.
 
-**Módulos** (13 aulas cada):
+### Labirintos da Sabedoria (`simulado`)
+
+Cada núcleo tem um simulado (`M.N.3-labirinto_sabedoria.json`) que é o **espelho do boss** do mesmo núcleo: mesmas habilidades, dados sintéticos diferentes, **sem aquecimento** (só `maratona.missoes`). O labirinto do núcleo 5 (`M.5.1-labirinto_sabedoria.json`) é a consolidação dos 4 labirintos, com 8 missões (2 representativas de cada núcleo) servindo como pré-prova.
+
+### Módulos (13 aulas cada)
+
 - Módulo I — Variáveis, Matemática e Condicionais
-- Módulo II — Coleções e Repetições (`for`, `while`, listas)
-- Módulo III — Funções e Programação Estruturada
+- Módulo II — Coleções e Repetições (`for`, `while`, listas, matrizes)
+- Módulo III — Funções e Programação Estruturada (`def`, escopo, `*args/**kwargs`, `import`)
 
+Cada módulo tem 13 aulas (4 núcleos × 3 + prova final) e **46 arquivos JSON** (4 núcleos × 11 + nucleo5 × 2).
+
+
+---
+
+## Navegação (rotas)
+
+```
+/                                                       seleção de curso
+/[curso]                                                lista de módulos
+/[curso]/[modulo]                                       lista de núcleos (+ prova final)
+/[curso]/[modulo]/[nucleo]                              lista de aulas
+/[curso]/[modulo]/[nucleo]/[aula]                       lista de atividades da aula
+/[curso]/[modulo]/[nucleo]/[aula]/[atividade]           atividade renderizada por subtipo
+```
+
+A página `[atividade].vue` é roteadora: mapeia `lesson.subtipo` → view especializado em `app/components/aula/{Subtipo}View.vue` (ConceitoView, AprendizView, AventuraView, GuardiaoView, GrupoView, BossView, ProvaView; `simulado` usa BossView).
+
+### Endpoints relevantes
+
+- `GET /api/cursos/catalogo` — lista de cursos.
+- `GET /api/cursos/[curso]/modulos` — módulos + aulas + atividades agrupadas por `numero`.
+- `GET /api/cursos/[curso]/modulos/[modulo]/nucleos/[nucleo]/aulas/[aula]` — payload de uma aula específica (atividades para a arena).
+- `GET /api/cursos/python/aulas/[...slug]` — carrega um JSON de atividade pelo slug (`modulo1/nucleo1/1.1.1-conceitos`).
+
+`server/utils/course-catalog.ts:groupLessons` agrupa quests por `numero` (string), expondo `nucleo` e `aula` em cada `CourseLessonSummary`.
 
 ---
 

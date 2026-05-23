@@ -1,0 +1,95 @@
+{
+  "id": "python-2.1.1-CT",
+  "curso": "python",
+  "modulo": 2,
+  "aula": 1,
+  "numero": "2.1.1",
+  "tipo": "aula",
+  "subtipo": "conceito",
+  "titulo": "Listas: criação, acesso e métodos básicos",
+  "subtitulo": "Organizando os dados da nossa rotina para enxergar padrões",
+  "objetivo": "Compreender como agrupar dados do cotidiano em listas, acessar posições por índice e manipular as informações com métodos básicos (`append`, `insert`, `remove`, `pop`).",
+  "duracao": "1h30",
+  "tags": [
+    "listas",
+    "índices",
+    "métodos de lista"
+  ],
+  "secoes": {
+    "abertura": {
+      "objetivo": {
+        "texto_md": "Variáveis isoladas guardam um valor por vez. Quando precisamos acompanhar uma sequência — contas dos últimos meses, notas de uma turma, focos de queimada da semana — criar uma variável para cada valor torna o código gigante. As **listas** existem para resolver isso: uma única variável que guarda muitos valores em ordem."
+      },
+      "retomada": {
+        "texto_md": "**O que você já sabe e vai usar hoje:**\n\n* Variáveis, tipos e `input()` do Módulo I.\n* Conversão de tipos com `int()` e `float()`.\n* Formatação de saída com `print()` e f-strings."
+      },
+      "situacao": {
+        "titulo": "O problema de olhar um dia de cada vez",
+        "texto_md": "Imagine que uma família decide anotar o valor gasto com a conta de luz. Sem listas, ela criaria: `mes1 = 650`, `mes2 = 680`, `mes3 = 710`... Olhando um mês isolado, parece só \"um pouco mais caro\". Mas o código fica gigantesco e comparar o primeiro mês com o último exige um esforço enorme."
+      },
+      "problematizacao": {
+        "texto_md": "* O que acontece com a nossa capacidade de planejamento quando olhamos apenas para o dado isolado do momento, sem ver o histórico completo?\n* Quando agrupamos nossos dados em uma linha do tempo (uma lista) e notamos, por exemplo, o custo de vida subindo enquanto o valor da nossa hora de trabalho continua o mesmo: por que essa discrepância acontece na prática?"
+      }
+    },
+    "conceito": {
+      "titulo": "Conceito técnico",
+      "texto_md": "Uma **lista** é uma coleção **ordenada** que guarda vários valores em uma única variável. Em Python, listas são criadas com colchetes `[ ]` e os valores são separados por vírgula. Os valores podem ser de qualquer tipo (números, strings, até outras listas).\n\nCada item ocupa uma **posição** chamada **índice**. O primeiro item está no índice `0`, o segundo no `1`, e assim por diante. Índices negativos contam de trás para frente: `-1` é o último item, `-2` é o penúltimo.\n\nListas são **mutáveis**: podemos adicionar, remover e substituir itens depois de criadas. Os principais **métodos** são:\n\n| Método | O que faz | Exemplo |\n|---|---|---|\n| `append(x)` | Acrescenta `x` no **final** | `gastos.append(150)` |\n| `insert(i, x)` | Insere `x` na **posição `i`** | `gastos.insert(0, 80)` |\n| `remove(x)` | Remove a **primeira ocorrência** de `x` | `gastos.remove(250)` |\n| `pop()` / `pop(i)` | Remove e **retorna** o último (ou o do índice `i`) | `ultimo = gastos.pop()` |\n| `len(lista)` | Quantos itens há na lista | `len(gastos)` |",
+      "exemplos": [
+        {
+          "titulo": "1) Criando uma lista e acessando por índice",
+          "texto_md": "Cada item recebe uma posição automaticamente. Note os índices positivos e o uso de `-1`.",
+          "python": "conta_luz = [120, 135, 150, 180, 210]\n\nprint(conta_luz[0])   # 120  (primeiro mês)\nprint(conta_luz[2])   # 150  (terceiro mês)\nprint(conta_luz[-1])  # 210  (último mês)\nprint(len(conta_luz)) # 5     (tamanho da lista)"
+        },
+        {
+          "titulo": "2) Alterando um item",
+          "texto_md": "Atribuir um valor a `lista[i]` substitui o que estava lá.",
+          "python": "conta_luz = [120, 135, 150, 180, 210]\nconta_luz[2] = 155  # corrigindo um registro errado\nprint(conta_luz)    # [120, 135, 155, 180, 210]"
+        },
+        {
+          "titulo": "3) Métodos básicos: append, insert, remove, pop",
+          "texto_md": "Os quatro métodos que cobrem 90% das manipulações iniciais.",
+          "python": "despesas = [120, 90, 150]\n\ndespesas.append(200)      # [120, 90, 150, 200]\ndespesas.insert(1, 80)    # [120, 80, 90, 150, 200]\ndespesas.remove(90)       # [120, 80, 150, 200]\nultimo = despesas.pop()   # ultimo = 200; lista = [120, 80, 150]\n\nprint(despesas)\nprint(\"removido:\", ultimo)"
+        }
+      ]
+    },
+    "pratica_guiada": {
+      "titulo": "Prática guiada",
+      "texto_md": "Vamos exercitar listas em três passos progressivos.",
+      "exemplos": [
+        {
+          "titulo": "Passo 1 — append e pop",
+          "texto_md": "Recebemos uma lista de despesas e acrescentamos uma nova ao final. Em seguida, removemos a primeira (já paga). Note o `float()` ao converter a entrada do usuário, para que a soma futura funcione corretamente.",
+          "python": "despesas = [120.0, 90.0, 150.0]\nprint(\"Inicial:\", despesas)\n\nnova_conta = float(input(\"Valor da nova conta: \"))\ndespesas.append(nova_conta)\nprint(\"Depois do append:\", despesas)\n\npago = despesas.pop(0)\nprint(\"Conta paga:\", pago)\nprint(\"Pendentes:\", despesas)"
+        },
+        {
+          "titulo": "Passo 2 — insert e remove",
+          "texto_md": "Insere um valor em uma posição específica e remove um valor conhecido.",
+          "python": "compras = [\"arroz\", \"feijao\", \"acucar\"]\ncompras.insert(1, \"oleo\")     # entre arroz e feijao\nprint(compras)                # ['arroz', 'oleo', 'feijao', 'acucar']\n\ncompras.remove(\"acucar\")      # tira a primeira ocorrência de 'acucar'\nprint(compras)                # ['arroz', 'oleo', 'feijao']"
+        },
+        {
+          "titulo": "Passo 3 — integração: um pequeno cadastro interativo",
+          "texto_md": "Reunimos `append`, `insert` e `pop` em um único fluxo. Observe a conversão da entrada e o uso de `len()` para contar itens.",
+          "python": "compras = []\n\ncompras.append(input(\"Item 1: \"))\ncompras.append(input(\"Item 2: \"))\ncompras.append(input(\"Item 3: \"))\n\nprint(\"Lista de compras:\", compras)\nprint(\"Total de itens:\", len(compras))\n\nprimeiro = compras.pop(0)\nprint(\"Comprado primeiro:\", primeiro)\nprint(\"Resta na lista:\", compras)"
+        }
+      ]
+    },
+    "pratica_autonoma": {
+      "titulo": "Exercício de Continuação (Sua vez!)",
+      "texto_md": "**Enunciado:** Você está construindo um sistema para ajudar uma família a monitorar os valores das compras de mercado ao longo do mês. O programa recebe a lista atualizada com os valores das compras já realizadas. Uma nova compra no valor de `999` acaba de ser feita e deve ser registrada no final da lista. Simultaneamente, a família decide cancelar a primeira compra (índice 0). Exiba como ficou a lista final.\n\n**Entradas e Saídas (Autocorreção):**\n\n| Entrada | Saída |\n|---|---|\n| [101, 102, 103] | [102, 103, 999] |\n| [55, 66] | [66, 999] |"
+    },
+    "fechamento": {
+      "titulo": "Fechamento e Autoavaliação",
+      "quiz": {
+        "texto_md": "**1. Em Python, qual índice representa o primeiro item de uma lista?**\nA) 0\nB) 1\nC) -1\n\n::details{summary=\"Ver a resposta correta\"}\n**Correto: A) 0.** Na programação, as posições dos índices começam sempre do zero.\n::\n\n**2. Qual método adiciona um novo item ao final da lista?**\nA) remove()\nB) append()\nC) pop()\n\n::details{summary=\"Ver a resposta correta\"}\n**Correto: B) append().** Este método anexa o elemento na última posição.\n::\n\n**3. O método `pop()` faz o quê?**\nA) Apenas consulta o último item\nB) Ordena a lista automaticamente\nC) Remove e retorna um item\n\n::details{summary=\"Ver a resposta correta\"}\n**Correto: C) Remove e retorna um item.** Ele retira o valor da lista e devolve-o, permitindo que ele seja guardado em uma variável.\n::"
+      },
+      "leitura_complementar": {
+        "texto_md": "* **Documentação Oficial:** Pesquise a documentação do Python sobre estruturas de dados para revisar métodos de lista.\n* **Para praticar:** Crie listas baseadas no seu cotidiano financeiro. Anote, em uma lista, os 5 itens que você mais compra no mercado e aplique `append`, `pop` e índices."
+      },
+      "reflexao": {
+        "texto_md": "* Observar um número isolado nos anestesia; observar um conjunto de dados revela uma história. Se aplicarmos a lógica das listas ao longo de anos, perceberíamos discrepâncias claras (como gráficos de salários versus gráficos de custo de produtos básicos). Aprender a programar é, no fundo, aprender a enxergar esses padrões estruturais."
+      }
+    }
+  },
+  "premio": null,
+  "nucleo": 1
+}

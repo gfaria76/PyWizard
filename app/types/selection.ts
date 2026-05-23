@@ -18,8 +18,9 @@ export interface CourseActivitySummary {
 }
 
 export interface CourseLessonSummary {
-  numero: number
+  numero: string
   nucleo: number
+  aula: number
   titulo: string
   atividades: CourseActivitySummary[]
 }

@@ -1,0 +1,112 @@
+{
+  "id": "python-2.4.3-MB",
+  "curso": "python",
+  "modulo": 2,
+  "aula": 3,
+  "numero": "2.4.3",
+  "tipo": "masmorra",
+  "subtipo": "boss",
+  "titulo": "O Auditor Chefe",
+  "subtitulo": "Matrizes, coordenadas duplas e o labirinto dos dados corporativos",
+  "objetivo": "Dominar a leitura de múltiplas dimensões, utilizando laços for aninhados e coordenadas (i, j) para auditar matrizes pesadas e cruzar tabelas governamentais.",
+  "duracao": "2h00",
+  "tags": [],
+  "secoes": {
+    "abertura": {
+      "introducao": {
+        "texto_md": "# A Prova de Fogo Final: O Labirinto\n\nAté aqui, a sua visão era unidimensional. Uma linha, uma série, um problema de cada vez. Mas as corporações e os governos escondem a sua contabilidade em tabelas densas, onde os números se cruzam em linhas e colunas infinitas.\n\nNesta maratona, você enfrentará **Matrizes** (listas dentro de listas). O seu desafio é não se deixar esmagar pelo volume brutal de dados. Terá de usar laços aninhados (`for` dentro de `for`) e manter o rastro rigoroso das coordenadas `(i, j)` para descobrir não apenas *o que* está errado, mas *onde* a fratura ocorreu no espaço e no tempo.\n\nA plataforma avalia seu desempenho global. Resultados expressivos podem desbloquear recursos especiais no seu Inventário.\n\n---"
+      }
+    },
+    "aquecimento": {
+      "titulo": "FASE 1: Aquecimento de Sistemas (Warm-up)",
+      "texto_md": "**Tempo estimado:** 15 minutos.\n**Pontuação:** 0 pontos.\n**Objetivo:** Calibrar a sua capacidade de entrar e sair das gavetas (sublistas) sem o código explodir.",
+      "missoes": [
+        {
+          "titulo": "Aquecimento A: O Balanço Global",
+          "texto_md": "**O Problema:** O SUS precisa saber o total de leitos ocupados no estado, mas a base de dados vem separada por `[Hospitais [Alas]]`.\n\nO sistema injeta a matriz `leitos` (uma lista que contém várias listas de `Inteiros`). Crie um laço aninhado para abrir cada hospital e, em seguida, cada ala lá dentro. Some tudo numa variável global e imprima o total absoluto de leitos ocupados.\n\n**Casos de Teste (Amostra):**\n\n| Entrada Oculta (`leitos`) | Saída Esperada | Show |\n|---|---|---|\n| [[10, 20], [30, 40, 10], [5]] | Total de ocupacoes: 115 | Sim |\n| [[0, 0], [1, 1]] | Total de ocupacoes: 2 | Sim |",
+          "meta": {
+            "tipo": "warmup",
+            "dataset": "warmup_a"
+          }
+        },
+        {
+          "titulo": "Aquecimento B: A Detecção de Fissuras",
+          "texto_md": "**O Problema:** Num relatório bancário de centenas de filiais, um único saldo negativo pode indicar desvio.\n\nO sistema injeta a matriz `saldos_filiais` (`Floats`). Percorra a tabela inteira e conte quantas vezes aparece um saldo estritamente negativo (`< 0.0`). Imprima a quantidade de alertas.\n\n**Casos de Teste (Amostra):**\n\n| Entrada Oculta (`saldos_filiais`) | Saída Esperada | Show |\n|---|---|---|\n| [[100.0, -50.0], [200.0, 300.0], [-10.0, 0.0]] | Alertas de desvio: 2 | Sim |\n| [[50.0, 50.0], [10.0, 10.0]] | Alertas de desvio: 0 | Sim |",
+          "meta": {
+            "tipo": "warmup",
+            "dataset": "warmup_b"
+          }
+        }
+      ]
+    },
+    "maratona": {
+      "titulo": "FASE 2: A Maratona (Missões Oficiais)",
+      "texto_md": "**Tempo estimado:** 1h45m.\n**Status:** Avaliação Ativa.\n**Instruções:** Estude os fluxogramas com muita atenção. Não tente adivinhar respostas; o avaliador vai injetar arquivos com milhares de linhas e colunas.",
+      "missoes": [
+        {
+          "titulo": "Missão 1: O Funil da Desigualdade (IPCA por Linha)",
+          "texto_md": "**O Problema:** O IPCA agregado costuma esconder disparidades fortes entre categorias de consumo. Se calcularmos só a média nacional, apagamos a inflação real das famílias trabalhadoras. Precisamos isolar linha por linha.\n\nA matriz `notas` contém `Floats`. Cada \"linha\" da matriz é uma escola diferente. Você deve calcular a média **exclusiva de cada linha** (zerando o acumulador ao mudar de escola). Sempre que a média de uma escola ficar abaixo de `450.0`, registre uma infração de ensino.\nNo final, imprima o total de escolas que ficaram abaixo do nível crítico de ensino.\n\n```mermaid\nflowchart TB\n    A[(Escolas)] --> B(ler Escola)\n    B --> C{Média}\n    C -- Sim --> D(Nota Crítica)\n    C -- Não --> B\n    D -- próxima --> B\n\n    style A stroke:#000000,fill:#E1F0D4\n    style B stroke:#000000,fill:#C3E0E0\n    style C stroke:#000000,fill:#C3EFE0\n    style D stroke:#000000,fill:#F69F9F\n```\n\n**Casos de Teste (Amostra):**\n\n| Entrada | Saída | Show |\n|---|---|---|\n| [[500.0, 500.0], [400.0, 420.0], [600.0, 300.0]] | Escolas em estado critico: 2 | Sim |\n| [[600.0, 700.0], [450.0, 450.0]] | Escolas em estado critico: 0 | Não |\n| [[100.0, 100.0]] | Escolas em estado critico: 1 | Não |",
+          "meta": {
+            "tipo": "maratona",
+            "dataset": "missao_1"
+          }
+        },
+        {
+          "titulo": "Missão 2: O Epicentro do Desastre (Rastreio i, j)",
+          "texto_md": "**O Problema:** Os satélites do INPE varrem o país registrando a temperatura do solo numa malha gigante. Detectamos que há um incêndio ativo, mas o sistema apenas imprimiu a temperatura, sem dizer **onde** ela foi registrada.\n\nA matriz `mapa_termico` contém milhares de medições (`Floats`). Procure o **maior valor absoluto** dentro de todo este labirinto. Mas, atenção: guardar o valor não basta. Tem de guardar a coordenada da Linha (`i`) e a coordenada da Coluna (`j`) onde esse pico ocorreu pela primeira vez. Imprima a temperatura crítica e as suas coordenadas exatas.\n\n```mermaid\nflowchart TD\n    A[(Mapa Térmico)] --> F(ler Valor)\n    F -- checar --> B{Maior?}\n    B -- não --> F\n    B -- sim --> C(\"Coordenadas x,y\")\n        C --> F\n    C -- fim --> D([x,y e valor do epicentro])\n\n    style A stroke:#000000,fill:#E1F0D4\n    style D stroke:#000000,fill:#DBFDF8\n    style B stroke:#000000,fill:#FFF2CC\n```\n\n**Casos de Teste (Amostra):**\n\n| Entrada | Saída | Show |\n|---|---|---|\n| [[30.0, 32.0], [40.0, 95.5, 38.0], [33.0, 34.0]] | Epicentro: 95.50 graus<br>Detectado na Linha: 1, Coluna: 1 | Sim |\n| [[100.0, 50.0], [80.0, 90.0]] | Epicentro: 100.00 graus<br>Detectado na Linha: 0, Coluna: 0 | Sim |\n| [[0.0, 0.0], [0.0, 0.0, 8.5]] | Epicentro: 8.50 graus<br>Detectado na Linha: 1, Coluna: 2 | Não |",
+          "meta": {
+            "tipo": "maratona",
+            "dataset": "missao_2"
+          }
+        },
+        {
+          "titulo": "Missão 3: A Variação do Tesouro (BNDES - Comparação Linha a Linha)",
+          "texto_md": "**O Problema:** Os desembolsos por carteira do BNDES oscilam mês a mês. Precisamos não saber apenas o total anual, mas **quantas vezes houve crescimento** em relação à janela imediatamente anterior.\n\nA matriz `arrecadacao` tem várias linhas de valores (`Floats`).\n1. Primeiro, calcule a soma total de CADA linha (mês) e guarde essas somas numa lista secundária `totais_mensais`.\n2. Em seguida, percorra essa nova lista comparando o mês atual com o mês imediatamente anterior.\n3. Conte quantas vezes a soma do mês atual foi **estritamente maior** que a do mês passado. Imprima a resposta.\n\n**Casos de Teste (Amostra):**\n\n| Entrada | Saída | Show |\n|---|---|---|\n| [[10.0, 10.0], [5.0, 5.0], [20.0, 20.0], [20.0, 20.0]] | Meses em crescimento: 1 | Sim |\n| [[1.0, 2.0], [2.0, 2.0], [3.0, 3.0]] | Meses em crescimento: 2 | Sim |\n| [[100.0, 100.0], [50.0, 50.0], [10.0, 10.0]] | Meses em crescimento: 0 | Não |",
+          "meta": {
+            "tipo": "maratona",
+            "dataset": "missao_3"
+          }
+        },
+        {
+          "titulo": "Missão 4: O Abandono Geográfico (Bolsa Família - A Pior Linha)",
+          "texto_md": "**O Problema:** O Bolsa Família registra repasses por município e período. A base de dados tem várias regiões (linhas) e precisamos apontar publicamente qual linha recebeu a menor soma no recorte auditado.\n\nA matriz `distribuicao` (`Inteiros`).\nDescubra a soma de cada linha. Rastreie e guarde na memória o **índice (a posição)** da linha que possui a **menor soma absoluta** de todas. Se houver empate, guarde a primeira vez que encontrou o pior valor. Para o relatório final, você não deve imprimir as somas; o Tribunal exige que imprima apenas qual foi o Índice da pior região detectada.\n\n```mermaid\nflowchart\n    A[(Distribuição)] --> B(ler Região)\n    B --> C(Soma Região)\n    C --> D(Atualizar Pior)\n    D --> B\n    D -- fim --> E([Resultado])\n\n    style A stroke:#000000,fill:#E1F0D4\n    style E stroke:#000000,fill:#A0F0FF\n```\n\n**Casos de Teste (Amostra):**\n\n| Entrada | Saída | Show |\n|---|---|---|\n| [[100, 100], [10, 5], [50, 50]] | Regiao mais abandonada (Indice): 1 | Sim |\n| [[5, 5], [20, 20], [8, 8]] | Regiao mais abandonada (Indice): 0 | Sim |\n| [[100, 100], [100, 100], [0, 0]] | Regiao mais abandonada (Indice): 2 | Não |",
+          "meta": {
+            "tipo": "maratona",
+            "dataset": "missao_4"
+          }
+        },
+        {
+          "titulo": "Missão 5: Cruzamento de Dimensões (BNDES - O Mapa da Injustiça)",
+          "texto_md": "**O Problema:** Em operações de crédito, o valor contratado e o valor desembolsado podem divergir de forma estrutural. Para quebrar a cortina de fumaça, temos de cruzar o Mapa do Contratado com o Mapa do Desembolsado com precisão milimétrica.\n\nO avaliador injeta duas matrizes rigorosamente do mesmo tamanho (milhares de linhas e colunas): `horas_matriz` (`Floats`) e `pagamento_matriz` (`Floats`).\nUtilize a técnica de coordenada dupla `(i, j)` para abrir a mesma gaveta em ambas as matrizes simultaneamente. Identifique e conte os incidentes críticos onde o contratado foi **maior ou igual a 8.0**, MAS o desembolsado na mesma coordenada foi **menor que 45.00**. Imprima a quantidade massiva de infrações.\n\n*(Nota: Se conquistou o `zip()`, ele poderá ajudá-lo a alinhar as linhas. Se não, a matemática dos índices com `range(len())` servirá perfeitamente).*\n\n**Casos de Teste (Amostra):**\n\n| Entradas | Saída | Show |\n|---|---|---|\n| Horas: [[4.0, 8.0], [10.0, 8.0]]<br>Pagamentos: [[20.0, 50.0], [40.0, 30.0]] | Infracoes criticas detectadas: 2 | Sim |\n| Horas: [[12.0, 14.0], [12.0, 12.0]]<br>Pagamentos: [[100.0, 80.0], [90.0, 90.0]] | Infracoes criticas detectadas: 0 | Sim |\n| Horas: [[8.0, 8.0], [8.0, 8.0]]<br>Pagamentos: [[44.9, 50.0], [40.0, 45.0]] | Infracoes criticas detectadas: 2 | Não |",
+          "meta": {
+            "tipo": "maratona",
+            "dataset": "missao_5"
+          }
+        }
+      ]
+    },
+    "backend": {
+      "titulo": "Atenção IA de Backend / Sistema Gerenciador:",
+      "texto_md": "Este bloco instrui a geração dos datasets para a Maratona 4. O foco técnico são as matrizes bidimensionais e os seus índices (Listas contendo Listas). Testes ocultos devem conter matrizes com dimensões consideráveis (ex: 100x100 até 500x100) para garantir que a O(n²) é avaliada sem estourar o tempo.\n\n### Warmup A & B (Dados Sintéticos em Matrizes)\n* **Warmup A (SUS Leitos):** Matrizes de `Inteiros` (de 0 a 50). O output exige o `sum` global de todos os elementos das sublistas.\n* **Warmup B (BNDES Saldo):** Derivar matrizes de `Floats` com base em `content/fontes/bndes_operacoes.json`, injetando valores como `-5.0` ou `-100.0` aleatoriamente para validação. Output é o contador de itens `< 0.0`.\n\n### Missão 1 (IBGE - IPCA - Média por Linha)\n* **Fonte da Base:** `content/fontes/ibge_ipca.json`\n* **Estrutura do JSON:** Uma matriz `notas` onde cada linha representa um agrupamento de categoria/período e as colunas são variações (`Floats`).\n* **Validação (Gabarito):** Iterar sobre as linhas. Para cada linha, `if sum(linha) / len(linha) < 450.0: contador += 1`. Imprimir o `contador`.\n\n### Missão 2 (INPE - Queimadas - Busca i, j)\n* **Fonte da Base:** `content/fontes/inpe_queimadas.json`\n* **Estrutura:** Malha térmica simulada em matriz de `Floats`. Injetar um pico extremo único (ex: `150.5`) para não haver empates nas coordenadas.\n* **Validação (Gabarito):** Rastrear `maior`, `linha_idx`, `col_idx`. Atualiza os três sempre que `matriz[i][j] > maior`.\n\n### Missão 3 (BNDES - Variação Linha a Linha)\n* **Fonte da Base:** `content/fontes/bndes_operacoes.json`\n* **Estrutura:** Matriz de `Floats`.\n* **Validação (Gabarito):** Criar uma array auxiliar `somas = [sum(linha) for linha in matriz]`. Depois, comparar `if somas[x] > somas[x-1]` num laço que começa no índice 1. Imprime a contagem de sucessos.\n\n### Missão 4 (Bolsa Família - Pior Índice)\n* **Fonte da Base:** `content/fontes/ptransp_bolsafamilia.json`\n* **Estrutura:** Matriz de `Inteiros` ou `Floats` por região/período.\n* **Validação (Gabarito):** Iterar e calcular a soma da linha atual. Se a soma atual for MENOR que a `menor_soma` registrada (começando com float('inf')), guarda a nova soma e o `índice_linha` atual. Imprime APENAS o `índice_linha`.\n\n### Missão 5 (BNDES - Cruzamento Duplo / Contratado x Desembolsado)\n* **Fonte da Base:** `content/fontes/bndes_operacoes.json`\n* **Estrutura:** O JSON injeta duas chaves: `horas_matriz` e `pagamento_matriz`. Ambas têm rigorosamente a mesma forma geométrica (mesmo número de linhas e itens por linha).\n* **Validação (Gabarito):** Laço duplo com índices:\n  `if horas[i][j] >= 8.0 and pagamento[i][j] < 45.00: contador += 1`. Imprime `contador`."
+    }
+  },
+  "desafios": [],
+  "premio": {
+    "pontuacao": 100,
+    "superpower_reward": "sorted-key",
+    "recursos": [
+      "Comprar tempo: 3x5min (10 Moedas)",
+      "Comprar dica IA: 3 consultas (10 Moedas)"
+    ],
+    "testes_ocultos": {
+      "warmup_a": "/api/datasets/sus_leitos_matriz.json",
+      "warmup_b": "/api/datasets/bndes_operacoes_saldos_matriz.json",
+      "missao_1": "/api/datasets/ibge_ipca_matriz_linhas.json",
+      "missao_2": "/api/datasets/inpe_queimadas_coordenadas.json",
+      "missao_3": "/api/datasets/bndes_desembolso_evolucao_matriz.json",
+      "missao_4": "/api/datasets/ptransp_bolsafamilia_pior_linha.json",
+      "missao_5": "/api/datasets/bndes_operacoes_matrizes.json"
+    }
+  },
+  "nucleo": 4
+}

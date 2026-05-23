@@ -1,0 +1,112 @@
+{
+  "id": "python-1.4.3-MS",
+  "curso": "python",
+  "modulo": 1,
+  "nucleo": 4,
+  "aula": 3,
+  "numero": "1.4.3",
+  "tipo": "masmorra",
+  "subtipo": "simulado",
+  "titulo": "Labirinto das Decisões Encadeadas",
+  "subtitulo": "Simulado individual pré-boss «O Regulamentador» — elif, condicionais aninhadas e lógica multi-critério",
+  "objetivo": "Treinar a montagem de cadeias `if/elif/else` e condicionais aninhadas em cenários equivalentes aos do boss «O Regulamentador», calibrando tempo, formato de saída e ordem dos limiares antes da avaliação oficial.",
+  "duracao": "1h30",
+  "tags": [
+    "labirinto_sabedoria",
+    "simulado",
+    "pré-boss",
+    "elif",
+    "condicionais aninhadas"
+  ],
+  "secoes": {
+    "abertura": {
+      "introducao": {
+        "texto_md": "# Labirinto das Decisões Encadeadas\n\nEste é um simulado individual antes do boss «O Regulamentador». As missões aqui são equivalentes às do boss em escopo, formato e dificuldade, mas usam dados sintéticos diferentes. O resultado não conta para a nota final do núcleo; serve como termômetro pessoal e para identificar tópicos a revisar.\n\n**Regras do labirinto:**\n\n* Tente todas as missões dentro do tempo estimado do boss.\n* Leia primeiro os limiares de cada faixa, depois escreva o fluxo do mais específico para o mais geral.\n* Compare seu resultado com o gabarito e revise os conceitos antes da maratona oficial.\n"
+      }
+    },
+    "maratona": {
+      "titulo": "Simulado completo (espelho do boss «O Regulamentador»)",
+      "texto_md": "Cinco missões equivalentes às do boss em habilidade e formato, com dados sintéticos diferentes.",
+      "missoes": [
+        {
+          "titulo": "A Tabela do IRPF (variação de salários)",
+          "texto_md": "**O Treino:** O avaliador injeta `salario_mensal` (`Float`). Classifique a faixa do IRPF e calcule o imposto simplificado sobre o total. Imprima:\n\n`Faixa: X`\n`Imposto estimado: R$ X.XX`\n\nFaixas: <= 2259.20 → `Isento`; <= 2826.65 → `7.5%`; <= 3751.05 → `15%`; <= 4664.68 → `22.5%`; acima → `27.5%`.\n\n**Casos de Teste (Amostra):**\n\n| Entrada | Saída | Show |\n|---|---|---|\n| `2500.0` | Faixa: 7.5%<br>Imposto estimado: R$ 187.50 | Sim |\n| `4700.0` | Faixa: 27.5%<br>Imposto estimado: R$ 1292.50 | Sim |",
+          "meta": {
+            "tipo": "simulado",
+            "espelha_missao": "missao_1"
+          }
+        },
+        {
+          "titulo": "Cobertura Vacinal por Região (variação Amazônia/restante)",
+          "texto_md": "**O Treino:** O avaliador injeta `cobertura_pct` (`Float`) e `amazonia` (`Int`, 0 ou 1). Na Amazônia Legal: >=95 → `Nivel: Adequado`; >=80 → `Nivel: Alerta`; abaixo → `Nivel: Critico`. Nos demais municípios: >=90 → `Nivel: Adequado`; >=70 → `Nivel: Alerta`; abaixo → `Nivel: Critico`.\n\n**Casos de Teste (Amostra):**\n\n| Entrada | Saída | Show |\n|---|---|---|\n| `85.0`, `1` | Nivel: Alerta | Sim |\n| `60.0`, `0` | Nivel: Critico | Sim |",
+          "meta": {
+            "tipo": "simulado",
+            "espelha_missao": "missao_2"
+          }
+        },
+        {
+          "titulo": "Sistema de Multas (variação DETRAN)",
+          "texto_md": "**O Treino:** O avaliador injeta `tipo_infracao` (`String`: `L`, `M`, `G`, `GV`) e `reincidente` (`Int`, 0 ou 1). Valores base: L=88.38, M=130.16, G=195.23, GV=880.41. Se reincidente, o valor dobra. Se for `GV`, além da multa imprima `Adicional: Suspensao de CNH`.\n\n**Casos de Teste (Amostra):**\n\n| Entrada | Saída | Show |\n|---|---|---|\n| `M`, `1` | Multa: R$ 260.32 | Sim |\n| `GV`, `1` | Multa: R$ 1760.82<br>Adicional: Suspensao de CNH | Sim |",
+          "meta": {
+            "tipo": "simulado",
+            "espelha_missao": "missao_3"
+          }
+        },
+        {
+          "titulo": "Faixa Habitacional (variação MCMV)",
+          "texto_md": "**O Treino:** O avaliador injeta `renda_familiar` (`Float`) e `grupo_prioritario` (`Int`, 0 ou 1). Classifique a faixa habitacional e o subsídio: <=2640 → Faixa 1, subsídio 55000; <=4400 → Faixa 2, subsídio 29000; <=8000 → Faixa 3, sem subsídio; acima → Fora do programa. Na Faixa 1, se for grupo prioritário, soma 5000 ao subsídio.\n\n**Casos de Teste (Amostra):**\n\n| Entrada | Saída | Show |\n|---|---|---|\n| `2200.0`, `0` | Faixa: Faixa 1<br>Subsidio: R$ 55000.00 | Sim |\n| `7500.0`, `1` | Faixa: Faixa 3<br>Subsidio: R$ 0.00 | Sim |",
+          "meta": {
+            "tipo": "simulado",
+            "espelha_missao": "missao_4"
+          }
+        },
+        {
+          "titulo": "Estado Nutricional (variação SISVAN)",
+          "texto_md": "**O Treino:** O avaliador injeta `z_score` (`Float`) e `idade_meses` (`Int`). Classifique: < -3 → `Estado: Magreza acentuada`; < -2 → `Estado: Magreza`; < 1 → `Estado: Adequado`; < 2 → `Estado: Risco de sobrepeso`; acima → `Estado: Sobrepeso`. Se `z_score < -2` e `idade_meses < 6`, adicione `Urgencia: TRIAGEM IMEDIATA`.\n\n**Casos de Teste (Amostra):**\n\n| Entrada | Saída | Show |\n|---|---|---|\n| `0.5`, `24` | Estado: Adequado | Sim |\n| `-3.2`, `3` | Estado: Magreza acentuada<br>Urgencia: TRIAGEM IMEDIATA | Sim |",
+          "meta": {
+            "tipo": "simulado",
+            "espelha_missao": "missao_5"
+          }
+        }
+      ]
+    },
+    "fechamento": {
+      "titulo": "Encerramento do Labirinto",
+      "reflexao": {
+        "texto_md": "* Quais missões consumiram mais tempo? Identifique gargalos.\n* Em quais formatos de saída houve erro? Revise antes do boss.\n* Marque os tópicos a reler nos `conceitos` correspondentes antes da maratona oficial.\n"
+      }
+    }
+  },
+  "premio": {
+    "pontuacao": 0,
+    "recursos": [
+      "Gabarito disponível após o término do simulado",
+      "Relatório de fraquezas: tópicos a revisar antes do boss"
+    ]
+  },
+  "rpg": {
+    "xp_reward": 80,
+    "variant": "labyrinth-simulation",
+    "oracle_hints": [
+      "Trate este labirinto como o boss real — formato de saída conta.",
+      "Cronometre cada missão para identificar onde perde tempo.",
+      "Se errar duas seguidas, volte aos conceitos antes de prosseguir."
+    ],
+    "enemy_name": "Eco do Boss IV",
+    "enemy_hp": 200,
+    "weakness": "preparação prévia",
+    "loot_drops": [
+      {
+        "item": "Mapa do Labirinto",
+        "type": "consumable",
+        "rarity": "uncommon"
+      },
+      {
+        "item": "Pergaminho de Foco",
+        "type": "consumable",
+        "rarity": "common",
+        "quantity": 2
+      }
+    ]
+  }
+}

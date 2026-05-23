@@ -1,0 +1,323 @@
+{
+  "id": "python-3.5.1-MP",
+  "curso": "python",
+  "modulo": 3,
+  "nucleo": 5,
+  "aula": 1,
+  "numero": "3.5.1",
+  "tipo": "masmorra",
+  "subtipo": "prova",
+  "titulo": "Prova do Módulo III: Arquitetura de Funções",
+  "subtitulo": "Modularização, listas e interfaces reutilizáveis em dados públicos",
+  "objetivo": "Avaliar a autonomia do estudante nos conteúdos do Módulo 3 por meio de uma prova com banco de 20 questões e sorteio editorial de 5 por tentativa.",
+  "duracao": "1h30",
+  "tags": [
+    "prova",
+    "funções",
+    "modularização",
+    "mutabilidade",
+    "listas",
+    "import"
+  ],
+  "secoes": {
+    "abertura": {
+      "introducao": {
+        "texto_md": "# Prova Final do Módulo III\n\nChegou a etapa em que a pergunta já não é mais se você sabe programar uma solução isolada, mas se consegue **organizar** soluções: escrever funções claras, proteger dados de efeitos colaterais, encapsular laços, devolver resultados consistentes e aproveitar bibliotecas quando isso faz sentido. Esta prova simula situações reais de engenharia de software em pequenos sistemas públicos.\n\n**Regras:**\n- Todas as questões possuem autocorreção automática.\n- Use prioritariamente funções com os nomes pedidos no enunciado.\n- Evite variáveis globais: o avaliador pode chamar suas funções mais de uma vez.\n- Em questões que exigem preservar a lista original, isso será validado.\n\n---"
+      }
+    },
+    "questoes": {
+      "titulo": "Banco de Questões da Prova",
+      "texto_md": "A prova final trabalha com **20 questões no banco**. A aplicação deve sortear **5 questões** em equilíbrio editorial, com **3 médias + 2 difíceis** e no mínimo **5 variações equivalentes** entre combinações possíveis.",
+      "banco_questoes": [
+        {
+          "titulo": "Questão 1 — Triagem social em função",
+          "texto_md": "**O Problema:** Defina uma função `elegivel(renda_per_capita)` que retorne a string `\"SIM\"` se a renda for menor ou igual a 218.00, senão `\"NAO\"`. Leia uma renda do `input()` e imprima:\n\n`Elegivel: X`\n\n**Casos de Teste (Amostra):**\n\n| Entrada | Saída | Show |\n|---|---|---|\n| `150.0` | Elegivel: SIM | Sim |\n| `300.0` | Elegivel: NAO | Sim |",
+          "meta": {
+            "tipo": "banco-questoes",
+            "questao": "questao_1",
+            "pontos": "20",
+            "dificuldade": "media",
+            "variacoesEquivalentesMinimas": 5,
+            "sorteioEquilibrado": true
+          }
+        },
+        {
+          "titulo": "Questão 2 — Caixa-preta da mutabilidade",
+          "texto_md": "**O Problema:** Defina uma função `adicionar(lista, valor)` que faz `lista.append(valor)` e retorna a lista. Aplique-a duas vezes em uma lista inicial vazia e imprima a lista final:\n\n`Resultado: [...]`\n\nUse exatamente os valores 10 e 20 nas duas chamadas.\n\n**Casos de Teste (Amostra):**\n\n| Entrada | Saída | Show |\n|---|---|---|\n| (sem entrada) | Resultado: [10, 20] | Sim |",
+          "meta": {
+            "tipo": "banco-questoes",
+            "questao": "questao_2",
+            "pontos": "20",
+            "dificuldade": "media",
+            "variacoesEquivalentesMinimas": 5,
+            "sorteioEquilibrado": true
+          }
+        },
+        {
+          "titulo": "Questão 3 — Bug do ranking seguro",
+          "texto_md": "**O Problema:** Defina `ordenar_copia(valores)` que retorne uma lista ordenada **sem alterar** a original. Imprima duas linhas:\n\n`Original: [...]`\n`Ordenada: [...]`\n\nLeia a lista pelo `eval(input())`.\n\n**Casos de Teste (Amostra):**\n\n| Entrada | Saída | Show |\n|---|---|---|\n| `[4, 1, 3]` | Original: [4, 1, 3]<br>Ordenada: [1, 3, 4] | Sim |\n| `[5]` | Original: [5]<br>Ordenada: [5] | Sim |",
+          "meta": {
+            "tipo": "banco-questoes",
+            "questao": "questao_3",
+            "pontos": "20",
+            "dificuldade": "media",
+            "variacoesEquivalentesMinimas": 5,
+            "sorteioEquilibrado": true
+          }
+        },
+        {
+          "titulo": "Questão 4 — Consolidador com *args",
+          "texto_md": "**O Problema:** Defina `somar_tudo(*valores)` que retorne a soma de quantidades variáveis. Faça três chamadas (com 0, 1 e 3 argumentos) e imprima cada resultado no formato `Soma: N` (uma por linha).\n\n**Casos de Teste (Amostra):**\n\n| Entrada | Saída | Show |\n|---|---|---|\n| (sem entrada) | Soma: 0<br>Soma: 5<br>Soma: 60 | Sim |",
+          "meta": {
+            "tipo": "banco-questoes",
+            "questao": "questao_4",
+            "pontos": "20",
+            "dificuldade": "media",
+            "variacoesEquivalentesMinimas": 5,
+            "sorteioEquilibrado": true
+          }
+        },
+        {
+          "titulo": "Questão 5 — Painel matricial modular",
+          "texto_md": "**O Problema:** Defina `total_matriz(matriz)` que retorna a soma de todos os elementos de uma matriz (lista de listas). Aplique-a a uma matriz lida via `eval(input())` e imprima:\n\n`Total: N`\n\n**Casos de Teste (Amostra):**\n\n| Entrada | Saída | Show |\n|---|---|---|\n| `[[1,2],[3,4]]` | Total: 10 | Sim |\n| `[[5]]` | Total: 5 | Sim |",
+          "meta": {
+            "tipo": "banco-questoes",
+            "questao": "questao_5",
+            "pontos": "20",
+            "dificuldade": "media",
+            "variacoesEquivalentesMinimas": 5,
+            "sorteioEquilibrado": true
+          }
+        },
+        {
+          "titulo": "Questão 6 — Função de desconto",
+          "texto_md": "**O Problema:** Defina `aplicar_desconto(valor, taxa=0.10)` que retorne `valor * (1 - taxa)`. Leia `valor` do `input()` e imprima a duas chamadas (com taxa padrão e com `taxa=0.20`):\n\n`Padrao: R$ X.XX`\n`Customizada: R$ X.XX`\n\n**Casos de Teste (Amostra):**\n\n| Entrada | Saída | Show |\n|---|---|---|\n| `200.0` | Padrao: R$ 180.00<br>Customizada: R$ 160.00 | Sim |\n| `100.0` | Padrao: R$ 90.00<br>Customizada: R$ 80.00 | Sim |",
+          "meta": {
+            "tipo": "banco-questoes",
+            "questao": "questao_6",
+            "pontos": "20",
+            "dificuldade": "media",
+            "variacoesEquivalentesMinimas": 5,
+            "sorteioEquilibrado": true
+          }
+        },
+        {
+          "titulo": "Questão 7 — Lista preservada",
+          "texto_md": "**O Problema:** Defina `dobrar_copia(valores)` que retorna uma nova lista com cada valor multiplicado por 2, **sem alterar** a original. Imprima:\n\n`Original: [...]`\n`Dobrada: [...]`\n\nLista vinda de `eval(input())`.\n\n**Casos de Teste (Amostra):**\n\n| Entrada | Saída | Show |\n|---|---|---|\n| `[1, 2, 3]` | Original: [1, 2, 3]<br>Dobrada: [2, 4, 6] | Sim |\n| `[5]` | Original: [5]<br>Dobrada: [10] | Sim |",
+          "meta": {
+            "tipo": "banco-questoes",
+            "questao": "questao_7",
+            "pontos": "20",
+            "dificuldade": "media",
+            "variacoesEquivalentesMinimas": 5,
+            "sorteioEquilibrado": true
+          }
+        },
+        {
+          "titulo": "Questão 8 — Escopo local controlado",
+          "texto_md": "**O Problema:** Defina `contar_maiores(valores, limite)` que conte quantos elementos são maiores que `limite`, usando apenas variáveis locais. Faça duas chamadas (em listas diferentes) e imprima:\n\n`Lote A: N`\n`Lote B: N`\n\nPode hard-codar os dois lotes; a função deve ser determinística.\n\n**Casos de Teste (Amostra):**\n\n| Entrada | Saída | Show |\n|---|---|---|\n| (sem entrada; lote A=[10,50,70,20], lote B=[100,30,20], limite=40) | Lote A: 2<br>Lote B: 1 | Sim |",
+          "meta": {
+            "tipo": "banco-questoes",
+            "questao": "questao_8",
+            "pontos": "20",
+            "dificuldade": "media",
+            "variacoesEquivalentesMinimas": 5,
+            "sorteioEquilibrado": true
+          }
+        },
+        {
+          "titulo": "Questão 9 — Média com retorno",
+          "texto_md": "**O Problema:** Defina `media(valores)` que retorna a média da lista. Aplique a uma lista vinda do `eval(input())` e imprima:\n\n`Media: X.XX`\n\n**Casos de Teste (Amostra):**\n\n| Entrada | Saída | Show |\n|---|---|---|\n| `[10.0, 20.0, 30.0]` | Media: 20.00 | Sim |\n| `[5.0, 5.0]` | Media: 5.00 | Sim |",
+          "meta": {
+            "tipo": "banco-questoes",
+            "questao": "questao_9",
+            "pontos": "20",
+            "dificuldade": "media",
+            "variacoesEquivalentesMinimas": 5,
+            "sorteioEquilibrado": true
+          }
+        },
+        {
+          "titulo": "Questão 10 — Top3 sem mutação",
+          "texto_md": "**O Problema:** Defina `top3(valores)` que retorne os 3 maiores valores em ordem decrescente, **sem alterar** a lista original. Imprima:\n\n`Original: [...]`\n`Top 3: [...]`\n\nSe a lista tiver menos de 3 elementos, retorne todos em ordem decrescente.\n\n**Casos de Teste (Amostra):**\n\n| Entrada | Saída | Show |\n|---|---|---|\n| `[3, 1, 4, 1, 5, 9, 2]` | Original: [3, 1, 4, 1, 5, 9, 2]<br>Top 3: [9, 5, 4] | Sim |\n| `[7, 2]` | Original: [7, 2]<br>Top 3: [7, 2] | Sim |",
+          "meta": {
+            "tipo": "banco-questoes",
+            "questao": "questao_10",
+            "pontos": "20",
+            "dificuldade": "media",
+            "variacoesEquivalentesMinimas": 5,
+            "sorteioEquilibrado": true
+          }
+        },
+        {
+          "titulo": "Questão 11 — Filtro com parâmetros",
+          "texto_md": "**O Problema:** Defina `entre(valores, minimo, maximo)` que retorna uma nova lista com os elementos `x` tais que `minimo <= x <= maximo`. Aplique a uma lista via `eval(input())` e imprima:\n\n`Filtrados: [...]`\n\nValores de min/max: hard-coded (10 e 50).\n\n**Casos de Teste (Amostra):**\n\n| Entrada | Saída | Show |\n|---|---|---|\n| `[5, 15, 25, 55, 40]` | Filtrados: [15, 25, 40] | Sim |\n| `[100, 200]` | Filtrados: [] | Sim |",
+          "meta": {
+            "tipo": "banco-questoes",
+            "questao": "questao_11",
+            "pontos": "20",
+            "dificuldade": "dificil",
+            "variacoesEquivalentesMinimas": 5,
+            "sorteioEquilibrado": true
+          }
+        },
+        {
+          "titulo": "Questão 12 — Import de utilidades",
+          "texto_md": "**O Problema:** Use `math.ceil` para calcular quantas equipes de 18 pessoas atendem `total` famílias. Defina `equipes(total, capacidade=18)` e leia `total` do `input()`. Imprima:\n\n`Equipes: N`\n\n**Casos de Teste (Amostra):**\n\n| Entrada | Saída | Show |\n|---|---|---|\n| `100` | Equipes: 6 | Sim |\n| `36` | Equipes: 2 | Sim |",
+          "meta": {
+            "tipo": "banco-questoes",
+            "questao": "questao_12",
+            "pontos": "20",
+            "dificuldade": "dificil",
+            "variacoesEquivalentesMinimas": 5,
+            "sorteioEquilibrado": true
+          }
+        },
+        {
+          "titulo": "Questão 13 — Args flexíveis",
+          "texto_md": "**O Problema:** Defina `total_repasses(*valores, taxa=0.0)` que retorna a soma dos valores multiplicada por `(1 + taxa)`. Faça duas chamadas e imprima:\n\n`Sem taxa: R$ X.XX`\n`Com 10%: R$ X.XX`\n\nValores hard-coded: `100, 200, 50`.\n\n**Casos de Teste (Amostra):**\n\n| Entrada | Saída | Show |\n|---|---|---|\n| (sem entrada) | Sem taxa: R$ 350.00<br>Com 10%: R$ 385.00 | Sim |",
+          "meta": {
+            "tipo": "banco-questoes",
+            "questao": "questao_13",
+            "pontos": "20",
+            "dificuldade": "dificil",
+            "variacoesEquivalentesMinimas": 5,
+            "sorteioEquilibrado": true
+          }
+        },
+        {
+          "titulo": "Questão 14 — Kwargs para relatórios",
+          "texto_md": "**O Problema:** Defina `relatorio(**dados)` que extraia `orgao` (padrão `\"N/D\"`) e `status` (padrão `\"Sem status\"`) usando `.get()`. Retorne a string `\"Orgao: X | Status: Y\"`. Faça duas chamadas e imprima cada resultado em sua linha.\n\n**Casos de Teste (Amostra):**\n\n| Entrada | Saída | Show |\n|---|---|---|\n| (sem entrada; chamada 1: orgao=\"FNDE\", status=\"Regular\"; chamada 2: vazia) | Orgao: FNDE \\| Status: Regular<br>Orgao: N/D \\| Status: Sem status | Sim |",
+          "meta": {
+            "tipo": "banco-questoes",
+            "questao": "questao_14",
+            "pontos": "20",
+            "dificuldade": "dificil",
+            "variacoesEquivalentesMinimas": 5,
+            "sorteioEquilibrado": true
+          }
+        },
+        {
+          "titulo": "Questão 15 — Função de auditoria",
+          "texto_md": "**O Problema:** Defina `auditar(valores, teto)` que retorne uma tupla `(criticas, total)` onde `criticas` é a lista dos valores >= `teto` e `total` é a soma dessas críticas. Use desempacotamento na chamada e imprima:\n\n`Criticas: [...]`\n`Total critico: R$ X.XX`\n\nLista de `eval(input())`, teto hard-coded como 800.0.\n\n**Casos de Teste (Amostra):**\n\n| Entrada | Saída | Show |\n|---|---|---|\n| `[450.0, 1200.0, 800.0, 90.0, 1600.0]` | Criticas: [1200.0, 800.0, 1600.0]<br>Total critico: R$ 3600.00 | Sim |\n| `[10.0, 20.0]` | Criticas: []<br>Total critico: R$ 0.00 | Sim |",
+          "meta": {
+            "tipo": "banco-questoes",
+            "questao": "questao_15",
+            "pontos": "20",
+            "dificuldade": "dificil",
+            "variacoesEquivalentesMinimas": 5,
+            "sorteioEquilibrado": true
+          }
+        },
+        {
+          "titulo": "Questão 16 — Loop encapsulado",
+          "texto_md": "**O Problema:** Defina `somar_pares(valores)` que use um laço `for` interno (com acumulador local) para somar apenas os valores pares. Leia a lista via `eval(input())` e imprima:\n\n`Soma de pares: N`\n\n**Casos de Teste (Amostra):**\n\n| Entrada | Saída | Show |\n|---|---|---|\n| `[1, 2, 3, 4, 5, 6]` | Soma de pares: 12 | Sim |\n| `[1, 3, 5]` | Soma de pares: 0 | Sim |",
+          "meta": {
+            "tipo": "banco-questoes",
+            "questao": "questao_16",
+            "pontos": "20",
+            "dificuldade": "dificil",
+            "variacoesEquivalentesMinimas": 5,
+            "sorteioEquilibrado": true
+          }
+        },
+        {
+          "titulo": "Questão 17 — Mutabilidade em listas",
+          "texto_md": "**O Problema:** Defina duas funções:\n\n* `normalizar_inplace(valores)` — divide cada elemento pelo `sum(valores)`, alterando a lista original.\n* `normalizar_copia(valores)` — devolve uma nova lista normalizada, sem alterar a original.\n\nAplique cada uma a uma lista `[10, 20, 70]` e imprima:\n\n`Inplace alterada: [...]`\n`Copia retornada: [...]`\n`Original apos copia: [...]`\n\n**Casos de Teste (Amostra):**\n\n| Entrada | Saída | Show |\n|---|---|---|\n| (sem entrada) | Inplace alterada: [0.1, 0.2, 0.7]<br>Copia retornada: [0.1, 0.2, 0.7]<br>Original apos copia: [10, 20, 70] | Sim |",
+          "meta": {
+            "tipo": "banco-questoes",
+            "questao": "questao_17",
+            "pontos": "20",
+            "dificuldade": "dificil",
+            "variacoesEquivalentesMinimas": 5,
+            "sorteioEquilibrado": true
+          }
+        },
+        {
+          "titulo": "Questão 18 — Módulo reutilizável",
+          "texto_md": "**O Problema:** Defina três funções no MESMO arquivo:\n\n* `formatar_brl(valor)` → retorna `\"R$ X.XX\"`.\n* `calcular_imposto(valor, taxa=0.15)` → retorna `valor * taxa`.\n* `relatorio(valor)` → usa as duas anteriores e retorna a string `\"Imposto: R$ X.XX\"`.\n\nLeia `valor` do `input()` e imprima o resultado de `relatorio(valor)`.\n\n**Casos de Teste (Amostra):**\n\n| Entrada | Saída | Show |\n|---|---|---|\n| `1000.0` | Imposto: R$ 150.00 | Sim |\n| `500.0` | Imposto: R$ 75.00 | Sim |",
+          "meta": {
+            "tipo": "banco-questoes",
+            "questao": "questao_18",
+            "pontos": "20",
+            "dificuldade": "dificil",
+            "variacoesEquivalentesMinimas": 5,
+            "sorteioEquilibrado": true
+          }
+        },
+        {
+          "titulo": "Questão 19 — Assinatura segura",
+          "texto_md": "**O Problema:** Defina `calcular_desconto(valor, percentual)` que retorna a tupla `(ok, desconto)`:\n\n* Se `percentual` está fora de `[0, 1]`: `(False, 0.0)`.\n* Senão: `(True, valor * percentual)`.\n\nFaça duas chamadas (uma válida, uma inválida) e imprima cada resultado em sua linha:\n\n`Chamada 1: ok=X desc=R$ X.XX`\n`Chamada 2: ok=X desc=R$ X.XX`\n\n**Casos de Teste (Amostra):**\n\n| Entrada | Saída | Show |\n|---|---|---|\n| (sem entrada; chamada 1: valor=200, percentual=0.1; chamada 2: valor=200, percentual=1.5) | Chamada 1: ok=True desc=R$ 20.00<br>Chamada 2: ok=False desc=R$ 0.00 | Sim |",
+          "meta": {
+            "tipo": "banco-questoes",
+            "questao": "questao_19",
+            "pontos": "20",
+            "dificuldade": "dificil",
+            "variacoesEquivalentesMinimas": 5,
+            "sorteioEquilibrado": true
+          }
+        },
+        {
+          "titulo": "Questão 20 — Arquitetura final de funções",
+          "texto_md": "**O Problema:** Construa três funções que respondem a um pipeline de pagamentos:\n\n* `aplicar_inss(salario)` → retorna `salario * 0.11`.\n* `aplicar_irrf(salario_apos_inss)` → retorna `salario_apos_inss * 0.075`.\n* `holerite(salario)` → usa as anteriores e retorna a tupla `(inss, irrf, liquido)`.\n\nLeia `salario` do `input()`, chame `holerite` e imprima:\n\n`INSS: R$ X.XX`\n`IRRF: R$ X.XX`\n`Liquido: R$ X.XX`\n\n**Casos de Teste (Amostra):**\n\n| Entrada | Saída | Show |\n|---|---|---|\n| `3000.0` | INSS: R$ 330.00<br>IRRF: R$ 200.25<br>Liquido: R$ 2469.75 | Sim |\n| `1000.0` | INSS: R$ 110.00<br>IRRF: R$ 66.75<br>Liquido: R$ 823.25 | Sim |",
+          "meta": {
+            "tipo": "banco-questoes",
+            "questao": "questao_20",
+            "pontos": "20",
+            "dificuldade": "dificil",
+            "variacoesEquivalentesMinimas": 5,
+            "sorteioEquilibrado": true
+          }
+        }
+      ],
+      "sorteio": {
+        "total_banco": 20,
+        "questoes_sorteadas": 5,
+        "criterio": "sorteio editorial equilibrado por dificuldade",
+        "totalBanco": 20,
+        "questoesSorteadas": 5,
+        "distribuicaoDificuldade": {
+          "media": 3,
+          "dificil": 2
+        },
+        "variacoesEquilibradasMinimas": 5
+      },
+      "equilibrioEditorial": {
+        "dificuldadesDisponiveis": {
+          "media": 10,
+          "dificil": 10
+        },
+        "distribuicaoPorAplicacao": {
+          "media": 3,
+          "dificil": 2
+        },
+        "variacoesEquivalentesMinimas": 5
+      }
+    },
+    "backend": {
+      "titulo": "Atenção IA de Backend / Sistema Gerenciador:",
+      "texto_md": "Este bloco orienta a geração editorial do banco da prova final do Módulo 3. O banco contém 20 questões e cada aplicação deve selecionar 5 questões. Gere no mínimo 10 casos por questão, com forte presença de valores de borda.\n\nRegras editoriais adicionais: manter sorteio equilibrado com **3 questões médias** e **2 difíceis** por aplicação, garantindo no mínimo **5 variações equivalentes** de prova no banco."
+    }
+  },
+  "desafios": [],
+  "premio": {
+    "pontuacao_academica": 100,
+    "superpower_reward": "arquiteto-de-funcoes",
+    "recursos": [
+      "Comprar tempo adicional: 3x de 5min (10 Moedas)",
+      "Comprar dica IA: 3 consultas à lógica base (10 Moedas)"
+    ],
+    "testes_ocultos": {
+      "banco_questoes": "/api/datasets/modulo3_prova_banco_20.json"
+    }
+  },
+  "avaliacao": {
+    "pontuacao_maxima": 100,
+    "criterios": [
+      "Correção automática por testes ocultos das 5 questões sorteadas.",
+      "Aderência ao formato de saída exigido em cada questão.",
+      "Uso correto apenas dos conceitos estudados no Módulo 3."
+    ],
+    "tipo_correcao": "automatica"
+  }
+}

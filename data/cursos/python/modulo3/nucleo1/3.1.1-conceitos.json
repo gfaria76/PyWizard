@@ -1,0 +1,96 @@
+{
+  "id": "python-3.1.1-CT",
+  "curso": "python",
+  "modulo": 3,
+  "aula": 1,
+  "numero": "3.1.1",
+  "tipo": "aula",
+  "subtipo": "conceito",
+  "titulo": "Introducao a Funcoes (def)",
+  "subtitulo": "Nomeando e reaproveitando blocos de logica para nao trabalhar no escuro",
+  "objetivo": "Criar funcoes simples com `def`, entender como a reutilizacao reduz erros sistemicos e aplicar chamadas repetidas com entradas diferentes em cenarios reais.",
+  "duracao": "1h30",
+  "tags": [
+    "def",
+    "funcoes",
+    "reutilizacao",
+    "return"
+  ],
+  "secoes": {
+    "abertura": {
+      "objetivo": {
+        "texto_md": "Em muitos sistemas publicos, o mesmo calculo aparece em varias telas: uma para cadastro, outra para relatorio, outra para auditoria. Quando a regra muda e cada trecho foi copiado de um jeito, nasce o caos: parte do sistema atualiza, parte fica atrasada, e o erro cai no colo de quem depende do resultado. A declaracao `def` existe para cortar esse problema pela raiz."
+      },
+      "retomada": {
+        "texto_md": "**O que voce ja traz no inventario:**\n\n* Variaveis, tipos e operacoes do Modulo I.\n* Condicionais e comparacoes para decidir regras.\n* Listas e lacos do Modulo II para processar dados em lote."
+      },
+      "situacao": {
+        "titulo": "O bug replicado em sete telas",
+        "texto_md": "Uma equipe manteve o calculo de adicional noturno copiado em sete pontos do sistema de folha. A regra de percentual mudou por convenio e duas telas nao foram atualizadas. Resultado: trabalhadores com valores diferentes para a mesma jornada. Com uma funcao `calcular_adicional_noturno(...)`, a regra ficaria centralizada e auditavel."
+      },
+      "problematizacao": {
+        "texto_md": "* Se a mesma conta aparece em varios arquivos, como garantir que todas as versoes estao alinhadas apos uma mudanca legal?\n* Por que dar nome para uma regra (`def calcular_x`) melhora manutencao e leitura, e nao apenas organizacao estetica?"
+      }
+    },
+    "conceito": {
+      "titulo": "Conceito tecnico",
+      "texto_md": "Uma **funcao** e um bloco de codigo com um nome. Voce a define **uma vez** com a palavra `def` e a chama quantas vezes precisar. Pense em uma funcao como uma **formula de planilha personalizada**: voce dá um nome, descreve o cálculo uma vez, e depois aplica em milhares de células diferentes.\n\n```python\ndef nome_da_funcao(parametro1, parametro2):\n    # bloco indentado (corpo)\n    resultado = parametro1 + parametro2\n    return resultado          # devolve o resultado\n\n# Para usar (chamar):\nresposta = nome_da_funcao(10, 20)\n```\n\n**Anatomia de uma funcao:**\n\n* **`def`** — palavra-chave que declara a funcao.\n* **Nome** — escolhido por você (use verbos: `calcular_taxa`, `validar_idade`).\n* **Parametros entre parenteses** — as \"entradas\" da funcao. Podem ser zero, um ou vários.\n* **Corpo indentado** — o que a funcao faz.\n* **`return`** — devolve um valor para quem chamou. **É opcional.**\n\n**Sobre o `return`:**\n\n* Quando `return` está presente, a funcao **devolve um valor**. Esse valor pode ser guardado numa variável ou usado diretamente: `total = calcular_repasse(100, 5)`.\n* Quando **não há `return`** (ou ele aparece sozinho, sem valor), a funcao automaticamente devolve `None` — um valor especial que significa \"nada\". Funcoes sem `return` servem para executar **acoes** (imprimir, gravar log) em vez de **calcular**.\n\n**Por que vale a pena?**\n\n1. **Não repetir código** — escreva uma vez, use em muitos lugares.\n2. **Corrigir em um único ponto** — se a regra muda, muda só dentro da funcao.\n3. **Nomes que documentam a intenção** — `calcular_irpf(salario)` é mais claro do que ver as contas soltas.\n4. **Testabilidade** — uma funcao pequena pode ser testada isoladamente.",
+      "exemplos": [
+        {
+          "titulo": "1) Primeira funcao com return",
+          "texto_md": "Encapsulamos o cálculo da taxa administrativa. A funcao recebe um valor, calcula a taxa e devolve o resultado.",
+          "python": "def calcular_taxa(valor):\n    return valor * 0.02\n\ntaxa = calcular_taxa(850.0)\nprint(f\"Taxa: R$ {taxa:.2f}\")"
+        },
+        {
+          "titulo": "2) Reuso: a mesma funcao com entradas diferentes",
+          "texto_md": "Uma funcao escrita uma vez serve para muitas chamadas. Cada chamada é independente.",
+          "python": "def calcular_desconto(valor_bruto):\n    return valor_bruto * 0.10\n\nprint(f\"Desconto A: R$ {calcular_desconto(120.0):.2f}\")\nprint(f\"Desconto B: R$ {calcular_desconto(340.0):.2f}\")\nprint(f\"Desconto C: R$ {calcular_desconto(890.0):.2f}\")"
+        },
+        {
+          "titulo": "3) Funcao sem return: uma acao padronizada",
+          "texto_md": "Quando o objetivo é executar uma acao (não devolver um valor), `return` pode ser omitido. A funcao retorna `None` automaticamente.",
+          "python": "def emitir_alerta(orgao):\n    print(f\"Alerta enviado para: {orgao}\")\n\nresultado = emitir_alerta(\"Defesa Civil\")\nprint(\"O que a funcao devolveu?\", resultado)  # None"
+        }
+      ]
+    },
+    "pratica_guiada": {
+      "titulo": "Pratica guiada",
+      "texto_md": "Vamos construir funcoes em três passos: sem parametros, com um parametro, com múltiplos parametros e return.",
+      "exemplos": [
+        {
+          "titulo": "Passo 1 — Funcao sem parametros",
+          "texto_md": "Imprime sempre a mesma mensagem. Útil quando a acao é fixa.",
+          "python": "def saudacao_inicial():\n    print(\"Bem-vindo ao sistema da prefeitura.\")\n    print(\"Digite sua opcao no menu para continuar.\")\n\nsaudacao_inicial()\nsaudacao_inicial()  # podemos chamar quantas vezes quiser"
+        },
+        {
+          "titulo": "Passo 2 — Funcao com um parametro e return",
+          "texto_md": "Calcular o dobro de um valor. A funcao recebe o número e devolve o resultado.",
+          "python": "def dobrar(numero):\n    return numero * 2\n\nprint(dobrar(5))      # 10\nprint(dobrar(12.5))   # 25.0\n\ntotal = dobrar(100) + dobrar(50)\nprint(total)          # 300"
+        },
+        {
+          "titulo": "Passo 3 — Funcao com varios parametros (repasse municipal)",
+          "texto_md": "A regra de repasse fica em um lugar so. Mudou a regra? Editamos apenas dentro da funcao.",
+          "python": "def calcular_repasse(populacao, valor_por_habitante):\n    return populacao * valor_por_habitante\n\nrepasse_a = calcular_repasse(12000, 18.5)\nrepasse_b = calcular_repasse(35000, 18.5)\n\nprint(f\"Repasse A: R$ {repasse_a:.2f}\")\nprint(f\"Repasse B: R$ {repasse_b:.2f}\")"
+        }
+      ]
+    },
+    "pratica_autonoma": {
+      "titulo": "Exercicio de Continuacao (Sua vez!)",
+      "texto_md": "**Enunciado:** Crie uma funcao `calcular_multa(atraso_dias)` que retorne `atraso_dias * 2.5`. Depois, imprima `Multa: R$ X.XX`.\n\n| Entrada (`atraso_dias`) | Saida Esperada |\n|---|---|\n| 4 | Multa: R$ 10.00 |\n| 0 | Multa: R$ 0.00 |\n| 11 | Multa: R$ 27.50 |"
+    },
+    "fechamento": {
+      "titulo": "Fechamento e Autoavaliacao",
+      "quiz": {
+        "texto_md": "**1. Qual é o principal ganho de usar `def` para uma regra repetida?**\nA) Diminuir manutencao e risco de divergência entre cópias da mesma regra.\nB) Evitar qualquer uso de variável.\nC) Substituir completamente `if`.\n\n::details{summary=\"Ver a resposta correta\"}\n**Correto: A.** Centralizar a regra evita inconsistencias quando ela precisa mudar — basta editar a funcao em um lugar.\n::\n\n**2. O que `return` faz dentro de uma funcao?**\nA) Interrompe o Python para sempre.\nB) Devolve um resultado para quem chamou a funcao.\nC) Cria uma lista automaticamente.\n\n::details{summary=\"Ver a resposta correta\"}\n**Correto: B.** `return` entrega o resultado para o local onde a funcao foi chamada. Sem `return`, a funcao devolve `None`.\n::\n\n**3. Quando duas partes do sistema fazem o mesmo calculo, qual estratégia é mais segura?**\nA) Copiar e colar a fórmula.\nB) Escrever uma funcao e chamá-la nos dois pontos.\nC) Recalcular manualmente em planilha.\n\n::details{summary=\"Ver a resposta correta\"}\n**Correto: B.** Reuso com funcao reduz erro operacional e garante consistência.\n::"
+      },
+      "leitura_complementar": {
+        "texto_md": "* Consulte a secao \"Defining Functions\" da documentacao Python para revisar assinatura, chamada e retorno.\n* Prática diária: observe um processo repetitivo no seu trabalho e descreva como ele viraria uma funcao nomeada."
+      },
+      "reflexao": {
+        "texto_md": "* Quando voce nomeia uma regra em uma funcao, deixa de depender de memoria e passa a depender de método. O nome da funcao já documenta o que ela faz — outro programador (ou voce daqui a três meses) entende a intencao em segundos."
+      }
+    }
+  },
+  "premio": null,
+  "nucleo": 1
+}

@@ -1,0 +1,82 @@
+{
+  "id": "python-1.4.2-TA",
+  "curso": "python",
+  "modulo": 1,
+  "aula": 2,
+  "numero": "1.4.2",
+  "tipo": "trilha",
+  "subtipo": "aprendiz",
+  "titulo": "Labirintos da Regra",
+  "subtitulo": "5 desafios em sala sobre if aninhado",
+  "objetivo": "Consolidar em sala o conteúdo de If-Else Aninhado e Validações Complexas.",
+  "duracao": "30min",
+  "tags": [
+    "trilha-aprendiz",
+    "if aninhado"
+  ],
+  "secoes": {
+    "abertura": {
+      "introducao": {
+        "texto_md": "# Trilha do Aprendiz XI: Labirintos da Regra\n\nEsta trilha em sala transforma o conteúdo de **If-Else Aninhado e Validações Complexas** em cinco desafios de prática imediata."
+      }
+    },
+    "preparacao": {
+      "titulo": "Preparação da trilha",
+      "texto_md": "* releia o conceito antes de começar;\n* avance do mais simples ao mais exigente;\n* confira o formato de saída."
+    },
+    "desafios": {
+      "titulo": "Cinco desafios da trilha",
+      "texto_md": "Cinco desafios em sala para consolidar if aninhado.",
+      "missoes": [
+        {
+          "titulo": "Triagem Hospitalar",
+          "texto_md": "**O Problema:** Receba idade e febre. Se idade >= 60, faça uma segunda decisão para definir `Prioridade alta` ou `Monitorar`.\n\n**Casos de Teste (Amostra):**\n\n| Entrada | Saída | Show |\n|---|---|---|\n| 65<br>1 | Prioridade alta | Sim |"
+        },
+        {
+          "titulo": "Moradia Social",
+          "texto_md": "**O Problema:** Receba renda e filhos. Se renda <= 350, avalie filhos para decidir `Prioridade` ou `Cadastro comum`.\n\n**Casos de Teste (Amostra):**\n\n| Entrada | Saída | Show |\n|---|---|---|\n| 300.0<br>3 | Prioridade | Sim |"
+        },
+        {
+          "titulo": "Consumo de Energia",
+          "texto_md": "**O Problema:** Receba consumo e inadimplente (0 ou 1). Se consumo > 100, faça nova validação para decidir `Fiscalizar` ou `Alertar`.\n\n**Casos de Teste (Amostra):**\n\n| Entrada | Saída | Show |\n|---|---|---|\n| 120<br>1 | Fiscalizar | Não |"
+        },
+        {
+          "titulo": "Multa de Trânsito",
+          "texto_md": "**O Problema:** Receba velocidade e reincidente (0 ou 1). Se houve excesso, avalie reincidência para definir a gravidade.\n\n**Casos de Teste (Amostra):**\n\n| Entrada | Saída | Show |\n|---|---|---|\n| 90<br>1 | Grave | Não |"
+        },
+        {
+          "titulo": "Biblioteca do Campus",
+          "texto_md": "**O Problema:** Receba atraso e livro_raro (0 ou 1). Se atraso > 7, avalie se o livro é raro para decidir o bloqueio.\n\n**Casos de Teste (Amostra):**\n\n| Entrada | Saída | Show |\n|---|---|---|\n| 10<br>1 | Bloqueio total | Não |"
+        }
+      ]
+    },
+    "fechamento": {
+      "titulo": "Fechamento da Trilha",
+      "reflexao": {
+        "texto_md": "Resolver em sala ajuda a transformar explicação em confiança prática."
+      }
+    }
+  },
+  "premio": {
+    "pontuacao": 70
+  },
+  "rpg": {
+    "xp_reward": 70,
+    "variant": "trail",
+    "oracle_hints": [
+      "Verifique a formatação exata da saída pedida.",
+      "Releia o enunciado com atenção antes de codar."
+    ],
+    "enemy_name": "Autômato do Elif",
+    "enemy_hp": 75,
+    "weakness": "elif",
+    "loot_drops": [
+      {
+        "item": "Selo de Combate",
+        "type": "badge",
+        "rarity": "common"
+      }
+    ]
+  },
+  "nucleo": 4
+}

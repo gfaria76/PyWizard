@@ -1,0 +1,116 @@
+{
+  "id": "python-3.4.3-MS",
+  "curso": "python",
+  "modulo": 3,
+  "aula": 3,
+  "numero": "3.4.3",
+  "tipo": "masmorra",
+  "subtipo": "simulado",
+  "titulo": "antes do Boss",
+  "subtitulo": "Treino individual com questões equivalentes às do boss ««Bibliotecas e Interfaces Flexíveis»",
+  "objetivo": "Oferecer um simulado individual de pré-boss com questões equivalentes às do boss ««Bibliotecas e Interfaces Flexíveis», permitindo calibrar tempo, formato de saída e identificação de pontos fracos antes da avaliação oficial.",
+  "duracao": "1h30",
+  "tags": [
+    "labirinto_sabedoria",
+    "simulado",
+    "pré-boss",
+    "boss",
+    "import",
+    "math",
+    "args",
+    "kwargs",
+    "modularização"
+  ],
+  "secoes": {
+    "abertura": {
+      "introducao": {
+        "texto_md": "# Labirinto da Sabedoria IV\n\nEste é um simulado individual antes do boss ««Bibliotecas e Interfaces Flexíveis». As questões aqui são equivalentes às do boss em escopo, formato e dificuldade, mas usam dados sintéticos diferentes. Resultado não conta para a nota final do núcleo; serve como termômetro pessoal e para identificar tópicos a revisar.\n\n**Regras do labirinto:**\n\n* Tente todas as missões dentro do tempo estimado do boss.\n* Compare seu resultado com o gabarito e revise antes da maratona oficial.\n"
+      }
+    },
+    "maratona": {
+      "titulo": "Simulado completo (espelho do boss)",
+      "texto_md": "Cinco missões simuladas, equivalentes às do boss ««Bibliotecas e Interfaces Flexíveis». Mesmas habilidades, dados sintéticos diferentes.",
+      "missoes": [
+        {
+          "titulo": "Escala de Visitas Domiciliares",
+          "texto_md": "**O Treino:** Importe `math` e crie uma função `visitas_por_dia(total_familias, capacidade_equipe)` que retorne quantos dias completos de operação serão necessários para atender todas as famílias, usando arredondamento para cima. Depois, imprima `Dias: N`.\n\n**Casos de Teste (Amostra):**\n\n| Entrada | Saída | Show |\n|---|---|---|\n| `125`, `18` | Dias: 7 | Sim |\n| `90`, `30` | Dias: 3 | Sim |",
+          "meta": {
+            "tipo": "simulado",
+            "espelha_missao": "missao_1"
+          }
+        },
+        {
+          "titulo": "Consolidador Flexível de Despesas",
+          "texto_md": "**O Treino:** Crie uma função `somar_despesas(*despesas)` que retorne a soma total recebida. Depois, use-a para imprimir:\n\n`Total: R$ X.XX`\n`Media: R$ X.XX`\n\nA média deve ser calculada com base na quantidade de argumentos recebidos.\n\n**Casos de Teste (Amostra):**\n\n| Entrada Oculta | Saída Esperada | Show |\n|---|---|---|\n| `120.0, 300.0, 180.0` | Total: R$ 600.00<br>Media: R$ 200.00 | Sim |\n| `50.0, 50.0` | Total: R$ 100.00<br>Media: R$ 50.00 | Sim |",
+          "meta": {
+            "tipo": "simulado",
+            "espelha_missao": "missao_2"
+          }
+        },
+        {
+          "titulo": "Gerador de Relatório Nomeado",
+          "texto_md": "**O Treino:** Crie uma função `montar_relatorio(**dados)` que receba as chaves `orgao`, `valor` e `status` e retorne a string `Orgao: X | Valor: R$ X.XX | Status: X`. Depois, imprima a string retornada.\n\n**Casos de Teste (Amostra):**\n\n| Entrada Oculta | Saída Esperada | Show |\n|---|---|---|\n| `orgao=FNDE, valor=120000.0, status=Regular` | Orgao: FNDE<br>Valor: R$ 120000.00<br>Status: Regular | Sim |\n| `orgao=SESAU, valor=9800.5, status=Alerta` | Orgao: SESAU<br>Valor: R$ 9800.50<br>Status: Alerta | Sim |",
+          "meta": {
+            "tipo": "simulado",
+            "espelha_missao": "missao_3"
+          }
+        },
+        {
+          "titulo": "Distância Logística Simplificada",
+          "texto_md": "**O Treino:** Importe `math` e crie uma função `distancia_rede(x1, y1, x2, y2)` que calcule a distância euclidiana entre dois pontos usando a fórmula `sqrt((x2-x1)**2 + (y2-y1)**2)`. Depois, imprima `Distancia: X.XX km`.\n\n**Casos de Teste (Amostra):**\n\n| Entrada | Saída | Show |\n|---|---|---|\n| `0`, `0`, `3`, `4` | Distancia: 5.00 km | Sim |\n| `1`, `1`, `1`, `6` | Distancia: 5.00 km | Sim |",
+          "meta": {
+            "tipo": "simulado",
+            "espelha_missao": "missao_4"
+          }
+        },
+        {
+          "titulo": "Painel Configurável de Meta",
+          "texto_md": "**O Treino:** Crie uma função `avaliar_meta(valor_atual, meta, **config)` que retorne `Atingida` se `valor_atual >= meta`. Caso contrário, retorne `Em risco` quando `config` contiver `tolerancia=True` e `valor_atual >= meta * 0.9`; nos demais casos, retorne `Nao atingida`. Depois, imprima `Status: X`.\n\n**Casos de Teste (Amostra):**\n\n| Entrada Oculta | Saída Esperada | Show |\n|---|---|---|\n| `95.0, 100.0, tolerancia=True` | Status: Em risco | Sim |\n| `105.0, 100.0, tolerancia=False` | Status: Atingida | Sim |\n| `70.0, 100.0, tolerancia=True` | Status: Nao atingida | Não |",
+          "meta": {
+            "tipo": "simulado",
+            "espelha_missao": "missao_5"
+          }
+        }
+      ]
+    },
+    "fechamento": {
+      "titulo": "Encerramento do Labirinto",
+      "reflexao": {
+        "texto_md": "* Quais missões consumiram mais tempo? Identifique gargalos.\n* Em quais formatos de saída houve erro? Revise antes do boss.\n* Marque os tópicos a reler nos `conceitos` correspondentes antes da maratona oficial.\n"
+      }
+    }
+  },
+  "premio": {
+    "pontuacao": 0,
+    "recursos": [
+      "Gabarito disponível após o término do simulado",
+      "Relatório de fraquezas: tópicos a revisar antes do boss"
+    ]
+  },
+  "rpg": {
+    "xp_reward": 80,
+    "variant": "labyrinth-simulation",
+    "oracle_hints": [
+      "Trate este labirinto como o boss real — formato de saída conta.",
+      "Cronometre cada missão para identificar onde perde tempo.",
+      "Se errar duas seguidas, volte aos conceitos antes de prosseguir."
+    ],
+    "enemy_name": "Eco do Boss IV",
+    "enemy_hp": 200,
+    "weakness": "preparação prévia",
+    "loot_drops": [
+      {
+        "item": "Mapa do Labirinto",
+        "type": "consumable",
+        "rarity": "uncommon"
+      },
+      {
+        "item": "Pergaminho de Foco",
+        "type": "consumable",
+        "rarity": "common",
+        "quantity": 2
+      }
+    ]
+  },
+  "nucleo": 4
+}

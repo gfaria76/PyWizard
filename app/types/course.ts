@@ -5,6 +5,7 @@ export type LessonSubtype =
   | 'aventura'   // trilha autônoma, 5 desafios
   | 'guardiao'   // revisão acumulativa, 10 desafios
   | 'grupo'      // expedição em grupo (5 integrantes)
+  | 'simulado'   // labirinto da sabedoria (pré-boss / pré-prova)
   | 'boss'       // avaliação prática principal do bloco
   | 'prova'      // banco de 20 questões, sorteio de 5
 export type LessonKind = 'A' | 'E' | 'P'
@@ -19,7 +20,9 @@ export interface InventoryItem {
 }
 
 export interface ModuleQuest {
-  numero: number
+  numero: string | number
+  nucleo?: number
+  aula?: number
   tipo_aula: LessonKind
   subtipo?: LessonSubtype
   titulo: string

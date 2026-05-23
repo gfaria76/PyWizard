@@ -1,0 +1,340 @@
+{
+  "id": "python-1.5.1-MP",
+  "curso": "python",
+  "modulo": 1,
+  "nucleo": 5,
+  "aula": 1,
+  "numero": "1.5.1",
+  "tipo": "masmorra",
+  "subtipo": "prova",
+  "titulo": "O Analista Regulatório",
+  "subtitulo": "Variáveis, matemática, formatação e lógica condicional em dados públicos",
+  "objetivo": "Avaliar a autonomia do estudante nos conteúdos do Módulo I por meio de uma prova com banco de 20 questões e sorteio editorial de 5 por tentativa.",
+  "duracao": "1h30",
+  "tags": [
+    "prova",
+    "avaliação",
+    "variáveis",
+    "operações matemáticas",
+    "f-strings",
+    "condicionais",
+    "divisão inteira",
+    "módulo"
+  ],
+  "secoes": {
+    "abertura": {
+      "introducao": {
+        "texto_md": "# Prova Final do Módulo I\n\nVocê concluiu o primeiro ciclo de formação e agora precisa demonstrar que consegue transformar regras simples em sistemas confiáveis. Esta prova simula situações reais de atendimento, triagem, cobrança e regulação em serviços públicos brasileiros. Aqui não basta \"ter entendido a ideia\" é preciso calcular corretamente, formatar bem a saída e respeitar exatamente os critérios institucionais descritos no enunciado.\n\n**Regras:**\n- Todas as questões possuem autocorreção automática.\n- Use apenas os conceitos estudados no Módulo I.\n- Não use listas, laços nem `def`.\n- Leia os formatos de saída com atenção total: uma palavra errada pode invalidar a submissão.\n\n---"
+      }
+    },
+    "questoes": {
+      "titulo": "Banco de Questões da Prova",
+      "texto_md": "A prova final trabalha com **20 questões no banco**. A aplicação deve sortear **5 questões** em equilíbrio editorial, com **3 médias + 2 difíceis** e no mínimo **5 variações equivalentes** entre combinações possíveis.",
+      "banco_questoes": [
+        {
+          "titulo": "Questão 1 — Auxílio-Transporte",
+          "texto_md": "**O Problema:** O avaliador injeta `salario` (`Float`) e `valor_passagem` (`Float`). O auxílio-transporte cobre o custo mensal de 44 passagens, descontando 6% do salário do trabalhador. Calcule o valor pago pelo empregador (44 × valor_passagem − 0,06 × salario; se o resultado for negativo, pague 0).\n\nImprima: `Auxilio: R$ X.XX`.\n\n**Casos de Teste (Amostra):**\n\n| Entrada | Saída | Show |\n|---|---|---|\n| `1412.00`, `5.00` | Auxilio: R$ 135.28 | Sim |\n| `5000.00`, `4.50` | Auxilio: R$ 0.00 | Sim |",
+          "meta": {
+            "tipo": "banco-questoes",
+            "questao": "questao_1",
+            "pontos": "20",
+            "dificuldade": "media",
+            "variacoesEquivalentesMinimas": 5,
+            "sorteioEquilibrado": true
+          }
+        },
+        {
+          "titulo": "Questão 2 — Teste de Mesa do CadÚnico",
+          "texto_md": "**O Problema:** O avaliador injeta `renda_total` (`Float`) e `n_membros` (`Int`). Calcule a renda per capita (renda_total / n_membros). Imprima exatamente:\n\n`Per capita: R$ X.XX`\n\n**Casos de Teste (Amostra):**\n\n| Entrada | Saída | Show |\n|---|---|---|\n| `2100.0`, `3` | Per capita: R$ 700.00 | Sim |\n| `900.0`, `4` | Per capita: R$ 225.00 | Sim |",
+          "meta": {
+            "tipo": "banco-questoes",
+            "questao": "questao_2",
+            "pontos": "20",
+            "dificuldade": "media",
+            "variacoesEquivalentesMinimas": 5,
+            "sorteioEquilibrado": true
+          }
+        },
+        {
+          "titulo": "Questão 3 — Bug da Escala de Plantão",
+          "texto_md": "**O Problema:** O avaliador injeta `total_horas` (`Int`). Cada plantão tem 12 horas. Calcule quantos plantões completos cabem no total e quantas horas sobram (não fecham um plantão). Imprima:\n\n`Plantoes completos: N`\n`Horas sobrando: N`\n\n**Casos de Teste (Amostra):**\n\n| Entrada | Saída | Show |\n|---|---|---|\n| `40` | Plantoes completos: 3<br>Horas sobrando: 4 | Sim |\n| `60` | Plantoes completos: 5<br>Horas sobrando: 0 | Sim |",
+          "meta": {
+            "tipo": "banco-questoes",
+            "questao": "questao_3",
+            "pontos": "20",
+            "dificuldade": "media",
+            "variacoesEquivalentesMinimas": 5,
+            "sorteioEquilibrado": true
+          }
+        },
+        {
+          "titulo": "Questão 4 — Classificação Tarifária da Água",
+          "texto_md": "**O Problema:** O avaliador injeta `consumo_m3` (`Float`). Tarifa por m³: até 10 → 3.50; até 25 → 5.20; acima → 7.80. Calcule o valor da conta (consumo × tarifa correspondente) e imprima:\n\n`Tarifa: R$ X.XX`\n`Total: R$ X.XX`\n\n**Casos de Teste (Amostra):**\n\n| Entrada | Saída | Show |\n|---|---|---|\n| `8.0` | Tarifa: R$ 3.50<br>Total: R$ 28.00 | Sim |\n| `30.0` | Tarifa: R$ 7.80<br>Total: R$ 234.00 | Sim |",
+          "meta": {
+            "tipo": "banco-questoes",
+            "questao": "questao_4",
+            "pontos": "20",
+            "dificuldade": "media",
+            "variacoesEquivalentesMinimas": 5,
+            "sorteioEquilibrado": true
+          }
+        },
+        {
+          "titulo": "Questão 5 — Risco Habitacional",
+          "texto_md": "**O Problema:** O avaliador injeta `renda` (`Float`) e `mora_em_area_risco` (`Int`, 0 ou 1). Uma família é classificada como prioritária se renda ≤ 1800 **e** mora em área de risco. Imprima `Prioridade: SIM` ou `Prioridade: NAO`.\n\n**Casos de Teste (Amostra):**\n\n| Entrada | Saída | Show |\n|---|---|---|\n| `1500.0`, `1` | Prioridade: SIM | Sim |\n| `1500.0`, `0` | Prioridade: NAO | Sim |",
+          "meta": {
+            "tipo": "banco-questoes",
+            "questao": "questao_5",
+            "pontos": "20",
+            "dificuldade": "media",
+            "variacoesEquivalentesMinimas": 5,
+            "sorteioEquilibrado": true
+          }
+        },
+        {
+          "titulo": "Questão 6 — Elegibilidade de Bolsa",
+          "texto_md": "**O Problema:** O avaliador injeta `idade` (`Int`) e `media_notas` (`Float`). Concede bolsa se idade entre 14 e 18 (inclusive) **e** média ≥ 7.0. Imprima `Bolsa: CONCEDIDA` ou `Bolsa: NEGADA`.\n\n**Casos de Teste (Amostra):**\n\n| Entrada | Saída | Show |\n|---|---|---|\n| `15`, `8.0` | Bolsa: CONCEDIDA | Sim |\n| `15`, `6.5` | Bolsa: NEGADA | Sim |",
+          "meta": {
+            "tipo": "banco-questoes",
+            "questao": "questao_6",
+            "pontos": "20",
+            "dificuldade": "media",
+            "variacoesEquivalentesMinimas": 5,
+            "sorteioEquilibrado": true
+          }
+        },
+        {
+          "titulo": "Questão 7 — Painel de Frequência Escolar",
+          "texto_md": "**O Problema:** O avaliador injeta `presencas` (`Int`) e `total_aulas` (`Int`). Calcule a frequência em porcentagem (`presencas / total_aulas * 100`) e imprima:\n\n`Frequencia: X.X%`\n\n**Casos de Teste (Amostra):**\n\n| Entrada | Saída | Show |\n|---|---|---|\n| `18`, `20` | Frequencia: 90.0% | Sim |\n| `12`, `20` | Frequencia: 60.0% | Sim |",
+          "meta": {
+            "tipo": "banco-questoes",
+            "questao": "questao_7",
+            "pontos": "20",
+            "dificuldade": "media",
+            "variacoesEquivalentesMinimas": 5,
+            "sorteioEquilibrado": true
+          }
+        },
+        {
+          "titulo": "Questão 8 — Faixa de Consumo de Energia",
+          "texto_md": "**O Problema:** O avaliador injeta `consumo_kwh` (`Float`). Faixa: <=100 → `Faixa: Baixo`; <=250 → `Faixa: Medio`; caso contrário → `Faixa: Alto`. Imprima apenas a linha de faixa.\n\n**Casos de Teste (Amostra):**\n\n| Entrada | Saída | Show |\n|---|---|---|\n| `80.0` | Faixa: Baixo | Sim |\n| `300.0` | Faixa: Alto | Sim |",
+          "meta": {
+            "tipo": "banco-questoes",
+            "questao": "questao_8",
+            "pontos": "20",
+            "dificuldade": "media",
+            "variacoesEquivalentesMinimas": 5,
+            "sorteioEquilibrado": true
+          }
+        },
+        {
+          "titulo": "Questão 9 — Cálculo de Kits Emergenciais",
+          "texto_md": "**O Problema:** O avaliador injeta `kits_disponiveis` (`Int`) e `familias` (`Int`). Calcule quantos kits cada família recebe (divisão inteira) e quantos kits sobram. Imprima:\n\n`Kits por familia: N`\n`Sobra: N`\n\n**Casos de Teste (Amostra):**\n\n| Entrada | Saída | Show |\n|---|---|---|\n| `127`, `20` | Kits por familia: 6<br>Sobra: 7 | Sim |\n| `100`, `10` | Kits por familia: 10<br>Sobra: 0 | Sim |",
+          "meta": {
+            "tipo": "banco-questoes",
+            "questao": "questao_9",
+            "pontos": "20",
+            "dificuldade": "media",
+            "variacoesEquivalentesMinimas": 5,
+            "sorteioEquilibrado": true
+          }
+        },
+        {
+          "titulo": "Questão 10 — Triagem de Atendimento",
+          "texto_md": "**O Problema:** O avaliador injeta `idade` (`Int`) e `gestante` (`Int`, 0 ou 1). Tem prioridade se idade ≥ 60 **ou** gestante. Imprima `Atendimento: PRIORITARIO` ou `Atendimento: REGULAR`.\n\n**Casos de Teste (Amostra):**\n\n| Entrada | Saída | Show |\n|---|---|---|\n| `35`, `1` | Atendimento: PRIORITARIO | Sim |\n| `45`, `0` | Atendimento: REGULAR | Sim |",
+          "meta": {
+            "tipo": "banco-questoes",
+            "questao": "questao_10",
+            "pontos": "20",
+            "dificuldade": "media",
+            "variacoesEquivalentesMinimas": 5,
+            "sorteioEquilibrado": true
+          }
+        },
+        {
+          "titulo": "Questão 11 — Relatório de Holerite",
+          "texto_md": "**O Problema:** O avaliador injeta `salario_bruto` (`Float`). Aplique 11% de INSS, 7% de IRRF (sobre o já descontado de INSS) e imprima exatamente três linhas:\n\n`INSS: R$ X.XX`\n`IRRF: R$ X.XX`\n`Liquido: R$ X.XX`\n\n**Casos de Teste (Amostra):**\n\n| Entrada | Saída | Show |\n|---|---|---|\n| `3000.00` | INSS: R$ 330.00<br>IRRF: R$ 186.90<br>Liquido: R$ 2483.10 | Sim |\n| `1500.00` | INSS: R$ 165.00<br>IRRF: R$ 93.45<br>Liquido: R$ 1241.55 | Sim |",
+          "meta": {
+            "tipo": "banco-questoes",
+            "questao": "questao_11",
+            "pontos": "20",
+            "dificuldade": "dificil",
+            "variacoesEquivalentesMinimas": 5,
+            "sorteioEquilibrado": true
+          }
+        },
+        {
+          "titulo": "Questão 12 — Classificação de Chuva",
+          "texto_md": "**O Problema:** O avaliador injeta `mm_24h` (`Float`). Classifique: <5 → `Fraca`; <25 → `Moderada`; <50 → `Forte`; <100 → `Muito Forte`; ≥100 → `Extrema`. Se a chuva for `Forte` ou superior, adicione na linha seguinte `Alerta: emitido`. Imprima:\n\n`Categoria: X`\n(opcional) `Alerta: emitido`\n\n**Casos de Teste (Amostra):**\n\n| Entrada | Saída | Show |\n|---|---|---|\n| `30.0` | Categoria: Forte<br>Alerta: emitido | Sim |\n| `12.0` | Categoria: Moderada | Sim |",
+          "meta": {
+            "tipo": "banco-questoes",
+            "questao": "questao_12",
+            "pontos": "20",
+            "dificuldade": "dificil",
+            "variacoesEquivalentesMinimas": 5,
+            "sorteioEquilibrado": true
+          }
+        },
+        {
+          "titulo": "Questão 13 — Fiscalização de Estoque",
+          "texto_md": "**O Problema:** O avaliador injeta `estoque_atual` (`Int`) e `consumo_diario` (`Int`). Calcule quantos dias inteiros o estoque dura e quantas unidades sobram no último dia parcial. Se durar menos de 7 dias, acrescente `Alerta: estoque baixo`.\n\n`Dias completos: N`\n`Sobra final: N`\n(opcional) `Alerta: estoque baixo`\n\n**Casos de Teste (Amostra):**\n\n| Entrada | Saída | Show |\n|---|---|---|\n| `100`, `15` | Dias completos: 6<br>Sobra final: 10<br>Alerta: estoque baixo | Sim |\n| `500`, `20` | Dias completos: 25<br>Sobra final: 0 | Sim |",
+          "meta": {
+            "tipo": "banco-questoes",
+            "questao": "questao_13",
+            "pontos": "20",
+            "dificuldade": "dificil",
+            "variacoesEquivalentesMinimas": 5,
+            "sorteioEquilibrado": true
+          }
+        },
+        {
+          "titulo": "Questão 14 — Controle de Presença",
+          "texto_md": "**O Problema:** O avaliador injeta `presencas` (`Int`) e `aulas_dadas` (`Int`). Calcule a frequência percentual e classifique: ≥75 → `Status: Aprovado`; ≥50 → `Status: Recuperacao`; abaixo → `Status: Reprovado`. Imprima:\n\n`Frequencia: X.X%`\n`Status: X`\n\n**Casos de Teste (Amostra):**\n\n| Entrada | Saída | Show |\n|---|---|---|\n| `15`, `20` | Frequencia: 75.0%<br>Status: Aprovado | Sim |\n| `8`, `20` | Frequencia: 40.0%<br>Status: Reprovado | Sim |",
+          "meta": {
+            "tipo": "banco-questoes",
+            "questao": "questao_14",
+            "pontos": "20",
+            "dificuldade": "dificil",
+            "variacoesEquivalentesMinimas": 5,
+            "sorteioEquilibrado": true
+          }
+        },
+        {
+          "titulo": "Questão 15 — Tarifa de Ônibus",
+          "texto_md": "**O Problema:** O avaliador injeta `idade` (`Int`) e `estudante` (`Int`, 0 ou 1). Tarifa cheia: R$ 5.00. Aplique: idade < 5 ou idade ≥ 65 → `Tarifa: R$ 0.00 (gratuita)`; estudante → 50% da tarifa → `Tarifa: R$ 2.50 (meia)`; caso contrário → `Tarifa: R$ 5.00 (cheia)`.\n\n**Casos de Teste (Amostra):**\n\n| Entrada | Saída | Show |\n|---|---|---|\n| `70`, `0` | Tarifa: R$ 0.00 (gratuita) | Sim |\n| `22`, `1` | Tarifa: R$ 2.50 (meia) | Sim |",
+          "meta": {
+            "tipo": "banco-questoes",
+            "questao": "questao_15",
+            "pontos": "20",
+            "dificuldade": "dificil",
+            "variacoesEquivalentesMinimas": 5,
+            "sorteioEquilibrado": true
+          }
+        },
+        {
+          "titulo": "Questão 16 — Faixa de IMC",
+          "texto_md": "**O Problema:** O avaliador injeta `peso_kg` (`Float`) e `altura_m` (`Float`). Calcule IMC = peso / altura². Classifique: <18.5 → `Abaixo`; <25 → `Normal`; <30 → `Sobrepeso`; caso contrário → `Obesidade`. Imprima:\n\n`IMC: X.XX`\n`Classificacao: X`\n\n**Casos de Teste (Amostra):**\n\n| Entrada | Saída | Show |\n|---|---|---|\n| `70.0`, `1.75` | IMC: 22.86<br>Classificacao: Normal | Sim |\n| `95.0`, `1.70` | IMC: 32.87<br>Classificacao: Obesidade | Sim |",
+          "meta": {
+            "tipo": "banco-questoes",
+            "questao": "questao_16",
+            "pontos": "20",
+            "dificuldade": "dificil",
+            "variacoesEquivalentesMinimas": 5,
+            "sorteioEquilibrado": true
+          }
+        },
+        {
+          "titulo": "Questão 17 — Distribuição de Cestas",
+          "texto_md": "**O Problema:** O avaliador injeta `cestas` (`Int`), `familias` (`Int`) e `prioritarias` (`Int`, número de famílias prioritárias). Cada família prioritária recebe 2 cestas; o restante recebe 1. Calcule cestas usadas e cestas que sobram. Imprima:\n\n`Usadas: N`\n`Sobra: N`\n\nSe sobra for negativa (não dá conta), imprima `Sobra: -N (deficit)` em vez de positiva.\n\n**Casos de Teste (Amostra):**\n\n| Entrada | Saída | Show |\n|---|---|---|\n| `30`, `20`, `5` | Usadas: 25<br>Sobra: 5 | Sim |\n| `10`, `8`, `5` | Usadas: 13<br>Sobra: -3 (deficit) | Sim |",
+          "meta": {
+            "tipo": "banco-questoes",
+            "questao": "questao_17",
+            "pontos": "20",
+            "dificuldade": "dificil",
+            "variacoesEquivalentesMinimas": 5,
+            "sorteioEquilibrado": true
+          }
+        },
+        {
+          "titulo": "Questão 18 — Classificação de Senha",
+          "texto_md": "**O Problema:** O avaliador injeta `tamanho` (`Int`), `tem_numero` (`Int`, 0 ou 1) e `tem_simbolo` (`Int`, 0 ou 1). Classifique: tamanho<6 → `Forca: Fraca`; tamanho>=10 e tem_numero e tem_simbolo → `Forca: Forte`; caso contrário → `Forca: Media`.\n\n**Casos de Teste (Amostra):**\n\n| Entrada | Saída | Show |\n|---|---|---|\n| `5`, `1`, `1` | Forca: Fraca | Sim |\n| `12`, `1`, `1` | Forca: Forte | Sim |",
+          "meta": {
+            "tipo": "banco-questoes",
+            "questao": "questao_18",
+            "pontos": "20",
+            "dificuldade": "dificil",
+            "variacoesEquivalentesMinimas": 5,
+            "sorteioEquilibrado": true
+          }
+        },
+        {
+          "titulo": "Questão 19 — Verificação de Documentos",
+          "texto_md": "**O Problema:** O avaliador injeta `cpf_ok` (`Int`, 0 ou 1), `rg_ok` (`Int`) e `comprovante_ok` (`Int`). Aprova somente se os três forem 1. Caso contrário, imprima o primeiro documento faltante na ordem CPF, RG, Comprovante.\n\nFormatos: `Status: APROVADO` OU `Status: PENDENTE<br>Falta: X` (onde X é `CPF`, `RG` ou `Comprovante`).\n\n**Casos de Teste (Amostra):**\n\n| Entrada | Saída | Show |\n|---|---|---|\n| `1`, `1`, `1` | Status: APROVADO | Sim |\n| `1`, `0`, `1` | Status: PENDENTE<br>Falta: RG | Sim |",
+          "meta": {
+            "tipo": "banco-questoes",
+            "questao": "questao_19",
+            "pontos": "20",
+            "dificuldade": "dificil",
+            "variacoesEquivalentesMinimas": 5,
+            "sorteioEquilibrado": true
+          }
+        },
+        {
+          "titulo": "Questão 20 — Risco de Barragem",
+          "texto_md": "**O Problema:** O avaliador injeta `nivel_pct` (`Float`, percentual do reservatório) e `chuva_24h_mm` (`Float`). Regras (verificadas em ordem):\n\n1. Se `nivel_pct >= 95` **e** `chuva_24h_mm >= 50` → `Risco: CRITICO`\n2. Se `nivel_pct >= 95` ou `chuva_24h_mm >= 50` → `Risco: ALTO`\n3. Se `nivel_pct >= 80` → `Risco: ATENCAO`\n4. Caso contrário → `Risco: NORMAL`\n\nImprima apenas a linha de risco.\n\n**Casos de Teste (Amostra):**\n\n| Entrada | Saída | Show |\n|---|---|---|\n| `97.0`, `60.0` | Risco: CRITICO | Sim |\n| `85.0`, `10.0` | Risco: ATENCAO | Sim |",
+          "meta": {
+            "tipo": "banco-questoes",
+            "questao": "questao_20",
+            "pontos": "20",
+            "dificuldade": "dificil",
+            "variacoesEquivalentesMinimas": 5,
+            "sorteioEquilibrado": true
+          }
+        }
+      ],
+      "sorteio": {
+        "total_banco": 20,
+        "questoes_sorteadas": 5,
+        "criterio": "sorteio editorial equilibrado por dificuldade",
+        "totalBanco": 20,
+        "questoesSorteadas": 5,
+        "distribuicaoDificuldade": {
+          "media": 3,
+          "dificil": 2
+        },
+        "variacoesEquilibradasMinimas": 5
+      },
+      "equilibrioEditorial": {
+        "dificuldadesDisponiveis": {
+          "media": 10,
+          "dificil": 10
+        },
+        "distribuicaoPorAplicacao": {
+          "media": 3,
+          "dificil": 2
+        },
+        "variacoesEquivalentesMinimas": 5
+      }
+    },
+    "backend": {
+      "titulo": "Atenção IA de Backend / Sistema Gerenciador:",
+      "texto_md": "Este bloco orienta a geração editorial do banco da prova final do Módulo I. O banco contém 20 questões e cada aplicação deve selecionar 5 questões. Gere no mínimo 10 casos por questão, com presença forte de valores de borda.\n\nRegras editoriais adicionais: manter sorteio equilibrado com **3 questões médias** e **2 difíceis** por aplicação, garantindo no mínimo **5 variações equivalentes** de prova no banco."
+    }
+  },
+  "desafios": [],
+  "premio": {
+    "pontuacao_academica": 100,
+    "superpower_reward": "regra-clara",
+    "recursos": [
+      "Comprar tempo adicional: 3x de 5min (10 Moedas)",
+      "Comprar dica IA: 3 consultas à lógica base (10 Moedas)"
+    ],
+    "testes_ocultos": {
+      "banco_questoes": "/api/datasets/modulo1_prova_banco_20.json"
+    }
+  },
+  "avaliacao": {
+    "pontuacao_maxima": 100,
+    "criterios": [
+      "Correção automática por testes ocultos das 5 questões sorteadas.",
+      "Aderência ao formato de saída exigido em cada questão.",
+      "Uso correto apenas dos conceitos estudados no Módulo I."
+    ],
+    "tipo_correcao": "automatica"
+  },
+  "rpg": {
+    "xp_reward": 50,
+    "variant": "trail",
+    "oracle_hints": [
+      "Verifique a formatação exata da saída pedida.",
+      "Releia o enunciado com atenção antes de codar."
+    ],
+    "loot_drops": [
+      {
+        "item": "Superpoder: regra-clara",
+        "type": "superpower",
+        "rarity": "epic"
+      }
+    ]
+  }
+}

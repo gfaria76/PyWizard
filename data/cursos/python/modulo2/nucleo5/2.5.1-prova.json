@@ -1,0 +1,316 @@
+{
+  "id": "python-2.5.1-MP",
+  "curso": "python",
+  "modulo": 2,
+  "nucleo": 5,
+  "aula": 1,
+  "numero": "2.5.1",
+  "tipo": "masmorra",
+  "subtipo": "prova",
+  "titulo": "Prova do Módulo II: Auditoria Final de Sistemas",
+  "subtitulo": "Leitura lógica, correção de bugs e programação aplicada em dados públicos",
+  "objetivo": "Avaliar a autonomia do estudante nos conteúdos do Módulo 2 por meio de uma prova com banco de 20 questões e sorteio editorial de 5 por tentativa.",
+  "duracao": "1h30",
+  "tags": [],
+  "secoes": {
+    "abertura": {
+      "introducao": {
+        "texto_md": "# Auditoria Final de Sistemas\n\nEste é o desafio definitivo do Módulo II. Tudo o que você aprendeu — listas, índices, laços, interrupções e matrizes — será testado de uma vez. As questões simulam cenários reais de auditoria em dados públicos brasileiros. Não há warmup: cada questão conta pontos.\n\nA plataforma avalia seu desempenho global. Resultados expressivos podem desbloquear recursos especiais no seu Inventário.\n\n**Regras:**\n- Todas as questões possuem autocorreção automática.\n- Use apenas os conceitos do Módulo II (sem `def` obrigatório).\n- Leia cada enunciado com atenção cirúrgica antes de escrever qualquer linha de código.\n\n---"
+      }
+    },
+    "questoes": {
+      "titulo": "Banco de Questões da Prova",
+      "texto_md": "A prova final trabalha com **20 questões no banco**. A aplicação deve sortear **5 questões** em equilíbrio editorial, com **3 médias + 2 difíceis** e no mínimo **5 variações equivalentes** entre combinações possíveis.",
+      "banco_questoes": [
+        {
+          "titulo": "Questão 1 — Relatório sindical de listas",
+          "texto_md": "**O Problema:** O avaliador injeta `salarios` (`List[Float]`) com os salários de uma categoria. Imprima a quantidade de salários e o total geral:\n\n`Trabalhadores: N`\n`Folha total: R$ X.XX`\n\n**Casos de Teste (Amostra):**\n\n| Entrada | Saída | Show |\n|---|---|---|\n| `[1500.0, 1800.0, 2200.0]` | Trabalhadores: 3<br>Folha total: R$ 5500.00 | Sim |\n| `[3000.0, 3000.0]` | Trabalhadores: 2<br>Folha total: R$ 6000.00 | Sim |",
+          "meta": {
+            "tipo": "banco-questoes",
+            "questao": "questao_1",
+            "pontos": "20",
+            "dificuldade": "media",
+            "variacoesEquivalentesMinimas": 5,
+            "sorteioEquilibrado": true
+          }
+        },
+        {
+          "titulo": "Questão 2 — Teste de mesa com continue",
+          "texto_md": "**O Problema:** O avaliador injeta `valores` (`List[Int]`). Percorra a lista somando apenas os valores positivos (use `continue` para pular os negativos). Imprima:\n\n`Soma positiva: N`\n\n**Casos de Teste (Amostra):**\n\n| Entrada | Saída | Show |\n|---|---|---|\n| `[10, -5, 7, -2, 3]` | Soma positiva: 20 | Sim |\n| `[-1, -2, -3]` | Soma positiva: 0 | Sim |",
+          "meta": {
+            "tipo": "banco-questoes",
+            "questao": "questao_2",
+            "pontos": "20",
+            "dificuldade": "media",
+            "variacoesEquivalentesMinimas": 5,
+            "sorteioEquilibrado": true
+          }
+        },
+        {
+          "titulo": "Questão 3 — Correção de bug em diárias",
+          "texto_md": "**O Problema:** O avaliador injeta `diarias` (`List[Float]`). Calcule a soma das diárias e a média. Imprima:\n\n`Total: R$ X.XX`\n`Media: R$ X.XX`\n\n**Casos de Teste (Amostra):**\n\n| Entrada | Saída | Show |\n|---|---|---|\n| `[150.0, 200.0, 175.0, 225.0]` | Total: R$ 750.00<br>Media: R$ 187.50 | Sim |\n| `[100.0, 100.0]` | Total: R$ 200.00<br>Media: R$ 100.00 | Sim |",
+          "meta": {
+            "tipo": "banco-questoes",
+            "questao": "questao_3",
+            "pontos": "20",
+            "dificuldade": "media",
+            "variacoesEquivalentesMinimas": 5,
+            "sorteioEquilibrado": true
+          }
+        },
+        {
+          "titulo": "Questão 4 — Auditoria cruzada de preços",
+          "texto_md": "**O Problema:** O avaliador injeta `precos_a` (`List[Float]`) e `precos_b` (`List[Float]`), do mesmo tamanho, representando dois fornecedores. Para cada índice, conte em quantos o fornecedor A é mais barato. Imprima:\n\n`A mais barato: N`\n\n**Casos de Teste (Amostra):**\n\n| Entrada | Saída | Show |\n|---|---|---|\n| `[10.0, 20.0, 30.0]`, `[12.0, 18.0, 35.0]` | A mais barato: 2 | Sim |\n| `[5.0, 5.0]`, `[5.0, 5.0]` | A mais barato: 0 | Sim |",
+          "meta": {
+            "tipo": "banco-questoes",
+            "questao": "questao_4",
+            "pontos": "20",
+            "dificuldade": "media",
+            "variacoesEquivalentesMinimas": 5,
+            "sorteioEquilibrado": true
+          }
+        },
+        {
+          "titulo": "Questão 5 — Labirinto matricial",
+          "texto_md": "**O Problema:** O avaliador injeta `matriz` (`List[List[Int]]`) representando salas (1 = bloqueada, 0 = livre). Conte quantas salas estão livres. Imprima:\n\n`Salas livres: N`\n\n**Casos de Teste (Amostra):**\n\n| Entrada | Saída | Show |\n|---|---|---|\n| `[[0,1,0],[1,0,0]]` | Salas livres: 4 | Sim |\n| `[[1,1],[1,1]]` | Salas livres: 0 | Sim |",
+          "meta": {
+            "tipo": "banco-questoes",
+            "questao": "questao_5",
+            "pontos": "20",
+            "dificuldade": "media",
+            "variacoesEquivalentesMinimas": 5,
+            "sorteioEquilibrado": true
+          }
+        },
+        {
+          "titulo": "Questão 6 — Filtros de ponto eletrônico",
+          "texto_md": "**O Problema:** O avaliador injeta `horas_diarias` (`List[Float]`) de uma semana. Conte quantos dias o trabalhador ultrapassou 8 horas. Imprima:\n\n`Dias com extra: N`\n\n**Casos de Teste (Amostra):**\n\n| Entrada | Saída | Show |\n|---|---|---|\n| `[8.0, 9.5, 7.5, 10.0, 8.0, 0.0, 0.0]` | Dias com extra: 2 | Sim |\n| `[8.0, 8.0, 8.0, 8.0, 8.0]` | Dias com extra: 0 | Sim |",
+          "meta": {
+            "tipo": "banco-questoes",
+            "questao": "questao_6",
+            "pontos": "20",
+            "dificuldade": "media",
+            "variacoesEquivalentesMinimas": 5,
+            "sorteioEquilibrado": true
+          }
+        },
+        {
+          "titulo": "Questão 7 — Média de telemetria",
+          "texto_md": "**O Problema:** O avaliador injeta `leituras` (`List[Float]`) com temperaturas registradas. Use `sum()` e `len()` para calcular a média. Imprima:\n\n`Media: X.XX`\n\n**Casos de Teste (Amostra):**\n\n| Entrada | Saída | Show |\n|---|---|---|\n| `[20.0, 22.0, 18.0, 24.0]` | Media: 21.00 | Sim |\n| `[36.6]` | Media: 36.60 | Sim |",
+          "meta": {
+            "tipo": "banco-questoes",
+            "questao": "questao_7",
+            "pontos": "20",
+            "dificuldade": "media",
+            "variacoesEquivalentesMinimas": 5,
+            "sorteioEquilibrado": true
+          }
+        },
+        {
+          "titulo": "Questão 8 — Análise de cesta básica",
+          "texto_md": "**O Problema:** O avaliador injeta `precos` (`List[Float]`) com os preços dos itens. Imprima o menor, o maior e o total:\n\n`Menor: R$ X.XX`\n`Maior: R$ X.XX`\n`Total: R$ X.XX`\n\n**Casos de Teste (Amostra):**\n\n| Entrada | Saída | Show |\n|---|---|---|\n| `[5.0, 12.0, 3.5, 8.0]` | Menor: R$ 3.50<br>Maior: R$ 12.00<br>Total: R$ 28.50 | Sim |\n| `[10.0]` | Menor: R$ 10.00<br>Maior: R$ 10.00<br>Total: R$ 10.00 | Sim |",
+          "meta": {
+            "tipo": "banco-questoes",
+            "questao": "questao_8",
+            "pontos": "20",
+            "dificuldade": "media",
+            "variacoesEquivalentesMinimas": 5,
+            "sorteioEquilibrado": true
+          }
+        },
+        {
+          "titulo": "Questão 9 — Contagem de queimadas",
+          "texto_md": "**O Problema:** O avaliador injeta `focos_por_dia` (`List[Int]`) com a contagem diária. Conte quantos dias tiveram mais de 50 focos. Imprima:\n\n`Dias criticos: N`\n\n**Casos de Teste (Amostra):**\n\n| Entrada | Saída | Show |\n|---|---|---|\n| `[10, 60, 80, 45, 100]` | Dias criticos: 3 | Sim |\n| `[5, 10, 15]` | Dias criticos: 0 | Sim |",
+          "meta": {
+            "tipo": "banco-questoes",
+            "questao": "questao_9",
+            "pontos": "20",
+            "dificuldade": "media",
+            "variacoesEquivalentesMinimas": 5,
+            "sorteioEquilibrado": true
+          }
+        },
+        {
+          "titulo": "Questão 10 — Varredura de contratos",
+          "texto_md": "**O Problema:** O avaliador injeta `valores` (`List[Float]`) dos contratos do ano. Use `enumerate` para imprimir o índice (começando em 0) e o valor de cada contrato acima de 100000.00, no formato:\n\n`Contrato N: R$ X.XX`\n\nSe não houver nenhum, imprima apenas `Nenhum contrato critico`.\n\n**Casos de Teste (Amostra):**\n\n| Entrada | Saída | Show |\n|---|---|---|\n| `[50000.0, 150000.0, 80000.0, 200000.0]` | Contrato 1: R$ 150000.00<br>Contrato 3: R$ 200000.00 | Sim |\n| `[10000.0, 20000.0]` | Nenhum contrato critico | Sim |",
+          "meta": {
+            "tipo": "banco-questoes",
+            "questao": "questao_10",
+            "pontos": "20",
+            "dificuldade": "media",
+            "variacoesEquivalentesMinimas": 5,
+            "sorteioEquilibrado": true
+          }
+        },
+        {
+          "titulo": "Questão 11 — Sentinela de acessos",
+          "texto_md": "**O Problema:** O avaliador injeta uma sequência de inteiros pela função `input()`. Cada inteiro é o id de um acesso; ao ler `-1`, pare. Conte quantos acessos foram registrados (não contar a sentinela). Imprima:\n\n`Acessos: N`\n\n**Casos de Teste (Amostra):**\n\n| Entrada | Saída | Show |\n|---|---|---|\n| `101`<br>`102`<br>`103`<br>`-1` | Acessos: 3 | Sim |\n| `-1` | Acessos: 0 | Sim |",
+          "meta": {
+            "tipo": "banco-questoes",
+            "questao": "questao_11",
+            "pontos": "20",
+            "dificuldade": "dificil",
+            "variacoesEquivalentesMinimas": 5,
+            "sorteioEquilibrado": true
+          }
+        },
+        {
+          "titulo": "Questão 12 — Resumo de IPCA",
+          "texto_md": "**O Problema:** O avaliador injeta `variacoes` (`List[Float]`) com a variação mensal do IPCA em pontos percentuais. Imprima quantos meses tiveram inflação positiva, quantos tiveram deflação e o acumulado:\n\n`Meses positivos: N`\n`Meses negativos: N`\n`Acumulado: X.XX`\n\n**Casos de Teste (Amostra):**\n\n| Entrada | Saída | Show |\n|---|---|---|\n| `[0.5, -0.2, 0.3, 0.1, -0.1]` | Meses positivos: 3<br>Meses negativos: 2<br>Acumulado: 0.60 | Sim |\n| `[0.0, 0.0]` | Meses positivos: 0<br>Meses negativos: 0<br>Acumulado: 0.00 | Sim |",
+          "meta": {
+            "tipo": "banco-questoes",
+            "questao": "questao_12",
+            "pontos": "20",
+            "dificuldade": "dificil",
+            "variacoesEquivalentesMinimas": 5,
+            "sorteioEquilibrado": true
+          }
+        },
+        {
+          "titulo": "Questão 13 — Relatório de viagens",
+          "texto_md": "**O Problema:** O avaliador injeta `quilometragens` (`List[List[Float]]`) onde cada lista interna representa um motorista e seus dias. Imprima o total geral percorrido por toda a frota:\n\n`Total geral: X.XX km`\n\n**Casos de Teste (Amostra):**\n\n| Entrada | Saída | Show |\n|---|---|---|\n| `[[100.0, 150.0], [200.0, 50.0, 75.0]]` | Total geral: 575.00 km | Sim |\n| `[[10.0]]` | Total geral: 10.00 km | Sim |",
+          "meta": {
+            "tipo": "banco-questoes",
+            "questao": "questao_13",
+            "pontos": "20",
+            "dificuldade": "dificil",
+            "variacoesEquivalentesMinimas": 5,
+            "sorteioEquilibrado": true
+          }
+        },
+        {
+          "titulo": "Questão 14 — Mapa de sensoriamento",
+          "texto_md": "**O Problema:** O avaliador injeta `matriz` (`List[List[Int]]`) representando uma grade de sensores. Cada célula é 0 (sem alerta) ou 1 (alerta). Conte quantas células estão em alerta. Imprima:\n\n`Alertas ativos: N`\n\n**Casos de Teste (Amostra):**\n\n| Entrada | Saída | Show |\n|---|---|---|\n| `[[0,1,0],[1,1,0],[0,0,1]]` | Alertas ativos: 4 | Sim |\n| `[[0,0],[0,0]]` | Alertas ativos: 0 | Sim |",
+          "meta": {
+            "tipo": "banco-questoes",
+            "questao": "questao_14",
+            "pontos": "20",
+            "dificuldade": "dificil",
+            "variacoesEquivalentesMinimas": 5,
+            "sorteioEquilibrado": true
+          }
+        },
+        {
+          "titulo": "Questão 15 — Matriz hospitalar",
+          "texto_md": "**O Problema:** O avaliador injeta `internacoes` (`List[List[Int]]`) onde cada linha representa um hospital e cada coluna um dia da semana. Para cada hospital, imprima o total semanal no formato:\n\n`Hospital N: total N`\n\n(N começa em 0)\n\n**Casos de Teste (Amostra):**\n\n| Entrada | Saída | Show |\n|---|---|---|\n| `[[10,12,15],[8,8,8]]` | Hospital 0: total 37<br>Hospital 1: total 24 | Sim |\n| `[[5,5]]` | Hospital 0: total 10 | Sim |",
+          "meta": {
+            "tipo": "banco-questoes",
+            "questao": "questao_15",
+            "pontos": "20",
+            "dificuldade": "dificil",
+            "variacoesEquivalentesMinimas": 5,
+            "sorteioEquilibrado": true
+          }
+        },
+        {
+          "titulo": "Questão 16 — Detecção de extremos",
+          "texto_md": "**O Problema:** O avaliador injeta `valores` (`List[Float]`). Use um único laço `for` para descobrir o menor e o maior simultaneamente (sem usar `min()` e `max()`). Imprima:\n\n`Menor: X.XX`\n`Maior: X.XX`\n\n**Casos de Teste (Amostra):**\n\n| Entrada | Saída | Show |\n|---|---|---|\n| `[3.5, 1.2, 7.8, 4.0]` | Menor: 1.20<br>Maior: 7.80 | Sim |\n| `[5.0]` | Menor: 5.00<br>Maior: 5.00 | Sim |",
+          "meta": {
+            "tipo": "banco-questoes",
+            "questao": "questao_16",
+            "pontos": "20",
+            "dificuldade": "dificil",
+            "variacoesEquivalentesMinimas": 5,
+            "sorteioEquilibrado": true
+          }
+        },
+        {
+          "titulo": "Questão 17 — Contagem de linhas críticas",
+          "texto_md": "**O Problema:** O avaliador injeta `matriz` (`List[List[Int]]`). Conte quantas linhas têm soma >= 100. Imprima:\n\n`Linhas criticas: N`\n\n**Casos de Teste (Amostra):**\n\n| Entrada | Saída | Show |\n|---|---|---|\n| `[[30,40,50],[10,20,30],[60,50,10]]` | Linhas criticas: 2 | Sim |\n| `[[10,20]]` | Linhas criticas: 0 | Sim |",
+          "meta": {
+            "tipo": "banco-questoes",
+            "questao": "questao_17",
+            "pontos": "20",
+            "dificuldade": "dificil",
+            "variacoesEquivalentesMinimas": 5,
+            "sorteioEquilibrado": true
+          }
+        },
+        {
+          "titulo": "Questão 18 — Varredura com enumerate",
+          "texto_md": "**O Problema:** O avaliador injeta `matriz` (`List[List[Int]]`). Use `enumerate` aninhado para imprimir as coordenadas de todas as células com valor 0, no formato:\n\n`Falha: linha X, coluna Y`\n\nSe não houver, imprima `Sem falhas`.\n\n**Casos de Teste (Amostra):**\n\n| Entrada | Saída | Show |\n|---|---|---|\n| `[[1,0],[0,1]]` | Falha: linha 0, coluna 1<br>Falha: linha 1, coluna 0 | Sim |\n| `[[1,1],[1,1]]` | Sem falhas | Sim |",
+          "meta": {
+            "tipo": "banco-questoes",
+            "questao": "questao_18",
+            "pontos": "20",
+            "dificuldade": "dificil",
+            "variacoesEquivalentesMinimas": 5,
+            "sorteioEquilibrado": true
+          }
+        },
+        {
+          "titulo": "Questão 19 — Controle de lotes",
+          "texto_md": "**O Problema:** Leia entradas pelo `input()` (uma por linha) representando o peso de um lote. Pare quando ler `0`. Conte quantos lotes vieram fora da faixa válida (peso < 5 ou peso > 20). Imprima:\n\n`Lotes fora da faixa: N`\n\n**Casos de Teste (Amostra):**\n\n| Entrada | Saída | Show |\n|---|---|---|\n| `10`<br>`3`<br>`25`<br>`15`<br>`0` | Lotes fora da faixa: 2 | Sim |\n| `10`<br>`15`<br>`0` | Lotes fora da faixa: 0 | Sim |",
+          "meta": {
+            "tipo": "banco-questoes",
+            "questao": "questao_19",
+            "pontos": "20",
+            "dificuldade": "dificil",
+            "variacoesEquivalentesMinimas": 5,
+            "sorteioEquilibrado": true
+          }
+        },
+        {
+          "titulo": "Questão 20 — Auditoria final de matrizes",
+          "texto_md": "**O Problema:** O avaliador injeta `matriz` (`List[List[Float]]`) com valores monetários. Para cada linha, calcule a média (`sum(linha)/len(linha)`). Imprima o total da soma e a média mais alta encontrada:\n\n`Total geral: R$ X.XX`\n`Maior media de linha: R$ X.XX`\n\n**Casos de Teste (Amostra):**\n\n| Entrada | Saída | Show |\n|---|---|---|\n| `[[10.0,20.0],[30.0,30.0],[5.0,5.0]]` | Total geral: R$ 100.00<br>Maior media de linha: R$ 30.00 | Sim |\n| `[[100.0]]` | Total geral: R$ 100.00<br>Maior media de linha: R$ 100.00 | Sim |",
+          "meta": {
+            "tipo": "banco-questoes",
+            "questao": "questao_20",
+            "pontos": "20",
+            "dificuldade": "dificil",
+            "variacoesEquivalentesMinimas": 5,
+            "sorteioEquilibrado": true
+          }
+        }
+      ],
+      "sorteio": {
+        "total_banco": 20,
+        "questoes_sorteadas": 5,
+        "criterio": "sorteio editorial equilibrado por dificuldade",
+        "totalBanco": 20,
+        "questoesSorteadas": 5,
+        "distribuicaoDificuldade": {
+          "media": 3,
+          "dificil": 2
+        },
+        "variacoesEquilibradasMinimas": 5
+      },
+      "equilibrioEditorial": {
+        "dificuldadesDisponiveis": {
+          "media": 10,
+          "dificil": 10
+        },
+        "distribuicaoPorAplicacao": {
+          "media": 3,
+          "dificil": 2
+        },
+        "variacoesEquivalentesMinimas": 5
+      }
+    },
+    "backend": {
+      "titulo": "Atenção IA de Backend / Sistema Gerenciador:",
+      "texto_md": "Este bloco orienta a geração editorial do banco da prova final do Módulo 2. O banco contém 20 questões e cada aplicação deve selecionar 5 questões. Gere no mínimo 10 casos por questão, com forte presença de valores de borda.\n\nRegras editoriais adicionais: manter sorteio equilibrado com **3 questões médias** e **2 difíceis** por aplicação, garantindo no mínimo **5 variações equivalentes** de prova no banco."
+    }
+  },
+  "desafios": [],
+  "premio": {
+    "pontuacao_academica": 100,
+    "superpower_reward": "unpacking",
+    "recursos": [
+      "Comprar tempo adicional: 3x de 5min (10 Moedas)",
+      "Comprar dica IA: 3 consultas à lógica base (10 Moedas)"
+    ],
+    "testes_ocultos": {
+      "banco_questoes": "/api/datasets/modulo2_prova_banco_20.json"
+    }
+  },
+  "avaliacao": {
+    "pontuacao_maxima": 100,
+    "criterios": [
+      "Correção automática por testes ocultos das 5 questões sorteadas.",
+      "Aderência ao formato de saída exigido em cada questão.",
+      "Uso correto apenas dos conceitos estudados no Módulo 2."
+    ],
+    "tipo_correcao": "automatica"
+  }
+}

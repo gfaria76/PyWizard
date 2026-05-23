@@ -1,0 +1,115 @@
+{
+  "id": "python-3.3.3-MS",
+  "curso": "python",
+  "modulo": 3,
+  "aula": 3,
+  "numero": "3.3.3",
+  "tipo": "masmorra",
+  "subtipo": "simulado",
+  "titulo": "antes do Boss",
+  "subtitulo": "Treino individual com questões equivalentes às do boss ««Escalabilidade Modular»",
+  "objetivo": "Oferecer um simulado individual de pré-boss com questões equivalentes às do boss ««Escalabilidade Modular», permitindo calibrar tempo, formato de saída e identificação de pontos fracos antes da avaliação oficial.",
+  "duracao": "1h30",
+  "tags": [
+    "labirinto_sabedoria",
+    "simulado",
+    "pré-boss",
+    "boss",
+    "for em funções",
+    "while em funções",
+    "escopo local",
+    "acumuladores"
+  ],
+  "secoes": {
+    "abertura": {
+      "introducao": {
+        "texto_md": "# Labirinto da Sabedoria III\n\nEste é um simulado individual antes do boss ««Escalabilidade Modular». As questões aqui são equivalentes às do boss em escopo, formato e dificuldade, mas usam dados sintéticos diferentes. Resultado não conta para a nota final do núcleo; serve como termômetro pessoal e para identificar tópicos a revisar.\n\n**Regras do labirinto:**\n\n* Tente todas as missões dentro do tempo estimado do boss.\n* Compare seu resultado com o gabarito e revise antes da maratona oficial.\n"
+      }
+    },
+    "maratona": {
+      "titulo": "Simulado completo (espelho do boss)",
+      "texto_md": "Cinco missões simuladas, equivalentes às do boss ««Escalabilidade Modular». Mesmas habilidades, dados sintéticos diferentes.",
+      "missoes": [
+        {
+          "titulo": "Soma de Repasses por Município",
+          "texto_md": "**O Treino:** Crie uma função `somar_repasses(repasses)` que retorne a soma total dos valores de uma lista de repasses. Depois, imprima:\n\n`Total: R$ X.XX`\n`Media: R$ X.XX`\n\n**Casos de Teste (Amostra):**\n\n| Entrada Oculta (`repasses`) | Saída Esperada | Show |\n|---|---|---|\n| [1000.0, 2000.0, 500.0] | Total: R$ 3500.00<br>Media: R$ 1166.67 | Sim |\n| [800.0, 1200.0] | Total: R$ 2000.00<br>Media: R$ 1000.00 | Sim |",
+          "meta": {
+            "tipo": "simulado",
+            "espelha_missao": "missao_1"
+          }
+        },
+        {
+          "titulo": "Contagem de Alertas Climáticos",
+          "texto_md": "**O Treino:** Crie uma função `contar_alertas(indices, limite)` que percorra a lista `indices` e retorne quantos valores são maiores ou iguais a `limite`. Depois, imprima `Alertas: N`.\n\n**Casos de Teste (Amostra):**\n\n| Entradas | Saída | Show |\n|---|---|---|\n| `[10, 35, 52, 18, 70]`, `50` | Alertas: 2 | Sim |\n| `[40, 40, 40]`, `40` | Alertas: 3 | Sim |",
+          "meta": {
+            "tipo": "simulado",
+            "espelha_missao": "missao_2"
+          }
+        },
+        {
+          "titulo": "Média até o Marcador",
+          "texto_md": "**O Treino:** Crie uma função `media_ate_zero(valores)` que percorra a lista com `while`, somando apenas os valores antes do primeiro `0.0`, e retorne a média. Depois, imprima `Media valida: X.XX`.\n\n**Casos de Teste (Amostra):**\n\n| Entrada Oculta (`valores`) | Saída Esperada | Show |\n|---|---|---|\n| [100.0, 200.0, 0.0, 999.0] | Media valida: 150.00 | Sim |\n| [50.0, 50.0, 50.0, 0.0] | Media valida: 50.00 | Sim |",
+          "meta": {
+            "tipo": "simulado",
+            "espelha_missao": "missao_3"
+          }
+        },
+        {
+          "titulo": "Resumo de Matrícula por Turma",
+          "texto_md": "**O Treino:** Crie uma função `resumo_turmas(matriz)` que receba uma matriz em que cada linha representa as faltas de uma turma ao longo da semana. A função deve retornar dois valores: a soma total de faltas e a maior soma entre as turmas. Depois, imprima:\n\n`Faltas totais: N`\n`Maior turma: N`\n\n**Casos de Teste (Amostra):**\n\n| Entrada Oculta (`matriz`) | Saída Esperada | Show |\n|---|---|---|\n| [[1, 2, 1], [0, 0, 1], [3, 2, 2]] | Faltas totais: 12<br>Maior turma: 7 | Sim |\n| [[0], [4, 1]] | Faltas totais: 5<br>Maior turma: 5 | Sim |",
+          "meta": {
+            "tipo": "simulado",
+            "espelha_missao": "missao_4"
+          }
+        },
+        {
+          "titulo": "Ranking de Municípios Críticos",
+          "texto_md": "**O Treino:** Crie uma função `ranking_criticos(indicadores, limite)` que percorra a lista de indicadores, construa uma nova lista apenas com os valores estritamente acima de `limite` e retorne essa lista já em ordem decrescente. Depois, imprima:\n\n`Criticos: [..]`\n`Total criticos: N`\n\n**Casos de Teste (Amostra):**\n\n| Entradas | Saída | Show |\n|---|---|---|\n| `[12.0, 88.0, 43.0, 120.0]`, `50.0` | Criticos: [120.0, 88.0]<br>Total criticos: 2 | Sim |\n| `[10.0, 20.0]`, `50.0` | Criticos: []<br>Total criticos: 0 | Sim |",
+          "meta": {
+            "tipo": "simulado",
+            "espelha_missao": "missao_5"
+          }
+        }
+      ]
+    },
+    "fechamento": {
+      "titulo": "Encerramento do Labirinto",
+      "reflexao": {
+        "texto_md": "* Quais missões consumiram mais tempo? Identifique gargalos.\n* Em quais formatos de saída houve erro? Revise antes do boss.\n* Marque os tópicos a reler nos `conceitos` correspondentes antes da maratona oficial.\n"
+      }
+    }
+  },
+  "premio": {
+    "pontuacao": 0,
+    "recursos": [
+      "Gabarito disponível após o término do simulado",
+      "Relatório de fraquezas: tópicos a revisar antes do boss"
+    ]
+  },
+  "rpg": {
+    "xp_reward": 80,
+    "variant": "labyrinth-simulation",
+    "oracle_hints": [
+      "Trate este labirinto como o boss real — formato de saída conta.",
+      "Cronometre cada missão para identificar onde perde tempo.",
+      "Se errar duas seguidas, volte aos conceitos antes de prosseguir."
+    ],
+    "enemy_name": "Eco do Boss III",
+    "enemy_hp": 200,
+    "weakness": "preparação prévia",
+    "loot_drops": [
+      {
+        "item": "Mapa do Labirinto",
+        "type": "consumable",
+        "rarity": "uncommon"
+      },
+      {
+        "item": "Pergaminho de Foco",
+        "type": "consumable",
+        "rarity": "common",
+        "quantity": 2
+      }
+    ]
+  },
+  "nucleo": 3
+}

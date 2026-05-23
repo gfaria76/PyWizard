@@ -21,7 +21,16 @@
       "Bash(node -e 'const j = JSON.parse\\(require\\('\\\\''fs'\\\\''\\).readFileSync\\('\\\\''__TRACKED_VAR__'\\\\''\\)\\); const s = j.secoes; if \\(s && s.desafios\\) console.log\\('\\\\''Still has desafios: __TRACKED_VAR__'\\\\''\\);')",
       "Bash(rm app/pages/\\\\[curso\\\\]/\\\\[modulo\\\\]/\\\\[nucleo\\\\]/index.vue app/pages/\\\\[curso\\\\]/\\\\[modulo\\\\]/\\\\[nucleo\\\\]/\\\\[aula\\\\].vue)",
       "Bash(rmdir app/pages/\\\\[curso\\\\]/\\\\[modulo\\\\]/\\\\[nucleo\\\\])",
-      "Bash(ps -p 69896 -o pid,etime,command)"
+      "Bash(ps -p 69896 -o pid,etime,command)",
+      "Bash(node -e \"const j=JSON.parse\\(require\\('fs'\\).readFileSync\\('data/cursos/python/modulo1/nucleo1/aula-11-trilha-aprendiz.json'\\)\\); console.log\\(Object.keys\\(j.secoes\\)\\); console.log\\('desafios keys:', Object.keys\\(j.secoes.desafios||{}\\)\\)\")",
+      "Bash(node -e \"const j=JSON.parse\\(require\\('fs'\\).readFileSync\\('data/cursos/python/modulo1/nucleo1/aula-11-trilha-guardiao.json'\\)\\); console.log\\(Object.keys\\(j.secoes\\)\\); const m=j.secoes.desafios?.missoes?.[0]; console.log\\('mission sample keys:', m? Object.keys\\(m\\): null\\); console.log\\('meta:', m?.meta\\)\")",
+      "Bash(node -e \"const j=JSON.parse\\(require\\('fs'\\).readFileSync\\('data/cursos/python/modulo1/aula-50-PROVA.json'\\)\\); console.log\\(Object.keys\\(j.secoes\\)\\); console.log\\('questoes keys:', Object.keys\\(j.secoes.questoes||{}\\)\\)\")",
+      "Bash(node -e \"const j=JSON.parse\\(require\\('fs'\\).readFileSync\\('data/cursos/python/game/modulo1.json'\\)\\); console.log\\('aulas count:', j.aulas.length\\); j.aulas.slice\\(0,4\\).forEach\\(a=>console.log\\(JSON.stringify\\({numero:a.numero, rotulo:a.rotulo, subtipo:a.subtipo, arquivo:a.arquivo}\\)\\)\\)\")",
+      "Bash(node *)",
+      "Bash(rm -f \"server/api/cursos/[curso]/modulos/[modulo]/aulas/[aula].get.ts\")",
+      "Bash(rm -f \"server/api/cursos/python/modulos/[modulo]/aulas/[aula].get.ts\")",
+      "Bash(rm -rf \"server/api/cursos/python/modulos/[modulo]\")",
+      "Bash(rmdir \"server/api/cursos/[curso]/modulos/[modulo]/aulas\")"
     ]
   }
 }

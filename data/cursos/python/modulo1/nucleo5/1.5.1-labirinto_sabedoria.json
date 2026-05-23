@@ -1,0 +1,143 @@
+{
+  "id": "python-1.5.1-MS",
+  "curso": "python",
+  "modulo": 1,
+  "nucleo": 5,
+  "aula": 1,
+  "numero": "1.5.1",
+  "tipo": "masmorra",
+  "subtipo": "simulado",
+  "titulo": "Salão da Sabedoria Final",
+  "subtitulo": "Simulado integrado pré-prova com 8 missões representativas dos 4 núcleos do Módulo I",
+  "objetivo": "Consolidar o domínio dos conceitos do Módulo I por meio de um simulado individual que reúne duas missões representativas de cada um dos 4 núcleos. Calibra ritmo, formato de saída e identificação de pontos fracos antes da Prova Final.",
+  "duracao": "2h00",
+  "tags": [
+    "labirinto_sabedoria",
+    "simulado",
+    "pré-prova",
+    "modulo-1"
+  ],
+  "secoes": {
+    "abertura": {
+      "introducao": {
+        "texto_md": "# Salão da Sabedoria Final\n\nEste simulado individual reúne missões equivalentes às dos labirintos dos 4 núcleos do Módulo I. Use-o antes da Prova Final para calibrar tempo, formato de saída e identificar tópicos a revisar. O resultado não conta para a nota final do módulo.\n\n**Regras do labirinto:**\n\n* Tente todas as missões dentro do tempo estimado da Prova.\n* As missões cobrem os 4 núcleos: variáveis/matemática/f-strings; divisão inteira/módulo; if/else/lógicos; elif/aninhamento.\n* Compare seu resultado com o gabarito e revise antes da Prova oficial.\n"
+      }
+    },
+    "maratona": {
+      "titulo": "Simulado integrado (8 missões dos 4 núcleos)",
+      "texto_md": "Duas missões representativas de cada núcleo do Módulo I, com escopo, formato e dificuldade equivalentes aos dos respectivos bosses. Dados sintéticos.",
+      "missoes": [
+        {
+          "titulo": "Núcleo 1 — A Distorção Salarial (Portal da Transparência)",
+          "texto_md": "**O Treino:** Um consórcio de jornalistas quer provar a disparidade entre o salário-base de um trabalhador e o teto de remuneração em um órgão público. O avaliador injeta `salario_teto` (`Float`) e `salario_base` (`Float`). Calcule a diferença absoluta entre os dois e o percentual que o teto representa em relação ao base. Imprima:\n\n`Diferenca: R$ X.XX`\n`Teto representa: X.X% do base`\n\n**Casos de Teste (Amostra):**\n\n| Entrada | Saída | Show |\n|---|---|---|\n| `39293.32`, `1412.0` | Diferenca: R$ 37881.32<br>Teto representa: 2782.8% do base | Sim |\n| `10000.0`, `2000.0` | Diferenca: R$ 8000.00<br>Teto representa: 500.0% do base | Sim |",
+          "meta": {
+            "tipo": "simulado",
+            "espelha_missao": "missao_1",
+            "origem_nucleo": 1
+          }
+        },
+        {
+          "titulo": "Núcleo 1 — Déficit de Saneamento (SNIS)",
+          "texto_md": "**O Treino:** O avaliador injeta `total_domicilios` (`Int`) e `com_esgoto` (`Int`). Calcule quantos domicílios estão sem acesso à rede e a taxa percentual de cobertura. Imprima:\n\n`Sem esgoto: N`\n`Cobertura: X.X%`\n`Deficit absoluto: N domicilios`\n\n**Casos de Teste (Amostra):**\n\n| Entrada | Saída | Show |\n|---|---|---|\n| `10000`, `6500` | Sem esgoto: 3500<br>Cobertura: 65.0%<br>Deficit absoluto: 3500 domicilios | Sim |\n| `5000`, `5000` | Sem esgoto: 0<br>Cobertura: 100.0%<br>Deficit absoluto: 0 domicilios | Sim |",
+          "meta": {
+            "tipo": "simulado",
+            "espelha_missao": "missao_3",
+            "origem_nucleo": 1
+          }
+        },
+        {
+          "titulo": "Núcleo 2 — O Rateio Escolar (FNDE)",
+          "texto_md": "**O Treino:** O avaliador injeta `verba_total_centavos` (`Int`) e `num_escolas` (`Int`). A verba precisa ser distribuída igualmente entre escolas, em centavos. Calcule quanto cada escola recebe e qual saldo volta ao caixa. Imprima:\n\n`Por escola: R$ X.XX`\n`Saldo retornado: R$ X.XX`\n\n**Casos de Teste (Amostra):**\n\n| Entrada | Saída | Show |\n|---|---|---|\n| `100000`, `7` | Por escola: R$ 142.85<br>Saldo retornado: R$ 0.05 | Sim |\n| `50000`, `10` | Por escola: R$ 50.00<br>Saldo retornado: R$ 0.00 | Sim |",
+          "meta": {
+            "tipo": "simulado",
+            "espelha_missao": "missao_1",
+            "origem_nucleo": 2
+          }
+        },
+        {
+          "titulo": "Núcleo 2 — Planejamento Rodoviário (DNIT)",
+          "texto_md": "**O Treino:** O avaliador injeta `total_km` (`Int`) e `km_por_dia` (`Int`). Calcule quantos dias completos de obra são necessários e quantos quilômetros sobram para um último dia parcial. Imprima:\n\n`Dias completos: N`\n`Km restantes: N`\n`Equipes-dia totais: N`\n\n**Casos de Teste (Amostra):**\n\n| Entrada | Saída | Show |\n|---|---|---|\n| `150`, `12` | Dias completos: 12<br>Km restantes: 6<br>Equipes-dia totais: 13 | Sim |\n| `120`, `12` | Dias completos: 10<br>Km restantes: 0<br>Equipes-dia totais: 10 | Sim |",
+          "meta": {
+            "tipo": "simulado",
+            "espelha_missao": "missao_3",
+            "origem_nucleo": 2
+          }
+        },
+        {
+          "titulo": "Núcleo 3 — Triagem Fiscal de Empresas",
+          "texto_md": "**O Treino:** O avaliador injeta `faturamento` (`Float`) e `imposto_recolhido` (`Float`). Uma empresa entra em auditoria se o faturamento for maior que 4,8 milhões **ou** se o imposto recolhido representar menos de 8% do faturamento. Imprima `Auditoria: NECESSARIA` ou `Auditoria: DISPENSA`.\n\n**Casos de Teste (Amostra):**\n\n| Entrada | Saída | Show |\n|---|---|---|\n| `5000000.0`, `500000.0` | Auditoria: NECESSARIA | Sim |\n| `3000000.0`, `300000.0` | Auditoria: DISPENSA | Sim |",
+          "meta": {
+            "tipo": "simulado",
+            "espelha_missao": "missao_1",
+            "origem_nucleo": 3
+          }
+        },
+        {
+          "titulo": "Núcleo 3 — Monitoramento Especial do INPE",
+          "texto_md": "**O Treino:** O avaliador injeta `desmatamento_ha` (`Float`) e `cobertura_pct` (`Float`). Um município entra em `Monitoramento: ESPECIAL` se o desmatamento for maior que 100 hectares **e** a cobertura florestal restante for menor que 50%. Caso contrário, `Monitoramento: REGULAR`.\n\n**Casos de Teste (Amostra):**\n\n| Entrada | Saída | Show |\n|---|---|---|\n| `150.0`, `35.0` | Monitoramento: ESPECIAL | Sim |\n| `150.0`, `55.0` | Monitoramento: REGULAR | Sim |",
+          "meta": {
+            "tipo": "simulado",
+            "espelha_missao": "missao_3",
+            "origem_nucleo": 3
+          }
+        },
+        {
+          "titulo": "Núcleo 4 — A Tabela do IRPF (variação de salários)",
+          "texto_md": "**O Treino:** O avaliador injeta `salario_mensal` (`Float`). Classifique a faixa do IRPF e calcule o imposto simplificado sobre o total. Imprima:\n\n`Faixa: X`\n`Imposto estimado: R$ X.XX`\n\nFaixas: <= 2259.20 → `Isento`; <= 2826.65 → `7.5%`; <= 3751.05 → `15%`; <= 4664.68 → `22.5%`; acima → `27.5%`.\n\n**Casos de Teste (Amostra):**\n\n| Entrada | Saída | Show |\n|---|---|---|\n| `2500.0` | Faixa: 7.5%<br>Imposto estimado: R$ 187.50 | Sim |\n| `4700.0` | Faixa: 27.5%<br>Imposto estimado: R$ 1292.50 | Sim |",
+          "meta": {
+            "tipo": "simulado",
+            "espelha_missao": "missao_1",
+            "origem_nucleo": 4
+          }
+        },
+        {
+          "titulo": "Núcleo 4 — Sistema de Multas (variação DETRAN)",
+          "texto_md": "**O Treino:** O avaliador injeta `tipo_infracao` (`String`: `L`, `M`, `G`, `GV`) e `reincidente` (`Int`, 0 ou 1). Valores base: L=88.38, M=130.16, G=195.23, GV=880.41. Se reincidente, o valor dobra. Se for `GV`, além da multa imprima `Adicional: Suspensao de CNH`.\n\n**Casos de Teste (Amostra):**\n\n| Entrada | Saída | Show |\n|---|---|---|\n| `M`, `1` | Multa: R$ 260.32 | Sim |\n| `GV`, `1` | Multa: R$ 1760.82<br>Adicional: Suspensao de CNH | Sim |",
+          "meta": {
+            "tipo": "simulado",
+            "espelha_missao": "missao_3",
+            "origem_nucleo": 4
+          }
+        }
+      ]
+    },
+    "fechamento": {
+      "titulo": "Encerramento do Salão",
+      "reflexao": {
+        "texto_md": "* Quais núcleos consumiram mais tempo? Marque os conceitos a revisar antes da Prova.\n* Em quais formatos de saída houve erro? Releia os enunciados e ajuste antes da avaliação oficial.\n* Se errar duas seguidas em um núcleo, volte aos  daquele núcleo antes de prosseguir.\n"
+      }
+    }
+  },
+  "premio": {
+    "pontuacao": 0,
+    "recursos": [
+      "Gabarito disponível após o término do simulado",
+      "Relatório de fraquezas por núcleo: tópicos a revisar antes da Prova"
+    ]
+  },
+  "rpg": {
+    "xp_reward": 120,
+    "variant": "labyrinth-simulation-final",
+    "oracle_hints": [
+      "Trate este salão como a Prova real — formato de saída conta.",
+      "Cronometre cada missão para identificar onde perde tempo.",
+      "Se errar em um núcleo específico, revise antes de prosseguir para o próximo."
+    ],
+    "enemy_name": "Guardião do Salão",
+    "enemy_hp": 350,
+    "weakness": "preparação integrada",
+    "loot_drops": [
+      {
+        "item": "Mapa do Salão",
+        "type": "consumable",
+        "rarity": "rare"
+      },
+      {
+        "item": "Pergaminho de Foco",
+        "type": "consumable",
+        "rarity": "common",
+        "quantity": 3
+      }
+    ]
+  }
+}
